@@ -43,6 +43,15 @@ namespace BattlePlay
 
 		public void InitControls()
 		{
+			// [RE] rebuild the pending-control table from BattlePlayData.controls
+			m_waitingControls.Clear();
+			var controls = battlePlayData != null ? battlePlayData.controls : null;
+			if (controls == null) return;
+			for (int i = 0; i < controls.Count; i++)
+			{
+				controls[i].controlIdx = i;
+				m_waitingControls[i] = controls[i];
+			}
 		}
 
 		public void InitBattlePlayData()
@@ -60,7 +69,23 @@ namespace BattlePlay
 
 		public bool EmitControl(ControlType type, ControlFlow.statusType status, UnitData controlUnit, UnitData targetUnit, int tileIdx, int skillId, int itemId, IntVector2 mouseGridPos)
 		{
-			return false;
+			// [RE] local input → control record → append to battlePlayData
+			// (server-authoritative mirror arrives via multiplay socket).
+			var control = new BattleControl
+			{
+				uid = controlUnit != null ? controlUnit.uid : 0,
+				type = type,
+				status = status,
+				controlUnitId = controlUnit != null ? controlUnit.unitId : 0,
+				targetUnitId = targetUnit != null ? targetUnit.unitId : 0,
+				tileIdx = tileIdx,
+				skillId = skillId,
+				itemId = itemId,
+				mouseGridPos = mouseGridPos,
+				turnIdx = battlePlayData != null ? battlePlayData.controlIdx : 0,
+			};
+			AddControl(control);
+			return true;
 		}
 
 		public void EmitControl(Action action)
@@ -81,10 +106,18 @@ namespace BattlePlay
 
 		public void AddControl(BattleControl battleControl)
 		{
+			if (battlePlayData == null) return;
+			battleControl.controlIdx = battlePlayData.controlIdx++;
+			battlePlayData.controls.Add(battleControl);
+			m_waitingControls[battleControl.controlIdx] = battleControl;
 		}
 
 		public void AddMissedControls(BattleControl[] battleControls)
 		{
+			// [RE] reconnect path: server replays controls we never saw
+			if (battleControls == null) return;
+			foreach (var bc in battleControls)
+				AddControl(bc);
 		}
 
 		public void AddSticker(BattleSticker battleSticker)
@@ -109,6 +142,18 @@ namespace BattlePlay
 
 		private void CheckControl(int idx)
 		{
+			// [RE] apply the next waiting control if its predecessor completed
+			BattleControl control;
+			if (!m_waitingControls.TryGetValue(idx, out control))
+				return;
+			if (control.applied)
+			{
+				m_waitingControls.Remove(idx);
+				return;
+			}
+			if (!CheckControllingUnit(control))
+				return;   // [RE] not this unit's turn yet — wait
+			ApplyControl(control);
 		}
 
 		public void EndMultiPlayAIControl()
@@ -121,6 +166,53 @@ namespace BattlePlay
 
 		private void UpdateControl()
 		{
+			// [RE] decompiled UpdateControl: currentBattleControl completes →
+			// advance to the next control in the queue.
+			if (battlePlayData == null) return;
+			if (currentBattleControl != null)
+			{
+				if (!currentBattleControl.applied)
+					return;
+				lasttBattleControl = currentBattleControl;
+				currentBattleControl = null;
+			}
+			// process controls in order until one is in-flight
+			while (m_waitingControls.Count > 0 && currentBattleControl == null)
+			{
+				int minIdx = int.MaxValue;
+				foreach (var k in m_waitingControls.Keys)
+					if (k < minIdx) minIdx = k;
+				if (minIdx == int.MaxValue) break;
+				var control = m_waitingControls[minIdx];
+				if (!CheckControllingUnit(control))
+					break;
+				ApplyControl(control);
+				if (currentBattleControl == null)
+					m_waitingControls.Remove(minIdx);
+				else
+					break;   // [RE] in-flight — wait for completion in a later frame
+			}
+		}
+
+		// [RE] rebuild-only: the control executor hook (original dispatched by
+		// type into unit animation/action systems — restored per-type in the
+		// battle scene milestone).
+		private void ApplyControl(BattleControl control)
+		{
+			switch (control.type)
+			{
+				case ControlType.CompleteAction:
+					control.applied = true;
+					EmitCompleteAction(null, true);
+					return;
+				case ControlType.SkipTurn:
+					control.applied = true;
+					return;
+				default:
+					control.applied = true;   // [RE] executor stub: mark consumed
+					break;
+			}
+			currentBattleControl = control;
 		}
 
 		private void UpdateSticker()
