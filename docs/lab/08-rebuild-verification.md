@@ -75,3 +75,19 @@ For each of the 18 scenes:
 - **8-D** Write the one-page *operations* runbook: how to deploy (`wrangler
   deploy`), how to rotate the packet-encryption key, how to restore a player
   from D1 history.
+
+## 8.7 Milestone 2 acceptance (actual results, 2026-10-12)
+
+```
+  REST login: guest_proto_test
+  handshake ok (sid=41ee5e83...)
+  login reply: 2["login",{"userId":"guest_proto_test"}]
+  enterToWorld reply: 2["enterToWorld",{"room_id":"world:7484","world_id":7484}]
+  chat broadcast: 2["chattingMessage",{"msg":"hello 조조",...}]
+  chat ack: 2["broadcastTo",{"success":true}]
+  leaveRoom reply: 2["leaveRoom",{"room_id":"world:7484"}]
+  PROTOCOL_TEST_PASS
+```
+
+Run it: `server/test/protocol_test.py <port>` (wrangler dev must be up).
+Commits: 9360d7c4 (server), 0fc5e7cf (client network hub).

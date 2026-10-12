@@ -20,13 +20,20 @@ indices in brackets).
 4. `HeartBeats` [626162] + `SocketIOMin` client (engine.io v4 framing)
    — wire format from P §1–2
 
-## Milestone 2 — Server skeleton (Cloudflare)
-- Worker WS route → Durable Object `GameServer` speaking engine.io v4 +
-  socket.io v4 event layer (P §2), JSON in/out via zod
-- D1 schema: players, inventory, progress; auth by guest token
-- `HttpRequest` REST endpoints mirrored (notices/terms placeholders)
+## Milestone 2 — Server skeleton (Cloudflare) ✅ 9360d7c4
+- [x] Worker WS route → Durable Object `GameServer`: engine.io v4 + socket.io
+      v4 (zod-validated), event catalog: login/enterToWorld/want_room_id/
+      leaveRoom/broadcastTo/updateHistory (analysis/protocol_events.md)
+- [x] D1 schema: players, inventory, progress (server/schema.d1.sql applied)
+- [x] REST: /user/login (guest authKey issue), /user/getUserData,
+      /user/updateHistory (heartbeat contract)
+- [x] Hermetic acceptance: server/test/protocol_test.py → PROTOCOL_TEST_PASS
 
-## Milestone 3 — Town & progression
+## Milestone 3 — Town & progression (client network hub ✅ 0fc5e7cf)
+- [x] SocketIOComponent/Encoder/Decoder/Parser rebuilt on real
+      WebSocketSharp+LitJson (vendored, replacing AssetRipper stubs)
+- [x] SessionImpl: full login/enter-world state machine (PImpl.cs splice),
+      SessionBoot guest-auth glue, HeartBeats, HttpRequest on UnityWebRequest
 - `Town` scene controllers, `WorldMapControlFlow` [615678],
   `SceneDataPipe` [433454] (cross-scene state)
 - Inventory/items from baked `Item` assets [11545] — write ObscuredTypes

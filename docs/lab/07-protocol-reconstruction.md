@@ -106,3 +106,26 @@ is the contract; both sides get zod/C# schema checks.
   10k pending acks? → cross-ref dsa-04.
 
 Solutions: `solutions/07.md`.
+
+## 7.8 War stories from the rebuild (2026-10-12) — read as incident reports
+
+1. **The ack-id that ate an hour.** First server parse expected v0.9-era
+   `2<id>#` separation; the actual v4 wire puts ack digits directly after the
+   type (`42<id>[...]`). Symptom: events parsed, acks never did. Lesson:
+   *protocol versions differ in tiny grammar details — keep a golden frame
+   capture and diff against it.*
+2. **The off-by-one event consumer.** `broadcastTo` produces TWO wire events
+   (room broadcast + sender ack). A test that reads "one event per action"
+   drifts one frame behind and blames the server. Lesson: *consume by frame
+   type, not by count* — and print raw frames when asserting (the 5-minute
+   `print(repr(frame))` found what 40 minutes of reasoning missed).
+3. **pkill self-matching, three ways.** `pkill -f AssetRipper` kills your own
+   shell (pattern appears in your own command line), then again via the
+   relaunch text in the same call, then again via `ps|grep|xargs kill`.
+   Durable rules: bracket-trick patterns (`[a]ssetRipper`), cleanup in its
+   own call, and — best — **port-based cleanup** (`fuser -k PORT/tcp`) which
+   cannot self-match.
+4. **Environment drift after host crash.** A host crash silently re-ordered
+   PATH to Windows-interop `node`/`npx` (WSL UNC-path resolution swallowed
+   the working directory). Pin tool paths absolutely in an env script and
+   verify with `which` — never trust "it worked yesterday".
