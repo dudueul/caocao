@@ -157,10 +157,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return null;
+			return m_name;
 		}
 		set
 		{
+			m_name = value;
 		}
 	}
 
@@ -168,10 +169,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_id;
 		}
 		set
 		{
+			m_id = value;
 		}
 	}
 
@@ -179,10 +181,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_tier;
 		}
 		set
 		{
+			m_tier = value;
 		}
 	}
 
@@ -190,10 +193,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_slot;
 		}
 		set
 		{
+			m_slot = value;
 		}
 	}
 
@@ -201,10 +205,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_itemType;
 		}
 		set
 		{
+			m_itemType = value;
 		}
 	}
 
@@ -212,10 +217,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_boxType;
 		}
 		set
 		{
+			m_boxType = value;
 		}
 	}
 
@@ -223,10 +229,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_price;
 		}
 		set
 		{
+			m_price = value;
 		}
 	}
 
@@ -234,10 +241,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_gold;
 		}
 		set
 		{
+			m_gold = value;
 		}
 	}
 
@@ -245,10 +253,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_tresureType;
 		}
 		set
 		{
+			m_tresureType = value;
 		}
 	}
 
@@ -256,10 +265,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_enhanceType;
 		}
 		set
 		{
+			m_enhanceType = value;
 		}
 	}
 
@@ -267,10 +277,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_unitLv;
 		}
 		set
 		{
+			m_unitLv = value;
 		}
 	}
 
@@ -278,10 +289,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_itemEffect;
 		}
 		set
 		{
+			m_itemEffect = value;
 		}
 	}
 
@@ -289,10 +301,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_effectValue;
 		}
 		set
 		{
+			m_effectValue = value;
 		}
 	}
 
@@ -300,10 +313,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_maxValue;
 		}
 		set
 		{
+			m_maxValue = value;
 		}
 	}
 
@@ -311,10 +325,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_typeValue;
 		}
 		set
 		{
+			m_typeValue = value;
 		}
 	}
 
@@ -322,10 +337,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_payType;
 		}
 		set
 		{
+			m_payType = value;
 		}
 	}
 
@@ -355,10 +371,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_skillId;
 		}
 		set
 		{
+			m_skillId = value;
 		}
 	}
 
@@ -366,10 +383,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_skillVal;
 		}
 		set
 		{
+			m_skillVal = value;
 		}
 	}
 
@@ -377,10 +395,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_unitId;
 		}
 		set
 		{
+			m_unitId = value;
 		}
 	}
 
@@ -388,10 +407,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return null;
+			return m_atlas;
 		}
 		set
 		{
+			m_atlas = value;
 		}
 	}
 
@@ -399,10 +419,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return null;
+			return m_icon;
 		}
 		set
 		{
+			m_icon = value;
 		}
 	}
 
@@ -410,10 +431,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_atk;
 		}
 		set
 		{
+			m_atk = value;
 		}
 	}
 
@@ -421,10 +443,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_atkUp;
 		}
 		set
 		{
+			m_atkUp = value;
 		}
 	}
 
@@ -432,10 +455,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_def;
 		}
 		set
 		{
+			m_def = value;
 		}
 	}
 
@@ -443,10 +467,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_defUp;
 		}
 		set
 		{
+			m_defUp = value;
 		}
 	}
 
@@ -454,10 +479,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_inte;
 		}
 		set
 		{
+			m_inte = value;
 		}
 	}
 
@@ -465,10 +491,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_inteUp;
 		}
 		set
 		{
+			m_inteUp = value;
 		}
 	}
 
@@ -476,10 +503,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_agi;
 		}
 		set
 		{
+			m_agi = value;
 		}
 	}
 
@@ -487,10 +515,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_agiUp;
 		}
 		set
 		{
+			m_agiUp = value;
 		}
 	}
 
@@ -498,10 +527,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_mor;
 		}
 		set
 		{
+			m_mor = value;
 		}
 	}
 
@@ -509,10 +539,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_morUp;
 		}
 		set
 		{
+			m_morUp = value;
 		}
 	}
 
@@ -520,10 +551,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_hp;
 		}
 		set
 		{
+			m_hp = value;
 		}
 	}
 
@@ -531,10 +563,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_hpUp;
 		}
 		set
 		{
+			m_hpUp = value;
 		}
 	}
 
@@ -542,10 +575,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_mp;
 		}
 		set
 		{
+			m_mp = value;
 		}
 	}
 
@@ -553,10 +587,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_mpUp;
 		}
 		set
 		{
+			m_mpUp = value;
 		}
 	}
 
@@ -564,10 +599,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_maxLv;
 		}
 		set
 		{
+			m_maxLv = value;
 		}
 	}
 
@@ -575,10 +611,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_targetType;
 		}
 		set
 		{
+			m_targetType = value;
 		}
 	}
 
@@ -586,10 +623,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_targetArea;
 		}
 		set
 		{
+			m_targetArea = value;
 		}
 	}
 
@@ -597,10 +635,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_effectArea;
 		}
 		set
 		{
+			m_effectArea = value;
 		}
 	}
 
@@ -608,10 +647,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_canUseThousandBattle;
 		}
 		set
 		{
+			m_canUseThousandBattle = value;
 		}
 	}
 
@@ -619,10 +659,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_canUseWorldBoss;
 		}
 		set
 		{
+			m_canUseWorldBoss = value;
 		}
 	}
 
@@ -630,10 +671,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_skinId;
 		}
 		set
 		{
+			m_skinId = value;
 		}
 	}
 
@@ -641,10 +683,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_stickerId;
 		}
 		set
 		{
+			m_stickerId = value;
 		}
 	}
 
@@ -652,10 +695,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_jobType;
 		}
 		set
 		{
+			m_jobType = value;
 		}
 	}
 
@@ -663,10 +707,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_skillBook;
 		}
 		set
 		{
+			m_skillBook = value;
 		}
 	}
 
@@ -674,10 +719,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return 0;
+			return m_country;
 		}
 		set
 		{
+			m_country = value;
 		}
 	}
 
@@ -685,10 +731,11 @@ public class Item : PermanentBase
 	{
 		get
 		{
-			return null;
+			return m_desc;
 		}
 		set
 		{
+			m_desc = value;
 		}
 	}
 }

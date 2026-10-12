@@ -23,7 +23,7 @@ public class UserItems : ITransmittable, iTransmitContainer, IUpsertedMarkable
 	{
 		get
 		{
-			return null;
+			return m_srl2Item;
 		}
 	}
 
@@ -90,6 +90,34 @@ public class UserItems : ITransmittable, iTransmitContainer, IUpsertedMarkable
 
 	protected override void DeserializeImpl(JsonData jsonData)
 	{
+		// [RE] server sends an array of inventory rows; upsert each into the
+		// srl/id indexes (original accepted {srl,id,exp,amount,...}).
+		if (jsonData == null) return;
+		if (jsonData.IsArray)
+		{
+			for (int i = 0; i < jsonData.Count; i++)
+				UpsertFromRow(jsonData[i]);
+			return;
+		}
+		UpsertFromRow(jsonData);
+	}
+
+	// [RE] rebuild-only upsert — the original GetAddedItems/Deserialize path
+	// did the same via the srl-based rows.
+	public UserItem UpsertFromRow(JsonData row)
+	{
+		if (row == null) return null;
+		var item = new UserItem();
+		if (row.Keys.Contains("srl"))
+			item.srl = (ulong)row["srl"];
+		else
+			item.srl = ++ms_srl;
+		item.Deserialize(row);
+		m_srl2Item[item.srl] = item;
+		m_id2Items[item.id] = item;
+		m_srls.Add(item.srl);
+		item.isAdded = true;
+		return item;
 	}
 
 	public void DeserializeEnhances(JsonData jsonData)
@@ -127,12 +155,16 @@ public class UserItems : ITransmittable, iTransmitContainer, IUpsertedMarkable
 
 	public bool HasItemByItemId(int itemId)
 	{
-		return false;
+		return GetItemCount(itemId) > 0;
 	}
 
 	public int GetItemCount(int itemId)
 	{
-		return 0;
+		int sum = 0;
+		foreach (var kv in m_srl2Item)
+			if (kv.Value.id == itemId)
+				sum += kv.Value.count;
+		return sum;
 	}
 
 	public int GetItemCountNotEquipped(int itemId)
@@ -142,6 +174,9 @@ public class UserItems : ITransmittable, iTransmitContainer, IUpsertedMarkable
 
 	public UserItem GetItem(int itemId)
 	{
+		foreach (var kv in m_srl2Item)
+			if (kv.Value.id == itemId)
+				return kv.Value;
 		return null;
 	}
 

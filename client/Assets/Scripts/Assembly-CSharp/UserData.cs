@@ -173,7 +173,9 @@ public class UserData : ITransmittable, IUserDataBase, iTransmitContainer
 	{
 		get
 		{
-			return null;
+			if (m_items == null)
+				m_items = new UserItems();
+			return m_items;
 		}
 	}
 
@@ -181,7 +183,9 @@ public class UserData : ITransmittable, IUserDataBase, iTransmitContainer
 	{
 		get
 		{
-			return null;
+			if (m_units == null)
+				m_units = new UserUnits();
+			return m_units;
 		}
 	}
 

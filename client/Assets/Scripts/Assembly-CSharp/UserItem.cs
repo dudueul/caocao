@@ -59,7 +59,7 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return false;
+			return m_locked != 0;
 		}
 	}
 
@@ -157,10 +157,11 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return 0;
+			return m_id;
 		}
 		set
 		{
+			m_id = value;
 		}
 	}
 
@@ -168,10 +169,11 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return 0;
+			return m_exp;
 		}
 		set
 		{
+			m_exp = value;
 		}
 	}
 
@@ -179,10 +181,11 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return 0;
+			return m_amount;
 		}
 		set
 		{
+			m_amount = value;
 		}
 	}
 
@@ -207,7 +210,7 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return false;
+			return m_itemInfo != null && m_itemInfo.slot >= 0 && m_itemInfo.slot <= 4;
 		}
 	}
 
@@ -216,7 +219,7 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return false;
+			return m_itemInfo != null && m_itemInfo.slot == 1;
 		}
 	}
 
@@ -225,7 +228,7 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return false;
+			return m_itemInfo != null && m_itemInfo.slot == 3;
 		}
 	}
 
@@ -234,7 +237,7 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return false;
+			return m_itemInfo != null && (m_itemInfo.slot == 0 || m_itemInfo.slot == 2 || m_itemInfo.slot == 4);
 		}
 	}
 
@@ -243,7 +246,7 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return false;
+			return m_itemInfo != null && m_itemInfo.itemType == 20;
 		}
 	}
 
@@ -252,7 +255,7 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return false;
+			return m_itemInfo != null && m_itemInfo.gold > 0;
 		}
 	}
 
@@ -266,11 +269,11 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	}
 
 	[DoNotJsonfy]
-	public int sellPrice
+	public bool sellPrice
 	{
 		get
 		{
-			return 0;
+			return m_itemInfo != null ? m_itemInfo.gold / 4 : 0;   // [RE] matches server 25% resale
 		}
 	}
 
