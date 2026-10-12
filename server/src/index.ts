@@ -106,7 +106,8 @@ export class GameServer extends DurableObject {
       case "/user/getUserData":
         return json(await this.getUserData(userId));
       case "/user/updateHistory":
-        return json({ success: true });
+        // [RE] HeartBeats consumes {success, seq, notice, entrustTurn/Battle}
+        return json({ success: true, seq: 0, notice: "", entrustTurn: false, entrustBattle: false });
       default:
         // [RE] every recovered endpoint lands here in later milestones
         // (guild/, arena/, battle/...); explicit 404 keeps the contract honest.
