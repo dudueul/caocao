@@ -1,4 +1,12 @@
-# dsa-02 — FlatBuffers Memory Layout (decoding real game tables by hand)
+# dsa-02 — FlatBuffers Memory Layout (decoding real game data by hand)
+
+> **CORRECTION (2026-10-12, from the decompiled binary):** the game's
+> `key_*` GuildWarFlatBuffer types are FlatBuffers **structs** — inline
+> fields, NO vtable. Decompiled proof: `Createkey_building_history`
+> (@0x24c3640) is just `builder.Prep(4, 12)` + three reversed `PutInt`s +
+> `new Offset<T>(builder.Offset)`. Both layouts are taught below — tables
+> (§1, the general format) and structs (§1b, what this game actually uses) —
+> because the contrast IS the lesson in zero-copy design.
 
 **Grounding type (from `dump.cs`):**
 
@@ -90,3 +98,37 @@ FlatBuffers to Workers via R2 and decode with `@farcaster/flatbuffers`-style
 reader we implement in dsa-02, or (b) transcode tables to D1 rows/JSON at
 build time. Decision recorded in `analysis/PROTOCOL.md §6` once dsa-02
 exercises are graded.
+
+## 1b. STRUCTS — the layout this game actually ships
+
+```
+struct key_building_history { PPlaceId:int; HistoryId:int; HistoryKey:int; }
+buffer (12 bytes, little-endian, NO header):
+  +0  07 00 00 00   PPlaceId
+  +4  2A 00 00 00   HistoryId
+  +8  39 05 00 00   HistoryKey
+```
+
+Hand-decode of `exercises/flatbuffer_sample_struct.bin` (the NEW sample):
+offset 0 = 7, offset 4 = 42, offset 8 = 1337. **The entire read is one
+`GetInt(bb_pos + N)`** — zero indirection. Builder side: `Prep(4, 12)`
+(align=4, bytes=12) then fields pushed in REVERSE (last field first, so the
+first field lands at the lowest offset), then `builder.Offset` wraps into
+`Offset<T>`. This matches the decompiled `Createkey_building_history`
+exactly (grounded in commit 0a8b51a2).
+
+**Table vs struct — the design tradeoff:**
+
+| | table | struct |
+|---|---|---|
+| optional fields | yes (vtable 0 = default) | no (always present) |
+| evolution (append fields) | free | breaks layout |
+| field count vs wire size | small (vtable + data) | minimal (data only) |
+| access cost | 2 loads + add | 1 load |
+| used in this game | GuildWar world-state *objects* | key_* *ids/entries* |
+
+## 1c. Checker update
+
+`verify-lab.sh dsa02` still checks the TABLE sample (general format); the
+struct sample checks trivially: `xxd -r` → three ints. Both skills matter:
+decode a table by vtable (§1), decode a struct by layout (§1b).
