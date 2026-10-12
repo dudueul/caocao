@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 44);
 			}
 		}
 
@@ -114,7 +114,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 48);
 			}
 		}
 
@@ -122,7 +122,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 52);
 			}
 		}
 
@@ -130,7 +130,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0L;
+				return __p.bb.GetLong(__p.bb_pos + 56);
 			}
 		}
 
@@ -138,7 +138,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0L;
+				return __p.bb.GetLong(__p.bb_pos + 64);
 			}
 		}
 
@@ -146,7 +146,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0L;
+				return __p.bb.GetLong(__p.bb_pos + 72);
 			}
 		}
 
@@ -154,7 +154,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 80);
 			}
 		}
 
@@ -162,22 +162,44 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 88);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public world __assign(int _i, ByteBuffer _bb)
 		{
-			return default(world);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<world> Createworld(FlatBufferBuilder builder, short ClanDbShard, int WorldId, int InstanceIndex, int LatestCorpsId, int Status, int SeasonKey, int SeasonDetailKey, int NextSeasonDetailKey, int PBattleWorldId, int PGuildwarTownId, int TownShardIndex, int TownGrade, int RewardGrade, int Map, long PlayStart, long PlayEnd, long ExpireDate, int PVictoryPlaceId, ulong VictoryGuildId)
 		{
-			return default(Offset<world>);
+			builder.Prep(8, 96);
+			builder.PutUlong(VictoryGuildId);
+			builder.PutInt(PVictoryPlaceId);
+			builder.PutLong(ExpireDate);
+			builder.PutLong(PlayEnd);
+			builder.PutLong(PlayStart);
+			builder.PutInt(Map);
+			builder.PutInt(RewardGrade);
+			builder.PutInt(TownGrade);
+			builder.PutInt(TownShardIndex);
+			builder.PutInt(PGuildwarTownId);
+			builder.PutInt(PBattleWorldId);
+			builder.PutInt(NextSeasonDetailKey);
+			builder.PutInt(SeasonDetailKey);
+			builder.PutInt(SeasonKey);
+			builder.PutInt(Status);
+			builder.PutInt(LatestCorpsId);
+			builder.PutInt(InstanceIndex);
+			builder.PutInt(WorldId);
+			builder.PutShort(ClanDbShard);
+			return new Offset<world>(builder.Offset);
 		}
 	}
 }

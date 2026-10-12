@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -50,22 +50,30 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public corps_function __assign(int _i, ByteBuffer _bb)
 		{
-			return default(corps_function);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<corps_function> Createcorps_function(FlatBufferBuilder builder, int CorpsId, int PCorpsFunctionId, int AvailableDate, int AvailableDuration, int CooldownDate)
 		{
-			return default(Offset<corps_function>);
+			builder.Prep(4, 20);
+			builder.PutInt(CooldownDate);
+			builder.PutInt(AvailableDuration);
+			builder.PutInt(AvailableDate);
+			builder.PutInt(PCorpsFunctionId);
+			builder.PutInt(CorpsId);
+			return new Offset<corps_function>(builder.Offset);
 		}
 	}
 }

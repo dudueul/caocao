@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -42,22 +42,29 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public key_user_history __assign(int _i, ByteBuffer _bb)
 		{
-			return default(key_user_history);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<key_user_history> Createkey_user_history(FlatBufferBuilder builder, ulong GuildId, ulong UserId, int HistoryId, int HistoryKey)
 		{
-			return default(Offset<key_user_history>);
+			builder.Prep(8, 24);
+			builder.PutInt(HistoryKey);
+			builder.PutInt(HistoryId);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<key_user_history>(builder.Offset);
 		}
 	}
 }

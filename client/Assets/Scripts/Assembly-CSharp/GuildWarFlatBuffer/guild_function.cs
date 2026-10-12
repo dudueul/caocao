@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,22 +26,27 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public guild_function __assign(int _i, ByteBuffer _bb)
 		{
-			return default(guild_function);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<guild_function> Createguild_function(FlatBufferBuilder builder, ulong GuildId, int PGuildFunctionId)
 		{
-			return default(Offset<guild_function>);
+			builder.Prep(8, 16);
+			builder.PutInt(PGuildFunctionId);
+			builder.PutUlong(GuildId);
+			return new Offset<guild_function>(builder.Offset);
 		}
 	}
 }

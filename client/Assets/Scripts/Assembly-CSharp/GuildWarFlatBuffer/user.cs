@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -74,22 +74,33 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public user __assign(int _i, ByteBuffer _bb)
 		{
-			return default(user);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<user> Createuser(FlatBufferBuilder builder, ulong GuildId, ulong UserId, int FaceUnitId, int FaceSkinitemId, int NationName, int PPlaceId, int Contribution, int CreateDate)
 		{
-			return default(Offset<user>);
+			builder.Prep(8, 40);
+			builder.PutInt(CreateDate);
+			builder.PutInt(Contribution);
+			builder.PutInt(PPlaceId);
+			builder.PutInt(NationName);
+			builder.PutInt(FaceSkinitemId);
+			builder.PutInt(FaceUnitId);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<user>(builder.Offset);
 		}
 	}
 }

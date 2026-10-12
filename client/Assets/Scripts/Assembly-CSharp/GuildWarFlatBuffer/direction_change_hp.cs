@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 10);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 16);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 24);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 26);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 32);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
@@ -90,22 +90,35 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 44);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public direction_change_hp __assign(int _i, ByteBuffer _bb)
 		{
-			return default(direction_change_hp);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<direction_change_hp> Createdirection_change_hp(FlatBufferBuilder builder, int TargetPlaceId, int TargetCorpsId, short TargetPosX, short TargetPosY, ulong TargetUserId, short SourcePosX, short SourcePosY, ulong SourceUserId, int BeforeHp, int AfterHp)
 		{
-			return default(Offset<direction_change_hp>);
+			builder.Prep(8, 48);
+			builder.PutInt(AfterHp);
+			builder.PutInt(BeforeHp);
+			builder.PutUlong(SourceUserId);
+			builder.PutShort(SourcePosY);
+			builder.PutShort(SourcePosX);
+			builder.PutUlong(TargetUserId);
+			builder.PutShort(TargetPosY);
+			builder.PutShort(TargetPosX);
+			builder.PutInt(TargetCorpsId);
+			builder.PutInt(TargetPlaceId);
+			return new Offset<direction_change_hp>(builder.Offset);
 		}
 	}
 }

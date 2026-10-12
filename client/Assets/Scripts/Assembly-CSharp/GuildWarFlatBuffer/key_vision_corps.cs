@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,22 +34,28 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 6);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public key_vision_corps __assign(int _i, ByteBuffer _bb)
 		{
-			return default(key_vision_corps);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<key_vision_corps> Createkey_vision_corps(FlatBufferBuilder builder, int CorpsId, short PosX, short PosY)
 		{
-			return default(Offset<key_vision_corps>);
+			builder.Prep(4, 8);
+			builder.PutShort(PosY);
+			builder.PutShort(PosX);
+			builder.PutInt(CorpsId);
+			return new Offset<key_vision_corps>(builder.Offset);
 		}
 	}
 }

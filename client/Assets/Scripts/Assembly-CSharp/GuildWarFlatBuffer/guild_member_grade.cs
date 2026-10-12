@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,22 +34,28 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 16);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public guild_member_grade __assign(int _i, ByteBuffer _bb)
 		{
-			return default(guild_member_grade);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<guild_member_grade> Createguild_member_grade(FlatBufferBuilder builder, ulong GuildId, ulong UserId, short Grade)
 		{
-			return default(Offset<guild_member_grade>);
+			builder.Prep(8, 24);
+			builder.PutShort(Grade);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<guild_member_grade>(builder.Offset);
 		}
 	}
 }

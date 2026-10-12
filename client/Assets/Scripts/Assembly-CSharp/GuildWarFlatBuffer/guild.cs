@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 20);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -82,22 +82,34 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public guild __assign(int _i, ByteBuffer _bb)
 		{
-			return default(guild);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<guild> Createguild(FlatBufferBuilder builder, ulong GuildId, int GuildName, int EmblemSpriteIndex, int GuildwarRank, short PositionType, int MaxUserJoinCount, int ColorIndex, int LatestCorpsPassiveIndex, int RankingPoint)
 		{
-			return default(Offset<guild>);
+			builder.Prep(8, 40);
+			builder.PutInt(RankingPoint);
+			builder.PutInt(LatestCorpsPassiveIndex);
+			builder.PutInt(ColorIndex);
+			builder.PutInt(MaxUserJoinCount);
+			builder.PutShort(PositionType);
+			builder.PutInt(GuildwarRank);
+			builder.PutInt(EmblemSpriteIndex);
+			builder.PutInt(GuildName);
+			builder.PutUlong(GuildId);
+			return new Offset<guild>(builder.Offset);
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,22 +26,27 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public key_user_trading_post __assign(int _i, ByteBuffer _bb)
 		{
-			return default(key_user_trading_post);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<key_user_trading_post> Createkey_user_trading_post(FlatBufferBuilder builder, ulong GuildId, ulong UserId)
 		{
-			return default(Offset<key_user_trading_post>);
+			builder.Prep(8, 16);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<key_user_trading_post>(builder.Offset);
 		}
 	}
 }

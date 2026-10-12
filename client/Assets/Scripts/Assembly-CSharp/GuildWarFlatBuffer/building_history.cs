@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -50,22 +50,30 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public building_history __assign(int _i, ByteBuffer _bb)
 		{
-			return default(building_history);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<building_history> Createbuilding_history(FlatBufferBuilder builder, int PPlaceId, int HistoryId, int HistoryKey, int HistoryValue, int LatestDate)
 		{
-			return default(Offset<building_history>);
+			builder.Prep(4, 20);
+			builder.PutInt(LatestDate);
+			builder.PutInt(HistoryValue);
+			builder.PutInt(HistoryKey);
+			builder.PutInt(HistoryId);
+			builder.PutInt(PPlaceId);
+			return new Offset<building_history>(builder.Offset);
 		}
 	}
 }

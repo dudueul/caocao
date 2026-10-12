@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 32);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -98,22 +98,36 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public corps_passive_damage __assign(int _i, ByteBuffer _bb)
 		{
-			return default(corps_passive_damage);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<corps_passive_damage> Createcorps_passive_damage(FlatBufferBuilder builder, int CorpsId, int PassiveIndex, int PassiveId, int CreateDate, int FirstTickDate, int LastTickDate, int NextTickDate, int EndDate, short DamageType, int DamagePower, int DamageInterval)
 		{
-			return default(Offset<corps_passive_damage>);
+			builder.Prep(4, 44);
+			builder.PutInt(DamageInterval);
+			builder.PutInt(DamagePower);
+			builder.PutShort(DamageType);
+			builder.PutInt(EndDate);
+			builder.PutInt(NextTickDate);
+			builder.PutInt(LastTickDate);
+			builder.PutInt(FirstTickDate);
+			builder.PutInt(CreateDate);
+			builder.PutInt(PassiveId);
+			builder.PutInt(PassiveIndex);
+			builder.PutInt(CorpsId);
+			return new Offset<corps_passive_damage>(builder.Offset);
 		}
 	}
 }

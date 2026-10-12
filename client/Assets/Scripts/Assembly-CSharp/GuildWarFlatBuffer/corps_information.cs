@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 44);
 			}
 		}
 
@@ -114,7 +114,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 48);
 			}
 		}
 
@@ -122,7 +122,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 52);
 			}
 		}
 
@@ -130,7 +130,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 56);
 			}
 		}
 
@@ -138,7 +138,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 60);
 			}
 		}
 
@@ -146,7 +146,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 64);
 			}
 		}
 
@@ -154,7 +154,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 68);
 			}
 		}
 
@@ -162,7 +162,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 72);
 			}
 		}
 
@@ -170,7 +170,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 76);
 			}
 		}
 
@@ -178,22 +178,46 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 80);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public corps_information __assign(int _i, ByteBuffer _bb)
 		{
-			return default(corps_information);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<corps_information> Createcorps_information(FlatBufferBuilder builder, int CorpsId, int FaceUnitId, int FaceSkinitemId, int NationName, int JobId, int JobTypeId, int BaseAtk, int BaseInte, int BaseDef, int BaseAgi, int BaseMor, int AdditiveAtkPercent, int AdditiveIntePercent, int AdditiveDefPercent, int AdditiveAgiPercent, int AdditiveMorPercent, short JobMaxLevel, int MaxMilitaryPower, short MaxActionPoint, int ActionPointRecoveryTime, int ActionPointRecoveryAmount)
 		{
-			return default(Offset<corps_information>);
+			builder.Prep(4, 84);
+			builder.PutInt(ActionPointRecoveryAmount);
+			builder.PutInt(ActionPointRecoveryTime);
+			builder.PutShort(MaxActionPoint);
+			builder.PutInt(MaxMilitaryPower);
+			builder.PutShort(JobMaxLevel);
+			builder.PutInt(AdditiveMorPercent);
+			builder.PutInt(AdditiveAgiPercent);
+			builder.PutInt(AdditiveDefPercent);
+			builder.PutInt(AdditiveIntePercent);
+			builder.PutInt(AdditiveAtkPercent);
+			builder.PutInt(BaseMor);
+			builder.PutInt(BaseAgi);
+			builder.PutInt(BaseDef);
+			builder.PutInt(BaseInte);
+			builder.PutInt(BaseAtk);
+			builder.PutInt(JobTypeId);
+			builder.PutInt(JobId);
+			builder.PutInt(NationName);
+			builder.PutInt(FaceSkinitemId);
+			builder.PutInt(FaceUnitId);
+			builder.PutInt(CorpsId);
+			return new Offset<corps_information>(builder.Offset);
 		}
 	}
 }

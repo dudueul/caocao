@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -50,22 +50,30 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public user_trading_post __assign(int _i, ByteBuffer _bb)
 		{
-			return default(user_trading_post);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<user_trading_post> Createuser_trading_post(FlatBufferBuilder builder, ulong GuildId, ulong UserId, int UseCount, int GetGold, int UseGold)
 		{
-			return default(Offset<user_trading_post>);
+			builder.Prep(8, 32);
+			builder.PutInt(UseGold);
+			builder.PutInt(GetGold);
+			builder.PutInt(UseCount);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<user_trading_post>(builder.Offset);
 		}
 	}
 }

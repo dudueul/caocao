@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 16);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 44);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 46);
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 48);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 52);
 			}
 		}
 
@@ -114,7 +114,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 56);
 			}
 		}
 
@@ -122,7 +122,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 60);
 			}
 		}
 
@@ -130,7 +130,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 64);
 			}
 		}
 
@@ -138,7 +138,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 68);
 			}
 		}
 
@@ -146,7 +146,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 72);
 			}
 		}
 
@@ -154,7 +154,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 76);
 			}
 		}
 
@@ -162,7 +162,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 80);
 			}
 		}
 
@@ -170,7 +170,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 84);
 			}
 		}
 
@@ -178,22 +178,46 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 88);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public corps __assign(int _i, ByteBuffer _bb)
 		{
-			return default(corps);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<corps> Createcorps(FlatBufferBuilder builder, int CorpsId, ulong UserId, ulong GuildId, int Atk, int Inte, int Def, int Agi, int Mor, short PosX, short PosY, int Exp, short ForwardDirection, int MilitaryPower, int TotalDamage, int DestoryCorpsCount, int LastestPassiveIndex, int SiegeWeaponUseCount, short ActionPoint, int LastestActionDate, int UpdateDate, int CreateDate)
 		{
-			return default(Offset<corps>);
+			builder.Prep(8, 96);
+			builder.PutInt(CreateDate);
+			builder.PutInt(UpdateDate);
+			builder.PutInt(LastestActionDate);
+			builder.PutShort(ActionPoint);
+			builder.PutInt(SiegeWeaponUseCount);
+			builder.PutInt(LastestPassiveIndex);
+			builder.PutInt(DestoryCorpsCount);
+			builder.PutInt(TotalDamage);
+			builder.PutInt(MilitaryPower);
+			builder.PutShort(ForwardDirection);
+			builder.PutInt(Exp);
+			builder.PutShort(PosY);
+			builder.PutShort(PosX);
+			builder.PutInt(Mor);
+			builder.PutInt(Agi);
+			builder.PutInt(Def);
+			builder.PutInt(Inte);
+			builder.PutInt(Atk);
+			builder.PutUlong(GuildId);
+			builder.PutUlong(UserId);
+			builder.PutInt(CorpsId);
+			return new Offset<corps>(builder.Offset);
 		}
 	}
 }

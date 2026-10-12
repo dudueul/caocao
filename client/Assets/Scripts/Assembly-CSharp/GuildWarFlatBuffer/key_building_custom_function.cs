@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,22 +26,27 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 4);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public key_building_custom_function __assign(int _i, ByteBuffer _bb)
 		{
-			return default(key_building_custom_function);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<key_building_custom_function> Createkey_building_custom_function(FlatBufferBuilder builder, int PPlaceId, short CustomActionType)
 		{
-			return default(Offset<key_building_custom_function>);
+			builder.Prep(4, 8);
+			builder.PutShort(CustomActionType);
+			builder.PutInt(PPlaceId);
+			return new Offset<key_building_custom_function>(builder.Offset);
 		}
 	}
 }

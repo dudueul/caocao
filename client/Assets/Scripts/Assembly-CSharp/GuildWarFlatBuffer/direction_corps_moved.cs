@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 12);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 14);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 16);
 			}
 		}
 
@@ -58,22 +58,31 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 18);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public direction_corps_moved __assign(int _i, ByteBuffer _bb)
 		{
-			return default(direction_corps_moved);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<direction_corps_moved> Createdirection_corps_moved(FlatBufferBuilder builder, ulong MovedUserId, int MovedCorpsId, short BeforePosX, short BeforePosY, short AfterPosX, short AfterPosY)
 		{
-			return default(Offset<direction_corps_moved>);
+			builder.Prep(8, 24);
+			builder.PutShort(AfterPosY);
+			builder.PutShort(AfterPosX);
+			builder.PutShort(BeforePosY);
+			builder.PutShort(BeforePosX);
+			builder.PutInt(MovedCorpsId);
+			builder.PutUlong(MovedUserId);
+			return new Offset<direction_corps_moved>(builder.Offset);
 		}
 	}
 }

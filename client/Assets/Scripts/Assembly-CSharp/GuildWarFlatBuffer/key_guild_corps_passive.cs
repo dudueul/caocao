@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,22 +26,27 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public key_guild_corps_passive __assign(int _i, ByteBuffer _bb)
 		{
-			return default(key_guild_corps_passive);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<key_guild_corps_passive> Createkey_guild_corps_passive(FlatBufferBuilder builder, ulong GuildId, int PassiveIndex)
 		{
-			return default(Offset<key_guild_corps_passive>);
+			builder.Prep(8, 16);
+			builder.PutInt(PassiveIndex);
+			builder.PutUlong(GuildId);
+			return new Offset<key_guild_corps_passive>(builder.Offset);
 		}
 	}
 }

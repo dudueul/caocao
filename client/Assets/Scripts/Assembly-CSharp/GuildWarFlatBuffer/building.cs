@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 6);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 16);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 44);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 48);
 			}
 		}
 
@@ -114,7 +114,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 52);
 			}
 		}
 
@@ -122,22 +122,39 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 56);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public building __assign(int _i, ByteBuffer _bb)
 		{
-			return default(building);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<building> Createbuilding(FlatBufferBuilder builder, int PPlaceId, short PosX, short PosY, ulong GuildId, ulong VisionGuildId, int BuildingId, int BuildingHp, int UpdateDate, int LastestPassiveIndex, int OwnerChangeDate, int AutoAttackTick, int AutoAttackIntervalTick, int RepairStartDate, int RepairEndDate)
 		{
-			return default(Offset<building>);
+			builder.Prep(8, 64);
+			builder.PutInt(RepairEndDate);
+			builder.PutInt(RepairStartDate);
+			builder.PutInt(AutoAttackIntervalTick);
+			builder.PutInt(AutoAttackTick);
+			builder.PutInt(OwnerChangeDate);
+			builder.PutInt(LastestPassiveIndex);
+			builder.PutInt(UpdateDate);
+			builder.PutInt(BuildingHp);
+			builder.PutInt(BuildingId);
+			builder.PutUlong(VisionGuildId);
+			builder.PutUlong(GuildId);
+			builder.PutShort(PosY);
+			builder.PutShort(PosX);
+			builder.PutInt(PPlaceId);
+			return new Offset<building>(builder.Offset);
 		}
 	}
 }

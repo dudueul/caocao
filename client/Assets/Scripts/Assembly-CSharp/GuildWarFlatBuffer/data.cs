@@ -4,13 +4,13 @@ namespace GuildWarFlatBuffer
 {
 	public struct data : IFlatbufferObject
 	{
-		private Table __p;
+		private Struct __p;
 
 		public ByteBuffer ByteBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,23 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
-			}
-		}
-
-		public world? World
-		{
-			get
-			{
-				return null;
-			}
-		}
-
-		public world_seq? WorldSeq
-		{
-			get
-			{
-				return null;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -66,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -74,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -82,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -90,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -98,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -106,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -114,7 +98,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
@@ -122,7 +106,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 44);
 			}
 		}
 
@@ -130,7 +114,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 48);
 			}
 		}
 
@@ -138,7 +122,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 52);
 			}
 		}
 
@@ -146,7 +130,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 56);
 			}
 		}
 
@@ -154,7 +138,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 60);
 			}
 		}
 
@@ -162,7 +146,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 64);
 			}
 		}
 
@@ -170,7 +154,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 68);
 			}
 		}
 
@@ -178,7 +162,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 72);
 			}
 		}
 
@@ -186,7 +170,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 76);
 			}
 		}
 
@@ -194,7 +178,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 80);
 			}
 		}
 
@@ -202,7 +186,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 84);
 			}
 		}
 
@@ -210,7 +194,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 88);
 			}
 		}
 
@@ -218,7 +202,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 92);
 			}
 		}
 
@@ -226,7 +210,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 96);
 			}
 		}
 
@@ -234,7 +218,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 100);
 			}
 		}
 
@@ -242,7 +226,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 104);
 			}
 		}
 
@@ -250,7 +234,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 108);
 			}
 		}
 
@@ -258,7 +242,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 112);
 			}
 		}
 
@@ -266,7 +250,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 116);
 			}
 		}
 
@@ -274,7 +258,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 120);
 			}
 		}
 
@@ -282,7 +266,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 124);
 			}
 		}
 
@@ -290,7 +274,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 128);
 			}
 		}
 
@@ -298,7 +282,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 132);
 			}
 		}
 
@@ -306,7 +290,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 136);
 			}
 		}
 
@@ -314,7 +298,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 140);
 			}
 		}
 
@@ -322,7 +306,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 144);
 			}
 		}
 
@@ -330,7 +314,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 148);
 			}
 		}
 
@@ -338,7 +322,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 152);
 			}
 		}
 
@@ -346,7 +330,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 156);
 			}
 		}
 
@@ -354,7 +338,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 160);
 			}
 		}
 
@@ -362,7 +346,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 164);
 			}
 		}
 
@@ -370,7 +354,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 168);
 			}
 		}
 
@@ -378,7 +362,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 172);
 			}
 		}
 
@@ -386,7 +370,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 176);
 			}
 		}
 
@@ -394,7 +378,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 180);
 			}
 		}
 
@@ -402,7 +386,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 184);
 			}
 		}
 
@@ -410,7 +394,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 188);
 			}
 		}
 
@@ -418,7 +402,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 192);
 			}
 		}
 
@@ -426,7 +410,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 196);
 			}
 		}
 
@@ -434,7 +418,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 200);
 			}
 		}
 
@@ -442,7 +426,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 204);
 			}
 		}
 
@@ -450,7 +434,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 208);
 			}
 		}
 
@@ -458,7 +442,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 212);
 			}
 		}
 
@@ -466,7 +450,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 216);
 			}
 		}
 
@@ -474,7 +458,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 220);
 			}
 		}
 
@@ -482,7 +466,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 224);
 			}
 		}
 
@@ -490,7 +474,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 228);
 			}
 		}
 
@@ -498,7 +482,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 232);
 			}
 		}
 
@@ -506,7 +490,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 236);
 			}
 		}
 
@@ -514,7 +498,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 240);
 			}
 		}
 
@@ -522,7 +506,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 244);
 			}
 		}
 
@@ -530,7 +514,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 248);
 			}
 		}
 
@@ -538,7 +522,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 252);
 			}
 		}
 
@@ -546,7 +530,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 256);
 			}
 		}
 
@@ -554,7 +538,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 260);
 			}
 		}
 
@@ -562,7 +546,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 264);
 			}
 		}
 
@@ -570,906 +554,93 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 268);
 			}
-		}
-
-		public static data GetRootAsdata(ByteBuffer _bb)
-		{
-			return default(data);
-		}
-
-		public static data GetRootAsdata(ByteBuffer _bb, data obj)
-		{
-			return default(data);
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public data __assign(int _i, ByteBuffer _bb)
 		{
-			return default(data);
-		}
-
-		public string Strings(int j)
-		{
-			return null;
-		}
-
-		public building? Building(int j)
-		{
-			return null;
-		}
-
-		public building_custom_function? BuildingCustomFunction(int j)
-		{
-			return null;
-		}
-
-		public building_history? BuildingHistory(int j)
-		{
-			return null;
-		}
-
-		public building_passive? BuildingPassive(int j)
-		{
-			return null;
-		}
-
-		public building_passive_damage? BuildingPassiveDamage(int j)
-		{
-			return null;
-		}
-
-		public corps? Corps(int j)
-		{
-			return null;
-		}
-
-		public corps_custom_function? CorpsCustomFunction(int j)
-		{
-			return null;
-		}
-
-		public corps_function? CorpsFunction(int j)
-		{
-			return null;
-		}
-
-		public corps_history? CorpsHistory(int j)
-		{
-			return null;
-		}
-
-		public corps_information? CorpsInformation(int j)
-		{
-			return null;
-		}
-
-		public corps_passive? CorpsPassive(int j)
-		{
-			return null;
-		}
-
-		public corps_passive_damage? CorpsPassiveDamage(int j)
-		{
-			return null;
-		}
-
-		public corps_siege_weapon? CorpsSiegeWeapon(int j)
-		{
-			return null;
-		}
-
-		public guild? Guild(int j)
-		{
-			return null;
-		}
-
-		public guild_corps_passive? GuildCorpsPassive(int j)
-		{
-			return null;
-		}
-
-		public guild_custom_function? GuildCustomFunction(int j)
-		{
-			return null;
-		}
-
-		public guild_function? GuildFunction(int j)
-		{
-			return null;
-		}
-
-		public guild_history? GuildHistory(int j)
-		{
-			return null;
-		}
-
-		public guild_member_grade? GuildMemberGrade(int j)
-		{
-			return null;
-		}
-
-		public tile_effect? TileEffect(int j)
-		{
-			return null;
-		}
-
-		public user? User(int j)
-		{
-			return null;
-		}
-
-		public user_corps? UserCorps(int j)
-		{
-			return null;
-		}
-
-		public user_history? UserHistory(int j)
-		{
-			return null;
-		}
-
-		public user_siege_weapon? UserSiegeWeapon(int j)
-		{
-			return null;
-		}
-
-		public user_stats? UserStats(int j)
-		{
-			return null;
-		}
-
-		public user_trading_post? UserTradingPost(int j)
-		{
-			return null;
-		}
-
-		public vision? Vision(int j)
-		{
-			return null;
-		}
-
-		public vision_building? VisionBuilding(int j)
-		{
-			return null;
-		}
-
-		public vision_corps? VisionCorps(int j)
-		{
-			return null;
-		}
-
-		public key_building? BuildingDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_building_custom_function? BuildingCustomFunctionDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_building_history? BuildingHistoryDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_building_passive? BuildingPassiveDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_building_passive_damage? BuildingPassiveDamageDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps? CorpsDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps_custom_function? CorpsCustomFunctionDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps_function? CorpsFunctionDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps_history? CorpsHistoryDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps_information? CorpsInformationDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps_passive? CorpsPassiveDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps_passive_damage? CorpsPassiveDamageDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_corps_siege_weapon? CorpsSiegeWeaponDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_guild? GuildDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_guild_corps_passive? GuildCorpsPassiveDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_guild_custom_function? GuildCustomFunctionDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_guild_function? GuildFunctionDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_guild_history? GuildHistoryDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_guild_member_grade? GuildMemberGradeDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_tile_effect? TileEffectDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_user? UserDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_user_corps? UserCorpsDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_user_history? UserHistoryDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_user_siege_weapon? UserSiegeWeaponDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_user_stats? UserStatsDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_user_trading_post? UserTradingPostDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_vision? VisionDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_vision_building? VisionBuildingDeleted(int j)
-		{
-			return null;
-		}
-
-		public key_vision_corps? VisionCorpsDeleted(int j)
-		{
-			return null;
-		}
-
-		public direction_combat_source? DirectionCombatSource(int j)
-		{
-			return null;
-		}
-
-		public direction_combat_target? DirectionCombatTarget(int j)
-		{
-			return null;
-		}
-
-		public direction_change_hp? DirectionChangeHp(int j)
-		{
-			return null;
-		}
-
-		public direction_corps_moved? DirectionCorpsMoved(int j)
-		{
-			return null;
-		}
-
-		public direction_combat_message? DirectionCombatMessage(int j)
-		{
-			return null;
-		}
-
-		public direction_ping? DirectionPing(int j)
-		{
-			return null;
-		}
-
-		public static void Startdata(FlatBufferBuilder builder)
-		{
-		}
-
-		public static void AddClanDbShard(FlatBufferBuilder builder, int clanDbShard)
-		{
-		}
-
-		public static void AddWorldId(FlatBufferBuilder builder, int worldId)
-		{
-		}
-
-		public static void AddSeq(FlatBufferBuilder builder, int seq)
-		{
-		}
-
-		public static void AddStrings(FlatBufferBuilder builder, VectorOffset stringsOffset)
-		{
-		}
-
-		public static VectorOffset CreateStringsVector(FlatBufferBuilder builder, StringOffset[] data)
-		{
-			return default(VectorOffset);
-		}
-
-		public static void StartStringsVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddWorld(FlatBufferBuilder builder, Offset<world> worldOffset)
-		{
-		}
-
-		public static void AddWorldSeq(FlatBufferBuilder builder, Offset<world_seq> worldSeqOffset)
-		{
-		}
-
-		public static void AddBuilding(FlatBufferBuilder builder, VectorOffset buildingOffset)
-		{
-		}
-
-		public static void StartBuildingVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingCustomFunction(FlatBufferBuilder builder, VectorOffset buildingCustomFunctionOffset)
-		{
-		}
-
-		public static void StartBuildingCustomFunctionVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingHistory(FlatBufferBuilder builder, VectorOffset buildingHistoryOffset)
-		{
-		}
-
-		public static void StartBuildingHistoryVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingPassive(FlatBufferBuilder builder, VectorOffset buildingPassiveOffset)
-		{
-		}
-
-		public static void StartBuildingPassiveVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingPassiveDamage(FlatBufferBuilder builder, VectorOffset buildingPassiveDamageOffset)
-		{
-		}
-
-		public static void StartBuildingPassiveDamageVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorps(FlatBufferBuilder builder, VectorOffset corpsOffset)
-		{
-		}
-
-		public static void StartCorpsVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsCustomFunction(FlatBufferBuilder builder, VectorOffset corpsCustomFunctionOffset)
-		{
-		}
-
-		public static void StartCorpsCustomFunctionVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsFunction(FlatBufferBuilder builder, VectorOffset corpsFunctionOffset)
-		{
-		}
-
-		public static void StartCorpsFunctionVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsHistory(FlatBufferBuilder builder, VectorOffset corpsHistoryOffset)
-		{
-		}
-
-		public static void StartCorpsHistoryVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsInformation(FlatBufferBuilder builder, VectorOffset corpsInformationOffset)
-		{
-		}
-
-		public static void StartCorpsInformationVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsPassive(FlatBufferBuilder builder, VectorOffset corpsPassiveOffset)
-		{
-		}
-
-		public static void StartCorpsPassiveVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsPassiveDamage(FlatBufferBuilder builder, VectorOffset corpsPassiveDamageOffset)
-		{
-		}
-
-		public static void StartCorpsPassiveDamageVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsSiegeWeapon(FlatBufferBuilder builder, VectorOffset corpsSiegeWeaponOffset)
-		{
-		}
-
-		public static void StartCorpsSiegeWeaponVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuild(FlatBufferBuilder builder, VectorOffset guildOffset)
-		{
-		}
-
-		public static void StartGuildVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildCorpsPassive(FlatBufferBuilder builder, VectorOffset guildCorpsPassiveOffset)
-		{
-		}
-
-		public static void StartGuildCorpsPassiveVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildCustomFunction(FlatBufferBuilder builder, VectorOffset guildCustomFunctionOffset)
-		{
-		}
-
-		public static void StartGuildCustomFunctionVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildFunction(FlatBufferBuilder builder, VectorOffset guildFunctionOffset)
-		{
-		}
-
-		public static void StartGuildFunctionVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildHistory(FlatBufferBuilder builder, VectorOffset guildHistoryOffset)
-		{
-		}
-
-		public static void StartGuildHistoryVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildMemberGrade(FlatBufferBuilder builder, VectorOffset guildMemberGradeOffset)
-		{
-		}
-
-		public static void StartGuildMemberGradeVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddTileEffect(FlatBufferBuilder builder, VectorOffset tileEffectOffset)
-		{
-		}
-
-		public static void StartTileEffectVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUser(FlatBufferBuilder builder, VectorOffset userOffset)
-		{
-		}
-
-		public static void StartUserVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserCorps(FlatBufferBuilder builder, VectorOffset userCorpsOffset)
-		{
-		}
-
-		public static void StartUserCorpsVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserHistory(FlatBufferBuilder builder, VectorOffset userHistoryOffset)
-		{
-		}
-
-		public static void StartUserHistoryVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserSiegeWeapon(FlatBufferBuilder builder, VectorOffset userSiegeWeaponOffset)
-		{
-		}
-
-		public static void StartUserSiegeWeaponVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserStats(FlatBufferBuilder builder, VectorOffset userStatsOffset)
-		{
-		}
-
-		public static void StartUserStatsVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserTradingPost(FlatBufferBuilder builder, VectorOffset userTradingPostOffset)
-		{
-		}
-
-		public static void StartUserTradingPostVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddVision(FlatBufferBuilder builder, VectorOffset visionOffset)
-		{
-		}
-
-		public static void StartVisionVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddVisionBuilding(FlatBufferBuilder builder, VectorOffset visionBuildingOffset)
-		{
-		}
-
-		public static void StartVisionBuildingVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddVisionCorps(FlatBufferBuilder builder, VectorOffset visionCorpsOffset)
-		{
-		}
-
-		public static void StartVisionCorpsVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingDeleted(FlatBufferBuilder builder, VectorOffset buildingDeletedOffset)
-		{
-		}
-
-		public static void StartBuildingDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingCustomFunctionDeleted(FlatBufferBuilder builder, VectorOffset buildingCustomFunctionDeletedOffset)
-		{
-		}
-
-		public static void StartBuildingCustomFunctionDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingHistoryDeleted(FlatBufferBuilder builder, VectorOffset buildingHistoryDeletedOffset)
-		{
-		}
-
-		public static void StartBuildingHistoryDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingPassiveDeleted(FlatBufferBuilder builder, VectorOffset buildingPassiveDeletedOffset)
-		{
-		}
-
-		public static void StartBuildingPassiveDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddBuildingPassiveDamageDeleted(FlatBufferBuilder builder, VectorOffset buildingPassiveDamageDeletedOffset)
-		{
-		}
-
-		public static void StartBuildingPassiveDamageDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsDeleted(FlatBufferBuilder builder, VectorOffset corpsDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsCustomFunctionDeleted(FlatBufferBuilder builder, VectorOffset corpsCustomFunctionDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsCustomFunctionDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsFunctionDeleted(FlatBufferBuilder builder, VectorOffset corpsFunctionDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsFunctionDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsHistoryDeleted(FlatBufferBuilder builder, VectorOffset corpsHistoryDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsHistoryDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsInformationDeleted(FlatBufferBuilder builder, VectorOffset corpsInformationDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsInformationDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsPassiveDeleted(FlatBufferBuilder builder, VectorOffset corpsPassiveDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsPassiveDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsPassiveDamageDeleted(FlatBufferBuilder builder, VectorOffset corpsPassiveDamageDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsPassiveDamageDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddCorpsSiegeWeaponDeleted(FlatBufferBuilder builder, VectorOffset corpsSiegeWeaponDeletedOffset)
-		{
-		}
-
-		public static void StartCorpsSiegeWeaponDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildDeleted(FlatBufferBuilder builder, VectorOffset guildDeletedOffset)
-		{
-		}
-
-		public static void StartGuildDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildCorpsPassiveDeleted(FlatBufferBuilder builder, VectorOffset guildCorpsPassiveDeletedOffset)
-		{
-		}
-
-		public static void StartGuildCorpsPassiveDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildCustomFunctionDeleted(FlatBufferBuilder builder, VectorOffset guildCustomFunctionDeletedOffset)
-		{
-		}
-
-		public static void StartGuildCustomFunctionDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildFunctionDeleted(FlatBufferBuilder builder, VectorOffset guildFunctionDeletedOffset)
-		{
-		}
-
-		public static void StartGuildFunctionDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildHistoryDeleted(FlatBufferBuilder builder, VectorOffset guildHistoryDeletedOffset)
-		{
-		}
-
-		public static void StartGuildHistoryDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddGuildMemberGradeDeleted(FlatBufferBuilder builder, VectorOffset guildMemberGradeDeletedOffset)
-		{
-		}
-
-		public static void StartGuildMemberGradeDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddTileEffectDeleted(FlatBufferBuilder builder, VectorOffset tileEffectDeletedOffset)
-		{
-		}
-
-		public static void StartTileEffectDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserDeleted(FlatBufferBuilder builder, VectorOffset userDeletedOffset)
-		{
-		}
-
-		public static void StartUserDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserCorpsDeleted(FlatBufferBuilder builder, VectorOffset userCorpsDeletedOffset)
-		{
-		}
-
-		public static void StartUserCorpsDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserHistoryDeleted(FlatBufferBuilder builder, VectorOffset userHistoryDeletedOffset)
-		{
-		}
-
-		public static void StartUserHistoryDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserSiegeWeaponDeleted(FlatBufferBuilder builder, VectorOffset userSiegeWeaponDeletedOffset)
-		{
-		}
-
-		public static void StartUserSiegeWeaponDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserStatsDeleted(FlatBufferBuilder builder, VectorOffset userStatsDeletedOffset)
-		{
-		}
-
-		public static void StartUserStatsDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddUserTradingPostDeleted(FlatBufferBuilder builder, VectorOffset userTradingPostDeletedOffset)
-		{
-		}
-
-		public static void StartUserTradingPostDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddVisionDeleted(FlatBufferBuilder builder, VectorOffset visionDeletedOffset)
-		{
-		}
-
-		public static void StartVisionDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddVisionBuildingDeleted(FlatBufferBuilder builder, VectorOffset visionBuildingDeletedOffset)
-		{
-		}
-
-		public static void StartVisionBuildingDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddVisionCorpsDeleted(FlatBufferBuilder builder, VectorOffset visionCorpsDeletedOffset)
-		{
-		}
-
-		public static void StartVisionCorpsDeletedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddDirectionCombatSource(FlatBufferBuilder builder, VectorOffset directionCombatSourceOffset)
-		{
-		}
-
-		public static void StartDirectionCombatSourceVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddDirectionCombatTarget(FlatBufferBuilder builder, VectorOffset directionCombatTargetOffset)
-		{
-		}
-
-		public static void StartDirectionCombatTargetVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddDirectionChangeHp(FlatBufferBuilder builder, VectorOffset directionChangeHpOffset)
-		{
-		}
-
-		public static void StartDirectionChangeHpVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddDirectionCorpsMoved(FlatBufferBuilder builder, VectorOffset directionCorpsMovedOffset)
-		{
-		}
-
-		public static void StartDirectionCorpsMovedVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddDirectionCombatMessage(FlatBufferBuilder builder, VectorOffset directionCombatMessageOffset)
-		{
-		}
-
-		public static void StartDirectionCombatMessageVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static void AddDirectionPing(FlatBufferBuilder builder, VectorOffset directionPingOffset)
-		{
-		}
-
-		public static void StartDirectionPingVector(FlatBufferBuilder builder, int numElems)
-		{
-		}
-
-		public static Offset<data> Enddata(FlatBufferBuilder builder)
-		{
-			return default(Offset<data>);
+			__p = new Struct(_i, _bb);
+			return this;
+		}
+
+		public static Offset<data> Createdata(FlatBufferBuilder builder, int ClanDbShard, int WorldId, int Seq, int StringsLength, int BuildingLength, int BuildingCustomFunctionLength, int BuildingHistoryLength, int BuildingPassiveLength, int BuildingPassiveDamageLength, int CorpsLength, int CorpsCustomFunctionLength, int CorpsFunctionLength, int CorpsHistoryLength, int CorpsInformationLength, int CorpsPassiveLength, int CorpsPassiveDamageLength, int CorpsSiegeWeaponLength, int GuildLength, int GuildCorpsPassiveLength, int GuildCustomFunctionLength, int GuildFunctionLength, int GuildHistoryLength, int GuildMemberGradeLength, int TileEffectLength, int UserLength, int UserCorpsLength, int UserHistoryLength, int UserSiegeWeaponLength, int UserStatsLength, int UserTradingPostLength, int VisionLength, int VisionBuildingLength, int VisionCorpsLength, int BuildingDeletedLength, int BuildingCustomFunctionDeletedLength, int BuildingHistoryDeletedLength, int BuildingPassiveDeletedLength, int BuildingPassiveDamageDeletedLength, int CorpsDeletedLength, int CorpsCustomFunctionDeletedLength, int CorpsFunctionDeletedLength, int CorpsHistoryDeletedLength, int CorpsInformationDeletedLength, int CorpsPassiveDeletedLength, int CorpsPassiveDamageDeletedLength, int CorpsSiegeWeaponDeletedLength, int GuildDeletedLength, int GuildCorpsPassiveDeletedLength, int GuildCustomFunctionDeletedLength, int GuildFunctionDeletedLength, int GuildHistoryDeletedLength, int GuildMemberGradeDeletedLength, int TileEffectDeletedLength, int UserDeletedLength, int UserCorpsDeletedLength, int UserHistoryDeletedLength, int UserSiegeWeaponDeletedLength, int UserStatsDeletedLength, int UserTradingPostDeletedLength, int VisionDeletedLength, int VisionBuildingDeletedLength, int VisionCorpsDeletedLength, int DirectionCombatSourceLength, int DirectionCombatTargetLength, int DirectionChangeHpLength, int DirectionCorpsMovedLength, int DirectionCombatMessageLength, int DirectionPingLength)
+		{
+			builder.Prep(4, 272);
+			builder.PutInt(DirectionPingLength);
+			builder.PutInt(DirectionCombatMessageLength);
+			builder.PutInt(DirectionCorpsMovedLength);
+			builder.PutInt(DirectionChangeHpLength);
+			builder.PutInt(DirectionCombatTargetLength);
+			builder.PutInt(DirectionCombatSourceLength);
+			builder.PutInt(VisionCorpsDeletedLength);
+			builder.PutInt(VisionBuildingDeletedLength);
+			builder.PutInt(VisionDeletedLength);
+			builder.PutInt(UserTradingPostDeletedLength);
+			builder.PutInt(UserStatsDeletedLength);
+			builder.PutInt(UserSiegeWeaponDeletedLength);
+			builder.PutInt(UserHistoryDeletedLength);
+			builder.PutInt(UserCorpsDeletedLength);
+			builder.PutInt(UserDeletedLength);
+			builder.PutInt(TileEffectDeletedLength);
+			builder.PutInt(GuildMemberGradeDeletedLength);
+			builder.PutInt(GuildHistoryDeletedLength);
+			builder.PutInt(GuildFunctionDeletedLength);
+			builder.PutInt(GuildCustomFunctionDeletedLength);
+			builder.PutInt(GuildCorpsPassiveDeletedLength);
+			builder.PutInt(GuildDeletedLength);
+			builder.PutInt(CorpsSiegeWeaponDeletedLength);
+			builder.PutInt(CorpsPassiveDamageDeletedLength);
+			builder.PutInt(CorpsPassiveDeletedLength);
+			builder.PutInt(CorpsInformationDeletedLength);
+			builder.PutInt(CorpsHistoryDeletedLength);
+			builder.PutInt(CorpsFunctionDeletedLength);
+			builder.PutInt(CorpsCustomFunctionDeletedLength);
+			builder.PutInt(CorpsDeletedLength);
+			builder.PutInt(BuildingPassiveDamageDeletedLength);
+			builder.PutInt(BuildingPassiveDeletedLength);
+			builder.PutInt(BuildingHistoryDeletedLength);
+			builder.PutInt(BuildingCustomFunctionDeletedLength);
+			builder.PutInt(BuildingDeletedLength);
+			builder.PutInt(VisionCorpsLength);
+			builder.PutInt(VisionBuildingLength);
+			builder.PutInt(VisionLength);
+			builder.PutInt(UserTradingPostLength);
+			builder.PutInt(UserStatsLength);
+			builder.PutInt(UserSiegeWeaponLength);
+			builder.PutInt(UserHistoryLength);
+			builder.PutInt(UserCorpsLength);
+			builder.PutInt(UserLength);
+			builder.PutInt(TileEffectLength);
+			builder.PutInt(GuildMemberGradeLength);
+			builder.PutInt(GuildHistoryLength);
+			builder.PutInt(GuildFunctionLength);
+			builder.PutInt(GuildCustomFunctionLength);
+			builder.PutInt(GuildCorpsPassiveLength);
+			builder.PutInt(GuildLength);
+			builder.PutInt(CorpsSiegeWeaponLength);
+			builder.PutInt(CorpsPassiveDamageLength);
+			builder.PutInt(CorpsPassiveLength);
+			builder.PutInt(CorpsInformationLength);
+			builder.PutInt(CorpsHistoryLength);
+			builder.PutInt(CorpsFunctionLength);
+			builder.PutInt(CorpsCustomFunctionLength);
+			builder.PutInt(CorpsLength);
+			builder.PutInt(BuildingPassiveDamageLength);
+			builder.PutInt(BuildingPassiveLength);
+			builder.PutInt(BuildingHistoryLength);
+			builder.PutInt(BuildingCustomFunctionLength);
+			builder.PutInt(BuildingLength);
+			builder.PutInt(StringsLength);
+			builder.PutInt(Seq);
+			builder.PutInt(WorldId);
+			builder.PutInt(ClanDbShard);
+			return new Offset<data>(builder.Offset);
 		}
 	}
 }

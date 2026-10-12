@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -50,22 +50,30 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public direction_combat_message __assign(int _i, ByteBuffer _bb)
 		{
-			return default(direction_combat_message);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<direction_combat_message> Createdirection_combat_message(FlatBufferBuilder builder, ulong GuildId, int PCombatMessage, int CustomKey, int MessageParamsGuild, int MessageParamsOther)
 		{
-			return default(Offset<direction_combat_message>);
+			builder.Prep(8, 24);
+			builder.PutInt(MessageParamsOther);
+			builder.PutInt(MessageParamsGuild);
+			builder.PutInt(CustomKey);
+			builder.PutInt(PCombatMessage);
+			builder.PutUlong(GuildId);
+			return new Offset<direction_combat_message>(builder.Offset);
 		}
 	}
 }

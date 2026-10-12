@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -74,22 +74,33 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public user_stats __assign(int _i, ByteBuffer _bb)
 		{
-			return default(user_stats);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<user_stats> Createuser_stats(FlatBufferBuilder builder, ulong GuildId, ulong UserId, int BaseAtk, int BaseDef, int BaseInte, int BaseAgi, int BaseMor, int TreasurePoint)
 		{
-			return default(Offset<user_stats>);
+			builder.Prep(8, 40);
+			builder.PutInt(TreasurePoint);
+			builder.PutInt(BaseMor);
+			builder.PutInt(BaseAgi);
+			builder.PutInt(BaseInte);
+			builder.PutInt(BaseDef);
+			builder.PutInt(BaseAtk);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<user_stats>(builder.Offset);
 		}
 	}
 }

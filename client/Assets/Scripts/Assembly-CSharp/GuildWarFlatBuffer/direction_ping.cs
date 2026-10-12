@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 20);
 			}
 		}
 
@@ -50,22 +50,30 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 22);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public direction_ping __assign(int _i, ByteBuffer _bb)
 		{
-			return default(direction_ping);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<direction_ping> Createdirection_ping(FlatBufferBuilder builder, ulong GuildId, ulong UserId, int PingId, short PosX, short PosY)
 		{
-			return default(Offset<direction_ping>);
+			builder.Prep(8, 24);
+			builder.PutShort(PosY);
+			builder.PutShort(PosX);
+			builder.PutInt(PingId);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<direction_ping>(builder.Offset);
 		}
 	}
 }

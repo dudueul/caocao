@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,22 +34,28 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public key_corps_custom_function __assign(int _i, ByteBuffer _bb)
 		{
-			return default(key_corps_custom_function);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<key_corps_custom_function> Createkey_corps_custom_function(FlatBufferBuilder builder, int CorpsId, short CustomActionType, int CustomActionKey)
 		{
-			return default(Offset<key_corps_custom_function>);
+			builder.Prep(4, 12);
+			builder.PutInt(CustomActionKey);
+			builder.PutShort(CustomActionType);
+			builder.PutInt(CorpsId);
+			return new Offset<key_corps_custom_function>(builder.Offset);
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 10);
 			}
 		}
 
@@ -42,22 +42,29 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public vision __assign(int _i, ByteBuffer _bb)
 		{
-			return default(vision);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<vision> Createvision(FlatBufferBuilder builder, ulong GuildId, short PosX, short PosY, int VisionCount)
 		{
-			return default(Offset<vision>);
+			builder.Prep(8, 16);
+			builder.PutInt(VisionCount);
+			builder.PutShort(PosY);
+			builder.PutShort(PosX);
+			builder.PutUlong(GuildId);
+			return new Offset<vision>(builder.Offset);
 		}
 	}
 }

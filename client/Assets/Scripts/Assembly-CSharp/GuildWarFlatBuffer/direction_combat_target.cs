@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 12);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 14);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 16);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 18);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 24);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 40);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 42);
 			}
 		}
 
@@ -114,22 +114,38 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 48);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public direction_combat_target __assign(int _i, ByteBuffer _bb)
 		{
-			return default(direction_combat_target);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<direction_combat_target> Createdirection_combat_target(FlatBufferBuilder builder, int PCombatAction, int TargetPlaceId, int TargetCorpsId, short TargetTileX, short TargetTileY, short TargetPosX, short TargetPosY, ulong TargetUserId, int SourcePlaceId, int SourceCorpsId, short SourcePosX, short SourcePosY, ulong SourceUserId)
 		{
-			return default(Offset<direction_combat_target>);
+			builder.Prep(8, 56);
+			builder.PutUlong(SourceUserId);
+			builder.PutShort(SourcePosY);
+			builder.PutShort(SourcePosX);
+			builder.PutInt(SourceCorpsId);
+			builder.PutInt(SourcePlaceId);
+			builder.PutUlong(TargetUserId);
+			builder.PutShort(TargetPosY);
+			builder.PutShort(TargetPosX);
+			builder.PutShort(TargetTileY);
+			builder.PutShort(TargetTileX);
+			builder.PutInt(TargetCorpsId);
+			builder.PutInt(TargetPlaceId);
+			builder.PutInt(PCombatAction);
+			return new Offset<direction_combat_target>(builder.Offset);
 		}
 	}
 }

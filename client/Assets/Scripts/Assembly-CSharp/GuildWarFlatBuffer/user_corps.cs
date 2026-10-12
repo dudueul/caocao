@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0uL;
+				return __p.bb.GetUlong(__p.bb_pos + 8);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 20);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 24);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 28);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 32);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 36);
 			}
 		}
 
@@ -82,7 +82,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 40);
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 44);
 			}
 		}
 
@@ -98,22 +98,36 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 48);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public user_corps __assign(int _i, ByteBuffer _bb)
 		{
-			return default(user_corps);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<user_corps> Createuser_corps(FlatBufferBuilder builder, ulong GuildId, ulong UserId, int CorpsId, int CorpsSucceedingExp, int FaceUnitId, int FaceSkinitemId, int JobId, int JobTypeId, int CreateCount, int CorpsCreatableDate, int CreateDate)
 		{
-			return default(Offset<user_corps>);
+			builder.Prep(8, 56);
+			builder.PutInt(CreateDate);
+			builder.PutInt(CorpsCreatableDate);
+			builder.PutInt(CreateCount);
+			builder.PutInt(JobTypeId);
+			builder.PutInt(JobId);
+			builder.PutInt(FaceSkinitemId);
+			builder.PutInt(FaceUnitId);
+			builder.PutInt(CorpsSucceedingExp);
+			builder.PutInt(CorpsId);
+			builder.PutUlong(UserId);
+			builder.PutUlong(GuildId);
+			return new Offset<user_corps>(builder.Offset);
 		}
 	}
 }

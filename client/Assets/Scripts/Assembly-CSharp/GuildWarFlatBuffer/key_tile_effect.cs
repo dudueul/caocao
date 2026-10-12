@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 2);
 			}
 		}
 
@@ -34,22 +34,28 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public key_tile_effect __assign(int _i, ByteBuffer _bb)
 		{
-			return default(key_tile_effect);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<key_tile_effect> Createkey_tile_effect(FlatBufferBuilder builder, short PosX, short PosY, int PTileEffect)
 		{
-			return default(Offset<key_tile_effect>);
+			builder.Prep(4, 8);
+			builder.PutInt(PTileEffect);
+			builder.PutShort(PosY);
+			builder.PutShort(PosX);
+			return new Offset<key_tile_effect>(builder.Offset);
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return null;
+				return __p.bb;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetShort(__p.bb_pos + 0);
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 4);
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 8);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 12);
 			}
 		}
 
@@ -50,22 +50,30 @@ namespace GuildWarFlatBuffer
 		{
 			get
 			{
-				return 0;
+				return __p.bb.GetInt(__p.bb_pos + 16);
 			}
 		}
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
+			__p = new Struct(_i, _bb);
 		}
 
 		public world_seq __assign(int _i, ByteBuffer _bb)
 		{
-			return default(world_seq);
+			__p = new Struct(_i, _bb);
+			return this;
 		}
 
 		public static Offset<world_seq> Createworld_seq(FlatBufferBuilder builder, short ClanDbShard, int WorldId, int InstanceIndex, int Seq, int Tick)
 		{
-			return default(Offset<world_seq>);
+			builder.Prep(4, 20);
+			builder.PutInt(Tick);
+			builder.PutInt(Seq);
+			builder.PutInt(InstanceIndex);
+			builder.PutInt(WorldId);
+			builder.PutShort(ClanDbShard);
+			return new Offset<world_seq>(builder.Offset);
 		}
 	}
 }
