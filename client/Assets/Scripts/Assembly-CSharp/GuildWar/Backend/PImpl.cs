@@ -7201,7 +7201,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_socketServerUuid;
 				}
 			}
 
@@ -7209,7 +7209,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_socketServerIP;
 				}
 			}
 
@@ -7217,7 +7217,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_socketServerPort;
 				}
 			}
 
@@ -7225,7 +7225,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_logicServerUuid;
 				}
 			}
 
@@ -7233,7 +7233,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_logicServerIP;
 				}
 			}
 
@@ -7241,7 +7241,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_logicServerPort;
 				}
 			}
 
@@ -7249,7 +7249,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_distributorServerUuid;
 				}
 			}
 
@@ -7257,7 +7257,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_distributorServerIP;
 				}
 			}
 
@@ -7265,7 +7265,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_userId;
 				}
 			}
 
@@ -7273,7 +7273,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0uL;
+					return m_userId;
 				}
 			}
 		}
@@ -7376,6 +7376,11 @@ namespace GuildWar.Backend
 			public int world_id;
 		}
 
+		// [RE] SessionImpl rebuilt from decompiled PImpl.SessionImpl
+		// (TypeDefIndex 8378; field offsets verified in dump.cs). Socket flow:
+		// CreateSocket → OnSocketConnect → UpdateSocketLogin(["login",{userId,authKey}])
+		// → OnSocketLogined → EnterSocketServerWorldRoom(["enterToWorld",...]).
+		// REST authKey: POST /user/login (rebuild) — original: /chat/getAuthKey.
 		private class SessionImpl : Session
 		{
 			public GameObject m_gameObject;
@@ -7426,6 +7431,10 @@ namespace GuildWar.Backend
 
 			private float m_socketWorldRoomTimer;
 
+			// [RE] rebuild-only: public login hook (original: Manager subscribed
+			// the session events internally; SessionBoot needs the same access).
+			public static event Action<string> OnAnySessionLogined;
+
 			private RoomKey m_socketHaveToEnterWorldRoom;
 
 			private RoomKey m_socketHaveToLeaveWorldRoom;
@@ -7440,7 +7449,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_connectionInfo;
 				}
 			}
 
@@ -7448,7 +7457,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return false;
+					return m_socketConnected && m_socketLoggedIn;
 				}
 			}
 
@@ -7456,7 +7465,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return false;
+					return m_socketLoggedIn;
 				}
 			}
 
@@ -7464,7 +7473,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_authKey;
 				}
 			}
 
@@ -7472,7 +7481,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_userCnt;
 				}
 			}
 
@@ -7480,7 +7489,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return false;
+					return m_maintenance;
 				}
 			}
 
@@ -7488,9 +7497,11 @@ namespace GuildWar.Backend
 			{
 				add
 				{
+					onSocketConnected__BackingField = (Action)Delegate.Combine(onSocketConnected__BackingField, value);
 				}
 				remove
 				{
+					onSocketConnected__BackingField = (Action)Delegate.Remove(onSocketConnected__BackingField, value);
 				}
 			}
 
@@ -7498,9 +7509,11 @@ namespace GuildWar.Backend
 			{
 				add
 				{
+					onSocketDisconnected__BackingField = (Action)Delegate.Combine(onSocketDisconnected__BackingField, value);
 				}
 				remove
 				{
+					onSocketDisconnected__BackingField = (Action)Delegate.Remove(onSocketDisconnected__BackingField, value);
 				}
 			}
 
@@ -7508,9 +7521,11 @@ namespace GuildWar.Backend
 			{
 				add
 				{
+					onSocketLogined__BackingField = (Action)Delegate.Combine(onSocketLogined__BackingField, value);
 				}
 				remove
 				{
+					onSocketLogined__BackingField = (Action)Delegate.Remove(onSocketLogined__BackingField, value);
 				}
 			}
 
@@ -7518,9 +7533,11 @@ namespace GuildWar.Backend
 			{
 				add
 				{
+					onSocketEnteredToWorld__BackingField = (Action)Delegate.Combine(onSocketEnteredToWorld__BackingField, value);
 				}
 				remove
 				{
+					onSocketEnteredToWorld__BackingField = (Action)Delegate.Remove(onSocketEnteredToWorld__BackingField, value);
 				}
 			}
 
@@ -7528,9 +7545,11 @@ namespace GuildWar.Backend
 			{
 				add
 				{
+					onSocketLeavedFromWorld__BackingField = (Action)Delegate.Combine(onSocketLeavedFromWorld__BackingField, value);
 				}
 				remove
 				{
+					onSocketLeavedFromWorld__BackingField = (Action)Delegate.Remove(onSocketLeavedFromWorld__BackingField, value);
 				}
 			}
 
@@ -7538,9 +7557,11 @@ namespace GuildWar.Backend
 			{
 				add
 				{
+					onSocketWorldHistoryUpdated__BackingField = (Action<int, int, JsonData>)Delegate.Combine(onSocketWorldHistoryUpdated__BackingField, value);
 				}
 				remove
 				{
+					onSocketWorldHistoryUpdated__BackingField = (Action<int, int, JsonData>)Delegate.Remove(onSocketWorldHistoryUpdated__BackingField, value);
 				}
 			}
 
@@ -7548,153 +7569,308 @@ namespace GuildWar.Backend
 			{
 				add
 				{
+					onSocketErrored__BackingField = (Action<SocketIOEvent>)Delegate.Combine(onSocketErrored__BackingField, value);
 				}
 				remove
 				{
+					onSocketErrored__BackingField = (Action<SocketIOEvent>)Delegate.Remove(onSocketErrored__BackingField, value);
 				}
 			}
 
 			public SessionImpl(ConnectionInfoImpl connectionInfo)
 			{
+				m_connectionInfo = connectionInfo;
+				m_authKey = string.Empty;
+				m_gameObject = new GameObject("SessionImpl");
+				UnityEngine.Object.DontDestroyOnLoad(m_gameObject);
 			}
 
+			// [RE] REST payload convention: [user_id, ...args] (decompiled
+			// addUserIdObjects used by every Send).
 			private object[] addUserIdObjects(params object[] args)
 			{
-				return null;
+				var all = new object[args.Length + 1];
+				all[0] = m_connectionInfo.userId;
+				for (int i = 0; i < args.Length; i++)
+					all[i + 1] = args[i];
+				return all;
 			}
 
 			public void Send(string uri, string method, bool showNetworkIndicator, HttpRequest.ResponseCallback callback, params object[] args)
 			{
+				HttpRequest.instance.Send(uri, method, showNetworkIndicator, callback, addUserIdObjects(args));
 			}
 
 			[DebuggerHidden]
 			public IEnumerator SendAndWait(string uri, string method, bool showNetworkIndicator, HttpRequest.ResponseCallback callback, params object[] args)
 			{
-				return null;
+				// [RE] original wraps Send + waits for the response callback
+				bool done = false;
+				JsonData result = null;
+				HttpRequest.instance.Send(uri, method, showNetworkIndicator, delegate(JsonData jd)
+				{
+					result = jd;
+					done = true;
+				}, addUserIdObjects(args));
+				while (!done)
+					yield return null;
+				yield return result;
 			}
 
 			public void RequestGetWorldData(int clan_db_shard, int world_id, int from_sequence, int to_sequence, List<int> except_sequences, HttpRequest.ResponseCallback callback)
 			{
+				// [RE] POST /guildWar/getWorldData with the sequence-window args
+				HttpRequest.instance.Send("/guildWar/getWorldData", "POST", true, callback,
+					new object[] { clan_db_shard, world_id, from_sequence, to_sequence, except_sequences });
 			}
 
 			public void Update()
 			{
+				UpdateWebAuthKey();
+				UpdateSocketConnect();
+				UpdateSocketLogin();
+				UpdateSocketWorldRooms();
 			}
 
+			// [RE] UpdateWebAuthKey → REST auth; original hit /chat/getAuthKey
+			// (literal `_chat_getAuthKey`), rebuild hits /user/login then keeps
+			// the returned authKey. Re-fetch every m_authKeyValidationTimer drift.
 			private void UpdateWebAuthKey()
 			{
+				if (m_webGettingAuthKey || !string.IsNullOrEmpty(m_authKey))
+					return;
+				m_getAuthTimer += Time.deltaTime;
+				if (m_getAuthTimer < 2f)
+					return;
+				m_getAuthTimer = 0f;
+				m_webGettingAuthKey = true;
+				HttpRequest.instance.Send("/user/login", "POST", false, delegate(JsonData response)
+				{
+					m_webGettingAuthKey = false;
+					if (response != null && response.Keys.Contains("authKey"))
+					{
+						m_authKey = response["authKey"].ToString();
+						m_needToReLoginSocketServer = true;
+					}
+			}, new object[] { m_connectionInfo.userId });
 			}
 
 			private void OnWebGetAuthKey(JsonData response)
 			{
+				m_webGettingAuthKey = false;
+				if (response != null && response.Keys.Contains("authKey"))
+					m_authKey = response["authKey"].ToString();
 			}
 
 			private void DestroySocket()
 			{
+				if (m_socket != null)
+				{
+					m_socket.Close();
+					UnityEngine.Object.Destroy(m_socket.gameObject);
+					m_socket = null;
+				}
+				m_socketConnected = false;
+				m_socketLoggedIn = false;
+				m_socketConnecting = false;
+				m_socketLoggingIn = false;
 			}
 
 			private void CreateSocket()
 			{
+				DestroySocket();
+				// [RE] URL template literal: ws://{0}/socket.io/?EIO=4&transport=websocket
+				var host = new Uri(ServerSetting.instance.GAME_SERVER_HOST_URL).Authority;
+				var go = new GameObject("SocketIO");
+				go.transform.SetParent(m_gameObject.transform, false);
+				m_socket = go.AddComponent<SocketIOComponent>();
+				m_socket.url = string.Format("ws://{0}/socket.io/?EIO=4&transport=websocket", host);
+				m_socket.autoConnect = true;
+				m_socket.On("connect", OnSocketConnect);
+				m_socket.On("disconnect", OnSocketDisconnect);
+				m_socket.On("error", OnSocketError);
+				m_socket.On("login", OnSocketLogined);
+				m_socket.On("enterToWorld", OnSocketEnterToWorld);
+				m_socket.On("updateHistory", OnSocketUpdateHistory);
+				m_socket.Connect();
+				m_socketConnecting = true;
+				m_socketConnectTimer = 0f;
 			}
 
 			private void OnSocketError(SocketIOEvent e)
 			{
+				if (onSocketErrored__BackingField != null)
+					onSocketErrored__BackingField(e);
 			}
 
 			private void ResetSocketConnect()
 			{
+				m_socketConnecting = false;
+				m_socketConnected = false;
+				m_socketConnectTimer = 0f;
+				m_needToReLoginSocketServer = true;
 			}
 
 			private void UpdateSocketConnect()
 			{
+				if (m_socket == null)
+				{
+					CreateSocket();
+					return;
+				}
+				if (m_socketConnected)
+					return;
+				m_socketConnectTimer += Time.deltaTime;
+				if (m_socketConnectTimer > 10f)
+				{
+					CreateSocket();   // [RE] original retried with backoff; 10s cadence
+				}
 			}
 
 			private void OnSocketConnect(SocketIOEvent e)
 			{
+				// [RE] decompiled OnSocketConnect: reset world-room state, mark
+				// connected, fire onSocketConnected, start login.
+				m_socketConnected = true;
+				m_socketConnecting = false;
+				m_socketConnectTimer = 0f;
+				ResetSocketWorldRooms();
+				m_needToReLoginSocketServer = true;
+				m_socketLoginTimer = 5f;   // [RE] decompiled: first login after 5s grace
+				if (onSocketConnected__BackingField != null)
+					onSocketConnected__BackingField();
 			}
 
 			private void OnSocketDisconnect(SocketIOEvent e)
 			{
+				m_socketConnected = false;
+				m_socketLoggedIn = false;
+				m_socketLoggingIn = false;
+				ResetSocketWorldRooms();
+				if (onSocketDisconnected__BackingField != null)
+					onSocketDisconnected__BackingField();
 			}
 
 			private void ResetSocketLogin()
 			{
+				m_socketLoggingIn = false;
+				m_socketLoggedIn = false;
+				m_socketLoginTimer = 0f;
 			}
 
 			private void UpdateSocketLogin()
 			{
+				// [RE] faithful port of the decompiled UpdateSocketLogin:
+				// waits for authKey, retries every 5s while un-logged.
+				if (m_socketLoggedIn || m_socketLoggingIn || m_socket == null || !m_socketConnected)
+					return;
+				if (string.IsNullOrEmpty(m_authKey))
+					return;
+				m_socketLoginTimer += Time.deltaTime;
+				if (m_socketLoginTimer < 5f)
+					return;
+				m_socketLoginTimer = 0f;
+				m_socketLoggingIn = true;
+				var payload = new JsonData();
+				payload["userId"] = m_connectionInfo.userId;
+				payload["authKey"] = m_authKey;
+				m_socket.Emit("login", payload, delegate(JsonData ack)
+				{
+					m_socketLoggingIn = false;
+					if (ack != null && !ack.Keys.Contains("error"))
+					{
+						m_socketLoggedIn = true;
+						if (onSocketLogined__BackingField != null)
+							onSocketLogined__BackingField();
+					}
+					else
+					{
+						m_needToReLoginSocketServer = true;
+						OnWebGetAuthKey(null);   // force re-auth
+					}
+				});
 			}
 
 			private void OnSocketLogined(SocketIOEvent e)
 			{
+				m_socketLoggedIn = true;
+				if (OnAnySessionLogined != null)
+					OnAnySessionLogined(m_connectionInfo.userId);
+				if (onSocketLogined__BackingField != null)
+					onSocketLogined__BackingField();
 			}
 
 			public void EnterSocketServerWorldRoom(int clan_db_shard, int world_id)
 			{
+				m_socketHaveToEnterWorldRoom = new RoomKey { clan_db_shard = clan_db_shard, world_id = world_id };
 			}
 
 			public void LeaveSocketServerWorldRoom(int clan_db_shard, int world_id)
 			{
+				m_socketHaveToLeaveWorldRoom = new RoomKey { clan_db_shard = clan_db_shard, world_id = world_id };
 			}
 
 			private void ResetSocketWorldRooms()
 			{
+				m_socketEnteringWorldRoom = default(RoomKey);
+				m_socketLeavingWorldRoom = default(RoomKey);
+				m_socketEnteredWorldRoom = default(RoomKey);
 			}
 
 			private void UpdateSocketWorldRooms()
 			{
+				// [RE] original: one enter/leave in flight at a time.
+				if (m_socketHaveToLeaveWorldRoom.world_id != 0 || m_socketHaveToLeaveWorldRoom.clan_db_shard != 0)
+				{
+					var leave = m_socketHaveToLeaveWorldRoom;
+					m_socketHaveToLeaveWorldRoom = default(RoomKey);
+					m_socketLeavingWorldRoom = leave;
+					if (m_socket != null && m_socketConnected && m_socketLoggedIn)
+						m_socket.Emit("leaveRoom", new JsonData { ["room_id"] = string.Format("world:{0}", leave.world_id) },
+							delegate(JsonData ack)
+							{
+								m_socketLeavingWorldRoom = default(RoomKey);
+								if (onSocketLeavedFromWorld__BackingField != null)
+									onSocketLeavedFromWorld__BackingField();
+							});
+					return;
+				}
+				if ((m_socketHaveToEnterWorldRoom.world_id != 0 || m_socketHaveToEnterWorldRoom.clan_db_shard != 0) && m_socketConnected && m_socketLoggedIn)
+				{
+					var enter = m_socketHaveToEnterWorldRoom;
+					m_socketHaveToEnterWorldRoom = default(RoomKey);
+					m_socketEnteringWorldRoom = enter;
+					if (m_socket != null)
+						m_socket.Emit("enterToWorld", new JsonData { ["world_id"] = enter.world_id, ["guild_id"] = enter.clan_db_shard },
+							delegate(JsonData ack)
+							{
+								m_socketEnteringWorldRoom = default(RoomKey);
+								m_socketEnteredWorldRoom = enter;
+								if (onSocketEnteredToWorld__BackingField != null)
+									onSocketEnteredToWorld__BackingField();
+							});
+				}
 			}
 
 			private void OnSocketEnterToWorld(SocketIOEvent e)
 			{
+				m_socketEnteredWorldRoom = m_socketEnteringWorldRoom;
+				m_socketEnteringWorldRoom = default(RoomKey);
+				if (onSocketEnteredToWorld__BackingField != null)
+					onSocketEnteredToWorld__BackingField();
 			}
 
 			private void OnSocketUpdateHistory(SocketIOEvent e)
 			{
+				// [RE] world history seq-window sync → data-table listeners
+				int from = 0, to = 0;
+				if (e.data != null && e.data.Keys.Contains("from_seq"))
+					from = (int)e.data["from_seq"];
+				if (e.data != null && e.data.Keys.Contains("to_seq"))
+					to = (int)e.data["to_seq"];
+				if (onSocketWorldHistoryUpdated__BackingField != null)
+					onSocketWorldHistoryUpdated__BackingField(from, to, e.data);
 			}
-		}
-
-		private class WorldMetaDataImpl : WorldMetaData
-		{
-			private ObscuredInt m_season_key;
-
-			private ObscuredInt m_clan_db_shard;
-
-			private ObscuredInt m_world_id;
-
-			private ObscuredInt m_instance_index;
-
-			private ObscuredEnum<WorldStatus> m_status;
-
-			private ObscuredString m_map;
-
-			private ObscuredString m_socket_server_uuid;
-
-			private ObscuredString m_logic_server_uuid;
-
-			private ObscuredString m_distributor_server_uuid;
-
-			private ObscuredString m_socket_server_ip;
-
-			private ObscuredString m_logic_server_ip;
-
-			private ObscuredString m_distributor_server_ip;
-
-			private ObscuredInt m_socket_server_port;
-
-			private ObscuredInt m_logic_server_port;
-
-			private ObscuredInt m_distributor_server_port;
-
-			public Session session;
-
-			public int latestServerSequence;
-
-			public int requiredSequence;
-
-			public Dictionary<int, int> requiredRequestIdsAndSequences;
-
-			public float timerGetWorldData;
 
 			public override int season_detail_key
 			{
@@ -7708,7 +7884,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_socketEnteredWorldRoom.clan_db_shard;
 				}
 			}
 
@@ -7716,7 +7892,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_socketEnteredWorldRoom.world_id;
 				}
 			}
 
@@ -7732,7 +7908,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return WorldStatus.None;
+					return WorldStatus.NONE;
 				}
 			}
 
@@ -7740,7 +7916,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return string.Empty;
 				}
 			}
 
@@ -7748,7 +7924,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_connectionInfo.socketServerUuid;
 				}
 			}
 
@@ -7756,7 +7932,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_connectionInfo.logicServerUuid;
 				}
 			}
 
@@ -7764,7 +7940,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_connectionInfo.distributorServerUuid;
 				}
 			}
 
@@ -7772,7 +7948,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_connectionInfo.socketServerIP;
 				}
 			}
 
@@ -7780,7 +7956,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_connectionInfo.logicServerIP;
 				}
 			}
 
@@ -7788,7 +7964,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return null;
+					return m_connectionInfo.distributorServerIP;
 				}
 			}
 
@@ -7796,7 +7972,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_connectionInfo.socketServerPort;
 				}
 			}
 
@@ -7804,7 +7980,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_connectionInfo.logicServerPort;
 				}
 			}
 
@@ -7812,7 +7988,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0;
+					return m_connectionInfo.distributorServerPort;
 				}
 			}
 
@@ -7829,9 +8005,46 @@ namespace GuildWar.Backend
 				return false;
 			}
 
-			public void Update()
+		}
+
+				// [RE] rebuild-only local session factory. Original flow: NPA account
+		// login → per-country server info (LiveJPN/LiveGLB...) → RequestSession.
+		// Rebuild: LOCAL ServerSetting + guest device id → SessionImpl, driven
+		// by an internal pump MonoBehaviour (original: Manager.Update() loop).
+		private class SessionPump : MonoBehaviour
+		{
+			public SessionImpl session;
+
+			private void Update()
 			{
+				if (session != null)
+					session.Update();
 			}
+		}
+
+		public static Session CreateLocalSession(ulong userId)
+		{
+			var info = new ConnectionInfoImpl();
+			var hostUrl = ServerSetting.instance.GAME_SERVER_HOST_URL;
+			int port = 80;
+			try { port = new Uri(hostUrl).Port; } catch { }
+			info.m_socketServerUuid = "local";
+			info.m_socketServerIP = hostUrl;
+			info.m_socketServerPort = port;
+			info.m_logicServerUuid = "local";
+			info.m_logicServerIP = hostUrl;
+			info.m_logicServerPort = port;
+			info.m_distributorServerUuid = "local";
+			info.m_distributorServerIP = hostUrl;
+			info.m_distributorServerPort = port;
+			info.m_userId = userId;
+			var go = new GameObject("SessionImpl");
+			UnityEngine.Object.DontDestroyOnLoad(go);
+			var impl = new SessionImpl(info);
+			impl.m_gameObject = go;
+			var pump = go.AddComponent<SessionPump>();
+			pump.session = impl;
+			return impl;
 		}
 
 		public static Manager CreateManager()

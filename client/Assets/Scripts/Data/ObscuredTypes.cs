@@ -82,3 +82,41 @@ namespace CodeStage.AntiCheat.ObscuredTypes
         { hiddenValue = BitConverter.SingleToInt32Bits(v), inited = true };
     }
 }
+
+namespace CodeStage.AntiCheat.ObscuredTypes
+{
+    [Serializable]
+    public struct ObscuredBool
+    {
+        public int currentCryptoKey;
+        public int hiddenValue;    // bit-packed bool
+        public bool inited;
+        public bool fakeValue;
+
+        public bool GetDecrypted() =>
+            currentCryptoKey == 0 ? hiddenValue != 0 : (hiddenValue ^ currentCryptoKey) != 0;
+
+        public static implicit operator bool(ObscuredBool o) => o.GetDecrypted();
+        public static implicit operator ObscuredBool(bool v) => new ObscuredBool
+        { hiddenValue = v ? 1 : 0, inited = true };
+    }
+}
+
+namespace CodeStage.AntiCheat.ObscuredTypes
+{
+    [Serializable]
+    public struct ObscuredULong
+    {
+        public ulong currentCryptoKey;
+        public ulong hiddenValue;
+        public bool inited;
+        public ulong fakeValue;
+
+        public ulong GetDecrypted() =>
+            currentCryptoKey == 0 ? hiddenValue : hiddenValue ^ currentCryptoKey;
+
+        public static implicit operator ulong(ObscuredULong o) => o.GetDecrypted();
+        public static implicit operator ObscuredULong(ulong v) => new ObscuredULong
+        { hiddenValue = v, inited = true };
+    }
+}
