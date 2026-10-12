@@ -14,6 +14,10 @@ namespace GuildWar.Backend
 {
 	internal static class PImpl
 	{
+		// [RE] rebuild-only: public login hook (original: Manager subscribed the
+		// session events internally; rebuild boot (SessionBoot) needs access).
+		public static event Action<string> OnAnySessionLogined;
+
 		public class CameraDataImpl : CameraData, IDataTableOwner, IClientDataOwnerImpl, IDataTypeImpl<CameraData>, IDataType<CameraData>, IDataType, IDataUpdateListener<CameraData>
 		{
 			private ClientData m_clientData;
@@ -7430,10 +7434,6 @@ namespace GuildWar.Backend
 			private bool m_socketLoggedIn;
 
 			private float m_socketWorldRoomTimer;
-
-			// [RE] rebuild-only: public login hook (original: Manager subscribed
-			// the session events internally; SessionBoot needs the same access).
-			public static event Action<string> OnAnySessionLogined;
 
 			private RoomKey m_socketHaveToEnterWorldRoom;
 
