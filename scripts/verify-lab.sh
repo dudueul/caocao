@@ -32,6 +32,9 @@ assert (vsize, tsize, f0) == (10, 16, 4), f"wrong header {(vsize,tsize,f0)}"
 print("dsa02 PASS: vtable(10,16) fields=7,42,1337")
 PY
   ;;
+dsa02b)
+  python3 -c "import struct,sys; b=open(sys.argv[1],'rb').read(); assert b==struct.pack('<iii',7,42,1337), b.hex(); print('dsa02b PASS: struct layout = plain ints (no vtable)')" "$WORK/docs/lab/exercises/flatbuffer_sample_struct.bin"
+  ;;
 dsa03)
   python3 - "$WORK/docs/lab/exercises/battlegrid_01.json" <<'PY2'
 import json, sys, heapq
