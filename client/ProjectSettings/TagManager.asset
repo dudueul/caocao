@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - BattleMap
+  - Troop
+  - Unit
+  - Selection
+  - Button
+  - UnitEnergy
+  - GUI
+  - singleton
+  - MapObjects
+  - Towns
+  - Duel
+  - Buildings
+  - FlowLine
+  - UnitDmgRate
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - GUI
+  - Unit
+  - UnitColorBox
+  - MinimapBorder
+  - Cloud
+  - Particle
+  - Duel
+  - ConditionMarker
+  - MapObject
+  - InvisibleOnMinimap
+  - WorldMapObject
+  - Popup
+  - Overlay
+  - BattleField
+  - Fog
+  - GuildWarMinimapObject
+  - GuildWarMinimapFog
+  - GuildWarMinimapBG
+  - 
+  - 
+  - 
+  - 
+  - Loading
+  - Movie
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BgCancelSelection
+    uniqueID: 748135855
+    locked: 0
+  - name: BackgroundMap
+    uniqueID: 3045451347
+    locked: 0
+  - name: FloorMapObjects
+    uniqueID: 2864474699
+    locked: 0
+  - name: DownDecoMapObjects
+    uniqueID: 2445453863
+    locked: 0
+  - name: MapObjects
+    uniqueID: 1540418653
+    locked: 0
+  - name: UpDecoMapObjects
+    uniqueID: 1314372211
+    locked: 0
+  - name: Selection
+    uniqueID: 1002125939
+    locked: 0
+  - name: AttackRangeKnife
+    uniqueID: 630668251
+    locked: 0
+  - name: Character
+    uniqueID: 3993596241
+    locked: 0
+  - name: Duel
+    uniqueID: 2815996297
+    locked: 0
+  - name: Effect
+    uniqueID: 1159264745
+    locked: 0
+  - name: Particle
+    uniqueID: 3322999297
+    locked: 0
+  - name: Cloud
+    uniqueID: 3806646711
+    locked: 0
+  - name: Fog
+    uniqueID: 3102429903
+    locked: 0
+  - name: GUI
+    uniqueID: 463970645
+    locked: 0

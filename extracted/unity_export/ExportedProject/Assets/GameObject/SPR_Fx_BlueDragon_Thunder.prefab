@@ -1,0 +1,420 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: SPR_Fx_BlueDragon_Thunder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f28a10f064b0573af11a2e931d98da, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  version: 3
+  materialIdsValid: 1
+  needMaterialInstance: 0
+  spriteDefinitions:
+  - name: Thunder_04
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.003908203}
+    - {x: 0.47265428, y: 0.003908203}
+    - {x: 0.003908203, y: 0.1289043}
+    - {x: 0.47265428, y: 0.1289043}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: 90daaf12c28c30145abc0ec456887ad3
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Thunder_02
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.48047072, y: 0.003908203}
+    - {x: 0.9492168, y: 0.003908203}
+    - {x: 0.48047072, y: 0.1289043}
+    - {x: 0.9492168, y: 0.1289043}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: c453a6907d829e54e93a1cbb6144fac8
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Thunder_05
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.1367207}
+    - {x: 0.003908203, y: 0.6054668}
+    - {x: 0.1289043, y: 0.1367207}
+    - {x: 0.1289043, y: 0.6054668}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: 5dc7782835e7a69468c2fbaa62ae2a63
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Thunder_08
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.6132832}
+    - {x: 0.47265428, y: 0.6132832}
+    - {x: 0.003908203, y: 0.7382793}
+    - {x: 0.47265428, y: 0.7382793}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: 85b25badb1d7cb740906462fa17d1eea
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Thunder_01
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.003908203, y: 0.7460957}
+    - {x: 0.47265428, y: 0.7460957}
+    - {x: 0.003908203, y: 0.8710918}
+    - {x: 0.47265428, y: 0.8710918}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: 8f4623cd83222fb498ca9b1d1313c7f2
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Thunder_06
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.1367207, y: 0.1367207}
+    - {x: 0.1367207, y: 0.6054668}
+    - {x: 0.26171678, y: 0.1367207}
+    - {x: 0.26171678, y: 0.6054668}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: 4953297b23eb4ed49aeeb6dd7f472a9a
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Thunder_03
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.26953322, y: 0.1367207}
+    - {x: 0.26953322, y: 0.6054668}
+    - {x: 0.39452928, y: 0.1367207}
+    - {x: 0.39452928, y: 0.6054668}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: bfa6717dfc938614ba21b4e29c651606
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Thunder_07
+    boundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 1.1999999, y: 0, z: 0}
+    - {x: 2.3999999, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: 0, y: -0.32, z: 0}
+    - {x: 2.3999999, y: -0.32, z: 0}
+    - {x: 0, y: 0.32, z: 0}
+    - {x: 2.3999999, y: 0.32, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.40234572, y: 0.1367207}
+    - {x: 0.40234572, y: 0.6054668}
+    - {x: 0.5273418, y: 0.1367207}
+    - {x: 0.5273418, y: 0.6054668}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+    materialId: 0
+    sourceTextureGUID: 15f435e6acf5118448912b26f0493e97
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  premultipliedAlpha: 0
+  material: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: a6f32b9c4b575dc4196d420777874e93, type: 2}
+  textures:
+  - {fileID: 2800000, guid: 72ad32f872e5ada47b3bfb9d37116212, type: 3}
+  textureFilterMode: 1
+  textureMipMaps: 0
+  allowMultipleAtlases: 0
+  spriteCollectionGUID: 3e01666da8e2d7c4d92b8bb1ee69b6e0
+  spriteCollectionName: SPR_Fx_BlueDragon_Thunder
+  assetName:
+  loadable: 0
+  sizeDef:
+    type: 1
+    orthoSize: 10
+    pixelsPerMeter: 100
+    width: 960
+    height: 640
+  invOrthoSize: 2
+  halfTargetHeight: 50
+  buildKey: 285652104
+  dataGuid: 3795874d1eb8b3e4282462818faa5ad8
+  managedSpriteCollection: 0
+  hasPlatformData: 0
+  spriteCollectionPlatforms: []
+  spriteCollectionPlatformGUIDs: []
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

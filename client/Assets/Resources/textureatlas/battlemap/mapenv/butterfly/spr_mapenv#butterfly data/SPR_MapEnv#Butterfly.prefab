@@ -1,0 +1,588 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: SPR_MapEnv#Butterfly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f28a10f064b0573af11a2e931d98da, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  version: 3
+  materialIdsValid: 1
+  needMaterialInstance: 0
+  spriteDefinitions:
+  - name: EventEnv_Butterfly07
+    boundsData:
+    - {x: -0.009999999, y: 0.035, z: 0}
+    - {x: 0.060000002, y: 0.049999997, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.04, y: 0.01, z: 0}
+    - {x: 0.020000001, y: 0.01, z: 0}
+    - {x: -0.04, y: 0.06, z: 0}
+    - {x: 0.020000001, y: 0.06, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5000625, y: 3.125E-05}
+    - {x: 0.8749375, y: 3.125E-05}
+    - {x: 0.5000625, y: 0.15621875}
+    - {x: 0.8749375, y: 0.15621875}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: 0ab091d99a14f4a45ad8aa0cc0ca84a0
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly01
+    boundsData:
+    - {x: -0.009999998, y: 0.029999997, z: 0}
+    - {x: 0.08, y: 0.04, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.049999997, y: 0.01, z: 0}
+    - {x: 0.030000001, y: 0.01, z: 0}
+    - {x: -0.049999997, y: 0.049999997, z: 0}
+    - {x: 0.030000001, y: 0.049999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 6.25E-05, y: 3.125E-05}
+    - {x: 0.4999375, y: 3.125E-05}
+    - {x: 6.25E-05, y: 0.12496875}
+    - {x: 0.4999375, y: 0.12496875}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: 39f69f847adb1054c8649b594986e328
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly06
+    boundsData:
+    - {x: -0.009999999, y: 0.024999999, z: 0}
+    - {x: 0.060000002, y: 0.049999997, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.04, y: 0, z: 0}
+    - {x: 0.020000001, y: 0, z: 0}
+    - {x: -0.04, y: 0.049999997, z: 0}
+    - {x: 0.020000001, y: 0.049999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 6.25E-05, y: 0.12503125}
+    - {x: 0.3749375, y: 0.12503125}
+    - {x: 6.25E-05, y: 0.28121874}
+    - {x: 0.3749375, y: 0.28121874}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: 626599466697b5143a75ded317883af6
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly03
+    boundsData:
+    - {x: -0.014999999, y: 0.02, z: 0}
+    - {x: 0.05, y: 0.04, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.04, y: 0, z: 0}
+    - {x: 0.010000002, y: 0, z: 0}
+    - {x: -0.04, y: 0.04, z: 0}
+    - {x: 0.010000002, y: 0.04, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7500625, y: 0.37503126}
+    - {x: 0.7500625, y: 0.53121877}
+    - {x: 0.9999375, y: 0.37503126}
+    - {x: 0.9999375, y: 0.53121877}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: 6857659cb992e474ba1633b7399d2dbd
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly05
+    boundsData:
+    - {x: -0.014999999, y: 0.02, z: 0}
+    - {x: 0.05, y: 0.04, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.04, y: 0, z: 0}
+    - {x: 0.010000002, y: 0, z: 0}
+    - {x: -0.04, y: 0.04, z: 0}
+    - {x: 0.010000002, y: 0.04, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7500625, y: 0.37503126}
+    - {x: 0.7500625, y: 0.53121877}
+    - {x: 0.9999375, y: 0.37503126}
+    - {x: 0.9999375, y: 0.53121877}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: 6907ccdfd1e985e458b75526dabdfcf9
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly11
+    boundsData:
+    - {x: 1.8626451E-09, y: 0.035, z: 0}
+    - {x: 0.06, y: 0.049999997, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.029999997, y: 0.01, z: 0}
+    - {x: 0.030000001, y: 0.01, z: 0}
+    - {x: -0.029999997, y: 0.06, z: 0}
+    - {x: 0.030000001, y: 0.06, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3750625, y: 0.15628125}
+    - {x: 0.7499375, y: 0.15628125}
+    - {x: 0.3750625, y: 0.31246874}
+    - {x: 0.7499375, y: 0.31246874}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: a720b80364ee2e949bf63eca12f2e8b9
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly09
+    boundsData:
+    - {x: -0.004999998, y: 0.04, z: 0}
+    - {x: 0.049999997, y: 0.060000002, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.029999997, y: 0.01, z: 0}
+    - {x: 0.020000001, y: 0.01, z: 0}
+    - {x: -0.029999997, y: 0.07, z: 0}
+    - {x: 0.020000001, y: 0.07, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 6.25E-05, y: 0.43753126}
+    - {x: 6.25E-05, y: 0.59371877}
+    - {x: 0.3749375, y: 0.43753126}
+    - {x: 0.3749375, y: 0.59371877}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: b0ec8a00c8efcb149acd3fa82b7b75ce
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly02
+    boundsData:
+    - {x: -0.014999998, y: 0.029999997, z: 0}
+    - {x: 0.07, y: 0.04, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.049999997, y: 0.01, z: 0}
+    - {x: 0.020000001, y: 0.01, z: 0}
+    - {x: -0.049999997, y: 0.049999997, z: 0}
+    - {x: 0.020000001, y: 0.049999997, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7500625, y: 0.15628125}
+    - {x: 0.7500625, y: 0.37496874}
+    - {x: 0.9999375, y: 0.15628125}
+    - {x: 0.9999375, y: 0.37496874}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: bdf862f7495ba2347b994aeee8f7413b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly04
+    boundsData:
+    - {x: -0.014999999, y: 0.02, z: 0}
+    - {x: 0.05, y: 0.04, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.04, y: 0, z: 0}
+    - {x: 0.010000002, y: 0, z: 0}
+    - {x: -0.04, y: 0.04, z: 0}
+    - {x: 0.010000002, y: 0.04, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.7500625, y: 0.53128123}
+    - {x: 0.7500625, y: 0.68746877}
+    - {x: 0.9999375, y: 0.53128123}
+    - {x: 0.9999375, y: 0.68746877}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: d021de7a4c99b874ba19318f46ee2f0e
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly00
+    boundsData:
+    - {x: -0.009999999, y: 0.035, z: 0}
+    - {x: 0.060000002, y: 0.049999997, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.04, y: 0.01, z: 0}
+    - {x: 0.020000001, y: 0.01, z: 0}
+    - {x: -0.04, y: 0.06, z: 0}
+    - {x: 0.020000001, y: 0.06, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 6.25E-05, y: 0.28128126}
+    - {x: 0.3749375, y: 0.28128126}
+    - {x: 6.25E-05, y: 0.43746874}
+    - {x: 0.3749375, y: 0.43746874}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: d2ba18b80653d7048afc06cc08805760
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly08
+    boundsData:
+    - {x: -0.009999999, y: 0.035, z: 0}
+    - {x: 0.060000002, y: 0.049999997, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.04, y: 0.01, z: 0}
+    - {x: 0.020000001, y: 0.01, z: 0}
+    - {x: -0.04, y: 0.06, z: 0}
+    - {x: 0.020000001, y: 0.06, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3750625, y: 0.31253126}
+    - {x: 0.7499375, y: 0.31253126}
+    - {x: 0.3750625, y: 0.46871874}
+    - {x: 0.7499375, y: 0.46871874}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: f0dfc95992a05b24fbbb4f1c5b315242
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Butterfly10
+    boundsData:
+    - {x: -0.004999998, y: 0.04, z: 0}
+    - {x: 0.049999997, y: 0.060000002, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.009999998, y: 0.04, z: 0}
+    - {x: 0.16, y: 0.16, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.029999997, y: 0.01, z: 0}
+    - {x: 0.020000001, y: 0.01, z: 0}
+    - {x: -0.029999997, y: 0.07, z: 0}
+    - {x: 0.020000001, y: 0.07, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3750625, y: 0.46878126}
+    - {x: 0.3750625, y: 0.62496877}
+    - {x: 0.7499375, y: 0.46878126}
+    - {x: 0.7499375, y: 0.62496877}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+    materialId: 0
+    sourceTextureGUID: f47b9a7905fb297449c456e57aff3533
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  premultipliedAlpha: 0
+  material: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: f41d2f679beda1e49a8abb501cd05b03, type: 2}
+  textures:
+  - {fileID: 2800000, guid: dc39e5f7c0bb8ad44b962521bc1d5f56, type: 3}
+  textureFilterMode: 0
+  textureMipMaps: 0
+  allowMultipleAtlases: 0
+  spriteCollectionGUID: 940d3df90e46d514baf05518c5e8a1a8
+  spriteCollectionName: SPR_MapEnv#Butterfly
+  assetName:
+  loadable: 0
+  sizeDef:
+    type: 1
+    orthoSize: 10
+    pixelsPerMeter: 100
+    width: 960
+    height: 640
+  invOrthoSize: 2
+  halfTargetHeight: 50
+  buildKey: 1606377722
+  dataGuid: 9326da577aa64da42a696f5d6e763c00
+  managedSpriteCollection: 0
+  hasPlatformData: 0
+  spriteCollectionPlatforms: []
+  spriteCollectionPlatformGUIDs: []
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

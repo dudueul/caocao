@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Entrance.unity
+    guid: 4d82cbe8d0041db45ad2205b7170c586
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 2e0f4be96e6afa14c8d3fec74aa4103b
+  - enabled: 1
+    path: Assets/Scenes/Restart.unity
+    guid: dc60910ee0bdb074d94d9ccfeb83618c
+  - enabled: 1
+    path: Assets/Scenes/StageSelect.unity
+    guid: 8bef835be8e198a449cac3fae74120ac
+  - enabled: 1
+    path: Assets/Scenes/ScenarioMap.unity
+    guid: 2f1f9d57b80e5564aaeee149e2b1d02c
+  - enabled: 1
+    path: Assets/Scenes/BattleMap.unity
+    guid: 82402184c37ced648ab684468c289206
+  - enabled: 1
+    path: Assets/Scenes/WorldMap.unity
+    guid: cf7f17d9a77a9a44b879f6ebceca2f43
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: b15deadf6b64e5e4891844befc9c5c9a
+  - enabled: 1
+    path: Assets/Scenes/Duel.unity
+    guid: 82ac857628e0605418c2b784d27e808b
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 6a3431c0da3407840aaf761d89b435de
+  - enabled: 1
+    path: Assets/Scenes/Recon.unity
+    guid: 0c85a232e3f00eb4d9a2c8e814a88b25
+  - enabled: 1
+    path: Assets/Scenes/Movie.unity
+    guid: 156eb6ce58369a043b917b4149054a97
+  - enabled: 1
+    path: Assets/Scenes/AnnihilationWar.unity
+    guid: 122900be3eef56548a4326e9b5cbbc08
+  - enabled: 1
+    path: Assets/Scenes/ThousandBattle.unity
+    guid: 3344d6ec4f46a9346ba72e40f5aad94e
+  - enabled: 1
+    path: Assets/Scenes/Instance.unity
+    guid: 981b8179fdf5e74428fb1f525c610bff
+  - enabled: 1
+    path: Assets/Scenes/GuildSiegeWar.unity
+    guid: 0657aedfcf4e3764c9ef567077330a63
+  - enabled: 1
+    path: Assets/Scenes/Competition.unity
+    guid: 9ab17e4ec9589ac4abce897150948fc4
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: eb891604bec335b41880bf31b4dccde8
+  - enabled: 1
+    path: Assets/Scenes/GuildWar.unity
+    guid: b65d2a81b2ddba74298cbcc98bdef6c7
+  - enabled: 1
+    path: Assets/Scenes/GuildWarLobby.unity
+    guid: 004b8975a81fac146a28f707064ab841
+  m_configObjects: {}

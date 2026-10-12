@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 9e82f11f840f026429812b39c2eb7704
+timeCreated: 1791817889
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  name:
+  externalObjects: {}
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TH_B_Small
+  fontNames:
+  - TH_B_Small
+  fallbackFontReferences: []
+  customCharacters:
+  fontRenderingMode: 0
+  output:
+    hasEmptyFontData: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData:
+  assetBundleName:
+  assetBundleVariant:

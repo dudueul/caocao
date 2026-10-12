@@ -1,0 +1,82 @@
+using System.Collections.Specialized;
+
+namespace WebSocketSharp.Net
+{
+	internal abstract class AuthenticationBase
+	{
+		private AuthenticationSchemes _scheme;
+
+		internal NameValueCollection Parameters;
+
+		public string Algorithm
+		{
+			get
+			{
+				return null;
+			}
+		}
+
+		public string Nonce
+		{
+			get
+			{
+				return null;
+			}
+		}
+
+		public string Opaque
+		{
+			get
+			{
+				return null;
+			}
+		}
+
+		public string Qop
+		{
+			get
+			{
+				return null;
+			}
+		}
+
+		public string Realm
+		{
+			get
+			{
+				return null;
+			}
+		}
+
+		public AuthenticationSchemes Scheme
+		{
+			get
+			{
+				return AuthenticationSchemes.None;
+			}
+		}
+
+		protected AuthenticationBase(AuthenticationSchemes scheme, NameValueCollection parameters)
+		{
+		}
+
+		internal static string CreateNonceValue()
+		{
+			return null;
+		}
+
+		internal static NameValueCollection ParseParameters(string value)
+		{
+			return null;
+		}
+
+		internal abstract string ToBasicString();
+
+		internal abstract string ToDigestString();
+
+		public override string ToString()
+		{
+			return null;
+		}
+	}
+}

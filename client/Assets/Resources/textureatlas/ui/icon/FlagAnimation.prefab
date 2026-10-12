@@ -1,0 +1,321 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: FlagAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  material: {fileID: 2100000, guid: 5a1452c365533d34db4f515767fa2414, type: 2}
+  mSprites:
+  - name: Flag_GameStart_01
+    x: 221
+    y: 320
+    width: 114
+    height: 90
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 55
+    paddingTop: 33
+    paddingBottom: 42
+  - name: Flag_GameStart_02
+    x: 344
+    y: 237
+    width: 116
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 53
+    paddingTop: 43
+    paddingBottom: 42
+  - name: Flag_GameStart_03
+    x: 229
+    y: 234
+    width: 114
+    height: 83
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 55
+    paddingTop: 40
+    paddingBottom: 42
+  - name: Flag_GameStart_04
+    x: 229
+    y: 149
+    width: 109
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 60
+    paddingTop: 39
+    paddingBottom: 42
+  - name: Flag_GameStart_05
+    x: 108
+    y: 148
+    width: 113
+    height: 86
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 56
+    paddingTop: 37
+    paddingBottom: 42
+  - name: Flag_GameStart_06
+    x: 108
+    y: 63
+    width: 115
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 54
+    paddingTop: 39
+    paddingBottom: 42
+  - name: Flag_GameStart_07
+    x: 229
+    y: 64
+    width: 108
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 61
+    paddingTop: 39
+    paddingBottom: 42
+  - name: Flag_GameStart_08
+    x: 115
+    y: 418
+    width: 116
+    height: 94
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 53
+    paddingTop: 29
+    paddingBottom: 42
+  - name: Flag_GameStart_09
+    x: 0
+    y: 305
+    width: 107
+    height: 105
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 62
+    paddingTop: 18
+    paddingBottom: 42
+  - name: Flag_GameStart_10
+    x: 0
+    y: 204
+    width: 106
+    height: 100
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 63
+    paddingTop: 23
+    paddingBottom: 42
+  - name: Flag_GameStart_11
+    x: 336
+    y: 318
+    width: 111
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 58
+    paddingTop: 31
+    paddingBottom: 42
+  - name: Flag_GameStart_12
+    x: 0
+    y: 411
+    width: 114
+    height: 101
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 55
+    paddingTop: 22
+    paddingBottom: 42
+  - name: Flag_GameStart_13
+    x: 232
+    y: 416
+    width: 111
+    height: 96
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 58
+    paddingTop: 27
+    paddingBottom: 42
+  - name: Flag_GameStart_14
+    x: 108
+    y: 235
+    width: 120
+    height: 82
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 49
+    paddingTop: 41
+    paddingBottom: 42
+  - name: Flag_GameStart_15
+    x: 339
+    y: 156
+    width: 111
+    height: 77
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 58
+    paddingTop: 46
+    paddingBottom: 42
+  - name: Flag_GameStart_16
+    x: 339
+    y: 5
+    width: 111
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 58
+    paddingTop: 49
+    paddingBottom: 42
+  - name: Flag_GameStart_17
+    x: 339
+    y: 80
+    width: 113
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 56
+    paddingTop: 48
+    paddingBottom: 42
+  - name: Flag_GameStart_18
+    x: 108
+    y: 318
+    width: 112
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 57
+    paddingTop: 31
+    paddingBottom: 42
+  - name: Flag_GameStart_19
+    x: 344
+    y: 418
+    width: 113
+    height: 94
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 56
+    paddingTop: 29
+    paddingBottom: 42
+  - name: Flag_Spear
+    x: 0
+    y: 85
+    width: 88
+    height: 118
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 38
+    paddingRight: 101
+    paddingTop: 52
+    paddingBottom: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+  origTexWidth: 512
+  origTexHeight: 512
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

@@ -1,0 +1,41 @@
+package com.bumptech.glide.signature;
+
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import com.bumptech.glide.load.Key;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+
+/* JADX INFO: loaded from: /home/jtk/work/caocao/extracted/apk/classes.dex */
+public final class ApplicationVersionSignature {
+    private static final ConcurrentHashMap<String, Key> PACKAGE_NAME_TO_KEY = new ConcurrentHashMap<>();
+
+    private ApplicationVersionSignature() {
+    }
+
+    public static Key obtain(Context context) {
+        String packageName = context.getPackageName();
+        Key key = PACKAGE_NAME_TO_KEY.get(packageName);
+        if (key != null) {
+            return key;
+        }
+        Key keyObtainVersionSignature = obtainVersionSignature(context);
+        Key keyPutIfAbsent = PACKAGE_NAME_TO_KEY.putIfAbsent(packageName, keyObtainVersionSignature);
+        return keyPutIfAbsent == null ? keyObtainVersionSignature : keyPutIfAbsent;
+    }
+
+    private static Key obtainVersionSignature(Context context) {
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return new StringSignature(packageInfo != null ? String.valueOf(packageInfo.versionCode) : UUID.randomUUID().toString());
+    }
+
+    static void reset() {
+        PACKAGE_NAME_TO_KEY.clear();
+    }
+}

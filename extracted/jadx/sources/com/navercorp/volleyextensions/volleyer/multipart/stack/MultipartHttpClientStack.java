@@ -1,0 +1,146 @@
+package com.navercorp.volleyextensions.volleyer.multipart.stack;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.navercorp.volleyextensions.volleyer.multipart.HttpEntityWrapper;
+import com.navercorp.volleyextensions.volleyer.multipart.Multipart;
+import com.navercorp.volleyextensions.volleyer.multipart.MultipartContainer;
+import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpHead;
+import org.apache.http.client.methods.HttpOptions;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.client.methods.HttpTrace;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+
+/* JADX INFO: loaded from: /home/jtk/work/caocao/extracted/apk/classes.dex */
+public class MultipartHttpClientStack implements MultipartHttpStack {
+    private static final String HEADER_CONTENT_TYPE = "Content-Type";
+    protected final HttpClient mClient;
+
+    public static final class HttpPatch extends HttpEntityEnclosingRequestBase {
+        public static final String METHOD_NAME = "PATCH";
+
+        public HttpPatch() {
+        }
+
+        public HttpPatch(String str) {
+            setURI(URI.create(str));
+        }
+
+        public HttpPatch(URI uri) {
+            setURI(uri);
+        }
+
+        @Override // org.apache.http.client.methods.HttpRequestBase, org.apache.http.client.methods.HttpUriRequest
+        public String getMethod() {
+            return "PATCH";
+        }
+    }
+
+    public MultipartHttpClientStack(HttpClient httpClient) {
+        this.mClient = httpClient;
+    }
+
+    private static void addHeaders(HttpUriRequest httpUriRequest, Map<String, String> map) {
+        for (String str : map.keySet()) {
+            httpUriRequest.setHeader(str, map.get(str));
+        }
+    }
+
+    static HttpUriRequest createHttpRequest(Request<?> request, Map<String, String> map) throws AuthFailureError {
+        switch (request.getMethod()) {
+            case -1:
+                byte[] postBody = request.getPostBody();
+                if (postBody == null) {
+                    return new HttpGet(request.getUrl());
+                }
+                HttpPost httpPost = new HttpPost(request.getUrl());
+                httpPost.addHeader("Content-Type", request.getPostBodyContentType());
+                httpPost.setEntity(new ByteArrayEntity(postBody));
+                return httpPost;
+            case 0:
+                return new HttpGet(request.getUrl());
+            case 1:
+                HttpPost httpPost2 = new HttpPost(request.getUrl());
+                setEntityIfNonEmptyMultipart(httpPost2, request);
+                return httpPost2;
+            case 2:
+                HttpPut httpPut = new HttpPut(request.getUrl());
+                setEntityIfNonEmptyMultipart(httpPut, request);
+                return httpPut;
+            case 3:
+                return new HttpDelete(request.getUrl());
+            case 4:
+                return new HttpHead(request.getUrl());
+            case 5:
+                return new HttpOptions(request.getUrl());
+            case 6:
+                return new HttpTrace(request.getUrl());
+            case 7:
+                HttpPatch httpPatch = new HttpPatch(request.getUrl());
+                httpPatch.addHeader("Content-Type", request.getBodyContentType());
+                setEntityIfNonEmptyMultipart(httpPatch, request);
+                return httpPatch;
+            default:
+                throw new IllegalStateException("Unknown request method.");
+        }
+    }
+
+    private static HttpEntity createMultipartHttpEntity(Multipart multipart) {
+        return new HttpEntityWrapper(multipart);
+    }
+
+    private static List<NameValuePair> getPostParameterPairs(Map<String, String> map) {
+        ArrayList arrayList = new ArrayList(map.size());
+        for (String str : map.keySet()) {
+            arrayList.add(new BasicNameValuePair(str, map.get(str)));
+        }
+        return arrayList;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    private static void setEntityIfNonEmptyMultipart(HttpEntityEnclosingRequestBase httpEntityEnclosingRequestBase, Request<?> request) throws AuthFailureError {
+        Multipart multipart;
+        if (request instanceof MultipartContainer) {
+            MultipartContainer multipartContainer = (MultipartContainer) request;
+            if (!multipartContainer.hasMultipart() || (multipart = multipartContainer.getMultipart()) == null) {
+                return;
+            }
+            httpEntityEnclosingRequestBase.addHeader("Content-Type", multipart.getContentType());
+            httpEntityEnclosingRequestBase.setEntity(createMultipartHttpEntity(multipart));
+        }
+    }
+
+    protected void onPrepareRequest(HttpUriRequest httpUriRequest) throws IOException {
+    }
+
+    @Override // com.android.volley.toolbox.HttpStack
+    public HttpResponse performRequest(Request<?> request, Map<String, String> map) throws IOException, AuthFailureError {
+        HttpUriRequest httpUriRequestCreateHttpRequest = createHttpRequest(request, map);
+        addHeaders(httpUriRequestCreateHttpRequest, map);
+        addHeaders(httpUriRequestCreateHttpRequest, request.getHeaders());
+        onPrepareRequest(httpUriRequestCreateHttpRequest);
+        HttpParams params = httpUriRequestCreateHttpRequest.getParams();
+        int timeoutMs = request.getTimeoutMs();
+        HttpConnectionParams.setConnectionTimeout(params, BaseImageDownloader.DEFAULT_HTTP_CONNECT_TIMEOUT);
+        HttpConnectionParams.setSoTimeout(params, timeoutMs);
+        return this.mClient.execute(httpUriRequestCreateHttpRequest);
+    }
+}

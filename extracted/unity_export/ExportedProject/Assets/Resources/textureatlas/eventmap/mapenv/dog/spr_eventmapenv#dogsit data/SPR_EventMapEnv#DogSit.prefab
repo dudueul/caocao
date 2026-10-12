@@ -1,0 +1,588 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: SPR_EventMapEnv#DogSit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f28a10f064b0573af11a2e931d98da, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  version: 3
+  materialIdsValid: 1
+  needMaterialInstance: 0
+  spriteDefinitions:
+  - name: EventEnv_Dog_Sit09
+    boundsData:
+    - {x: -0.024999976, y: 0.17, z: 0}
+    - {x: 0.37, y: 0.38000003, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.16000003, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.36, z: 0}
+    - {x: 0.16000003, y: 0.36, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6250078, y: 3.90625E-06}
+    - {x: 0.6250078, y: 0.14452735}
+    - {x: 0.9218672, y: 3.90625E-06}
+    - {x: 0.9218672, y: 0.14452735}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: 005e75cb5246c084d877c6ea0fac85d9
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit10
+    boundsData:
+    - {x: -0.03999999, y: 0.17, z: 0}
+    - {x: 0.33999997, y: 0.38000003, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.13, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.36, z: 0}
+    - {x: 0.13, y: 0.36, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6093828, y: 0.4062539}
+    - {x: 0.6093828, y: 0.53905857}
+    - {x: 0.9062422, y: 0.4062539}
+    - {x: 0.9062422, y: 0.53905857}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: 1e5c47e3fdb9ed743b54a0d38da87ff6
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit00
+    boundsData:
+    - {x: -0.029999971, y: 0.165, z: 0}
+    - {x: 0.36, y: 0.37000003, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.15000004, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.35000002, z: 0}
+    - {x: 0.15000004, y: 0.35000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 7.8125E-06, y: 0.2890664}
+    - {x: 7.8125E-06, y: 0.4296836}
+    - {x: 0.2890547, y: 0.2890664}
+    - {x: 0.2890547, y: 0.4296836}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: 5723998d0dac8c448abcf2051bf225a5
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit02
+    boundsData:
+    - {x: -0.014999986, y: 0.165, z: 0}
+    - {x: 0.39, y: 0.37000003, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.18, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.35000002, z: 0}
+    - {x: 0.18, y: 0.35000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 7.8125E-06, y: 3.90625E-06}
+    - {x: 0.3046797, y: 3.90625E-06}
+    - {x: 7.8125E-06, y: 0.14452735}
+    - {x: 0.3046797, y: 0.14452735}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: 6a2a060e7a9d2874bb269a05a2e4e979
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit08
+    boundsData:
+    - {x: -0.0049999654, y: 0.15499999, z: 0}
+    - {x: 0.41000003, y: 0.35, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.20000005, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.32999998, z: 0}
+    - {x: 0.20000005, y: 0.32999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3046953, y: 3.90625E-06}
+    - {x: 0.6249922, y: 3.90625E-06}
+    - {x: 0.3046953, y: 0.13671485}
+    - {x: 0.6249922, y: 0.13671485}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: 8da88ac0f04f13b45b73a063b4c932dc
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit11
+    boundsData:
+    - {x: -0.034999967, y: 0.165, z: 0}
+    - {x: 0.35000002, y: 0.37000003, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.14000005, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.35000002, z: 0}
+    - {x: 0.14000005, y: 0.35000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 7.8125E-06, y: 0.4296914}
+    - {x: 7.8125E-06, y: 0.5664023}
+    - {x: 0.2890547, y: 0.4296914}
+    - {x: 0.2890547, y: 0.5664023}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: a67ce03bfa7dec5498bbcb7ded91b23d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit05
+    boundsData:
+    - {x: -0.0049999654, y: 0.14, z: 0}
+    - {x: 0.41000003, y: 0.32000002, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.20000005, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.3, z: 0}
+    - {x: 0.20000005, y: 0.3, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6093828, y: 0.2812539}
+    - {x: 0.9296797, y: 0.2812539}
+    - {x: 0.6093828, y: 0.4062461}
+    - {x: 0.9296797, y: 0.4062461}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: aa5fce2431f52b94c90505cd40f18c4d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit07
+    boundsData:
+    - {x: -0.0049999654, y: 0.145, z: 0}
+    - {x: 0.41000003, y: 0.33, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.20000005, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.31, z: 0}
+    - {x: 0.20000005, y: 0.31, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.2890703, y: 0.2734414}
+    - {x: 0.6093672, y: 0.2734414}
+    - {x: 0.2890703, y: 0.40233985}
+    - {x: 0.6093672, y: 0.40233985}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: acb20a24ebbd09847a859cd61bc716a1
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit04
+    boundsData:
+    - {x: -0.00999999, y: 0.15499999, z: 0}
+    - {x: 0.39999998, y: 0.35, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.19, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.32999998, z: 0}
+    - {x: 0.19, y: 0.32999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3046953, y: 0.13672265}
+    - {x: 0.6171797, y: 0.13672265}
+    - {x: 0.3046953, y: 0.2734336}
+    - {x: 0.6171797, y: 0.2734336}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: cf7070d7bf9e0074fa33578b88fd93c2
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit03
+    boundsData:
+    - {x: -0.014999986, y: 0.15499999, z: 0}
+    - {x: 0.39, y: 0.35, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.18, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.32999998, z: 0}
+    - {x: 0.18, y: 0.32999998, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6171953, y: 0.14453515}
+    - {x: 0.9218672, y: 0.14453515}
+    - {x: 0.6171953, y: 0.2812461}
+    - {x: 0.9218672, y: 0.2812461}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: dc1c074a3aad39d40b0e521c3da9fe08
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit06
+    boundsData:
+    - {x: -0.0049999654, y: 0.14, z: 0}
+    - {x: 0.41000003, y: 0.32000002, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.20000005, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.3, z: 0}
+    - {x: 0.20000005, y: 0.3, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.2890703, y: 0.40234765}
+    - {x: 0.6093672, y: 0.40234765}
+    - {x: 0.2890703, y: 0.5273398}
+    - {x: 0.6093672, y: 0.5273398}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: e2c38de858a72ba4a8604f309b2ae806
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: EventEnv_Dog_Sit01
+    boundsData:
+    - {x: -0.024999976, y: 0.165, z: 0}
+    - {x: 0.37, y: 0.37000003, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01999998, y: 0.19, z: 0}
+    - {x: 1, y: 1, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.20999998, y: -0.02000001, z: 0}
+    - {x: 0.16000003, y: -0.02000001, z: 0}
+    - {x: -0.20999998, y: 0.35000002, z: 0}
+    - {x: 0.16000003, y: 0.35000002, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 7.8125E-06, y: 0.14453515}
+    - {x: 0.2890547, y: 0.14453515}
+    - {x: 7.8125E-06, y: 0.2890586}
+    - {x: 0.2890547, y: 0.2890586}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+    materialId: 0
+    sourceTextureGUID: f98a60f968adbc9428826db4b7eacce1
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  premultipliedAlpha: 0
+  material: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: c4aa63042f37a7c47a4d9ea11dc5f54f, type: 2}
+  textures:
+  - {fileID: 2800000, guid: a5e949d75a7f96a42a2805987e9bf1ad, type: 3}
+  textureFilterMode: 0
+  textureMipMaps: 0
+  allowMultipleAtlases: 0
+  spriteCollectionGUID: 3cf21e266ca27bd4694ddba07da19352
+  spriteCollectionName: SPR_EventMapEnv#DogSit
+  assetName:
+  loadable: 0
+  sizeDef:
+    type: 1
+    orthoSize: 10
+    pixelsPerMeter: 100
+    width: 960
+    height: 640
+  invOrthoSize: 2
+  halfTargetHeight: 50
+  buildKey: 1558015137
+  dataGuid: 0aa566a5e7fd63b459aedd214118266f
+  managedSpriteCollection: 0
+  hasPlatformData: 0
+  spriteCollectionPlatforms: []
+  spriteCollectionPlatformGUIDs: []
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

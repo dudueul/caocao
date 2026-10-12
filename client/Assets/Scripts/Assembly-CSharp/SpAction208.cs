@@ -1,0 +1,15 @@
+public class SpAction208 : SpActionApplicableBase
+{
+	public override EnumData.spAction id
+	{
+		get
+		{
+			return (EnumData.spAction)0;
+		}
+	}
+
+	public override float OnGetCalculatedFloatBySkillID(int skillID, float value)
+	{
+		return 0f;
+	}
+}

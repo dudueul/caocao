@@ -1,0 +1,53 @@
+package com.google.android.gms.auth;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+import java.util.ArrayList;
+
+/* JADX INFO: loaded from: /home/jtk/work/caocao/extracted/apk/classes.dex */
+public final class zzn implements Parcelable.Creator<TokenData> {
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ TokenData createFromParcel(Parcel parcel) {
+        int iValidateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        ArrayList<String> arrayListCreateStringList = null;
+        boolean z = false;
+        boolean z2 = false;
+        Long longObject = null;
+        String strCreateString = null;
+        int i = 0;
+        while (parcel.dataPosition() < iValidateObjectHeader) {
+            int header = SafeParcelReader.readHeader(parcel);
+            switch (SafeParcelReader.getFieldId(header)) {
+                case 1:
+                    i = SafeParcelReader.readInt(parcel, header);
+                    break;
+                case 2:
+                    strCreateString = SafeParcelReader.createString(parcel, header);
+                    break;
+                case 3:
+                    longObject = SafeParcelReader.readLongObject(parcel, header);
+                    break;
+                case 4:
+                    z2 = SafeParcelReader.readBoolean(parcel, header);
+                    break;
+                case 5:
+                    z = SafeParcelReader.readBoolean(parcel, header);
+                    break;
+                case 6:
+                    arrayListCreateStringList = SafeParcelReader.createStringList(parcel, header);
+                    break;
+                default:
+                    SafeParcelReader.skipUnknownField(parcel, header);
+                    break;
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, iValidateObjectHeader);
+        return new TokenData(i, strCreateString, longObject, z2, z, arrayListCreateStringList);
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ TokenData[] newArray(int i) {
+        return new TokenData[i];
+    }
+}

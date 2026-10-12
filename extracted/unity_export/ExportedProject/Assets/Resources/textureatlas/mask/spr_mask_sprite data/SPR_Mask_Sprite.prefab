@@ -1,0 +1,336 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: SPR_Mask_Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f28a10f064b0573af11a2e931d98da, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  version: 3
+  materialIdsValid: 1
+  needMaterialInstance: 0
+  spriteDefinitions:
+  - name: AssaultShip_F00
+    boundsData:
+    - {x: -0.01000002, y: 0.014999986, z: 0}
+    - {x: 0.71999997, y: 0.80999994, z: 0}
+    untrimmedBoundsData:
+    - {x: -0.01000002, y: 0.07999997, z: 0}
+    - {x: 0.97999996, y: 0.9799999, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.37, y: -0.39, z: 0}
+    - {x: 0.34999996, y: -0.39, z: 0}
+    - {x: -0.37, y: 0.41999996, z: 0}
+    - {x: 0.34999996, y: 0.41999996, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6210977, y: 3.90625E-06}
+    - {x: 0.6210977, y: 0.2812461}
+    - {x: 0.93749607, y: 3.90625E-06}
+    - {x: 0.93749607, y: 0.2812461}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 0045dcd7aaec82146a6560c289bcf72a, type: 2}
+    materialId: 0
+    sourceTextureGUID: 3e8965f351189e44d9c4d3736d6faaa9
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Ship_F00
+    boundsData:
+    - {x: 0, y: 0.039999977, z: 0}
+    - {x: 0.79999995, y: 0.76, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.07999997, z: 0}
+    - {x: 0.97999996, y: 0.9799999, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.39999998, y: -0.34, z: 0}
+    - {x: 0.39999998, y: -0.34, z: 0}
+    - {x: -0.39999998, y: 0.41999996, z: 0}
+    - {x: 0.39999998, y: 0.41999996, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 3.90625E-06, y: 3.90625E-06}
+    - {x: 0.3124961, y: 3.90625E-06}
+    - {x: 3.90625E-06, y: 0.2968711}
+    - {x: 0.3124961, y: 0.2968711}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 0045dcd7aaec82146a6560c289bcf72a, type: 2}
+    materialId: 0
+    sourceTextureGUID: 5143b15c9bfa5a44697ff38d47ade247
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Ship_B00
+    boundsData:
+    - {x: 0, y: 0.07999997, z: 0}
+    - {x: 0.79999995, y: 0.67999995, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.07999997, z: 0}
+    - {x: 0.97999996, y: 0.9799999, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.39999998, y: -0.26000002, z: 0}
+    - {x: 0.39999998, y: -0.26000002, z: 0}
+    - {x: -0.39999998, y: 0.41999996, z: 0}
+    - {x: 0.39999998, y: 0.41999996, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.5429727, y: 0.52344143}
+    - {x: 0.8554648, y: 0.52344143}
+    - {x: 0.5429727, y: 0.78905857}
+    - {x: 0.8554648, y: 0.78905857}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 0045dcd7aaec82146a6560c289bcf72a, type: 2}
+    materialId: 0
+    sourceTextureGUID: b4a197be05f16164e9a290c620f8c343
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Ship_L00
+    boundsData:
+    - {x: 0, y: -0.00500001, z: 0}
+    - {x: 0.96, y: 0.5899999, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0.97999996, y: 0.97999996, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.48, y: -0.29999998, z: 0}
+    - {x: 0.48, y: -0.29999998, z: 0}
+    - {x: -0.48, y: 0.28999996, z: 0}
+    - {x: 0.48, y: 0.28999996, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3125039, y: 0.29297265}
+    - {x: 0.3125039, y: 0.6679648}
+    - {x: 0.5429648, y: 0.29297265}
+    - {x: 0.5429648, y: 0.6679648}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 0045dcd7aaec82146a6560c289bcf72a, type: 2}
+    materialId: 0
+    sourceTextureGUID: f985e2060ac4f014689511a72a483685
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: AssaultShip_L00
+    boundsData:
+    - {x: -0.015000001, y: 1.4901161E-08, z: 0}
+    - {x: 0.92999995, y: 0.62, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0.97999996, y: 0.97999996, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.48, y: -0.30999997, z: 0}
+    - {x: 0.45, y: -0.30999997, z: 0}
+    - {x: -0.48, y: 0.31, z: 0}
+    - {x: 0.45, y: 0.31, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.6210977, y: 0.2812539}
+    - {x: 0.98437107, y: 0.2812539}
+    - {x: 0.6210977, y: 0.52343357}
+    - {x: 0.98437107, y: 0.52343357}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 0045dcd7aaec82146a6560c289bcf72a, type: 2}
+    materialId: 0
+    sourceTextureGUID: 2dafd20bdc1ec824dab91ee6fea98e8b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: AssaultShip_B00
+    boundsData:
+    - {x: -0.004999995, y: 0.105000004, z: 0}
+    - {x: 0.78999996, y: 0.75, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.09, z: 0}
+    - {x: 0.97999996, y: 0.97999996, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.39999998, y: -0.26999998, z: 0}
+    - {x: 0.39, y: -0.26999998, z: 0}
+    - {x: -0.39999998, y: 0.48, z: 0}
+    - {x: 0.39, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3125039, y: 3.90625E-06}
+    - {x: 0.6210898, y: 3.90625E-06}
+    - {x: 0.3125039, y: 0.29296485}
+    - {x: 0.6210898, y: 0.29296485}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: 0045dcd7aaec82146a6560c289bcf72a, type: 2}
+    materialId: 0
+    sourceTextureGUID: ea19dedd1b484b949b78837cbb99c3e0
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  premultipliedAlpha: 0
+  material: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: 0045dcd7aaec82146a6560c289bcf72a, type: 2}
+  textures:
+  - {fileID: 2800000, guid: 54c2d01eaee5b4740a25efcc0d4e5536, type: 3}
+  textureFilterMode: 0
+  textureMipMaps: 0
+  allowMultipleAtlases: 0
+  spriteCollectionGUID: 4656acb00ff0bf447a550e459b1cc83b
+  spriteCollectionName: SPR_Mask_Sprite
+  assetName:
+  loadable: 0
+  sizeDef:
+    type: 1
+    orthoSize: 10
+    pixelsPerMeter: 100
+    width: 960
+    height: 640
+  invOrthoSize: 2
+  halfTargetHeight: 50
+  buildKey: 753151356
+  dataGuid: f754ec14eff5a49448d4762dee6237e9
+  managedSpriteCollection: 0
+  hasPlatformData: 0
+  spriteCollectionPlatforms: []
+  spriteCollectionPlatformGUIDs: []
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

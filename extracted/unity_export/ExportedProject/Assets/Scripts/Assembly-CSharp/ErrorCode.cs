@@ -1,0 +1,26 @@
+public static class ErrorCode
+{
+	public enum UserItem
+	{
+		SUCCEED = 0,
+		Errors = 10000,
+		EARNITEM_CONSUMABLE_MAX_STACK_OVERFLOW = 10001,
+		USEITEM_INVALID_COUNT_INPUT = 10002,
+		USEITEM_INVALID_ID_INPUT = 10003,
+		USEITEM_INVALID_SRLID_INPUT = 10004
+	}
+
+	public enum MapObjectChangeStatus
+	{
+		SUCCEED = 0,
+		FAIL = 10000,
+		WRONG_TYPE = 10001,
+		WRONG_VALUE = 10002,
+		NOT_IMPLEMENTED_STATUS_ID = 10003
+	}
+
+	public enum HTTPResponse
+	{
+		LACK_OF_MONEY = -203
+	}
+}

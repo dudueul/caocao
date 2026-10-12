@@ -1,0 +1,756 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: SPR_Mask_Forest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f28a10f064b0573af11a2e931d98da, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  version: 3
+  materialIdsValid: 1
+  needMaterialInstance: 0
+  spriteDefinitions:
+  - name: Forest_02
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3906289, y: 0.2382832}
+    - {x: 0.75780857, y: 0.2382832}
+    - {x: 0.3906289, y: 0.34570116}
+    - {x: 0.75780857, y: 0.34570116}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 0b83057adabd19d499e5728c1b62a6cd
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Forest_04
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.21000001, z: 0}
+    - {x: 0.93999994, y: 0.56, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.49, z: 0}
+    - {x: 0.46999997, y: 0.49, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.007816406, y: 0.003908203}
+    - {x: 0.3749961, y: 0.003908203}
+    - {x: 0.007816406, y: 0.1132793}
+    - {x: 0.3749961, y: 0.1132793}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: dcb638aab00a8aa4bbf2703feddee1ac
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Forest_03
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.21000001, z: 0}
+    - {x: 0.93999994, y: 0.56, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.49, z: 0}
+    - {x: 0.46999997, y: 0.49, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3906289, y: 0.003908203}
+    - {x: 0.75780857, y: 0.003908203}
+    - {x: 0.3906289, y: 0.1132793}
+    - {x: 0.75780857, y: 0.1132793}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: c3305eacd5c63ef4c9b725bdeff5b814
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Forest_01
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3906289, y: 0.3535176}
+    - {x: 0.75780857, y: 0.3535176}
+    - {x: 0.3906289, y: 0.46093553}
+    - {x: 0.75780857, y: 0.46093553}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 72cbc15e2700cec41ac5a90911bb5814
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: Forest_05
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.21000001, z: 0}
+    - {x: 0.93999994, y: 0.56, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.49, z: 0}
+    - {x: 0.46999997, y: 0.49, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.77344143, y: 0.003908203}
+    - {x: 0.77344143, y: 0.18749805}
+    - {x: 0.99218357, y: 0.003908203}
+    - {x: 0.99218357, y: 0.18749805}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 13be1ebe1ae170b4bb98ec763e5d14ce
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: PeachForest_03
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.21000001, z: 0}
+    - {x: 0.93999994, y: 0.56, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.49, z: 0}
+    - {x: 0.46999997, y: 0.49, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.007816406, y: 0.1210957}
+    - {x: 0.3749961, y: 0.1210957}
+    - {x: 0.007816406, y: 0.2304668}
+    - {x: 0.3749961, y: 0.2304668}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 9bac53551bc59ec4fa844e39907c5aaf
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: SnowyForest_04
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.21000001, z: 0}
+    - {x: 0.93999994, y: 0.56, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.49, z: 0}
+    - {x: 0.46999997, y: 0.49, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3906289, y: 0.1210957}
+    - {x: 0.75780857, y: 0.1210957}
+    - {x: 0.3906289, y: 0.2304668}
+    - {x: 0.75780857, y: 0.2304668}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 3bdac627e17cb844bbec6b12345bf48e
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: PeachForest_02
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.77344143, y: 0.38672072}
+    - {x: 0.77344143, y: 0.57031053}
+    - {x: 0.9882773, y: 0.38672072}
+    - {x: 0.9882773, y: 0.57031053}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: e4e8df06456caea4290a99659799987a
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: SnowyForest_01
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.007816406, y: 0.35547072}
+    - {x: 0.3749961, y: 0.35547072}
+    - {x: 0.007816406, y: 0.46288866}
+    - {x: 0.3749961, y: 0.46288866}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 50649c9bb2936724f8c8d63ed3d5f8a2
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: SnowyForest_02
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3906289, y: 0.46875197}
+    - {x: 0.75780857, y: 0.46875197}
+    - {x: 0.3906289, y: 0.5761699}
+    - {x: 0.75780857, y: 0.5761699}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 8781dd2521178ab4d967c1ab55e7277c
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: SnowyForest_03
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.21000001, z: 0}
+    - {x: 0.93999994, y: 0.56, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.49, z: 0}
+    - {x: 0.46999997, y: 0.49, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.77344143, y: 0.19531445}
+    - {x: 0.77344143, y: 0.37890428}
+    - {x: 0.99218357, y: 0.19531445}
+    - {x: 0.99218357, y: 0.37890428}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: addc0a18473187e4aa8a994b72a4af6a
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: SnowyForest_05
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.77344143, y: 0.57812697}
+    - {x: 0.77344143, y: 0.7617168}
+    - {x: 0.9882773, y: 0.57812697}
+    - {x: 0.9882773, y: 0.7617168}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: d62be3c7647cebc4a8786f3887aa81e0
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: PeachForest_05
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.007816406, y: 0.4707051}
+    - {x: 0.3749961, y: 0.4707051}
+    - {x: 0.007816406, y: 0.57812303}
+    - {x: 0.3749961, y: 0.57812303}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 90ea2419418c5d54c975ef2e974d403e
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: PeachForest_04
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.21000001, z: 0}
+    - {x: 0.93999994, y: 0.56, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.49, z: 0}
+    - {x: 0.46999997, y: 0.49, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.007816406, y: 0.2382832}
+    - {x: 0.3749961, y: 0.2382832}
+    - {x: 0.007816406, y: 0.34765428}
+    - {x: 0.3749961, y: 0.34765428}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: 28b304aa1f1ce12469d03fab7d90604b
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name:
+    boundsData:
+    - {x: 0.31, y: -0.31, z: 0}
+    - {x: 0.64, y: 0.64, z: 0}
+    untrimmedBoundsData:
+    - {x: 0.31, y: -0.31, z: 0}
+    - {x: 0.64, y: 0.64, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.01, y: -0.63, z: 0}
+    - {x: 0.63, y: -0.63, z: 0}
+    - {x: -0.01, y: 0.00999999, z: 0}
+    - {x: 0.63, y: 0.00999999, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.007816406, y: 0.58593947}
+    - {x: 0.015621094, y: 0.58593947}
+    - {x: 0.007816406, y: 0.5898418}
+    - {x: 0.015621094, y: 0.5898418}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID:
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  - name: PeachForest_01
+    boundsData:
+    - {x: -1.4901161E-08, y: 0.205, z: 0}
+    - {x: 0.93999994, y: 0.55, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0.4, z: 0}
+    - {x: 0.96, y: 0.96, z: 0}
+    texelSize: {x: 0.01, y: 0.01}
+    positions:
+    - {x: -0.47, y: -0.07, z: 0}
+    - {x: 0.46999997, y: -0.07, z: 0}
+    - {x: -0.47, y: 0.48, z: 0}
+    - {x: 0.46999997, y: 0.48, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: 0.3906289, y: 0.58398634}
+    - {x: 0.75780857, y: 0.58398634}
+    - {x: 0.3906289, y: 0.6914043}
+    - {x: 0.75780857, y: 0.6914043}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+    materialId: 0
+    sourceTextureGUID: e05ba4fd07500cd4bab8fced7a921e5d
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 0
+    complexGeometry: 0
+    physicsEngine: 0
+    colliderType: 0
+    customColliders: []
+    colliderVertices: []
+    colliderIndicesFwd:
+    colliderIndicesBack:
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
+  premultipliedAlpha: 0
+  material: {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: fffd9cd6bfe431e468fa7b71e017f8bb, type: 2}
+  textures:
+  - {fileID: 2800000, guid: bc04d77dbce619d4eb367cc685704759, type: 3}
+  textureFilterMode: 1
+  textureMipMaps: 0
+  allowMultipleAtlases: 0
+  spriteCollectionGUID: e12f6ea51c8912a4a930851b647673f6
+  spriteCollectionName: SPR_Mask_Forest
+  assetName:
+  loadable: 0
+  sizeDef:
+    type: 1
+    orthoSize: 10
+    pixelsPerMeter: 100
+    width: 960
+    height: 640
+  invOrthoSize: 2
+  halfTargetHeight: 50
+  buildKey: 462051755
+  dataGuid: 4de723fb4cf2ef34485d947eec22a333
+  managedSpriteCollection: 0
+  hasPlatformData: 0
+  spriteCollectionPlatforms: []
+  spriteCollectionPlatformGUIDs: []
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

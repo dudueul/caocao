@@ -1,0 +1,1062 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: Cha_info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  material: {fileID: 2100000, guid: 8de99c9c5514d2a45a4979f35de809b2, type: 2}
+  mSprites:
+  - name: cha_frame_bg_back
+    x: 421
+    y: 23
+    width: 38
+    height: 38
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_back_cash_01
+    x: 381
+    y: 23
+    width: 38
+    height: 38
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_back_cash_02
+    x: 473
+    y: 412
+    width: 100
+    height: 100
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_01_h256
+    x: 381
+    y: 224
+    width: 84
+    height: 72
+    borderLeft: 20
+    borderRight: 20
+    borderTop: 30
+    borderBottom: 30
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_02_h256
+    x: 381
+    y: 298
+    width: 80
+    height: 94
+    borderLeft: 35
+    borderRight: 35
+    borderTop: 42
+    borderBottom: 42
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_a
+    x: 177
+    y: 150
+    width: 202
+    height: 86
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 34
+    borderBottom: 46
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_a_deco
+    x: 575
+    y: 436
+    width: 186
+    height: 38
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 1
+  - name: cha_frame_bg_grade_b
+    x: 177
+    y: 326
+    width: 202
+    height: 86
+    borderLeft: 41
+    borderRight: 41
+    borderTop: 36
+    borderBottom: 36
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_b_1
+    x: 177
+    y: 238
+    width: 202
+    height: 86
+    borderLeft: 36
+    borderRight: 36
+    borderTop: 36
+    borderBottom: 36
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_bottom1
+    x: 575
+    y: 476
+    width: 202
+    height: 36
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_bottom2
+    x: 779
+    y: 476
+    width: 202
+    height: 36
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_c
+    x: 687
+    y: 374
+    width: 110
+    height: 60
+    borderLeft: 23
+    borderRight: 23
+    borderTop: 28
+    borderBottom: 28
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_d
+    x: 575
+    y: 374
+    width: 110
+    height: 60
+    borderLeft: 16
+    borderRight: 16
+    borderTop: 18
+    borderBottom: 18
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_s
+    x: 177
+    y: 414
+    width: 202
+    height: 98
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 30
+    borderBottom: 44
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_s_deco01
+    x: 381
+    y: 394
+    width: 90
+    height: 118
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_bg_grade_s_deco02
+    x: 763
+    y: 449
+    width: 206
+    height: 25
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 1
+  - name: cha_frame_cost_bg
+    x: 303
+    y: 3
+    width: 54
+    height: 60
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_job_b
+    x: 407
+    y: 1
+    width: 10
+    height: 20
+    borderLeft: 3
+    borderRight: 3
+    borderTop: 4
+    borderBottom: 4
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_job_bg
+    x: 110
+    y: 6
+    width: 12
+    height: 26
+    borderLeft: 6
+    borderRight: 6
+    borderTop: 4
+    borderBottom: 4
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_job_p
+    x: 461
+    y: 41
+    width: 10
+    height: 20
+    borderLeft: 3
+    borderRight: 3
+    borderTop: 4
+    borderBottom: 4
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_job_r
+    x: 451
+    y: 1
+    width: 10
+    height: 20
+    borderLeft: 3
+    borderRight: 3
+    borderTop: 4
+    borderBottom: 4
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_lv_bg
+    x: 126
+    y: 97
+    width: 48
+    height: 61
+    borderLeft: 7
+    borderRight: 7
+    borderTop: 5
+    borderBottom: 18
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 1
+  - name: cha_frame_name_bg_grade_01
+    x: 0
+    y: 0
+    width: 108
+    height: 32
+    borderLeft: 50
+    borderRight: 50
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_bg
+    x: 557
+    y: 396
+    width: 14
+    height: 14
+    borderLeft: 5
+    borderRight: 5
+    borderTop: 5
+    borderBottom: 5
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_light
+    x: 435
+    y: 120
+    width: 32
+    height: 34
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_n
+    x: 529
+    y: 380
+    width: 26
+    height: 30
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_new
+    x: 499
+    y: 221
+    width: 24
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_new_big
+    x: 126
+    y: 47
+    width: 48
+    height: 48
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_s
+    x: 473
+    y: 380
+    width: 26
+    height: 30
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_s2
+    x: 501
+    y: 380
+    width: 26
+    height: 30
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_frame_star_s2_dim
+    x: 359
+    y: 1
+    width: 15
+    height: 17
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 1
+  - name: cha_reinforce_bg
+    x: 126
+    y: 1
+    width: 44
+    height: 44
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_unittree_frame_grade_s_deco_03
+    x: 381
+    y: 156
+    width: 90
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cha_unittree_frame_shadow
+    x: 381
+    y: 63
+    width: 54
+    height: 28
+    borderLeft: 26
+    borderRight: 26
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cost_bg_01
+    x: 303
+    y: 65
+    width: 70
+    height: 83
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 4
+    paddingTop: 3
+    paddingBottom: 2
+  - name: cost_color
+    x: 381
+    y: 93
+    width: 52
+    height: 61
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 13
+    paddingRight: 13
+    paddingTop: 13
+    paddingBottom: 14
+  - name: FaceCircleFrame_E
+    x: 0
+    y: 337
+    width: 175
+    height: 175
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: FaceCircleFrame_P
+    x: 0
+    y: 160
+    width: 175
+    height: 175
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Profile_Frame
+    x: 0
+    y: 34
+    width: 124
+    height: 124
+    borderLeft: 35
+    borderRight: 35
+    borderTop: 35
+    borderBottom: 35
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Profile_Frame2
+    x: 177
+    y: 24
+    width: 124
+    height: 124
+    borderLeft: 46
+    borderRight: 46
+    borderTop: 40
+    borderBottom: 40
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: unit_job_1210001
+    x: 473
+    y: 353
+    width: 28
+    height: 25
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 3
+    paddingBottom: 2
+  - name: unit_job_1210002
+    x: 473
+    y: 247
+    width: 24
+    height: 25
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 4
+    paddingTop: 2
+    paddingBottom: 3
+  - name: unit_job_1210003
+    x: 525
+    y: 221
+    width: 23
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 4
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210004
+    x: 550
+    y: 222
+    width: 23
+    height: 23
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 4
+    paddingTop: 4
+    paddingBottom: 3
+  - name: unit_job_1210005
+    x: 473
+    y: 325
+    width: 26
+    height: 26
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 2
+    paddingBottom: 2
+  - name: unit_job_1210006
+    x: 546
+    y: 197
+    width: 22
+    height: 22
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 5
+    paddingTop: 4
+    paddingBottom: 4
+  - name: unit_job_1210007
+    x: 473
+    y: 169
+    width: 22
+    height: 22
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 5
+    paddingTop: 4
+    paddingBottom: 4
+  - name: unit_job_1210008
+    x: 177
+    y: 0
+    width: 26
+    height: 22
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 1
+    paddingTop: 4
+    paddingBottom: 4
+  - name: unit_job_1210009
+    x: 520
+    y: 197
+    width: 24
+    height: 22
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 4
+    paddingBottom: 4
+  - name: unit_job_1210010
+    x: 435
+    y: 93
+    width: 30
+    height: 25
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 3
+    paddingBottom: 2
+  - name: unit_job_1210011
+    x: 501
+    y: 325
+    width: 25
+    height: 26
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 2
+    paddingBottom: 2
+  - name: unit_job_1210012
+    x: 497
+    y: 193
+    width: 21
+    height: 26
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 4
+    paddingTop: 2
+    paddingBottom: 2
+  - name: unit_job_1210013
+    x: 473
+    y: 221
+    width: 24
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210014
+    x: 473
+    y: 274
+    width: 25
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210015
+    x: 503
+    y: 353
+    width: 25
+    height: 25
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 3
+    paddingBottom: 2
+  - name: unit_job_1210016
+    x: 497
+    y: 173
+    width: 24
+    height: 18
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 6
+    paddingBottom: 6
+  - name: unit_job_1210017
+    x: 527
+    y: 274
+    width: 25
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210018
+    x: 473
+    y: 300
+    width: 27
+    height: 23
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 1
+    paddingTop: 4
+    paddingBottom: 3
+  - name: unit_job_1210019
+    x: 523
+    y: 172
+    width: 22
+    height: 19
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 4
+    paddingTop: 6
+    paddingBottom: 5
+  - name: unit_job_1210020
+    x: 437
+    y: 67
+    width: 30
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210021
+    x: 531
+    y: 300
+    width: 27
+    height: 23
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 1
+    paddingTop: 3
+    paddingBottom: 4
+  - name: unit_job_1210022
+    x: 525
+    y: 248
+    width: 24
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 1
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210023
+    x: 473
+    y: 152
+    width: 27
+    height: 15
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 1
+    paddingTop: 8
+    paddingBottom: 7
+  - name: unit_job_1210024
+    x: 265
+    y: 4
+    width: 30
+    height: 18
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 6
+    paddingBottom: 6
+  - name: unit_job_1210025
+    x: 502
+    y: 300
+    width: 27
+    height: 23
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 4
+    paddingBottom: 3
+  - name: unit_job_1210026
+    x: 359
+    y: 40
+    width: 17
+    height: 23
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 7
+    paddingTop: 3
+    paddingBottom: 4
+  - name: unit_job_1210027
+    x: 551
+    y: 247
+    width: 21
+    height: 25
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 4
+    paddingTop: 2
+    paddingBottom: 3
+  - name: unit_job_1210028
+    x: 235
+    y: 2
+    width: 28
+    height: 20
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 6
+    paddingBottom: 4
+  - name: unit_job_1210029
+    x: 381
+    y: 0
+    width: 24
+    height: 21
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 4
+    paddingTop: 5
+    paddingBottom: 4
+  - name: unit_job_1210030
+    x: 421
+    y: 5
+    width: 28
+    height: 16
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 7
+    paddingBottom: 7
+  - name: unit_job_1210031
+    x: 359
+    y: 20
+    width: 20
+    height: 18
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 5
+    paddingTop: 6
+    paddingBottom: 6
+  - name: unit_job_1210032
+    x: 528
+    y: 327
+    width: 26
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 1
+    paddingTop: 4
+    paddingBottom: 2
+  - name: unit_job_1210059
+    x: 499
+    y: 248
+    width: 24
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210060
+    x: 473
+    y: 193
+    width: 22
+    height: 26
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 4
+    paddingTop: 1
+    paddingBottom: 3
+  - name: unit_job_1210069
+    x: 205
+    y: 2
+    width: 28
+    height: 20
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 6
+    paddingBottom: 4
+  - name: unit_job_1210070
+    x: 500
+    y: 274
+    width: 25
+    height: 24
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 3
+    paddingBottom: 3
+  - name: unit_job_1210078
+    x: 530
+    y: 353
+    width: 25
+    height: 25
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 3
+    paddingTop: 3
+    paddingBottom: 2
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+  origTexWidth: 1024
+  origTexHeight: 512
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

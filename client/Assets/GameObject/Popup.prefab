@@ -1,0 +1,581 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  m_Layer: 0
+  m_Name: Popup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  material: {fileID: 2100000, guid: 9658d9488a9a5304fb140ebf127b7d19, type: 2}
+  mSprites:
+  - name: battle_v_popup_bg
+    x: 0
+    y: 21
+    width: 217
+    height: 46
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 6
+    borderBottom: 18
+    paddingLeft: 4
+    paddingRight: 3
+    paddingTop: 0
+    paddingBottom: 0
+  - name: battle_v_popup_bg_deco
+    x: 448
+    y: 230
+    width: 49
+    height: 19
+    borderLeft: 1
+    borderRight: 1
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: BG_Glow
+    x: 662
+    y: 126
+    width: 100
+    height: 100
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: item_list_smalltitle2
+    x: 974
+    y: 330
+    width: 28
+    height: 36
+    borderLeft: 2
+    borderRight: 2
+    borderTop: 4
+    borderBottom: 4
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_black_bg
+    x: 502
+    y: 386
+    width: 10
+    height: 10
+    borderLeft: 2
+    borderRight: 2
+    borderTop: 2
+    borderBottom: 2
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_center_text_bg
+    x: 0
+    y: 185
+    width: 374
+    height: 20
+    borderLeft: 160
+    borderRight: 160
+    borderTop: 4
+    borderBottom: 4
+    paddingLeft: 9
+    paddingRight: 9
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_center_text_bg_2
+    x: 0
+    y: 207
+    width: 376
+    height: 20
+    borderLeft: 160
+    borderRight: 160
+    borderTop: 6
+    borderBottom: 6
+    paddingLeft: 8
+    paddingRight: 8
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_center_text_bg_3
+    x: 886
+    y: 368
+    width: 108
+    height: 26
+    borderLeft: 53
+    borderRight: 53
+    borderTop: 3
+    borderBottom: 3
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_bg_01
+    x: 0
+    y: 398
+    width: 512
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_bg_02
+    x: 718
+    y: 320
+    width: 166
+    height: 192
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_bg_03
+    x: 0
+    y: 447
+    width: 512
+    height: 65
+    borderLeft: 2
+    borderRight: 2
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 0
+  - name: popup_roll_bg_04
+    x: 502
+    y: 356
+    width: 6
+    height: 16
+    borderLeft: 2
+    borderRight: 2
+    borderTop: 13
+    borderBottom: 2
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 4
+    paddingBottom: 0
+  - name: popup_roll_bg_05
+    x: 448
+    y: 271
+    width: 62
+    height: 3
+    borderLeft: 3
+    borderRight: 3
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_bg_bottom
+    x: 0
+    y: 69
+    width: 246
+    height: 98
+    borderLeft: 110
+    borderRight: 110
+    borderTop: 1
+    borderBottom: 95
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_center_01
+    x: 764
+    y: 6
+    width: 14
+    height: 118
+    borderLeft: 12
+    borderRight: 12
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_center_02
+    x: 996
+    y: 368
+    width: 26
+    height: 26
+    borderLeft: 12
+    borderRight: 12
+    borderTop: 12
+    borderBottom: 12
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_center_03
+    x: 514
+    y: 84
+    width: 124
+    height: 116
+    borderLeft: 1
+    borderRight: 1
+    borderTop: 0
+    borderBottom: 25
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_center_03_2
+    x: 886
+    y: 396
+    width: 124
+    height: 116
+    borderLeft: 1
+    borderRight: 1
+    borderTop: 0
+    borderBottom: 25
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_center_04
+    x: 378
+    y: 211
+    width: 30
+    height: 8
+    borderLeft: 1
+    borderRight: 1
+    borderTop: 1
+    borderBottom: 1
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_center_05
+    x: 662
+    y: 228
+    width: 124
+    height: 88
+    borderLeft: 1
+    borderRight: 1
+    borderTop: 1
+    borderBottom: 1
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_tb_01
+    x: 932
+    y: 320
+    width: 40
+    height: 46
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_tb_02
+    x: 219
+    y: 21
+    width: 46
+    height: 46
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_roll_tb_03
+    x: 0
+    y: 229
+    width: 446
+    height: 45
+    borderLeft: 23
+    borderRight: 23
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 1
+  - name: popup_roll_tb_04
+    x: 248
+    y: 125
+    width: 20
+    height: 42
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_text_bg
+    x: 0
+    y: 169
+    width: 268
+    height: 14
+    borderLeft: 120
+    borderRight: 120
+    borderTop: 4
+    borderBottom: 4
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_text_bg_02
+    x: 588
+    y: 16
+    width: 62
+    height: 66
+    borderLeft: 28
+    borderRight: 28
+    borderTop: 30
+    borderBottom: 30
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_texture_01
+    x: 418
+    y: 37
+    width: 92
+    height: 46
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_texture_02
+    x: 418
+    y: 3
+    width: 92
+    height: 32
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_texture_03
+    x: 0
+    y: 276
+    width: 500
+    height: 120
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_title_blue
+    x: 514
+    y: 202
+    width: 146
+    height: 56
+    borderLeft: 40
+    borderRight: 40
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_title_green
+    x: 514
+    y: 260
+    width: 146
+    height: 56
+    borderLeft: 40
+    borderRight: 40
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_title_red
+    x: 270
+    y: 27
+    width: 146
+    height: 56
+    borderLeft: 40
+    borderRight: 40
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: popup_White_bg
+    x: 502
+    y: 374
+    width: 10
+    height: 10
+    borderLeft: 2
+    borderRight: 2
+    borderTop: 2
+    borderBottom: 2
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tooltip_popup_bg
+    x: 662
+    y: 24
+    width: 100
+    height: 100
+    borderLeft: 24
+    borderRight: 24
+    borderTop: 20
+    borderBottom: 20
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tooltip_popup_bg_02
+    x: 270
+    y: 85
+    width: 216
+    height: 98
+    borderLeft: 10
+    borderRight: 10
+    borderTop: 75
+    borderBottom: 10
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tooltip_popup_bg_deco
+    x: 514
+    y: 10
+    width: 72
+    height: 72
+    borderLeft: 6
+    borderRight: 6
+    borderTop: 6
+    borderBottom: 6
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tooltip_popup_btm
+    x: 448
+    y: 251
+    width: 56
+    height: 18
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: unit_effect_light
+    x: 514
+    y: 318
+    width: 202
+    height: 194
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 10
+  - name: worldmap_popup_frame
+    x: 886
+    y: 332
+    width: 44
+    height: 34
+    borderLeft: 12
+    borderRight: 12
+    borderTop: 12
+    borderBottom: 12
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: worldmap_popup_frame_deco
+    x: 378
+    y: 221
+    width: 128
+    height: 6
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+  origTexWidth: 1024
+  origTexHeight: 512
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1

@@ -1,0 +1,154 @@
+package com.google.android.gms.common.api.internal;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.support.annotation.NonNull;
+import android.support.v4.util.ArrayMap;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.lang.ref.WeakReference;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.WeakHashMap;
+
+/* JADX INFO: loaded from: /home/jtk/work/caocao/extracted/apk/classes.dex */
+public final class zzbr extends Fragment implements LifecycleFragment {
+    private static WeakHashMap<Activity, WeakReference<zzbr>> zzla = new WeakHashMap<>();
+    private Map<String, LifecycleCallback> zzlb = new ArrayMap();
+    private int zzlc = 0;
+    private Bundle zzld;
+
+    public static zzbr zzc(Activity activity) {
+        zzbr zzbrVar;
+        WeakReference<zzbr> weakReference = zzla.get(activity);
+        if (weakReference == null || (zzbrVar = weakReference.get()) == null) {
+            try {
+                zzbrVar = (zzbr) activity.getFragmentManager().findFragmentByTag("LifecycleFragmentImpl");
+                if (zzbrVar == null || zzbrVar.isRemoving()) {
+                    zzbrVar = new zzbr();
+                    activity.getFragmentManager().beginTransaction().add(zzbrVar, "LifecycleFragmentImpl").commitAllowingStateLoss();
+                }
+                zzla.put(activity, new WeakReference<>(zzbrVar));
+            } catch (ClassCastException e) {
+                throw new IllegalStateException("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e);
+            }
+        }
+        return zzbrVar;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final void addCallback(String str, @NonNull LifecycleCallback lifecycleCallback) {
+        if (this.zzlb.containsKey(str)) {
+            throw new IllegalArgumentException(new StringBuilder(String.valueOf(str).length() + 59).append("LifecycleCallback with tag ").append(str).append(" already added to this fragment.").toString());
+        }
+        this.zzlb.put(str, lifecycleCallback);
+        if (this.zzlc > 0) {
+            new Handler(Looper.getMainLooper()).post(new zzbs(this, lifecycleCallback, str));
+        }
+    }
+
+    @Override // android.app.Fragment
+    public final void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        super.dump(str, fileDescriptor, printWriter, strArr);
+        Iterator<LifecycleCallback> it = this.zzlb.values().iterator();
+        while (it.hasNext()) {
+            it.next().dump(str, fileDescriptor, printWriter, strArr);
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final <T extends LifecycleCallback> T getCallbackOrNull(String str, Class<T> cls) {
+        return cls.cast(this.zzlb.get(str));
+    }
+
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final Activity getLifecycleActivity() {
+        return getActivity();
+    }
+
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final boolean isCreated() {
+        return this.zzlc > 0;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final boolean isStarted() {
+        return this.zzlc >= 2;
+    }
+
+    @Override // android.app.Fragment
+    public final void onActivityResult(int i, int i2, Intent intent) {
+        super.onActivityResult(i, i2, intent);
+        Iterator<LifecycleCallback> it = this.zzlb.values().iterator();
+        while (it.hasNext()) {
+            it.next().onActivityResult(i, i2, intent);
+        }
+    }
+
+    @Override // android.app.Fragment
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        this.zzlc = 1;
+        this.zzld = bundle;
+        for (Map.Entry<String, LifecycleCallback> entry : this.zzlb.entrySet()) {
+            entry.getValue().onCreate(bundle != null ? bundle.getBundle(entry.getKey()) : null);
+        }
+    }
+
+    @Override // android.app.Fragment
+    public final void onDestroy() {
+        super.onDestroy();
+        this.zzlc = 5;
+        Iterator<LifecycleCallback> it = this.zzlb.values().iterator();
+        while (it.hasNext()) {
+            it.next().onDestroy();
+        }
+    }
+
+    @Override // android.app.Fragment
+    public final void onResume() {
+        super.onResume();
+        this.zzlc = 3;
+        Iterator<LifecycleCallback> it = this.zzlb.values().iterator();
+        while (it.hasNext()) {
+            it.next().onResume();
+        }
+    }
+
+    @Override // android.app.Fragment
+    public final void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        if (bundle == null) {
+            return;
+        }
+        for (Map.Entry<String, LifecycleCallback> entry : this.zzlb.entrySet()) {
+            Bundle bundle2 = new Bundle();
+            entry.getValue().onSaveInstanceState(bundle2);
+            bundle.putBundle(entry.getKey(), bundle2);
+        }
+    }
+
+    @Override // android.app.Fragment
+    public final void onStart() {
+        super.onStart();
+        this.zzlc = 2;
+        Iterator<LifecycleCallback> it = this.zzlb.values().iterator();
+        while (it.hasNext()) {
+            it.next().onStart();
+        }
+    }
+
+    @Override // android.app.Fragment
+    public final void onStop() {
+        super.onStop();
+        this.zzlc = 4;
+        Iterator<LifecycleCallback> it = this.zzlb.values().iterator();
+        while (it.hasNext()) {
+            it.next().onStop();
+        }
+    }
+}

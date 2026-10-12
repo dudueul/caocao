@@ -1,0 +1,1069 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1709254077376921
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4730242686860875}
+  - component: {fileID: 114724804207875695}
+  - component: {fileID: 114618682377417806}
+  m_Layer: 0
+  m_Name: MusicDot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4730242686860875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114724804207875695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  material: {fileID: 2100000, guid: 4a4a8a4dedc0b114693e2528158a6ac4, type: 2}
+  mSprites:
+  - name: CDance_00
+    x: 215
+    y: 436
+    width: 95
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 35
+    paddingRight: 30
+    paddingTop: 53
+    paddingBottom: 31
+  - name: CDance_01
+    x: 312
+    y: 265
+    width: 80
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 43
+    paddingRight: 37
+    paddingTop: 54
+    paddingBottom: 31
+  - name: CDance_02
+    x: 470
+    y: 359
+    width: 68
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 49
+    paddingRight: 43
+    paddingTop: 53
+    paddingBottom: 31
+  - name: CDance_03
+    x: 312
+    y: 13
+    width: 70
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 44
+    paddingRight: 46
+    paddingTop: 53
+    paddingBottom: 31
+  - name: CDance_04
+    x: 312
+    y: 437
+    width: 96
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 36
+    paddingRight: 28
+    paddingTop: 54
+    paddingBottom: 31
+  - name: CDance_05
+    x: 470
+    y: 437
+    width: 69
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 39
+    paddingRight: 52
+    paddingTop: 54
+    paddingBottom: 31
+  - name: CDance_06
+    x: 470
+    y: 281
+    width: 64
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 40
+    paddingRight: 56
+    paddingTop: 53
+    paddingBottom: 31
+  - name: CDance_07
+    x: 312
+    y: 183
+    width: 72
+    height: 80
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 43
+    paddingRight: 45
+    paddingTop: 49
+    paddingBottom: 31
+  - name: Dance_F00
+    x: 410
+    y: 419
+    width: 58
+    height: 93
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 68
+    paddingRight: 74
+    paddingTop: 59
+    paddingBottom: 48
+  - name: Dance_F01
+    x: 215
+    y: 225
+    width: 71
+    height: 101
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 54
+    paddingRight: 75
+    paddingTop: 51
+    paddingBottom: 48
+  - name: Dance_F02
+    x: 410
+    y: 307
+    width: 45
+    height: 110
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 80
+    paddingRight: 75
+    paddingTop: 42
+    paddingBottom: 48
+  - name: Dance_F03
+    x: 215
+    y: 328
+    width: 68
+    height: 106
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 71
+    paddingRight: 61
+    paddingTop: 46
+    paddingBottom: 48
+  - name: Dance_F04
+    x: 312
+    y: 342
+    width: 65
+    height: 93
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 82
+    paddingRight: 53
+    paddingTop: 59
+    paddingBottom: 48
+  - name: Dance_F05
+    x: 312
+    y: 91
+    width: 61
+    height: 90
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 79
+    paddingRight: 60
+    paddingTop: 62
+    paddingBottom: 48
+  - name: DeDance_00
+    x: 99
+    y: 283
+    width: 104
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 30
+    paddingRight: 26
+    paddingTop: 54
+    paddingBottom: 31
+  - name: DeDance_01
+    x: 215
+    y: 145
+    width: 85
+    height: 78
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 38
+    paddingRight: 37
+    paddingTop: 51
+    paddingBottom: 31
+  - name: DeDance_02
+    x: 99
+    y: 131
+    width: 104
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 24
+    paddingRight: 32
+    paddingTop: 55
+    paddingBottom: 31
+  - name: DeDance_03
+    x: 99
+    y: 360
+    width: 114
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 24
+    paddingTop: 55
+    paddingBottom: 31
+  - name: DeDance_04
+    x: 99
+    y: 207
+    width: 104
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 30
+    paddingRight: 26
+    paddingTop: 55
+    paddingBottom: 31
+  - name: DeDance_05
+    x: 215
+    y: 65
+    width: 85
+    height: 78
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 38
+    paddingRight: 37
+    paddingTop: 51
+    paddingBottom: 31
+  - name: DeDance_06
+    x: 99
+    y: 55
+    width: 104
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 24
+    paddingRight: 32
+    paddingTop: 55
+    paddingBottom: 31
+  - name: DeDance_07
+    x: 99
+    y: 436
+    width: 114
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 24
+    paddingTop: 53
+    paddingBottom: 31
+  - name: LReady_00
+    x: 375
+    y: 105
+    width: 33
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 26
+    paddingRight: 37
+    paddingTop: 13
+    paddingBottom: 10
+  - name: LReady_01
+    x: 733
+    y: 45
+    width: 32
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 27
+    paddingRight: 37
+    paddingTop: 14
+    paddingBottom: 10
+  - name: LReady_02
+    x: 686
+    y: 48
+    width: 36
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 37
+    paddingTop: 15
+    paddingBottom: 10
+  - name: LReady_03
+    x: 985
+    y: 438
+    width: 36
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 37
+    paddingTop: 15
+    paddingBottom: 10
+  - name: LReady_04
+    x: 733
+    y: 122
+    width: 32
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 27
+    paddingRight: 37
+    paddingTop: 14
+    paddingBottom: 10
+  - name: LReady_05
+    x: 768
+    y: 198
+    width: 31
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 37
+    paddingTop: 13
+    paddingBottom: 10
+  - name: LReady_06
+    x: 768
+    y: 121
+    width: 31
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 37
+    paddingTop: 14
+    paddingBottom: 10
+  - name: LReady_07
+    x: 771
+    y: 276
+    width: 35
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 26
+    paddingRight: 35
+    paddingTop: 15
+    paddingBottom: 10
+  - name: LReady_08
+    x: 733
+    y: 276
+    width: 36
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 25
+    paddingRight: 35
+    paddingTop: 15
+    paddingBottom: 10
+  - name: LReady_09
+    x: 733
+    y: 199
+    width: 33
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 26
+    paddingRight: 37
+    paddingTop: 14
+    paddingBottom: 10
+  - name: NDance_00
+    x: 470
+    y: 51
+    width: 60
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 32
+    paddingRight: 48
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_01
+    x: 659
+    y: 438
+    width: 54
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 38
+    paddingRight: 48
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_02
+    x: 637
+    y: 276
+    width: 47
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 45
+    paddingRight: 48
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_03
+    x: 686
+    y: 276
+    width: 45
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 48
+    paddingRight: 47
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_04
+    x: 686
+    y: 200
+    width: 44
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 52
+    paddingRight: 44
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_05
+    x: 637
+    y: 200
+    width: 45
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 55
+    paddingRight: 40
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_06
+    x: 603
+    y: 438
+    width: 54
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 36
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_07
+    x: 541
+    y: 438
+    width: 60
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 44
+    paddingRight: 36
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_08
+    x: 771
+    y: 438
+    width: 54
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 44
+    paddingRight: 42
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_09
+    x: 977
+    y: 362
+    width: 47
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 44
+    paddingRight: 49
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_10
+    x: 637
+    y: 124
+    width: 45
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 43
+    paddingRight: 52
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_11
+    x: 686
+    y: 124
+    width: 44
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 40
+    paddingRight: 56
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_12
+    x: 637
+    y: 48
+    width: 45
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 36
+    paddingRight: 59
+    paddingTop: 48
+    paddingBottom: 18
+  - name: NDance_13
+    x: 715
+    y: 438
+    width: 54
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 32
+    paddingRight: 54
+    paddingTop: 48
+    paddingBottom: 18
+  - name: Ready_00
+    x: 470
+    y: 127
+    width: 63
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 19
+    paddingTop: 13
+    paddingBottom: 11
+  - name: Ready_01
+    x: 933
+    y: 438
+    width: 50
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 26
+    paddingRight: 20
+    paddingTop: 14
+    paddingBottom: 11
+  - name: Ready_02
+    x: 827
+    y: 439
+    width: 51
+    height: 73
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 23
+    paddingTop: 15
+    paddingBottom: 11
+  - name: Ready_03
+    x: 410
+    y: 157
+    width: 58
+    height: 73
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 24
+    paddingTop: 15
+    paddingBottom: 11
+  - name: Ready_04
+    x: 410
+    y: 5
+    width: 56
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 20
+    paddingRight: 20
+    paddingTop: 14
+    paddingBottom: 11
+  - name: Ready_05
+    x: 470
+    y: 204
+    width: 63
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 21
+    paddingRight: 12
+    paddingTop: 13
+    paddingBottom: 11
+  - name: Ready_06
+    x: 925
+    y: 362
+    width: 50
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 24
+    paddingTop: 14
+    paddingBottom: 11
+  - name: Ready_07
+    x: 880
+    y: 439
+    width: 51
+    height: 73
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 25
+    paddingRight: 20
+    paddingTop: 15
+    paddingBottom: 11
+  - name: Ready_08
+    x: 410
+    y: 232
+    width: 58
+    height: 73
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 26
+    paddingRight: 12
+    paddingTop: 15
+    paddingBottom: 11
+  - name: Ready_09
+    x: 410
+    y: 81
+    width: 56
+    height: 74
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 18
+    paddingTop: 14
+    paddingBottom: 11
+  - name: ReadyBangTong01
+    x: 0
+    y: 176
+    width: 96
+    height: 111
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ReadyBangTong02
+    x: 0
+    y: 63
+    width: 96
+    height: 111
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 1
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ReadyBangTong03
+    x: 0
+    y: 401
+    width: 97
+    height: 111
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ReadyBangTong04
+    x: 0
+    y: 289
+    width: 97
+    height: 110
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 0
+  - name: WDance_00
+    x: 541
+    y: 266
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_01
+    x: 541
+    y: 180
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_02
+    x: 541
+    y: 94
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_03
+    x: 541
+    y: 8
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_04
+    x: 589
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_05
+    x: 589
+    y: 266
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_06
+    x: 541
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_07
+    x: 589
+    y: 180
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_08
+    x: 589
+    y: 94
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_09
+    x: 589
+    y: 8
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_10
+    x: 637
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_11
+    x: 685
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_12
+    x: 733
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_13
+    x: 781
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_14
+    x: 829
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  - name: WDance_15
+    x: 877
+    y: 352
+    width: 46
+    height: 84
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 34
+    paddingTop: 16
+    paddingBottom: 8
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+  origTexWidth: 1024
+  origTexHeight: 512
+--- !u!114 &114618682377417806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709254077376921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f7db9a480b403690a4a83220213122, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  material: {fileID: 0}
+  mSprites: []
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+  origTexWidth: 0
+  origTexHeight: 0
+--- !u!1001 &100100000
+Prefab:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1709254077376921}
+  m_IsPrefabAsset: 1
