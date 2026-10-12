@@ -59,18 +59,20 @@ export function decodeIo(data: string): IoPacket | null {
       return { kind: "disconnect", args: [] };
     case SIO.event:
     case SIO.ack: {
-      // optional numeric ack id, then "#"? — v4 puts id directly: "3<json>"
-      // with id digits only when kind=ack.
+      // v4: ack id digits come directly after the packet type ("42<id>["...]")
+      // for event-with-ack; ack packets ("3<id>...") always carry the id.
       let ackId: number | undefined;
       if (p === SIO.ack) {
         const m = /^(\d+)(.*)$/s.exec(body);
         if (!m) return null;
         ackId = parseInt(m[1], 10);
         body = m[2];
-      } else if (/^\d+#/.test(body)) {
-        const m = /^(\d+)#(.*)$/s.exec(body);
-        ackId = parseInt(m![1], 10);
-        body = m![2];
+      } else if (/^\d+/.test(body)) {
+        const m = /^(\d+)(.*)$/s.exec(body);
+        if (m) {
+          ackId = parseInt(m[1], 10);
+          body = m[2];
+        }
       }
       const arr = body ? JSON.parse(body) : [];
       return {
