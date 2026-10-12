@@ -65,3 +65,24 @@ A retried `DuelAttack1` must not double-apply. Include a client-generated
 `verify-lab.sh dsa07` (lands with Phase 4): replay tests + dedup tests +
 snapshot-restore equivalence (state after replay == state after
 snapshot+tail).
+
+## 6. THE ORIGINAL PAYLOADS, RECOVERED (2026-10-12)
+
+Decompiled `Finish*` coroutine iterators gave the real result-packet shapes
+(`analysis/decompiled/Finish*`):
+
+```
+/battle/scenarioBattleEnd  POST {scenarioId, isWin, victoryGrade,
+                                modeLevel, battlePlayTime}
+/battle/multiBattleEnd     POST {townId, opponentId, unitId, isWin,
+                                occupationPct}
+```
+
+The rebuild implements them as **append-only battle rows** (D1 `battles`:
+open → done with is_win/grade/occupation_pct) — §2's event-sourcing in
+production form: the log IS the source of truth, wallet rewards derive from
+grade (`250 + grade*100`), progress rows derive from the log. Verified:
+`battleStart → battleEnd(win,2) → +450g` round-trip green (commit 4808b43f+).
+
+Exercise 7-B's snapshot question now has a REAL harness: the battles table
+replays any player's full battle history from open-state rows alone.
