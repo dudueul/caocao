@@ -75,3 +75,13 @@ CREATE TABLE IF NOT EXISTS wallets (
   gold INTEGER NOT NULL DEFAULT 0,
   cash INTEGER NOT NULL DEFAULT 0
 );
+
+CREATE TABLE IF NOT EXISTS battles (
+  battle_id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  kind TEXT NOT NULL,
+  ref_id TEXT,
+  state TEXT NOT NULL,
+  is_win INTEGER, grade INTEGER, occupation_pct INTEGER, play_time_ms INTEGER,
+  opened_at INTEGER NOT NULL, closed_at INTEGER
+);

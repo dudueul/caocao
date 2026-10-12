@@ -492,6 +492,53 @@ export class GameServer extends DurableObject {
         const res = await this.buyItem(userId, Number(itemId));
         return json(res);
       }
+      // ---- battle flow (event-sourced per dsa-07) ------------------------
+      // [RE] payload shapes decompiled from FinishScenario/FinishSiege
+      // iterators: scenarioBattleEnd {scenarioId,isWin,victoryGrade,
+      // modeLevel,battlePlayTime}; multi {townId,opponentId,unitId,isWin,
+      // occupationPct}. Every call appends to the battles log table.
+      case "/battle/scenarioBattleStart": {
+        await this.migrate();
+        const [scenarioId] = args as [number];
+        const battleId = sid(12);
+        await (this.env as Env).DB
+          .prepare("INSERT INTO battles (battle_id, user_id, kind, ref_id, state, opened_at) VALUES (?1, ?2, 'scenario', ?3, 'open', ?4)")
+          .bind(battleId, userId, Number(scenarioId) || 0, Date.now()).run();
+        return json({ success: true, battleId });
+      }
+      case "/battle/scenarioBattleEnd": {
+        const [scenarioId, isWin, victoryGrade, modeLevel, battlePlayTime] = args as [number, number, number, number, number];
+        const now = Date.now();
+        const stmts: D1PreparedStatement[] = [
+          (this.env as Env).DB.prepare(
+            "UPDATE battles SET state = 'done', is_win = ?2, grade = ?3, play_time_ms = ?4, closed_at = ?5 WHERE user_id = ?1 AND kind = 'scenario' AND state = 'open'")
+            .bind(userId, isWin ? 1 : 0, victoryGrade ?? 0, battlePlayTime ?? 0, now),
+          // [RE] progress: cleared scenario unlocks next; append-only progress log
+          (this.env as Env).DB.prepare(
+            "INSERT OR REPLACE INTO progress (user_id, key, value, updated_at) VALUES (?1, ?2, ?3, ?4)")
+            .bind(userId, "scenario:" + (scenarioId ?? 0) + ":clear", isWin ? "1" : "0", now),
+          isWin ? (this.env as Env).DB.prepare(
+            "UPDATE wallets SET gold = gold + ?2 WHERE user_id = ?1").bind(userId, 250 + (victoryGrade ?? 0) * 100)
+            : (this.env as Env).DB.prepare("SELECT 1").bind(),
+        ];
+        await (this.env as Env).DB.batch(stmts.filter(s => s));
+        return json({ success: true, rewardGold: isWin ? 250 + (victoryGrade ?? 0) * 100 : 0 });
+      }
+      case "/battle/multiBattleStart": {
+        await this.migrate();
+        const battleId = sid(12);
+        await (this.env as Env).DB
+          .prepare("INSERT INTO battles (battle_id, user_id, kind, ref_id, state, opened_at) VALUES (?1, ?2, 'multi', ?3, 'open', ?4)")
+          .bind(battleId, userId, String(args[0] ?? ""), Date.now()).run();
+        return json({ success: true, battleId });
+      }
+      case "/battle/multiBattleEnd": {
+        const [townId, opponentId, unitId, isWin, occupationPct] = args as [string, number, number, number, number];
+        await (this.env as Env).DB
+          .prepare("UPDATE battles SET state = 'done', is_win = ?2, occupation_pct = ?3, closed_at = ?4 WHERE user_id = ?1 AND kind = 'multi' AND state = 'open'")
+          .bind(userId, isWin ? 1 : 0, occupationPct ?? 0, Date.now()).run();
+        return json({ success: true });
+      }
       case "/item/lock": {
         const [itemId, locked] = args as [number, number];
         await (this.env as Env).DB
@@ -528,6 +575,7 @@ export class GameServer extends DurableObject {
       db.prepare(`CREATE TABLE IF NOT EXISTS players (user_id TEXT PRIMARY KEY, auth_key TEXT NOT NULL, created_at INTEGER NOT NULL, last_seen INTEGER)`),
       db.prepare(`CREATE TABLE IF NOT EXISTS inventory (user_id TEXT NOT NULL, item_id INTEGER NOT NULL, count INTEGER NOT NULL DEFAULT 1, tier INTEGER NOT NULL DEFAULT 0, locked INTEGER NOT NULL DEFAULT 0, acquired_at INTEGER NOT NULL, PRIMARY KEY (user_id, item_id))`),
       db.prepare(`CREATE TABLE IF NOT EXISTS wallets (user_id TEXT PRIMARY KEY, gold INTEGER NOT NULL DEFAULT 0, cash INTEGER NOT NULL DEFAULT 0)`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS battles (battle_id TEXT PRIMARY KEY, user_id TEXT NOT NULL, kind TEXT NOT NULL, ref_id TEXT, state TEXT NOT NULL, is_win INTEGER, grade INTEGER, occupation_pct INTEGER, play_time_ms INTEGER, opened_at INTEGER NOT NULL, closed_at INTEGER)`),
       db.prepare(`CREATE TABLE IF NOT EXISTS items (item_id INTEGER PRIMARY KEY, name TEXT NOT NULL, tier INTEGER NOT NULL DEFAULT 0, slot INTEGER NOT NULL DEFAULT 0, item_type INTEGER NOT NULL DEFAULT 0, box_type INTEGER NOT NULL DEFAULT 0, price INTEGER NOT NULL DEFAULT 0, gold INTEGER NOT NULL DEFAULT 0, item_effect INTEGER NOT NULL DEFAULT 0, effect_value INTEGER NOT NULL DEFAULT 0, max_value INTEGER NOT NULL DEFAULT 0, type_value INTEGER NOT NULL DEFAULT 0, pay_type INTEGER NOT NULL DEFAULT 0, atk INTEGER DEFAULT 0, atk_up INTEGER DEFAULT 0, def INTEGER DEFAULT 0, def_up INTEGER DEFAULT 0, inte INTEGER DEFAULT 0, inte_up INTEGER DEFAULT 0, agi INTEGER DEFAULT 0, agi_up INTEGER DEFAULT 0, mor INTEGER DEFAULT 0, mor_up INTEGER DEFAULT 0, hp INTEGER DEFAULT 0, hp_up INTEGER DEFAULT 0, mp INTEGER DEFAULT 0, mp_up INTEGER DEFAULT 0, max_lv INTEGER NOT NULL DEFAULT 1, target_type INTEGER NOT NULL DEFAULT 0, skill_id INTEGER NOT NULL DEFAULT 0, unit_id INTEGER NOT NULL DEFAULT 0, atlas TEXT DEFAULT '', icon TEXT DEFAULT '', country INTEGER NOT NULL DEFAULT 0, job_type INTEGER NOT NULL DEFAULT 0)`),
     ]);
     const count = await db.prepare("SELECT COUNT(*) AS c FROM items").first<{ c: number }>();
