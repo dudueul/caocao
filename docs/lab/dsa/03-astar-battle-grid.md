@@ -63,9 +63,35 @@ A* is boring; the heap is where students learn:
   (measured with the reference A*; path recorded in the file). Your solution
   must match the cost and produce a valid path; `scripts/verify-lab.sh dsa03`
   checks cost exactly and validates every step is 4-connected and passable.
-- After Phase 2, `analysis/diff_pathfinding.md` records where the original
-  differs (if it does): e.g., diagonals, occupancy blocking, "through-ally"
-  rules.
+
+## 6. THE ORIGINAL, RECOVERED — diff results (2026-10-12)
+
+The original's own pathfinder shipped as `AStarPathFinder` + `QuickPathFinder`
+(stubs in the export). Rebuilt in-place (commit e55ce6eb) with the original's
+exact shape. **The diff, field by field:**
+
+| Aspect | Canonical textbook A* | The original (recovered) |
+|---|---|---|
+| Open list | binary heap | `List<AStarNode>` + `Sort(ByFCost)` — O(n log n) per pop |
+| Tie-break | (f, insertion) | `ulong priority = (uint)f << 32 \| (uint)h` — **two keys packed in one integer** (see dsa-01 bit-packing) |
+| Heuristic | (varies) | Manhattan × *global min tile cost* — keeps h ≥ actual distance when costs ≥ min |
+| Re-expansion | closed set, no re-add | closed `HashSet` + g-based re-relax (lazy-duplicate variant) |
+| Blocked goal | fail | `GetAroundPassablePosition` — reroutes to the nearest passable ring tile toward the start |
+| Safety | none | `loopLimit` — a hard iteration cap against pathological maps |
+| Grid | 4- or 8-connected | **4-connected only** (`(dr==0)==(dc==0)` skip) |
+| Separate structures | — | `QuickPathFinderContext` = a Dijkstra **flood** for movement *ranges* (blue tiles) with a `Queue` frontier + **ZOC clamp** (enemy-adjacent tiles cut the frontier — the rule that makes battle lines matter) |
+
+**Lessons worth writing in your notebook:**
+1. The original's `List+Sort` is *wrong* asymptotically — and *right* for a
+   ~30×30 grid: allocation-free, cache-friendly, and 900 tiles amortize the
+   sort fine. Know your n (dsa-06 crossover).
+2. The ulong priority packing = one comparison instead of two — 2016-mobile
+   CPU budget thinking.
+3. The flood + A* pair mirrors exactly how SRPGs work: ranges (flood) for
+   UI, paths (A*) for execution.
+4. The blocked-destination fallback reveals DESIGN intent: SRPGs promise
+   "you can always move toward the target" — UX requirement encoded in the
+   algorithm's edge case.
 
 ## 5. Bridge to the rebuild
 
