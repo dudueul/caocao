@@ -57,7 +57,375 @@ export default {
   },
 };
 
+const CATALOG: CatalogRow[] = [
+ {
+  "item_id": 10001,
+  "name": "sword_iron",
+  "tier": 0,
+  "slot": 1,
+  "item_type": 1,
+  "price": 0,
+  "gold": 120,
+  "atk": 8,
+  "atk_up": 2,
+  "max_lv": 5,
+  "icon": "item_n_sword1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10002,
+  "name": "sword_steel",
+  "tier": 1,
+  "slot": 1,
+  "item_type": 1,
+  "price": 0,
+  "gold": 450,
+  "atk": 15,
+  "atk_up": 3,
+  "max_lv": 5,
+  "icon": "item_n_sword2",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10003,
+  "name": "sword_king",
+  "tier": 2,
+  "slot": 1,
+  "item_type": 1,
+  "price": 0,
+  "gold": 1600,
+  "atk": 26,
+  "atk_up": 5,
+  "max_lv": 8,
+  "icon": "item_n_sword3",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10011,
+  "name": "spear_cavalry",
+  "tier": 0,
+  "slot": 1,
+  "item_type": 2,
+  "price": 0,
+  "gold": 140,
+  "atk": 7,
+  "atk_up": 2,
+  "mor": 1,
+  "max_lv": 5,
+  "icon": "item_n_spear1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10021,
+  "name": "bow_short",
+  "tier": 0,
+  "slot": 1,
+  "item_type": 3,
+  "price": 0,
+  "gold": 130,
+  "atk": 6,
+  "atk_up": 2,
+  "agi": 2,
+  "max_lv": 5,
+  "icon": "item_n_bow1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10031,
+  "name": "horse_light",
+  "tier": 0,
+  "slot": 2,
+  "item_type": 4,
+  "price": 0,
+  "gold": 200,
+  "agi": 4,
+  "agi_up": 1,
+  "hp": 5,
+  "max_lv": 5,
+  "icon": "item_n_horse1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10032,
+  "name": "horse_heavy",
+  "tier": 1,
+  "slot": 2,
+  "item_type": 4,
+  "price": 0,
+  "gold": 700,
+  "agi": 2,
+  "def": 6,
+  "def_up": 2,
+  "hp": 12,
+  "max_lv": 5,
+  "icon": "item_n_horse2",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10041,
+  "name": "armor_leather",
+  "tier": 0,
+  "slot": 3,
+  "item_type": 5,
+  "price": 0,
+  "gold": 110,
+  "def": 5,
+  "def_up": 1,
+  "max_lv": 5,
+  "icon": "item_n_light1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10042,
+  "name": "armor_chain",
+  "tier": 1,
+  "slot": 3,
+  "item_type": 5,
+  "price": 0,
+  "gold": 480,
+  "def": 11,
+  "def_up": 2,
+  "hp": 8,
+  "max_lv": 5,
+  "icon": "item_n_light2",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10043,
+  "name": "armor_plate",
+  "tier": 2,
+  "slot": 3,
+  "item_type": 5,
+  "price": 0,
+  "gold": 1500,
+  "def": 20,
+  "def_up": 4,
+  "hp": 15,
+  "max_lv": 8,
+  "icon": "item_n_light3",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10051,
+  "name": "helmet_iron",
+  "tier": 0,
+  "slot": 4,
+  "item_type": 6,
+  "price": 0,
+  "gold": 100,
+  "def": 3,
+  "def_up": 1,
+  "max_lv": 5,
+  "icon": "item_n_helm1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10061,
+  "name": "potion_heal",
+  "tier": 0,
+  "slot": 0,
+  "item_type": 10,
+  "price": 0,
+  "gold": 60,
+  "item_effect": 1,
+  "effect_value": 50,
+  "max_value": 200,
+  "max_lv": 1,
+  "icon": "item_n_potion1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10062,
+  "name": "potion_mana",
+  "tier": 0,
+  "slot": 0,
+  "item_type": 10,
+  "price": 0,
+  "gold": 80,
+  "item_effect": 2,
+  "effect_value": 30,
+  "max_value": 100,
+  "max_lv": 1,
+  "icon": "item_n_potion2",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10071,
+  "name": "treasure_seal_1",
+  "tier": 1,
+  "slot": 5,
+  "item_type": 20,
+  "price": 0,
+  "gold": 2500,
+  "item_effect": 3,
+  "effect_value": 5,
+  "tresure_type": 1,
+  "enhance_type": 1,
+  "max_lv": 3,
+  "icon": "icon_treasure1",
+  "atlas": "treasure"
+ },
+ {
+  "item_id": 10072,
+  "name": "treasure_seal_2",
+  "tier": 2,
+  "slot": 5,
+  "item_type": 20,
+  "price": 0,
+  "gold": 6000,
+  "item_effect": 3,
+  "effect_value": 8,
+  "tresure_type": 1,
+  "enhance_type": 1,
+  "max_lv": 5,
+  "icon": "icon_treasure2",
+  "atlas": "treasure"
+ },
+ {
+  "item_id": 10081,
+  "name": "ticket_recruit",
+  "tier": 0,
+  "slot": 0,
+  "item_type": 30,
+  "price": 100,
+  "gold": 0,
+  "pay_type": 1,
+  "max_lv": 1,
+  "icon": "item_t_ticket1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10082,
+  "name": "ticket_enhance",
+  "tier": 0,
+  "slot": 0,
+  "item_type": 30,
+  "price": 0,
+  "gold": 500,
+  "max_lv": 1,
+  "icon": "icon_enhanceTicket",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10091,
+  "name": "book_skill_sword",
+  "tier": 1,
+  "slot": 6,
+  "item_type": 40,
+  "price": 0,
+  "gold": 1200,
+  "skill_id": 101,
+  "skill_val": 1,
+  "max_lv": 1,
+  "icon": "item_n_book1",
+  "atlas": "item"
+ },
+ {
+  "item_id": 10101,
+  "name": "unit_guanYu",
+  "tier": 3,
+  "slot": 7,
+  "item_type": 50,
+  "price": 0,
+  "gold": 0,
+  "unit_id": 1001,
+  "unit_lv": 1,
+  "job_type": 1,
+  "country": 1,
+  "max_lv": 10,
+  "icon": "unit_1001",
+  "atlas": "unit"
+ },
+ {
+  "item_id": 10102,
+  "name": "unit_zhangFei",
+  "tier": 3,
+  "slot": 7,
+  "item_type": 50,
+  "price": 0,
+  "gold": 0,
+  "unit_id": 1002,
+  "unit_lv": 1,
+  "job_type": 2,
+  "country": 1,
+  "max_lv": 10,
+  "icon": "unit_1002",
+  "atlas": "unit"
+ },
+ {
+  "item_id": 10103,
+  "name": "unit_xiaHouDun",
+  "tier": 2,
+  "slot": 7,
+  "item_type": 50,
+  "price": 0,
+  "gold": 9000,
+  "unit_id": 1003,
+  "unit_lv": 1,
+  "job_type": 1,
+  "country": 2,
+  "max_lv": 10,
+  "icon": "unit_1003",
+  "atlas": "unit"
+ },
+ {
+  "item_id": 10104,
+  "name": "unit_zhaoYun",
+  "tier": 2,
+  "slot": 7,
+  "item_type": 50,
+  "price": 0,
+  "gold": 9500,
+  "unit_id": 1004,
+  "unit_lv": 1,
+  "job_type": 3,
+  "country": 1,
+  "max_lv": 10,
+  "icon": "unit_1004",
+  "atlas": "unit"
+ },
+ {
+  "item_id": 10111,
+  "name": "skin_king_crown",
+  "tier": 2,
+  "slot": 8,
+  "item_type": 60,
+  "price": 300,
+  "gold": 0,
+  "pay_type": 1,
+  "skin_id": 5001,
+  "max_lv": 1,
+  "icon": "skin_5001",
+  "atlas": "skin"
+ },
+ {
+  "item_id": 10121,
+  "name": "box_gold_1",
+  "tier": 0,
+  "slot": 0,
+  "item_type": 70,
+  "box_type": 1,
+  "price": 0,
+  "gold": 300,
+  "max_lv": 1,
+  "icon": "item_n_box1",
+  "atlas": "item"
+ }
+];
+
+interface CatalogRow {
+  item_id: number; name: string; tier: number; slot: number; item_type: number;
+  box_type: number; price: number; gold: number; item_effect: number;
+  effect_value: number; max_value: number; type_value: number; pay_type: number;
+  atk: number; atk_up: number; def: number; def_up: number; inte: number;
+  inte_up: number; agi: number; agi_up: number; mor: number; mor_up: number;
+  hp: number; hp_up: number; mp: number; mp_up: number; max_lv: number;
+  target_type: number; skill_id: number; unit_id: number; atlas: string;
+  icon: string; country: number; job_type: number;
+}
+
 export class GameServer extends DurableObject {
+  private migrated = false;
   private sessions = new Map<WebSocket, Session>();
 
   override async fetch(request: Request): Promise<Response> {
@@ -103,11 +471,34 @@ export class GameServer extends DurableObject {
         const row = await this.ensureUser(target);
         return json({ userId: row.user_id, authKey: row.auth_key, maintenance: false });
       }
-      case "/user/getUserData":
+      case "/user/getUserData": {
+        // [RE] the big login payload — the original catalog rode this call
+        // (era-typical server-driven balance; Item.cs schema is the contract)
         return json(await this.getUserData(userId));
+      }
       case "/user/updateHistory":
         // [RE] HeartBeats consumes {success, seq, notice, entrustTurn/Battle}
         return json({ success: true, seq: 0, notice: "", entrustTurn: false, entrustBattle: false });
+
+      // ---- item economy (schema: Item.cs 49-field contract) -------------
+      case "/item/sellItems": {
+        const [itemIds] = args as [number[]];
+        if (!Array.isArray(itemIds)) return json({ error: "bad_payload" });
+        const sold = await this.sellItems(userId, itemIds);
+        return json(sold);
+      }
+      case "/item/craftItem": {
+        const [itemId] = args as [number];
+        const res = await this.buyItem(userId, Number(itemId));
+        return json(res);
+      }
+      case "/item/lock": {
+        const [itemId, locked] = args as [number, number];
+        await (this.env as Env).DB
+          .prepare("UPDATE inventory SET locked = ?2 WHERE user_id = ?1 AND item_id = ?3")
+          .bind(userId, locked ? 1 : 0, Number(itemId)).run();
+        return json({ success: true });
+      }
       default:
         // [RE] every recovered endpoint lands here in later milestones
         // (guild/, arena/, battle/...); explicit 404 keeps the contract honest.
@@ -115,29 +506,154 @@ export class GameServer extends DurableObject {
     }
   }
 
-  private async ensureUser(userId: string) {
+  // [RE] self-migration: schema + catalog seed on first use — dev CLI and
+  // deployed Workers each get their own D1 storage, so the server carries
+  // its schema (the catalog is embedded from seed/items.json at build time).
+  private async migrate(): Promise<D1Database> {
     const db = (this.env as Env).DB;
+    if (this.migrated) return db;
+    // [RE] repair: dev D1 may predate a column; recreate stale tables.
+    // (Deployed DBs are always fresh; ALTER-based migration lands later.)
+    try {
+      const invCols = await db.prepare("PRAGMA table_info(inventory)").all<{ name: string }>();
+      if (invCols.results && !invCols.results.some(c => c.name === "locked")) {
+        await db.batch([
+          db.prepare("DROP TABLE IF EXISTS inventory"),
+          db.prepare("DROP TABLE IF EXISTS wallets"),
+          db.prepare("DROP TABLE IF EXISTS items"),
+        ]);
+      }
+    } catch { /* fresh db */ }
+    await db.batch([
+      db.prepare(`CREATE TABLE IF NOT EXISTS players (user_id TEXT PRIMARY KEY, auth_key TEXT NOT NULL, created_at INTEGER NOT NULL, last_seen INTEGER)`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS inventory (user_id TEXT NOT NULL, item_id INTEGER NOT NULL, count INTEGER NOT NULL DEFAULT 1, tier INTEGER NOT NULL DEFAULT 0, locked INTEGER NOT NULL DEFAULT 0, acquired_at INTEGER NOT NULL, PRIMARY KEY (user_id, item_id))`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS wallets (user_id TEXT PRIMARY KEY, gold INTEGER NOT NULL DEFAULT 0, cash INTEGER NOT NULL DEFAULT 0)`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS items (item_id INTEGER PRIMARY KEY, name TEXT NOT NULL, tier INTEGER NOT NULL DEFAULT 0, slot INTEGER NOT NULL DEFAULT 0, item_type INTEGER NOT NULL DEFAULT 0, box_type INTEGER NOT NULL DEFAULT 0, price INTEGER NOT NULL DEFAULT 0, gold INTEGER NOT NULL DEFAULT 0, item_effect INTEGER NOT NULL DEFAULT 0, effect_value INTEGER NOT NULL DEFAULT 0, max_value INTEGER NOT NULL DEFAULT 0, type_value INTEGER NOT NULL DEFAULT 0, pay_type INTEGER NOT NULL DEFAULT 0, atk INTEGER DEFAULT 0, atk_up INTEGER DEFAULT 0, def INTEGER DEFAULT 0, def_up INTEGER DEFAULT 0, inte INTEGER DEFAULT 0, inte_up INTEGER DEFAULT 0, agi INTEGER DEFAULT 0, agi_up INTEGER DEFAULT 0, mor INTEGER DEFAULT 0, mor_up INTEGER DEFAULT 0, hp INTEGER DEFAULT 0, hp_up INTEGER DEFAULT 0, mp INTEGER DEFAULT 0, mp_up INTEGER DEFAULT 0, max_lv INTEGER NOT NULL DEFAULT 1, target_type INTEGER NOT NULL DEFAULT 0, skill_id INTEGER NOT NULL DEFAULT 0, unit_id INTEGER NOT NULL DEFAULT 0, atlas TEXT DEFAULT '', icon TEXT DEFAULT '', country INTEGER NOT NULL DEFAULT 0, job_type INTEGER NOT NULL DEFAULT 0)`),
+    ]);
+    const count = await db.prepare("SELECT COUNT(*) AS c FROM items").first<{ c: number }>();
+    if (!count || count.c === 0) {
+      const stmts = CATALOG.map(it =>
+        db.prepare(`INSERT OR REPLACE INTO items (item_id,name,tier,slot,item_type,box_type,price,gold,item_effect,effect_value,max_value,type_value,pay_type,atk,atk_up,def,def_up,inte,inte_up,agi,agi_up,mor,mor_up,hp,hp_up,mp,mp_up,max_lv,target_type,skill_id,unit_id,atlas,icon,country,job_type)
+          VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14,?15,?16,?17,?18,?19,?20,?21,?22,?23,?24,?25,?26,?27,?28,?29,?30,?31,?32,?33,?34,?35)`)
+          .bind(it.item_id, it.name, it.tier ?? 0, it.slot ?? 0, it.item_type ?? 0, it.box_type ?? 0,
+                it.price ?? 0, it.gold ?? 0,
+                it.item_effect ?? 0, it.effect_value ?? 0, it.max_value ?? 0, it.type_value ?? 0, it.pay_type ?? 0,
+                it.atk ?? 0, it.atk_up ?? 0, it.def ?? 0, it.def_up ?? 0, it.inte ?? 0, it.inte_up ?? 0,
+                it.agi ?? 0, it.agi_up ?? 0, it.mor ?? 0, it.mor_up ?? 0, it.hp ?? 0, it.hp_up ?? 0,
+                it.mp ?? 0, it.mp_up ?? 0, it.max_lv ?? 1, it.target_type ?? 0, it.skill_id ?? 0,
+                it.unit_id ?? 0, it.atlas ?? "", it.icon ?? "", it.country ?? 0, it.job_type ?? 0));
+      await db.batch(stmts);
+    }
+    this.migrated = true;
+    return db;
+  }
+
+  private async ensureUser(userId: string) {
+    const db = await this.migrate();
     if (userId) {
       const found = await db
         .prepare("SELECT user_id, auth_key FROM players WHERE user_id = ?1")
         .bind(userId).first<{ user_id: string; auth_key: string }>();
-      if (found) return found;
+      if (found) {
+        await this.ensureWallet(userId);
+        return found;
+      }
     }
     const newId = userId || sid(8);
     const authKey = sid(24);
-    await db.prepare(
-      "INSERT INTO players (user_id, auth_key, created_at) VALUES (?1, ?2, ?3)")
-      .bind(newId, authKey, Date.now()).run();
+    await db.batch([
+      db.prepare(
+        "INSERT INTO players (user_id, auth_key, created_at) VALUES (?1, ?2, ?3)")
+        .bind(newId, authKey, Date.now()),
+      db.prepare("INSERT OR IGNORE INTO wallets (user_id, gold, cash) VALUES (?1, 1000, 0)")
+        .bind(newId),
+      // [RE] starter kit: iron sword + leather armor + 3 potions
+      db.prepare("INSERT OR IGNORE INTO inventory (user_id, item_id, count, acquired_at) VALUES (?1, 10001, 1, ?2)").bind(newId, Date.now()),
+      db.prepare("INSERT OR IGNORE INTO inventory (user_id, item_id, count, acquired_at) VALUES (?1, 10041, 1, ?2)").bind(newId, Date.now()),
+      db.prepare("INSERT OR IGNORE INTO inventory (user_id, item_id, count, acquired_at) VALUES (?1, 10061, 3, ?2)").bind(newId, Date.now()),
+    ]);
     return { user_id: newId, auth_key: authKey };
   }
 
+  private async ensureWallet(userId: string) {
+    const db = await this.migrate();
+    await db
+      .prepare("INSERT OR IGNORE INTO wallets (user_id, gold, cash) VALUES (?1, 1000, 0)")
+      .bind(userId).run();
+  }
+
   private async getUserData(userId: string) {
-    const db = (this.env as Env).DB;
+    const db = await this.migrate();
     const row = await db.prepare(
       "SELECT user_id, created_at FROM players WHERE user_id = ?1")
       .bind(userId).first<{ user_id: string; created_at: number }>();
     if (!row) return { error: "notFoundUserId" };   // [RE] literal exists in metadata
-    return { userId: row.user_id, createdAt: row.created_at };
+    await this.ensureWallet(userId);
+    const wallet = await db.prepare("SELECT gold, cash FROM wallets WHERE user_id = ?1")
+      .bind(userId).first<{ gold: number; cash: number }>();
+    const inventory = await db.prepare(
+      "SELECT item_id, count, tier, locked FROM inventory WHERE user_id = ?1")
+      .bind(userId).all<{ item_id: number; count: number; tier: number; locked: number }>();
+    const catalog = await db.prepare(
+      "SELECT * FROM items ORDER BY item_id").all();
+    return {
+      userId: row.user_id,
+      createdAt: row.created_at,
+      gold: wallet?.gold ?? 0,
+      cash: wallet?.cash ?? 0,
+      inventory: inventory.results ?? [],
+      catalog: catalog.results ?? [],
+      serverTime: Date.now(),
+    };
+  }
+
+  private async sellItems(userId: string, itemIds: number[]) {
+    const db = await this.migrate();
+    await this.ensureWallet(userId);
+    let goldEarned = 0;
+    const stmts: D1PreparedStatement[] = [];
+    for (const id of itemIds) {
+      const item = await db.prepare("SELECT gold FROM items WHERE item_id = ?1")
+        .bind(id).first<{ gold: number }>();
+      const owned = await db.prepare(
+        "SELECT count, locked FROM inventory WHERE user_id = ?1 AND item_id = ?2")
+        .bind(userId, id).first<{ count: number; locked: number }>();
+      if (!owned || owned.locked) continue;
+      const quarter = Math.floor((item?.gold ?? 0) / 4) || 1;   // [RE] 25% resale
+      goldEarned += quarter;
+      const remaining = owned.count - 1;
+      if (remaining <= 0)
+        stmts.push(db.prepare("DELETE FROM inventory WHERE user_id = ?1 AND item_id = ?2").bind(userId, id));
+      else
+        stmts.push(db.prepare("UPDATE inventory SET count = ?3 WHERE user_id = ?1 AND item_id = ?2").bind(userId, id, remaining));
+    }
+    if (goldEarned > 0)
+      stmts.push(db.prepare("UPDATE wallets SET gold = gold + ?2 WHERE user_id = ?1").bind(userId, goldEarned));
+    if (stmts.length > 0) await db.batch(stmts);
+    return { success: true, goldEarned };
+  }
+
+  private async buyItem(userId: string, itemId: number) {
+    const db = await this.migrate();
+    await this.ensureWallet(userId);
+    const item = await db.prepare("SELECT gold, price FROM items WHERE item_id = ?1")
+      .bind(itemId).first<{ gold: number; price: number }>();
+    if (!item) return { error: "notFoundItemId" };
+    const cost = item.gold > 0 ? item.gold : item.price;   // [RE] gold vs cash
+    const wallet = await db.prepare("SELECT gold, cash FROM wallets WHERE user_id = ?1")
+      .bind(userId).first<{ gold: number; cash: number }>();
+    if (!wallet || wallet.gold < cost) return { error: "notEnoughGold" };
+    const owned = await db.prepare(
+      "SELECT count FROM inventory WHERE user_id = ?1 AND item_id = ?2")
+      .bind(userId, itemId).first<{ count: number }>();
+    const stmts = [
+      db.prepare("UPDATE wallets SET gold = gold - ?2 WHERE user_id = ?1").bind(userId, cost),
+      owned
+        ? db.prepare("UPDATE inventory SET count = count + 1 WHERE user_id = ?1 AND item_id = ?2").bind(userId, itemId)
+        : db.prepare("INSERT INTO inventory (user_id, item_id, count, acquired_at) VALUES (?1, ?2, 1, ?3)").bind(userId, itemId, Date.now()),
+    ];
+    await db.batch(stmts);
+    return { success: true, itemId, cost };
   }
 
   // ---- WebSocket / socket.io ----------------------------------------------
@@ -208,7 +724,7 @@ export class GameServer extends DurableObject {
         if (!p.success) return reply([{ error: "bad_payload" }]);
         s.userId = String(p.data.userId);
         s.authKey = p.data.authKey;
-        const db = (this.env as Env).DB;
+        const db = await this.migrate();
         const row = await db.prepare("SELECT auth_key FROM players WHERE user_id = ?1")
           .bind(s.userId).first<{ auth_key: string }>();
         if (!row || row.auth_key !== p.data.authKey) {

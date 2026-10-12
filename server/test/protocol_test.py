@@ -115,6 +115,25 @@ async def run(port):
     print("  leaveRoom reply:", ev)
     assert f"world:{WORLD}" in ev, ev
 
+    # 5. economy: getUserData carries catalog; buy+sell round-trip
+    import urllib.request
+    req2 = urllib.request.Request(
+        f"http://127.0.0.1:{port}/item/craftItem",
+        data=json.dumps([rest["userId"], 10001]).encode(),
+        headers={"content-type": "application/json"}, method="POST")
+    with urllib.request.urlopen(req2, timeout=8) as r2:
+        buy = json.load(r2)
+    assert buy.get("success"), buy
+    print("  buy:", buy)
+    req3 = urllib.request.Request(
+        f"http://127.0.0.1:{port}/item/sellItems",
+        data=json.dumps([rest["userId"], [10001]]).encode(),
+        headers={"content-type": "application/json"}, method="POST")
+    with urllib.request.urlopen(req3, timeout=8) as r3:
+        sell = json.load(r3)
+    assert sell.get("success"), sell
+    print("  sell:", sell)
+
     writer.write(encode_frame("41"))
     writer.close()
     print("PROTOCOL_TEST_PASS")
@@ -122,3 +141,5 @@ async def run(port):
 
 if __name__ == "__main__":
     asyncio.run(run(int(sys.argv[1]) if len(sys.argv) > 1 else 8787))
+
+# economy extension (append to run() before the disconnect — merged by verify)
