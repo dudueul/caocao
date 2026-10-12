@@ -1,106 +1,212 @@
+#region License
+/*
+ * PayloadData.cs
+ *
+ * The MIT License
+ *
+ * Copyright (c) 2012-2025 sta.blockhead
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+#endregion
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace WebSocketSharp
 {
-	internal class PayloadData : IEnumerable<byte>, IEnumerable
-	{
-		private byte[] _applicationData;
+  internal class PayloadData : IEnumerable<byte>
+  {
+    #region Private Fields
 
-		private byte[] _extensionData;
+    private byte[]                 _data;
+    private static readonly byte[] _emptyBytes;
+    private long                   _extDataLength;
+    private long                   _length;
 
-		private bool _masked;
+    #endregion
 
-		public const ulong MaxLength = 9223372036854775807uL;
+    #region Public Fields
 
-		internal bool ContainsReservedCloseStatusCode
-		{
-			get
-			{
-				return false;
-			}
-		}
+    /// <summary>
+    /// Represents the empty payload data.
+    /// </summary>
+    public static readonly PayloadData Empty;
 
-		public byte[] ApplicationData
-		{
-			get
-			{
-				return null;
-			}
-		}
+    /// <summary>
+    /// Represents the allowable max length of payload data.
+    /// </summary>
+    /// <remarks>
+    ///   <para>
+    ///   A <see cref="WebSocketException"/> is thrown when the length of
+    ///   incoming payload data is greater than the value of this field.
+    ///   </para>
+    ///   <para>
+    ///   If you would like to change the value of this field, it must be
+    ///   a number between <see cref="WebSocket.FragmentLength"/> and
+    ///   <see cref="Int64.MaxValue"/> inclusive.
+    ///   </para>
+    /// </remarks>
+    public static readonly ulong MaxLength;
 
-		public byte[] ExtensionData
-		{
-			get
-			{
-				return null;
-			}
-		}
+    #endregion
 
-		public bool IsMasked
-		{
-			get
-			{
-				return false;
-			}
-		}
+    #region Static Constructor
 
-		public ulong Length
-		{
-			get
-			{
-				return 0uL;
-			}
-		}
+    static PayloadData ()
+    {
+      _emptyBytes = new byte[0];
 
-		public PayloadData()
-		{
-		}
+      Empty = new PayloadData (_emptyBytes, 0);
+      MaxLength = Int64.MaxValue;
+    }
 
-		public PayloadData(byte[] applicationData)
-		{
-		}
+    #endregion
 
-		public PayloadData(string applicationData)
-		{
-		}
+    #region Internal Constructors
 
-		public PayloadData(byte[] applicationData, bool masked)
-		{
-		}
+    internal PayloadData (byte[] data)
+      : this (data, data.LongLength)
+    {
+    }
 
-		public PayloadData(byte[] extensionData, byte[] applicationData, bool masked)
-		{
-		}
+    internal PayloadData (byte[] data, long length)
+    {
+      _data = data;
+      _length = length;
+    }
 
-		private static void mask(byte[] src, byte[] key)
-		{
-		}
+    internal PayloadData (ushort code, string reason)
+    {
+      _data = code.Append (reason);
+      _length = _data.LongLength;
+    }
 
-		[DebuggerHidden]
-		public IEnumerator<byte> GetEnumerator()
-		{
-			return null;
-		}
+    #endregion
 
-		public void Mask(byte[] maskingKey)
-		{
-		}
+    #region Internal Properties
 
-		public byte[] ToByteArray()
-		{
-			return null;
-		}
+    internal ushort Code {
+      get {
+        return _length >= 2
+               ? _data.SubArray (0, 2).ToUInt16 (ByteOrder.Big)
+               : (ushort) 1005;
+      }
+    }
 
-		public override string ToString()
-		{
-			return null;
-		}
+    internal long ExtensionDataLength {
+      get {
+        return _extDataLength;
+      }
 
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return null;
-		}
-	}
+      set {
+        _extDataLength = value;
+      }
+    }
+
+    internal bool HasReservedCode {
+      get {
+        return _length >= 2 && Code.IsReservedStatusCode ();
+      }
+    }
+
+    internal string Reason {
+      get {
+        if (_length <= 2)
+          return String.Empty;
+
+        var bytes = _data.SubArray (2, _length - 2);
+
+        string reason;
+
+        return bytes.TryGetUTF8DecodedString (out reason)
+               ? reason
+               : String.Empty;
+      }
+    }
+
+    #endregion
+
+    #region Public Properties
+
+    public byte[] ApplicationData {
+      get {
+        return _extDataLength > 0
+               ? _data.SubArray (_extDataLength, _length - _extDataLength)
+               : _data;
+      }
+    }
+
+    public byte[] ExtensionData {
+      get {
+        return _extDataLength > 0
+               ? _data.SubArray (0, _extDataLength)
+               : _emptyBytes;
+      }
+    }
+
+    public ulong Length {
+      get {
+        return (ulong) _length;
+      }
+    }
+
+    #endregion
+
+    #region Internal Methods
+
+    internal void Mask (byte[] key)
+    {
+      for (long i = 0; i < _length; i++)
+        _data[i] = (byte) (_data[i] ^ key[i % 4]);
+    }
+
+    #endregion
+
+    #region Public Methods
+
+    public IEnumerator<byte> GetEnumerator ()
+    {
+      foreach (var b in _data)
+        yield return b;
+    }
+
+    public byte[] ToArray ()
+    {
+      return _data;
+    }
+
+    public override string ToString ()
+    {
+      return BitConverter.ToString (_data);
+    }
+
+    #endregion
+
+    #region Explicit Interface Implementations
+
+    IEnumerator IEnumerable.GetEnumerator ()
+    {
+      return GetEnumerator ();
+    }
+
+    #endregion
+  }
 }
