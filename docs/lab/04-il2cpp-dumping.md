@@ -98,3 +98,31 @@ original source's private fields. Now imagine you wrote this class in 2016.
   it must be exact-match O(1) for 163k entries. → `dsa/01-...`.
 
 Solutions: `solutions/04.md`.
+
+## 4.7 The best surprise of this course: `const` survives IL2CPP *perfectly*
+
+Milestone 5b needed the combat tuning table. Result — **383 real constants**
+recovered verbatim from the stubs (`ClientConst.cs`): `doubleAttackRate=100`,
+`doubleAttackEffectRate=75`, `minHitRatio=30`/`maxHitRatio=100`, per-level
+weapon/armor exp tables...
+
+Why: C# `const` fields are **compile-time** — they're baked into the *IL
+metadata* and preserved in `global-metadata.dat`. But `static readonly`
+arrays are *runtime* — they live in `cctor` machine code. The military-power
+coefficients (`CombatPower.Almighty.coef` etc.) were `static readonly` — so
+they had to be dug out of **decompiled `cctor`s**:
+
+```
+Almighty.coef        = {100, 100, 75,  65,  60}   (decompiled @0x210a88c)
+MilitaryOfficier.coef= {100, 100, 25,  85,  85}   (atk/def-dominant)
+CivilOfficer.coef    = {10,  75, 135, 50, 100}    (intelligence-dominant!)
+ETC.coef             = {100, 100, 100, 100, 100}
+```
+
+Note the design intel leaking out: civil officers weight intelligence 1.35×,
+military officers ignore intelligence (0.25×). **The game's class philosophy
+is readable in four arrays of five integers.**
+
+Rule of thumb for any Unity RE: `const` → free in metadata; `static readonly`
+→ decompile the `.cctor`; `enum` → free (metadata); anything else → native
+decompile.
