@@ -46,3 +46,17 @@ log — argue trade-offs for a 5MB text table.
 `verify-lab.sh dsa08`: checks 8-A's blob construction (round-trip equality
 for all 19,897 values) and that your (offset,len) table uses < 1/3 the
 memory of naive.
+
+## 5. Measured reference (2026-10-12, on the real 19,897 literals)
+
+`exercises/dsa08-interning.py`:
+
+```
+naive ≈ 1.5 MB | blob+(offset,len) ≈ 0.8 MB (57% of naive)
+full blob decode: 4.7 ms
+```
+
+The 49%-saving is *before* pointer/BIAS accounting of a real runtime (C# adds
+object headers per string — ~24B each → naive ≈ 2.1 MB → blob = 38%). Note
+Python strings are themselves interned here — the exercise deliberately
+simulates the un-interned layout via size accounting.

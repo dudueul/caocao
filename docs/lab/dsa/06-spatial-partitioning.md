@@ -45,3 +45,17 @@ encoding (bitboard per row) and implement cone/cross/line/3×3 generation.
 `verify-lab.sh dsa06`: correctness (query set equality vs brute force on
 random layouts) + a performance assertion (grid < brute force at n=5,000;
 either may win at n=200 — report, don't assert).
+
+## 5. Measured reference (2026-10-12, exercise 6-A reference impl)
+
+`exercises/dsa06-grid.py` — random 2D, cell=32, radius=100:
+
+```
+n=200:  brute=0.04ms grid=0.02ms  (grid wins)
+n=5000: brute=0.79ms grid=0.13ms  (grid wins)
+```
+
+Honest surprise: at n=200 the grid already won in Python (the brute force is
+O(n) but Python's per-op overhead is high; the grid's pruning pays). The doc
+claim "brute wins under 1k" comes from C# inlining costs — **measure in YOUR
+language**, which is the actual lesson.
