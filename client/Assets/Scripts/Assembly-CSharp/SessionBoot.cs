@@ -98,6 +98,7 @@ public class SessionBoot : MonoBehaviour
 		if (started)
 			return;
 		started = true;
+		Debug.Log("[SessionBoot] StartSession — device userId=" + GetGuestUserId());
 		GuildWar.Backend.PImpl.CreateLocalSession(GetGuestUserId());
 		GuildWar.Backend.PImpl.OnAnySessionLogined += OnSocketLogined;
 	}
@@ -131,6 +132,7 @@ public class SessionBoot : MonoBehaviour
 
 	private void Start()
 	{
+		Debug.Log("[SessionBoot] Start — autoStart=" + autoStart);
 		if (autoStart)
 			StartSession();
 	}

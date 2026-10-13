@@ -7643,6 +7643,7 @@ namespace GuildWar.Backend
 					return;
 				m_getAuthTimer = 0f;
 				m_webGettingAuthKey = true;
+				UnityEngine.Debug.Log("[SessionImpl] UpdateWebAuthKey → POST /user/login");
 				HttpRequest.instance.Send("/user/login", "POST", false, delegate(JsonData response)
 				{
 					m_webGettingAuthKey = false;
@@ -7650,6 +7651,11 @@ namespace GuildWar.Backend
 					{
 						m_authKey = response["authKey"].ToString();
 						m_needToReLoginSocketServer = true;
+						UnityEngine.Debug.Log("[SessionImpl] authKey OK → socket login next");
+					}
+					else
+					{
+						UnityEngine.Debug.LogWarning("[SessionImpl] /user/login response bad: " + (response == null ? "NULL" : response.ToJson()));
 					}
 			}, new object[] { m_connectionInfo.userId });
 			}
@@ -7677,6 +7683,7 @@ namespace GuildWar.Backend
 
 			private void CreateSocket()
 			{
+				UnityEngine.Debug.Log("[SessionImpl] CreateSocket → " + ServerSetting.instance.GAME_SERVER_HOST_URL);
 				DestroySocket();
 				// [RE] URL template literal: ws://{0}/socket.io/?EIO=4&transport=websocket
 				var host = new Uri(ServerSetting.instance.GAME_SERVER_HOST_URL).Authority;
@@ -7694,6 +7701,7 @@ namespace GuildWar.Backend
 				m_socket.Connect();
 				m_socketConnecting = true;
 				m_socketConnectTimer = 0f;
+				UnityEngine.Debug.Log("[SessionImpl] socket url=" + m_socket.url);
 			}
 
 			private void OnSocketError(SocketIOEvent e)
@@ -7728,6 +7736,7 @@ namespace GuildWar.Backend
 
 			private void OnSocketConnect(SocketIOEvent e)
 			{
+				UnityEngine.Debug.Log("[SessionImpl] OnSocketConnect");
 				// [RE] decompiled OnSocketConnect: reset world-room state, mark
 				// connected, fire onSocketConnected, start login.
 				m_socketConnected = true;
@@ -7770,6 +7779,7 @@ namespace GuildWar.Backend
 					return;
 				m_socketLoginTimer = 0f;
 				m_socketLoggingIn = true;
+				UnityEngine.Debug.Log("[SessionImpl] emit login");
 				var payload = new JsonData();
 				payload["userId"] = m_connectionInfo.userId;
 				payload["authKey"] = (string)m_authKey;
