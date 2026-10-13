@@ -24,7 +24,8 @@ namespace GuildWar
 		{
 			public TileKey tileKey;
 
-			public SourceData(TileKey tileKey)
+			// [RE] param made optional — derived ctors chain implicitly
+			public SourceData(TileKey tileKey = default(TileKey))
 			{
 			}
 		}

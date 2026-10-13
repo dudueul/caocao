@@ -87,7 +87,7 @@ public class WebSocketSharpTransport : IWebSocketTransport
 
 	public void Send(string text)
 	{
-		if (ws != null && ws.ReadyState == WebSocketState.Open)
+		if (ws != null && ws.ReadyState == WebSocketSharp.WebSocketState.Open)
 			ws.Send(text);
 	}
 

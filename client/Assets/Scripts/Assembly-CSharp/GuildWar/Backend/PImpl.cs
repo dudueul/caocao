@@ -7794,7 +7794,7 @@ namespace GuildWar.Backend
 			{
 				m_socketLoggedIn = true;
 				if (OnAnySessionLogined != null)
-					OnAnySessionLogined(m_connectionInfo.userId);
+					OnAnySessionLogined(m_connectionInfo.userId.ToString());
 				if (onSocketLogined__BackingField != null)
 					onSocketLogined__BackingField();
 			}

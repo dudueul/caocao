@@ -35,7 +35,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 				return null;
 			if (ms_instance != null)
 				return ms_instance;
-			ms_instance = FindObjectOfType<T>();
+			ms_instance = UnityEngine.Object.FindAnyObjectByType<T>();
 			if (ms_instance != null)
 				return ms_instance;
 			if (ms_isAddingComponent)
