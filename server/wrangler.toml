@@ -16,3 +16,9 @@ new_sqlite_classes = ["GameServer"]
 binding = "DB"
 database_name = "caocao"
 database_id = "local-dev-placeholder"
+
+# R2 content bucket — WebGL/iOS asset bundles (Brotli) + catalog snapshots.
+# [RE] mirrors the original design: akamaized CDN for patchable content.
+[[r2_buckets]]
+binding = "CDN"
+bucket_name = "caocao-cdn"

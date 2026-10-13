@@ -15,6 +15,7 @@ import {
 export interface Env {
   GAME_SERVER: DurableObjectNamespace;
   DB: D1Database;
+  CDN: R2Bucket;
 }
 
 const HS: Omit<Handshake, "sid"> = {
@@ -60,6 +61,19 @@ export default {
           body: await request.text(),
         }));
       if (resp.status !== 404) return resp;
+    }
+
+    // [RE] CDN route: /cdn/<key> serves R2 objects with the right encoding.
+    // Upload pipeline: scripts/upload_cdn.sh (Brotli + manifest).
+    if (url.pathname.startsWith("/cdn/")) {
+      const key = decodeURIComponent(url.pathname.slice("/cdn/".length));
+      const obj = await env.CDN.get(key);
+      if (!obj) return new Response("not found", { status: 404, headers: CORS });
+      const headers: Record<string, string> = { ...CORS };
+      obj.writeHttpMetadata(headers);
+      if (key.endsWith(".br")) headers["content-encoding"] = "br";
+      if (key.endsWith(".json")) headers["content-type"] = "application/json";
+      return new Response(obj.body, { headers });
     }
 
     if (url.pathname === "/healthz")
