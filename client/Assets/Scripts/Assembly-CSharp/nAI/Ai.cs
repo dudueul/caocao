@@ -320,7 +320,7 @@ namespace nAI
 		{
 		}
 
-		private void _ListUp(Action.ActionType actionType, EnumData.Skills skillId, int itemId, int attackRangeType, Func<UnitData, bool> targetFilter, QuickPathFinderContext context)
+		private void _ListUp(nAI.Action.ActionType actionType, EnumData.Skills skillId, int itemId, int attackRangeType, Func<UnitData, bool> targetFilter, QuickPathFinderContext context)
 		{
 		}
 
@@ -346,7 +346,7 @@ namespace nAI
 		{
 		}
 
-		public void FindBestVipAttackAction(Action.ActionType actionType, EnumData.Skills skillId, List<UnitData> targets, QuickPathFinderContext context)
+		public void FindBestVipAttackAction(nAI.Action.ActionType actionType, EnumData.Skills skillId, List<UnitData> targets, QuickPathFinderContext context)
 		{
 		}
 

@@ -208,7 +208,7 @@ public class UnitController : MonoBehaviour
 		return null;
 	}
 
-	private void ShowBestTarget(Action.ActionType actionType, EnumData.Skills skillId, List<UnitData> targets, bool move)
+	private void ShowBestTarget(nAI.Action.ActionType actionType, EnumData.Skills skillId, List<UnitData> targets, bool move)
 	{
 	}
 

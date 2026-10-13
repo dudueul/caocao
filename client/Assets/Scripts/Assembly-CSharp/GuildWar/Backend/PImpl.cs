@@ -14,10 +14,6 @@ namespace GuildWar.Backend
 {
 	internal static class PImpl
 	{
-		// [RE] rebuild-only: public login hook (original: Manager subscribed the
-		// session events internally; rebuild boot (SessionBoot) needs access).
-		public static event Action<string> OnAnySessionLogined;
-
 		public class CameraDataImpl : CameraData, IDataTableOwner, IClientDataOwnerImpl, IDataTypeImpl<CameraData>, IDataType<CameraData>, IDataType, IDataUpdateListener<CameraData>
 		{
 			private ClientData m_clientData;
@@ -5537,6 +5533,22 @@ namespace GuildWar.Backend
 				}
 			}
 
+			public override int world_id
+			{
+				get
+				{
+					return 0;
+				}
+			}
+
+			public override int instance_index
+			{
+				get
+				{
+					return 0;
+				}
+			}
+
 			public override int latest_corps_id
 			{
 				get
@@ -5554,6 +5566,14 @@ namespace GuildWar.Backend
 			}
 
 			public override int season_key
+			{
+				get
+				{
+					return 0;
+				}
+			}
+
+			public override int season_detail_key
 			{
 				get
 				{
@@ -7181,7 +7201,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_socketServerUuid;
+					return null;
 				}
 			}
 
@@ -7189,7 +7209,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_socketServerIP;
+					return null;
 				}
 			}
 
@@ -7197,7 +7217,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_socketServerPort;
+					return 0;
 				}
 			}
 
@@ -7205,7 +7225,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_logicServerUuid;
+					return null;
 				}
 			}
 
@@ -7213,7 +7233,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_logicServerIP;
+					return null;
 				}
 			}
 
@@ -7221,7 +7241,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_logicServerPort;
+					return 0;
 				}
 			}
 
@@ -7229,7 +7249,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_distributorServerUuid;
+					return null;
 				}
 			}
 
@@ -7237,7 +7257,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_distributorServerIP;
+					return null;
 				}
 			}
 
@@ -7245,7 +7265,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_userId;
+					return 0;
 				}
 			}
 
@@ -7253,7 +7273,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return m_userId;
+					return 0uL;
 				}
 			}
 		}
@@ -7848,38 +7868,6 @@ namespace GuildWar.Backend
 					onSocketWorldHistoryUpdated__BackingField(from, to, e.data);
 			}
 
-			public override int season_detail_key
-			{
-				get
-				{
-					return 0;
-				}
-			}
-
-			public override int clan_db_shard
-			{
-				get
-				{
-					return m_socketEnteredWorldRoom.clan_db_shard;
-				}
-			}
-
-			public override int world_id
-			{
-				get
-				{
-					return m_socketEnteredWorldRoom.world_id;
-				}
-			}
-
-			public override int instance_index
-			{
-				get
-				{
-					return 0;
-				}
-			}
-
 			public void AddRequireSequence(int sequence, int requestIndex)
 			{
 			}
@@ -7973,7 +7961,72 @@ namespace GuildWar.Backend
 
 			public float timerGetWorldData;
 
+			public void AddRequireSequence(int sequence, int requestIndex)
+			{
+			}
+
+			public bool NeedGetWorldData()
+			{
+				return false;
+			}
+
+			public void Update()
+			{
+			}
+		}
+
+
+		private class WorldMetaDataImpl : WorldMetaData
+		{
+			private ObscuredInt m_season_key;
+
+			private ObscuredInt m_clan_db_shard;
+
+			private ObscuredInt m_world_id;
+
+			private ObscuredInt m_instance_index;
+
+			private ObscuredEnum<WorldStatus> m_status;
+
+			private ObscuredString m_map;
+
+			private ObscuredString m_socket_server_uuid;
+
+			private ObscuredString m_logic_server_uuid;
+
+			private ObscuredString m_distributor_server_uuid;
+
+			private ObscuredString m_socket_server_ip;
+
+			private ObscuredString m_logic_server_ip;
+
+			private ObscuredString m_distributor_server_ip;
+
+			private ObscuredInt m_socket_server_port;
+
+			private ObscuredInt m_logic_server_port;
+
+			private ObscuredInt m_distributor_server_port;
+
+			public Session session;
+
+			public int latestServerSequence;
+
+			public int requiredSequence;
+
+			public Dictionary<int, int> requiredRequestIdsAndSequences;
+
+			public float timerGetWorldData;
+
 			public override int season_detail_key
+			{
+				get
+				{
+					return 0;
+				}
+			}
+
+			public override int clan_db_shard
 			{
 				get
 				{
