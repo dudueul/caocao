@@ -7961,63 +7961,6 @@ namespace GuildWar.Backend
 
 			public float timerGetWorldData;
 
-			public void AddRequireSequence(int sequence, int requestIndex)
-			{
-			}
-
-			public bool NeedGetWorldData()
-			{
-				return false;
-			}
-
-			public void Update()
-			{
-			}
-		}
-
-
-		private class WorldMetaDataImpl : WorldMetaData
-		{
-			private ObscuredInt m_season_key;
-
-			private ObscuredInt m_clan_db_shard;
-
-			private ObscuredInt m_world_id;
-
-			private ObscuredInt m_instance_index;
-
-			private ObscuredEnum<WorldStatus> m_status;
-
-			private ObscuredString m_map;
-
-			private ObscuredString m_socket_server_uuid;
-
-			private ObscuredString m_logic_server_uuid;
-
-			private ObscuredString m_distributor_server_uuid;
-
-			private ObscuredString m_socket_server_ip;
-
-			private ObscuredString m_logic_server_ip;
-
-			private ObscuredString m_distributor_server_ip;
-
-			private ObscuredInt m_socket_server_port;
-
-			private ObscuredInt m_logic_server_port;
-
-			private ObscuredInt m_distributor_server_port;
-
-			public Session session;
-
-			public int latestServerSequence;
-
-			public int requiredSequence;
-
-			public Dictionary<int, int> requiredRequestIdsAndSequences;
-
-			public float timerGetWorldData;
-
 			public override int season_detail_key
 			{
 				get
