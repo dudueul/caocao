@@ -571,8 +571,7 @@ namespace SocketIO
 						return;
 					}
 				}
-				else
-					UnityEngine.Debug.LogWarning("[SocketIO] ack NO MATCH id=" + packet.id);
+				UnityEngine.Debug.LogWarning("[SocketIO] ack NO MATCH id=" + packet.id);
 			}
 			if (ev != null)
 				DispatchEvent(ev);
