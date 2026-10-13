@@ -61,7 +61,7 @@ public class UnitData : UnitDataForRenderer
 	{
 		get
 		{
-			return null;
+			return m_userUnit;
 		}
 		set
 		{

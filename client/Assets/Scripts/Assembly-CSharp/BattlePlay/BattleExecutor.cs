@@ -40,8 +40,10 @@ namespace BattlePlay
 		{
 			if (attacker == null || defender == null)
 				return 0;
-			int atk = attacker.stat != null ? attacker.stat.atk : 0;
-			int def = defender.stat != null ? defender.stat.def : 0;
+			var astat = attacker.userUnit != null ? attacker.userUnit.troopStat : default(TroopStat);
+			var dstat = defender.userUnit != null ? defender.userUnit.troopStat : default(TroopStat);
+			int atk = astat.atk;
+			int def = dstat.def;
 			int raw = Math.Max(1, atk * 2 - def);   // [RE-APPROX]
 			var roll = UnityEngine.Random.Range(ClientConst.minHitRatio, ClientConst.maxHitRatio + 1);
 			int dmg = raw * roll / 100;

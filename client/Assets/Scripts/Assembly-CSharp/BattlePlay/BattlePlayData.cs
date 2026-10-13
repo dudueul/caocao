@@ -137,11 +137,17 @@ namespace BattlePlay
 			}
 		}
 
+		private int m_controlIdx;   // [RE] rebuilt: manager advances this index
+
 		public int controlIdx
 		{
 			get
 			{
-				return 0;
+				return m_controlIdx;
+			}
+			set
+			{
+				m_controlIdx = value;
 			}
 		}
 

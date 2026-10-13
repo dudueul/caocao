@@ -179,6 +179,14 @@ public class HttpRequest : Singleton<HttpRequest>
 			}
 		}
 
+		public string packet
+		{
+			get
+			{
+				return m_packet;
+			}
+		}
+
 		public HttpRequestContext(string uri, string packet, string method, bool showNetworkIndicator, ResponseCallback responseCallback, RetryPopupCallback retryPopupCallback, Option opt)
 		{
 			m_uri = uri;
@@ -272,7 +280,7 @@ public class HttpRequest : Singleton<HttpRequest>
 
 		public int priority;
 
-		int IComparable.CompareTo(object b)
+		public int CompareTo(object b)   // [RE] public so lambdas can call it
 		{
 			var o = (OrderedResponseCallback)b;
 			return priority.CompareTo(o.priority);
@@ -349,7 +357,7 @@ public class HttpRequest : Singleton<HttpRequest>
 		{
 			if (req.method != "GET")
 			{
-				var body = Encoding.UTF8.GetBytes(ctx.m_packet ?? "[]");
+				var body = Encoding.UTF8.GetBytes(ctx.packet ?? "[]");
 				req.uploadHandler = new UploadHandlerRaw(body);
 			}
 			req.downloadHandler = new DownloadHandlerBuffer();

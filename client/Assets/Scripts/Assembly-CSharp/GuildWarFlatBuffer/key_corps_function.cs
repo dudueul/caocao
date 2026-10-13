@@ -32,12 +32,14 @@ namespace GuildWarFlatBuffer
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
-			__p = new Struct(_i, _bb);
+			__p.bb_pos = _i;
+			__p.bb = _bb;
 		}
 
 		public key_corps_function __assign(int _i, ByteBuffer _bb)
 		{
-			__p = new Struct(_i, _bb);
+			__p.bb_pos = _i;
+			__p.bb = _bb;
 			return this;
 		}
 

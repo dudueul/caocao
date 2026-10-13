@@ -69,7 +69,7 @@ public class WebSocketSharpTransport : IWebSocketTransport
 		};
 		ws.OnMessage += delegate(object s, WebSocketSharp.MessageEventArgs e)
 		{
-			if (e.Type == WebSocketSharp.Opcode.Text && OnTextMessage != null)
+			if (e.IsText && OnTextMessage != null)
 				OnTextMessage(e.Data);
 		};
 		ws.ConnectAsync();
@@ -87,7 +87,7 @@ public class WebSocketSharpTransport : IWebSocketTransport
 
 	public void Send(string text)
 	{
-		if (ws != null && ws.ReadyState == WebSocketSharp.ReadyState.Open)
+		if (ws != null && ws.ReadyState == WebSocketState.Open)
 			ws.Send(text);
 	}
 

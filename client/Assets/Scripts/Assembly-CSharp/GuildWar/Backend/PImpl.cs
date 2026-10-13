@@ -14,6 +14,9 @@ namespace GuildWar.Backend
 {
 	internal static class PImpl
 	{
+		// [RE] rebuild-only: public login hook (original: Manager subscribed the
+		// session events internally; rebuild boot (SessionBoot) needs access).
+		public static event Action<string> OnAnySessionLogined;
 		public class CameraDataImpl : CameraData, IDataTableOwner, IClientDataOwnerImpl, IDataTypeImpl<CameraData>, IDataType<CameraData>, IDataType, IDataUpdateListener<CameraData>
 		{
 			private ClientData m_clientData;
@@ -7769,7 +7772,7 @@ namespace GuildWar.Backend
 				m_socketLoggingIn = true;
 				var payload = new JsonData();
 				payload["userId"] = m_connectionInfo.userId;
-				payload["authKey"] = m_authKey;
+				payload["authKey"] = (string)m_authKey;
 				m_socket.Emit("login", payload, delegate(JsonData ack)
 				{
 					m_socketLoggingIn = false;

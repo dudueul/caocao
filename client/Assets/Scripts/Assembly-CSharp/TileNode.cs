@@ -53,7 +53,7 @@ public class TileNode : IPoolElement
 		}
 	}
 
-	public int movePower { get; private set; }
+	public int movePower { get; internal set; }
 
 	public int ignoreZocMovePower { get; set; }
 

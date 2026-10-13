@@ -121,7 +121,7 @@ public class ServerSetting : IServerSetting
 	{
 		// [RE] original: switch(countryCode){100: LiveJPN/StageJPN/DevJPN,
 		// 10000: LiveGLB/StageGLB/DevGLB} — rebuilt as a single configurable row.
-		var go = Singleton<ServerSetting>.instance;
+		var go = instance as ServerSetting;
 		return go != null ? go : new ServerSetting();
 	}
 

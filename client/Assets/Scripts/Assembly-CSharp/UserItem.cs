@@ -149,7 +149,12 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	{
 		get
 		{
-			return 0uL;
+			return m_srl;
+		}
+		// [RE] rebuild-only: UserItems upsert assigns the server-side srl
+		set
+		{
+			m_srl = value;
 		}
 	}
 
@@ -269,11 +274,11 @@ public class UserItem : ITransmittable, IUpsertedMarkable
 	}
 
 	[DoNotJsonfy]
-	public bool sellPrice
+	public int sellPrice   // [RE] stub said bool — int (AssetRipper type artifact)
 	{
 		get
 		{
-			return m_itemInfo != null ? m_itemInfo.gold / 4 : 0;   // [RE] matches server 25% resale
+			return m_itemInfo != null ? m_itemInfo.gold / 4 : 0;   // matches server 25% resale
 		}
 	}
 

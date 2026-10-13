@@ -1407,7 +1407,7 @@ public class UserUnit : ITransmittable
 	{
 		get
 		{
-			return default(TroopStat);
+			return m_troopStat;
 		}
 	}
 

@@ -40,12 +40,14 @@ namespace GuildWarFlatBuffer
 
 		public void __init(int _i, ByteBuffer _bb)
 		{
-			__p = new Struct(_i, _bb);
+			__p.bb_pos = _i;
+			__p.bb = _bb;
 		}
 
 		public guild_custom_function __assign(int _i, ByteBuffer _bb)
 		{
-			__p = new Struct(_i, _bb);
+			__p.bb_pos = _i;
+			__p.bb = _bb;
 			return this;
 		}
 

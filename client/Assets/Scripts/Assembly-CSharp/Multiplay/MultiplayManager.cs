@@ -103,6 +103,8 @@ namespace Multiplay
 
 		public Action OnMatchedCallback;
 
+		public Action OnMatchmakingStartedCallback;
+
 		public Action OnMatchmakingCanceledCallback;
 
 		public Action<bool> OnCheckMatchmakingCallback;
@@ -476,7 +478,7 @@ namespace Multiplay
 			{
 				var control = new BattleControl();
 				control.Deserialize(e.data);
-				AddControl(control);
+				BattlePlay.BattlePlayManager.instance.AddControl(control);
 			});
 		}
 

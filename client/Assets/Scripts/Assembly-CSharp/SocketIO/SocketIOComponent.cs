@@ -296,7 +296,7 @@ namespace SocketIO
 
 		private void EmitPacket(Packet packet)
 		{
-			if (ws == null || ws.ReadyState != ReadyState.Open)
+			if (ws == null || !ws.IsOpen)
 				return;
 			ws.Send(encoder.Encode(packet));
 		}
