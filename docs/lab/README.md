@@ -28,6 +28,7 @@ here was captured **during that actual rebuild**.
 | 06 | [Native analysis: Ghidra + REA](06-ghidra-rea-native-analysis.md) | manual |
 | 07 | [Protocol reconstruction](07-protocol-reconstruction.md) | `lab07` |
 | 08 | [Rebuild & verification](08-rebuild-verification.md) | `lab07`,`dsa*` |
+| 09 | [Cross-platform channels: Android, iOS, WebGL](09-cross-platform-channels.md) | `lab07` |
 
 ## DSA companions
 

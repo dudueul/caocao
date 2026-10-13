@@ -68,6 +68,14 @@ indices in brackets).
 - Arena/Competition/AnnihilationWar/ThousandBattle modes
 - Gacha, pedlar (shop rotation), fair-rule anti-cheat parity
 
+## Milestone 7 — Platform channels ✅ core (27f3f082)
+- [x] IWebSocketTransport seam: WebSocketSharp (native) / browser WS via
+      .jslib (WebGL) — golden flow byte-identical through the seam
+- [x] Server CORS preflight (WebGL-ready)
+- [ ] iOS: needs macOS build host (owner decision: own Mac / CI Mac / Unity
+      Cloud Build); IL2CPP-only ✓; wss:// in prod (ATS)
+- [ ] WebGL: Brotli asset pipeline on R2; origin tightening in CORS
+
 ## Milestone 8 — Ship-config
 - Replace/stub SDKs: Tapjoy→(optional ads stub), NPA→own auth, Adjust→noop,
   Crashlytics→Sentry, IAB→Play Billing v7 re-implementation
