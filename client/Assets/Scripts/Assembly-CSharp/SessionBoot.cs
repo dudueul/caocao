@@ -108,6 +108,24 @@ public class SessionBoot : MonoBehaviour
 			return;
 		logined = true;
 		Debug.Log("[SessionBoot] socket logined as " + userId + " → " + nextSceneAfterLogin);
+		// [RE] the Login scene's full-screen black overlays (BlackBG/FadeTexture/
+		// Dim) were faded out by PlayMaker FSM tweens in the original; FSMs are
+		// stubbed in the rebuild, so clear them directly (Milestone 3 polish
+		// replaces this with a proper NGUI fade).
+		foreach (var overlayName in new[] { "BlackBG", "FadeTexture", "Dim", "Black" })
+		{
+			var overlay = GameObject.Find(overlayName);
+			if (overlay != null)
+				overlay.SetActive(false);
+		}
+		StartCoroutine(LoadNextSceneAfterFade());
+	}
+
+	[DebuggerHidden]
+	private System.Collections.IEnumerator LoadNextSceneAfterFade()
+	{
+		// [RE] small delay so the login UI is visible/legible before the switch
+		yield return new UnityEngine.WaitForSeconds(1.5f);
 		SceneManager.LoadScene(nextSceneAfterLogin);
 	}
 
