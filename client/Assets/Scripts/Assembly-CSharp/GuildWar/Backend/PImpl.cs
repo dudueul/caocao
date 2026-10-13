@@ -7276,7 +7276,7 @@ namespace GuildWar.Backend
 			{
 				get
 				{
-					return 0uL;
+					return m_userId;   // [RE] fix loop 12: stub return 0 resurfaced in rebuild
 				}
 			}
 		}

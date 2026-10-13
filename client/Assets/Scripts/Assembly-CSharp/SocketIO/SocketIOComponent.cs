@@ -551,13 +551,21 @@ namespace SocketIO
 			SocketIOEvent ev = parser.Parse(packet.json);
 			if (packet.socketPacketType == SocketPacketType.ACK)
 			{
+				// [RE] fix loop 12: ACK payloads are raw data ([{result}] or
+				// [{a},{b}]) — NOT the [name, args] event shape. The parser's
+				// ev.data came out null for single-element acks → callbacks
+				// saw null → treated as failure → retry loop. Pass the
+				// element itself for single-object acks.
 				for (int i = ackList.Count - 1; i >= 0; i--)
 				{
 					if (ackList[i].packetId == packet.id)
 					{
 						var a = ackList[i];
 						ackList.RemoveAt(i);
-						a.Invoke(ev != null ? ev.data : null);
+						JsonData ackPayload = null;
+						if (packet.json != null && packet.json.IsArray && packet.json.Count >= 1)
+							ackPayload = packet.json.Count == 1 ? packet.json[0] : packet.json;
+						a.Invoke(ackPayload);
 						return;
 					}
 				}
