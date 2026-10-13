@@ -56,6 +56,7 @@ namespace HutongGames.PlayMaker.Actions
 			}
 		}
 
+#if !UNITY_2019_1_OR_NEWER && !UNITY_6000_0_OR_NEWER
 		protected GUIText guiText
 		{
 			get
@@ -71,6 +72,7 @@ namespace HutongGames.PlayMaker.Actions
 				return null;
 			}
 		}
+#endif
 
 		protected Light light
 		{

@@ -1,5 +1,2 @@
-HttpRequest$$Send @ 016cb898 -> HttpRequest$$Send.c
-HttpRequest$$SendAndWait @ 016cc25c -> HttpRequest$$SendAndWait.c
-HttpRequest$$Send @ 016dd3f4 -> HttpRequest$$Send.c
-HttpRequest$$Send @ 016dd42c -> HttpRequest$$Send.c
-HttpRequest$$SendAndWait @ 016dd468 -> HttpRequest$$SendAndWait.c
+Multiplay.MultiplayManager$$ConnectToMultiplayServer @ 0139f9e8 -> Multiplay.MultiplayManager$$ConnectToMultiplayServer.c
+Multiplay.MultiplayManager$$EmitSocketMessage @ 013a12a4 -> Multiplay.MultiplayManager$$EmitSocketMessage.c

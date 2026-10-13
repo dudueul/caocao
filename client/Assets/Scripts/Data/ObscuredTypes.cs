@@ -327,6 +327,27 @@ namespace CodeStage.AntiCheat.ObscuredTypes
         { hiddenValue = v, inited = true };
     }
 
+    // [RE] the original CodeStage ObscuredEnum WAS generic (ObscuredEnum<T> —
+    // ControlFlow.cs/Replay.cs/Watch.cs use it with type args). Generic shim:
+    // stores the enum's underlying int; conversions to/from T.
+    [Serializable]
+    public struct ObscuredEnum<T> where T : struct, IConvertible
+    {
+        public int currentCryptoKey;
+        public int hiddenValue;
+        public bool inited;
+
+        public T GetDecrypted()
+        {
+            int bits = currentCryptoKey == 0 ? hiddenValue : hiddenValue ^ currentCryptoKey;
+            return (T)(object)bits;
+        }
+
+        public static implicit operator T(ObscuredEnum<T> o) => o.GetDecrypted();
+        public static implicit operator ObscuredEnum<T>(T v) => new ObscuredEnum<T>
+        { hiddenValue = (int)(object)v, inited = true };
+    }
+
     // [RE] PlayerPrefs wrapper — the original stored saves through it
     // (crypto per key). Rebuild: transparent passthrough to PlayerPrefs.
     public static class ObscuredPrefs

@@ -61,7 +61,6 @@ public class TileNode : IPoolElement
 
 	// [RE] per-unit score cache keyed by unit hash — the AI scoring surface
 	// (AI evaluated every reachable tile per unit; see EnumData.aiType).
-	public Dictionary<int, float> m_scores;
 
 	public float get_Item(int hashCode)
 	{

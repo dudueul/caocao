@@ -10,8 +10,6 @@ public class BetterList<T>
 	public int size;
 
 	// C# has no syntax for parameterized property 'Item'.
-	// Its 'property:' attributes below are ignored by the compiler (CS0657).
-	[property: DebuggerHidden]
 	public T get_Item(int i)
 	{
 		return default(T);
@@ -21,7 +19,6 @@ public class BetterList<T>
 	{
 	}
 
-	[DebuggerHidden]
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public IEnumerator<T> GetEnumerator()

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Eppy;
 using UnityEngine;
 
 public class PanelPopup2Buttons : PanelPopupBase

@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 
 [ExecuteInEditMode]
-[SerializeField]
 public class UnitTreeItemUI : MonoBehaviour
 {
 	private static Color ms_cashBGColor;

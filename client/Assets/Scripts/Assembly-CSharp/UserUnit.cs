@@ -192,7 +192,6 @@ public class UserUnit : ITransmittable
 		KitTreasure = 5
 	}
 
-	[SerializeField]
 	public class UnitRes
 	{
 		protected static int resLessMin;

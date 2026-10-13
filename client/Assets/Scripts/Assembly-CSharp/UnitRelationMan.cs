@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using BattlePlay;
-using Eppy;
 using UnityEngine;
 
 public class UnitRelationMan : MonoBehaviour

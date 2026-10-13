@@ -1,3 +1,6 @@
+using UnityEngine;
+
+#if !UNITY_2019_1_OR_NEWER && !UNITY_6000_0_OR_NEWER
 using System;
 using UnityEngine;
 
@@ -31,3 +34,5 @@ namespace HutongGames.PlayMaker.Actions
 		}
 	}
 }
+
+#endif

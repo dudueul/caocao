@@ -1,3 +1,5 @@
+using LitJson;
+
 // [RE] Rebuilt HeartBeats (TypeDefIndex 10898).
 // Decompiled facts kept: networkInterval/aliveInterval ints, lastTimeUser
 // Interaction float, m_serverNoticeMsg, entrustTurn/entrustBattle (AI

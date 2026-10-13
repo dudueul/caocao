@@ -10,6 +10,7 @@
 // codename)). No scene YAML surgery required — provenance: Login.unity object
 // list, docs/lab/08 §8.4 step 1.
 using System;
+using System.Diagnostics;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;

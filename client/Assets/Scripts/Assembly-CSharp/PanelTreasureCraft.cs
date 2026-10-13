@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using CodeStage.AntiCheat.ObscuredTypes;
-using Eppy;
 using UnityEngine;
 
 public class PanelTreasureCraft : CaocaoUIPanel

@@ -1,5 +1,4 @@
 using System;
-using Eppy;
 using UnityEngine;
 
 public class PanelPopup4Buttons : PanelPopupBase
