@@ -62,9 +62,9 @@ public class WebSocketSharpTransport : IWebSocketTransport
 		Close();
 		ws = new WebSocketSharp.WebSocket(Url);
 		ws.Log.Level = WebSocketSharp.LogLevel.Debug;   // [RE] connect diagnostics
-		ws.Log.Output += delegate(object s, WebSocketSharp.LogData e)
+		ws.Log.Output += delegate(object s, WebSocketSharp.LogData e, string userMessage)
 		{
-			UnityEngine.Debug.Log("[WsTransport] " + e.Message);
+			UnityEngine.Debug.Log("[WsTransport] " + e.Message + (userMessage ?? ""));
 		};
 		ws.OnOpen += delegate { UnityEngine.Debug.Log("[WsTransport] OPEN"); IsOpen = true; if (OnOpen != null) OnOpen(); };
 		ws.OnClose += delegate(object s, WebSocketSharp.CloseEventArgs e)
