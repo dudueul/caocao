@@ -13,15 +13,20 @@ namespace SocketIO
 
 		public Ack(int packetId, Action<JsonData> action)
 		{
+			this.packetId = packetId;
+			this.action = action;
+			time = DateTime.UtcNow;
 		}
 
 		public void Invoke(JsonData ev)
 		{
+			if (action != null)
+				action(ev);
 		}
 
 		public override string ToString()
 		{
-			return null;
+			return string.Format("[Ack: id={0}]", packetId);
 		}
 	}
 }
