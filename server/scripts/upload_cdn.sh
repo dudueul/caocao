@@ -13,7 +13,9 @@ SRC="${1:?usage: upload_cdn.sh <content-dir> [--check]}"
 CHECK="${2:-}"
 WRANGLER="${WRANGLER:-$HOME/.local/share/fnm/node-versions/v26.2.0/installation/bin/npx}"
 
-command -v brotli >/dev/null 2>&1 || { echo "apt install brotli (or apt-get --user equivalent)"; exit 1; }
+NODE="${NODE:-$HOME/.local/share/fnm/node-versions/v26.2.0/installation/bin/node}"
+[ -x "$NODE" ] || NODE="$(command -v node)"
+# [RE] root-free brotli via Node's built-in zlib (scripts/brotli-file.mjs)
 
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
@@ -24,11 +26,14 @@ FIRST=1
 find "$SRC" -type f | while read -r f; do
   rel="${f#"$SRC"/}"
   [ "$FIRST" = "0" ] && echo "," >> "$MANIFEST"; FIRST=0
+  size=0
   if [[ "$CHECK" == "--check" ]]; then
-    echo "  would upload: $rel (bro: $(brotli -c "$f" | wc -c) bytes)"
+    size=$("$NODE" scripts/brotli-size.mjs "$f")
+    echo "  would upload: $rel (bro: $size bytes)"
   else
     b="$TMP/$(basename "$rel").br"
-    brotli -f -q 9 -o "$b" "$f"
+    "$NODE" "$(dirname "$0")/brotli-file.mjs" "$f" "$b"
+    size=$(wc -c < "$b")
     $WRANGLER r2 object put "caocao-cdn/$rel.br" --file "$b" --remote
     size=$(wc -c < "$b")
   fi
