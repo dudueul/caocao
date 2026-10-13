@@ -469,6 +469,33 @@ public class HttpRequest : Singleton<HttpRequest>
 		yield return result;
 	}
 
+	// [RE] minimal JSON string quoting — bypasses JsonMapper here entirely
+	// (fix loop 15: the vendored LitJson's ToJson(string) threw a writer-state
+	// exception inside PacketArrayToPacketString; manual quoting is
+	// deterministic and needs no writer state machine)
+	private static string Quote(string s)
+	{
+		var sb = new StringBuilder(s.Length + 2);
+		sb.Append('"');
+		foreach (var ch in s)
+		{
+			switch (ch)
+			{
+				case '"': sb.Append("\\\""); break;
+				case '\\': sb.Append("\\\\"); break;
+				case '\n': sb.Append("\\n"); break;
+				case '\r': sb.Append("\\r"); break;
+				case '\t': sb.Append("\\t"); break;
+				default:
+					if (ch < 0x20) sb.Append("\\u").Append(((int)ch).ToString("x4"));
+					else sb.Append(ch);
+					break;
+			}
+		}
+		sb.Append('"');
+		return sb.ToString();
+	}
+
 	public static string PacketArrayToPacketString(object[] packet)
 	{
 		// [RE] PacketUtil.JsonString(object[]) equivalent (LitJson in this build)
@@ -482,8 +509,8 @@ public class HttpRequest : Singleton<HttpRequest>
 				if (v == null) sb.Append("null");
 				else if (v is string s) sb.Append(JsonMapper.ToJson(s));
 				else if (v is bool b) sb.Append(b ? "true" : "false");
-				else if (v is ulong || v is uint) sb.Append(JsonMapper.ToJson(v.ToString()));   // [RE] exact: JSON numbers lose ulong precision
-				else if (v is long l && (l > 4503599627370496L || l < -4503599627370496L)) sb.Append(JsonMapper.ToJson(l.ToString()));
+				else if (v is ulong || v is uint) sb.Append(Quote(v.ToString()));   // [RE] exact: JSON numbers lose ulong precision
+				else if (v is long l && (l > 4503599627370496L || l < -4503599627370496L)) sb.Append(Quote(l.ToString()));
 				else if (v is int || v is long || v is float || v is double) sb.Append(v.ToString());
 				else if (v is object[] arr) sb.Append(PacketArrayToPacketString(arr));
 				else sb.Append(JsonMapper.ToJson(v.ToString()));
