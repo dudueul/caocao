@@ -7781,7 +7781,10 @@ namespace GuildWar.Backend
 				m_socketLoggingIn = true;
 				UnityEngine.Debug.Log("[SessionImpl] emit login");
 				var payload = new JsonData();
-				payload["userId"] = m_connectionInfo.userId;
+				// [RE] fix loop 13: LitJson serializes ulong via double — 8.78e18
+				// loses precision and formats in E-notation → server matched a
+				// DIFFERENT user → authFail loop. Send the exact decimal string.
+				payload["userId"] = m_connectionInfo.userId.ToString();
 				payload["authKey"] = (string)m_authKey;
 				m_socket.Emit("login", payload, delegate(JsonData ack)
 				{

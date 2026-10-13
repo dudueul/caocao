@@ -992,7 +992,10 @@ export class GameServer extends DurableObject {
       // [RE] SessionImpl$$UpdateSocketLogin: ["login", {userId, authKey}]
       case "login": {
         const p = LoginPayload.safeParse(payload);
-        if (!p.success) return reply([{ error: "bad_payload" }]);
+        if (!p.success) {
+          console.log("[do] login bad_payload:", JSON.stringify(payload).slice(0, 120));
+          return reply([{ error: "bad_payload" }]);
+        }
         s.userId = String(p.data.userId);
         s.authKey = p.data.authKey;
         const db = await this.migrate();
