@@ -121,8 +121,9 @@ public class ServerSetting : IServerSetting
 	{
 		// [RE] original: switch(countryCode){100: LiveJPN/StageJPN/DevJPN,
 		// 10000: LiveGLB/StageGLB/DevGLB} — rebuilt as a single configurable row.
-		var go = instance as ServerSetting;
-		return go != null ? go : new ServerSetting();
+		// NOTE: must NOT read `instance` here — instance() calls this method
+		// (StackOverflow crash at Login scene load, fixed).
+		return new ServerSetting();
 	}
 
 	public IServerSetting GetFallback()

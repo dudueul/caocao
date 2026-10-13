@@ -4,7 +4,7 @@ using UnityEngine.Video;
 
 namespace RockVR.Video
 {
-	public class VideoPlayer : MonoBehaviour
+	public class VideoPlayerCtrl : MonoBehaviour
 	{
 		private List<string> videoFiles;
 
@@ -12,7 +12,7 @@ namespace RockVR.Video
 
 		private int index;
 
-		public static VideoPlayer instance;
+		public static VideoPlayerCtrl instance;
 
 		private void Awake()
 		{
