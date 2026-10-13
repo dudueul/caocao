@@ -6,11 +6,11 @@ namespace SocketIO
 {
 	public class Decoder
 	{
-		public Packet Decode(WebSocketSharp.MessageEventArgs e)
+		// [RE] takes the raw engine.io text frame — platform-agnostic seam
+		// (WebSocketSharp's MessageEventArgs ctor is internal, so the
+		// transport layer unwraps to text; same shape on WebGL).
+		public Packet Decode(string frame)
 		{
-			if (e == null || e.Type != WebSocketSharp.Opcode.Text)
-				return null;
-			string frame = e.Data;
 			if (string.IsNullOrEmpty(frame))
 				return null;
 

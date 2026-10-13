@@ -32,9 +32,19 @@ type Session = {
   rooms: Set<string>;
 };
 
+const CORS = {
+  "access-control-allow-origin": "*",          // [RE] tighten per-channel in prod
+  "access-control-allow-methods": "POST, GET, OPTIONS",
+  "access-control-allow-headers": "content-type",
+};
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+
+    // [RE] WebGL channel: browsers preflight every POST with content-type
+    if (request.method === "OPTIONS")
+      return new Response(null, { status: 204, headers: CORS });
 
     if (url.pathname === "/socket.io/" && request.headers.get("Upgrade") === "websocket") {
       const id = env.GAME_SERVER.idFromName("global");
@@ -52,8 +62,9 @@ export default {
       if (resp.status !== 404) return resp;
     }
 
-    if (url.pathname === "/healthz") return new Response("ok");
-    return new Response("not found", { status: 404 });
+    if (url.pathname === "/healthz")
+      return new Response("ok", { headers: CORS });
+    return new Response("not found", { status: 404, headers: CORS });
   },
 };
 
@@ -1041,6 +1052,6 @@ function roomName(p: { world_id?: number; guild_id?: number; room_type?: string 
 function json(obj: unknown, status = 200): Response {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", ...CORS },
   });
 }

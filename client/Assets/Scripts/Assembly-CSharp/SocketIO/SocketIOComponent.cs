@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using LitJson;
 using UnityEngine;
-using WebSocketSharp;
 
 namespace SocketIO
 {
@@ -36,7 +35,8 @@ namespace SocketIO
 
 		private bool wsConnected;
 
-		private WebSocket ws;
+		private IWebSocketTransport ws;   // [RE] platform seam: WebSocketSharp on
+		                                  // native, browser WS via .jslib on WebGL (Lab 09)
 
 		private Encoder encoder;
 
@@ -65,7 +65,7 @@ namespace SocketIO
 
 		public int reconnectDelay { get; set; }
 
-		public WebSocket socket
+		public IWebSocketTransport socket
 		{
 			get
 			{
@@ -161,19 +161,19 @@ namespace SocketIO
 			if (ws != null || isConnecting)
 				return;
 			isConnecting = true;
-			ws = new WebSocket(url);
+			ws = WebSocketTransportFactory.Create(url);
 			ws.OnOpen += OnOpen;
-			ws.OnMessage += OnMessage;
+			ws.OnTextMessage += OnTransportMessage;
 			ws.OnClose += OnClose;
 			ws.OnError += OnError;
-			ws.ConnectAsync();
+			ws.Connect();
 		}
 
 		public void Close()
 		{
 			if (ws != null)
 			{
-				ws.CloseAsync();
+				ws.Dispose();
 				ws = null;
 			}
 			connected = false;
@@ -232,7 +232,7 @@ namespace SocketIO
 		}
 
 		[DebuggerHidden]
-		private IEnumerator StayConnected(WebSocket webSocket)
+		private IEnumerator StayConnected(IWebSocketTransport webSocket)
 		{
 			// [RE] original reconnect watchdog: retries every reconnectDelay while
 			// the app is alive and auto-reconnect is desired.
@@ -249,7 +249,7 @@ namespace SocketIO
 		}
 
 		[DebuggerHidden]
-		private IEnumerator SendPing(WebSocket webSocket)
+		private IEnumerator SendPing(IWebSocketTransport webSocket)
 		{
 			// [RE] engine.io v4: CLIENT pings ("2"), server answers "3".
 			while (wsConnected)
@@ -290,7 +290,7 @@ namespace SocketIO
 
 		private void EmitClose()
 		{
-			if (ws != null && ws.ReadyState == ReadyState.Open)
+			if (ws != null && ws.IsOpen)
 				ws.Send("6");
 		}
 
@@ -303,7 +303,7 @@ namespace SocketIO
 
 		private void EmitPing()
 		{
-			if (ws != null && ws.ReadyState == ReadyState.Open)
+			if (ws != null && ws.IsOpen)
 				ws.Send("2");
 		}
 
@@ -325,9 +325,10 @@ namespace SocketIO
 			EmitPacket(new Packet(EnginePacketType.MESSAGE, SocketPacketType.CONNECT, 0, "/", -1, null));
 		}
 
-		private void OnMessage(object sender, MessageEventArgs e)
+		private void OnTransportMessage(string text)
 		{
-			Packet packet = decoder.Decode(e);
+			// [RE] transport delivers engine.io text frames on every platform
+			Packet packet = decoder.Decode(text);
 			if (packet == null)
 				return;
 			switch (packet.enginePacketType)
@@ -370,7 +371,7 @@ namespace SocketIO
 
 		private void EmitPong()
 		{
-			if (ws != null && ws.ReadyState == ReadyState.Open)
+			if (ws != null && ws.IsOpen)
 				ws.Send("3");
 		}
 
