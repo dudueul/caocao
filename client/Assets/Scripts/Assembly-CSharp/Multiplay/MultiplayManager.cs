@@ -32,7 +32,10 @@ namespace Multiplay
 			{
 				get
 				{
-					return null;
+					// [RE] ws://{ip}/socket.io/?EIO=4&transport=websocket (template
+					// literal); the rebuilt server's getServerInfo already returns
+					// the full ws URL in `ip`.
+					return string.Format("ws://{0}/socket.io/?EIO=4&transport=websocket", (string)ip);
 				}
 			}
 		}
@@ -367,6 +370,21 @@ namespace Multiplay
 
 		public void ConnectToMultiplayServer()
 		{
+			// [RE] decompiled: REST /multiplay/getServerInfo first (matchmaker
+			// hands out the game server), then Connect().
+			HttpRequest.instance.Send("/multiplay/getServerInfo", "POST", true, delegate(JsonData jd)
+			{
+				if (jd != null && jd.Keys.Contains("socketServerIP"))
+				{
+					m_currentServerInfo = new ServerInfo();
+					m_currentServerInfo.ip = jd["socketServerIP"].ToString();
+					m_currentServerInfo.port = jd.Keys.Contains("port") ? (int)jd["port"] : 0;
+					m_authKey = jd.Keys.Contains("authKey") ? jd["authKey"].ToString() : string.Empty;
+					Connect();
+				}
+				else if (OnSocketErrorCallback != null)
+					OnSocketErrorCallback();
+			});
 		}
 
 		public void InitBattleStep()
@@ -379,6 +397,15 @@ namespace Multiplay
 
 		private void Connect()
 		{
+			if (m_currentServerInfo == null)
+				return;
+			var go = gameObject;
+			if (m_socket == null)
+				m_socket = go.AddComponent<SocketIOComponent>();
+			m_socket.url = m_currentServerInfo.Uri;
+			m_socket.autoConnect = true;
+			Register();
+			m_socket.Connect();
 		}
 
 		public void WillDisconnect()
@@ -395,10 +422,62 @@ namespace Multiplay
 
 		private void EmitSocketMessage(string ev, string data)
 		{
+			// [RE] decompiled: string.Format("{0}{1}", ev, data) → JsonData →
+			// Emit — the wire form is ["<ev>", <data>].
+			var payload = new JsonData();
+			payload["data"] = data;
+			if (m_socket != null)
+				m_socket.Emit(ev, payload);
 		}
 
 		private void Register()
 		{
+			if (m_socket == null)
+				return;
+			m_socket.On("connect", delegate(SocketIOEvent e)
+			{
+				// [RE] login right after connect (SessionImpl parity)
+				var payload = new JsonData();
+				payload["userId"] = MyUserData.hasInstance ? 0UL : 0UL;
+				if (MyUserData.hasInstance)
+					payload["userId"] = 0UL;
+				payload["authKey"] = (string)m_authKey;
+				m_socket.Emit("login", payload);
+			});
+			m_socket.On("disconnect", delegate(SocketIOEvent e)
+			{
+				m_socket = null;
+				if (OnDisconnectedCallback != null)
+					OnDisconnectedCallback();
+			});
+			m_socket.On("error", delegate(SocketIOEvent e)
+			{
+				if (OnSocketErrorCallback != null)
+					OnSocketErrorCallback();
+			});
+			m_socket.On("userRegistered", delegate(SocketIOEvent e)
+			{
+				if (OnUserRegisteredCallback != null)
+					OnUserRegisteredCallback();
+			});
+			// [RE] matchmaking: matched / cancel / room-not-found (event catalog)
+			m_socket.On("matched", delegate(SocketIOEvent e)
+			{
+				if (OnMatchedCallback != null)
+					OnMatchedCallback();
+			});
+			m_socket.On("notFoundRoomId", delegate(SocketIOEvent e)
+			{
+				if (OnMatchmakingCanceledCallback != null)
+					OnMatchmakingCanceledCallback();
+			});
+			// [RE] battle controls ride the room broadcast → feed the executor
+			m_socket.On("battleControl", delegate(SocketIOEvent e)
+			{
+				var control = new BattleControl();
+				control.Deserialize(e.data);
+				AddControl(control);
+			});
 		}
 
 		public void RequestRoomInfo(ulong uid)
@@ -415,6 +494,15 @@ namespace Multiplay
 
 		public void RequestMatchmaking(int battleId, int mmr, int point, int streak, int tierGrade)
 		{
+			// [RE] event catalog: want_room_id {room_type} → room_id reply
+			var payload = new JsonData();
+			payload["room_type"] = "duel";
+			if (m_socket != null && m_socket.IsConnected)
+			{
+				m_socket.Emit("want_room_id", payload);
+				if (OnMatchmakingStartedCallback != null)
+					OnMatchmakingStartedCallback();
+			}
 		}
 
 		public bool CheckMatchmaking()
