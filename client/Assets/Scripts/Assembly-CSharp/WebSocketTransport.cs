@@ -62,7 +62,9 @@ public class WebSocketSharpTransport : IWebSocketTransport
 		Close();
 		ws = new WebSocketSharp.WebSocket(Url);
 		ws.Log.Level = WebSocketSharp.LogLevel.Debug;   // [RE] connect diagnostics
-		ws.Log.Output += delegate(object s, WebSocketSharp.LogData e, string userMessage)
+		// [RE] this vendored WebSocketSharp is modified: Log.Output is
+		// Action<LogData, string> (2 params — no sender, unlike upstream)
+		ws.Log.Output += delegate(WebSocketSharp.LogData e, string userMessage)
 		{
 			UnityEngine.Debug.Log("[WsTransport] " + e.Message + (userMessage ?? ""));
 		};
