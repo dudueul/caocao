@@ -7,22 +7,28 @@ public class ClientConst
 	{
 		public static class Almighty
 		{
-			public static readonly ObscuredInt[] coef;
+			// [RE] recovered from decompiled cctor @0x210a88c: {100,100,75,65,60}
+			public static readonly ObscuredInt[] coef = new ObscuredInt[] { 100, 100, 75, 65, 60 };
 		}
 
 		public static class MilitaryOfficier
 		{
-			public static readonly ObscuredInt[] coef;
+			// [RE] recovered from decompiled cctor: {100,100,25,85,85}
+			// (atk/def-dominant — military officers)
+			public static readonly ObscuredInt[] coef = new ObscuredInt[] { 100, 100, 25, 85, 85 };
 		}
 
 		public static class CivilOfficer
 		{
-			public static readonly ObscuredInt[] coef;
+			// [RE] recovered from decompiled cctor: {10,75,135,50,100}
+			// (intelligence-dominant 1.35 — civil officers)
+			public static readonly ObscuredInt[] coef = new ObscuredInt[] { 10, 75, 135, 50, 100 };
 		}
 
 		public static class ETC
 		{
-			public static readonly ObscuredInt[] coef;
+			// [RE] recovered from decompiled cctor: flat 100s
+			public static readonly ObscuredInt[] coef = new ObscuredInt[] { 100, 100, 100, 100, 100 };
 		}
 	}
 
