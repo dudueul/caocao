@@ -759,8 +759,9 @@ export class GameServer extends DurableObject {
     return db;
   }
 
-  // [RE] world snapshot as FlatBuffers structs — the struct layout from
-  // dsa-02 §1b: per row [corps_id][guild_id][pos_x][pos_y][face][job][power]
+  // [RE] world snapshot — REBUILD contract (the original's key_* structs are
+  // id-only lookup keys; data rows rode the ClientDataType payloads). Row
+  // layout: [corps_id][guild_id][pos_x][pos_y][face][job][power]
   // little-endian, 28 bytes; buildings 16 bytes. Binary content-type.
   private async worldSnapshot(worldId: number, fromSeq: number): Promise<Response> {
     const db = await this.migrate();

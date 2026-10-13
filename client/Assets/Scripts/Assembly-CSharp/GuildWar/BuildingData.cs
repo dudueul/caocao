@@ -367,5 +367,6 @@ namespace GuildWar
 		public void ResetDataRefsAll()
 		{
 		}
+
 	}
 }
