@@ -1,12 +1,10 @@
 // [RE] NPA / TOY SDK shims — the original glue (NPAController, CaocaoToyPush*,
 // NPAListener/*) compiled against the TOYSDK.dll, which Unity 6 rejects
 // ("Unloading broken assembly"). These shims recreate the EXACT type shapes
-// the glue stubs reference, sourced from Il2CppDumper's dump.cs
-// (namespaces NPA*, NPAListener) — the SDK is functionally dead (replaced by
-// the guest-auth backend); this file keeps the dead code compiling.
-//
-// Grounding evidence: the listener stubs' own method sets define each
-// interface's contract (BannerListener → INPBannerListener etc.).
+// and NAMESPACES from Il2CppDumper's dump.cs (fix loop 17: per-type namespace
+// map verified — NXPToyCloseResult ∈ NPA.Promotion, the user/login result
+// classes ∈ NPA.Auth). The SDK is functionally dead (replaced by the
+// guest-auth backend); this file keeps the dead glue compiling.
 using System;
 
 namespace SimpleJSON
@@ -67,18 +65,6 @@ namespace NPA
 	{
 	}
 
-	public class NXPToyLoginResult : NXPToyResult
-	{
-	}
-
-	public class NXPToyCountryResult : NXPToyResult
-	{
-	}
-
-	public class NXPToyUserInfoResult : NXPToyResult
-	{
-	}
-
 	public class NPCloseResult
 	{
 	}
@@ -102,6 +88,17 @@ namespace NPA
 		void OnBannerClick(string landInfo);
 		void OnBannerFailed(NPResult npResult);
 		void OnBannerDismiss();
+	}
+
+	// [RE] dump.cs: INPEndingBannerListener (with "ing") ∈ NPA, TypeDefIndex 3029;
+	// the EndingBannerListener stub spells it INPEndBannerListener (original
+	// code typo preserved) — declare BOTH spellings.
+	public interface INPEndingBannerListener
+	{
+		void OnEndingBannerClick(string landInfo);
+		void OnEndingBannerFailed(NPResult npResult);
+		void OnEndingBannerDismiss();
+		void OnEndingBannerExit();
 	}
 
 	public interface INPEndBannerListener
@@ -136,6 +133,27 @@ namespace NPA
 
 namespace NPA.Auth
 {
-	// [RE] `using NPA.Auth;` in listener glue — namespace exists, types unused
-	// by the rebuild's auth path.
+	// [RE] dump.cs: the login/user result classes live HERE (TypeIndexes in
+	// NPA.Auth) — LoginListener/GetCountryFromServerListener/GetUserInfoListener
+	// have `using NPA.Auth;`
+	public class NXPToyLoginResult : NPA.NXPToyResult
+	{
+	}
+
+	public class NXPToyCountryResult : NPA.NXPToyResult
+	{
+	}
+
+	public class NXPToyUserInfoResult : NPA.NXPToyResult
+	{
+	}
+}
+
+namespace NPA.Promotion
+{
+	// [RE] dump.cs: NXPToyCloseResult ∈ NPA.Promotion (TypeDefIndex 3206) —
+	// NoticeListener has `using NPA.Promotion;`
+	public class NXPToyCloseResult : NPA.NXPResult
+	{
+	}
 }
