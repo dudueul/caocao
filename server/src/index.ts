@@ -492,6 +492,105 @@ export class GameServer extends DurableObject {
         const res = await this.buyItem(userId, Number(itemId));
         return json(res);
       }
+      // ---- guild core (schema: /guild/* endpoints, 113 guild-family calls) --
+      case "/guild/create": {
+        const [name] = args as [string];
+        const db = await this.migrate();
+        if (!name || String(name).length > 24) return json({ error: "bad_name" });
+        const existing = await db.prepare("SELECT guild_id FROM guild_members WHERE user_id = ?1").bind(userId).first();
+        if (existing) return json({ error: "alreadyInGuild" });
+        const created = await db.prepare(
+          "INSERT INTO guilds (name, created_at) VALUES (?1, ?2) RETURNING guild_id")
+          .bind(String(name), Date.now()).first<{ guild_id: number }>();
+        await db.batch([
+          db.prepare("INSERT INTO guild_members (guild_id, user_id, job, joined_at) VALUES (?1, ?2, 9, ?3)")  // [RE] 9 = guild master grade
+            .bind(created!.guild_id, userId, Date.now()),
+        ]);
+        return json({ success: true, guildId: created!.guild_id });
+      }
+      case "/guild/get_me": {
+        const db = await this.migrate();
+        const me = await db.prepare(
+          "SELECT g.guild_id, g.name, g.motd, g.emblem, m.job FROM guilds g JOIN guild_members m ON m.guild_id = g.guild_id WHERE m.user_id = ?1")
+          .bind(userId).first();
+        return json(me ?? { error: "noGuild" });
+      }
+      case "/guild/get_guild_list": {
+        const db = await this.migrate();
+        const list = await db.prepare(
+          "SELECT g.guild_id, g.name, g.motd, (SELECT COUNT(*) FROM guild_members m WHERE m.guild_id = g.guild_id) AS members FROM guilds g ORDER BY members DESC LIMIT 50")
+          .all();
+        return json({ guilds: list.results ?? [] });
+      }
+      case "/guild/apply": {
+        const [guildId] = args as [number];
+        const db = await this.migrate();
+        await db.prepare("INSERT OR IGNORE INTO guild_applicants (guild_id, user_id, applied_at) VALUES (?1, ?2, ?3)")
+          .bind(Number(guildId), userId, Date.now()).run();
+        return json({ success: true });
+      }
+      case "/guild/get_applicants": {
+        const db = await this.migrate();
+        const myGuild = await db.prepare("SELECT guild_id, job FROM guild_members WHERE user_id = ?1").bind(userId).first<{ guild_id: number; job: number }>();
+        if (!myGuild || myGuild.job < 9 - 8) /* [RE] officer+ */ return json({ error: "noPermission" });
+        const rows = await db.prepare("SELECT user_id, applied_at FROM guild_applicants WHERE guild_id = ?1").bind(myGuild.guild_id).all();
+        return json({ applicants: rows.results ?? [] });
+      }
+      case "/guild/process_applicant": {
+        const [applicantId, accept] = args as [string, number];
+        const db = await this.migrate();
+        const myGuild = await db.prepare("SELECT guild_id, job FROM guild_members WHERE user_id = ?1").bind(userId).first<{ guild_id: number; job: number }>();
+        if (!myGuild || myGuild.job < 1) return json({ error: "noPermission" });
+        if (accept) {
+          await db.batch([
+            db.prepare("INSERT OR IGNORE INTO guild_members (guild_id, user_id, job, joined_at) VALUES (?1, ?2, 1, ?3)")
+              .bind(myGuild.guild_id, String(applicantId), Date.now()),
+            db.prepare("DELETE FROM guild_applicants WHERE guild_id = ?1 AND user_id = ?2")
+              .bind(myGuild.guild_id, String(applicantId)),
+          ]);
+        } else {
+          await db.prepare("DELETE FROM guild_applicants WHERE guild_id = ?1 AND user_id = ?2")
+            .bind(myGuild.guild_id, String(applicantId)).run();
+        }
+        return json({ success: true });
+      }
+      case "/guild/leave":
+      case "/guild/kick": {
+        const db = await this.migrate();
+        const target = path === "/guild/kick" ? String(args[0]) : userId;
+        const myGuild = await db.prepare("SELECT guild_id, job FROM guild_members WHERE user_id = ?1").bind(userId).first<{ guild_id: number; job: number }>();
+        if (!myGuild) return json({ error: "noGuild" });
+        if (path === "/guild/kick" && myGuild.job < 1) return json({ error: "noPermission" });
+        const masterCount = await db.prepare("SELECT COUNT(*) AS c FROM guild_members WHERE guild_id = ?1 AND job = 9").bind(myGuild.guild_id).first<{ c: number }>();
+        if (path === "/guild/leave" && target === userId && masterCount && masterCount.c === 1)
+          return json({ error: "needGuildMasterSuccessor" });   // [RE] succeed_guild_master first
+        await db.prepare("DELETE FROM guild_members WHERE guild_id = ?1 AND user_id = ?2")
+          .bind(myGuild.guild_id, target).run();
+        return json({ success: true });
+      }
+      case "/guild/set_motd": {
+        const [motd] = args as [string];
+        const db = await this.migrate();
+        const myGuild = await db.prepare("SELECT guild_id, job FROM guild_members WHERE user_id = ?1").bind(userId).first<{ guild_id: number; job: number }>();
+        if (!myGuild || myGuild.job < 1) return json({ error: "noPermission" });
+        await db.prepare("UPDATE guilds SET motd = ?2 WHERE guild_id = ?1")
+          .bind(myGuild.guild_id, String(motd ?? "").slice(0, 200)).run();
+        return json({ success: true });
+      }
+
+      // ---- guild-war world sync (FlatBuffers snapshot, dsa-02 §1b) --------
+      case "/guildWar/getWorldMetaData": {
+        const db = await this.migrate();
+        const worlds = await db.prepare("SELECT world_id, seq FROM world_seq ORDER BY world_id").all();
+        return json({ worlds: worlds.results ?? [] });
+      }
+      case "/guildWar/getWorldData": {
+        // [RE] binary FlatBuffers struct snapshot: corps + buildings rows.
+        // original: RequestGetWorldData(clan_db_shard, world_id, from_seq,
+        // to_seq, except_sequences) — sequence-window sync.
+        const [clanDbShard, worldId, fromSeq] = args as [number, number, number];
+        return await this.worldSnapshot(Number(worldId) || 1, Number(fromSeq) || 0);
+      }
       // ---- battle flow (event-sourced per dsa-07) ------------------------
       // [RE] payload shapes decompiled from FinishScenario/FinishSiege
       // iterators: scenarioBattleEnd {scenarioId,isWin,victoryGrade,
@@ -576,6 +675,12 @@ export class GameServer extends DurableObject {
       db.prepare(`CREATE TABLE IF NOT EXISTS inventory (user_id TEXT NOT NULL, item_id INTEGER NOT NULL, count INTEGER NOT NULL DEFAULT 1, tier INTEGER NOT NULL DEFAULT 0, locked INTEGER NOT NULL DEFAULT 0, acquired_at INTEGER NOT NULL, PRIMARY KEY (user_id, item_id))`),
       db.prepare(`CREATE TABLE IF NOT EXISTS wallets (user_id TEXT PRIMARY KEY, gold INTEGER NOT NULL DEFAULT 0, cash INTEGER NOT NULL DEFAULT 0)`),
       db.prepare(`CREATE TABLE IF NOT EXISTS battles (battle_id TEXT PRIMARY KEY, user_id TEXT NOT NULL, kind TEXT NOT NULL, ref_id TEXT, state TEXT NOT NULL, is_win INTEGER, grade INTEGER, occupation_pct INTEGER, play_time_ms INTEGER, opened_at INTEGER NOT NULL, closed_at INTEGER)`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS guilds (guild_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, motd TEXT NOT NULL DEFAULT '', emblem INTEGER NOT NULL DEFAULT 0, join_config INTEGER NOT NULL DEFAULT 0, created_at INTEGER NOT NULL)`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS guild_members (guild_id INTEGER NOT NULL, user_id TEXT NOT NULL, job INTEGER NOT NULL DEFAULT 0, joined_at INTEGER NOT NULL, PRIMARY KEY (guild_id, user_id))`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS guild_applicants (guild_id INTEGER NOT NULL, user_id TEXT NOT NULL, applied_at INTEGER NOT NULL, PRIMARY KEY (guild_id, user_id))`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS world_corps (world_id INTEGER NOT NULL, corps_id INTEGER NOT NULL, guild_id INTEGER NOT NULL, pos_x INTEGER NOT NULL, pos_y INTEGER NOT NULL, face_unit_id INTEGER NOT NULL DEFAULT 0, job_type INTEGER NOT NULL DEFAULT 0, military_power INTEGER NOT NULL DEFAULT 0, updated_seq INTEGER NOT NULL, PRIMARY KEY (world_id, corps_id))`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS world_buildings (world_id INTEGER NOT NULL, place_id INTEGER NOT NULL, kind INTEGER NOT NULL DEFAULT 0, guild_id INTEGER NOT NULL DEFAULT 0, updated_seq INTEGER NOT NULL, PRIMARY KEY (world_id, place_id))`),
+      db.prepare(`CREATE TABLE IF NOT EXISTS world_seq (world_id INTEGER PRIMARY KEY, seq INTEGER NOT NULL DEFAULT 0)`),
       db.prepare(`CREATE TABLE IF NOT EXISTS items (item_id INTEGER PRIMARY KEY, name TEXT NOT NULL, tier INTEGER NOT NULL DEFAULT 0, slot INTEGER NOT NULL DEFAULT 0, item_type INTEGER NOT NULL DEFAULT 0, box_type INTEGER NOT NULL DEFAULT 0, price INTEGER NOT NULL DEFAULT 0, gold INTEGER NOT NULL DEFAULT 0, item_effect INTEGER NOT NULL DEFAULT 0, effect_value INTEGER NOT NULL DEFAULT 0, max_value INTEGER NOT NULL DEFAULT 0, type_value INTEGER NOT NULL DEFAULT 0, pay_type INTEGER NOT NULL DEFAULT 0, atk INTEGER DEFAULT 0, atk_up INTEGER DEFAULT 0, def INTEGER DEFAULT 0, def_up INTEGER DEFAULT 0, inte INTEGER DEFAULT 0, inte_up INTEGER DEFAULT 0, agi INTEGER DEFAULT 0, agi_up INTEGER DEFAULT 0, mor INTEGER DEFAULT 0, mor_up INTEGER DEFAULT 0, hp INTEGER DEFAULT 0, hp_up INTEGER DEFAULT 0, mp INTEGER DEFAULT 0, mp_up INTEGER DEFAULT 0, max_lv INTEGER NOT NULL DEFAULT 1, target_type INTEGER NOT NULL DEFAULT 0, skill_id INTEGER NOT NULL DEFAULT 0, unit_id INTEGER NOT NULL DEFAULT 0, atlas TEXT DEFAULT '', icon TEXT DEFAULT '', country INTEGER NOT NULL DEFAULT 0, job_type INTEGER NOT NULL DEFAULT 0)`),
     ]);
     const count = await db.prepare("SELECT COUNT(*) AS c FROM items").first<{ c: number }>();
@@ -594,6 +699,62 @@ export class GameServer extends DurableObject {
     }
     this.migrated = true;
     return db;
+  }
+
+  // [RE] world snapshot as FlatBuffers structs — the struct layout from
+  // dsa-02 §1b: per row [corps_id][guild_id][pos_x][pos_y][face][job][power]
+  // little-endian, 28 bytes; buildings 16 bytes. Binary content-type.
+  private async worldSnapshot(worldId: number, fromSeq: number): Promise<Response> {
+    const db = await this.migrate();
+    const corps = await db.prepare(
+      "SELECT corps_id, guild_id, pos_x, pos_y, face_unit_id, job_type, military_power FROM world_corps WHERE world_id = ?1 AND updated_seq > ?2 ORDER BY corps_id")
+      .bind(worldId, fromSeq).all<{ corps_id: number; guild_id: number; pos_x: number; pos_y: number; face_unit_id: number; job_type: number; military_power: number }>();
+    const buildings = await db.prepare(
+      "SELECT place_id, kind, guild_id FROM world_buildings WHERE world_id = ?1 AND updated_seq > ?2 ORDER BY place_id")
+      .bind(worldId, fromSeq).all<{ place_id: number; kind: number; guild_id: number }>();
+    const seqRow = await db.prepare("SELECT seq FROM world_seq WHERE world_id = ?1").bind(worldId).first<{ seq: number }>();
+
+    const corpsRow = (r: { corps_id: number; guild_id: number; pos_x: number; pos_y: number; face_unit_id: number; job_type: number; military_power: number }) => {
+      // [RE] key_corps struct field order (from the .fbs + decompiled struct layout)
+      const b = new ArrayBuffer(28);
+      const v = new DataView(b);
+      v.setInt32(0, r.corps_id, true);
+      v.setInt32(4, r.guild_id, true);
+      v.setInt32(8, r.pos_x, true);
+      v.setInt32(12, r.pos_y, true);
+      v.setInt32(16, r.face_unit_id, true);
+      v.setInt32(20, r.job_type, true);
+      v.setInt32(24, r.military_power, true);
+      return new Uint8Array(b);
+    };
+    const buildingRow = (r: { place_id: number; kind: number; guild_id: number }) => {
+      const b = new ArrayBuffer(12);
+      const v = new DataView(b);
+      v.setInt32(0, r.place_id, true);
+      v.setInt32(4, r.kind, true);
+      v.setInt32(8, r.guild_id, true);
+      return new Uint8Array(b);
+    };
+
+    // frame: [magic "CWLD"][worldId i32][seq i32][corpsCount i32][rows...][bldCount i32][rows...]
+    const cc = corps.results?.length ?? 0, bc = buildings.results?.length ?? 0;
+    const header = new ArrayBuffer(20);
+    const hv = new DataView(header);
+    hv.setInt32(0, 0x444C5743, true);          // "CWLD"
+    hv.setInt32(4, worldId, true);
+    hv.setInt32(8, seqRow?.seq ?? 0, true);
+    hv.setInt32(12, cc, true);
+    hv.setInt32(16, bc, true);
+    const parts: Uint8Array[] = [new Uint8Array(header)];
+    for (const r of corps.results ?? []) parts.push(corpsRow(r));
+    for (const r of buildings.results ?? []) parts.push(buildingRow(r));
+    const total = parts.reduce((s, p) => s + p.length, 0);
+    const out = new Uint8Array(total);
+    let off = 0;
+    for (const p of parts) { out.set(p, off); off += p.length; }
+    return new Response(out, {
+      headers: { "content-type": "application/octet-stream" },
+    });
   }
 
   private async ensureUser(userId: string) {
