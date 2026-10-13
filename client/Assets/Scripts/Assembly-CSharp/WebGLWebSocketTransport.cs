@@ -7,6 +7,7 @@
 // payload) — a perfect fit for the browser WebSocket. Binary frames unused
 // by this protocol.
 using System;
+using UnityEngine;
 using System.Runtime.InteropServices;
 
 public class WebGLWebSocketTransport : IWebSocketTransport

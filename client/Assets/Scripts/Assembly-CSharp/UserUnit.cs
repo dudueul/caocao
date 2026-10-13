@@ -218,7 +218,6 @@ public class UserUnit : ITransmittable
 		}
 	}
 
-	[SerializeField]
 	public class UnitMaxRes : UnitRes
 	{
 		// C# has no syntax for parameterized property 'Item'.

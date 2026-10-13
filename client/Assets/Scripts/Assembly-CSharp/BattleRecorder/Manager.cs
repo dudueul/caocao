@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using Caocao;
-using Eppy;
 using ICSharpCode.SharpZipLib.Zip;
 
 namespace BattleRecorder

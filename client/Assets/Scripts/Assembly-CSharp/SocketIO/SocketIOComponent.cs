@@ -318,7 +318,7 @@ namespace SocketIO
 			EmitPacket(p);
 		}
 
-		private void OnOpen(object sender, EventArgs e)
+		private void OnOpen()
 		{
 			wsConnected = true;
 			isConnecting = false;
@@ -355,12 +355,12 @@ namespace SocketIO
 			}
 		}
 
-		private void OnError(object sender, ErrorEventArgs e)
+		private void OnError(string message)
 		{
 			wsConnected = false;
 		}
 
-		private void OnClose(object sender, CloseEventArgs e)
+		private void OnClose()
 		{
 			wsConnected = false;
 			connected = false;

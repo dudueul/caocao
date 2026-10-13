@@ -5537,22 +5537,6 @@ namespace GuildWar.Backend
 				}
 			}
 
-			public override int world_id
-			{
-				get
-				{
-					return 0;
-				}
-			}
-
-			public override int instance_index
-			{
-				get
-				{
-					return 0;
-				}
-			}
-
 			public override int latest_corps_id
 			{
 				get
@@ -5570,14 +5554,6 @@ namespace GuildWar.Backend
 			}
 
 			public override int season_key
-			{
-				get
-				{
-					return 0;
-				}
-			}
-
-			public override int season_detail_key
 			{
 				get
 				{
@@ -7904,98 +7880,6 @@ namespace GuildWar.Backend
 				}
 			}
 
-			public override WorldStatus status
-			{
-				get
-				{
-					return WorldStatus.NONE;
-				}
-			}
-
-			public override string map
-			{
-				get
-				{
-					return string.Empty;
-				}
-			}
-
-			public override string socket_server_uuid
-			{
-				get
-				{
-					return m_connectionInfo.socketServerUuid;
-				}
-			}
-
-			public override string logic_server_uuid
-			{
-				get
-				{
-					return m_connectionInfo.logicServerUuid;
-				}
-			}
-
-			public override string distributor_server_uuid
-			{
-				get
-				{
-					return m_connectionInfo.distributorServerUuid;
-				}
-			}
-
-			public override string socket_server_ip
-			{
-				get
-				{
-					return m_connectionInfo.socketServerIP;
-				}
-			}
-
-			public override string logic_server_ip
-			{
-				get
-				{
-					return m_connectionInfo.logicServerIP;
-				}
-			}
-
-			public override string distributor_server_ip
-			{
-				get
-				{
-					return m_connectionInfo.distributorServerIP;
-				}
-			}
-
-			public override int socket_server_port
-			{
-				get
-				{
-					return m_connectionInfo.socketServerPort;
-				}
-			}
-
-			public override int logic_server_port
-			{
-				get
-				{
-					return m_connectionInfo.logicServerPort;
-				}
-			}
-
-			public override int distributor_server_port
-			{
-				get
-				{
-					return m_connectionInfo.distributorServerPort;
-				}
-			}
-
-			protected override void DeserializeImpl(JsonData jsonData)
-			{
-			}
-
 			public void AddRequireSequence(int sequence, int requestIndex)
 			{
 			}
@@ -8090,14 +7974,6 @@ namespace GuildWar.Backend
 			public float timerGetWorldData;
 
 			public override int season_detail_key
-			{
-				get
-				{
-					return 0;
-				}
-			}
-
-			public override int clan_db_shard
 			{
 				get
 				{
