@@ -548,6 +548,7 @@ namespace SocketIO
 
 		private void HandlePacketPayload(Packet packet)
 		{
+			UnityEngine.Debug.Log("[SocketIO] payload: type=" + packet.socketPacketType + " id=" + packet.id + " pendingAcks=" + ackList.Count);
 			SocketIOEvent ev = parser.Parse(packet.json);
 			if (packet.socketPacketType == SocketPacketType.ACK)
 			{
@@ -565,10 +566,13 @@ namespace SocketIO
 						JsonData ackPayload = null;
 						if (packet.json != null && packet.json.IsArray && packet.json.Count >= 1)
 							ackPayload = packet.json.Count == 1 ? packet.json[0] : packet.json;
+						UnityEngine.Debug.Log("[SocketIO] ack MATCHED id=" + packet.id + " → invoking callback");
 						a.Invoke(ackPayload);
 						return;
 					}
 				}
+				else
+					UnityEngine.Debug.LogWarning("[SocketIO] ack NO MATCH id=" + packet.id);
 			}
 			if (ev != null)
 				DispatchEvent(ev);

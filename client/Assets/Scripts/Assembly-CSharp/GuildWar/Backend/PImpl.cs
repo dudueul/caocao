@@ -7788,6 +7788,7 @@ namespace GuildWar.Backend
 				payload["authKey"] = (string)m_authKey;
 				m_socket.Emit("login", payload, delegate(JsonData ack)
 				{
+					UnityEngine.Debug.Log("[SessionImpl] login ack received: " + (ack == null ? "NULL" : ack.ToJson()));
 					m_socketLoggingIn = false;
 					if (ack != null && !ack.Keys.Contains("error"))
 					{
