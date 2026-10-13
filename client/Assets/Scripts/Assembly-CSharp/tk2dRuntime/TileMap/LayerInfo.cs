@@ -24,7 +24,7 @@ namespace tk2dRuntime.TileMap
 
 		public bool skipMeshGeneration;
 
-		public PhysicMaterial physicMaterial;
+		public PhysicsMaterial physicMaterial;
 
 		public PhysicsMaterial2D physicsMaterial2D;
 	}
