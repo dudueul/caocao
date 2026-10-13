@@ -1001,6 +1001,8 @@ export class GameServer extends DurableObject {
         const db = await this.migrate();
         const row = await db.prepare("SELECT auth_key FROM players WHERE user_id = ?1")
           .bind(s.userId).first<{ auth_key: string }>();
+        if (!row) console.log("[do] login authFail: no user", s.userId);
+        else if (row.auth_key !== p.data.authKey) console.log("[do] login authFail: key mismatch");
         if (!row || row.auth_key !== p.data.authKey) {
           return reply([{ error: "authFail" }]);
         }

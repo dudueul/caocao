@@ -482,7 +482,9 @@ public class HttpRequest : Singleton<HttpRequest>
 				if (v == null) sb.Append("null");
 				else if (v is string s) sb.Append(JsonMapper.ToJson(s));
 				else if (v is bool b) sb.Append(b ? "true" : "false");
-				else if (v is int || v is long || v is float || v is double || v is uint || v is ulong) sb.Append(v.ToString());
+				else if (v is ulong || v is uint) sb.Append(JsonMapper.ToJson(v.ToString()));   // [RE] exact: JSON numbers lose ulong precision
+				else if (v is long l && (l > 4503599627370496L || l < -4503599627370496L)) sb.Append(JsonMapper.ToJson(l.ToString()));
+				else if (v is int || v is long || v is float || v is double) sb.Append(v.ToString());
 				else if (v is object[] arr) sb.Append(PacketArrayToPacketString(arr));
 				else sb.Append(JsonMapper.ToJson(v.ToString()));
 			}
