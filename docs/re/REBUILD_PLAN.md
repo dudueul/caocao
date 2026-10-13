@@ -46,16 +46,22 @@ indices in brackets).
   `PendingEffectManager` [487748], skills (EnumData.SkillTypes)
 - Pathfinding: our A* (dsa-03) diffed vs decompiled (analysis/diff_pathfinding.md)
 
-## Milestone 5 — Async multiplayer
-- Raid/Instance/WorldBoss flows (`RaidManager` [552963], Finish* senders)
-- Server: battle turn resolution service, result packets per P §3
-- Chatting (channel/whisper/guild) on same socket; `Chatting` [396491]
+## Milestone 5 — Async multiplayer ✅ (61335cea, 48f99f14, eb22dc4d)
+- [x] Battle executor: per-ControlType dispatch + CombatPower coef (REAL,
+      decompiled cctors) + 383-const tuning table
+- [x] Battle endpoints: scenario/multi start→end (event-sourced D1 log)
+- [x] Replays: /multiplay/getReplayData over the battle log
+- [x] Multiplay bridge: getServerInfo handoff → socket rooms → battleControl
+- [ ] Damage formula exact extraction (SpAction* decompile) — [RE-APPROX] now
+- [ ] Chat UI panels (Chatting singleton logic ✓, UI pending)
 
-## Milestone 6 — Realtime PvP (the FlatBuffers mode)
-- `MultiplayManager` matchmaking [622273], `Duel` scene, `DuelCommands`
-  command stream [6402], rollback strategy (`RollbackBattle`)
-- DO rooms with Durable Object per match; GuildWar world-state streaming in
-  FlatBuffers (schemas: analysis/fbs/GuildWarFlatBuffer.fbs — 67 tables)
+## Milestone 6 — GuildWar world sync ✅ (0a8b51a2, 4504115b)
+- [x] FlatBuffers v1.6.0 vendored (namespace-faithful); all 67 GuildWarFlatBuffer
+      structs regenerated as inline STRUCTS (decompiled-proof grounded)
+- [x] Server: guild CRUD/apply/applicants/motd + CWLD world snapshots
+      (28B corps rows, 12B buildings) — python round-trip OK
+- [ ] Client DataTableImpl snapshot/diff application (generic decode core)
+- [ ] Rollback battle resolution (RollbackBattle decompile)
 
 ## Milestone 7 — Meta & economy
 - Guild system (`GuildSiegeWarFlowController` [479535], guild scenes)
