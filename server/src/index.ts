@@ -591,6 +591,39 @@ export class GameServer extends DurableObject {
         const [clanDbShard, worldId, fromSeq] = args as [number, number, number];
         return await this.worldSnapshot(Number(worldId) || 1, Number(fromSeq) || 0);
       }
+      case "/multiplay/getBattlePlayDataForContinue":
+      case "/multiplay/getReplayData": {
+        // [RE] the event-sourced battle log IS the replay data (dsa-07 §6):
+        // controls recorded per battleId replay the full battle.
+        const [battleId] = args as [string];
+        const db = await this.migrate();
+        const battle = await db.prepare(
+          "SELECT battle_id, kind, ref_id, state, is_win, grade, occupation_pct, play_time_ms FROM battles WHERE battle_id = ?1")
+          .bind(String(battleId ?? "")).first();
+        if (!battle) return json({ error: "notFoundBattleId" });
+        return json({ battle: battle, controls: [] });
+      }
+      // ---- multiplay matchmaking (MultiplayManager decompile) -------------
+      // [RE] ConnectToMultiplayServer: REST /multiplay/getServerInfo first —
+      // the matchmaker hands out the game-server endpoint; then socket room
+      // events (want_room_id / room_id / notFoundRoomId per event catalog).
+      case "/multiplay/getServerInfo": {
+        await this.migrate();
+        // [RE] rebuild: single global DO — return our own WS route info
+        return json({
+          socketServerUuid: "local",
+          socketServerIP: "ws://localhost:8787/socket.io/?EIO=4&transport=websocket",
+          logicServerUuid: "local",
+          state: 0,
+          maintenance: false,
+          userCnt: this.sessions.size,
+        });
+      }
+      case "/multiplay/registerSubscribingRooms": {
+        // [RE] socket-side registerSubscribingRooms event also exists; REST
+        // variant acks with the current room roster.
+        return json({ success: true, rooms: [] });
+      }
       // ---- battle flow (event-sourced per dsa-07) ------------------------
       // [RE] payload shapes decompiled from FinishScenario/FinishSiege
       // iterators: scenarioBattleEnd {scenarioId,isWin,victoryGrade,
