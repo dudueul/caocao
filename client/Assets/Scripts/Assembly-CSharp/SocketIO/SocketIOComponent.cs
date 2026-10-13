@@ -127,6 +127,22 @@ namespace SocketIO
 		public void Update()
 		{
 			// [RE] single-consumer drain — see dsa-04.
+			// BUGFIX (fix loop 10): BOTH queues must drain unconditionally —
+			// the socket.io CONNECT packet lands in ackQueue (transport
+			// messages), and it was only drained inside DispatchEvent (i.e.,
+			// only when an eventQueue item happened to trigger it). The
+			// "connect" event therefore never fired → infinite reconnect loop.
+			while (true)
+			{
+				Packet p;
+				lock (ackQueueLock)
+				{
+					if (ackQueue == null || ackQueue.Count == 0) break;
+					p = ackQueue.Dequeue();
+				}
+				if (p != null)
+					HandleMessageDeferred(p);
+			}
 			if (eventQueue != null)
 			{
 				while (true)
