@@ -7686,7 +7686,7 @@ namespace GuildWar.Backend
 				UnityEngine.Debug.Log("[SessionImpl] CreateSocket → " + ServerSetting.instance.GAME_SERVER_HOST_URL);
 				DestroySocket();
 				// [RE] URL template literal: ws://{0}/socket.io/?EIO=4&transport=websocket
-				var host = new Uri(ServerSetting.instance.GAME_SERVER_HOST_URL).Authority;
+				var host = new Uri(ServerSetting.instance.GAME_SERVER_HOST_URL).Authority.Replace("localhost", "127.0.0.1"); // [RE] IPv4: WebSocketSharp lacks v6→v4 fallback; WSL2 relay is v4-only
 				var go = new GameObject("SocketIO");
 				go.transform.SetParent(m_gameObject.transform, false);
 				m_socket = go.AddComponent<SocketIOComponent>();
