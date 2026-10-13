@@ -927,6 +927,7 @@ export class GameServer extends DurableObject {
   // ---- WebSocket / socket.io ----------------------------------------------
 
   override async webSocketMessage(ws: WebSocket, message: string | ArrayBuffer): Promise<void> {
+    console.log("[do] ws msg:", typeof message, String(message).slice(0, 60));
     if (typeof message !== "string") return;
     const frame = decodeFrame(message);
     if (!frame) return;
@@ -943,6 +944,7 @@ export class GameServer extends DurableObject {
   }
 
   override async webSocketClose(ws: WebSocket): Promise<void> {
+    console.log("[do] ws close");
     const s = this.sessions.get(ws);
     if (!s) return;
     for (const room of s.rooms) this.broadcastTo(room, event("playerLeft", { sid: s.sid }), ws);
@@ -954,8 +956,9 @@ export class GameServer extends DurableObject {
   }
 
   private async handleIo(ws: WebSocket, pkt: IoPacket): Promise<void> {
+    console.log("[do] io packet:", pkt.kind, pkt.eventName ?? "");
     const s = this.sessions.get(ws);
-    if (!s) return;
+    if (!s) { console.log("[do] NO SESSION for this ws!"); return; }
 
     switch (pkt.kind) {
       case "connect":

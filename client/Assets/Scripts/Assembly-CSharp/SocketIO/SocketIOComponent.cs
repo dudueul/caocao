@@ -322,11 +322,13 @@ namespace SocketIO
 		{
 			wsConnected = true;
 			isConnecting = false;
+			UnityEngine.Debug.Log("[SocketIO] ws open → send 40 (socket.io CONNECT)");
 			EmitPacket(new Packet(EnginePacketType.MESSAGE, SocketPacketType.CONNECT, 0, "/", -1, null));
 		}
 
 		private void OnTransportMessage(string text)
 		{
+			UnityEngine.Debug.Log("[SocketIO] recv: " + text);
 			// [RE] transport delivers engine.io text frames on every platform
 			Packet packet = decoder.Decode(text);
 			if (packet == null)
