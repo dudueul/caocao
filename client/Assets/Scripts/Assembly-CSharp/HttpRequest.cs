@@ -353,6 +353,7 @@ public class HttpRequest : Singleton<HttpRequest>
 	{
 		ctx.status = RequestStatus.didSent;
 		var url = ctx.absolutePath;
+		UnityEngine.Debug.Log("[HttpRequest] " + ctx.method + " " + url);
 		using (var req = new UnityWebRequest(url, ctx.method.ToUpper() == "GET" ? "GET" : "POST"))
 		{
 			if (req.method != "GET")
