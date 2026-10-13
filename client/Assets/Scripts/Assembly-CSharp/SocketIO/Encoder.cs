@@ -16,7 +16,9 @@ namespace SocketIO
 			switch (packet.enginePacketType)
 			{
 				case EnginePacketType.OPEN:
-					sb.Append('0').Append(packet.json.ToJson());
+					sb.Append('0');
+					if (packet.json != null)
+						sb.Append(packet.json.ToJson());
 					break;
 				case EnginePacketType.CLOSE:
 					sb.Append('6');

@@ -379,12 +379,15 @@ namespace SocketIO
 		{
 			if (packet.json != null)
 			{
+				// [RE] LitJson 0.16 stores JSON ints as long — direct
+				// (int)/(double) casts throw "doesn't hold a double"; parse
+				// from string instead.
 				if (packet.json.Keys.Contains("sid"))
 					sid = packet.json["sid"].ToString();
 				if (packet.json.Keys.Contains("pingInterval"))
-					pingInterval = (int)packet.json["pingInterval"];
+					int.TryParse(packet.json["pingInterval"].ToString(), out pingInterval);
 				if (packet.json.Keys.Contains("pingTimeout"))
-					pingTimeout = (double)packet.json["pingTimeout"];
+					double.TryParse(packet.json["pingTimeout"].ToString(), out pingTimeout);
 			}
 			lastPongUtc = DateTime.UtcNow;
 		}
