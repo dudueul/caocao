@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0030](../adr/0030-modern-techniques-adopted.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0031](../adr/0031-svelte-dom-overlay.md)).
 
 ## Vision
 
@@ -81,6 +81,7 @@ flowchart TB
 | Undo | Free move undo until an action is confirmed; then final, in every mode | [0028](../adr/0028-undo-moves-until-action.md) |
 | Benchmark lessons | Relation matrix as data, per-mode tuning, named damage pipeline, damage floor `max(10, 1.5 × level)` | [0029](../adr/0029-benchmark-lessons-adopted.md) |
 | Modern techniques | Danger zones (+ boss intent), gambits for absent seats, break on advantage, push and fire hazards; all free for everyone | [0030](../adr/0030-modern-techniques-adopted.md) |
+| Client UI | Svelte 5 components as a DOM overlay on the PixiJS canvas; one battle store | [0031](../adr/0031-svelte-dom-overlay.md) |
 | Toolchain | Bun (install, tests, scripts), TypeScript 7, Biome, determinism guard | [0019](../adr/0019-bun-toolchain.md) (supersedes [0018](../adr/0018-toolchain.md)) |
 
 ## Roadmap
@@ -101,7 +102,6 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 | # | Question | Current leaning |
 |---|---|---|
 | 2 | Name of the game; fresh repository from the snapshot | Working name `tk`; the owner restarts from a snapshot ([0017](../adr/0017-clear-this-repository.md)) |
-| 3 | Menu/UI framework | DOM overlay (a light framework) over the Pixi canvas |
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |

@@ -43,3 +43,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0028](0028-undo-moves-until-action.md) | Moves can be undone freely until an action is confirmed; nothing after that | Accepted | 2026-10-14 |
 | [0029](0029-benchmark-lessons-adopted.md) | Adopt four benchmark lessons: relation matrix, per-mode tuning, named damage pipeline, level-scaled floor | Accepted | 2026-10-14 |
 | [0030](0030-modern-techniques-adopted.md) | Adopt danger zones, gambits, break on advantage, and forced movement with hazards | Accepted | 2026-10-14 |
+| [0031](0031-svelte-dom-overlay.md) | The client UI is a Svelte 5 DOM overlay on the PixiJS battlefield | Accepted | 2026-10-14 |

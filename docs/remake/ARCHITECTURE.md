@@ -237,7 +237,7 @@ flowchart LR
   EV --> ST["view state"]
   EV --> AQ["animation queue"]
   AQ --> PX["PixiJS battle view<br/>map, units, effects"]
-  ST --> UI["UI overlay (proposed: DOM)<br/>menus, unit panels, dialogue"]
+  ST --> UI["Svelte 5 DOM overlay<br/>menus, unit panels, dialogue"]
 ```
 
 - The battle view only consumes events, so solo and online play share the same renderer path.
