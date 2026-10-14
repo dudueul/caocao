@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0015](../adr/0015-delivery-order-engine-then-arena.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0016](../adr/0016-new-repository.md)).
 
 ## Vision
 
@@ -66,6 +66,7 @@ flowchart TB
 | World modes | One World engine, two presets | [0013](../adr/0013-one-world-engine.md) |
 | Progression | Scoped per mode; Arena normalized | [0014](../adr/0014-scoped-progression-fair-arena.md) |
 | Build order | Engine → Arena → Story → private World → public seasons → Raids, Duels | [0015](../adr/0015-delivery-order-engine-then-arena.md) |
+| Repository | New repository for the code; these docs move there; this repo stays the archive | [0016](../adr/0016-new-repository.md) |
 
 ## Roadmap
 
@@ -84,7 +85,7 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 
 | # | Question | Current leaning |
 |---|---|---|
-| 2 | Where the new code lives | Separate repository; this one stays the reference archive |
+| 2 | Name of the game and its repository | To be chosen ([0016](../adr/0016-new-repository.md)) |
 | 3 | Menu/UI framework | DOM overlay (a light framework) over the Pixi canvas |
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |

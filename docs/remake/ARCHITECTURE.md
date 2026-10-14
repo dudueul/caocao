@@ -49,7 +49,7 @@ flowchart LR
 
 ## 2. Code layout
 
-A TypeScript monorepo **(proposed: separate repository)**:
+A TypeScript monorepo in its own repository ([0016](../adr/0016-new-repository.md)):
 
 ```mermaid
 flowchart BT

@@ -28,3 +28,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0013](0013-one-world-engine.md) | Living History and Warlord Campaign share one World engine | Accepted | 2026-10-14 |
 | [0014](0014-scoped-progression-fair-arena.md) | Scoped progression per mode, with a level-normalized Arena | Accepted | 2026-10-14 |
 | [0015](0015-delivery-order-engine-then-arena.md) | Build order: rules engine, then Arena, Story, private World, public seasons | Accepted | 2026-10-14 |
+| [0016](0016-new-repository.md) | The remake lives in a new repository; this one stays the reference archive | Accepted | 2026-10-14 |
