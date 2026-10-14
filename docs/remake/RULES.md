@@ -247,7 +247,7 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 
 ## 7. Turns, rounds and victory
 
-| Rule | Value ([ADR 0003](../adr/0003-turn-structure.md), [ADR 0027](../adr/0027-p0-engine-defaults.md) *proposed*) |
+| Rule | Value ([ADR 0003](../adr/0003-turn-structure.md), [ADR 0027](../adr/0027-p0-engine-defaults.md)) |
 |---|---|
 | Command | one unit's whole action: move to a tile, then attack, cast or wait |
 | Undo | moves can be undone freely in the client until an action is confirmed; the confirmed command is final ([ADR 0028](../adr/0028-undo-moves-until-action.md)) |

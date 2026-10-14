@@ -1,8 +1,8 @@
 # 0027. Rules-engine defaults chosen while building P0
 
-- **Status:** Proposed (implemented; the owner to confirm or change)
+- **Status:** Accepted (confirmed by the owner, all eight defaults)
 - **Date:** 2026-10-14
-- **Deciders:** Claude, pending the project owner
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0003](0003-turn-structure.md), [0004](0004-server-authoritative-referee.md),
   [0020](0020-five-stats-with-distinct-roles.md), [0022](0022-medium-number-scale.md),
   [0024](0024-stratagems-elements-and-fortune-twists.md), [`docs/remake/RULES.md` §7](../remake/RULES.md#7-turns-rounds-and-victory)

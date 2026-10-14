@@ -39,7 +39,7 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0024](0024-stratagems-elements-and-fortune-twists.md) | Stratagems: MP and elements shaped by terrain and weather, with rare fortune twists | Accepted | 2026-10-14 |
 | [0025](0025-deterministic-double-attacks-and-counters.md) | Double attacks by a fixed 민첩 threshold; one counter at 800‰ | Accepted | 2026-10-14 |
 | [0026](0026-soft-zone-of-control.md) | Soft zones of control, with skirmisher exceptions | Accepted | 2026-10-14 |
-| [0027](0027-p0-engine-defaults.md) | Rules-engine defaults chosen while building P0 | Proposed | 2026-10-14 |
+| [0027](0027-p0-engine-defaults.md) | Rules-engine defaults chosen while building P0 | Accepted | 2026-10-14 |
 | [0028](0028-undo-moves-until-action.md) | Moves can be undone freely until an action is confirmed; nothing after that | Accepted | 2026-10-14 |
 | [0029](0029-benchmark-lessons-adopted.md) | Adopt four benchmark lessons: relation matrix, per-mode tuning, named damage pipeline, level-scaled floor | Accepted | 2026-10-14 |
 | [0030](0030-modern-techniques-adopted.md) | Adopt danger zones, gambits, break on advantage, and forced movement with hazards | Accepted | 2026-10-14 |

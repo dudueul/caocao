@@ -77,7 +77,7 @@ flowchart TB
 | Stratagems | MP; fire, water, earth, wind, support, disruption; terrain‰ × weather‰; rare 운 fortune twists (천운/불운, ~1 in 25) | [0024](../adr/0024-stratagems-elements-and-fortune-twists.md) |
 | Counters and double attacks | Double attack at a 민첩 gap ≥ 20 (무도가 ≥ 10); one counter per enemy action at 800‰; shown exactly in previews | [0025](../adr/0025-deterministic-double-attacks-and-counters.md) |
 | Movement | Soft ZOC: entering an enemy-adjacent tile ends movement; cavalry and bandits pass one ZOC tile | [0026](../adr/0026-soft-zone-of-control.md) |
-| Engine defaults | One command per unit action, alternating round starter, confusion, round-limit draw, baseline AI (**proposed**) | [0027](../adr/0027-p0-engine-defaults.md) |
+| Engine defaults | One command per unit action, alternating round starter, confusion, round-limit draw, baseline AI | [0027](../adr/0027-p0-engine-defaults.md) |
 | Undo | Free move undo until an action is confirmed; then final, in every mode | [0028](../adr/0028-undo-moves-until-action.md) |
 | Benchmark lessons | Relation matrix as data, per-mode tuning, named damage pipeline, damage floor `max(10, 1.5 × level)` | [0029](../adr/0029-benchmark-lessons-adopted.md) |
 | Modern techniques | Danger zones (+ boss intent), gambits for absent seats, break on advantage, push and fire hazards; all free for everyone | [0030](../adr/0030-modern-techniques-adopted.md) |
