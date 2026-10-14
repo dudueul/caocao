@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0018](../adr/0018-toolchain.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0019](../adr/0019-bun-toolchain.md)).
 
 ## Vision
 
@@ -67,7 +67,7 @@ flowchart TB
 | Progression | Scoped per mode; Arena normalized | [0014](../adr/0014-scoped-progression-fair-arena.md) |
 | Build order | Engine → Arena → Story → private World → public seasons → Raids, Duels | [0015](../adr/0015-delivery-order-engine-then-arena.md) |
 | Repository | This repository, cleared; the recovery archive is commit `dabaf0a2` | [0017](../adr/0017-clear-this-repository.md) (supersedes [0016](../adr/0016-new-repository.md)) |
-| Toolchain | npm workspaces, TypeScript 7, Vitest, Biome, determinism guard (**proposed**) | [0018](../adr/0018-toolchain.md) |
+| Toolchain | Bun (install, tests, scripts), TypeScript 7, Biome, determinism guard | [0019](../adr/0019-bun-toolchain.md) (supersedes [0018](../adr/0018-toolchain.md)) |
 
 ## Roadmap
 

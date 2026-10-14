@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "bun:test";
 import { Prng, seedFromString } from "../src/index.ts";
 
 // Golden values: if these change, every stored replay and seed breaks.

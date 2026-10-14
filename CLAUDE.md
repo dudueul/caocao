@@ -18,7 +18,8 @@
 - `packages/rules` is pure and deterministic ([ADR 0006](docs/adr/0006-typescript-everywhere.md)):
   no clock, I/O, timers, `Math.random`, locale APIs or float literals.
   Randomness comes from the `Prng` in the state; numbers are integers (fixed-point ×1000).
-- Run `npm run check` before every commit (typecheck, Biome, determinism guard, tests).
+- Run `bun run check` before every commit (typecheck, Biome, determinism guard, `bun test`).
+  Toolchain: Bun 1.4, TypeScript 7, Biome 2 ([ADR 0019](docs/adr/0019-bun-toolchain.md)).
 - Golden values (PRNG sequence, state hashes) change only with a format-version bump.
 
 ## IP boundary

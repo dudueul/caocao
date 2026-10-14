@@ -50,8 +50,8 @@ flowchart LR
 ## 2. Code layout
 
 A TypeScript monorepo in this repository ([0017](../adr/0017-clear-this-repository.md)),
-with the toolchain of [0018](../adr/0018-toolchain.md) (npm workspaces, TypeScript 7,
-Vitest, Biome). **Today only `packages/rules` has code** (seeded PRNG, canonical
+with the toolchain of [0019](../adr/0019-bun-toolchain.md) (Bun for install, tests and
+scripts; TypeScript 7; Biome). **Today only `packages/rules` has code** (seeded PRNG, canonical
 state hash); the other folders hold a README describing their phase.
 
 ```mermaid

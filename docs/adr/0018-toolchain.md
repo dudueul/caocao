@@ -1,6 +1,6 @@
 # 0018. Toolchain: npm workspaces, TypeScript 7, Vitest, Biome, and a determinism guard
 
-- **Status:** Proposed (in use by the skeleton; the owner to confirm or change)
+- **Status:** Superseded by [0019](0019-bun-toolchain.md) (the owner chose Bun)
 - **Date:** 2026-10-14
 - **Deciders:** Claude (default choice for the skeleton), pending the project owner
 - **Related:** [0006](0006-typescript-everywhere.md), [0017](0017-clear-this-repository.md),

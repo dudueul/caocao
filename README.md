@@ -5,7 +5,7 @@ battles drive every mode: Story chapters, Arena PvP, co-op Raids, and **Living
 History**, where friends found households in a 120-year history that plays out
 in 120 days. Web-first (PWA), with the same build wrapped for PC and mobile later.
 
-**Status:** design settled for the first phases (18 ADRs); **P0** (rules
+**Status:** design settled for the first phases (19 ADRs); **P0** (rules
 engine) has started: `packages/rules` has a seeded PRNG and a canonical state hash.
 
 | Start here | |
@@ -27,17 +27,17 @@ apps/
 docs/
   remake/     current design documents (with diagrams)
   adr/        architecture decision records
-scripts/      check-determinism.mjs
+scripts/      check-determinism.mjs (run by bun run check)
 ```
 
 ## Develop
 
-Requires Node ≥ 22.12.
+Requires [Bun](https://bun.sh) 1.4 (version pinned in `.bun-version`).
 
 ```bash
-npm ci
-npm run check      # typecheck → lint (Biome) → determinism guard → tests (Vitest)
-npm run format     # Biome format + safe fixes
+bun install
+bun run check      # typecheck (tsc) → lint (Biome) → determinism guard → bun test
+bun run format     # Biome format + safe fixes
 ```
 
 ## Archive
