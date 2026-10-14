@@ -37,3 +37,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0022](0022-medium-number-scale.md) | Medium number scale: HP 100–600, hits of about 20–120 | Accepted | 2026-10-14 |
 | [0023](0023-terrain-family-affinity-and-cover.md) | Terrain: per-family movement and affinity, plus cover for everyone | Accepted | 2026-10-14 |
 | [0024](0024-stratagems-elements-and-fortune-twists.md) | Stratagems: MP and elements shaped by terrain and weather, with rare fortune twists | Accepted | 2026-10-14 |
+| [0025](0025-deterministic-double-attacks-and-counters.md) | Double attacks by a fixed 민첩 threshold; one counter at 800‰ | Accepted | 2026-10-14 |

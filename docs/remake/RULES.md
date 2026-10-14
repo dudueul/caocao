@@ -40,21 +40,26 @@ Solid arrows are battle roles; dotted arrows are World / Living History roles
 
 ```mermaid
 flowchart TB
-  A["attack declared<br/>(legal target in range)"] --> H{"hit?<br/>hit‰ vs PRNG"}
-  H -->|miss| M["event: missed"]
-  H -->|hit| C{"critical?<br/>crit‰ vs PRNG"}
-  C -->|yes| DC["damage × 1500/1000"]
-  C -->|no| D["base damage"]
-  DC --> APPLY["apply HP loss"]
-  D --> APPLY
-  APPLY --> K{"HP ≤ 0?"}
-  K -->|yes| DEF["unit defeated →<br/>officer fate roll (운)"]
-  K -->|no| CT{"defender can counter?<br/>(range, not disabled)"}
-  CT -->|yes| CA["counter-attack<br/>(same steps, no counter)"]
-  CT -->|no| END["end of action"]
-  CA --> END
+  A["attack declared<br/>(legal target in range)"] --> S1["strike 1<br/>(hit, critical, damage)"]
+  S1 --> K1{"defender<br/>HP ≤ 0?"}
+  K1 -->|yes| DEF["defender defeated →<br/>officer fate roll (운)"]
+  K1 -->|no| CT{"can counter?<br/>attacker in range, not disabled,<br/>not catapult or stratagem"}
+  CT -->|yes| CA["counter strike at 800‰<br/>(hit, critical, damage)"]
+  CT -->|no| DA
+  CA --> K2{"attacker<br/>HP ≤ 0?"}
+  K2 -->|yes| ADEF["attacker defeated →<br/>officer fate roll (운)"]
+  K2 -->|no| DA{"double attack?<br/>민첩a − 민첩d ≥ 20<br/>(무도가 ≥ 10)"}
+  DA -->|yes| S2["strike 2<br/>(hit, critical, damage)"]
+  DA -->|no| END["end of action"]
+  S2 --> K3{"defender<br/>HP ≤ 0?"}
+  K3 -->|yes| DEF
+  K3 -->|no| END
   DEF --> END
+  ADEF --> END
 ```
+
+Each strike is: **hit?** (`hit‰` vs `Prng`), then **critical?** (`crit‰` vs
+`Prng`), then damage. A miss deals nothing and draws no critical roll.
 
 | Quantity | Formula (starting tuning) |
 |---|---|
@@ -64,7 +69,8 @@ flowchart TB
 | HP | class base + 통솔 bonus + level growth; range about 100–600 ([ADR 0022](../adr/0022-medium-number-scale.md)) |
 | Attack / defense | `ATK = class + 무력 + weapon`, `DEF = class + 통솔 + armour` |
 | Base damage | `max(10, ATK − ⌊DEF/2⌋)` → × counter triangle (1200 or 800 /1000) → × critical (1500/1000), each step floored |
-| Double attack, counter damage | *to be defined* |
+| Double attack | `민첩a − 민첩d ≥ 20` (무도가 `≥ 10`); each strike rolls separately ([ADR 0025](../adr/0025-deterministic-double-attacks-and-counters.md)) |
+| Counter | once per enemy action, 800‰ damage, only if the attacker is in the defender's range; never against catapults or stratagems |
 | Stratagems | see §5 |
 
 Worked example: 관우 (cavalry, tier 3, Lv 30) has ATK 60 + 97 + 25 = 182. Against
@@ -72,8 +78,9 @@ tier-2 infantry with DEF 50 + 70 + 20 = 140, base damage is 182 − 70 = **112**
 Cavalry against infantry is the losing side of the triangle (×800/1000), so a
 normal hit deals 89, and a critical hit deals 133. A 400-HP unit falls in about 4 hits.
 
-Each random check draws once from the battle's `Prng` in a fixed order (hit,
-then critical), so replays and the referee reproduce it exactly
+Each random check draws once from the battle's `Prng` in a fixed order (strike 1
+hit and critical, counter hit and critical, strike 2 hit and critical), so replays
+and the referee reproduce it exactly
 ([ADR 0004](../adr/0004-server-authoritative-referee.md)).
 
 ## 3. Classes
