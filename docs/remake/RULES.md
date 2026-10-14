@@ -205,7 +205,42 @@ flowchart TB
 
 Draw order from the battle `Prng`: success or status, then twist, then direction.
 
-## 6. Still to decide
+## 6. Movement
+
+A unit moves up to its class's move points; each tile costs its family's
+terrain movement cost (§4). Zones of control are soft
+([ADR 0026](../adr/0026-soft-zone-of-control.md)):
+
+```mermaid
+flowchart LR
+  S["start tile<br/>(leaving a ZOC is free)"] --> N{"next tile"}
+  N -->|"enemy on it"| X["blocked"]
+  N -->|"impassable or<br/>cost over budget"| X
+  N -->|"ally on it"| P["pass through<br/>(can't stop here)"]
+  N -->|"free tile"| Z{"next to an enemy?<br/>(ZOC)"}
+  Z -->|no| C["continue"]
+  Z -->|"yes, skirmisher,<br/>first ZOC tile"| C
+  Z -->|yes| STOP["movement ends here"]
+  P --> N
+  C --> N
+```
+
+Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
+`reachable()` returns every tile the unit can end on, sorted by row, then column.
+
+## 7. Turns, rounds and victory
+
+| Rule | Value ([ADR 0003](../adr/0003-turn-structure.md), [ADR 0027](../adr/0027-p0-engine-defaults.md) *proposed*) |
+|---|---|
+| Command | one unit's whole action: move to a tile, then attack, cast or wait |
+| Side phases | the side to act moves any of its ready units; `endPhase` passes; the lowest side starts each round |
+| Alternating | one unit per activation; sides alternate; the starting side switches every round |
+| Round start | units on village, fort or camp tiles heal (‰ of max HP, at least 1) |
+| Confusion | the unit can only wait in place, which uses up one round of the status; it can't counter |
+| HP / MP | max HP = class HP + 통솔 + 4 × level; max MP = class MP + ⌊지력/2⌋ |
+| Victory | the last side with living units wins; passing the round limit is a draw (story maps add objectives) |
+
+## 8. Still to decide
 
 | Topic | Depends on |
 |---|---|

@@ -5,8 +5,9 @@ battles drive every mode: Story chapters, Arena PvP, co-op Raids, and **Living
 History**, where friends found households in a 120-year history that plays out
 in 120 days. Web-first (PWA), with the same build wrapped for PC and mobile later.
 
-**Status:** design settled for the first phases (25 ADRs); **P0** (rules
-engine) has started: `packages/rules` has a seeded PRNG and a canonical state hash.
+**Status:** 27 ADRs. **P0** (rules engine) is implemented in `packages/rules`:
+movement with zones of control, combat, stratagems with fortune twists, both turn
+policies, a baseline AI, and 42 tests including AI-vs-AI soak and golden replays.
 
 | Start here | |
 |---|---|

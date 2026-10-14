@@ -1,2 +1,42 @@
+export { chooseCommand, scoreCommand } from "./ai.ts";
+export {
+  type ApplyResult,
+  apply,
+  type BattleSetup,
+  createBattle,
+  legalCommands,
+  readyUnits,
+  type UnitSetup,
+} from "./battle.ts";
+export {
+  classOf,
+  inRange,
+  isAlive,
+  isZoc,
+  terrainAt,
+  unitAt,
+  unitById,
+} from "./board.ts";
+export {
+  type AttackPreview,
+  attackPower,
+  critChance,
+  defensePower,
+  hitChance,
+  previewAttack,
+  strikeDamage,
+  triangleFactor,
+} from "./combat.ts";
 export { canonical, hashState } from "./hash.ts";
+export { canReach, type Reach, reachable } from "./move.ts";
 export { Prng, type PrngState, seedFromString } from "./prng.ts";
+export { replay, runBattle, type SimResult } from "./sim.ts";
+export {
+  canCast,
+  castStratagem,
+  statusChance,
+  stratagemDamage,
+  stratagemTargets,
+} from "./stratagem.ts";
+export { DEFAULT_TUNING } from "./tuning.ts";
+export type * from "./types.ts";
