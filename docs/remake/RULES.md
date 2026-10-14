@@ -61,7 +61,15 @@ flowchart TB
 | Hit | `hit‰ = clamp(850 + 6·(민첩a − 민첩d) − terrainEvasion‰, 250, 990)` |
 | Critical | `crit‰ = clamp(40 + 4·(운a − 운d), 10, 350)`, damage ×1.5 |
 | Officer fate on defeat | `escape‰ = clamp(600 + 4·운, 0, 950)`; otherwise captured or killed |
-| Base damage, double attack, counter damage, stratagems | *to be defined with the class system* |
+| HP | class base + 통솔 bonus + level growth; range about 100–600 ([ADR 0022](../adr/0022-medium-number-scale.md)) |
+| Attack / defense | `ATK = class + 무력 + weapon`, `DEF = class + 통솔 + armour` |
+| Base damage | `max(10, ATK − ⌊DEF/2⌋)` → × counter triangle (1200 or 800 /1000) → × critical (1500/1000), each step floored |
+| Double attack, counter damage, stratagems | *to be defined* |
+
+Worked example: 관우 (cavalry, tier 3, Lv 30) has ATK 60 + 97 + 25 = 182. Against
+tier-2 infantry with DEF 50 + 70 + 20 = 140, base damage is 182 − 70 = **112**.
+Cavalry against infantry is the losing side of the triangle (×800/1000), so a
+normal hit deals 89, and a critical hit deals 133. A 400-HP unit falls in about 4 hits.
 
 Each random check draws once from the battle's `Prng` in a fixed order (hit,
 then critical), so replays and the referee reproduce it exactly
@@ -106,7 +114,6 @@ group that beats it, −200‰. Promotion: tier 2 at Lv 20, tier 3 at Lv 40
 
 | Topic | Depends on |
 |---|---|
-| HP and damage scale (small numbers vs large) | next design session |
 | Terrain: movement costs, evasion and defense bonuses | classes (done) |
 | Stratagems, MP and status effects | stats and classes (done) |
 | Equipment types per family | classes (done), progression ([ADR 0014](../adr/0014-scoped-progression-fair-arena.md)) |

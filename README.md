@@ -5,7 +5,7 @@ battles drive every mode: Story chapters, Arena PvP, co-op Raids, and **Living
 History**, where friends found households in a 120-year history that plays out
 in 120 days. Web-first (PWA), with the same build wrapped for PC and mobile later.
 
-**Status:** design settled for the first phases (21 ADRs); **P0** (rules
+**Status:** design settled for the first phases (22 ADRs); **P0** (rules
 engine) has started: `packages/rules` has a seeded PRNG and a canonical state hash.
 
 | Start here | |

@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0021](../adr/0021-class-families-and-tiers.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0022](../adr/0022-medium-number-scale.md)).
 
 ## Vision
 
@@ -70,6 +70,7 @@ flowchart TB
 | Repository | This repository, cleared; the recovery archive is commit `dabaf0a2` | [0017](../adr/0017-clear-this-repository.md) (supersedes [0016](../adr/0016-new-repository.md)) |
 | Stats | 무력, 통솔, 지력, 민첩, 운, each with one battle role and one World role (운 = critical hits + fate on defeat) | [0020](../adr/0020-five-stats-with-distinct-roles.md) |
 | Classes | 12 families × 3 tiers + unique lines; counter triangle infantry ▶ cavalry ▶ archers | [0021](../adr/0021-class-families-and-tiers.md) |
+| Number scale | HP 100–600, damage `max(10, ATK − DEF/2)`, triangle ±200‰, critical ×1.5 | [0022](../adr/0022-medium-number-scale.md) |
 | Toolchain | Bun (install, tests, scripts), TypeScript 7, Biome, determinism guard | [0019](../adr/0019-bun-toolchain.md) (supersedes [0018](../adr/0018-toolchain.md)) |
 
 ## Roadmap
@@ -94,7 +95,7 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
-| 7 | HP and damage scale, terrain, stratagems, equipment ([RULES.md §4](RULES.md#4-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
+| 7 | Terrain, stratagems and MP, equipment ([RULES.md §4](RULES.md#4-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
 | 8 | Rules reference from the APK | Decompile about 50–100 formula, ability and AI functions into an engine-neutral spec |
 | 9 | Art pipeline | 96 px tiles (2×), palette and atlas tooling |
 | 10 | Languages | Korean first; English next |
