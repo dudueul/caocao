@@ -40,3 +40,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0025](0025-deterministic-double-attacks-and-counters.md) | Double attacks by a fixed 민첩 threshold; one counter at 800‰ | Accepted | 2026-10-14 |
 | [0026](0026-soft-zone-of-control.md) | Soft zones of control, with skirmisher exceptions | Accepted | 2026-10-14 |
 | [0027](0027-p0-engine-defaults.md) | Rules-engine defaults chosen while building P0 | Proposed | 2026-10-14 |
+| [0028](0028-undo-moves-until-action.md) | Moves can be undone freely until an action is confirmed; nothing after that | Accepted | 2026-10-14 |

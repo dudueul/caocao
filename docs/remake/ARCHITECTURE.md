@@ -241,6 +241,8 @@ flowchart LR
 ```
 
 - The battle view only consumes events, so solo and online play share the same renderer path.
+- Move undo is client-side only: the unit is shown on candidate tiles with exact
+  previews, and nothing is sent until an action is confirmed ([0028](../adr/0028-undo-moves-until-action.md)).
 - Assets stream per chapter or map; a service worker caches them for the PWA ([0005](../adr/0005-web-first-distribution.md)).
 
 ## 8. Testing and budgets

@@ -233,6 +233,7 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 | Rule | Value ([ADR 0003](../adr/0003-turn-structure.md), [ADR 0027](../adr/0027-p0-engine-defaults.md) *proposed*) |
 |---|---|
 | Command | one unit's whole action: move to a tile, then attack, cast or wait |
+| Undo | moves can be undone freely in the client until an action is confirmed; the confirmed command is final ([ADR 0028](../adr/0028-undo-moves-until-action.md)) |
 | Side phases | the side to act moves any of its ready units; `endPhase` passes; the lowest side starts each round |
 | Alternating | one unit per activation; sides alternate; the starting side switches every round |
 | Round start | units on village, fort or camp tiles heal (‰ of max HP, at least 1) |
