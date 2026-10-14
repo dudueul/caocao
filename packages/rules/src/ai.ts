@@ -3,6 +3,10 @@
  * side to act and take the best; ties go to the first in legal-command order.
  * It uses only exact previews (no Prng), so its choice is deterministic and
  * identical on client and server. Weights are starting values for playtests.
+ *
+ * Gambits (ADR 0030) let a player program "condition → behaviour" rules per
+ * unit; the AI follows them for absent seats and auto-battle, and falls back to
+ * its own scoring when no gambit applies.
  */
 import { legalCommands } from "./battle.ts";
 import { classOf, isAlive, terrainAt, unitById } from "./board.ts";
@@ -17,7 +21,16 @@ import {
   stratagemTargets,
 } from "./stratagem.ts";
 import { forMode } from "./tuning.ts";
-import type { BattleState, Command, Ruleset, Unit } from "./types.ts";
+import type {
+  BattleState,
+  Cell,
+  Command,
+  Gambit,
+  GambitBehavior,
+  GambitCondition,
+  Ruleset,
+  Unit,
+} from "./types.ts";
 
 const W = {
   damage: 10,
@@ -36,14 +49,14 @@ const W = {
   boldnessPerRound: 8,
 };
 
-/** For each enemy of the side to act: the tiles it could attack next turn. */
+/** For each enemy of `side`: the tiles it could attack next turn. */
 export type ThreatMap = ReadonlyArray<{ enemy: Unit; tiles: ReadonlySet<number> }>;
 
-export function threatMap(state: BattleState, rules: Ruleset): ThreatMap {
+export function threatMap(state: BattleState, rules: Ruleset, side = state.active): ThreatMap {
   const out: { enemy: Unit; tiles: Set<number> }[] = [];
   const w = state.map.width;
   for (const enemy of state.units) {
-    if (!isAlive(enemy) || enemy.side === state.active) continue;
+    if (!isAlive(enemy) || enemy.side === side) continue;
     const tiles = new Set<number>();
     const range = classOf(rules, enemy).range;
     for (const r of reachable(state, rules, enemy))
@@ -57,6 +70,28 @@ export function threatMap(state: BattleState, rules: Ruleset): ThreatMap {
   return out;
 }
 
+/**
+ * Danger zone for the UI (ADR 0030): every tile some enemy of `side` could
+ * attack next turn, sorted by row, then column.
+ */
+export function dangerTiles(state: BattleState, baseRules: Ruleset, side: number): Cell[] {
+  const rules = forMode(baseRules, state.mode);
+  const all = new Set<number>();
+  for (const t of threatMap(state, rules, side)) for (const k of t.tiles) all.add(k);
+  const w = state.map.width;
+  // Skip tiles no family can stand on (walls, water for most rulesets).
+  const standable = (k: number) => {
+    const terrain = state.map.tiles[k];
+    return Object.values(rules.affinity).some(
+      (row) => terrain !== undefined && row[terrain].move !== null,
+    );
+  };
+  return [...all]
+    .filter(standable)
+    .sort((a, b) => a - b)
+    .map((k) => ({ x: k % w, y: Math.floor(k / w) }));
+}
+
 /** Expected damage `me` could take on its current tile from enemies next turn. */
 function danger(
   rules: Ruleset,
@@ -66,7 +101,7 @@ function danger(
   skip: string,
 ): number {
   const key = me.y * s.map.width + me.x;
-  let total = 0;
+  let total = s.burning.some((b) => b.x === me.x && b.y === me.y) ? rules.tuning.burnDamage : 0;
   for (const t of threats) {
     if (t.enemy.id === skip || !t.tiles.has(key)) continue;
     total += permille(
@@ -126,8 +161,12 @@ export function scoreCommand(
     score += dealt * W.damage;
     if (p.damage * strikes >= target.hp) score += permille(W.killBase + target.maxHp, p.hit);
     const killsFirst = p.damage >= target.hp;
-    if (p.counter && !killsFirst)
-      score -= permille(p.counter.damage, p.counter.hit) * W.counterTaken;
+    if (p.counter && !killsFirst) {
+      // A landed breaking strike cancels the counter (ADR 0030).
+      const counterOdds = p.breaks ? 1000 - p.hit : 1000;
+      const expected = permille(permille(p.counter.damage, p.counter.hit), counterOdds);
+      score -= expected * W.counterTaken;
+    }
     // Exposure after the exchange; a likely kill removes that enemy's threat.
     return score - danger(rules, s, me, threats, killsFirst ? target.id : "") * W.danger;
   }
@@ -153,19 +192,142 @@ export function scoreCommand(
   return score - gap * approach - danger(rules, s, me, threats, "") * W.danger;
 }
 
-/** The AI's pick for the side to act, or null when the battle is over. */
-export function chooseCommand(state: BattleState, baseRules: Ruleset): Command | null {
+// ---------------------------------------------------------------- gambits (ADR 0030)
+
+type Act = Extract<Command, { kind: "act" }>;
+
+function hpBelow(u: Unit, permilleOfMax: number): boolean {
+  return u.hp * 1000 < u.maxHp * permilleOfMax;
+}
+
+function attacks(rules: Ruleset, state: BattleState, cmds: readonly Act[], family?: string): Act[] {
+  return cmds.filter((c) => {
+    if (c.action.kind !== "attack") return false;
+    const target = unitById(state, c.action.target);
+    return family === undefined || classOf(rules, target).family === family;
+  });
+}
+
+function conditionHolds(
+  rules: Ruleset,
+  state: BattleState,
+  unit: Unit,
+  cmds: readonly Act[],
+  when: GambitCondition,
+): boolean {
+  switch (when.kind) {
+    case "always":
+      return true;
+    case "selfHpBelow":
+      return hpBelow(unit, when.permille);
+    case "allyHpBelow":
+      return state.units.some(
+        (u) => u.side === unit.side && u.id !== unit.id && isAlive(u) && hpBelow(u, when.permille),
+      );
+    case "enemyInReach":
+      return attacks(rules, state, cmds, when.family).length > 0;
+    case "canKill":
+      return attacks(rules, state, cmds).some((c) => {
+        if (c.action.kind !== "attack") return false;
+        const [s, me] = shadow(state, unit, c.to);
+        const target = unitById(s, c.action.target);
+        return previewAttack(rules, s, me, target).damage >= target.hp;
+      });
+  }
+}
+
+/** Commands of one unit that carry out `behavior`; empty when it can't apply. */
+function behaviorCandidates(
+  rules: Ruleset,
+  state: BattleState,
+  unit: Unit,
+  cmds: readonly Act[],
+  behavior: GambitBehavior,
+): Act[] {
+  const waits = cmds.filter((c) => c.action.kind === "wait");
+  switch (behavior.kind) {
+    case "attackBest":
+      return attacks(rules, state, cmds);
+    case "attackFamily":
+      return attacks(rules, state, cmds, behavior.family);
+    case "attackLowestHp": {
+      const all = attacks(rules, state, cmds);
+      let lowest = Number.MAX_SAFE_INTEGER;
+      for (const c of all)
+        if (c.action.kind === "attack")
+          lowest = Math.min(lowest, unitById(state, c.action.target).hp);
+      return all.filter(
+        (c) => c.action.kind === "attack" && unitById(state, c.action.target).hp === lowest,
+      );
+    }
+    case "healAlly":
+      return cmds.filter(
+        (c) => c.action.kind === "stratagem" && stratagemDef(rules, c.action.id).effect === "heal",
+      );
+    case "retreatToHeal":
+      return waits.filter((c) => rules.terrains[terrainAt(state, c.to.x, c.to.y)].heal > 0);
+    case "advance": {
+      let best = Number.MAX_SAFE_INTEGER;
+      const dist = (c: Act) =>
+        nearestEnemyDistance(shadow(state, unit, c.to)[0], { ...unit, ...c.to });
+      for (const c of waits) best = Math.min(best, dist(c));
+      return waits.filter((c) => dist(c) === best);
+    }
+    case "hold":
+      return waits.filter((c) => c.to.x === unit.x && c.to.y === unit.y);
+  }
+}
+
+/** The unit's commands narrowed by its first applicable gambit (or all of them). */
+function gambitCommands(
+  rules: Ruleset,
+  state: BattleState,
+  unit: Unit,
+  cmds: readonly Act[],
+  gambits: readonly Gambit[] | undefined,
+): readonly Act[] {
+  if (!gambits || unit.status !== null) return cmds;
+  for (const g of gambits) {
+    if (!conditionHolds(rules, state, unit, cmds, g.when)) continue;
+    const picked = behaviorCandidates(rules, state, unit, cmds, g.behavior);
+    if (picked.length > 0) return picked;
+  }
+  return cmds;
+}
+
+/**
+ * The AI's pick for the side to act, or null when the battle is over. Units with
+ * gambits only consider the commands their first applicable gambit allows.
+ */
+export function chooseCommand(
+  state: BattleState,
+  baseRules: Ruleset,
+  gambits: Readonly<Record<string, readonly Gambit[]>> = {},
+): Command | null {
   const rules = forMode(baseRules, state.mode);
   const commands = legalCommands(state, rules);
   const threats = threatMap(state, rules);
+  const byUnit = new Map<string, Act[]>();
+  let fallback: Command | null = null;
+  for (const c of commands) {
+    if (c.kind !== "act") {
+      fallback = c;
+      continue;
+    }
+    const list = byUnit.get(c.unit);
+    if (list) list.push(c);
+    else byUnit.set(c.unit, [c]);
+  }
   let best: Command | null = null;
   let bestScore = Number.MIN_SAFE_INTEGER;
-  for (const c of commands) {
-    const sc = scoreCommand(state, rules, c, threats);
-    if (sc > bestScore) {
-      best = c;
-      bestScore = sc;
+  for (const [id, cmds] of byUnit) {
+    for (const c of gambitCommands(rules, state, unitById(state, id), cmds, gambits[id])) {
+      const sc = scoreCommand(state, rules, c, threats);
+      if (sc > bestScore) {
+        best = c;
+        bestScore = sc;
+      }
     }
   }
-  return best;
+  return best ?? fallback;
 }

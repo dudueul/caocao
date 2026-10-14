@@ -15,7 +15,7 @@ import {
   unitAt,
   unitById,
 } from "./board.ts";
-import { resolveAttack } from "./combat.ts";
+import { defeat, resolveAttack } from "./combat.ts";
 import { permille } from "./math.ts";
 import { canReach, reachable } from "./move.ts";
 import { Prng, seedFromString } from "./prng.ts";
@@ -92,6 +92,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
         y: s.y,
         acted: false,
         status: null,
+        broken: false,
         fate: null,
       };
     })
@@ -118,6 +119,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
     roundLimit: setup.roundLimit,
     active: 0,
     units,
+    burning: [],
     prng: seedFromString(setup.seed),
     winner: null,
   };
@@ -187,6 +189,7 @@ export function apply(state: BattleState, baseRules: Ruleset, command: Command):
     const error = validateAct(next, rules, command);
     if (error) return { ok: false, reason: error };
     const unit = unitById(next, command.unit);
+    unit.broken = false; // acting ends a break (ADR 0030)
     if (unit.x !== command.to.x || unit.y !== command.to.y) {
       events.push({
         kind: "moved",
@@ -215,7 +218,7 @@ export function apply(state: BattleState, baseRules: Ruleset, command: Command):
     unit.acted = true;
   }
 
-  advance(next, rules, events);
+  advance(next, rules, prng, events);
   next.prng = prng.state;
   return { ok: true, state: next, events };
 }
@@ -253,7 +256,7 @@ function validateAct(
 }
 
 /** After an action: end the battle, or pass the turn per the turn policy. */
-function advance(state: BattleState, rules: Ruleset, events: BattleEvent[]): void {
+function advance(state: BattleState, rules: Ruleset, prng: Prng, events: BattleEvent[]): void {
   const living = livingSides(state);
   if (living.length <= 1) {
     state.winner = living[0] ?? -1;
@@ -279,14 +282,31 @@ function advance(state: BattleState, rules: Ruleset, events: BattleEvent[]): voi
       }
     }
   }
-  newRound(state, rules, events);
+  newRound(state, rules, prng, events);
 }
 
-function newRound(state: BattleState, rules: Ruleset, events: BattleEvent[]): void {
+function newRound(state: BattleState, rules: Ruleset, prng: Prng, events: BattleEvent[]): void {
   state.round += 1;
   if (state.round > state.roundLimit) {
     state.winner = -1;
     events.push({ kind: "battleEnd", winner: -1 });
+    return;
+  }
+  // Fire burns whoever stands in it, then dies down (ADR 0030).
+  for (const b of state.burning) {
+    const u = unitAt(state, b.x, b.y);
+    if (!u) continue;
+    const damage = Math.min(u.hp, rules.tuning.burnDamage);
+    u.hp -= damage;
+    events.push({ kind: "burned", unit: u.id, damage, hpAfter: u.hp });
+    if (u.hp === 0) defeat(rules, prng, u, events);
+  }
+  for (const b of state.burning) b.rounds -= 1;
+  state.burning = state.burning.filter((b) => b.rounds > 0);
+  const living = livingSides(state);
+  if (living.length <= 1) {
+    state.winner = living[0] ?? -1;
+    events.push({ kind: "battleEnd", winner: state.winner });
     return;
   }
   for (const u of state.units) {

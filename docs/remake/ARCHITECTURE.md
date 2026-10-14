@@ -129,13 +129,13 @@ no wall-clock time. Golden-replay tests run in CI.
 | `board.ts` | Tile, unit and range queries; zones of control |
 | `move.ts` | `reachable()`: Dijkstra over family terrain costs with soft ZOC ([0026](../adr/0026-soft-zone-of-control.md)) |
 | `combat.ts` | Hit, critical, relation matrix, named damage pipeline, strike → counter → second strike, officer fate; `previewAttack()` with breakdown |
-| `stratagem.ts` | MP, element × terrain × weather, status rolls, fortune twists |
-| `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects, victory |
-| `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)) |
+| `stratagem.ts` | MP, element × terrain × weather, status rolls, fortune twists, push collisions, ignition |
+| `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects (healing, burning), victory |
+| `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)) |
 | `sim.ts` | `runBattle()` (AI vs AI), `replay()` (command-log verification) |
 | `prng.ts`, `hash.ts`, `math.ts`, `tuning.ts` | Seeded sfc32, canonical hash, integer helpers, default tuning, `forMode()`, `triangleRelations()` |
 
-Tests (`packages/rules/test/`, 46 cases) cover the RULES.md worked
+Tests (`packages/rules/test/`, 56 cases) cover the RULES.md worked
 examples, movement and ZOC, turn policies and validation, stratagem
 formulas and twist rates, golden replays, and an AI-vs-AI soak that checks
 every invariant after every step.
@@ -241,6 +241,10 @@ flowchart LR
 ```
 
 - The battle view only consumes events, so solo and online play share the same renderer path.
+- A **danger toggle** tints `dangerTiles()`; the forecast shows the damage
+  breakdown, `×2`, counter and *breaks* ([0030](../adr/0030-modern-techniques-adopted.md)).
+- Speed controls (2×/3×), skip and auto-battle for cleared maps are client
+  defaults; auto-battle runs `chooseCommand` with the player's gambits.
 - Move undo is client-side only: the unit is shown on candidate tiles with exact
   previews, and nothing is sent until an action is confirmed ([0028](../adr/0028-undo-moves-until-action.md)).
 - Assets stream per chapter or map; a service worker caches them for the PWA ([0005](../adr/0005-web-first-distribution.md)).

@@ -124,6 +124,10 @@ export interface StratagemDef {
   /** What a 천운 windfall does, and what a 불운 mishap does (ADR 0024). */
   readonly windfall: "power" | "refund";
   readonly mishap: "fizzle" | "backfire";
+  /** Push each target this many tiles away from the caster (ADR 0030). */
+  readonly push?: number;
+  /** Sets grass and forest in the area (and next to it) burning (ADR 0030). */
+  readonly ignites?: boolean;
 }
 
 /** Starting tuning numbers from RULES.md; all integers, probabilities in ‰. */
@@ -160,6 +164,14 @@ export interface Tuning {
   readonly damageFloorPerLevel: number;
   /** Final damage multiplier‰ of the "mode" pipeline stage (ADR 0029). */
   readonly damageMultiplier: number;
+  /** A landed strike with relation‰ ≥ this breaks the target (ADR 0030). */
+  readonly breakThreshold: number;
+  /** Collision damage when a pushed unit hits an obstacle / another unit. */
+  readonly pushWallDamage: number;
+  readonly pushUnitDamage: number;
+  /** Damage at round start to a unit on a burning tile, and burn duration. */
+  readonly burnDamage: number;
+  readonly burnRounds: number;
   /** Max MP = class MP + 지력 × mpPerIntellect‰ (ADR 0020). */
   readonly mpPerIntellect: number;
 }
@@ -203,7 +215,15 @@ export interface Unit {
   y: number;
   acted: boolean;
   status: Status | null;
+  /** Broken units can't counter until they act again (ADR 0030). */
+  broken: boolean;
   fate: Fate | null;
+}
+
+export interface BurningTile {
+  x: number;
+  y: number;
+  rounds: number;
 }
 
 export type TurnPolicyId = "sidePhases" | "alternating";
@@ -228,6 +248,8 @@ export interface BattleState {
   active: number;
   /** Units sorted by id. Defeated units stay, with hp 0 and a fate. */
   units: Unit[];
+  /** Tiles on fire, sorted by y then x. */
+  burning: BurningTile[];
   prng: PrngState;
   /** Set when the battle is over: the winning side, or -1 for a draw. */
   winner: number | null;
@@ -258,6 +280,8 @@ export type BattleEvent =
       crit: boolean;
       damage: number;
       hpAfter: number;
+      /** This strike broke the defender (ADR 0030). */
+      broke: boolean;
     }
   | { kind: "defeated"; unit: string; fate: Fate }
   | { kind: "stratagem"; caster: string; id: string; at: Cell }
@@ -271,8 +295,45 @@ export type BattleEvent =
       hpAfter: number;
     }
   | { kind: "twist"; caster: string; outcome: "windfall" | "mishap"; effect: string }
+  | {
+      kind: "pushed";
+      unit: string;
+      from: Cell;
+      to: Cell;
+      collided: "wall" | "unit" | null;
+      damage: number;
+      hpAfter: number;
+    }
+  | { kind: "ignited"; at: Cell }
+  | { kind: "burned"; unit: string; damage: number; hpAfter: number }
   | { kind: "waited"; unit: string }
   | { kind: "terrainHeal"; unit: string; amount: number; hpAfter: number }
   | { kind: "statusEnded"; unit: string; status: StatusKind }
   | { kind: "turn"; side: number; round: number }
   | { kind: "battleEnd"; winner: number };
+
+// ---------------------------------------------------------------- gambits (ADR 0030)
+
+/** When a gambit applies, evaluated for the unit about to act. */
+export type GambitCondition =
+  | { kind: "always" }
+  | { kind: "selfHpBelow"; permille: number }
+  | { kind: "allyHpBelow"; permille: number }
+  | { kind: "enemyInReach"; family?: FamilyId }
+  | { kind: "canKill" };
+
+/** What the unit does when its gambit applies. */
+export type GambitBehavior =
+  | { kind: "attackBest" }
+  | { kind: "attackLowestHp" }
+  | { kind: "attackFamily"; family: FamilyId }
+  | { kind: "healAlly" }
+  | { kind: "retreatToHeal" }
+  | { kind: "advance" }
+  | { kind: "hold" };
+
+/** One "condition → behaviour" rule; a unit's gambits are tried in order. */
+export interface Gambit {
+  readonly when: GambitCondition;
+  readonly behavior: GambitBehavior;
+}

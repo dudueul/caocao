@@ -110,9 +110,15 @@ export function canCounter(rules: Ruleset, a: Unit, d: Unit): boolean {
   return (
     isAlive(d) &&
     d.status === null &&
+    !d.broken &&
     classOf(rules, a).provokesCounter &&
     inRange(classOf(rules, d).range, d, a)
   );
+}
+
+/** Would a landed strike from `a` break `d`? (relation‰ ≥ breakThreshold, ADR 0030) */
+export function breaksOnHit(rules: Ruleset, a: Unit, d: Unit): boolean {
+  return relationFactor(rules, classOf(rules, a), classOf(rules, d)) >= rules.tuning.breakThreshold;
 }
 
 export function doublesAttack(rules: Ruleset, a: Unit, d: Unit): boolean {
@@ -127,6 +133,8 @@ export interface AttackPreview {
   critDamage: number;
   double: boolean;
   counter: { hit: number; crit: number; damage: number } | null;
+  /** A landed first strike breaks the defender, cancelling its counter (ADR 0030). */
+  breaks: boolean;
   /** Pipeline of the first strike without a critical, for the forecast UI. */
   breakdown: DamageStep[];
 }
@@ -151,6 +159,7 @@ export function previewAttack(
           damage: strikeDamage(rules, state, d, a, "counter", false),
         }
       : null,
+    breaks: breaksOnHit(rules, a, d),
     breakdown: damageSteps(rules, state, a, d, "first", false),
   };
 }
@@ -169,6 +178,8 @@ function strike(
   const crit = hit && prng.chance(critChance(rules, a, d));
   const damage = hit ? strikeDamage(rules, state, a, d, role, crit) : 0;
   d.hp = Math.max(0, d.hp - damage);
+  const broke = hit && d.hp > 0 && !d.broken && breaksOnHit(rules, a, d);
+  if (broke) d.broken = true;
   events.push({
     kind: "strike",
     attacker: a.id,
@@ -178,6 +189,7 @@ function strike(
     crit,
     damage,
     hpAfter: d.hp,
+    broke,
   });
   if (d.hp === 0) defeat(rules, prng, d, events);
 }
@@ -192,6 +204,7 @@ export function defeat(rules: Ruleset, prng: Prng, u: Unit, events: BattleEvent[
       ? "killed"
       : "captured";
   u.status = null;
+  u.broken = false;
   events.push({ kind: "defeated", unit: u.id, fate: u.fate });
 }
 

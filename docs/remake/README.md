@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0029](../adr/0029-benchmark-lessons-adopted.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0030](../adr/0030-modern-techniques-adopted.md)).
 
 ## Vision
 
@@ -80,6 +80,7 @@ flowchart TB
 | Engine defaults | One command per unit action, alternating round starter, confusion, round-limit draw, baseline AI (**proposed**) | [0027](../adr/0027-p0-engine-defaults.md) |
 | Undo | Free move undo until an action is confirmed; then final, in every mode | [0028](../adr/0028-undo-moves-until-action.md) |
 | Benchmark lessons | Relation matrix as data, per-mode tuning, named damage pipeline, damage floor `max(10, 1.5 × level)` | [0029](../adr/0029-benchmark-lessons-adopted.md) |
+| Modern techniques | Danger zones (+ boss intent), gambits for absent seats, break on advantage, push and fire hazards; all free for everyone | [0030](../adr/0030-modern-techniques-adopted.md) |
 | Toolchain | Bun (install, tests, scripts), TypeScript 7, Biome, determinism guard | [0019](../adr/0019-bun-toolchain.md) (supersedes [0018](../adr/0018-toolchain.md)) |
 
 ## Roadmap
@@ -104,8 +105,8 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
-| 7 | Equipment, Arena normalization ([RULES.md §9](RULES.md#9-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
-| 8 | Which modern techniques to adopt ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | Danger zones, speed/skip, gambits for absent seats, AI profiles first |
+| 7 | Equipment, Arena normalization ([RULES.md §10](RULES.md#10-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
+| 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | 96 px tiles (2×), palette and atlas tooling |
 | 10 | Languages | Korean first; English next |
 | 11 | Monetization (if public) | Out of scope until a public launch |

@@ -4,7 +4,16 @@
  * Prng draw order: status rolls (per target, by unit id), twist, direction,
  * then fate rolls for anyone defeated.
  */
-import { classOf, inBounds, inRange, isAlive, terrainAt, unitAt } from "./board.ts";
+import {
+  affinityAt,
+  classOf,
+  inBounds,
+  inRange,
+  isAlive,
+  NEIGHBOURS,
+  terrainAt,
+  unitAt,
+} from "./board.ts";
 import { defeat } from "./combat.ts";
 import { clamp, half, permille } from "./math.ts";
 import type { Prng } from "./prng.ts";
@@ -175,6 +184,12 @@ export function castStratagem(
     }
   }
 
+  if (!fizzle && def.push) {
+    for (const p of pending)
+      if (isAlive(p.unit)) push(rules, state, prng, caster, p.unit, def.push, events);
+  }
+  if (!fizzle && def.ignites) ignite(rules, state, def, at, events);
+
   if (backfire > 0) {
     caster.hp = Math.max(0, caster.hp - backfire);
     events.push({
@@ -188,4 +203,96 @@ export function castStratagem(
     });
     if (caster.hp === 0) defeat(rules, prng, caster, events);
   }
+}
+
+/** Push `u` up to `tiles` away from `from` along the main axis (ADR 0030). */
+function push(
+  rules: Ruleset,
+  state: BattleState,
+  prng: Prng,
+  from: Unit,
+  u: Unit,
+  tiles: number,
+  events: BattleEvent[],
+): void {
+  const ddx = u.x - from.x;
+  const ddy = u.y - from.y;
+  const horizontal = Math.abs(ddx) >= Math.abs(ddy);
+  const dx = horizontal ? Math.sign(ddx) : 0;
+  const dy = horizontal ? 0 : Math.sign(ddy);
+  if (dx === 0 && dy === 0) return;
+  const start = { x: u.x, y: u.y };
+  let collided: "wall" | "unit" | null = null;
+  let damage = 0;
+  for (let i = 0; i < tiles; i++) {
+    const nx = u.x + dx;
+    const ny = u.y + dy;
+    if (!inBounds(state, nx, ny) || affinityAt(rules, state, u, nx, ny).move === null) {
+      collided = "wall";
+      damage = rules.tuning.pushWallDamage;
+      break;
+    }
+    const other = unitAt(state, nx, ny);
+    if (other) {
+      collided = "unit";
+      damage = rules.tuning.pushUnitDamage;
+      other.hp = Math.max(0, other.hp - damage);
+      events.push({
+        kind: "pushed",
+        unit: other.id,
+        from: { x: nx, y: ny },
+        to: { x: nx, y: ny },
+        collided: "unit",
+        damage,
+        hpAfter: other.hp,
+      });
+      if (other.hp === 0) defeat(rules, prng, other, events);
+      break;
+    }
+    u.x = nx;
+    u.y = ny;
+  }
+  u.hp = Math.max(0, u.hp - damage);
+  events.push({
+    kind: "pushed",
+    unit: u.id,
+    from: start,
+    to: { x: u.x, y: u.y },
+    collided,
+    damage,
+    hpAfter: u.hp,
+  });
+  if (u.hp === 0) defeat(rules, prng, u, events);
+}
+
+const FLAMMABLE = new Set(["grass", "forest"]);
+
+/** Grass and forest in the area, and next to it, burn for `burnRounds` (ADR 0030). */
+function ignite(
+  rules: Ruleset,
+  state: BattleState,
+  def: StratagemDef,
+  at: Cell,
+  events: BattleEvent[],
+): void {
+  const tiles = new Map<number, Cell>();
+  const add = (x: number, y: number) => {
+    if (inBounds(state, x, y) && FLAMMABLE.has(terrainAt(state, x, y))) {
+      tiles.set(y * state.map.width + x, { x, y });
+    }
+  };
+  for (const o of def.area) {
+    const x = at.x + o.dx;
+    const y = at.y + o.dy;
+    if (!inBounds(state, x, y) || !FLAMMABLE.has(terrainAt(state, x, y))) continue;
+    add(x, y);
+    for (const n of NEIGHBOURS) add(x + n.dx, y + n.dy);
+  }
+  for (const [, c] of [...tiles].sort((a, b) => a[0] - b[0])) {
+    const existing = state.burning.find((b) => b.x === c.x && b.y === c.y);
+    if (existing) existing.rounds = Math.max(existing.rounds, rules.tuning.burnRounds);
+    else state.burning.push({ x: c.x, y: c.y, rounds: rules.tuning.burnRounds });
+    events.push({ kind: "ignited", at: c });
+  }
+  state.burning.sort((a, b) => a.y - b.y || a.x - b.x);
 }

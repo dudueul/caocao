@@ -1,4 +1,4 @@
-export { chooseCommand, scoreCommand } from "./ai.ts";
+export { chooseCommand, dangerTiles, scoreCommand, type ThreatMap, threatMap } from "./ai.ts";
 export {
   type ApplyResult,
   apply,
@@ -20,6 +20,7 @@ export {
 export {
   type AttackPreview,
   attackPower,
+  breaksOnHit,
   critChance,
   type DamageStage,
   type DamageStep,

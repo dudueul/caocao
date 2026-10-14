@@ -31,6 +31,11 @@ export const DEFAULT_TUNING: Tuning = {
   hpPerLevel: 4,
   damageFloorPerLevel: 1500,
   damageMultiplier: 1000,
+  breakThreshold: 1200,
+  pushWallDamage: 30,
+  pushUnitDamage: 20,
+  burnDamage: 20,
+  burnRounds: 1,
   mpPerIntellect: 500,
 };
 

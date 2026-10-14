@@ -70,7 +70,8 @@ Each strike is: **hit?** (`hit‰` vs `Prng`), then **critical?** (`crit‰` vs
 | Attack / defense | `ATK = class + 무력 + weapon`, `DEF = class + 통솔 + armour` |
 | Base damage | named pipeline ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)): **base** `max(floor, ATK − ⌊DEF/2⌋)` with `floor = max(10, ⌊1.5 × level⌋)` → **relation** × family relation‰ → **role** × 800‰ for counters → **critical** × 1500‰ → **mode** × mode damage‰; each step floored |
 | Double attack | `민첩a − 민첩d ≥ 20` (무도가 `≥ 10`); each strike rolls separately ([ADR 0025](../adr/0025-deterministic-double-attacks-and-counters.md)) |
-| Counter | once per enemy action, 800‰ damage, only if the attacker is in the defender's range; never against catapults or stratagems |
+| Counter | once per enemy action, 800‰ damage, only if the attacker is in the defender's range; never against catapults or stratagems; never by a broken unit |
+| Break | a landed strike with relation‰ ≥ 1200 breaks the target: no counters until it acts again ([ADR 0030](../adr/0030-modern-techniques-adopted.md)) |
 | Stratagems | see §5 |
 
 Worked example: 관우 (cavalry, tier 3, Lv 30) has ATK 60 + 97 + 25 = 182. Against
@@ -208,6 +209,19 @@ flowchart TB
 
 Draw order from the battle `Prng`: success or status, then twist, then direction.
 
+**Forced movement and hazards** ([ADR 0030](../adr/0030-modern-techniques-adopted.md)):
+
+```mermaid
+flowchart LR
+  P["push N tiles<br/>away from caster"] --> N{"next tile"}
+  N -->|"free"| M["move, continue"]
+  M --> N
+  N -->|"wall, water,<br/>off map"| W["stop: +30 damage"]
+  N -->|"unit"| U["stop: +20 damage<br/>to both"]
+  F["fire with ignite"] --> B["grass and forest in the area<br/>and next to it burn 1 round"]
+  B --> R["round start: occupants<br/>take 20, fire dies out"]
+```
+
 ## 6. Movement
 
 A unit moves up to its class's move points; each tile costs its family's
@@ -250,7 +264,20 @@ Each battle has a mode (sandbox, story, arena, world, raid). A mode may override
 any tuning value: for example a lower `twist‰` in Arena, or a damage multiplier
 in Raids ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)).
 
-## 9. Still to decide
+## 9. Gambits (AI rules for absent seats and auto-battle)
+
+A unit may carry ordered gambits `{ when, behavior }`; the AI uses the first one
+whose condition holds and whose behaviour has a legal command, otherwise its
+normal scoring ([ADR 0030](../adr/0030-modern-techniques-adopted.md)).
+
+| Conditions | Behaviours |
+|---|---|
+| always · own HP below ‰ · an ally's HP below ‰ · enemy (of a family) in reach · can kill | attack best · attack lowest-HP enemy · attack a family · heal an ally · retreat to a healing tile · advance · hold |
+
+Gambits are free for every player; they drive absent World seats and Story
+auto-battle, never live play.
+
+## 10. Still to decide
 
 | Topic | Depends on |
 |---|---|
