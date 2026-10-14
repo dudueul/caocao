@@ -6,7 +6,7 @@
   "linter": { "enabled": true, "rules": { "preset": "recommended" } },
   "overrides": [
     {
-      "includes": ["packages/rules/src/**"],
+      "includes": ["packages/rules/src/**", "packages/content/src/**"],
       "linter": {
         "rules": {
           "style": {

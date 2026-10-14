@@ -1,6 +1,6 @@
 # Remake architecture
 
-> Living document; reflects ADRs [0003](../adr/0003-turn-structure.md)–[0014](../adr/0014-scoped-progression-fair-arena.md).
+> Living document; reflects ADRs [0003](../adr/0003-turn-structure.md)–[0032](../adr/0032-content-as-typed-modules.md).
 > Items marked **(proposed)** are leanings, not decisions yet.
 
 ## 1. System context
@@ -51,14 +51,15 @@ flowchart LR
 
 A TypeScript monorepo in this repository ([0017](../adr/0017-clear-this-repository.md)),
 with the toolchain of [0019](../adr/0019-bun-toolchain.md) (Bun for install, tests and
-scripts; TypeScript 7; Biome). **Today only `packages/rules` has code** (seeded PRNG, canonical
-state hash, and the P0 battle engine below); the other folders hold a README
+scripts; TypeScript 7; Biome). **Today `packages/rules`** (seeded PRNG, canonical
+state hash, and the P0 battle engine below) **and `packages/content`** (the P0
+ruleset and sandbox scenario) have code; the other folders hold a README
 describing their phase.
 
 ```mermaid
 flowchart BT
   rules["packages/rules<br/>pure, deterministic:<br/>state, commands, events,<br/>formulas, AI, event VM"]
-  content["packages/content<br/>officers, classes, items, maps,<br/>scenarios, anchors (JSON + schemas)"]
+  content["packages/content<br/>officers, classes, items, maps,<br/>scenarios, anchors (typed TS + validators)"]
   protocol["packages/protocol<br/>client-server messages"]
   client["apps/client<br/>PixiJS battle view + UI"]
   server["apps/server<br/>Worker + Durable Objects"]
@@ -75,7 +76,7 @@ flowchart BT
 | Package | Allowed to use | Never uses |
 |---|---|---|
 | `rules` | `content` types, its own PRNG | DOM, network, `Date`, `Math.random`, floats in outcomes, `Map`/`Set` iteration order in outcomes |
-| `content` | JSON + schema validation at build time | runtime code |
+| `content` | `rules` types and helpers; typed data and validators ([0032](../adr/0032-content-as-typed-modules.md)) | the same bans as `rules`: clock, I/O, `Math.random`, floats |
 | `client` | `rules`, `protocol`, PixiJS, UI framework | deciding outcomes of online battles |
 | `server` | `rules`, `protocol`, Workers/DO APIs, D1, R2 | rendering |
 
@@ -129,16 +130,36 @@ no wall-clock time. Golden-replay tests run in CI.
 | `board.ts` | Tile, unit and range queries; zones of control |
 | `move.ts` | `reachable()`: Dijkstra over family terrain costs with soft ZOC ([0026](../adr/0026-soft-zone-of-control.md)) |
 | `combat.ts` | Hit, critical, relation matrix, named damage pipeline, strike → counter → second strike, officer fate; `previewAttack()` with breakdown |
-| `stratagem.ts` | MP, element × terrain × weather, status rolls, fortune twists, push collisions, ignition |
+| `stratagem.ts` | MP, element × terrain × weather, status rolls, fortune twists, push collisions, ignition; `previewStratagem()` |
 | `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects (healing, burning), victory |
-| `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)) |
+| `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); the approach pull follows a movement-cost field to the nearest attack position, so units route around rivers and walls; `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)) |
 | `sim.ts` | `runBattle()` (AI vs AI), `replay()` (command-log verification) |
 | `prng.ts`, `hash.ts`, `math.ts`, `tuning.ts` | Seeded sfc32, canonical hash, integer helpers, default tuning, `forMode()`, `triangleRelations()` |
 
-Tests (`packages/rules/test/`, 56 cases) cover the RULES.md worked
+Tests (`packages/rules/test/`, 58 cases) cover the RULES.md worked
 examples, movement and ZOC, turn policies and validation, stratagem
-formulas and twist rates, golden replays, and an AI-vs-AI soak that checks
+formulas, previews and twist rates, golden replays, and an AI-vs-AI soak that checks
 every invariant after every step.
+
+**Content (P0)** in `packages/content/src/` ([0032](../adr/0032-content-as-typed-modules.md)):
+
+```mermaid
+flowchart LR
+  CL["classes.ts<br/>6 tier-1 classes"] --> RS["ruleset.ts<br/>P0_RULES + P0_RULES_HASH"]
+  TE["terrain.ts<br/>12 terrains, 6 × 12 affinity"] --> RS
+  SG["stratagems.ts<br/>화계 풍계 혼란 치료"] --> RS
+  OF["officers.ts<br/>our own ratings"] --> SC["scenarios.ts<br/>scenarioSetup()"]
+  MP["maps.ts<br/>text rows"] --> SC
+  RS --> VA["validate.ts<br/>validateRuleset / validateScenario"]
+  SC --> VA
+  SC -->|"BattleSetup"| CB["rules.createBattle()"]
+  RS --> CB
+```
+
+Its tests (15 cases) validate the ruleset and every scenario, show that broken
+content is reported, check the medium number scale on the sandbox, and run an
+AI-vs-AI soak of the 오소 sandbox under both turn policies. In 30 seeded AI-vs-AI
+runs per policy, every battle ends in about 15 rounds (조조군 win about 4 in 5).
 
 **Content-driven parts**, each benchmarked on the recovered game ([0002](../adr/0002-remake-from-scratch.md)):
 
@@ -219,7 +240,7 @@ only for the recovered client.
 
 | Data | Where | Why |
 |---|---|---|
-| Game content (officers, classes, items, maps, scenarios, anchors) | `packages/content` → static JSON bundles, versioned | same data in the client and the DOs |
+| Game content (officers, classes, items, maps, scenarios, anchors) | `packages/content`, typed modules bundled into the client and the Worker; `P0_RULES_HASH` versions it | same data in the client and the DOs |
 | Account, Story roster, unlocks, legacy ([0014](../adr/0014-scoped-progression-fair-arena.md)) | `PlayerDO` storage (SQLite-backed DO) | single writer per account |
 | World state (households, armies, cities, clock) | `WorldDO` storage | single writer per world |
 | Ladders, season archives, hall of fame | D1 | queries across many entities |

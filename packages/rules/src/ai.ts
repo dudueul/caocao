@@ -9,7 +9,7 @@
  * its own scoring when no gambit applies.
  */
 import { legalCommands } from "./battle.ts";
-import { classOf, isAlive, terrainAt, unitById } from "./board.ts";
+import { classOf, isAlive, NEIGHBOURS, terrainAt, unitById } from "./board.ts";
 import { hitChance, previewAttack, strikeDamage } from "./combat.ts";
 import { permille } from "./math.ts";
 import { reachable } from "./move.ts";
@@ -135,6 +135,75 @@ function preferredDistance(rules: Ruleset, unit: Unit): number {
   return max;
 }
 
+const UNREACHABLE = Number.MAX_SAFE_INTEGER;
+const fieldCache = new WeakMap<BattleState, Map<string, number[]>>();
+
+/**
+ * Movement cost from every tile to the nearest tile where `unit` could attack an
+ * enemy, over its family's terrain costs, ignoring other units. The approach
+ * pull follows it, so units walk to a bridge or ford instead of stalling on the
+ * near bank of a river. Cached per state, side and class.
+ */
+function approachField(state: BattleState, rules: Ruleset, unit: Unit): number[] {
+  const key = `${unit.side}|${unit.classId}`;
+  let byKey = fieldCache.get(state);
+  if (!byKey) {
+    byKey = new Map();
+    fieldCache.set(state, byKey);
+  }
+  const cached = byKey.get(key);
+  if (cached) return cached;
+
+  const { width: w, height: h } = state.map;
+  const cls = classOf(rules, unit);
+  const row = rules.affinity[cls.family];
+  const cost = state.map.tiles.map((t) => row?.[t].move ?? null);
+  const dist: number[] = new Array(w * h).fill(UNREACHABLE);
+  // Bucket queue by distance: costs are small integers, so this is exact and ordered.
+  const buckets: number[][] = [[]];
+  for (const e of state.units) {
+    if (!isAlive(e) || e.side === unit.side) continue;
+    for (const o of cls.range) {
+      const x = e.x - o.dx;
+      const y = e.y - o.dy;
+      if (x < 0 || y < 0 || x >= w || y >= h) continue;
+      const k = y * w + x;
+      if (cost[k] === null || dist[k] === 0) continue;
+      dist[k] = 0;
+      buckets[0]?.push(k);
+    }
+  }
+  for (let d = 0; d < buckets.length; d++) {
+    for (const k of buckets[d] ?? []) {
+      if (dist[k] !== d) continue;
+      const x = k % w;
+      const y = (k - x) / w;
+      const enter = cost[k] as number;
+      for (const n of NEIGHBOURS) {
+        const nx = x + n.dx;
+        const ny = y + n.dy;
+        if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
+        const nk = ny * w + nx;
+        // Walking from the neighbour onto k costs k's terrain.
+        if (cost[nk] === null || d + enter >= (dist[nk] as number)) continue;
+        dist[nk] = d + enter;
+        while (buckets.length <= d + enter) buckets.push([]);
+        buckets[d + enter]?.push(nk);
+      }
+    }
+  }
+  byKey.set(key, dist);
+  return dist;
+}
+
+/** How far `unit` standing on `at` is from attacking (0 = it can attack now). */
+function approachGap(state: BattleState, rules: Ruleset, unit: Unit, at: Cell): number {
+  const d = approachField(state, rules, unit)[at.y * state.map.width + at.x] as number;
+  if (d !== UNREACHABLE) return d;
+  const moved = { ...unit, x: at.x, y: at.y };
+  return Math.abs(nearestEnemyDistance(state, moved) - preferredDistance(rules, moved));
+}
+
 export function scoreCommand(
   state: BattleState,
   rules: Ruleset,
@@ -186,8 +255,8 @@ export function scoreCommand(
     }
     return score - danger(rules, s, me, threats, "") * W.danger;
   }
-  // Wait: approach the preferred distance, weighed against exposure.
-  const gap = Math.abs(nearestEnemyDistance(s, me) - preferredDistance(rules, me));
+  // Wait: approach an attack position, weighed against exposure.
+  const gap = approachGap(state, rules, unit, command.to);
   const approach = W.approach + W.boldnessPerRound * state.round;
   return score - gap * approach - danger(rules, s, me, threats, "") * W.danger;
 }
@@ -268,8 +337,7 @@ function behaviorCandidates(
       return waits.filter((c) => rules.terrains[terrainAt(state, c.to.x, c.to.y)].heal > 0);
     case "advance": {
       let best = Number.MAX_SAFE_INTEGER;
-      const dist = (c: Act) =>
-        nearestEnemyDistance(shadow(state, unit, c.to)[0], { ...unit, ...c.to });
+      const dist = (c: Act) => approachGap(state, rules, unit, c.to);
       for (const c of waits) best = Math.min(best, dist(c));
       return waits.filter((c) => dist(c) === best);
     }

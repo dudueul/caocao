@@ -1,0 +1,13 @@
+{
+  "name": "@tk/content",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Game data (classes, terrain, stratagems, officers, maps, scenarios) for @tk/rules",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@tk/rules": "workspace:*"
+  }
+}

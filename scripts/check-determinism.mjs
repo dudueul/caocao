@@ -1,11 +1,11 @@
-// Determinism guard for packages/rules (ADR 0004, ADR 0006).
+// Determinism guard for packages/rules and packages/content (ADR 0004, ADR 0006).
 // Biome's noRestrictedGlobals bans clock/IO globals; this catches what it can't:
 // property calls and float literals. Golden-replay tests are the real proof.
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const ROOT = new URL("..", import.meta.url).pathname;
-const SRC = join(ROOT, "packages/rules/src");
+const SOURCES = ["packages/rules/src", "packages/content/src"].map((p) => join(ROOT, p));
 
 const BANNED = [
   [/\bMath\.random\b/, "use the Prng carried in the state"],
@@ -29,7 +29,7 @@ function codeOnly(text) {
 }
 
 let failures = 0;
-for (const file of files(SRC)) {
+for (const file of SOURCES.flatMap(files)) {
   const lines = codeOnly(readFileSync(file, "utf8")).split("\n");
   lines.forEach((line, i) => {
     for (const [re, why] of BANNED) {

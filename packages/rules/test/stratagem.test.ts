@@ -5,6 +5,7 @@ import {
   castStratagem,
   createBattle,
   Prng,
+  previewStratagem,
   seedFromString,
   statusChance,
   stratagemDamage,
@@ -65,6 +66,36 @@ describe("stratagem power (ADR 0024)", () => {
     const effect = r.events.find((e) => e.kind === "stratagemEffect");
     expect(effect && effect.kind === "stratagemEffect" ? effect.heal : -1).toBe(0);
     expect(HEAL.mp).toBe(5);
+  });
+});
+
+describe("previewStratagem", () => {
+  it("forecasts damage, the twist odds and the windfall lean without drawing from the Prng", () => {
+    const s = duel("..f.", "sunny");
+    const before = JSON.stringify(s.prng);
+    const caster = unitById(s, "s");
+    const p = previewStratagem(RULES, s, caster, FIRE, { x: 2, y: 0 });
+    expect(p.targets).toEqual([
+      {
+        unit: "t",
+        damage: stratagemDamage(s, FIRE, caster, unitById(s, "t")),
+        heal: 0,
+        chance: 1000,
+      },
+    ]);
+    expect(p.twist).toBe(RULES.tuning.twist);
+    expect(p.windfall).toBe(500); // equal 운
+    expect(p.ignites).toBe(true);
+    expect(JSON.stringify(s.prng)).toBe(before);
+  });
+
+  it("heal forecasts only the missing HP; status forecasts the landing chance", () => {
+    const s = duel("....");
+    const caster = unitById(s, "s");
+    expect(previewStratagem(RULES, s, caster, HEAL, { x: 0, y: 0 }).targets[0]?.heal).toBe(0);
+    const confuse = RULES.stratagems.confuse as typeof FIRE;
+    const p = previewStratagem(RULES, s, caster, confuse, { x: 2, y: 0 });
+    expect(p.targets[0]?.chance).toBe(statusChance(RULES, caster, unitById(s, "t")));
   });
 });
 

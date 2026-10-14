@@ -9,6 +9,7 @@ export {
   type UnitSetup,
 } from "./battle.ts";
 export {
+  affinityAt,
   classOf,
   inRange,
   isAlive,
@@ -39,8 +40,12 @@ export { replay, runBattle, type SimResult } from "./sim.ts";
 export {
   canCast,
   castStratagem,
+  previewStratagem,
+  type StratagemPreview,
   statusChance,
   stratagemDamage,
+  stratagemDef,
+  stratagemHeal,
   stratagemTargets,
 } from "./stratagem.ts";
 export { DEFAULT_TUNING, forMode, triangleRelations } from "./tuning.ts";

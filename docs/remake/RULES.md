@@ -115,6 +115,20 @@ flowchart LR
   OUT["Outside the triangle<br/>무도가 · 책사 · 도사 · 무희"]
 ```
 
+**P0 tier-1 classes** (starting tuning, [`packages/content`](../../packages/content/README.md)):
+
+| Class | Family | HP | MP | Move | ATK | DEF | Range | Notes |
+|---|---|---|---|---|---|---|---|---|
+| 보병 | infantry | 170 | 0 | 4 | 45 | 55 | adjacent | |
+| 궁병 | archer | 130 | 0 | 4 | 45 | 35 | distance 2 | can't shoot adjacent tiles |
+| 기병 | cavalry | 160 | 0 | 6 | 55 | 45 | adjacent | skirmisher |
+| 책사 | strategist | 120 | 20 | 4 | 25 | 30 | adjacent | 화계, 풍계, 혼란, 치료 (치료 moves to 도사 later) |
+| 무도가 | martial artist | 150 | 0 | 5 | 50 | 40 | adjacent | double attack at a 민첩 gap ≥ 10 |
+| 포차 | catapult | 140 | 0 | 3 | 55 | 35 | distance 2–3 | never provokes counters |
+
+At level 10 with 통솔 70, an infantry officer has 170 + 70 + 40 = 280 HP and
+takes about 4–5 ordinary hits from a peer.
+
 An attacker strong against the defender's group deals +200‰ damage; against the
 group that beats it, −200‰. Since [ADR 0029](../adr/0029-benchmark-lessons-adopted.md)
 this is stored as a family × family **relation matrix** in the ruleset (the
@@ -164,6 +178,17 @@ effect‰. Example rows (starting tuning):
 | 적병 Bandits | move | 1 | 1 | 2 | 1 | 1 |
 | | effect‰ | 1000 | 1100 | 1200 | 1000 | 1000 |
 
+The full P0 table (move cost / effect‰; — = impassable):
+
+| Family | Plain | Grass | Forest | Hills | Mountain | Ford | River | Bridge | Village | Fort | Wall | Camp |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 보병 infantry | 1 / 1000 | 1 / 1000 | 2 / 1000 | 2 / 1050 | 3 / 1000 | 2 / 900 | — | 1 / 1000 | 1 / 1000 | 1 / 1100 | — | 1 / 1000 |
+| 궁병 archer | 1 / 1000 | 1 / 1000 | 2 / 900 | 2 / 1100 | 3 / 1050 | 2 / 800 | — | 1 / 1000 | 1 / 1000 | 1 / 1100 | — | 1 / 1000 |
+| 기병 cavalry | 1 / 1100 | 1 / 1100 | 2 / 900 | 2 / 1000 | — | 3 / 800 | — | 1 / 1000 | 1 / 1000 | 1 / 1000 | — | 1 / 1000 |
+| 책사 strategist | 1 / 1000 | 1 / 1000 | 2 / 1000 | 2 / 1000 | 3 / 1000 | 2 / 900 | — | 1 / 1000 | 1 / 1050 | 1 / 1100 | — | 1 / 1050 |
+| 무도가 martial artist | 1 / 1000 | 1 / 1000 | 1 / 1050 | 1 / 1050 | 2 / 1000 | 2 / 900 | — | 1 / 1000 | 1 / 1000 | 1 / 1000 | — | 1 / 1000 |
+| 포차 catapult | 1 / 1000 | 1 / 1000 | 3 / 800 | 3 / 1000 | — | 3 / 700 | — | 1 / 1000 | 1 / 1000 | 1 / 1200 | — | 1 / 1000 |
+
 On its tile, a unit's ATK and DEF are multiplied by its effect‰ (floored) before
 the base damage formula. The defender's cover evasion‰ is the
 `terrainEvasion‰` in the hit formula.
@@ -208,6 +233,18 @@ flowchart TB
 | Fortune twist | `twist‰ = 40` per cast (mode configuration); direction `windfall‰ = clamp(500 + 6·(운caster − 운target), 150, 850)`; 운target = 50 when there is no target |
 
 Draw order from the battle `Prng`: success or status, then twist, then direction.
+
+**P0 stratagems** (starting tuning; every one targets a single tile):
+
+| Stratagem | School | MP | Range | Power | Terrain‰ | Weather‰ | Extra | Twist |
+|---|---|---|---|---|---|---|---|---|
+| 화계 fire | fire | 8 | 1–3 | 20 | grass, forest 1200; camp 1100; bridge 800; ford 600 | sunny 1100, wind 1300, rain 500 | ignites | power / backfire |
+| 풍계 gale | wind | 6 | 1–2 | 5 | plain, grass 1100; forest 800 | wind 1300, rain 900 | push 2 | power / fizzle |
+| 혼란 confuse | disruption | 8 | 1–3 | — | — | — | confusion, 1 round | refund / fizzle |
+| 치료 heal | support | 6 | 0–2 (self too) | 30 | — | — | heals allies | power / fizzle |
+
+`previewStratagem()` forecasts each target's damage, heal or landing chance,
+plus the twist and windfall odds, without drawing from the `Prng`.
 
 **Forced movement and hazards** ([ADR 0030](../adr/0030-modern-techniques-adopted.md)):
 

@@ -5,9 +5,11 @@ battles drive every mode: Story chapters, Arena PvP, co-op Raids, and **Living
 History**, where friends found households in a 120-year history that plays out
 in 120 days. Web-first (PWA), with the same build wrapped for PC and mobile later.
 
-**Status:** 31 ADRs. **P0** (rules engine) is implemented in `packages/rules`:
-movement with zones of control, combat, stratagems with fortune twists, both turn
-policies, a baseline AI with danger zones and gambits, break and push/fire hazards, and 56 tests including AI-vs-AI soak and golden replays.
+**Status:** 32 ADRs. **P0** rules engine in `packages/rules`: movement with
+zones of control, combat, stratagems with fortune twists, both turn policies, a
+baseline AI with danger zones and gambits, break and push/fire hazards. P0
+content in `packages/content`: six classes, twelve terrains, four stratagems,
+and the 오소 습격 sandbox. 73 tests, including AI-vs-AI soaks and golden replays.
 
 | Start here | |
 |---|---|
@@ -21,7 +23,7 @@ policies, a baseline AI with danger zones and gambits, break and push/fire hazar
 ```
 packages/
   rules/      pure, deterministic battle rules (shared by client and server)  ← code
-  content/    game data + schemas                                            (P0)
+  content/    game data as typed modules + validators                       ← code
   protocol/   client-server messages                                         (P1)
 apps/
   client/     Vite + PixiJS battlefield + Svelte 5 UI overlay, PWA             (P0)

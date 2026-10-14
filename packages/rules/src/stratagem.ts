@@ -17,6 +17,7 @@ import {
 import { defeat } from "./combat.ts";
 import { clamp, half, permille } from "./math.ts";
 import type { Prng } from "./prng.ts";
+import { forMode } from "./tuning.ts";
 import type { BattleEvent, BattleState, Cell, Ruleset, StratagemDef, Unit } from "./types.ts";
 
 const NEUTRAL_FORTUNE = 50;
@@ -89,6 +90,47 @@ export function statusChance(rules: Ruleset, caster: Unit, target: Unit): number
     t.statusMin,
     t.statusMax,
   );
+}
+
+export interface StratagemPreview {
+  /** Each affected unit: damage or heal before a twist, and the ‰ that it lands. */
+  targets: { unit: string; damage: number; heal: number; chance: number }[];
+  /** ‰ that a fortune twist happens, and ‰ that a twist is a windfall (ADR 0024). */
+  twist: number;
+  windfall: number;
+  push: number;
+  ignites: boolean;
+}
+
+/** Forecast of a cast by `caster` (already on its casting tile) at `at`, for the UI. */
+export function previewStratagem(
+  baseRules: Ruleset,
+  state: BattleState,
+  caster: Unit,
+  def: StratagemDef,
+  at: Cell,
+): StratagemPreview {
+  const rules = forMode(baseRules, state.mode);
+  const t = rules.tuning;
+  const main = unitAt(state, at.x, at.y);
+  const heal = (u: Unit) => Math.min(stratagemHeal(def, caster), u.maxHp - u.hp);
+  return {
+    targets: stratagemTargets(state, caster, def, at).map((u) => ({
+      unit: u.id,
+      damage: def.effect === "damage" ? stratagemDamage(state, def, caster, u) : 0,
+      heal: def.effect === "heal" ? heal(u) : 0,
+      chance: def.effect === "status" ? statusChance(rules, caster, u) : 1000,
+    })),
+    twist: t.twist,
+    windfall: clamp(
+      t.windfallBase +
+        t.windfallPerFortune * (caster.stats.fortune - (main?.stats.fortune ?? NEUTRAL_FORTUNE)),
+      t.windfallMin,
+      t.windfallMax,
+    ),
+    push: def.push ?? 0,
+    ignites: def.ignites === true,
+  };
 }
 
 interface Pending {
