@@ -28,7 +28,8 @@ are on a phone, and how damage is shown.
   (×1200/1000 or ×800/1000) and a critical hit (×1500/1000), each floored. A
   basic unit falls in about 3–5 hits.
 - Worked example: 관우 (cavalry, tier 3, Lv 30), ATK 60 + 97 + 25 = 182,
-  against tier-2 infantry, DEF 50 + 70 + 20 = 140 → 182 − 70 = **112** per hit.
+  against tier-2 infantry, DEF 50 + 70 + 20 = 140 → base damage 182 − 70 = **112**;
+  cavalry is on the losing side of the triangle against infantry, so the hit deals 89 (133 if critical).
 
 ## Consequences
 
