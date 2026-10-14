@@ -23,39 +23,6 @@ import struct
 import sys
 
 
-class BitReader:
-    __slots__ = ("data", "pos", "bit", "end")
-
-    def __init__(self, data, start, end):
-        self.data = data
-        self.pos = start
-        self.bit = 7
-        self.end = end
-
-    def getbit(self):
-        if self.pos >= self.end:
-            raise EOFError
-        b = (self.data[self.pos] >> self.bit) & 1
-        self.bit -= 1
-        if self.bit < 0:
-            self.bit = 7
-            self.pos += 1
-        return b
-
-    def getbits(self, n):
-        v = 0
-        for _ in range(n):
-            v = (v << 1) | self.getbit()
-        return v
-
-    def get_code(self):
-        n = 0
-        while self.getbit():
-            n += 1
-        v = self.getbits(n + 1)
-        return v + (1 << (n + 1)) - 2
-
-
 def parse(data):
     magic = data[:4]
     if magic not in (b"Ls12", b"LS11", b"Ls11", b"LS12"):
@@ -76,21 +43,42 @@ def parse(data):
 def decode_member(data, dic, csize, usize, off, dist_bias=0):
     if csize == usize:
         return bytes(data[off:off + csize])
-    br = BitReader(data, off, off + csize)
+    # The bitstream as a '0'/'1' string: get_code() becomes one str.find + one int().
+    chunk = data[off:off + csize]
+    bits = bin(int.from_bytes(chunk, "big"))[2:].zfill(len(chunk) * 8) if chunk else ""
+    nbits = len(bits)
+    p = 0
     out = bytearray()
+
+    def get_code():
+        nonlocal p
+        z = bits.find("0", p)
+        if z < 0:
+            raise EOFError
+        n = z - p + 1                      # leading 1 bits + 1 = width of v
+        e = z + 1 + n
+        if e > nbits:
+            raise EOFError
+        v = int(bits[z + 1:e], 2)
+        p = e
+        return v + (1 << n) - 2
+
     try:
         while len(out) < usize:
-            code = br.get_code()
+            code = get_code()
             if code < 256:
                 out.append(dic[code])
             else:
                 dist = code - 256 + dist_bias
-                length = br.get_code() + 3
+                length = get_code() + 3
                 start = len(out) - dist
                 if start < 0:
                     raise ValueError("bad back-reference at out=%d dist=%d" % (len(out), dist))
-                for i in range(length):
-                    out.append(out[start + i])
+                if dist >= length:
+                    out += out[start:start + length]
+                else:                      # overlapping copy repeats the last `dist` bytes
+                    for i in range(length):
+                        out.append(out[start + i])
     except EOFError:
         pass
     return bytes(out[:usize])

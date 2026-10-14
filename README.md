@@ -16,13 +16,16 @@ extracted/       dump outputs (never edit — regenerable)
   unity_export/  AssetRipper export (3,615 assets, 0 failed)
 analysis/        evidence log, protocol docs, event catalog, recovered .fbs
 data/tables/     239 data-table schemas + templates pre-filled from localization
+data/reference/  ekd5/: 1998 PC 조조전 reference values + class → sprite map
 docs/
-  re/            reconstruction blueprints (REBUILD_PLAN.md, CDN_ASSET_BUNDLES.md)
+  re/            reconstruction blueprints (REBUILD_PLAN.md, CDN_ASSET_BUNDLES.md,
+                 EKD5_FORMATS.md, CLASSIC_ART.md: 1998 art as Unity placeholders)
   server/        online architecture review + game-server practices
                  (GAME_SERVER_PRACTICES.md) and scaling memo (HYPERSCALE_ROADMAP.md)
   lab/           THE TEXTBOOK: labs 00–08, dsa-01–08, exercises, solutions
 scripts/         reproducible pipeline + verify-lab.sh (auto-grading);
-                 tables/ (template build), bundles/ (bundle + list decryption)
+                 tables/ (template build), bundles/ (bundle + list decryption),
+                 ekd5/ (1998 game decoders + export_art.py → Resources/ClassicArt)
 tools/           (~/tools) JDK 21, Ghidra 12.1.4, jadx, dotnet, REA — no sudo
 ```
 

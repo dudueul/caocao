@@ -100,8 +100,18 @@ All are Ls12 archives of raw **8-bit indexed** images, fixed size per member:
 
 **Palette:** SPALET.E5 (58 members, per battle map) and PMPALET.E5 (115) hold
 256 RGB triplets stored in **G, B, R** order — display colour = `(p[1], p[2], p[0])`.
-Index colour **magenta (255,0,255)** is the transparency key on sprites and icons.
-With this order portraits, unit sprites and icons render with correct colours.
+**Palette index 0** (a near-magenta, (247,0,255) in SPALET[0]) is the
+transparency key of unit sprites and item icons; portraits, maps and scene
+pictures are opaque. With this order portraits, unit sprites and icons render
+with correct colours. Battle maps use SPALET[map id], scene pictures PMPALET[i];
+sprites, portraits and icons use SPALET[0].
+
+**Battle-map images** `HMkk.E5` are *not* archives: raw 8-bit pixels stored as
+48×48 tiles one after another (row-major tile order, `w·h·2304` bytes), with
+`w,h` from `HEXZMAP.E5` member k.
+
+`scripts/ekd5/export_art.py` exports all of the above as indexed PNGs for the
+Unity client (`docs/re/CLASSIC_ART.md`).
 Mobile comparison: the remake's battle tile highlights are 96×96 px (exactly 2×
 the 48×48 tiles), while its portraits (200×256) are new painted art, not upscales.
 

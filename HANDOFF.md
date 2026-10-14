@@ -49,6 +49,10 @@ Workers/D1/DO), and a lab textbook generated from the actual work.
 - Item schema: 49 fields (`Item.cs`); all 239 table schemas + localization-prefilled
   templates in `data/tables/`. Balance values shipped in CDN bundles (lost) —
   catalog content is author-supplied (`server/seed/items.json`)
+- Placeholder art: `scripts/ekd5/export_art.py <1998 game>` exports the PC
+  조조전 units / maps / portraits / icons / SFX into the git-ignored
+  `client/Assets/Resources/ClassicArt/`; `Rebuild.Classic.ClassicArtPreview`
+  shows them in Play mode (`docs/re/CLASSIC_ART.md`). Never commit that folder.
 - fndid.bytes: encrypted local file, not yet cracked (bonus lab)
 
 ## Toolchain (~/tools, root-free)

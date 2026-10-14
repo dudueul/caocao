@@ -18,6 +18,7 @@ values. Stats are the 1998 raw values (max 50; the game may show them ×2).
 | `battlemaps.csv` | 58 | battle name, size, terrain grid, map image + script file pairing |
 | `terrain.csv` | 30 | terrain ids/names used by the grids |
 | `shops.csv` | 58 | shop stock per stage |
+| `sprite_map.json` | 53 + 1 | class (and officer) → unit sprite set, with confidence; read by `scripts/ekd5/export_art.py` (`docs/re/CLASSIC_ART.md`) |
 
 Columns ending in `?` are not fully understood; see `docs/re/EKD5_FORMATS.md`
 for byte layouts and evidence. Prose (officer bios, retreat lines, item and

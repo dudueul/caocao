@@ -1,2 +1,10 @@
 # Ghidra project database: regenerable, rewritten on every save, exceeds GitHub's 100MB limit
 analysis/ghidra_proj/
+
+# 1998 PC 조조전 art exported locally by scripts/ekd5/export_art.py — Koei's
+# copyright: every developer exports it from their own copy, never commit it
+client/Assets/Resources/ClassicArt/
+client/Assets/Resources/ClassicArt.meta
+
+# Python bytecode
+__pycache__/
