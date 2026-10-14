@@ -1,6 +1,6 @@
 # 0021. Twelve class families with three tiers each, plus unique lines
 
-- **Status:** Accepted
+- **Status:** Accepted; triangle stored as a relation matrix since [0029](0029-benchmark-lessons-adopted.md)
 - **Date:** 2026-10-14
 - **Deciders:** project owner
 - **Related:** [0007](0007-top-down-2d-pixijs.md), [0015](0015-delivery-order-engine-then-arena.md),

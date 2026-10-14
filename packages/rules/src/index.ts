@@ -21,11 +21,15 @@ export {
   type AttackPreview,
   attackPower,
   critChance,
+  type DamageStage,
+  type DamageStep,
+  damageFloor,
+  damageSteps,
   defensePower,
   hitChance,
   previewAttack,
+  relationFactor,
   strikeDamage,
-  triangleFactor,
 } from "./combat.ts";
 export { canonical, hashState } from "./hash.ts";
 export { canReach, type Reach, reachable } from "./move.ts";
@@ -38,5 +42,5 @@ export {
   stratagemDamage,
   stratagemTargets,
 } from "./stratagem.ts";
-export { DEFAULT_TUNING } from "./tuning.ts";
+export { DEFAULT_TUNING, forMode, triangleRelations } from "./tuning.ts";
 export type * from "./types.ts";

@@ -8,6 +8,7 @@ import {
   type Ruleset,
   type Stats,
   type TerrainId,
+  triangleRelations,
   type UnitSetup,
 } from "../src/index.ts";
 
@@ -48,7 +49,6 @@ function cls(id: string, family: FamilyId, o: Partial<ClassDef>): ClassDef {
     atk: 40,
     def: 40,
     range: ADJACENT,
-    counterGroup: "none",
     doubleAttackGap: 20,
     provokesCounter: true,
     skirmisher: false,
@@ -58,10 +58,9 @@ function cls(id: string, family: FamilyId, o: Partial<ClassDef>): ClassDef {
 }
 
 export const CLASSES: Record<string, ClassDef> = {
-  infantry: cls("infantry", "infantry", { counterGroup: "infantry", def: 50 }),
-  archer: cls("archer", "archer", { counterGroup: "archer", range: BOW, hp: 120 }),
+  infantry: cls("infantry", "infantry", { def: 50 }),
+  archer: cls("archer", "archer", { range: BOW, hp: 120 }),
   cavalry: cls("cavalry", "cavalry", {
-    counterGroup: "cavalry",
     move: 6,
     atk: 60,
     skirmisher: true,
@@ -75,7 +74,6 @@ export const CLASSES: Record<string, ClassDef> = {
   }),
   martialArtist: cls("martialArtist", "martialArtist", { doubleAttackGap: 10, atk: 45 }),
   catapult: cls("catapult", "catapult", {
-    counterGroup: "archer",
     range: RING3,
     move: 3,
     provokesCounter: false,
@@ -182,6 +180,10 @@ export const RULES: Ruleset = {
       mishap: "fizzle",
     },
   },
+  relations: triangleRelations(
+    { infantry: "infantry", archer: "archer", cavalry: "cavalry", catapult: "archer" },
+    200,
+  ),
   tuning: DEFAULT_TUNING,
 };
 

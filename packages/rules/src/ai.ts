@@ -16,6 +16,7 @@ import {
   stratagemHeal,
   stratagemTargets,
 } from "./stratagem.ts";
+import { forMode } from "./tuning.ts";
 import type { BattleState, Command, Ruleset, Unit } from "./types.ts";
 
 const W = {
@@ -153,7 +154,8 @@ export function scoreCommand(
 }
 
 /** The AI's pick for the side to act, or null when the battle is over. */
-export function chooseCommand(state: BattleState, rules: Ruleset): Command | null {
+export function chooseCommand(state: BattleState, baseRules: Ruleset): Command | null {
+  const rules = forMode(baseRules, state.mode);
   const commands = legalCommands(state, rules);
   const threats = threatMap(state, rules);
   let best: Command | null = null;

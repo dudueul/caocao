@@ -20,11 +20,13 @@ import { permille } from "./math.ts";
 import { canReach, reachable } from "./move.ts";
 import { Prng, seedFromString } from "./prng.ts";
 import { canCast, castStratagem, stratagemDef } from "./stratagem.ts";
+import { forMode } from "./tuning.ts";
 import type {
   BattleEvent,
   BattleMap,
   BattleState,
   Command,
+  ModeId,
   Ruleset,
   Stats,
   TurnPolicyId,
@@ -46,6 +48,8 @@ export interface UnitSetup {
 }
 
 export interface BattleSetup {
+  /** Selects per-mode tuning overrides (ADR 0029); default "sandbox". */
+  mode?: ModeId;
   map: BattleMap;
   weather: WeatherKind;
   policy: TurnPolicyId;
@@ -58,7 +62,9 @@ export type ApplyResult =
   | { ok: true; state: BattleState; events: BattleEvent[] }
   | { ok: false; reason: string };
 
-export function createBattle(rules: Ruleset, setup: BattleSetup): BattleState {
+export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleState {
+  const mode = setup.mode ?? "sandbox";
+  const rules = forMode(baseRules, mode);
   const t = rules.tuning;
   if (setup.map.tiles.length !== setup.map.width * setup.map.height) {
     throw new Error("map tiles do not match width × height");
@@ -103,6 +109,7 @@ export function createBattle(rules: Ruleset, setup: BattleSetup): BattleState {
   const sides = Math.max(...units.map((u) => u.side)) + 1;
   const state: BattleState = {
     version: 1,
+    mode,
     map: { width: setup.map.width, height: setup.map.height, tiles: [...setup.map.tiles] },
     weather: setup.weather,
     policy: setup.policy,
@@ -131,8 +138,9 @@ function firstSideOfRound(state: BattleState): number {
 }
 
 /** Every legal command for the side to act, in a deterministic order. */
-export function legalCommands(state: BattleState, rules: Ruleset): Command[] {
+export function legalCommands(state: BattleState, baseRules: Ruleset): Command[] {
   if (state.winner !== null) return [];
+  const rules = forMode(baseRules, state.mode);
   const out: Command[] = [];
   for (const u of readyUnits(state, state.active)) {
     if (u.status !== null) {
@@ -164,8 +172,9 @@ export function legalCommands(state: BattleState, rules: Ruleset): Command[] {
   return out;
 }
 
-export function apply(state: BattleState, rules: Ruleset, command: Command): ApplyResult {
+export function apply(state: BattleState, baseRules: Ruleset, command: Command): ApplyResult {
   if (state.winner !== null) return { ok: false, reason: "battle is over" };
+  const rules = forMode(baseRules, state.mode);
   const next = structuredClone(state);
   const prng = new Prng(next.prng);
   const events: BattleEvent[] = [];

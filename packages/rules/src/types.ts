@@ -23,7 +23,10 @@ export type FamilyId =
   | "dancer";
 
 /** Counter triangle groups: infantry ▶ cavalry ▶ archer ▶ infantry (ADR 0021). */
-export type CounterGroup = "infantry" | "cavalry" | "archer" | "none";
+export type CounterGroup = "infantry" | "cavalry" | "archer";
+
+/** Game modes; each may override tuning (ADR 0029). */
+export type ModeId = "sandbox" | "story" | "arena" | "world" | "raid";
 
 /** About twelve terrain types (ADR 0023). */
 export type TerrainId =
@@ -74,7 +77,6 @@ export interface ClassDef {
   readonly def: number;
   /** Tiles this class can attack, relative to its own tile. */
   readonly range: readonly Offset[];
-  readonly counterGroup: CounterGroup;
   /** 민첩 gap needed for a double attack (ADR 0025): 20, or 10 for martial artists. */
   readonly doubleAttackGap: number;
   /** False for catapults: their attacks never trigger counters (ADR 0025). */
@@ -135,7 +137,6 @@ export interface Tuning {
   readonly critMin: number;
   readonly critMax: number;
   readonly critMultiplier: number;
-  readonly triangle: number;
   readonly minDamage: number;
   readonly counterMultiplier: number;
   readonly escapeBase: number;
@@ -155,6 +156,10 @@ export interface Tuning {
   readonly windfallMultiplier: number;
   /** Max HP = class HP + 통솔 + level × hpPerLevel (ADR 0022). */
   readonly hpPerLevel: number;
+  /** Damage floor = max(minDamage, level × damageFloorPerLevel‰) (ADR 0029). */
+  readonly damageFloorPerLevel: number;
+  /** Final damage multiplier‰ of the "mode" pipeline stage (ADR 0029). */
+  readonly damageMultiplier: number;
   /** Max MP = class MP + 지력 × mpPerIntellect‰ (ADR 0020). */
   readonly mpPerIntellect: number;
 }
@@ -164,7 +169,11 @@ export interface Ruleset {
   readonly terrains: Readonly<Record<TerrainId, TerrainDef>>;
   readonly affinity: Readonly<Record<string, Readonly<Record<TerrainId, Affinity>>>>;
   readonly stratagems: Readonly<Record<string, StratagemDef>>;
+  /** Attacker family → defender family → damage‰; missing pairs are 1000 (ADR 0029). */
+  readonly relations: Readonly<Record<string, Readonly<Record<string, number>>>>;
   readonly tuning: Tuning;
+  /** Per-mode tuning overrides, merged over `tuning` by `forMode()`. */
+  readonly modes?: Readonly<Partial<Record<ModeId, Partial<Tuning>>>>;
 }
 
 // ---------------------------------------------------------------- battle state
@@ -208,6 +217,7 @@ export interface BattleMap {
 
 export interface BattleState {
   version: 1;
+  mode: ModeId;
   map: BattleMap;
   weather: WeatherKind;
   policy: TurnPolicyId;

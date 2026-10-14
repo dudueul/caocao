@@ -68,7 +68,7 @@ Each strike is: **hit?** (`hit‰` vs `Prng`), then **critical?** (`crit‰` vs
 | Officer fate on defeat | `escape‰ = clamp(600 + 4·운, 0, 950)`; otherwise captured or killed |
 | HP | class base + 통솔 bonus + level growth; range about 100–600 ([ADR 0022](../adr/0022-medium-number-scale.md)) |
 | Attack / defense | `ATK = class + 무력 + weapon`, `DEF = class + 통솔 + armour` |
-| Base damage | `max(10, ATK − ⌊DEF/2⌋)` → × counter triangle (1200 or 800 /1000) → × critical (1500/1000), each step floored |
+| Base damage | named pipeline ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)): **base** `max(floor, ATK − ⌊DEF/2⌋)` with `floor = max(10, ⌊1.5 × level⌋)` → **relation** × family relation‰ → **role** × 800‰ for counters → **critical** × 1500‰ → **mode** × mode damage‰; each step floored |
 | Double attack | `민첩a − 민첩d ≥ 20` (무도가 `≥ 10`); each strike rolls separately ([ADR 0025](../adr/0025-deterministic-double-attacks-and-counters.md)) |
 | Counter | once per enemy action, 800‰ damage, only if the attacker is in the defender's range; never against catapults or stratagems |
 | Stratagems | see §5 |
@@ -115,7 +115,10 @@ flowchart LR
 ```
 
 An attacker strong against the defender's group deals +200‰ damage; against the
-group that beats it, −200‰. Promotion: tier 2 at Lv 20, tier 3 at Lv 40
+group that beats it, −200‰. Since [ADR 0029](../adr/0029-benchmark-lessons-adopted.md)
+this is stored as a family × family **relation matrix** in the ruleset (the
+triangle is its default content), so specific pairs such as spearmen against
+cavalry can be tuned as data. Promotion: tier 2 at Lv 20, tier 3 at Lv 40
 (*tunable*). Higher tiers reuse the tier-1 animation with new details.
 
 ## 4. Terrain
@@ -241,7 +244,13 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 | HP / MP | max HP = class HP + 통솔 + 4 × level; max MP = class MP + ⌊지력/2⌋ |
 | Victory | the last side with living units wins; passing the round limit is a draw (story maps add objectives) |
 
-## 8. Still to decide
+## 8. Modes
+
+Each battle has a mode (sandbox, story, arena, world, raid). A mode may override
+any tuning value: for example a lower `twist‰` in Arena, or a damage multiplier
+in Raids ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)).
+
+## 9. Still to decide
 
 | Topic | Depends on |
 |---|---|

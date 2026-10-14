@@ -128,14 +128,14 @@ no wall-clock time. Golden-replay tests run in CI.
 | `types.ts` | Ruleset (classes, terrains, affinity, stratagems, tuning) and battle state, commands, events |
 | `board.ts` | Tile, unit and range queries; zones of control |
 | `move.ts` | `reachable()`: Dijkstra over family terrain costs with soft ZOC ([0026](../adr/0026-soft-zone-of-control.md)) |
-| `combat.ts` | Hit, critical, triangle, terrain effect, strike → counter → second strike, officer fate; `previewAttack()` |
+| `combat.ts` | Hit, critical, relation matrix, named damage pipeline, strike → counter → second strike, officer fate; `previewAttack()` with breakdown |
 | `stratagem.ts` | MP, element × terrain × weather, status rolls, fortune twists |
 | `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects, victory |
 | `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)) |
 | `sim.ts` | `runBattle()` (AI vs AI), `replay()` (command-log verification) |
-| `prng.ts`, `hash.ts`, `math.ts`, `tuning.ts` | Seeded sfc32, canonical hash, integer helpers, default tuning |
+| `prng.ts`, `hash.ts`, `math.ts`, `tuning.ts` | Seeded sfc32, canonical hash, integer helpers, default tuning, `forMode()`, `triangleRelations()` |
 
-Tests (`packages/rules/test/`, 42 cases) cover the RULES.md worked
+Tests (`packages/rules/test/`, 46 cases) cover the RULES.md worked
 examples, movement and ZOC, turn policies and validation, stratagem
 formulas and twist rates, golden replays, and an AI-vs-AI soak that checks
 every invariant after every step.

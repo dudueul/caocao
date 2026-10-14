@@ -5,22 +5,8 @@
 import { affinityAt, classOf, inRange, isAlive, terrainAt } from "./board.ts";
 import { clamp, half, permille } from "./math.ts";
 import type { Prng } from "./prng.ts";
-import type {
-  BattleEvent,
-  BattleState,
-  ClassDef,
-  CounterGroup,
-  Ruleset,
-  StrikeRole,
-  Unit,
-} from "./types.ts";
-
-const BEATS: Readonly<Record<CounterGroup, CounterGroup | null>> = {
-  infantry: "cavalry",
-  cavalry: "archer",
-  archer: "infantry",
-  none: null,
-};
+import { forMode } from "./tuning.ts";
+import type { BattleEvent, BattleState, ClassDef, Ruleset, StrikeRole, Unit } from "./types.ts";
 
 /** ATK on the unit's current tile: (class + 무력 + weapon) × terrain effect‰. */
 export function attackPower(rules: Ruleset, state: BattleState, u: Unit): number {
@@ -53,14 +39,61 @@ export function critChance(rules: Ruleset, a: Unit, d: Unit): number {
   );
 }
 
-/** Counter-triangle multiplier‰ for attacker class vs defender class. */
-export function triangleFactor(rules: Ruleset, a: ClassDef, d: ClassDef): number {
-  if (BEATS[a.counterGroup] === d.counterGroup) return 1000 + rules.tuning.triangle;
-  if (BEATS[d.counterGroup] === a.counterGroup) return 1000 - rules.tuning.triangle;
-  return 1000;
+/** Class-relation multiplier‰, attacker family vs defender family (ADR 0029). */
+export function relationFactor(rules: Ruleset, a: ClassDef, d: ClassDef): number {
+  return rules.relations[a.family]?.[d.family] ?? 1000;
 }
 
-/** Damage of one landed strike (before HP is applied). */
+/**
+ * Named damage pipeline (ADR 0029). ATK and DEF already include terrain effect‰.
+ *   base     max(level floor, ATK − ⌊DEF/2⌋)
+ *   relation × class-relation‰
+ *   role     × counter‰ for counter strikes
+ *   critical × critical‰ when critical
+ *   mode     × the mode's damage‰
+ * Each step is floored. Future ability modifiers attach to a named stage.
+ */
+export type DamageStage = "base" | "relation" | "role" | "critical" | "mode";
+
+export interface DamageStep {
+  readonly stage: DamageStage;
+  readonly value: number;
+}
+
+export function damageFloor(rules: Ruleset, attacker: Unit): number {
+  return Math.max(
+    rules.tuning.minDamage,
+    permille(attacker.level, rules.tuning.damageFloorPerLevel),
+  );
+}
+
+export function damageSteps(
+  rules: Ruleset,
+  state: BattleState,
+  a: Unit,
+  d: Unit,
+  role: StrikeRole,
+  crit: boolean,
+): DamageStep[] {
+  const t = rules.tuning;
+  const steps: DamageStep[] = [];
+  let v = Math.max(
+    damageFloor(rules, a),
+    attackPower(rules, state, a) - half(defensePower(rules, state, d)),
+  );
+  steps.push({ stage: "base", value: v });
+  v = permille(v, relationFactor(rules, classOf(rules, a), classOf(rules, d)));
+  steps.push({ stage: "relation", value: v });
+  if (role === "counter") v = permille(v, t.counterMultiplier);
+  steps.push({ stage: "role", value: v });
+  if (crit) v = permille(v, t.critMultiplier);
+  steps.push({ stage: "critical", value: v });
+  v = permille(v, t.damageMultiplier);
+  steps.push({ stage: "mode", value: v });
+  return steps;
+}
+
+/** Damage of one landed strike: the last value of the pipeline. */
 export function strikeDamage(
   rules: Ruleset,
   state: BattleState,
@@ -69,15 +102,8 @@ export function strikeDamage(
   role: StrikeRole,
   crit: boolean,
 ): number {
-  const t = rules.tuning;
-  const base = Math.max(
-    t.minDamage,
-    attackPower(rules, state, a) - half(defensePower(rules, state, d)),
-  );
-  let dmg = permille(base, triangleFactor(rules, classOf(rules, a), classOf(rules, d)));
-  if (role === "counter") dmg = permille(dmg, t.counterMultiplier);
-  if (crit) dmg = permille(dmg, t.critMultiplier);
-  return dmg;
+  const steps = damageSteps(rules, state, a, d, role, crit);
+  return (steps[steps.length - 1] as DamageStep).value;
 }
 
 export function canCounter(rules: Ruleset, a: Unit, d: Unit): boolean {
@@ -101,9 +127,17 @@ export interface AttackPreview {
   critDamage: number;
   double: boolean;
   counter: { hit: number; crit: number; damage: number } | null;
+  /** Pipeline of the first strike without a critical, for the forecast UI. */
+  breakdown: DamageStep[];
 }
 
-export function previewAttack(rules: Ruleset, state: BattleState, a: Unit, d: Unit): AttackPreview {
+export function previewAttack(
+  baseRules: Ruleset,
+  state: BattleState,
+  a: Unit,
+  d: Unit,
+): AttackPreview {
+  const rules = forMode(baseRules, state.mode);
   return {
     hit: hitChance(rules, state, a, d),
     crit: critChance(rules, a, d),
@@ -117,6 +151,7 @@ export function previewAttack(rules: Ruleset, state: BattleState, a: Unit, d: Un
           damage: strikeDamage(rules, state, d, a, "counter", false),
         }
       : null,
+    breakdown: damageSteps(rules, state, a, d, "first", false),
   };
 }
 

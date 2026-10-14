@@ -1,6 +1,6 @@
 # 0022. Medium number scale: HP 100–600, hits of about 20–120
 
-- **Status:** Accepted
+- **Status:** Accepted; floor amended by [0029](0029-benchmark-lessons-adopted.md)
 - **Date:** 2026-10-14
 - **Deciders:** project owner
 - **Related:** [0006](0006-typescript-everywhere.md), [0020](0020-five-stats-with-distinct-roles.md),

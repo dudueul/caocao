@@ -6,8 +6,8 @@ import {
   hitChance,
   previewAttack,
   type Ruleset,
+  relationFactor,
   strikeDamage,
-  triangleFactor,
   unitById,
 } from "../src/index.ts";
 import { CLASSES, RULES, setup, unit } from "./fixtures.ts";
@@ -38,7 +38,7 @@ describe("ADR 0022 worked example", () => {
   const d = unitById(s, "foot");
 
   it("base 112, ×800‰ for cavalry against infantry = 89, critical 133", () => {
-    expect(triangleFactor(rules, CLASSES.cavalry as never, CLASSES.infantry as never)).toBe(800);
+    expect(relationFactor(rules, CLASSES.cavalry as never, CLASSES.infantry as never)).toBe(800);
     expect(strikeDamage(rules, s, a, d, "first", false)).toBe(89);
     expect(strikeDamage(rules, s, a, d, "first", true)).toBe(133);
   });
@@ -140,5 +140,70 @@ describe("counters and double attacks (ADR 0025)", () => {
     if (!r.ok) return;
     const roles = r.events.flatMap((e) => (e.kind === "strike" ? [e.role] : []));
     expect(roles).toEqual(["first", "counter", "second"]);
+  });
+});
+
+describe("ADR 0029: relation matrix, modes, damage pipeline, level floor", () => {
+  const twoUnits = (over: Parameters<typeof setup>[2] = {}, attackerLevel = 1) =>
+    setup(
+      ["...."],
+      [
+        unit("a", 0, "cavalry", 0, 0, {}, { level: attackerLevel }),
+        unit("d", 1, "archer", 1, 0, { command: 50 }),
+      ],
+      over,
+    );
+
+  it("looks up family × family relations; missing pairs are neutral", () => {
+    expect(relationFactor(RULES, CLASSES.cavalry as never, CLASSES.archer as never)).toBe(1200);
+    expect(relationFactor(RULES, CLASSES.strategist as never, CLASSES.archer as never)).toBe(1000);
+    const rules: Ruleset = { ...RULES, relations: { cavalry: { archer: 1500 } } };
+    expect(relationFactor(rules, CLASSES.cavalry as never, CLASSES.archer as never)).toBe(1500);
+  });
+
+  it("runs the named stages in order and ends on the strike damage", () => {
+    const s = createBattle(RULES, twoUnits());
+    const p = previewAttack(RULES, s, unitById(s, "a"), unitById(s, "d"));
+    expect(p.breakdown.map((x) => x.stage)).toEqual([
+      "base",
+      "relation",
+      "role",
+      "critical",
+      "mode",
+    ]);
+    expect(p.breakdown.at(-1)?.value).toBe(p.damage);
+  });
+
+  it("applies per-mode tuning overrides chosen at battle creation", () => {
+    const rules: Ruleset = { ...RULES, modes: { arena: { damageMultiplier: 500 } } };
+    const sandbox = createBattle(rules, twoUnits());
+    const arena = createBattle(rules, twoUnits({ mode: "arena" }));
+    const full = previewAttack(
+      rules,
+      sandbox,
+      unitById(sandbox, "a"),
+      unitById(sandbox, "d"),
+    ).damage;
+    const halfDmg = previewAttack(rules, arena, unitById(arena, "a"), unitById(arena, "d")).damage;
+    expect(arena.mode).toBe("arena");
+    expect(halfDmg).toBe(Math.floor((full * 500) / 1000));
+  });
+
+  it("damage floor scales with the attacker's level: max(10, ⌊1.5 × level⌋)", () => {
+    const heavy: Ruleset = {
+      ...RULES,
+      classes: {
+        ...CLASSES,
+        archer: { ...(CLASSES.archer as NonNullable<(typeof CLASSES)[string]>), def: 400 },
+      },
+    };
+    const low = createBattle(heavy, twoUnits({}, 1));
+    const high = createBattle(heavy, twoUnits({}, 40));
+    expect(
+      previewAttack(heavy, low, unitById(low, "a"), unitById(low, "d")).breakdown[0]?.value,
+    ).toBe(10);
+    expect(
+      previewAttack(heavy, high, unitById(high, "a"), unitById(high, "d")).breakdown[0]?.value,
+    ).toBe(60);
   });
 });
