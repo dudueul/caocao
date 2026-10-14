@@ -17,6 +17,8 @@ extracted/       dump outputs (never edit — regenerable)
 analysis/        evidence log, protocol docs, event catalog, recovered .fbs
 docs/
   re/            reconstruction blueprints (REBUILD_PLAN.md)
+  server/        online architecture review + game-server practices
+                 (GAME_SERVER_PRACTICES.md) and scaling memo (HYPERSCALE_ROADMAP.md)
   lab/           THE TEXTBOOK: labs 00–08, dsa-01–08, exercises, solutions
 scripts/         reproducible pipeline + verify-lab.sh (auto-grading)
 tools/           (~/tools) JDK 21, Ghidra 12.1.4, jadx, dotnet, REA — no sudo
