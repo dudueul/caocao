@@ -11,7 +11,9 @@ import {
   runBattle,
   terrainAt,
 } from "@tk/rules";
-import { P0_RULES, scenarioSetup, WUCHAO_RAID } from "../src/index.ts";
+import { P0_RULES, scenarioOrders, scenarioSetup, WUCHAO_RAID } from "../src/index.ts";
+
+const ORDERS = scenarioOrders(WUCHAO_RAID);
 
 function invariants(s: BattleState): void {
   const seen = new Set<string>();
@@ -35,7 +37,7 @@ describe("Wuchao sandbox, AI vs AI", () => {
         let s = createBattle(P0_RULES, scenarioSetup(WUCHAO_RAID, { seed: `soak-${i}`, policy }));
         let steps = 0;
         while (s.winner === null && steps < 4000) {
-          const c = chooseCommand(s, P0_RULES);
+          const c = chooseCommand(s, P0_RULES, ORDERS);
           if (!c) break;
           const r = apply(s, P0_RULES, c);
           expect(r.ok).toBe(true);
@@ -49,6 +51,20 @@ describe("Wuchao sandbox, AI vs AI", () => {
       }
     });
   }
+
+  it("defenders with hold orders stay in the camp until the raiders come near", () => {
+    let s = createBattle(P0_RULES, scenarioSetup(WUCHAO_RAID, { seed: "hold" }));
+    const startX = new Map(s.units.map((u) => [u.id, u.x]));
+    // Round 1: the raiders are far away, so no defender moves.
+    while (s.round === 1 && s.winner === null) {
+      const c = chooseCommand(s, P0_RULES, ORDERS);
+      if (!c) break;
+      const r = apply(s, P0_RULES, c);
+      if (!r.ok) throw new Error(r.reason);
+      s = r.state;
+    }
+    for (const u of s.units) if (u.side === 1) expect(u.x).toBe(startX.get(u.id) as number);
+  });
 
   it("replaying the command log reproduces the final state", () => {
     const start = createBattle(P0_RULES, scenarioSetup(WUCHAO_RAID, { seed: "replay" }));

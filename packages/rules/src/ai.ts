@@ -47,6 +47,10 @@ const W = {
   danger: 6,
   /** Extra approach pressure per round, so cautious sides eventually engage. */
   boldnessPerRound: 8,
+  /** Cost per MP spent, so small effects don't drain a strategist. */
+  mp: 15,
+  /** Score of a command that achieves nothing; below any wait. */
+  useless: -900_000,
 };
 
 /** For each enemy of `side`: the tiles it could attack next turn. */
@@ -242,18 +246,21 @@ export function scoreCommand(
   if (action.kind === "stratagem") {
     const def = stratagemDef(rules, action.id);
     const targets = stratagemTargets(s, me, def, action.at);
+    let value = 0;
     for (const t of targets) {
       if (def.effect === "damage") {
         const dmg = Math.min(t.hp, stratagemDamage(s, def, me, t));
-        score += dmg * W.damage;
-        if (dmg >= t.hp) score += W.killBase + t.maxHp;
+        value += dmg * W.damage;
+        if (dmg >= t.hp) value += W.killBase + t.maxHp;
       } else if (def.effect === "heal") {
-        score += Math.min(t.maxHp - t.hp, stratagemHeal(def, me)) * W.heal;
+        value += Math.min(t.maxHp - t.hp, stratagemHeal(def, me)) * W.heal;
       } else if (t.status === null) {
-        score += permille(t.maxHp, statusChance(rules, me, t)) * W.status;
+        value += permille(t.maxHp, statusChance(rules, me, t)) * W.status;
       }
     }
-    return score - danger(rules, s, me, threats, "") * W.danger;
+    // A cast that achieves nothing (healing full HP, confusing the confused) is never worth MP.
+    if (value <= 0) return W.useless;
+    return score + value - def.mp * W.mp - danger(rules, s, me, threats, "") * W.danger;
   }
   // Wait: approach an attack position, weighed against exposure.
   const gap = approachGap(state, rules, unit, command.to);

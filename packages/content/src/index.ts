@@ -3,10 +3,12 @@ export { type MapDef, parseMap, WUCHAO } from "./maps.ts";
 export { OFFICERS, type OfficerDef } from "./officers.ts";
 export { P0_RULES, P0_RULES_HASH } from "./ruleset.ts";
 export {
+  ORDERS,
   SCENARIOS,
   type ScenarioDef,
   type ScenarioUnit,
   type SetupOptions,
+  scenarioOrders,
   scenarioSetup,
   WUCHAO_RAID,
 } from "./scenarios.ts";

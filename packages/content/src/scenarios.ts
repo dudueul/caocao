@@ -2,7 +2,7 @@
  * Scenarios: a map, two or more sides and their officers, ready to become a
  * `BattleSetup` for `createBattle`. P0 has one sandbox scenario.
  */
-import type { BattleSetup, ModeId, TurnPolicyId, WeatherKind } from "@tk/rules";
+import type { BattleSetup, Gambit, ModeId, TurnPolicyId, WeatherKind } from "@tk/rules";
 import { type MapDef, parseMap, WUCHAO } from "./maps.ts";
 import { OFFICERS } from "./officers.ts";
 
@@ -13,7 +13,24 @@ export interface ScenarioUnit {
   readonly side: number;
   readonly x: number;
   readonly y: number;
+  /** Standing orders for the AI when it controls this unit, as gambits (ADR 0030). */
+  readonly orders?: readonly Gambit[];
 }
+
+/** Reusable AI orders for scenario units. */
+export const ORDERS = {
+  /** Stay put; strike whatever comes into reach. */
+  hold: [
+    { when: { kind: "enemyInReach" }, behavior: { kind: "attackBest" } },
+    { when: { kind: "always" }, behavior: { kind: "hold" } },
+  ],
+  /** Heal an ally below 60% HP; otherwise hold. */
+  healThenHold: [
+    { when: { kind: "allyHpBelow", permille: 600 }, behavior: { kind: "healAlly" } },
+    { when: { kind: "enemyInReach" }, behavior: { kind: "attackBest" } },
+    { when: { kind: "always" }, behavior: { kind: "hold" } },
+  ],
+} as const satisfies Record<string, readonly Gambit[]>;
 
 export interface ScenarioDef {
   readonly id: string;
@@ -34,7 +51,7 @@ export const WUCHAO_RAID: ScenarioDef = {
   name: "오소 습격",
   year: 200,
   summary:
-    "Sandbox. Cao Cao's raiders cross the river to burn Yuan Shao's grain depot at Wuchao. The roster draws freely on the Guandu campaign.",
+    "Sandbox. Cao Cao's raiders cross the river to burn Yuan Shao's grain depot at Wuchao; the defenders hold the camp. The roster draws freely on the Guandu campaign.",
   sides: ["조조군", "원소군"],
   map: WUCHAO,
   weather: "sunny",
@@ -47,12 +64,53 @@ export const WUCHAO_RAID: ScenarioDef = {
     { officer: "xiahou-yuan", classId: "archer", level: 10, side: 0, x: 2, y: 3 },
     { officer: "xun-you", classId: "strategist", level: 10, side: 0, x: 1, y: 6 },
     { officer: "liu-ye", classId: "catapult", level: 10, side: 0, x: 2, y: 7 },
-    { officer: "chunyu-qiong", classId: "infantry", level: 10, side: 1, x: 14, y: 5 },
-    { officer: "gao-lan", classId: "infantry", level: 10, side: 1, x: 13, y: 4 },
-    { officer: "zhang-he", classId: "cavalry", level: 10, side: 1, x: 13, y: 6 },
-    { officer: "qu-yi", classId: "archer", level: 10, side: 1, x: 14, y: 3 },
-    { officer: "ju-shou", classId: "strategist", level: 10, side: 1, x: 15, y: 6 },
-    { officer: "wen-chou", classId: "martialArtist", level: 10, side: 1, x: 14, y: 7 },
+    // The depot's defenders hold the camp until the raiders come into reach.
+    {
+      officer: "chunyu-qiong",
+      classId: "infantry",
+      level: 10,
+      side: 1,
+      x: 14,
+      y: 5,
+      orders: ORDERS.hold,
+    },
+    {
+      officer: "gao-lan",
+      classId: "infantry",
+      level: 10,
+      side: 1,
+      x: 13,
+      y: 4,
+      orders: ORDERS.hold,
+    },
+    {
+      officer: "zhang-he",
+      classId: "cavalry",
+      level: 10,
+      side: 1,
+      x: 13,
+      y: 6,
+      orders: ORDERS.hold,
+    },
+    { officer: "qu-yi", classId: "archer", level: 10, side: 1, x: 14, y: 3, orders: ORDERS.hold },
+    {
+      officer: "ju-shou",
+      classId: "strategist",
+      level: 10,
+      side: 1,
+      x: 15,
+      y: 6,
+      orders: ORDERS.healThenHold,
+    },
+    {
+      officer: "wen-chou",
+      classId: "martialArtist",
+      level: 10,
+      side: 1,
+      x: 14,
+      y: 7,
+      orders: ORDERS.hold,
+    },
   ],
 };
 
@@ -91,4 +149,11 @@ export function scenarioSetup(s: ScenarioDef, o: SetupOptions): BattleSetup {
       };
     }),
   };
+}
+
+/** AI orders by unit id, for `chooseCommand(state, rules, orders)`. */
+export function scenarioOrders(s: ScenarioDef): Record<string, readonly Gambit[]> {
+  const out: Record<string, readonly Gambit[]> = {};
+  for (const u of s.units) if (u.orders) out[u.officer] = u.orders;
+  return out;
 }

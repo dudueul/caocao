@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0032](../adr/0032-content-as-typed-modules.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0034](../adr/0034-scenario-ai-orders.md)).
 
 ## Vision
 
@@ -84,6 +84,8 @@ flowchart TB
 | Client UI | Svelte 5 components as a DOM overlay on the PixiJS canvas; one battle store | [0031](../adr/0031-svelte-dom-overlay.md) |
 | Toolchain | Bun (install, tests, scripts), TypeScript 7, Biome, determinism guard | [0019](../adr/0019-bun-toolchain.md) (supersedes [0018](../adr/0018-toolchain.md)) |
 | Content format | Typed TS modules + validators; our own officer ratings in steps of 5; ruleset content hash *(proposed)* | [0032](../adr/0032-content-as-typed-modules.md) |
+| Sandbox client | Fixed layout, tap-to-move with pending undo, forecast then confirm, placeholder shapes, Korean UI text, speed and auto-battle; svelte-check (TS 6) + Biome for `.svelte` *(proposed)* | [0033](../adr/0033-p0-sandbox-client-defaults.md) |
+| Enemy behaviour | Scenario units carry standing AI orders written as gambits (hold, heal then hold) *(proposed)* | [0034](../adr/0034-scenario-ai-orders.md) |
 
 ## Roadmap
 
@@ -97,6 +99,8 @@ flowchart LR
 ```
 
 Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then-arena.md).
+**P0 today:** the rules engine, the P0 content and a playable battle sandbox
+(`bun run dev`) on desktop and phone.
 
 ## Open questions (next design sessions)
 

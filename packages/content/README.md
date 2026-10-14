@@ -49,4 +49,8 @@ One character per tile, row 0 at the top:
 
 | Id | Name | Map | Notes |
 |---|---|---|---|
-| `wuchao-raid` | 오소 습격 (200) | 16 × 12 | P0 sandbox: 조조군 (6) cross the river to the 원소군 grain depot (6). The roster draws freely on the Guandu campaign. |
+| `wuchao-raid` | 오소 습격 (200) | 16 × 12 | P0 sandbox: 조조군 (6) cross the river to the 원소군 grain depot (6), whose defenders hold the camp. The roster draws freely on the Guandu campaign. |
+
+Scenario units may carry **standing orders** for the AI, written as gambits
+(`ORDERS.hold`, `ORDERS.healThenHold`); `scenarioOrders()` collects them for
+`chooseCommand` ([ADR 0034](../../docs/adr/0034-scenario-ai-orders.md)).

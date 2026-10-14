@@ -1,0 +1,25 @@
+{
+  "name": "@tk/client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PixiJS battlefield with a Svelte 5 DOM overlay (ADR 0007, ADR 0031)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json --fail-on-warnings"
+  },
+  "dependencies": {
+    "@tk/content": "workspace:*",
+    "@tk/rules": "workspace:*",
+    "pixi.js": "8.22.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "svelte": "5.57.2",
+    "svelte-check": "4.7.6",
+    "typescript": "6.0.3",
+    "vite": "8.3.4"
+  }
+}

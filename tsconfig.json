@@ -15,5 +15,6 @@
     "types": ["bun"],
     "allowImportingTsExtensions": true
   },
-  "include": ["packages/*/src/**/*.ts", "packages/*/test/**/*.ts", "apps/*/src/**/*.ts"]
+  "include": ["packages/*/src/**/*.ts", "packages/*/test/**/*.ts", "apps/*/src/**/*.ts"],
+  "exclude": ["apps/client"]
 }

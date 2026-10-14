@@ -314,6 +314,22 @@ normal scoring ([ADR 0030](../adr/0030-modern-techniques-adopted.md)).
 Gambits are free for every player; they drive absent World seats and Story
 auto-battle, never live play.
 
+**Scenario orders** ([ADR 0034](../adr/0034-scenario-ai-orders.md)): enemy units
+in a scenario carry standing orders written as gambits, such as *hold* (strike
+whatever comes into reach, otherwise stay put) or *heal, then hold*. The 오소
+defenders hold their camp.
+
+```mermaid
+flowchart LR
+  A["AI unit to act"] --> O{"has orders?"}
+  O -->|no| S["utility scoring<br/>(all legal commands)"]
+  O -->|yes| G{"first gambit whose<br/>condition holds and<br/>behaviour has a command"}
+  G -->|found| N["score only those<br/>commands"]
+  G -->|none| S
+  N --> C["chosen command"]
+  S --> C
+```
+
 ## 10. Still to decide
 
 | Topic | Depends on |
