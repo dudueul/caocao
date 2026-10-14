@@ -84,6 +84,27 @@ For each family, 30 terrain-effect bytes (×10 = %, e.g. 11 = 110%) then 30 move
 
 Descriptions: IMSG[150+id]. **Not found:** base power, hit-rate and terrain/weather restriction tables. They are probably hard-coded in EKD5.EXE; the restrictions only appear as description text.
 
+## 2b. Graphics archives (verified by rendering, 2026-10-14)
+
+All are Ls12 archives of raw **8-bit indexed** images, fixed size per member:
+
+| Archive | Members | Member = | Notes |
+|---|---|---|---|
+| FACE.E5 | 228 | one 64×80 portrait (5,120 B) | index = officer face id |
+| UNIT_MOV.E5 | 151 | 11 frames × 48×48 (25,344 B) | move/idle frames |
+| UNIT_ATK.E5 | 151 | 12 frames × 64×64 (49,152 B) | attack frames |
+| UNIT_SPC.E5 | 151 | 5 frames × 48×48 (11,520 B) | special poses |
+| ITEM.E5 | 104 | one 32×32 icon (1,024 B) | index = item id |
+| MMAP.E5 | 115 | 640×400 (256,000 B) | scene backgrounds |
+| PMAP.E5 | 74 | 20,016 B | not decoded |
+
+**Palette:** SPALET.E5 (58 members, per battle map) and PMPALET.E5 (115) hold
+256 RGB triplets stored in **G, B, R** order — display colour = `(p[1], p[2], p[0])`.
+Index colour **magenta (255,0,255)** is the transparency key on sprites and icons.
+With this order portraits, unit sprites and icons render with correct colours.
+Mobile comparison: the remake's battle tile highlights are 96×96 px (exactly 2×
+the 48×48 tiles), while its portraits (200×256) are new painted art, not upscales.
+
 ## 3. IMSG.E5: 932 × 216-byte plaintext CP949 records
 0–103 item descriptions · 149 "Magic Message Start" · 150–217 strategy descriptions · 250–307 battle names (58) · 350–402 class descriptions (53) · 450–623 officer bios by officer id · 650–675 retreat lines · 700–… critical-hit lines (not indexed by officer id) · ~800+ credits. Filler records are 4 junk bytes.
 
@@ -130,5 +151,5 @@ R_kk = story/camp scenes before battle k; S_kk = battle k (unit placements + bat
 - Officer byte 16 (0–9) and byte 15 semantics. The display scale of stats (raw ≤ 50).
 - Job bytes 7 and 8 (assumed HP/MP growth). The grade-letter mapping 1..4 → C..S is assumed.
 - The two u16 shop-header values.
-- Graphics formats other than HM (FACE, UNIT_*, MMAP, PMAP…) and the exact palette format.
+- PMAP (story-scene maps) and effect animations (MCALL/MEFF); the other graphics are in §2b.
 - Full EEX bytecode semantics. The save-file layout beyond the officer block.
