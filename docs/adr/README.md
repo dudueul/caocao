@@ -32,3 +32,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0017](0017-clear-this-repository.md) | Clear this repository and build the remake in it; the archive is commit `dabaf0a2` | Accepted | 2026-10-14 |
 | [0018](0018-toolchain.md) | Toolchain: npm workspaces, TypeScript 7, Vitest, Biome, determinism guard | Superseded by 0019 | 2026-10-14 |
 | [0019](0019-bun-toolchain.md) | Bun for install, tests and scripts; TypeScript 7 and Biome stay | Accepted | 2026-10-14 |
+| [0020](0020-five-stats-with-distinct-roles.md) | Officers have five stats, each with one distinct role | Accepted | 2026-10-14 |

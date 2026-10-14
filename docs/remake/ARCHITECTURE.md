@@ -124,7 +124,7 @@ no wall-clock time. Golden-replay tests run in CI.
 
 | Part | Model | Benchmark in this repo |
 |---|---|---|
-| Damage and hit formulas | Pure functions of attacker, defender, terrain, conditions | `UnitCommonFunc.GetRawAttackDamage`, `GetAttackSuccessRate` (ARM64, decompilable) |
+| Damage and hit formulas | Pure functions of attacker, defender, terrain, conditions; specified in [RULES.md](RULES.md) | `UnitCommonFunc.GetRawAttackDamage`, `GetAttackSuccessRate` (ARM64, decompilable) |
 | Skills and special abilities | Data (shape, range, effect list) + a few code hooks | 234 `Skill*` and 475 `SpAction###` classes |
 | Conditions (buffs and debuffs) | Data: type, stacking, duration, cancel rules | `Conditions` table schema |
 | AI | Utility scoring: candidate actions × weighted features, per-officer tendency profile, PRNG tie-break | `nAI.*` scoring, `AITendencies` (cDistance, cGoal, cTarget, cDefeat …) |

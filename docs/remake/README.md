@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0019](../adr/0019-bun-toolchain.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0020](../adr/0020-five-stats-with-distinct-roles.md)).
 
 ## Vision
 
@@ -16,6 +16,7 @@ and the mobile stores.
 | Document | Content |
 |---|---|
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Stack, code layout, rules engine, online battles, server topology, data, testing |
+| [RULES.md](RULES.md) | Battle and character rules: stats, attack resolution, formulas (starting tuning) |
 | [WORLD_ENGINE.md](WORLD_ENGINE.md) | Living History and Warlord Campaign: calendar, clock, anchor events, households, pacing, seasons |
 | [../adr/](../adr/README.md) | Every decision with its context, alternatives and revisit triggers |
 
@@ -67,6 +68,7 @@ flowchart TB
 | Progression | Scoped per mode; Arena normalized | [0014](../adr/0014-scoped-progression-fair-arena.md) |
 | Build order | Engine → Arena → Story → private World → public seasons → Raids, Duels | [0015](../adr/0015-delivery-order-engine-then-arena.md) |
 | Repository | This repository, cleared; the recovery archive is commit `dabaf0a2` | [0017](../adr/0017-clear-this-repository.md) (supersedes [0016](../adr/0016-new-repository.md)) |
+| Stats | 무력, 통솔, 지력, 민첩, 운, each with one battle role and one World role (운 = critical hits + fate on defeat) | [0020](../adr/0020-five-stats-with-distinct-roles.md) |
 | Toolchain | Bun (install, tests, scripts), TypeScript 7, Biome, determinism guard | [0019](../adr/0019-bun-toolchain.md) (supersedes [0018](../adr/0018-toolchain.md)) |
 
 ## Roadmap
@@ -91,7 +93,7 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
-| 7 | Stat and class system | 5 stats like 조조전 (STR, CMD, INT, AGI, LUCK), class promotions, equipment |
+| 7 | Class system (stats are decided, [0020](../adr/0020-five-stats-with-distinct-roles.md)) | Class families with tiers and promotions; equipment |
 | 8 | Rules reference from the APK | Decompile about 50–100 formula, ability and AI functions into an engine-neutral spec |
 | 9 | Art pipeline | 96 px tiles (2×), palette and atlas tooling |
 | 10 | Languages | Korean first; English next |

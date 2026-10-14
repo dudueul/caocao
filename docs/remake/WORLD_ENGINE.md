@@ -162,6 +162,7 @@ stateDiagram-v2
 | Natural lifespan | 50–75, modified by events and traits |
 | Heir inherits | 50% fame, wealth share, loyal retainers, 1 skill |
 | Season score | household fame + titles + historical feats |
+| Officer fate when their unit is defeated | escape with `escape‰ = clamp(600 + 4·운, 0, 950)`, otherwise captured or killed ([RULES.md §2](RULES.md#2-attack-resolution-draft)) |
 
 ## 5. Pacing and battles
 
