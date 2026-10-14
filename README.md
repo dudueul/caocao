@@ -14,6 +14,7 @@ policies, a baseline AI, and 42 tests including AI-vs-AI soak and golden replays
 | [`docs/remake/README.md`](docs/remake/README.md) | Vision, modes, decision map, roadmap, open questions |
 | [`docs/remake/ARCHITECTURE.md`](docs/remake/ARCHITECTURE.md) | Stack, code layout, rules engine, online battles, servers, data |
 | [`docs/remake/RULES.md`](docs/remake/RULES.md) | Battle and character rules (stats, attack resolution, classes, terrain, stratagems) |
+| [`docs/remake/BENCHMARK.md`](docs/remake/BENCHMARK.md) | The 2018 game's battle formulas (decompiled, in our words) and lessons |
 | [`docs/remake/WORLD_ENGINE.md`](docs/remake/WORLD_ENGINE.md) | Living History / Warlord Campaign design |
 | [`docs/adr/`](docs/adr/README.md) | One record per decision |
 
