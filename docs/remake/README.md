@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0014](../adr/0014-scoped-progression-fair-arena.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0015](../adr/0015-delivery-order-engine-then-arena.md)).
 
 ## Vision
 
@@ -65,12 +65,25 @@ flowchart TB
 | Battle control | One seat per household corps; ≤ 6 seats a side; linked fronts | [0012](../adr/0012-household-corps-seats.md) |
 | World modes | One World engine, two presets | [0013](../adr/0013-one-world-engine.md) |
 | Progression | Scoped per mode; Arena normalized | [0014](../adr/0014-scoped-progression-fair-arena.md) |
+| Build order | Engine → Arena → Story → private World → public seasons → Raids, Duels | [0015](../adr/0015-delivery-order-engine-then-arena.md) |
+
+## Roadmap
+
+```mermaid
+flowchart LR
+  P0["P0 rules engine<br/>AI + battle sandbox"] --> P1["P1 Arena<br/>MatchDO referee, PWA<br/>friends play PvP"]
+  P1 --> P2["P2 Story ch.1<br/>event VM, dialogue,<br/>solo re-simulation"]
+  P2 --> P3["P3 Warlord Campaign<br/>WorldDO, clock, anchors,<br/>households (private)"]
+  P3 --> P4["P4 Living History<br/>season 1 (public)"]
+  P4 --> P5["P5 Raids, Duels/Board"]
+```
+
+Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then-arena.md).
 
 ## Open questions (next design sessions)
 
 | # | Question | Current leaning |
 |---|---|---|
-| 1 | Delivery order of modes (roadmap) | Rules engine + battle sandbox → Story chapter 1 → Arena → private campaign → public season → Raids, Duels |
 | 2 | Where the new code lives | Separate repository; this one stays the reference archive |
 | 3 | Menu/UI framework | DOM overlay (a light framework) over the Pixi canvas |
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |

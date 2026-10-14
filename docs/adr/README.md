@@ -27,3 +27,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0012](0012-household-corps-seats.md) | Players control a household corps (one seat per corps) in shared battles | Accepted | 2026-10-14 |
 | [0013](0013-one-world-engine.md) | Living History and Warlord Campaign share one World engine | Accepted | 2026-10-14 |
 | [0014](0014-scoped-progression-fair-arena.md) | Scoped progression per mode, with a level-normalized Arena | Accepted | 2026-10-14 |
+| [0015](0015-delivery-order-engine-then-arena.md) | Build order: rules engine, then Arena, Story, private World, public seasons | Accepted | 2026-10-14 |
