@@ -79,6 +79,29 @@ the curated anchors. Confidence:
   1998 PC game for the classic subset, or new design).
 - Drop the `#` helper columns before baking.
 
+## 1998 PC 조조전 reference values (`#ekd5_*`)
+
+Six templates also carry `#ekd5_*` helper columns from the 1998 PC game the
+mobile game is based on (`data/reference/ekd5/`, decoded from the owner's copy).
+Rows are matched by Korean name; old 1998 spellings are mapped only through
+Hangul consonant variants that exist as localization keys (제갈양 → 제갈량,
+감영 → 감녕). Names removed from a template by localization de-duplication but
+present in the 1998 data are appended with `#confidence = ekd5`.
+
+| Template | 1998 source | Rows with values | Rows appended | Helper columns |
+|---|---|---|---|---|
+| `Units` | officers | 98 | 63 (조조, 관우, 여포, 제갈량 …) | id, job, STR, CMD, INT, AGI, LUCK, HP, MP, level, weapon, armor |
+| `Skills` | strategies | 56 | 8 | id, mp, cast_range, effect_area, learn |
+| `Items` | items | 49 | 0 | id, kind, category, treasure, effect, power, effect_value, price |
+| `Jobs` | classes | 23 | 11 | id, family, tier, move, attack_range, equip |
+| `Tiles` | terrain | 19 | 5 | id |
+| `BattleMaps` | battles | 42 | 0 | map_id, width, height, hm (map image), script |
+
+These are **1998 values from a different game** — useful as a baseline and for
+relative balance, not as the mobile numbers, so they never fill the baked
+columns. The mobile `Units` stats (`str`, `cha`, `wis`, `dex`, `luck`) appear to be the
+same five attributes as 1998 STR, CMD, INT, AGI, LUCK.
+
 ## Known gaps
 
 - 155 tables have no localized text at all (pure numbers/ids), so their

@@ -16,3 +16,7 @@ cp "$W/load_order.json" data/tables/load_order.json
 rm -rf data/tables/templates
 python3 scripts/tables/gen_templates.py --work "$W" \
   --loc client/Assets/Resources/Localization_0.txt --out data/tables
+# 1998 PC 조조전 reference values (#ekd5_* helper columns), when the reference export exists
+if [ -d data/reference/ekd5 ]; then
+  python3 scripts/tables/merge_ekd5.py data/reference/ekd5 data/tables client/Assets/Resources/Localization_0.txt
+fi
