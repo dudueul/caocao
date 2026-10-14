@@ -15,7 +15,7 @@ extracted/       dump outputs (never edit — regenerable)
   jadx/          Java decompile (5,205 files)
   unity_export/  AssetRipper export (3,615 assets, 0 failed)
 analysis/        evidence log, protocol docs, event catalog, recovered .fbs
-data/tables/      239 data-table schemas + templates pre-filled from localization
+data/tables/     239 data-table schemas + templates pre-filled from localization
 docs/
   re/            reconstruction blueprints (REBUILD_PLAN.md, CDN_ASSET_BUNDLES.md)
   server/        online architecture review + game-server practices
