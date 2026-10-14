@@ -510,7 +510,7 @@ namespace SocketIO
 				foreach (var cb in list.ToArray())
 				{
 					try { cb(ev); }
-					catch (Exception ex) { Debug.LogError("[SocketIO] handler threw: " + ex); }
+					catch (Exception ex) { UnityEngine.Debug.LogError("[SocketIO] handler threw: " + ex); }
 				}
 		}
 

@@ -7792,9 +7792,11 @@ namespace GuildWar.Backend
 					m_socketLoggingIn = false;
 					if (ack != null && !ack.Keys.Contains("error"))
 					{
-						m_socketLoggedIn = true;
-						if (onSocketLogined__BackingField != null)
-							onSocketLogined__BackingField();
+						// The server answers an emit-with-callback via the ACK
+						// only (no separate "login" event), so the ack is the
+						// login result: take the same path as the event so
+						// OnAnySessionLogined (SessionBoot's hook) fires too.
+						OnSocketLogined(null);
 					}
 					else
 					{
