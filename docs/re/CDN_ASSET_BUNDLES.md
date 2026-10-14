@@ -123,7 +123,11 @@ with AssetRipper / AssetStudio).
    blocks it):
    - `https://web.archive.org/cdx/search/cdx?url=dxu1t8x55g49k.cloudfront.net/*&output=txt&limit=500`
    - `https://web.archive.org/cdx/search/cdx?url=nxm-caocao-ww.akamaized.net/*&output=txt&limit=500`
-3. **Live host check**: `curl -I "https://dxu1t8x55g49k.cloudfront.net/comic/kor/ImageList.txt"`
+3. **Live host check** — *checked 2026-10-14 with `*.cloudfront.net` allowed: a
+   control CloudFront host answered from the edge, but
+   `dxu1t8x55g49k.cloudfront.net` failed upstream (gateway 502, i.e. the name no
+   longer resolves) → the distribution appears to be deleted; use routes 1–2.*
+   `curl -I "https://dxu1t8x55g49k.cloudfront.net/comic/kor/ImageList.txt"`
    — the one CDN path the client builds itself. A 200 means the distribution is
    still up (then the package folder is likely
    `…/<something>/Android_etc2/` next to a `version.json`, inferred from the
