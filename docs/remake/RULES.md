@@ -67,13 +67,47 @@ Each random check draws once from the battle's `Prng` in a fixed order (hit,
 then critical), so replays and the referee reproduce it exactly
 ([ADR 0004](../adr/0004-server-authoritative-referee.md)).
 
-## 3. Still to decide
+## 3. Classes
+
+Twelve families, three tiers each, plus unique lines for lords and named heroes
+([ADR 0021](../adr/0021-class-families-and-tiers.md)). A class supplies HP, move,
+attack-range shape, terrain costs and bonuses, base attack and defense, stat
+growth, equipment types and skills. The officer's five stats come on top (§1).
+
+| # | Family | Role | Counter group | In P0 |
+|---|---|---|---|---|
+| 1 | 보병 Infantry | balanced front line | infantry | ✓ |
+| 2 | 창병 Spearmen *(provisional)* | holds the line; extra bonus against cavalry | infantry | |
+| 3 | 궁병 Archers | ranged, 2-tile reach, weak up close | archers | ✓ |
+| 4 | 노병 Crossbowmen | ranged, slower, armour-piercing | archers | |
+| 5 | 기병 Cavalry | high move, charges | cavalry | ✓ |
+| 6 | 궁기병 Horse archers | mobile ranged, fragile | cavalry | |
+| 7 | 포차 Catapults | long range, area damage, no counter | archers | ✓ |
+| 8 | 무도가 Martial artists | double attacks, high evasion | outside | ✓ |
+| 9 | 적병 Bandits | rough terrain mobility, steal | infantry | |
+| 10 | 책사 Strategists | attack stratagems | outside | ✓ |
+| 11 | 도사 Taoists | weather and terrain stratagems, healing | outside | |
+| 12 | 무희 Dancers | support: re-activate an ally, buffs | outside | |
+| — | 군주 / 영웅 unique lines | individual heroes and lords | by line | |
+
+```mermaid
+flowchart LR
+  INF["Infantry group<br/>보병 · 창병 · 적병"] -->|"+200‰"| CAV["Cavalry group<br/>기병 · 궁기병"]
+  CAV -->|"+200‰"| ARC["Archer group<br/>궁병 · 노병 · 포차"]
+  ARC -->|"+200‰"| INF
+  OUT["Outside the triangle<br/>무도가 · 책사 · 도사 · 무희"]
+```
+
+An attacker strong against the defender's group deals +200‰ damage; against the
+group that beats it, −200‰. Promotion: tier 2 at Lv 20, tier 3 at Lv 40
+(*tunable*). Higher tiers reuse the tier-1 animation with new details.
+
+## 4. Still to decide
 
 | Topic | Depends on |
 |---|---|
-| Class system: families, tiers, promotions, what a class adds | next design session |
-| HP and damage scale (small numbers vs large) | class system |
-| Terrain: movement costs, evasion and defense bonuses | class system |
-| Stratagems, MP and status effects | stat roles (done), class system |
-| Equipment | class system, progression ([ADR 0014](../adr/0014-scoped-progression-fair-arena.md)) |
+| HP and damage scale (small numbers vs large) | next design session |
+| Terrain: movement costs, evasion and defense bonuses | classes (done) |
+| Stratagems, MP and status effects | stats and classes (done) |
+| Equipment types per family | classes (done), progression ([ADR 0014](../adr/0014-scoped-progression-fair-arena.md)) |
 | Arena normalization | [ADR 0014](../adr/0014-scoped-progression-fair-arena.md) |
