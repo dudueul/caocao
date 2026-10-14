@@ -64,7 +64,8 @@ flowchart TB
 | HP | class base + 통솔 bonus + level growth; range about 100–600 ([ADR 0022](../adr/0022-medium-number-scale.md)) |
 | Attack / defense | `ATK = class + 무력 + weapon`, `DEF = class + 통솔 + armour` |
 | Base damage | `max(10, ATK − ⌊DEF/2⌋)` → × counter triangle (1200 or 800 /1000) → × critical (1500/1000), each step floored |
-| Double attack, counter damage, stratagems | *to be defined* |
+| Double attack, counter damage | *to be defined* |
+| Stratagems | see §5 |
 
 Worked example: 관우 (cavalry, tier 3, Lv 30) has ATK 60 + 97 + 25 = 182. Against
 tier-2 infantry with DEF 50 + 70 + 20 = 140, base damage is 182 − 70 = **112**.
@@ -156,10 +157,50 @@ On its tile, a unit's ATK and DEF are multiplied by its effect‰ (floored) befo
 the base damage formula. The defender's cover evasion‰ is the
 `terrainEvasion‰` in the hit formula.
 
-## 5. Still to decide
+## 5. Stratagems
+
+Stratagems (책략) cost MP, have a fixed range and area shape, and belong to a
+school. Terrain and weather scale elemental schools; 운 can twist the outcome
+([ADR 0024](../adr/0024-stratagems-elements-and-fortune-twists.md)).
+
+| School | Typical effect | Terrain and weather |
+|---|---|---|
+| Fire | damage, may leave burning tiles | strong on forest and grass, weak on water; boosted by sun and wind, crippled by rain |
+| Water | damage, pushes units | needs or favours river, ford and lake tiles |
+| Earth | damage, blocks or opens tiles | strong on hills and mountains |
+| Wind | damage, pushes units, changes the wind | strong on open ground |
+| Support | heal, buffs | none |
+| Disruption | confusion, bind, silence, poison | none |
+
+```mermaid
+flowchart TB
+  S["cast stratagem<br/>(MP paid, target in range)"] --> K{"damage or status?"}
+  K -->|damage| D["base + 지력a − ⌊지력d/2⌋<br/>× terrain‰ × weather‰"]
+  K -->|status| ST{"chance‰ vs PRNG<br/>(지력 vs 지력, 운d)"}
+  K -->|support| SP["heal / buff<br/>(scales with 지력)"]
+  D --> TW{"fortune twist?<br/>twist‰ = 40"}
+  ST --> TW
+  SP --> TW
+  TW -->|no| END["resolve normally"]
+  TW -->|yes| DIR{"windfall‰ =<br/>clamp(500 + 6·(운c − 운t), 150, 850)"}
+  DIR -->|천운| WF["windfall: ×1.5 power,<br/>+1 area ring, or MP refund"]
+  DIR -->|불운| MS["mishap: fizzle, or<br/>backfire at half power"]
+  WF --> BANNER["banner + sound,<br/>logged in the battle record"]
+  MS --> BANNER
+```
+
+| Quantity | Formula (starting tuning) |
+|---|---|
+| Damage | `base + 지력a − ⌊지력d/2⌋`, × terrain‰ (e.g. fire 1200 on forest or grass, 600 on river) × weather‰ (fire 1100 sunny, 500 rain, 1300 east wind), floored |
+| Status chance | `clamp(500 + 5·(지력a − 지력d) − 3·운d, 50, 900)` ‰ |
+| Heal | `40 + ⌊지력/2⌋` |
+| Fortune twist | `twist‰ = 40` per cast (mode configuration); direction `windfall‰ = clamp(500 + 6·(운caster − 운target), 150, 850)`; 운target = 50 when there is no target |
+
+Draw order from the battle `Prng`: success or status, then twist, then direction.
+
+## 6. Still to decide
 
 | Topic | Depends on |
 |---|---|
-| Stratagems, MP and status effects | stats and classes (done) |
 | Equipment types per family | classes (done), progression ([ADR 0014](../adr/0014-scoped-progression-fair-arena.md)) |
 | Arena normalization | [ADR 0014](../adr/0014-scoped-progression-fair-arena.md) |

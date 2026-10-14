@@ -5,14 +5,14 @@ battles drive every mode: Story chapters, Arena PvP, co-op Raids, and **Living
 History**, where friends found households in a 120-year history that plays out
 in 120 days. Web-first (PWA), with the same build wrapped for PC and mobile later.
 
-**Status:** design settled for the first phases (23 ADRs); **P0** (rules
+**Status:** design settled for the first phases (24 ADRs); **P0** (rules
 engine) has started: `packages/rules` has a seeded PRNG and a canonical state hash.
 
 | Start here | |
 |---|---|
 | [`docs/remake/README.md`](docs/remake/README.md) | Vision, modes, decision map, roadmap, open questions |
 | [`docs/remake/ARCHITECTURE.md`](docs/remake/ARCHITECTURE.md) | Stack, code layout, rules engine, online battles, servers, data |
-| [`docs/remake/RULES.md`](docs/remake/RULES.md) | Battle and character rules (stats, attack resolution, classes, terrain) |
+| [`docs/remake/RULES.md`](docs/remake/RULES.md) | Battle and character rules (stats, attack resolution, classes, terrain, stratagems) |
 | [`docs/remake/WORLD_ENGINE.md`](docs/remake/WORLD_ENGINE.md) | Living History / Warlord Campaign design |
 | [`docs/adr/`](docs/adr/README.md) | One record per decision |
 
