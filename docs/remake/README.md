@@ -18,6 +18,7 @@ and the mobile stores.
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Stack, code layout, rules engine, online battles, server topology, data, testing |
 | [RULES.md](RULES.md) | Battle and character rules: stats, attack resolution, formulas (starting tuning) |
 | [BENCHMARK.md](BENCHMARK.md) | How the 2018 mobile game resolved battles (decompiled, in our words) and the lessons for ours |
+| [MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md) | Techniques from recent tactics games, rated for fit (danger zones, gambits, break, hazards, AI) |
 | [WORLD_ENGINE.md](WORLD_ENGINE.md) | Living History and Warlord Campaign: calendar, clock, anchor events, households, pacing, seasons |
 | [../adr/](../adr/README.md) | Every decision with its context, alternatives and revisit triggers |
 
@@ -104,7 +105,7 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
 | 7 | Equipment, Arena normalization ([RULES.md §9](RULES.md#9-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
-| 8 | Modern techniques from recent tactics games | Being researched; ratio-based rates held ([BENCHMARK.md](BENCHMARK.md)) |
+| 8 | Which modern techniques to adopt ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | Danger zones, speed/skip, gambits for absent seats, AI profiles first |
 | 9 | Art pipeline | 96 px tiles (2×), palette and atlas tooling |
 | 10 | Languages | Korean first; English next |
 | 11 | Monetization (if public) | Out of scope until a public launch |
