@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "includes": ["**", "!**/node_modules", "!**/dist", "!**/package-lock.json"] },
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
+  "linter": { "enabled": true, "rules": { "preset": "recommended" } },
+  "overrides": [
+    {
+      "includes": ["packages/rules/src/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedGlobals": {
+              "level": "error",
+              "options": {
+                "deniedGlobals": {
+                  "Date": "rules must not read the clock (ADR 0006)",
+                  "performance": "rules must not read the clock (ADR 0006)",
+                  "crypto": "use the Prng carried in the state (ADR 0006)",
+                  "setTimeout": "rules are synchronous and pure (ADR 0006)",
+                  "setInterval": "rules are synchronous and pure (ADR 0006)",
+                  "fetch": "rules do no I/O (ADR 0006)",
+                  "Intl": "locale-dependent behaviour is not deterministic (ADR 0006)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

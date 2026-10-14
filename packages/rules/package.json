@@ -1,0 +1,10 @@
+{
+  "name": "@tk/rules",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure, deterministic battle rules shared by the client and the Durable Objects",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

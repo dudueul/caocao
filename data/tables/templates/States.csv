@@ -1,7 +1,0 @@
-name,id,occupationtype0,type0,reward0,flag,dailyMail,cloud,forceColor,boss,pedlarFlag,pedlarVal,instanceMinLv,instanceMaxLv,riotEvent,#name_en,#loc_row,#confidence
-병주,,,,,,,,,,,,,,,Bingzhou,17817,inferred
-기주,,,,,,,,,,,,,,,Jizhou,17818,inferred
-청주s,,,,,,,,,,,,,,,Qingzhou,17819,inferred
-양주(북),,,,,,,,,,,,,,,Liangzhou (N),17820,inferred
-양주(남),,,,,,,,,,,,,,,Liangzhou (S),17821,inferred
-형주(북),,,,,,,,,,,,,,,Jingzhou (N),17822,anchored

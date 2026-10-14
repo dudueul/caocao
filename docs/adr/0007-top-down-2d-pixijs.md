@@ -4,7 +4,7 @@
 - **Date:** 2026-10-14
 - **Deciders:** project owner
 - **Related:** [0005](0005-web-first-distribution.md), [0006](0006-typescript-everywhere.md),
-  [`docs/re/CLASSIC_ART.md`](../re/CLASSIC_ART.md) (1998 sheet layout used as the benchmark)
+  [`docs/re/CLASSIC_ART.md`](https://github.com/dudueul/caocao/blob/dabaf0a2/docs/re/CLASSIC_ART.md) (1998 sheet layout used as the benchmark)
 
 ## Context
 

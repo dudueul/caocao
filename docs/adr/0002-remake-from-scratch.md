@@ -4,7 +4,7 @@
 - **Date:** 2026-10-14
 - **Deciders:** project owner
 - **Related:** [0006](0006-typescript-everywhere.md), [0007](0007-top-down-2d-pixijs.md),
-  [`docs/re/CLASSIC_ART.md`](../re/CLASSIC_ART.md), [`data/tables/`](../../data/tables/README.md)
+  [`docs/re/CLASSIC_ART.md`](https://github.com/dudueul/caocao/blob/dabaf0a2/docs/re/CLASSIC_ART.md), [`data/tables/`](https://github.com/dudueul/caocao/blob/dabaf0a2/data/tables/README.md)
 
 ## Context
 

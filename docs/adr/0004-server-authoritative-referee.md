@@ -4,7 +4,7 @@
 - **Date:** 2026-10-14
 - **Deciders:** project owner
 - **Related:** [0003](0003-turn-structure.md), [0006](0006-typescript-everywhere.md),
-  [`docs/server/GAME_SERVER_PRACTICES.md` §4.3](../server/GAME_SERVER_PRACTICES.md),
+  [`docs/server/GAME_SERVER_PRACTICES.md` §4.3](https://github.com/dudueul/caocao/blob/dabaf0a2/docs/server/GAME_SERVER_PRACTICES.md),
   [`docs/remake/ARCHITECTURE.md` §4](../remake/ARCHITECTURE.md#4-online-battles)
 
 ## Context

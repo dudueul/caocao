@@ -1,5 +1,0 @@
-name,id,country,boxType,perDesc,needItemId,needItemCount,icon,boxEffect,achievementCnt,#perDesc_en,#loc_row,#confidence
-,,,,"일반적인 망루, 주변의 시야를 확보하며 내구도 역시 든든하다.",,,,,,An ordinary watchtower with a clear view of its surroundings and good durability.,21090,inferred
-,,,,"높이 세워진 망루, 주변의 시야를 넓게 확보하지만 내구도가 불완전하다.",,,,,,A tall watchtower with a wide field of vision but poor durability.,21091,inferred
-,,,,거점을 빼앗기 위하여 출정한 연합의 막사. 당장이라도 성을 함락시킬 것 같은 기세가 고조되어 있다.,,,,,,Alliance quarters dispatched to capture a domain. They're prepared to take a castle at a moment's notice.,21092,inferred
-,,,,거점을 지키기 위하여 소집한 연합의 막사. 어떠한 공격이라도 막을 기세이다.,,,,,,Alliance quarters charged with protecting a domain. They're ready to ward off any assault.,21093,inferred

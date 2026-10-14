@@ -1,0 +1,26 @@
+{
+  "name": "tk",
+  "private": true,
+  "type": "module",
+  "description": "Three Kingdoms grid-tactics remake (working name)",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "check": "npm run typecheck && npm run lint && npm run determinism && npm test",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "determinism": "node scripts/check-determinism.mjs",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  }
+}

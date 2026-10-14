@@ -204,7 +204,7 @@ flowchart LR
 
 Budget *(tunable)*: one tick under 2 s of DO CPU for about 100 households plus
 about 500 NPC officers. Larger public seasons shard by region (see
-[`HYPERSCALE_ROADMAP.md`](../server/HYPERSCALE_ROADMAP.md)).
+[`HYPERSCALE_ROADMAP.md`](https://github.com/dudueul/caocao/blob/dabaf0a2/docs/server/HYPERSCALE_ROADMAP.md)).
 
 ## 7. Season lifecycle
 

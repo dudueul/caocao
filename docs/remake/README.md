@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0016](../adr/0016-new-repository.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0018](../adr/0018-toolchain.md)).
 
 ## Vision
 
@@ -66,7 +66,8 @@ flowchart TB
 | World modes | One World engine, two presets | [0013](../adr/0013-one-world-engine.md) |
 | Progression | Scoped per mode; Arena normalized | [0014](../adr/0014-scoped-progression-fair-arena.md) |
 | Build order | Engine → Arena → Story → private World → public seasons → Raids, Duels | [0015](../adr/0015-delivery-order-engine-then-arena.md) |
-| Repository | New repository for the code; these docs move there; this repo stays the archive | [0016](../adr/0016-new-repository.md) |
+| Repository | This repository, cleared; the recovery archive is commit `dabaf0a2` | [0017](../adr/0017-clear-this-repository.md) (supersedes [0016](../adr/0016-new-repository.md)) |
+| Toolchain | npm workspaces, TypeScript 7, Vitest, Biome, determinism guard (**proposed**) | [0018](../adr/0018-toolchain.md) |
 
 ## Roadmap
 
@@ -85,7 +86,7 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 
 | # | Question | Current leaning |
 |---|---|---|
-| 2 | Name of the game and its repository | To be chosen ([0016](../adr/0016-new-repository.md)) |
+| 2 | Name of the game; fresh repository from the snapshot | Working name `tk`; the owner restarts from a snapshot ([0017](../adr/0017-clear-this-repository.md)) |
 | 3 | Menu/UI framework | DOM overlay (a light framework) over the Pixi canvas |
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
@@ -96,13 +97,13 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 | 10 | Languages | Korean first; English next |
 | 11 | Monetization (if public) | Out of scope until a public launch |
 
-## Reference material in this repository
+## Reference material in the archive (commit `dabaf0a2`)
 
 | What | Where |
 |---|---|
-| Original 22 battle modes, server patterns, online flow | [`docs/server/GAME_SERVER_PRACTICES.md`](../server/GAME_SERVER_PRACTICES.md) |
-| Scaling memo (seasons with many players) | [`docs/server/HYPERSCALE_ROADMAP.md`](../server/HYPERSCALE_ROADMAP.md) |
-| 239 data-table schemas + localization | [`data/tables/`](../../data/tables/README.md) |
-| 1998 officers, classes, items, terrain, maps | [`data/reference/ekd5/`](../../data/reference/ekd5/README.md) |
-| 1998 file formats and event scripts (EEX) | [`docs/re/EKD5_FORMATS.md`](../re/EKD5_FORMATS.md) |
-| Formulas, abilities, AI, event vocabulary (names, signatures, code) | `extracted/il2cpp/dump.cs`, `analysis/decompiled/` |
+| Original 22 battle modes, server patterns, online flow | [`docs/server/GAME_SERVER_PRACTICES.md`](https://github.com/dudueul/caocao/blob/dabaf0a2/docs/server/GAME_SERVER_PRACTICES.md) |
+| Scaling memo (seasons with many players) | [`docs/server/HYPERSCALE_ROADMAP.md`](https://github.com/dudueul/caocao/blob/dabaf0a2/docs/server/HYPERSCALE_ROADMAP.md) |
+| 239 data-table schemas + localization | [`data/tables/`](https://github.com/dudueul/caocao/blob/dabaf0a2/data/tables/README.md) |
+| 1998 officers, classes, items, terrain, maps | [`data/reference/ekd5/`](https://github.com/dudueul/caocao/blob/dabaf0a2/data/reference/ekd5/README.md) |
+| 1998 file formats and event scripts (EEX) | [`docs/re/EKD5_FORMATS.md`](https://github.com/dudueul/caocao/blob/dabaf0a2/docs/re/EKD5_FORMATS.md) |
+| Formulas, abilities, AI, event vocabulary (names, signatures, code) | [`extracted/il2cpp/dump.cs`](https://github.com/dudueul/caocao/blob/dabaf0a2/extracted/il2cpp/dump.cs), [`analysis/decompiled/`](https://github.com/dudueul/caocao/tree/dabaf0a2/analysis/decompiled) |

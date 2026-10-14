@@ -1,6 +1,0 @@
-package com.bumptech.glide.manager;
-
-/* JADX INFO: loaded from: /home/jtk/work/caocao/extracted/apk/classes.dex */
-public interface Lifecycle {
-    void addListener(LifecycleListener lifecycleListener);
-}

@@ -1,6 +1,6 @@
 # 0016. The remake lives in a new repository; this one stays the reference archive
 
-- **Status:** Accepted
+- **Status:** Superseded by [0017](0017-clear-this-repository.md)
 - **Date:** 2026-10-14
 - **Deciders:** project owner
 - **Related:** [0002](0002-remake-from-scratch.md), [0006](0006-typescript-everywhere.md),
