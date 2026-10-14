@@ -119,8 +119,12 @@ with AssetRipper / AssetStudio).
    `scripts/bundles/bundle_crypto.py --check` on the files; decrypt the
    scrambled ones and open them with AssetRipper. The data tables are
    ScriptableObjects named `_<Table>` (see `data/tables/`).
-2. **Web archive** — run from a normal network (the build container's proxy
-   blocks it):
+2. **Web archive** — *checked 2026-10-14 from the build container:
+   `archive.org` APIs reachable, but `web.archive.org` (the capture index) never
+   completed a TLS handshake (archive partly "Temporarily Offline" that day).
+   Availability API: no snapshots for the comic list or any CDN host root;
+   item search: no uploads of the mobile game (only the 1998 PC game in
+   JP/CHS/CHT/KR/EN editions).* Re-run the index queries from a normal network:
    - `https://web.archive.org/cdx/search/cdx?url=dxu1t8x55g49k.cloudfront.net/*&output=txt&limit=500`
    - `https://web.archive.org/cdx/search/cdx?url=nxm-caocao-ww.akamaized.net/*&output=txt&limit=500`
 3. **Live host check** — *checked 2026-10-14 with `*.cloudfront.net` allowed: a
@@ -132,5 +136,11 @@ with AssetRipper / AssetStudio).
    still up (then the package folder is likely
    `…/<something>/Android_etc2/` next to a `version.json`, inferred from the
    dev build layout `Bin/AssetBundle/<buildTarget>/version.json`).
-4. Without the bundle-list password, packages can still be found by name only if
+4. **PC client** (lead): the client has Steam / Nexon launcher login paths
+   (`/user/steamLogin`, `nxsteam`) and the localization has a "PC launch" login
+   event, so a Windows build existed. Its install folder (`*_Data/Managed/`
+   may hold a Mono `Assembly-CSharp.dll` with real method bodies) or its bundle
+   cache (`%USERPROFILE%\AppData\LocalLow\<company>\<product>\patch\`, Unity's
+   persistentDataPath on Windows) would be as valuable as a phone cache.
+5. Without the bundle-list password, packages can still be found by name only if
    the folder is guessed; the archive route (2) is the realistic way to learn it.
