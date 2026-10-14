@@ -1,0 +1,92 @@
+name,id,image,entranceType,entranceDesc,typeDesc,#name_en,#loc_row,#confidence
+제갈량과의 관계,,,,,,Relationship with Zhuge Liang,15612,inferred
+미방과의 관계,,,,,,Relationship with Mi Fang,15613,inferred
+손권과의 관계,,,,,,Relationship with Sun Quan,15614,inferred
+아린의 애정,,,,,,,15615,inferred
+수아의 애정,,,,,,,15616,inferred
+포삼랑의 애정,,,,,,,15617,inferred
+왕도의 애정,,,,,,,15618,inferred
+왕열의 애정,,,,,,,15619,inferred
+화만의 애정,,,,,,,15620,inferred
+몽매의 시련 1,,,,,,Meng Mei's Trial 1,15621,inferred
+몽매의 시련 2,,,,,,Meng Mei's Trial 2,15622,inferred
+몽매의 시련 3,,,,,,Meng Mei's Trial 3,15623,inferred
+몽매의 시련 4,,,,,,Meng Mei's Trial 4,15624,inferred
+몽매의 시련 5,,,,,,Meng Mei's Trial 5,15625,inferred
+몽매의 시련 6,,,,,,Meng Mei's Trial 6,15626,anchored
+몽매의 시련 7,,,,,,Meng Mei's Trial 7,15627,anchored
+몽매의 시련 8,,,,,,Meng Mei's Trial 8,15628,anchored
+몽매의 시련 9,,,,,,Meng Mei's Trial 9,15629,anchored
+몽매의 시련 10,,,,,,Meng Mei's Trial 10,15630,anchored
+몽매의 시련 11,,,,,,Meng Mei's Trial 11,15631,anchored
+몽매의 시련 12,,,,,,Meng Mei's Trial 12,15632,anchored
+몽매의 시련 13,,,,,,Meng Mei's Trial 13,15633,anchored
+몽매의 시련 14,,,,,,Meng Mei's Trial 14,15634,anchored
+몽매의 시련 15,,,,,,Meng Mei's Trial 15,15635,anchored
+몽매의 시련 16,,,,,,Meng Mei's Trial 16,15636,anchored
+몽매의 시련 17,,,,,,Meng Mei's Trial 17,15637,anchored
+몽매의 시련 18,,,,,,Meng Mei's Trial 18,15638,anchored
+몽매의 시련 19,,,,,,Meng Mei's Trial 19,15639,anchored
+몽매의 시련 20,,,,,,Meng Mei's Trial 20,15640,anchored
+몽매의 시련 21,,,,,,Meng Mei's Trial 21,15641,anchored
+몽매의 시련 22,,,,,,Meng Mei's Trial 22,15642,anchored
+몽매의 시련 23,,,,,,Meng Mei's Trial 23,15643,anchored
+몽매의 시련 24,,,,,,Meng Mei's Trial 24,15644,anchored
+몽매의 시련 25,,,,,,Meng Mei's Trial 25,15645,anchored
+몽매의 시련 26,,,,,,Meng Mei's Trial 26,15646,anchored
+몽매의 시련 27,,,,,,Meng Mei's Trial 27,15647,anchored
+몽매의 시련 28,,,,,,Meng Mei's Trial 28,15648,anchored
+몽매의 시련 29,,,,,,Meng Mei's Trial 29,15649,anchored
+몽매의 시련 30,,,,,,Meng Mei's Trial 30,15650,anchored
+맹수 퇴치,,,,,,Beast Taming,15651,anchored
+도적 퇴치,,,,,,Bandit Hunt,15652,anchored
+황건 토벌,,,,,,Yellow Turban Expedition,15653,anchored
+반란 제압,,,,,,Rebel Attack,15654,anchored
+보부상 구출,,,,,,Peddler Rescue,15655,anchored
+관군 구출,,,,,,Royal Rescue,15656,anchored
+몽매의 가르침,,,,,,Meng Mei's Lesson,15657,anchored
+기습,,,,,,Ambush,15658,anchored
+은전수집1,,,,,,Silver Coin Collector 1,15659,anchored
+정보 수집,,,,,,Collecting Info,15660,anchored
+요인 습격,,,,,,Assassination,15661,anchored
+도적 격퇴,,,,,,Banishing Bandits,15662,anchored
+황건 퇴치,,,,,,Yellow Turban Raid,15663,anchored
+거점 구원,,,,,,Domain Defense,15664,anchored
+황건 기습,,,,,,Yellow Turban Assault,15665,anchored
+은전수집2,,,,,,Silver Coin Collector 2,15666,anchored
+은전수집3,,,,,,Silver Coin Collector 3,15667,anchored
+관군 지원,,,,,,Supporting Royal Forces,15668,anchored
+은전수집4,,,,,,Silver Coin Collector 4,15669,anchored
+이민족 퇴치,,,,,,Barbarian Raid,15670,anchored
+이민족 기습,,,,,,Barbarian Assault,15671,anchored
+은전수집5,,,,,,Silver Coin Collector 5,15672,anchored
+은전수집6,,,,,,Silver Coin Collector 6,15673,anchored
+하구 전격전1,,,,,,Xiakou Blitz 1,15674,anchored
+산악 방위전1,,,,,,Mountain Defense 1,15675,anchored
+해안 포위전1,,,,,,Coastal Siege 1,15676,anchored
+맹수 토벌전1,,,,,,Beast Culling 1,15677,anchored
+산악 기습전1,,,,,,Mountain Raid 1,15678,anchored
+도하 요격전1,,,,,,River Interception 1,15679,anchored
+삼림 유인전1,,,,,,Forest Ambush 1,15680,anchored
+하구 전격전2,,,,,,Xiakou Blitz 2,15681,anchored
+산악 방위전2,,,,,,Mountain Defense 2,15682,anchored
+해안 포위전2,,,,,,Coast Siege 2,15683,anchored
+맹수 토벌전2,,,,,,Beast Culling 2,15684,anchored
+산악 기습전2,,,,,,Mountain Raid 2,15685,anchored
+도하 요격전2,,,,,,River Interception 2,15686,anchored
+삼림 유인전2,,,,,,Forest Ambush 2,15687,anchored
+하구 전격전3,,,,,,Xiakou Blitz 3,15688,anchored
+산악 방위전3,,,,,,Mountain Defense 3,15689,anchored
+해안 포위전3,,,,,,Coast Siege 3,15690,anchored
+맹수 토벌전3,,,,,,Beast Culling 3,15691,anchored
+산악 기습전3,,,,,,Mountain Raid 3,15692,anchored
+도하 요격전3,,,,,,River Intercept 3,15693,anchored
+삼림 유인전3,,,,,,Forest Ambush 3,15694,anchored
+가을 대축제1,,,,,,Fall Festival 1,15695,anchored
+가을 대축제2,,,,,,Fall Festival 2,15696,anchored
+가을 대축제3,,,,,,Fall Festival 3,15697,anchored
+군사 훈련전1,,,,,,Mock Battle 1,15698,anchored
+군사 훈련전2,,,,,,Mock Battle 2,15699,inferred
+군사 훈련전3,,,,,,Mock Battle 3,15700,inferred
+군사 훈련전4,,,,,,Mock Battle 4,15701,inferred
+군사 훈련전5,,,,,,Mock Battle 5,15702,inferred

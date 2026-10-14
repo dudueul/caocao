@@ -1,0 +1,376 @@
+column,seq,loc_row,confidence,ko,en
+passiveName,1,21232,inferred,공격력 증가 {0}%,ATK +{0}%
+passiveName,2,21233,inferred,책략: 공격력 증가 {0}%,Tactics: ATK +{0}%
+passiveName,3,21234,inferred,방어력 증가 {0}%,DEF +{0}%
+passiveName,4,21235,inferred,책략: 방어력 증가 {0}%,Tactics: DEF +{0}%
+passiveName,5,21236,inferred,정신력 증가 {0}%,WIS +{0}%
+passiveName,6,21237,inferred,책략: 정신력 증가 {0}%,Tactics: WIS +{0}%
+passiveName,7,21238,inferred,순발력 증가 {0}%,AGI +{0}%
+passiveName,8,21239,inferred,책략: 순발력 증가 {0}%,Tactics: AGI +{0}%
+passiveName,9,21240,inferred,사기 증가 {0}%,MRL +{0}%
+passiveName,10,21241,inferred,책략: 사기 증가 {0}%,Tactics: MRL +{0}%
+passiveName,11,21242,anchored,주는 근접 공격 강화 {0}%,Melee Damage Dealt +{0}%
+passiveName,12,21243,inferred,책략: 주는 근접 공격 강화 {0}%,Tactics: Melee Damage Dealt +{0}%
+passiveName,13,21244,inferred,받는 근접 공격 피해 감소 {0}%,Melee Damage Taken -{0}%
+passiveName,14,21245,inferred,책략: 받는 근접 공격 피해 감소 {0}%,Tactics: Melee Damage Taken -{0}%
+passiveName,15,21246,inferred,받는 근접 공격 피해 면역,Melee Damage Immunity
+passiveName,16,21247,inferred,주는 간접 공격 강화 {0}%,Ranged Damage Dealt +{0}%
+passiveName,17,21248,inferred,책략: 주는 간접 공격 강화 {0}%,Tactics: Ranged Damage Dealt +{0}%
+passiveName,18,21249,inferred,받는 간접 공격 피해 감소 {0}%,Ranged Damage Taken -{0}%
+passiveName,19,21250,inferred,책략: 받는 간접 공격 피해 감소 {0}%,Tactics: Ranged Damage Taken -{0}%
+passiveName,20,21251,inferred,받는 간접 공격 피해 면역,Ranged Damage Immunity
+passiveName,21,21252,inferred,주는 공격 피해 증가 {0}%,Attack Damage Dealt +{0}%
+passiveName,22,21253,inferred,책략: 주는 공격 피해 증가 {0}%,Tactics: Attack Damage Dealt +{0}%
+passiveName,23,21254,inferred,받는 공격 피해 감소 {0}%,Attack Damage Taken -{0}%
+passiveName,24,21255,inferred,책략: 받는 공격 피해 감소 {0}%,Tactics: Attack Damage Taken -{0}%
+passiveName,25,21256,inferred,받는 공격 피해 면역,Attack Damage Immunity
+passiveName,26,21257,inferred,주는 책략 피해 증가 {0}%,Tactics Damage Dealt +{0}%
+passiveName,27,21258,inferred,책략: 주는 책략 피해 증가 {0}%,Tactics: Tactics Damage Dealt +{0}%
+passiveName,28,21259,inferred,받는 책략 피해 감소 {0}%,Tactics Damage Taken -{0}%
+passiveName,29,21260,inferred,책략: 받는 책략 피해 감소 {0}%,Tactics: Tactics Damage Taken -{0}%
+passiveName,30,21261,inferred,받는 책략 피해 면역,Tactics Damage Immunity
+passiveName,31,21262,inferred,주는 모든 피해 증가 {0}%,All Damage Dealt +{0}%
+passiveName,32,21263,inferred,책략: 주는 모든 피해 증가 {0}%,Tactics: All Damage Dealt +{0}%
+passiveName,33,21264,inferred,받는 모든 피해 감소 {0}%,All Damage Taken -{0}%
+passiveName,34,21265,inferred,책략: 받는 모든 피해 감소 {0}%,Tactics: All Damage Taken -{0}%
+passiveName,35,21266,inferred,받는 모든 피해 면역,All Damage Immunity
+passiveName,36,21267,inferred,반격 강화 {0}%,Counterattack +{0}%
+passiveName,37,21268,inferred,책략: 반격 강화 {0}%,Tactics: Counterattack +{0}%
+passiveName,38,21269,inferred,주는 대응 공격 강화 {0}%,Intercept Damage Dealt +{0}%
+passiveName,39,21270,inferred,책략: 주는 대응 공격 강화 {0}%,Tactics: Intercept Damage Dealt +{0}%
+passiveName,40,21271,inferred,받는 대응 공격 면역,Intercept Immunity
+passiveName,41,21272,inferred,연속 공격,Double Attack
+passiveName,42,21273,inferred,연속 공격 강화 {0}%,Double Attack +{0}%
+passiveName,43,21274,inferred,책략: 연속 공격 강화 {0}%,Tactics: Double Attack +{0}%
+passiveName,44,21275,inferred,연속 책략 강화 {0}%,Double Tactics +{0}%
+passiveName,45,21276,inferred,책략: 연속 책략 강화 {0}%,Tactics: Double Tactics +{0}%
+passiveName,46,21277,inferred,연속 반격 강화 {0}%,Double Counter +{0}%
+passiveName,47,21278,inferred,책략: 연속 반격 강화 {0}%,Tactics: Double Counter +{0}%
+passiveName,48,21279,inferred,연속 반격 면역,Double Counter Immunity
+passiveName,49,21280,inferred,연속 대응 공격,Double Intercept
+passiveName,50,21281,inferred,연속 대응 공격 강화 {0}%,Double Intercept +{0}%
+passiveName,51,21282,inferred,책략: 연속 대응 공격 강화 {0}%,Tactics: Double Intercept +{0}%
+passiveName,52,21283,inferred,연속 대응 공격 면역,Double Intercept Immunity
+passiveName,53,21284,inferred,사용하지 않는 패시브,Unused Passives
+passiveName,54,21285,inferred,주는 군단 피해 증가 {0}%,Troop Damage Dealt +{0}%
+passiveName,55,21286,inferred,책략: 주는 군단 피해 증가 {0}%,Tactics: Troop Damage Dealt +{0}%
+passiveName,56,21287,inferred,주는 건물 피해 증가 {0}%,Building Damage Dealt +{0}%
+passiveName,57,21288,inferred,책략: 주는 건물 피해 증가 {0}%,Tactics: Building Damage Dealt +{0}%
+passiveName,58,21289,inferred,원소 공격 강화 {0}%,Elemental Attack +{0}%
+passiveName,59,21290,inferred,책략: 원소 공격 강화 {0}%,Tactics: Elemental Attack +{0}%
+passiveName,60,21291,inferred,원소 책략 강화 {0}%,Elemental Tactics +{0}%
+passiveName,61,21292,inferred,책략: 원소 책략 강화 {0}%,Tactics: Elemental Tactics +{0}%
+passiveName,62,21293,inferred,주는 원소 피해 증가 {0}%,Elemental Damage Dealt +{0}%
+passiveName,63,21294,inferred,책략: 주는 원소 피해 증가 {0}%,Tactics: Elemental Damage Dealt +{0}%
+passiveName,64,21295,inferred,받는 원소 피해 감소 {0}%,Elemental Damage Taken -{0}%
+passiveName,65,21296,inferred,책략: 받는 원소 피해 감소 {0}%,Tactics: Elemental Damage Taken -{0}%
+passiveName,66,21297,inferred,받는 원소 피해 증가 {0}%,Elemental Damage Taken +{0}%
+passiveName,67,21298,inferred,책략: 받는 원소 피해 증가 {0}%,Tactics: Elemental Damage Taken +{0}%
+passiveName,68,21299,inferred,원소 공격 면역,Elemental Attack Immunity
+passiveName,69,21300,inferred,원소 책략 면역,Elemental Tactics Immunity
+passiveName,70,21301,inferred,원소 피해 면역,Elemental Damage Immunity
+passiveName,71,21302,inferred,화계 공격 강화 {0}%,Fire Attack +{0}%
+passiveName,72,21303,inferred,책략: 화계 공격 강화 {0}%,Tactics: Fire Attack +{0}%
+passiveName,73,21304,inferred,화계 책략 강화 {0}%,Fire Tactics +{0}%
+passiveName,74,21305,inferred,책략: 화계 책략 강화 {0}%,Tactics: Fire Tactics +{0}%
+passiveName,75,21306,inferred,주는 화계 피해 증가 {0}%,Fire Damage Dealt +{0}%
+passiveName,76,21307,inferred,책략: 주는 화계 피해 증가 {0}%,Tactics: Fire Damage Dealt +{0}%
+passiveName,77,21308,inferred,받는 화계 피해 감소 {0}%,Fire Damage Taken -{0}%
+passiveName,78,21309,inferred,책략: 받는 화계 피해 감소 {0}%,Tactics: Fire Damage Taken -{0}%
+passiveName,79,21310,inferred,받는 화계 피해 증가 {0}%,Fire Damage Taken +{0}%
+passiveName,80,21311,inferred,책략: 받는 화계 피해 증가 {0}%,Tactics: Fire Damage Taken +{0}%
+passiveName,81,21312,inferred,화계 공격 면역,Fire Attack Immunity
+passiveName,82,21313,inferred,화계 책략 면역,Fire Tactics Immunity
+passiveName,83,21314,inferred,화계 피해 면역,Fire Damage Immunity
+passiveName,84,21315,inferred,수계 공격 강화 {0}%,Water Attack +{0}%
+passiveName,85,21316,inferred,책략: 수계 공격 강화 {0}%,Tactics: Water Attack +{0}%
+passiveName,86,21317,inferred,수계 책략 강화 {0}%,Water Tactics +{0}%
+passiveName,87,21318,inferred,책략: 수계 책략 강화 {0}%,Tactics: Water Tactics +{0}%
+passiveName,88,21319,inferred,주는 수계 피해 증가 {0}%,Water Damage Dealt +{0}%
+passiveName,89,21320,inferred,책략: 주는 수계 피해 증가 {0}%,Tactics: Water Damage Dealt +{0}%
+passiveName,90,21321,inferred,받는 수계 피해 감소 {0}%,Water Damage Taken -{0}%
+passiveName,91,21322,inferred,책략: 받는 수계 피해 감소 {0}%,Tactics: Water Damage Taken -{0}%
+passiveName,92,21323,inferred,받는 수계 피해 증가 {0}%,Water Damage Taken +{0}%
+passiveName,93,21324,inferred,책략: 받는 수계 피해 증가 {0}%,Tactics: Water Damage Taken +{0}%
+passiveName,94,21325,inferred,수계 공격 면역,Water Attack Immunity
+passiveName,95,21326,inferred,수계 책략 면역,Water Tactics Immunity
+passiveName,96,21327,inferred,수계 피해 면역,Water Damage Immunity
+passiveName,97,21328,inferred,풍계 공격 강화 {0}%,Wind Attack +{0}%
+passiveName,98,21329,inferred,책략: 풍계 공격 강화 {0}%,Tactics: Wind Attack +{0}%
+passiveName,99,21330,inferred,풍계 책략 강화 {0}%,Wind Tactics +{0}%
+passiveName,100,21331,inferred,책략: 풍계 책략 강화 {0}%,Tactics: Wind Tactics +{0}%
+passiveName,101,21332,inferred,주는 풍계 피해 증가 {0}%,Wind Damage Dealt +{0}%
+passiveName,102,21333,inferred,책략: 주는 풍계 피해 증가 {0}%,Tactics: Wind Damage Dealt +{0}%
+passiveName,103,21334,inferred,받는 풍계 피해 감소 {0}%,Wind Damage Taken -{0}%
+passiveName,104,21335,inferred,책략: 받는 풍계 피해 감소 {0}%,Tactics: Wind Damage Taken -{0}%
+passiveName,105,21336,inferred,받는 풍계 피해 증가 {0}%,Wind Damage Taken +{0}%
+passiveName,106,21337,inferred,책략: 받는 풍계 피해 증가 {0}%,Tactics: Wind Damage Taken +{0}%
+passiveName,107,21338,inferred,풍계 공격 면역,Wind Attack Immunity
+passiveName,108,21339,inferred,풍계 책략 면역,Wind Tactics Immunity
+passiveName,109,21340,inferred,풍계 피해 면역,Wind Damage Immunity
+passiveName,110,21341,inferred,지계 공격 강화 {0}%,Earth Attack +{0}%
+passiveName,111,21342,inferred,책략: 지계 공격 강화 {0}%,Tactics: Earth Attack +{0}%
+passiveName,112,21343,inferred,지계 책략 강화 {0}%,Earth Tactics +{0}%
+passiveName,113,21344,inferred,책략: 지계 책략 강화 {0}%,Tactics: Earth Tactics +{0}%
+passiveName,114,21345,inferred,주는 지계 피해 증가 {0}%,Earth Damage Dealt +{0}%
+passiveName,115,21346,inferred,책략: 주는 지계 피해 증가 {0}%,Tactics: Earth Damage Dealt +{0}%
+passiveName,116,21347,inferred,받는 지계 피해 감소 {0}%,Earth Damage Taken -{0}%
+passiveName,117,21348,inferred,책략: 받는 지계 피해 감소 {0}%,Tactics: Earth Damage Taken -{0}%
+passiveName,118,21349,inferred,받는 지계 피해 증가 {0}%,Earth Damage Taken +{0}%
+passiveName,119,21350,inferred,책략: 받는 지계 피해 증가 {0}%,Tactics: Earth Damage Taken +{0}%
+passiveName,120,21351,inferred,지계 공격 면역,Earth Attack Immunity
+passiveName,121,21352,inferred,지계 책략 면역,Earth Tactics Immunity
+passiveName,122,21353,inferred,지계 피해 면역,Earth Damage Immunity
+passiveName,123,21354,inferred,보급계 책략 강화 {0}%,Supply Tactics +{0}%
+passiveName,124,21355,inferred,책략: 보급계 책략 강화 {0}%,Tactics: Supply Tactics +{0}%
+passiveName,125,21356,inferred,책략 불가,Disable Tactics
+passiveName,126,21357,inferred,반격 불가,Disable Counterattack
+passiveName,127,21358,inferred,대응 공격 불가,Disable Intercept
+passiveName,128,21359,inferred,받는 모든 피해 증가 {0}%,All Damage Taken +{0}%
+passiveName,129,21360,inferred,책략: 받는 모든 피해 증가 {0}%,Tactics: All Damage Taken +{0}%
+passiveName,130,21361,inferred,군단의 지형 이동력 소모량 감소,Decrease Troop SPD Cost
+passiveName,131,21362,inferred,군단의 지형 피로도 소모량 감소,Decrease Troop Fatigue Cost
+passiveName,132,21363,inferred,효과 내성,Keep Effect
+passiveName,133,21364,inferred,공격력 감소 {0}%,ATK -{0}%
+passiveName,134,21365,inferred,책략: 공격력 감소 {0}%,Tactics: ATK -{0}%
+passiveName,135,21366,inferred,방어력 감소 {0}%,DEF -{0}%
+passiveName,136,21367,inferred,책략: 방어력 감소 {0}%,Tactics: DEF -{0}%
+passiveName,137,21368,inferred,정신력 감소 {0}%,WIS -{0}%
+passiveName,138,21369,inferred,책략: 정신력 감소 {0}%,Tactics: WIS -{0}%
+passiveName,139,21370,inferred,순발력 감소 {0}%,AGI -{0}%
+passiveName,140,21371,inferred,책략: 순발력 감소 {0}%,Tactics: AGI -{0}%
+passiveName,141,21372,inferred,사기 감소 {0}%,MRL -{0}%
+passiveName,142,21373,inferred,책략: 사기 감소 {0}%,Tactics: MRL -{0}%
+passiveName,143,21374,inferred,이동력 감소 {0},SPD -{0}
+passiveName,144,21375,inferred,책략: 이동력 감소 {0},Tactics: SPD -{0}
+passiveName,145,21376,inferred,이동력 증가 {0},SPD +{0}
+passiveName,146,21377,inferred,책략: 이동력 증가 {0},Tactics: SPD +{0}
+passiveName,147,21378,inferred,기마대 공격 강화 {0}%,Mounted Attack +{0}%
+passiveName,148,21379,inferred,책략: 기마대 공격 강화 {0}%,Tactics: Mounted Attack +{0}%
+passiveName,149,21380,inferred,사격대 공격 강화 {0}%,Ranged Attack +{0}%
+passiveName,150,21381,inferred,책략: 사격대 공격 강화 {0}%,Tactics: Ranged Attack +{0}%
+passiveName,151,21382,inferred,돌격대 공격 강화 {0}%,Assault Attack +{0}%
+passiveName,152,21383,inferred,책략: 돌격대 공격 강화 {0}%,Tactics: Assault Attack +{0}%
+passiveName,153,21384,inferred,주는 모든 피해 감소 {0}%,All Damage Dealt -{0}%
+passiveName,154,21385,inferred,책략: 주는 모든 피해 감소 {0}%,Tactics: All Damage Dealt -{0}%
+passiveName,155,21386,inferred,공격 범위 {0}칸 증가,Attack RNG +{0} Tiles
+passiveName,156,21387,inferred,수전 보조 {0}%,Naval Battle +{0}%
+passiveName,157,21388,inferred,산전 보조 {0}%,Mountain Battle +{0}%
+passiveName,158,21389,inferred,사막전 보조 {0}%,Desert Battle +{0}%
+passiveName,159,21390,inferred,발석거 조립,Assemble Trebuchet
+passiveName,160,21391,inferred,공성 병기: 발석거,Siege Weapon: Trebuchet
+passiveName,161,21392,inferred,충차 조립,Assemble Battering Ram
+passiveName,162,21393,inferred,공성 병기: 충차,Siege Weapon: Battering Ram
+passiveName,163,21394,inferred,기마대 공격 방어 {0}%,Mounted Attack DEF {0}%
+passiveName,164,21395,inferred,책략: 기마대 공격 방어 {0}%,Tactics: Mounted Attack DEF {0}%
+passiveName,165,21396,inferred,사격대 공격 방어 {0}%,Ranged Attack DEF {0}%
+passiveName,166,21397,inferred,책략: 사격대 공격 방어 {0}%,Tactics: Ranged Attack DEF {0}%
+passiveName,167,21398,inferred,돌격대 공격 방어 {0}%,Assault Attack DEF {0}%
+passiveName,168,21399,inferred,책략: 돌격대 공격 방어 {0}%,Tactics: Assault Attack DEF {0}%
+passiveName,169,21400,inferred,위치 강제 이동 효과 면역,Displace Immunity
+passiveName,170,21401,inferred,모든 공격거리 {0}칸,All Attack RNG {0} Tiles
+passiveName,171,21402,inferred,반격 위력 고정 {0}%,Fixed Counterattack Damage {0}%
+passiveName,172,21403,inferred,방어 진형,Defense Formation
+passiveName,173,21404,inferred,진형 구성,Formation Layout
+passiveName,174,21405,inferred,방어대 공격 방어 {0}%,Defense Attack DEF {0}%
+passiveName,175,21406,inferred,책략: 방어대 공격 방어 {0}%,Tactics: Defense Attack DEF {0}%
+passiveName,176,21407,inferred,받는 군단 피해 증가%,Troop Damage Taken +%
+passiveName,177,21408,inferred,책략: 받는 군단 피해 증가%,Tactics: Troop Damage Taken +%
+passiveName,178,21409,inferred,이동 시간 증가 {0},Movement Time +{0}
+passiveName,179,21410,inferred,책략: 이동 시간 증가 {0},Tactics: Movement Time +{0}
+passiveName,180,21411,inferred,이동 시간 감소 {0},Movement Time -{0}
+passiveName,181,21412,inferred,책략: 이동 시간 감소 {0},Tactics: Movement Time -{0}
+desc,1,21413,inferred,테스트 데이터.,Test data.
+desc,2,21414,inferred,군단 공격력이 {0}% 만큼 증가한다.,Increase Troop ATK by {0}%.
+desc,3,21415,inferred,군단 방어력이 {0}% 만큼 증가한다.,Increase troop DEF by {0}%.
+desc,4,21416,inferred,군단 정신력이 {0}% 만큼 증가한다.,Increase Troop WIS by {0}%.
+desc,5,21417,inferred,군단 순발력이 {0}% 만큼 증가한다.,Increase Troop AGI by {0}%.
+desc,6,21418,inferred,군단 사기가 {0}% 만큼 증가한다.,Increase Troop MRL by {0}%.
+desc,7,21419,inferred,근접 공격으로 주는 피해가 {0}% 만큼 증가한다.,Increase melee damage dealt by {0}%.
+desc,8,21420,inferred,근접 공격으로 받는 피해를 {0}% 만큼 감소시킨다.,Decrease incoming melee damage by {0}%.
+desc,9,21421,inferred,근접 공격으로 받는 피해를 100% 방어한다.,Block 100% of incoming melee damage.
+desc,10,21422,inferred,간접 공격으로 주는 피해가 {0}% 만큼 증가한다.,Increase ranged damage dealt by {0}%.
+desc,11,21423,inferred,간접 공격으로 받는 피해를 {0}% 만큼 감소시킨다.,Decrease incoming ranged damage by {0}%.
+desc,12,21424,inferred,간접 공격으로 받는 피해를 100% 방어한다.,Block 100% of incoming ranged damage.
+desc,13,21425,inferred,공격으로 주는 피해가 {0}% 만큼 증가한다.,Increase damage dealt by {0}%.
+desc,14,21426,inferred,공격으로 받는 피해를 {0}% 만큼 감소시킨다.,Decrease incoming damage by {0}%.
+desc,15,21427,inferred,공격으로 받는 피해를 100% 방어한다.,Block 100% of incoming damage.
+desc,16,21428,inferred,책략으로 주는 피해가 {0}% 만큼 증가한다.,Increase tactics damage dealt by {0}%.
+desc,17,21429,inferred,책략으로 받는 피해를 {0}% 만큼 감소시킨다.,Decrease incoming tactics damage by {0}%.
+desc,18,21430,inferred,책략으로 받는 피해를 100% 방어한다.,Block 100% of incoming tactics damage.
+desc,19,21431,inferred,주는 모든 피해가 {0}% 만큼 증가한다.,Increase all damage dealt by {0}%.
+desc,20,21432,inferred,받는 모든 피해를 {0}% 만큼 감소시킨다.,Decrease all incoming damage by {0}%.
+desc,21,21433,inferred,받는 모든 피해를 100% 방어한다.,Block 100% of all incoming damage.
+desc,22,21434,inferred,반격으로 주는 피해가 {0}% 만큼 증가한다.,Increase Counterattack damage dealt by {0}%.
+desc,23,21435,inferred,받는 반격의 피해를 100% 방어한다.,Block 100% of incoming Counterattack damage.
+desc,24,21436,inferred,대응 공격으로 주는 피해가 {0}% 만큼 증가한다.,Increase Intercept damage dealt by {0}%.
+desc,25,21437,inferred,받는 대응 공격의 피해를 100% 방어한다.,Block 100% of incoming intercept damage.
+desc,26,21438,inferred,대상을 연속으로 공격한다.,Attack the target twice.
+desc,27,21439,inferred,연속 공격 시 주는 추가 공격의 피해가 {0}% 만큼 증가한다.,Increase additional Double Attack damage dealt by {0}%.
+desc,28,21440,inferred,받는 연속 공격의 추가 공격 피해를 100% 방어한다.,Block 100% of incoming additional Double Attack damage.
+desc,29,21441,inferred,연속 책략 시 주는 추가 책략의 피해가 {0}% 만큼 증가한다.,Increase additional Double Tactics damage dealt by {0}%.
+desc,30,21442,inferred,받는 연속 책략의 추가 책략 피해를 100% 방어한다.,Block 100% of incoming additional Double Tactics damage.
+desc,31,21443,inferred,연속으로 반격한다.,Counter twice.
+desc,32,21444,inferred,연속 반격 시 주는 추가 반격의 피해가 {0}% 만큼 증가한다.,Increase additional Double Counter damage dealt by {0}%.
+desc,33,21445,inferred,받는 연속 반격의 추가 반격 피해를 100% 방어한다.,Block 100% of incoming additional Double Counter damage.
+desc,34,21446,inferred,연속으로 대응 공격한다.,Intercept twice.
+desc,35,21447,inferred,연속 대응 공격 시 주는 추가 대응 공격의 피해가 {0}% 만큼 증가한다.,Increase additional Double Intercept damage dealt by {0}%.
+desc,36,21448,inferred,받는 연속 대응 공격의 추가 대응 공격 피해를 100% 방어한다.,Block 100% of incoming additional Double Intercept damage.
+desc,37,21449,inferred,군단 상성을 100% 로 강제 변경한다.,Change troop type advantages to 100%.
+desc,38,21450,inferred,군단에게 {0}% 만큼 추가 피해를 준다.,Deal {0}% additional damage to troops.
+desc,39,21451,inferred,건물에게 {0}% 만큼 추가 피해를 준다.,Deal {0}% additional damage to buildings.
+desc,40,21452,inferred,장수가 부상당하지 않는다.,Commanders are not injured.
+desc,41,21453,inferred,"원소(화, 수, 지, 풍) 공격 사용 시 공격의 피해가 {0}% 만큼 증가한다.","Increase elemental (fire, water, earth, wind) damage by {0}%."
+desc,42,21454,inferred,"원소(화, 수, 지, 풍) 책략 사용 시 책략의 피해가 {0}% 만큼 증가한다.","Increase elemental (fire, water, earth, wind) tactics damage by {0}%."
+desc,43,21455,inferred,"주는 원소(화, 수, 지, 풍) 피해가 {0}% 만큼 증가한다.","Increase elemental (fire, water, earth, wind) damage dealt by {0}%."
+desc,44,21456,inferred,"받는 원소(화, 수, 지, 풍) 피해를 {0}% 만큼 감소시킨다.","Decrease incoming elemental (fire, water, earth, wind) damage by {0}%."
+desc,45,21457,inferred,"받는 원소(화, 수, 지, 풍) 피해가 {0}% 만큼 증가한다.","Increase incoming elemental (fire, water, earth, wind) damage by {0}%."
+desc,46,21458,inferred,"받는 원소(화, 수, 지, 풍) 공격의 피해를 100% 방어한다.","Block 100% of incoming elemental (fire, water, earth, wind) damage."
+desc,47,21459,inferred,"받는 원소(화, 수, 지, 풍) 책략의 피해를 100% 방어한다.","Block 100% of incoming elemental (fire, water, earth, wind) tactics damage."
+desc,48,21460,inferred,"받는 원소(화, 수, 지, 풍) 피해를 100% 방어한다.","Block 100% of incoming elemental (fire, water, earth, wind) damage."
+desc,49,21461,inferred,화계 공격 사용 시 공격의 피해가 {0}% 만큼 증가한다.,Increase fire damage dealt by {0}%.
+desc,50,21462,inferred,화계 책략 사용 시 책략의 피해가 {0}% 만큼 증가한다.,Increase fire tactics damage dealt by {0}%.
+desc,51,21463,inferred,주는 화계 피해가 {0}% 만큼 증가한다.,Increase fire damage dealt by {0}%.
+desc,52,21464,inferred,받는 화계 피해를 {0}% 만큼 감소시킨다.,Decrease incoming fire damage by {0}%.
+desc,53,21465,inferred,받는 화계 피해가 {0}% 만큼 증가한다.,Increase incoming fire damage by {0}%.
+desc,54,21466,inferred,받는 화계 공격의 피해를 100% 방어한다.,Block 100% of incoming fire damage.
+desc,55,21467,inferred,받는 화계 책략의 피해를 100% 방어한다.,Block 100% of incoming fire tactics damage.
+desc,56,21468,inferred,받는 화계 피해를 100% 방어한다.,Block 100% of incoming fire damage.
+desc,57,21469,inferred,수계 공격 사용 시 공격의 피해가 {0}% 만큼 증가한다.,Increase water damage dealt by {0}%
+desc,58,21470,inferred,수계 책략 사용 시 책략의 피해가 {0}% 만큼 증가한다.,Increase water tactics damage dealt by {0}%
+desc,59,21471,inferred,주는 수계 피해가 {0}% 만큼 증가한다.,Increase water damage dealt by {0}%.
+desc,60,21472,inferred,받는 수계 피해를 {0}% 만큼 감소시킨다.,Decrease incoming water damage by {0}%.
+desc,61,21473,inferred,받는 수계 피해가 {0}% 만큼 증가한다.,Increase incoming water damage by {0}%.
+desc,62,21474,inferred,받는 수계 공격의 피해를 100% 방어한다.,Block 100% of incoming water damage.
+desc,63,21475,inferred,받는 수계 책략의 피해를 100% 방어한다.,Block 100% of incoming water tactics damage.
+desc,64,21476,inferred,받는 수계 피해를 100% 방어한다.,Block 100% of incoming water damage.
+desc,65,21477,inferred,풍계 공격 사용 시 공격의 피해가 {0}% 만큼 증가한다,Increase wind damage dealt by {0}%
+desc,66,21478,inferred,풍계 책략 사용 시 책략의 피해가 {0}% 만큼 증가한다,Increase wind tactics damage dealt by {0}%
+desc,67,21479,inferred,주는 풍계 피해가 {0}% 만큼 증가한다,Increase wind damage dealt by {0}%.
+desc,68,21480,inferred,받는 풍계 피해를 {0}% 만큼 감소시킨다.,Decrease incoming wind damage by {0}%.
+desc,69,21481,inferred,받는 풍계 피해가 {0}% 만큼 증가한다.,Increase incoming wind damage by {0}%.
+desc,70,21482,inferred,받는 풍계 공격의 피해를 100% 방어한다.,Block 100% of incoming wind damage.
+desc,71,21483,inferred,받는 풍계 책략의 피해를 100% 방어한다.,Block 100% incoming of wind tactics damage.
+desc,72,21484,inferred,받는 풍계 피해를 100% 방어한다.,Block 100% incoming of wind damage.
+desc,73,21485,inferred,지계 공격 사용 시 공격의 피해가 {0}% 만큼 증가한다.,Increase earth damage dealt by {0}%.
+desc,74,21486,inferred,지계 책략 사용 시 책략의 피해가 {0}% 만큼 증가한다.,Increase earth tactics damage dealt by {0}%.
+desc,75,21487,inferred,주는 지계 피해가 {0}% 만큼 증가한다.,Increase earth damage dealt by {0}%.
+desc,76,21488,inferred,받는 지계 피해를 {0}% 만큼 감소시킨다.,Decrease incoming earth damage by {0}%.
+desc,77,21489,inferred,받는 지계의 피해가 {0}% 만큼 증가한다.,Increase incoming earth damage by {0}%.
+desc,78,21490,inferred,받는 지계 공격의 피해를 100% 방어한다.,Block 100% of incoming earth damage.
+desc,79,21491,inferred,받는 지계 책략의 피해를 100% 방어한다.,Block 100% of incoming earth tactics damage.
+desc,80,21492,inferred,받는 지계 피해를 100% 방어한다.,Block 100% of incoming earth damage.
+desc,81,21493,inferred,이동 불가.,Cannot move.
+desc,82,21494,inferred,공격 불가.,Cannot attack.
+desc,83,21495,inferred,책략 불가.,Cannot use tactics.
+desc,84,21496,inferred,반격 불가.,Cannot counterattack.
+desc,85,21497,inferred,대응 공격 불가.,Cannot intercept.
+desc,86,21498,inferred,사용 안함 삭제 예정,"Not used, scheduled for deletion."
+desc,87,21499,inferred,받는 모든 피해가 {0}% 만큼 증가한다.,Increase all incoming damage by {0}%.
+desc,88,21500,inferred,지형 {1}에서 소모하는 이동력의 소모량이 {0}만큼 감소한다.,Decrease {1} terrain SPD cost by {0}.
+desc,89,21501,inferred,지형 {1}에서 추가 누적하는 피로도가 {0}만큼 감소한다.,Decrease additional fatigue on {1} terrain by {0}.
+desc,90,21502,inferred,지형 효과 {1}의 적용 횟수가 {0}만큼 감소한다.,Decrease the number of {1} terrain effect applications by {0}.
+desc,91,21503,inferred,매 행동 시 최대 병력의 {0}%만큼 책략 피해를 입는다.,Deal tactics damage by {0}% of max troops every turn.
+desc,92,21504,inferred,군단 공격력이 {0}% 만큼 감소한다.,Decrease Troop ATK by {0}%.
+desc,93,21505,inferred,군단 방어력이 {0}% 만큼 감소한다.,Decrease Troop DEF by {0}%.
+desc,94,21506,inferred,군단 정신력이 {0}% 만큼 감소한다.,Decrease Troop WIS by {0}%.
+desc,95,21507,inferred,군단 순발력이 {0}% 만큼 감소한다.,Decrease Troop AGI by {0}%.
+desc,96,21508,inferred,군단 사기가 {0}% 만큼 감소한다.,Decrease Troop MRL by {0}%.
+desc,97,21509,inferred,군단 이동력이 {0} 만큼 감소한다.,Decrease Troop SPD by {0}%.
+desc,98,21510,inferred,군단 이동력이 {0} 만큼 증가한다.,Increase Troop SPD by {0}.
+desc,99,21511,inferred,조작 불가.,Cannot be controlled.
+desc,100,21512,inferred,본대 주위 6칸에 존재하는 아군 대상이 받는 모든 단일 피해를 자신이 대신 입는다. 대신 피해를 입을 경우 받는 피해량이 {0}% 만큼 감소한다.,Receive all single target damage dealt in the 6 surrounding tiles in place of his/her allies. Decrease damage taken by {0}% when receiving damage.
+desc,101,21513,inferred,일정 시간마다 최대 체력의 {0}% 만큼 피해를 입는다.,Deal damage equal to {0}% of max HP at set intervals.
+desc,102,21514,inferred,적대적인 대상을 교란시켜 행동 대기 시간을 {0}초 만큼 증가시킨다.,"Distract hostile targets, increasing their turn wait time by {0}s."
+desc,103,21515,inferred,기마대 군단 공격 시 주는 피해가 {0}% 만큼 증가한다.,Increase damage dealt to mounted troops by {0}%.
+desc,104,21516,inferred,사격대 군단 공격 시 주는 피해가 {0}% 만큼 증가한다.,Increase damage dealt to ranged troops by {0}%.
+desc,105,21517,inferred,돌격대 군단 공격 시 주는 피해가 {0}% 만큼 증가한다.,Increase damage dealt to assault troops by {0}%.
+desc,106,21518,inferred,주는 모든 피해가 {0}% 만큼 감소한다.,Decrease all damage dealt by {0}%.
+desc,107,21519,inferred,공격 범위가 {0}칸 증가한다.,Increase attack range by {0} tiles.
+desc,108,21520,inferred,"완류, 습지, 늪지, 독천 지형에서 주는 피해가 {0}% 만큼 증가한다.","Increase damage dealt on River, Swamp, Marsh, and Toxic Pool terrains by {0}%."
+desc,109,21521,inferred,"숲, 산지, 잔도 지형에서 주는 피해가 {0}% 만큼 증가한다.","Increase damage dealt on Forest, Mountain, and Mountain Pass terrains by {0}%."
+desc,110,21522,inferred,"사막, 황무지 지형에서 주는 피해가 {0}% 만큼 증가한다.",Increase damage dealt on Desert and Wasteland terrains by {0}%.
+desc,111,21523,inferred,발석거를 조립하고 있는 중이다.,Assembling trebuchet.
+desc,112,21524,inferred,범위 공격을 가하는 공성 병기인 발석거가 조립되어 있다.,Assembled a trebuchet siege weapon that launches ranged attacks.
+desc,113,21525,inferred,충차를 조립하고 있는 중이다.,Assembling battering ram.
+desc,114,21526,inferred,건물에 강한 공격을 가하는 공성 병기인 충차가 조립되어 있다.,Assembled a battering ram siege weapon that deals heavy damage to buildings.
+desc,115,21527,inferred,기마대 군단에게 받는 피해가 {0}% 만큼 감소한다.,Decrease incoming damage from mounted troops by {0}%.
+desc,116,21528,inferred,사격대 군단에게 받는 피해가 {0}% 만큼 감소한다.,Decrease incoming damage from ranged troops by {0}%.
+desc,117,21529,inferred,돌격대 군단에게 받는 피해가 {0}% 만큼 감소한다.,Decrease incoming damage from assault troops by {0}%.
+desc,118,21530,inferred,"평지, 초원, 황무지, 다리 지형에서 이동 시 행동 대기 시간이 {0}초로 변경된다.","Change turn wait time on Plains, Grassland, Wastelands, and Bridge terrains to {0}s."
+desc,119,21531,inferred,군단의 위치를 강제로 이동시키는 효과를 무시한다.,Ignore effects that displace troops.
+desc,120,21532,inferred,군단의 모든 공격 사거리를 {0}칸으로 변경시킨다.,Change all troops' attack range to {0} tiles.
+desc,121,21533,inferred,반격 공격의 위력을 {0}% 로 변경한다.,Change Counterattacks damage to {0}%.
+desc,122,21534,inferred,해당 위치에 방어 진형을 구성하여 공격 사거리를 증가시킨다.,Lay out a defensive formation to increase attack range.
+desc,123,21535,inferred,진형을 변경하여 방어 진형을 구성하고 있는 중이다.,Change positions to set up a defense formation.
+desc,124,21536,inferred,방어대 군단에게 받는 피해가 {0}% 만큼 감소한다.,Decrease incoming damage from defense troops by {0}%.
+desc,125,21537,inferred,군단에게 받는 피해가 {0}% 만큼 증가한다.,Increase incoming damage from troops by {0}%.
+desc,126,21538,inferred,이동 시 이동 대기 시간을 {0}초 만큼 증가시킨다.,"While moving, increase the movement wait time by {0}."
+desc,127,21539,inferred,이동 시 이동 대기 시간을 {0}초 만큼 감소시킨다.,"While moving, decrease the movement wait time by {0}."
+desc,128,21540,inferred,"완류, 습지 지형에서 이동 시 행동 대기 시간이 {0}초로 변경된다.",Change turn wait time on River and Swamp terrain to {0}s.
+desc,129,21541,inferred,혈투의 전장,Bloody Battle
+desc,130,21542,inferred,격전의 전장,Fierce Battle
+desc,131,21543,inferred,난투의 전장,Brawl Battle
+desc,132,21544,inferred,{0} 님께서 {1} 점거에 성공하셨습니다!,{0} successfully claimed {1}!
+desc,133,21545,inferred,{0} 님께서 {1} 연합의 적장을 물리치셨습니다!,{0} defeated an enemy leader of the {1} alliance!
+desc,134,21546,inferred,{0} 님의 군단이 전멸하였습니다!,The troops of {0} were eliminated!
+desc,135,21547,inferred,거점 건물을 점거하고 있습니다.\n적의 공세에 대비하셔야 합니다!,You've claimed a domain building.\nPrepare to fend off enemy forces!
+desc,136,21548,inferred,거점 건물을 점거하고 있습니다.\n거점 방어를 준비하셔야 합니다!,You've claimed a domain building.\nPrepare to defend the domain!
+desc,137,21549,inferred,거점 건물을 점거하고 있습니다.\n거점 방어를 거의 완료하였습니다.,You've claimed a domain building.\nYou're almost done defending the domain!
+desc,138,21550,inferred,{0} 건물이 공격 받고 있습니다.,The {0} building is under attack.
+desc,139,21551,inferred,{0} 건물이 파괴되었습니다.,The {0} building was destroyed.
+desc,140,21552,inferred,{0} 건물이 복구되었습니다.,The {0} building was restored.
+desc,141,21553,inferred,{0} 연합이 {1} 점거에 성공했다고 합니다!,The {0} alliance has successfully claimed {1}!
+desc,142,21554,inferred,보급품이 감소하고 있습니다.\n{0} 건물을 점거해야 합니다!,Supplies are decreasing.\nThe {0} building must be claimed!
+desc,143,21555,inferred,보급품이 얼마 남지 않았습니다.\n{0} 건물을 점거해야 합니다!,Supplies are running out.\nThe {0} building must be claimed!
+desc,144,21556,inferred,보급품이 거의 바닥났습니다.\n{0} 건물을 점거해야 합니다.,Supplies are almost gone.\nThe {0} building must be claimed!
+desc,145,21557,inferred,1.,1.
+desc,146,21558,inferred,2.,2.
+desc,147,21559,inferred,3.,3.
+desc,148,21560,inferred,4.,4.
+desc,149,21561,inferred,5.,5.
+desc,150,21562,inferred,6.,6.
+desc,151,21563,inferred,7.,7.
+desc,152,21564,inferred,8.,8.
+desc,153,21565,inferred,9.,9.
+desc,154,21566,inferred,10.,10.
+desc,155,21567,inferred,11.,11.
+desc,156,21568,inferred,12.,12.
+desc,157,21569,inferred,13.,13.
+desc,158,21570,inferred,14.,14.
+desc,159,21571,inferred,15.,15.
+desc,160,21572,inferred,16.,16.
+desc,161,21573,inferred,17.,17.
+desc,162,21574,inferred,18.,18.
+desc,163,21575,inferred,19.,19.
+desc,164,21576,inferred,20.,20.
+desc,165,21577,inferred,21.,21.
+desc,166,21578,inferred,22.,22.
+desc,167,21579,inferred,23.,23.
+desc,168,21580,inferred,24.,24.
+desc,169,21581,inferred,25.,25.
+desc,170,21582,inferred,26.,26.
+desc,171,21583,inferred,27.,27.
+desc,172,21584,inferred,28.,28.
+desc,173,21585,inferred,29.,29.
+desc,174,21586,inferred,30.,30.
+desc,175,21587,inferred,31.,31.
+desc,176,21588,inferred,32.,32.
+desc,177,21589,inferred,33.,33.
+desc,178,21590,inferred,34.,34.
+desc,179,21591,inferred,35.,35.
+desc,180,21592,inferred,36.,36.
+desc,181,21593,inferred,37.,37.
+desc,182,21594,inferred,38.,38.
+desc,183,21595,inferred,39.,39.
+desc,184,21596,inferred,40.,40.
+desc,185,21597,inferred,41.,41.
+desc,186,21598,inferred,42.,42.
+desc,187,21599,inferred,43.,43.
+desc,188,21600,inferred,44.,44.
+desc,189,21601,inferred,45.,45.
+desc,190,21602,inferred,46.,46.
+desc,191,21603,inferred,47.,47.
+desc,192,21604,inferred,48.,48.
+desc,193,21605,inferred,49.,49.
+desc,194,21606,inferred,50.,50.

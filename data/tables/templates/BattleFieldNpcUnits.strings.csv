@@ -1,0 +1,91 @@
+column,seq,loc_row,confidence,ko,en
+name,1,19245,inferred,서광,Western Mine
+name,2,19246,inferred,남광,Southern Mine
+name,3,19247,inferred,북광,Northern Mine
+name,4,19248,inferred,중광,Central Mine
+name,5,19249,inferred,설원과 숲의 북광_구,Northern Mine (Snow and Forests)_Old
+name,6,19250,inferred,손견2,Sun Jian 2
+name,7,19251,inferred,유비2,Liu Bei 2
+name,8,19252,inferred,손책2,Sun Ce 2
+name,9,19253,inferred,손권2,Sun Quan 2
+name,10,19254,inferred,원소2,Yuan Shao 2
+name,11,19255,inferred,원술2,Yuan Shu 2
+name,12,19256,inferred,장수2,Zhang Xiu 2
+name,13,19257,inferred,원상2,Yuan Shang 2
+name,14,19258,inferred,도겸2,Tao Qian 2
+name,15,19259,inferred,맹획2,Meng Huo 2
+name,16,19260,inferred,요화2,Liao Hua 2
+name,17,19261,inferred,장패2,Zang Ba 2
+name,18,19262,anchored,한당2,Han Dang 2
+name,19,19263,anchored,주창2,Zhou Cang 2
+name,20,19264,anchored,공도2,Gong Du 2
+name,21,19265,anchored,정보2,Cheng Pu 2
+name,22,19266,anchored,문추2,Wen Chou 2
+name,23,19267,anchored,능통2,Ling Tong 2
+name,24,19268,anchored,관흥2,Guan Xing 2
+name,25,19269,anchored,곽회2,Guo Huai 2
+name,26,19270,anchored,장익2,Zhang Yi 2
+name,27,19271,anchored,태사자2,Taishi Ci 2
+name,28,19272,anchored,장비2,Zhang Fei 2
+name,29,19273,anchored,안량2,Yan Liang 2
+name,30,19274,anchored,관평2,Guan Ping 2
+name,31,19275,anchored,하후은2,Xiahou En 2
+name,32,19276,anchored,이엄2,Li Yan 2
+name,33,19277,anchored,맹달2,Meng Da 2
+name,34,19278,anchored,순우경2,Chunyu Qiong 2
+name,35,19279,anchored,맹우2,Meng You 2
+name,36,19280,anchored,사마가2,Shamoke 2
+name,37,19281,anchored,조운2,Zhao Yun 2
+name,38,19282,anchored,강유2,Jiang Wei 2
+name,39,19283,anchored,여포2,Lu Bu 2
+name,40,19284,anchored,마초2,Ma Chao 2
+name,41,19285,anchored,공손찬2,Gongsun Zan 2
+name,42,19286,anchored,동탁2,Dong Zhuo 2
+name,43,19287,anchored,한수2,Han Sui 2
+name,44,19288,anchored,고순2,Gao Shun 2
+name,45,19289,anchored,화웅2,Hua Xiong 2
+name,46,19290,anchored,마등2,Ma Teng 2
+name,47,19291,anchored,축융2,Zhurong 2
+name,48,19292,anchored,감녕2,Gan Ning 2
+name,49,19293,anchored,문빙2,Wen Ping 2
+name,50,19294,anchored,장흠2,Jiang Qin 2
+name,51,19295,anchored,주태2,Zhou Tai 2
+name,52,19296,anchored,위연2,Wei Yan 2
+name,53,19297,anchored,황개2,Huang Gai 2
+name,54,19298,anchored,장억2,Zhang Ni 2
+name,55,19299,anchored,오의2,Wu Yi 2
+name,56,19300,anchored,뇌동2,Lei Tong 2
+name,57,19301,anchored,황충2,Huang Zhong 2
+name,58,19302,anchored,관색2,Guan Suo 2
+name,59,19303,anchored,신평2,Xin Ping 2
+name,60,19304,anchored,서성2,Xu Sheng 2
+name,61,19305,anchored,왕평2,Wang Ping 2
+name,62,19306,anchored,진무2,Chen Wu 2
+name,63,19307,anchored,정봉2,Ding Feng 2
+name,64,19308,anchored,간옹2,Jian Yong 2
+name,65,19309,anchored,서서2,Xu Shu 2
+name,66,19310,anchored,진궁2,Chen Gong 2
+name,67,19311,anchored,노숙2,Lu Su 2
+name,68,19312,anchored,미축2,Mi Zhu 2
+name,69,19313,anchored,마속2,Ma Su 2
+name,70,19314,anchored,전풍2,Tian Feng 2
+name,71,19315,anchored,저수2,Ju Shou 2
+name,72,19316,anchored,제갈량_마왕,Demon Zhuge Liang
+name,73,19317,anchored,방통2,Pang Tong 2
+name,74,19318,anchored,제갈량2,Zhuge Liang 2
+name,75,19319,anchored,장보2,Zhang Bao 2
+name,76,19320,anchored,장량2,Zhang Liang 2
+name,77,19321,anchored,조식2,Cao Zhi 2
+name,78,19322,anchored,장굉2,Zhang Hong 2
+name,79,19323,anchored,곽도2,Guo Tu 2
+name,80,19324,anchored,이숙2,Li Su 2
+name,81,19325,anchored,주유2,Zhou Yu 2
+name,82,19326,anchored,육손2,Lu Xun 2
+name,83,19327,anchored,여몽2,Lu Meng 2
+name,84,19328,anchored,변부인,Lady Bian
+name,85,19329,anchored,조령2,Cao Ying 2
+name,86,19330,anchored,손건2,Sun Qian 2
+name,87,19331,anchored,제갈근2,Zhuge Jin 2
+name,88,19332,anchored,신비2,Xin Pi 2
+name,89,19333,anchored,비의2,Fei Yi 2
+name,90,19334,anchored,봉기2,Feng Ji 2

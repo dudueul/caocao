@@ -1,0 +1,237 @@
+id,title,position,name,country,#name_en,#loc_row,#confidence
+,,,"공격, 방어력의 물리 피해 영향",,ATK/DEF Effect on Physical Damage,20854,inferred
+,,,정신력의 책략 피해 영향,,WIS Effect on Tactics Damage,20855,inferred
+,,,무작위 피해량,,Random Damage,20856,inferred
+,,,피해량,,Damage,20857,inferred
+,,,회복량,,Recovery,20858,inferred
+,,,부대의 HP,,Unit HP,20859,inferred
+,,,전화위복의 HP 조건,,Good from Evil HP Req.,20860,inferred
+,,,최대 COST,,Max Cost,20861,inferred
+,,,일시정지,,Pause,20862,inferred
+,,,이어하기,,Resume,20863,inferred
+,,,경험치 획득,,EXP Gain,20864,inferred
+,,,도구 사용,,Use Tool,20865,inferred
+,,,한 수/턴 무르기,,Undo Move/Turn,20866,inferred
+,,,부대 교체,,Change Unit,20867,inferred
+,,,"공격력, 방어력이 기본 물리 피해량에 미치는 영향력 : x {0}",,ATK/DEF effect on Base Physical Damage: x{0},20868,inferred
+,,,정신력이 기본 책략 피해량에 미치는 영향력 : x {0},,WIS effect on Base Tactics Damage: x{0},20869,inferred
+,,,무작위 피해량 : {0},,Random Damage: {0},20870,inferred
+,,,최종 피해량 : x {0},,Final Damage: x{0},20871,inferred
+,,,최종 회복량 : x {0},,Final Recovery: x{0},20872,inferred
+,,,부대의 HP : 기존 HP x {0},,Unit HP: Base HP x{0},20873,inferred
+,,,전화위복이 발동되는 HP 조건 : 0% ~ {0}%,,Good from Evil HP Req: 0% - {0}%,20874,inferred
+,,,COST 제한 : {0},,Cost Limit: {0},20875,inferred
+,,,일시정지 기능 금지,,Pause Disabled,20876,inferred
+,,,이어하기 기능 금지,,Resume Disabled,20877,inferred
+,,,경험치 획득 불가,,EXP Gain Disabled,20878,inferred
+,,,도구 사용 기능 금지,,Item Use Disabled,20879,inferred
+,,,한 수/턴 무르기 기능 금지,,Undo Move/Turn Disabled,20880,inferred
+,,,전투 중 부대 교체 가능,,Units can be changed during the battle,20881,inferred
+,,,김희재,,Kin Heuijae,20882,anchored
+,,,이효진,,Lee Hyojin,20883,anchored
+,,,김진상,,Kim Jinsang,20884,anchored
+,,,오준일,,Oh Junil,20885,anchored
+,,,정한교,,Jeong Hangyo,20886,anchored
+,,,오영균,,Oh Youngkyun,20887,anchored
+,,,남승호,,Nam Seungho,20888,anchored
+,,,송인석,,Song Inseok,20889,anchored
+,,,이대홍,,Lee Daehong,20890,anchored
+,,,이민영,,Lee Minyoung,20891,anchored
+,,,이민우,,Lee Minwoo,20892,anchored
+,,,이아롬,,Lee Arom,20893,anchored
+,,,장대영,,Jang Daeyeong,20894,anchored
+,,,김민규,,Kim Mingyu,20895,anchored
+,,,김치완,,Kim Chiwan,20896,anchored
+,,,배경우,,Bae Gyeongwu,20897,anchored
+,,,백승지,,Baek Seungji,20898,anchored
+,,,서혜성,,Seo Hyesung,20899,anchored
+,,,신종산,,Shin Jongsan,20900,anchored
+,,,정지은,,Jeong Jieun,20901,anchored
+,,,이인규,,Lee Inkyu,20902,anchored
+,,,최준우,,Choi Junwoo,20903,anchored
+,,,김준호,,Kim Junho,20904,anchored
+,,,박관수,,Park Kwansoo,20905,anchored
+,,,이정철,,Lee Jungchul,20906,anchored
+,,,김득환,,Kim Deukhwan,20907,anchored
+,,,이정기,,Lee Jeonggi,20908,anchored
+,,,강민영,,Kang Minyeong,20909,anchored
+,,,김민석,,Kim Minseok,20910,anchored
+,,,김영찬,,Kim Yeongchan,20911,anchored
+,,,이재호,,Lee Jaeho,20912,anchored
+,,,김유진,,Kim Yujin,20913,anchored
+,,,김규만,,Kim Gyuman,20914,anchored
+,,,박형권,,Park Hyeonggwon,20915,anchored
+,,,이준혁,,Lee Junhyeok,20916,anchored
+,,,김준원,,Kim Junwon,20917,anchored
+,,,오성균,,Oh Sungkyun,20918,anchored
+,,,안광열,,Ahn Gwangyeol,20919,anchored
+,,,윤보선,,Yun Boseon,20920,anchored
+,,,송화영,,Song Hwayoung,20921,anchored
+,,,정희재,,Jung Heejae,20922,anchored
+,,,방세웅,,Bang Sewoong,20923,anchored
+,,,성민규,,Sung Minkyu,20924,anchored
+,,,김영민,,Kim Yeongmin,20925,anchored
+,,,장혜윤,,Jang Hyeyoon,20926,anchored
+,,,김영훈,,Kim Yeonghun,20927,anchored
+,,,정준,,Jung Jun,20928,anchored
+,,,조기린,,Cho Kirin,20929,anchored
+,,,김달우,,Kim Dalwu,20930,anchored
+,,,이요셉,,Lee Yoseb,20931,anchored
+,,,박혜수,,Park Hyesoo,20932,anchored
+,,,성상민,,Sung Sangmin,20933,anchored
+,,,유종호,,Yoo Jongho,20934,anchored
+,,,이종혁,,Lee Jonghyuk,20935,anchored
+,,,김가해,,Kim Gahae,20936,anchored
+,,,채하나,,Chae Hana,20937,anchored
+,,,서영석,,Seo Yeongseok,20938,anchored
+,,,안용재,,An Yongjae,20939,anchored
+,,,박세민,,Park Semin,20940,anchored
+,,,김정훈,,Kim Jeonghun,20941,anchored
+,,,정보리,,Jung Bori,20942,anchored
+,,,임성아,,Im Sunga,20943,anchored
+,,,이시언,,Lee Sieon,20944,anchored
+,,,정진,,Jeong Jin,20945,anchored
+,,,원사운드,,One Sound,20946,anchored
+,,,강구한,,Kang Guhan,20947,anchored
+,,,권창욱,,Gwon Changwuk,20948,anchored
+,,,김도영,,Kim Doyeong,20949,anchored
+,,,김보영,,Kim Boyeong,20950,anchored
+,,,김영선,,Kim Youngsun,20951,anchored
+,,,김태영,,Kim Taeyeong,20952,anchored
+,,,김현지,,Kim Hyeonji,20953,anchored
+,,,김혜성,,Kim Hyeseong,20954,anchored
+,,,박성태,,Park Seongtae,20955,anchored
+,,,시영준,,Si Yeongjun,20956,anchored
+,,,신경선,,Shin Gyeongseon,20957,anchored
+,,,안효민,,An Hyomin,20958,anchored
+,,,여민정,,Yeo Minjeong,20959,anchored
+,,,윤아영,,Yoon Ayoung,20960,anchored
+,,,이광수,,Lee Gwangsu,20961,anchored
+,,,이새아,,Lee Saea,20962,anchored
+,,,이지현,,Lee Jihyun,20963,anchored
+,,,이현,,Lee Hyeon,20964,anchored
+,,,이호산,,Lee Hosan,20965,anchored
+,,,정성훈,,Jeong Seonghun,20966,anchored
+,,,정재헌,,Jeong Jaeheon,20967,anchored
+,,,조경이,,Cho Kyungyi,20968,anchored
+,,,조규준,,Cho Gyujun,20969,anchored
+,,,최낙윤,,Cho Nagyun,20970,anchored
+,,,최승훈,,Choi Seunghun,20971,anchored
+,,,홍범기,,Hong Bumki,20972,anchored
+,,,김범수(Nexon Korea),,Kim Beomsu(Nexon Korea),20973,anchored
+,,,김이태(Nexon Korea),,Kim Itae(Nexon Korea),20974,anchored
+,,,박도선(Nexon Korea),,Park Doseon (Nexon Korea),20975,anchored
+,,,박선주(Nexon Korea),,Park Seonju(Nexon Korea),20976,anchored
+,,,이정기(Nexon Korea),,Lee Jungki (Nexon Korea),20977,anchored
+,,,진보라(Nexon Korea),,Jin Bora(Nexon Korea),20978,anchored
+,,,김현욱,,Kim Hyunwook,20979,anchored
+,,,송호준,,Song Hojun,20980,anchored
+,,,이선영,,Lee Seonyeong,20981,anchored
+,,,강주영,,Kang Juyoung,20982,anchored
+,,,소예진,,So Yejin,20983,anchored
+,,,조상엽,,Cho Sangyup,20984,anchored
+,,,김기한,,Kim Gihan,20985,anchored
+,,,강보연,,Kang Boyeon,20986,anchored
+,,,김지아,,Kim Jia,20987,anchored
+,,,조문석,,Cho Moonseok,20988,anchored
+,,,차지현,,Cha Jihyun,20989,anchored
+,,,신재완,,Shin Jaewan,20990,anchored
+,,,박종민,,Park Jongmin,20991,anchored
+,,,이태광,,Lee Taegwang,20992,anchored
+,,,최선혜,,Choi Sunhye,20993,anchored
+,,,홍성빈,,Hong Sungbin,20994,anchored
+,,,공부천,,Gong Boochun,20995,anchored
+,,,신소희,,Shin Sohee,20996,anchored
+,,,장영소,,Jang Youngso,20997,anchored
+,,,김준영,,Kim Junyoung,20998,anchored
+,,,기강호,,Gi Kangho,20999,anchored
+,,,차승호,,Cha Seungho,21000,anchored
+,,,김광택,,Kim Kwangtaek,21001,anchored
+,,,이영호,,Lee Yeongho,21002,anchored
+,,,변정숙,,Byeon Jeongsuk,21003,anchored
+,,,윤혜성,,Yun Hyeseong,21004,anchored
+,,,조경옥,,Cho Gyeongok,21005,anchored
+,,,함지현,,Ham Jihyeon,21006,anchored
+,,,김민우,,Kim Minwoo,21007,anchored
+,,,임철웅,,Im Chulwoong,21008,anchored
+,,,최홍익,,Choi Hongik,21009,anchored
+,,,임상아,,Im Sanga,21010,anchored
+,,,박나연,,Park Nayeon,21011,anchored
+,,,배준수,,Bae Junsoo,21012,anchored
+,,,이경준,,Lee Kyungjun,21013,anchored
+,,,이제이,,Lee Jeyi,21014,anchored
+,,,이우창,,Lee Woochang,21015,anchored
+,,,진성백,,Jin Sungbaek,21016,anchored
+,,,김용식,,Kim Yongsik,21017,anchored
+,,,우유진,,Woo Yujin,21018,anchored
+,,,김명수,,Kim Myungsoo,21019,anchored
+,,,박지원,,Park Jiwon,21020,anchored
+,,,이정헌,,Lee Jungheon,21021,anchored
+,,,정상원,,Jeong Sangwon,21022,anchored
+,,,이득규,,Lee Deukgyu,21023,anchored
+,,,경규선,,Gyeong Gyuseon,21024,anchored
+,,,고민진,,Ko Minjin,21025,anchored
+,,,김명균,,Kim Myeonggyun,21026,anchored
+,,,김호중,,Kim Hojung,21027,anchored
+,,,나기성,,Na Giseong,21028,anchored
+,,,남상희,,Nam Sangheui,21029,anchored
+,,,문상헌,,Mun Sangheon,21030,anchored
+,,,문희영,,Mun Heuiyeong,21031,anchored
+,,,문희진,,Mun Heuijin,21032,anchored
+,,,박은지,,Park Eunji,21033,anchored
+,,,박인걸,,Park Ingeol,21034,anchored
+,,,박철우,,Park Cheolwu,21035,anchored
+,,,박희원,,Park Heuiwon,21036,anchored
+,,,서삼열,,Seo Samyeol,21037,anchored
+,,,송인웅,,Song Inwung,21038,anchored
+,,,최고은,,Choi Goeun,21039,anchored
+,,,박성철,,Park Seongcheol,21040,anchored
+,,,이슬기,,Lee Seulgi,21041,anchored
+,,,김영준,,Kim Yeongjun,21042,anchored
+,,,최용락,,Choi Yongnak,21043,anchored
+,,,박진호,,Park Jinho,21044,anchored
+,,,김예슬,,Kim Yeseul,21045,anchored
+,,,이택교,,Lee Taekgyo,21046,anchored
+,,,이동욱,,Lee Dongwuk,21047,anchored
+,,,오유진,,Oh Yujin,21048,anchored
+,,,안경민,,Ahn Gyeongmin,21049,anchored
+,,,엄범용,,Eom Beomyong,21050,anchored
+,,,유경윤,,Yu Gyeongyun,21051,anchored
+,,,신정훈,,Shin Jeonghun,21052,anchored
+,,,문은애,,Mun Eunae,21053,anchored
+,,,최주,,Choi Ju,21054,anchored
+,,,김범진,,Kim Beomjin,21055,anchored
+,,,안지혜,,Ahn Jihye,21056,anchored
+,,,정선철,,Jeong Seoncheol,21057,anchored
+,,,서민제,,Seo Minje,21058,anchored
+,,,곽영수,,Gwak Yeongsu,21059,anchored
+,,,이창영,,Lee Changyeong,21060,anchored
+,,,전대영,,Jeon Darong,21061,anchored
+,,,김진희,,Kim Jinheui,21062,anchored
+,,,이동열,,Lee Dongyeol,21063,inferred
+,,,석용현,,Seok Yonghyeon,21064,inferred
+,,,박주연,,Park Juyeon,21065,inferred
+,,,신지윤,,Shin Jiyun,21066,inferred
+,,,주태우,,Ju Taewu,21067,inferred
+,,,이청원,,Lee Cheongwon,21068,inferred
+,,,김희진,,Kim Heuijin,21069,inferred
+,,,백주영,,Baek Juyeong,21070,inferred
+,,,김지훈,,Kim Jihun,21071,inferred
+,,,이단비,,Lee Danbi,21072,inferred
+,,,신지영,,Shin Jiyeong,21073,inferred
+,,,김민지,,Kim Minji,21074,inferred
+,,,배은미,,Bae Eunmi,21075,inferred
+,,,이가람,,Lee Garam,21076,inferred
+,,,최샛별,,Choi Saetbyeol,21077,inferred
+,,,한윤정,,Han Yunjeong,21078,inferred
+,,,넥슨,,Nexon,21079,inferred
+,,,연의 인장 상자 1개,,Story Seal Chest x1,21080,inferred
+,,,연의 인장 상자 10개,,Story Seal Chest x10,21081,inferred
+,,,거점,,Domain,21082,inferred
+,,,방어시설,,Defensive Structure,21083,inferred
+,,,방화,,Fireproof,21084,inferred
+,,,오,,Wu,21085,inferred
+,,,망루,,Watchtower,21086,inferred
+,,,정찰 건물,,Scout Building,21087,inferred
+,,,방어 건물,,Defense Building,21088,inferred
+,,,군단 시작 지점,,Troop Start Point,21089,inferred

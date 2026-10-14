@@ -1,0 +1,16 @@
+name,id,countUnit,countHoldUnit,countBanUnit,countQueueUnit,battleMap,ranking,description,#name_en,#loc_row,#confidence
+실시간 섬멸전,,,,,,,,,Live Annihilation,20832,inferred
+실시간 난투전,,,,,,,,,Live Brawl,20833,inferred
+초원의 전투,,,,,,,,,Grassland Battle,20834,inferred
+장강의 전투,,,,,,,,,River Battle,20835,inferred
+성내의 전투,,,,,,,,,Courtyard Battle,20836,inferred
+산지의 전투,,,,,,,,,Mountain Battle,20837,inferred
+사막의 전투,,,,,,,,,Desert Battle,20838,inferred
+설원의 전투,,,,,,,,,Snowy Battle,20839,inferred
+몽매의 수련장,,,,,,,,,Meng Mei's Training Ground,20840,inferred
+모든 아군 부대에 최대 HP의 {0}%에 해당하는 회복,,,,,,,,,Restore {0}% of max HP to all ally units,20841,inferred
+특정 아군 부대에 최대 HP의 {0}%에 해당하는 회복,,,,,,,,,Restore {0}% of max HP to specified ally unit,20842,inferred
+특정 부대에 최대 HP의 {0}%에 해당하는 피해,,,,,,,,,Deal {0}% of max HP in damage to specified unit,20843,inferred
+특정 적군 부대에 최대 HP의 {0}%에 해당하는 피해,,,,,,,,,Deal {0}% of max HP in damage to specified enemy unit,20844,inferred
+모든 아군 부대의 1단계 상승 상태이상을 2단계 상승 상태이상으로 변경,,,,,,,,,Upgrade Lv. 1 positive status effects on all ally units to Lv. 2.,20845,inferred
+모든 적군 부대의 1단계 하강 상태이상을 2단계 하강 상태이상으로 변경,,,,,,,,,Upgrade Lv. 1 negative status effects on all enemy units to Lv. 2.,20846,inferred

@@ -1,0 +1,225 @@
+column,seq,loc_row,confidence,ko,en
+name,1,18991,inferred,횡재,Lucky Break
+name,2,18992,anchored,손 쉬운 승리,Didn't Even Break a Sweat
+name,3,18993,anchored,천리행 정복,Trial of the Gates Conquest
+name,4,18994,anchored,혈전,Barely a Scratch
+name,5,18995,anchored,속전속결,Blitzkrieg
+name,6,18996,anchored,마왕 토벌,Defeat the Demon
+name,7,18997,anchored,계급장 수여,Rank Promotion
+name,8,18998,anchored,장비 보급,Well Armed
+name,9,18999,anchored,요일 사건 평정,A Tedious Task
+name,10,19000,anchored,은전 사건 평정,Piles of Silver
+name,11,19001,anchored,천리행 돌파,Trial of the Gates Victory
+name,12,19002,anchored,민심 개선,Popularity Contest
+name,13,19003,anchored,섬멸하라!,Total Annihilation!
+name,14,19004,anchored,천리길도 한걸음부터,Master Artificer
+name,15,19005,anchored,떠…떴냐?!,Awe-Inspiring Artifacts
+name,16,19006,anchored,가죽끈 보충,Leather String Acquisition
+name,17,19007,anchored,우리의 적은 경기병,Light Cavalry Butcher
+name,18,19008,anchored,진상품 획득,Perhaps a Little Insecure
+name,19,19009,anchored,토벌하라!,Exterminate the Competition!
+name,20,19010,anchored,오늘의 운세,Treasure Hunter
+name,21,19011,anchored,부귀영화,Deep Pockets
+name,22,19012,anchored,종명정식,"Well Fed, Well Bred"
+name,23,19013,anchored,눈앞에 다가온 천하 통일,Domination is Imminent
+name,24,19014,anchored,나에게 이런 임무를?,Who? Me?
+name,25,19015,anchored,용맹하면 바로 나지,Valor is My Middle Name
+name,26,19016,anchored,토우병 몰러 나간다(극한),Clay Soldier Slayer (Extreme)
+name,27,19017,anchored,감히 네가 나를 배신해?,You Dare Betray Me?
+name,28,19018,anchored,마지막 힘을 다해,Give Your All
+name,29,19019,anchored,두 개의 짐짝(극한),Two Packs (Extreme)
+name,30,19020,anchored,북벌의 전초전,Prelude to the Northern Expedition
+name,31,19021,anchored,최후의 방어선,Last Line of Defense
+name,32,19022,anchored,설마?!,It Can't Be!
+name,33,19023,anchored,강을 건너 진격!,Cross the River!
+name,34,19024,anchored,동오의 기상(극한),Spirit of Eastern Wu (Extreme)
+name,35,19025,anchored,방심은 금물(극한),Stay Vigilant (Extreme)
+name,36,19026,anchored,불의 노래,Song of Fire
+name,37,19027,anchored,진퇴양난,Dilemma
+name,38,19028,anchored,정상 정복,To the Top
+name,39,19029,anchored,네가 좋아 구해준 건 아니야(극한),I Don't Dislike You (Extreme)
+name,40,19030,anchored,몰아치는 폭풍,Raging Storm
+name,41,19031,anchored,"남만, 아니 중원 최고의 지략가",Best Strategist in the Middle Kingdom
+name,42,19032,anchored,유비님은 언제 오는가?(극한),What's Keeping Liu Bei? (Extreme)
+name,43,19033,anchored,공격이 최선의 방어,Offense is the Best Defense
+name,44,19034,anchored,작별,Farewell
+name,45,19035,anchored,패왕 유비,Overlord Liu Bei
+name,46,19036,anchored,이 산을 넘을 수만 있다면,Impenetrable Mountain
+name,47,19037,anchored,진검승부,Live and Let Die
+name,48,19038,anchored,복수혈전,Red Revenge
+name,49,19039,anchored,"보고있나, 손권?","Watch and Learn, Sun Quan!"
+name,50,19040,anchored,촉바라기,"Shu, Always"
+name,51,19041,anchored,황제 폐하 행차시다!,Make Way for the Emperor!
+name,52,19042,anchored,우리의 적은 궁기병,Horse Archer Butcher
+name,53,19043,anchored,우리의 적은 중기병,Heavy Cavalry Butcher
+name,54,19044,anchored,우리의 적은 산악기병,Mountain Cavalry Butcher
+name,55,19045,anchored,우리의 적은 보병,Footman Butcher
+name,56,19046,anchored,우리의 적은 창병,Spearman Butcher
+name,57,19047,anchored,우리의 적은 궁병,Archer Butcher
+name,58,19048,anchored,우리의 적은 수군,Armada Butcher
+name,59,19049,anchored,목재 보충,Gather Wood
+name,60,19050,anchored,종이 보충,Gather Paper
+name,61,19051,anchored,가죽 보충,Gather Leather
+name,62,19052,anchored,광석 보충,Gather Ore
+name,63,19053,anchored,제련 도구 보충,Gather Refinement Tools
+name,64,19054,anchored,공예 도구 보충,Gather Crafting Tools
+name,65,19055,anchored,나무끈 보충,Gather Wooden Strings
+name,66,19056,anchored,종이끈 보충,Gather Paper Strings
+name,67,19057,anchored,청동 보충,Gather Bronze
+name,68,19058,anchored,구리 보충,Gather Copper
+name,69,19059,anchored,철 보충,Gather Iron
+name,70,19060,anchored,은 보충,Gather Silver
+name,71,19061,anchored,황금 보충,Gather Gold
+name,72,19062,anchored,청동끈 보충,Gather Bronze Strings
+name,73,19063,anchored,구리끈 보충,Gather Copper Strings
+name,74,19064,anchored,철끈 보충,Gather Iron Strings
+name,75,19065,inferred,은사 보충,Gather Silver Strings
+name,76,19066,inferred,금사 보충,Gather Gold Strings
+name,77,19067,inferred,신병 교육,Boot Camp
+name,78,19068,inferred,교위 교육,Officer Training
+name,79,19069,inferred,부관 교육,General Training
+name,80,19070,inferred,이때는 몰랐었지(극한),If Only I Knew (Extreme)
+name,81,19071,inferred,추노(극한),Chaser (Extreme)
+name,82,19072,inferred,불꽃으로,Up in Flames
+name,83,19073,inferred,무신은 쓰러지지 않는다!,The God of War Never Falls
+name,84,19074,inferred,그대는 내가 지켜주겠소,I Shall Be Your Protector
+name,85,19075,inferred,넌 나에게 모욕감을 주었어,You Insult Me
+name,86,19076,inferred,사신 토벌,Defeat the Four Gods
+desc,1,19077,inferred,"이 녀석, 광산이 가득 찼어!",A Mine Filled to Bursting
+desc,2,19078,inferred,"뜨거운 주먹, 냉정한 머리","Burning Fists, Cool Head"
+desc,3,19079,inferred,실력 차이를 느꼈습니까?,A Difference in Skill
+desc,4,19080,inferred,두드리면 열릴 것이다!,Knock to Open
+desc,5,19081,inferred,"지장, 맹장 위에 운장",Luck Above All
+desc,6,19082,anchored,보물 상자와 조각 조합에서 6성 이상 전략 보물을 20개 획득하세요.,"Obtain 20 artifacts (6-star or higher), either from Treasure Chests or by combining items."
+desc,7,19083,anchored,아군 2부대 미만 퇴각으로 섬멸전을 700회 승리하세요.,Win Annihilation battles 700 times without losing more than one unit.
+desc,8,19084,anchored,천리행 30관문을 7회 돌파하세요.,Complete Gate 30 in the Trial of the Gates 7 times.
+desc,9,19085,anchored,강한 상대를 대상으로 섬멸전을 700회 승리하세요.,Win Annihilation battles 700 times against strong opponents.
+desc,10,19086,anchored,혈투에 돌입하지 않고 섬멸전을 700회 승리하세요.,Win Annihilation battles 700 times without going into bloody battles.
+desc,11,19087,anchored,전략/장수 보물을 사용하지 않고 유비전[붉게 타버린 꿈(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Dream Gone to Flame (Standard)] in Liu Bei Story 15 times without using starred/commander-exclusive artifacts. (Can be achieved once.)
+desc,12,19088,anchored,아군 전원을 생존시키고 조조전[마지막 결전(일반)]을 3인장으로 15회 승리하세요. (1인 1회 가능),Complete [The Final Battle (Standard)] 15 times with 3 seals and without losing any units. (Can be achieved once.)
+desc,13,19089,anchored,장수 승급을 100회 진행하세요.,Promote commanders 100 times.
+desc,14,19090,anchored,장수 강화를 150회 진행하세요.,Upgrade commanders 150 times.
+desc,15,19091,anchored,요일 사건을 50회 승리하세요.,Complete 50 Daily Quests.
+desc,16,19092,anchored,은전 사건을 300회 승리하세요.,Complete 300 Silver Coin Quests.
+desc,17,19093,anchored,천리행 관문 200개를 돌파하세요.,Complete 200 Gates in the Trial of the Gates.
+desc,18,19094,anchored,칙서를 800개 사용하세요.,Use 800 Edicts.
+desc,19,19095,anchored,섬멸전을 350회 승리하세요.,Win 350 Annihilation battles.
+desc,20,19096,anchored,보물 생성을 120회 진행하세요.,Craft 120 artifacts.
+desc,21,19097,anchored,보물 합성을 200회 진행하세요.,Fuse artifacts 200 times.
+desc,22,19098,anchored,가죽끈을 8000개 획득하세요.,"Obtain 8,000 leather twine."
+desc,23,19099,anchored,경기병계 적군을 4000기 퇴각시키세요.,"Defeat 4,000 Light Cavalry units."
+desc,24,19100,anchored,3000개 거점에서 진상품을 획득하세요.,"Claim tributes from 3,000 domains."
+desc,25,19101,anchored,사건을 1000회 토벌하세요.,"Complete Quests 1,000 times through Expedition."
+desc,26,19102,anchored,보물 상자를 300회 개봉하세요.,Open 300 Treasure Chests
+desc,27,19103,anchored,은전을 400000000개 사용하세요.,"Use 400,000,000 Silver Coins."
+desc,28,19104,anchored,군량을 400000000개 사용하세요.,"Use 400,000,000 Rations."
+desc,29,19105,anchored,전략/장수 보물을 사용하지 않고 조조전[통일! 여정의 끝(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Unification! The Journey's End (Standard)] in Cao Cao Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,30,19106,anchored,전략/장수 보물을 사용하지 않고 하후연전[군량 지원(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Supply Rations (Standard)] in Xiahou Yuan Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,31,19107,anchored,전략/장수 보물을 사용하지 않고 하후연전[무술 대회(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Tournament (Standard)] in Xiahou Yuan Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,32,19108,anchored,전략/장수 보물을 사용하지 않고 서서전[공명의 행방(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Kongming's Whereabouts (Extreme)] in Xu Shu Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,33,19109,anchored,전략/장수 보물을 사용하지 않고 원소전[친우의 배신(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Friend's Betrayal (Standard)] in Yuan Shao Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,34,19110,anchored,전략/장수 보물을 사용하지 않고 원소전[재건(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Rebuilding (Standard)] in Yuan Shao Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,35,19111,anchored,전략/장수 보물을 사용하지 않고 조운전[귀환(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Return (Extreme)] in Zhao Yun Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,36,19112,anchored,전략/장수 보물을 사용하지 않고 조운전[북벌(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Northern Expedition (Standard] in Zhao Yun Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,37,19113,anchored,전략/장수 보물을 사용하지 않고 조운전[후방에 남다(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [I'll Stay Here (Standard] in Zhao Yun Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,38,19114,anchored,전략/장수 보물을 사용하지 않고 손견전[폐허가 된 낙양(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Luoyang in Ruins (Standard)] in Sun Jian Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,39,19115,anchored,전략/장수 보물을 사용하지 않고 손견전[형주 공격(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Jingzhou Campaign (Standard)] in Sun Jian Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,40,19116,anchored,전략/장수 보물을 사용하지 않고 엄백호전[동오의 덕왕(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Virtuous King of Eastern Wu (Extreme)] in Yan Baihu Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,41,19117,anchored,전략/장수 보물을 사용하지 않고 육손전[형주를 노리다(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Eyes on Jingzhou (Extreme)] in Lu Xun Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,42,19118,anchored,전략/장수 보물을 사용하지 않고 육손전[젊은 기재(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Young Talent (Standard)] in Lu Xun Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,43,19119,anchored,전략/장수 보물을 사용하지 않고 마초전[기성을 사수하라(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Protect the Castle (Standard)] in Ma Chao Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,44,19120,anchored,전략/장수 보물을 사용하지 않고 황충전[대전의 종지부(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Conclusion (Standard)] in Huang Zhong Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,45,19121,anchored,전략/장수 보물을 사용하지 않고 장비전[납치된 소녀(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [A Girl Abducted (Extreme)] in Zhang Fei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,46,19122,anchored,전략/장수 보물을 사용하지 않고 장비전[양평관 우회(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [To Yangping Pass (Standard)] in Zhang Fei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,47,19123,anchored,전략/장수 보물을 사용하지 않고 맹획전[남만 평정(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Secure Nanman (Standard)] in Meng Huo Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,48,19124,anchored,전략/장수 보물을 사용하지 않고 맹획전[유장군 침공(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Liu Zhang Attacks (Standard)] in Meng Huo Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,49,19125,anchored,전략/장수 보물을 사용하지 않고 도겸전[인과응보(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [What Goes Around Comes Around (Extreme)] in Tao Qian Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,50,19126,anchored,전략/장수 보물을 사용하지 않고 유비전[조조를 막아라(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Stop Cao Cao (Standard)] in Liu Bei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,51,19127,anchored,전략/장수 보물을 사용하지 않고 유비전[무신이여 안녕(일반)]을 15회 승리하세요. (1인 1회 가능),"Complete [Farewell, God of War (Standard)] in Liu Bei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)"
+desc,52,19128,anchored,전략/장수 보물을 사용하지 않고 유비전[익주로!(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [To Yizhou! (Standard)] in Liu Bei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,53,19129,anchored,전략/장수 보물을 사용하지 않고 유비전[낙성에서 지는 별(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Star Falls over Luo Castle (Standard)] in Liu Bei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,54,19130,anchored,전략/장수 보물을 사용하지 않고 유비전[운명의 승부(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Fateful Match (Standard)] in Liu Bei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,55,19131,anchored,전략/장수 보물을 사용하지 않고 유비전[복수를 위해(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [For Vengeance (Standard)] in Liu Bei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,56,19132,anchored,전략/장수 보물을 사용하지 않고 유비전[이도 공격(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Yidu Assault (Standard)] in Liu Bei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,57,19133,anchored,전략/장수 보물을 사용하지 않고 강유전[최후의 보루(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Last Resort (Standard)] in Jiang Wei Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,58,19134,anchored,전략/장수 보물을 사용하지 않고 동탁전[도를 넘어선 동탁(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Dong Zhuo Crosses the Line (Standard)] in Dong Zhuo Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,59,19135,anchored,전략/장수 보물을 사용하지 않고 동탁전[연환지계(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Falling Like Dominoes (Standard)] in Dong Zhuo Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,60,19136,anchored,궁기병계 적군을 3000기 퇴각시키세요.,"Defeat 3,000 Mounted Archer units."
+desc,61,19137,anchored,중기병계 적군을 5000기 퇴각시키세요.,"Defeat 5,000 Heavy Cavalry units."
+desc,62,19138,anchored,산악기병계 적군을 6000기 퇴각시키세요.,"Defeat 6,000 Mountain Cavalry units."
+desc,63,19139,anchored,보병계 적군을 5000기 퇴각시키세요.,"Defeat 5,000 footmen."
+desc,64,19140,anchored,창병계 적군을 4000기 퇴각시키세요.,"Defeat 4,000 Spearman units."
+desc,65,19141,anchored,궁병계 적군을 4000기 퇴각시키세요.,"Defeat 4,000 Archer units."
+desc,66,19142,anchored,수군계 적군을 6000기 퇴각시키세요.,"Defeat 6,000 Navy units."
+desc,67,19143,anchored,목재를 8000개 획득하세요.,"Obtain 8,000 wood."
+desc,68,19144,anchored,종이를 8000개 획득하세요.,"Obtain 8,000 paper."
+desc,69,19145,anchored,가죽을 15000개 획득하세요.,"Obtain 15,000 leather."
+desc,70,19146,anchored,광석을 8000개 획득하세요.,"Obtain 8,000 ore."
+desc,71,19147,anchored,제련 도구를 4000개 획득하세요.,"Obtain 4,000 Refinement Tools."
+desc,72,19148,anchored,공예 도구를 4000개 획득하세요.,"Obtain 4,000 Crafting Tools."
+desc,73,19149,anchored,나무끈을 6000개 획득하세요.,"Obtain 6,000 wooden twine."
+desc,74,19150,anchored,종이끈을 6000개 획득하세요.,"Obtain 6,000 paper twine."
+desc,75,19151,anchored,청동을 6000개 획득하세요.,"Obtain 6,000 bronze."
+desc,76,19152,anchored,구리를 6000개 획득하세요.,"Obtain 6,000 copper."
+desc,77,19153,anchored,철을 4000개 획득하세요.,"Obtain 4,000 iron."
+desc,78,19154,anchored,은을 2500개 획득하세요.,"Obtain 2,500 silver."
+desc,79,19155,anchored,황금을 1200개 획득하세요.,"Obtain 1,200 gold."
+desc,80,19156,anchored,청동끈을 500개 획득하세요.,Obtain 500 bronze twine.
+desc,81,19157,anchored,구리끈을 400개 획득하세요.,Obtain 400 copper twine.
+desc,82,19158,anchored,철끈을 300개 획득하세요.,Obtain 300 iron twine.
+desc,83,19159,anchored,은사를 250개 획득하세요.,Obtain 250 silver twine.
+desc,84,19160,anchored,금사를 200개 획득하세요.,Obtain 200 gold strings.
+desc,85,19161,anchored,1차 장수 승급을 150회 진행하세요.,Perform the first commander promotion 150 times.
+desc,86,19162,anchored,2차 장수 승급을 100회 진행하세요.,Perform the second commander promotion 100 times.
+desc,87,19163,anchored,3차 장수 승급을 50회 진행하세요.,Perform the third commander promotion 50 times.
+desc,88,19164,anchored,전략/장수 보물을 사용하지 않고 도겸전[군웅할거(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Rivalry of Lords (Extreme)] in Tao Qian Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,89,19165,anchored,전략/장수 보물을 사용하지 않고 도겸전[조조의 아버지(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Cao Cao's Father (Extreme)] in Tao Qian Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,90,19166,anchored,전략/장수 보물을 사용하지 않고 동탁전[낙양 불타다(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Luoyang Burns (Standard)] in Dong Zhuo Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,91,19167,anchored,전략/장수 보물을 사용하지 않고 여포전[결전의 막이 오르고(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Battle Begins (Standard)] in Lu Bu Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,92,19168,anchored,전략/장수 보물을 사용하지 않고 여포전[순욱의 계책(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Xun Yu's Plan (Standard)] in Lu Bu Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,93,19169,anchored,전략/장수 보물을 사용하지 않고 여포전[하비의 명과 암(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Light and Shadows in Xiapi (Standard)] in Lu Bu Story 15 times without using a starred/commander-exclusive artifact. (Can be achieved once)
+desc,94,19170,anchored,사신 토벌 3회 진행하세요.,Complete 3 Four Gods Expeditions.
+desc,95,19171,anchored,격전지를 120회 참가하세요.,Complete 120 Battlegrounds.
+desc,96,19172,anchored,경쟁전을 100회 참가하세요.,Complete 100 PvP Battles.
+desc,97,19173,anchored,경쟁전을 50회 승리하세요.,Win 50 PvP Battles.
+desc,98,19174,anchored,보물 강화를 150회 시도하세요.,Attempt to upgrade artifacts 150 times.
+desc,99,19175,anchored,보물 강화를 300회 성공하세요.,Successfully upgrade artifacts 300 times.
+desc,100,19176,anchored,3인장으로 유비전[붉게 타버린 꿈(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Dream Gone to Flame (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)
+desc,101,19177,anchored,3인장으로 조조전[통일! 여정의 끝(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Unification! The Journey's End (Standard)] in Cao Cao Story 15 times with 3 seals. (Can be achieved once)
+desc,102,19178,anchored,3인장으로 하후연전[군량 지원(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Supply Rations (Standard)] in Xiahou Yuan Story 15 times with 3 seals. (Can be achieved once)
+desc,103,19179,anchored,3인장으로 하후연전[무술 대회(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Tournament (Standard)] in Xiahou Yuan Story 15 times with 3 seals. (Can be achieved once)
+desc,104,19180,anchored,3인장으로 서서전[공명의 행방(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Kongming's Whereabouts (Extreme)] in Xu Shu Story 15 times with 3 seals. (Can be achieved once)
+desc,105,19181,anchored,3인장으로 원소전[친우의 배신(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Friend's Betrayal (Standard)] in Yuan Shao Story 15 times with 3 seals. (Can be achieved once)
+desc,106,19182,anchored,3인장으로 원소전[재건(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Rebuilding (Standard)] in Yuan Shao Story 15 times with 3 seals. (Can be achieved once)
+desc,107,19183,anchored,3인장으로 조운전[귀환(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Return (Extreme)] in Zhao Yun Story 15 times with 3 seals. (Can be achieved once)
+desc,108,19184,anchored,3인장으로 조운전[북벌(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Northern Expedition (Standard)] in Zhao Yun Story 15 times with 3 seals. (Can be achieved once)
+desc,109,19185,anchored,3인장으로 조운전[후방에 남다(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [I'll Stay Here (Standard)] in Zhao Yun Story 15 times with 3 seals. (Can be achieved once)
+desc,110,19186,anchored,3인장으로 손견전[폐허가 된 낙양(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Luoyang in Ruins (Standard)] in Sun Jian Story 15 times with 3 seals. (Can be achieved once)
+desc,111,19187,anchored,3인장으로 손견전[형주 공격(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Jingzhou Campaign (Standard)] in Sun Jian Story 15 times with 3 seals. (Can be achieved once)
+desc,112,19188,anchored,3인장으로 엄백호전[동오의 덕왕(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Virtuous King of Eastern Wu (Extreme)] in Yan Baihu Story 15 times with 3 seals. (Can be achieved once)
+desc,113,19189,anchored,3인장으로 육손전[형주를 노리다(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Eyes on Jingzhou (Extreme)] in Lu Xun Story 15 times with 3 seals. (Can be achieved once)
+desc,114,19190,anchored,3인장으로 육손전[젊은 기재(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Young Talent (Standard)] in Lu Xun Story 15 times with 3 seals. (Can be achieved once)
+desc,115,19191,anchored,3인장으로 마초전[기성을 사수하라(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Protect the Castle (Standard)] in Ma Chao Story 15 times with 3 seals. (Can be achieved once)
+desc,116,19192,anchored,3인장으로 황충전[대전의 종지부(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Conclusion (Standard)] in Huang Zhong Story 15 times with 3 seals. (Can be achieved once)
+desc,117,19193,anchored,3인장으로 장비전[납치된 소녀(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [A Girl Abducted (Extreme)] in Zhang Fei Story 15 times with 3 seals. (Can be achieved once)
+desc,118,19194,anchored,3인장으로 장비전[양평관 우회(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [To Yangping Pass (Standard)] in Zhang Fei Story 15 times with 3 seals. (Can be achieved once)
+desc,119,19195,anchored,3인장으로 맹획전[남만 평정(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Secure Nanman (Standard)] in Meng Huo Story 15 times with 3 seals. (Can be achieved once)
+desc,120,19196,anchored,3인장으로 맹획전[유장군 침공(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Liu Zhang Attacks (Standard)] in Meng Huo Story 15 times with 3 seals. (Can be achieved once)
+desc,121,19197,anchored,3인장으로 도겸전[인과응보(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [What Goes Around Comes Around (Extreme)] in Tao Qian Story 15 times with 3 seals. (Can be achieved once)
+desc,122,19198,anchored,3인장으로 유비전[조조를 막아라(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Stop Cao Cao (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)
+desc,123,19199,anchored,3인장으로 유비전[무신이여 안녕(일반)]을 15회 승리하세요. (1인 1회 가능),"Complete [Farewell, God of War (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)"
+desc,124,19200,anchored,3인장으로 유비전[익주로!(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [To Yizhou! (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)
+desc,125,19201,anchored,3인장으로 유비전[낙성에서 지는 별(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Star Falls over Luo Castle (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)
+desc,126,19202,anchored,3인장으로 유비전[운명의 승부(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [A Fateful Match (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)
+desc,127,19203,anchored,3인장으로 유비전[복수를 위해(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [For Vengeance (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)
+desc,128,19204,anchored,3인장으로 유비전[이도 공격(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Yidu Assault (Standard)] in Liu Bei Story 15 times with 3 seals. (Can be achieved once)
+desc,129,19205,anchored,3인장으로 강유전[최후의 보루(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Last Resort (Standard)] in Jiang Wei Story 15 times with 3 seals. (Can be achieved once)
+desc,130,19206,anchored,3인장으로 동탁전[도를 넘어선 동탁(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Dong Zhuo Crosses the Line (Standard)] in Dong Zhuo Story 15 times with 3 seals. (Can be achieved once)
+desc,131,19207,anchored,3인장으로 동탁전[연환지계(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Falling Like Dominoes! (Standard)] in Dong Zhuo Story 15 times with 3 seals. (Can be achieved once)
+desc,132,19208,anchored,3인장으로 도겸전[군웅할거(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Rivalry of Lords (Extreme)] in Tao Qian Story 15 times with 3 seals. (Can be achieved once)
+desc,133,19209,inferred,3인장으로 도겸전[조조의 아버지(극한)]을 15회 승리하세요. (1인 1회 가능),Complete [Cao Cao's Father (Extreme)] in Tao Qian Story 15 times with 3 seals. (Can be achieved once)
+desc,134,19210,inferred,3인장으로 동탁전[낙양 불타다(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Luoyang Burns (Standard)] in Dong Zhuo Story 15 times with 3 seals. (Can be achieved once)
+desc,135,19211,inferred,3인장으로 여포전[결전의 막이 오르고(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [The Battle Begins (Standard)] in Lu Bu Story 15 times with 3 seals. (Can be achieved once)
+desc,136,19212,inferred,3인장으로 여포전[순욱의 계책(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Xun Yu's Plan (Standard)] in Lu Bu Story 15 times with 3 seals. (Can be achieved once)
+desc,137,19213,inferred,3인장으로 여포전[하비의 명과 암(일반)]을 15회 승리하세요. (1인 1회 가능),Complete [Light and Shadows in Xiapi (Standard)] in Lu Bu Story 15 times with 3 seals. (Can be achieved once)
+desc,138,19214,inferred,종류에 관계 없이 사신을 100회 토벌하세요.,Complete any Four Gods Expeditions 100 times.

@@ -1,0 +1,233 @@
+name,id,icon,category,subcategory,order,minRank,maxRank,checkFlag,checkFlagVal,checkCompare,saveFlag,saveFlagVal,difficulty,checkType,checkVal,countVal,rate,quick,quickdetail,checkTutorId1,type0,reward0,desc,summary,enableClassic,country,#name_en,#loc_row,#confidence
+[영웅] 자원 관리,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Resourceful,17228,anchored
+[영웅] 오래된 인연 I,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Old Bonds,17229,anchored
+[영웅] 부패관리 척결,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Uproot Corruption,17230,anchored
+[영웅] 오래된 인연 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Old Bonds II,17231,anchored
+[영웅] 배후는 누구?,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Who's Behind It?,17232,anchored
+[영웅] 내정의 기본 I,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Governing 101 I,17233,anchored
+[영웅] 수적들의 소굴,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Pirates' Lair,17234,anchored
+[영웅] 내정의 기본 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Governing 101 II,17235,anchored
+[영웅] 황건 봉기 종결,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Yellow Turban Rebellion Finale,17236,anchored
+[영웅] 자원 관리 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Resourceful II,17237,anchored
+[영웅] 넓은 세상,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] The Whole Wide World,17238,anchored
+[영웅] 산적패 토벌,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Bandit Elimination,17239,anchored
+[영웅] 거점 공략,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Domain Conquest,17240,anchored
+[영웅] 내정의 기본 III,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Governing 101 III,17241,anchored
+[영웅] 태산의 산적,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Taishan Bandits,17242,anchored
+[영웅] 수복 전투,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reclaimers,17243,anchored
+[영웅] 중원의 노른자,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Take the Center,17244,anchored
+[영웅] 청주 사건을 부탁해,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Clear Qingzhou's Quests,17245,anchored
+[영웅] 난세의 간웅,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A Villain in Chaos,17246,anchored
+[영웅] 보물을 착용하자,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Equip an Artifact,17247,anchored
+[영웅] 보급의 중요성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] The Importance of Supplies,17248,anchored
+[영웅] 새로운 지역 I,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Area I,17249,anchored
+[영웅] 패왕의 땅,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Land of the Overlord,17250,anchored
+[영웅] 시장의 중요성 I,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] The Importance of the Market I,17251,anchored
+[영웅] 군량의 활성화 I,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Hearty Rations I,17252,anchored
+[영웅] 만기의 다짐,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Manji's Determination,17253,anchored
+[영웅] 연주 사건을 부탁해,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Clear Yanzhou's Quests,17254,anchored
+[영웅] 꾸준한 연구,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Steady Research,17255,anchored
+[영웅] 천해의 요새,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Natural Fortress,17256,anchored
+[영웅] 시장의 중요성 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] The Importance of the Market II,17257,anchored
+[영웅] 군량의 활성화 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Hearty Rations II,17258,anchored
+[영웅] 강보의 등장,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Enter Jiang Fu,17259,anchored
+[영웅] 악래 전위,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Dian Wei,17260,anchored
+[영웅] 물 위의 전투,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Battle on the Waves,17261,anchored
+[영웅] 세력 확장의 증거 I,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Proof of Expansion I,17262,anchored
+[영웅] 새로운 지역 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Area II,17263,anchored
+[영웅] 가상 전투,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Practice Battle,17264,anchored
+[영웅] 서주 사건을 부탁해,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Clear Xuzhou's Quests,17265,anchored
+[영웅] 도적 소탕,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Eliminate Thugs,17266,anchored
+[영웅] 왕좌지재 순욱,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Great Advisor Xun Yu,17267,anchored
+[영웅] 예주를 점령하라,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Occupy Yuzhou,17268,anchored
+[영웅] 시장의 중요성 III,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] The Importance of the Market III,17269,anchored
+[영웅] 군량의 활성화 III,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Hearty Rations III,17270,anchored
+[영웅] 의로운 유궁,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Honorable Liu Gong,17271,anchored
+[영웅] 조조의 승급,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Cao Cao's Promotion,17272,anchored
+[영웅] 잠재력의 개방,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Budding Potential,17273,anchored
+[영웅] 원술의 땅,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Yuan Shu's Territory,17274,anchored
+[영웅] 난세의 시작,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Dawn of Chaos,17275,anchored
+[영웅] 황건적의 꿈,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Yellow Turban Dream,17276,anchored
+[영웅] 호치 허저,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Tiger Fool Xu Chu,17277,anchored
+[영웅] 공적이 필요해,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Desiring Jade Seals,17278,anchored
+[영웅] 조조의 야망,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Cao Cao's Ambition,17279,anchored
+[영웅] 꾸준한 연구 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Steady Research II,17280,anchored
+[영웅] 석정 전투,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Battle of Shi Ting,17281,anchored
+[영웅] 세력 확장의 증거 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Proof of Expansion II,17282,anchored
+[영웅] 새로운 지역 III,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Area III,17283,anchored
+[영웅] 합비의 악몽 장료,,,,,,,,,,,,,,,,,,,,,,,,,,,"[Hero] Nightmare of Hefei, Zhang Liao",17284,anchored
+[영웅] 초선의 등장,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Diaochan Appears,17285,anchored
+[영웅] 동작대의 꿈,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Bronze Bird Pavilion's Dream,17286,anchored
+[영웅] 평원을 점령하라,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Occupy Pingyuan,17287,anchored
+[영웅] 최후의 승자 사마의,,,,,,,,,,,,,,,,,,,,,,,,,,,"[Hero] Sima Yi, Final Victor",17288,anchored
+[영웅] 연의 '헌제',,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Complete Emperor Xian in Story,17289,anchored
+[영웅] 세력 확장 III,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Expansion III,17290,anchored
+[영웅] 새로운 지역 Ⅳ ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Area IV ,17291,anchored
+[영웅] 황건 최고의 무장,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] The Yellow Turban's Greatest,17292,anchored
+[영웅] 서주를 노리는 여포,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Lu Bu's Eyes on Xuzhou,17293,anchored
+[영웅] 공손찬의 근거지,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Gongsun Zan's Domain,17294,anchored
+[영웅] 세력 확장 Ⅳ ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Expansion IV ,17295,anchored
+[영웅] 치안 안정,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reinforcing Security,17296,anchored
+[영웅] 새로운 지역 Ⅴ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Area V,17297,anchored
+[영웅] 숙부를 위한 희생,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Sacrifice for Uncle,17298,anchored
+[영웅] 의협의 사나이,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A Righteous Man,17299,anchored
+[영웅] 전설의 땅,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Legendary Land,17300,anchored
+[영웅] 임전무퇴의 맹장,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Never Surrender!,17301,anchored
+[영웅] 남방 평정의 시작,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Launching the Southern Expedition,17302,anchored
+[영웅] 막고 싶은 이별,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] An Inevitable Farewell,17303,anchored
+[영웅] 아픈 손가락,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Beloved,17304,anchored
+[영웅] 민심 안정화,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Pacifying the People,17305,anchored
+[영웅] 파촉으로 진격,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Advance on Bashu,17306,anchored
+[영웅] 맹장 황수아,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Huang the Brave,17307,anchored
+[영웅] 깨어진 거울,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Broken Mirror,17308,anchored
+[영웅] 새로운 지역 Ⅵ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Area VI,17309,anchored
+[영웅] 군신 관우,,,,,,,,,,,,,,,,,,,,,,,,,,,"[Hero] Guan Yu, the War God",17310,anchored
+[영웅] 병가지상사,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] To Err is Human,17311,anchored
+[영웅] 익주 진출,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Entering Yizhou,17312,anchored
+[영웅] 세력 확장 Ⅴ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Expansion V,17313,anchored
+[영웅] 마음을 교화하라,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Edification,17314,anchored
+[영웅] 서량의 금마초,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Ma Chao of Xiliang,17315,anchored
+[영웅] 새로운 지역 Ⅶ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Area VII,17316,anchored
+[영웅] 영걸,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A Great Man,17317,anchored
+[영웅] 요충지 공략,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Vital Points,17318,anchored
+[영웅] 세력 확장 Ⅵ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Expansion VI,17319,anchored
+[영웅] 기지개를 켠 복룡,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Zhuge Liang Makes His Move,17320,anchored
+[영웅] 서량으로,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] To Xiliang,17321,anchored
+[영웅] 인중 여포,,,,,,,,,,,,,,,,,,,,,,,,,,,"[Hero] Lu Bu, Hero Among Heroes",17322,anchored
+[영웅] 패업의 완성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Final Conquest,17323,anchored
+[영웅] 세력 확장 Ⅶ,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Expansion VII,17324,anchored
+[영웅] 지켜낸 평화,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Maintaining Peace,17325,anchored
+[영웅] 새로운 시대로,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] A New Age,17326,anchored
+[일일] 사건의 달인,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Master of Quests,17327,anchored
+[일일] 역사의 증인,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Historical Witness,17328,anchored
+[일일] 인재 등용,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Recruiting Talent,17329,anchored
+[일일] 인재 성장,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Growing Talent,17330,anchored
+[일일] 모든 임무를 완료하라,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Complete All Missions,17331,anchored
+[일일] 특별한 임무 수행,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Complete a Special Mission,17332,anchored
+[일일] 민심은 천심,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Will of the People,17333,anchored
+[일일] 도전! 섬멸전,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Annihilation Challenge,17334,anchored
+[일일] 도전! 사신전,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Challenge: Legend of the Four Gods,17335,anchored
+[일일] 보물 수집가,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Artifact Hunter,17336,anchored
+[일일] 도전! 격전지,,,,,,,,,,,,,,,,,,,,,,,,,,,[Daily] Challenge: Battleground,17337,anchored
+청주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Qingzhou,17338,anchored
+연주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yanzhou,17339,anchored
+서주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Xuzhou,17340,anchored
+예주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yuzhou,17341,anchored
+기주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jizhou,17342,anchored
+유주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Youzhou,17343,anchored
+병주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Bingzhou,17344,anchored
+양주(북) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Liangzhou (N),17345,anchored
+형주(북) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jingzhou (N),17346,anchored
+형주(남) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jingzhou (S),17347,anchored
+교주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jiaozhou,17348,anchored
+양주(남) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Liangzhou (S),17349,anchored
+익주(중) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yizhou (C),17350,anchored
+익주(남) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yizhou (S),17351,anchored
+익주(북) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yizhou (N),17352,anchored
+옹주(서) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yongzhou (W),17353,anchored
+옹주(동) 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yongzhou (E),17354,anchored
+사주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Sizhou,17355,anchored
+[천하통일] 모든 주 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,[Unification] Occupy all Provinces,17356,anchored
+북해 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Beihai,17357,anchored
+제남 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jinan,17358,anchored
+진류 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Chenliu,17359,anchored
+복양 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Puyang,17360,anchored
+하비 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Xiapi,17361,anchored
+팽성 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Pengcheng,17362,anchored
+수춘 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Shouchun,17363,anchored
+여남 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Runan,17364,anchored
+남피 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Nanpi,17365,anchored
+업 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Ye,17366,anchored
+북평 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Beiping,17367,anchored
+양평 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yangping,17368,anchored
+상당 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Shangdang,17369,anchored
+진양 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jinyang,17370,anchored
+여강 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Lujiang,17371,anchored
+시상 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Chaisang,17372,anchored
+양양 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Xiangyang,17373,anchored
+강릉 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jiangling,17374,anchored
+[도시] 천하 통일의 완성 I,,,,,,,,,,,,,,,,,,,,,,,,,,,[City] Complete Unification I,17375,anchored
+장사 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Changsha,17376,anchored
+무릉 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Wuling,17377,anchored
+남해 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Nanhai,17378,anchored
+창오 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Cangwu,17379,anchored
+건업 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Jianye,17380,anchored
+오 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Wu,17381,anchored
+성도 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Chengdu,17382,anchored
+영안 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yong'an,17383,anchored
+운남 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Yunnan,17384,anchored
+건녕 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Qujing,17385,anchored
+한중 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Hanzhong,17386,anchored
+자동 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Zitong,17387,anchored
+무위 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Wuei,17388,anchored
+남안 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Nanan,17389,anchored
+장안 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Chang'an,17390,anchored
+안정 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Anding,17391,anchored
+낙양 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Luoyang,17392,anchored
+허창 점령,,,,,,,,,,,,,,,,,,,,,,,,,,,Occupy Xuchang,17393,anchored
+[도시] 천하 통일의 완성 II,,,,,,,,,,,,,,,,,,,,,,,,,,,[City] Complete Unification II,17394,anchored
+군주 Rank 10 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 10,17395,anchored
+군주 Rank 15 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 15,17396,anchored
+군주 Rank 20 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 20,17397,anchored
+군주 Rank 30 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 30,17398,anchored
+군주 Rank 40 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 40,17399,anchored
+군주 Rank 50 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 50,17400,anchored
+군주 Rank 60 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 60,17401,anchored
+군주 Rank 70 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 70,17402,anchored
+군주 Rank 80 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 80,17403,anchored
+군주 Rank 90 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 90,17404,anchored
+군주 Rank 99 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Warlord Rank 99,17405,anchored
+첫 번째 접속,,,,,,,,,,,,,,,,,,,,,,,,,,,First Login,17406,anchored
+두 번째 접속,,,,,,,,,,,,,,,,,,,,,,,,,,,Second Login,17407,anchored
+세 번째 접속,,,,,,,,,,,,,,,,,,,,,,,,,,,Third Login,17408,anchored
+"공적 3,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 3,000 Jade Seals",17409,anchored
+"군량 2,000,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 2,000,000 Rations",17410,anchored
+"은전 3,000,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 3,000,000 Silver Coins",17411,anchored
+"군량 3,000,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 3,000,000 Rations",17412,anchored
+강유전 5화 [한중 함락] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Jiang Wei Story Part 5 [Hanzhong Falls] Complete,17413,anchored
+"은전 2,000,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 2,000,000 Silver Coins",17414,anchored
+마초전 7화 [기성을 점령하라] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Ma Chao Story Part 7 [Capture Jin Castle] Complete,17415,anchored
+황충전 7화 [군량고 습격] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Huang Zhong Story Part 7 [Raid the Stockpiles] Complete,17416,anchored
+조운전 14화 [하후연과 결전] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Zhao Yun Story Part 14 [Defeat Xiahou Yuan] Complete,17417,anchored
+손책전 8화 [태사자를 얻기 위해] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Sun Ce Story Part 8 [Pursuing Taishi Ci] Complete,17418,anchored
+주유전 9화 [적벽에 부는 바람] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Zhou Yu Story Part 9 [Winds Over Red Cliffs] Complete,17419,anchored
+동탁전 7화 [낙양 불타다] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Dong Zhuo Story Part 7 [Luoyang Burns] Complete,17420,anchored
+육손전 5화 [군신을 잡다] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Lu Xun Story Part 5 [To Capture a God] Complete,17421,anchored
+모든 인연 장수 포함하여 사건 50회 승리,,,,,,,,,,,,,,,,,,,,,,,,,,,Win 50 Quests including all friendship commanders.,17422,anchored
+[출사표] 보물 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,[Chu Shi Biao] Artifact Upgrade,17423,anchored
+[출사표] 도전! 경쟁전,,,,,,,,,,,,,,,,,,,,,,,,,,,[Chu Shi Biao] Challenge! PvP,17424,anchored
+여포전 6화 [살아남은 이유] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Lu Bu Story Part 6 [A Reason to Survive],17425,anchored
+[영웅] 군주 Rank 5 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 5,17426,anchored
+[영웅] 군주 Rank 7 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 7,17427,anchored
+[영웅] 군주 Rank 9 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 9,17428,anchored
+[영웅] 군주 Rank 11 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 11,17429,anchored
+[영웅] 군주 Rank 15 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 15,17430,anchored
+[영웅] 군주 Rank 20 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 20,17431,anchored
+[영웅] 군주 Rank 25 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 25,17432,anchored
+[영웅] 군주 Rank 30 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 30,17433,anchored
+[영웅] 군주 Rank 35 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 35,17434,anchored
+[영웅] 군주 Rank 40 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 40,17435,anchored
+[영웅] 군주 Rank 45 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 45,17436,anchored
+[영웅] 군주 Rank 50 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 50,17437,anchored
+[영웅] 군주 Rank 60 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 60,17438,anchored
+[영웅] 군주 Rank 70 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 70,17439,anchored
+[영웅] 군주 Rank 80 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 80,17440,anchored
+[영웅] 군주 Rank 90 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 90,17441,anchored
+[영웅] 군주 Rank 99 달성,,,,,,,,,,,,,,,,,,,,,,,,,,,[Hero] Reach Warlord Rank 99,17442,anchored
+[무장전] 입장권 구매,,,,,,,,,,,,,,,,,,,,,,,,,,,Buy [Officer Battle] Vouchers.,17443,anchored
+"은전 500,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 500,000 Silver Coins",17444,anchored
+"군량 500,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 500,000 Rations",17445,inferred
+"공적 2,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 2,000 Jade Seals",17446,inferred
+제갈량전(상) 6화 [용언] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Zhuge Liang Story (Ch.1) Part 6 [Words of a Dragon],17447,inferred
+주유전 1화 [먼저 떠난 벗] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Zhou Yu Story Part 1 [A Departed Friend],17448,inferred
+조조전 18화 [유비의 역습] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Cao Cao Story Part 18 [Liu Bei Strikes Back],17449,inferred
+손책전 6화 [용호상박] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Sun Ce Story Part 6 [Dragon vs Tiger],17450,inferred
+맹획전 1화 [무술 대회] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Meng Huo Story Part 1 [The Tournament],17451,inferred
+"군량 1,000,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 1,000,000 Rations",17452,inferred
+제갈량전(상) 2화 [융중 이동전] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Zhuge Liang Story (Ch.1) Part 2 [Longzhong Transportation],17453,inferred
+"은전 1,000,000 납부",,,,,,,,,,,,,,,,,,,,,,,,,,,"Spend 1,000,000 Silver Coins",17454,inferred
+사마의전(상) 4화 [흉몽] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Sima Yi Story (Ch.1) Part 4 [Nightmare],17455,inferred
+손상향전 2화 [운명의 만남] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Sun Shangxiang Story Part 2 [A Fateful Encounter],17456,inferred
+문앙전 2화 [조령 구출전] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Wen Yang Story Part 2 [Saving Cao Ying],17457,inferred
+조조전 4화 [조조 거병] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Cao Cao Story Part 4 [Cao Cao on the Move],17458,inferred
+관우전(상) 1화 [의협의 사나이] 전투 완료,,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Guan Yu Story (Ch.1) Part 1 [A Righteous Man],17459,inferred

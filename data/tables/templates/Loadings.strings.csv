@@ -1,0 +1,164 @@
+column,seq,loc_row,confidence,ko,en
+name,1,18650,anchored,장수의 Cost는 고정되어 있지 않고 성장에 따라 조금씩 증가합니다.\n확실히 티가 나는 건 승급 전후일 거예요.,A commander's cost is not fixed.\nIt will increase as they are promoted.
+name,2,18651,anchored,"당신이 내린 결정으로 장수의 생사가 결정되며, 때로는 역사가 완전히 갈라지기도 합니다.\n판단은 신중하게 하세요.","The choices you make determine a commander's fate, and sometimes the course of history.\nBe careful when you make your decisions."
+name,3,18652,anchored,최대 LV에 도달하더라도 훈련으로 능력을 좀 더 강화할 수 있습니다.\nLV이 같다고 해서 같은 장수라고 생각하면 오산입니다.,Train commanders to improve their basic abilities.\nAll commanders are different and have different abilities.
+name,4,18653,anchored,"청룡, 백호, 주작, 현무 사신의 신전이 있다는 소문이 있습니다.\n과연 그곳에는 어떤 비밀이 숨겨져 있을까요?","Rumor has it that there are temples for the Azure Dragon, White Tiger, Vermilion Bird, and Black Tortoise.\nWhat might those ancient structures hide?"
+name,5,18654,anchored,「조홍」은 재평가되어 마땅한 인물입니다. 그의 상징인 황금 투구가 그 사실을 반증하지요.,Cao Hong deserves to be reevaluated. He has a golden helmet for god's sake.
+name,6,18655,anchored,전설에 따르면 마왕은 영혼이 맑고 선한 자를 숙주로 삼는다고 합니다.\n마왕이 깃들지 않도록 조심하세요.,"According to legend, the demon chooses its host based on purity of soul.\nAlways be mindful that you don't fall victim to this fiend."
+name,7,18656,anchored,과금 없이 게임을 열심히 플레이하더라도 VIP LV가 성장합니다.\n단지 과금할 때보다 시간이 좀 더 필요할 뿐이에요.,Playing the game without making purchases won't stop your VIP Lv. growth. It just slows it down.
+name,8,18657,anchored,전투를 치르려면 군량이 필요합니다. 유능한 장수를 출진시키면 더 많은 군량이\n필요하죠. 아까워하지 마세요. 전투의 승리로 비용 이상의 가치를 입증할 겁니다.,"It takes Rations to enter the battlefield, and strong commanders require the most of all.\nBut don't worry—they'll prove their worth in combat."
+name,9,18658,anchored,전투 중 화면 오른쪽 아래의 「아군일람」을 터치하면\n행동 가능한 장수를 쉽게 찾을 수 있습니다.,Tap Ally List at the bottom right of the battle screen\nto easily find an active commander.
+name,10,18659,anchored,초원이나 숲에 있는 적에게는 화계 책략의 공격력이 20% 상승합니다.\n적들이 초원과 숲에 있다면 화계 책략을 준비하세요!,Fire damage increases by 20% against enemies in Grasslands or Forests.\nMake sure you keep that in mind when fighting in those terrains!
+name,11,18660,anchored,비가 오면 초원과 평지에도 물이 고이고 물길이 나곤 합니다.\n수계책략을 사용할 수 있으니 비가 올 때 적극적으로 활용해보세요!,Rain can make a puddle or waterway in Grasslands and Plains.\nUtilize Water Tactics during the rain.
+name,12,18661,anchored,서신은 일정 시간 내에 확인하지 않으면 사라집니다.\n놓치지 않도록 자주 확인해보세요.,Letters disappear if you don't read them within a set period of time.\nTry not to miss anything.
+name,13,18662,anchored,전장에서 빈 땅을 두 번 연속 선택하면 조작이 필요한 부대가 바로 화면에 나타납니다.\n행동할 부대를 찾기 쉽겠죠?,"To gain more Silver Coins and Rations, upgrade buildings by tapping Manage when you select your domain.\nManaging your domains is a vital part of statesmanship, so govern them well!"
+name,14,18663,anchored,"현혹, 해일은 적장에겐 사용할 수 없습니다.\n일반 병사들에게만 효과가 있으니 대상 선정에 유의하세요.",Intimidate and Tsunami can't be used on enemy commanders.\nYou can still use those tactics on normal units.
+name,15,18664,anchored,"장수가 많아 전투가 너무 오래 걸린다면, 턴 종료 > 위임을 선택해보세요.\n중요 장수만 직접 조작하고 나머지는 위임하는 것도 괜찮은 선택입니다.","If you feel like your turns are taking too long, you can enable the Auto Battle function.\nYou can still control the important commanders and leave the rest to the AI."
+name,16,18665,anchored,전체 70개의 거점을 점령하고 발전시키세요.\n그것이 중원의 패자가 되기 위한 첫걸음입니다.,Strategy mode allows you to occupy and manage domains.\nIt's the first step to becoming a true conqueror.
+name,17,18666,anchored,거점마다 방어 병력을 배치하는 걸 잊지 마세요.\n어렵게 얻은 거점을 쉽게 뺏길 수 있습니다.,Make sure you fortify your domains with defensive units.\nYou don't want to lose a hard-earned domain to an oversight.
+name,18,18667,anchored,"연의편의 전투에서는 전투의 목표에 따라서 인장을 획득할 수 있습니다.\n인장 수에 따라서 보상이 달라지니, 인장 3개에 도전해보세요.","Completing objectives in Story battles grants seals.\nThe number you gain changes the rewards you earn, so try to get three every time!"
+name,19,18668,anchored,"선택 시 이동범위가 초록색으로 보이는 부대는 적, 혹은 우군입니다.\n이들은 직접 조작할 수 없습니다.",Units that have their movement range in green when selected are either enemies or friends.\nThey cannot be controlled manually.
+name,20,18669,anchored,출진 부대의 조합에 따라 같은 전투라도 전혀 다른 양상으로 상황이\n변화합니다. 다양한 직업을 조합해 부대를 배치해보세요.,Each battle unfolds differently depending on the units used.\nTry using a variety of different units to see how they perform together.
+name,21,18670,anchored,마왕은 흙으로 빚은 인형들에게 영혼을 불어넣어서 그들을\n자유자재로 다룰 수 있다는 소문이 있습니다.,"According to legend, the demon can control\nClay Soldiers by enchanting them with souls."
+name,22,18671,anchored,전장에서 구름과 안개가 낀 지역은 전투 영역이 아니니\n안개를 향해 가지 마세요.,Areas on the battlefield with fog and clouds are not\ncombat zones. Stay away from the fog!
+name,23,18672,anchored,파촉은 깎아지는 돌산과 험난한 지형으로 유명합니다.\n산악지대에 유리한 병과들로 부대를 꾸려보세요.,"Bashu is infamous for its rocky, mountainous terrain.\nBe sure to use units that excel at mountain combat."
+name,24,18673,anchored,장강 유역은 큰 강을 끼고 있는 지형입니다.\n수전에 유리한 병과들로 부대를 꾸려보세요.,"The Yangtze river is very, very long.\nBe sure to use units that excel at water combat."
+name,25,18674,anchored,"무기와 방어구와는 달리, 나머지 장비들은 오래 사용하더라도\nLV가 증가하지 않습니다.","Equipment other than weapons and armor do not increase\nlevels, no matter how much you use them."
+name,26,18675,anchored,무기와 방어구는 공격하거나 맞을 때 각각 EXP가 증가합니다.,"Weapons and armor gain EXP when attacking and when attacked, respectively."
+name,27,18676,anchored,장비의 LV가 증가하면 그 위력이 증가합니다. 아이템의 종류에 따라 최대 LV이\n다르니 LV.Max가 된다면 합성을 통해 새로운 장비를 제작해 교체하세요.,"As equipment level increases, it grows more powerful. The max level changes based on the grade.\nWhen the equipment's grade reaches the maximum, you can craft it into a new item of a higher grade."
+name,28,18677,anchored,"전장에서 내가 조작할 장수를 못 찾겠다면, 5초만 기다려보세요.\n가장 가까운 장수를 조작할 수 있게 카메라가 자동으로 이동합니다.","If you have lost track of your commanders on the battlefield, just wait five seconds.\nThe camera will automatically move toward the nearest active commander."
+name,29,18678,anchored,"군량은 자신이 점령 중인 거점에서 징세를 통해 충전할 수 있습니다.\n최대보유량이 되면 더는 충전되지 않으니 자주 접속해 자원을 수거하고, 자주 소모하세요.","You can collect Rations from the buildings in your domain. Once you reach the maximum capacity,\nyou won't be able to collect any more. Make sure you use them often."
+name,30,18679,anchored,전투에서 패배하더라도 최후의 기회를 이용한다면 상황을 되돌려볼 수\n있습니다. 긴 연의편 전투에서 특히 유용합니다.,"If you use Undo Turn, you might be able to avoid losing a battle. "
+name,31,18680,anchored,연의편에서 야망의 성향에 따라서 조조의 삼국 통일의 여정이\n달라집니다. 야망은 전략편에서는 영향을 주지 않습니다.,"Cao Cao's Story changes based on his Ambition.\nHowever, this will not change any other story."
+name,32,18681,anchored,연대기와 연의편의 선택지에서 보여지는 붉고 푸른 게이지는 조조의\n야망의 성향을 나타냅니다. 붉은색이 강해질수록 야망이 강해집니다.,"The red and blue gauges in Cao Cao's Story indicate the tenacity of his Amibition.\nRed means stronger Ambition, and blue means weaker."
+name,33,18682,anchored,"조조의 야망이 너무 파랗거나 너무 붉게 치우쳤을 경우, 이전에 플레이한\n시나리오를 다시 플레이해 기존과 다른 선택을 하면 야망의 성향을 바꿀 수 있습니다.","If Cao Cao's Ambition is too much of one color,\nyou can replay the previous scenarios to change the outcome."
+name,34,18683,anchored,선택지를 잘못 고른 것 같다고 걱정하지 마세요.\n해당 시나리오를 다시 진행하면 선택을 바꿀 수 있습니다!,Don't worry if you feel you made the wrong decision.\nYou can always replay the scenarios if you change your mind!
+name,35,18684,anchored,"어떤 장수가 내 장수인지 잘 모르겠다면, 아무도 선택하지 않은 상태에서 5초만 기다려보세요. 조작 가능한 장수가 하얗게 점멸합니다.","If you have lost sight of your commanders, do nothing for five seconds.\nCommanders that can be controlled will flash white."
+name,36,18685,anchored,"붉은색은 내 부대, 보라색은 AI 아군을 의미합니다.\n파랑색은 적입니다. 누가 우리 편인지 잘 모르겠으면 색을 유심히 살펴보세요.","In Cao Cao's Story, your units are shown in red and your AI controlled friendly units are in purple.\nEnemies are shown in blue. Check the units' color to find out where they belong."
+name,37,18686,anchored,"수도로 지정한 거점은 어떤 경우에도 적에게 빼앗기지 않습니다.\n그 말은, 수도 외에는 모두 빼앗길 수 있다는 뜻입니다.","Capital domains can never be captured by the enemy.\nHowever, every other location is free game."
+name,38,18687,anchored,"내가 조작 중이 아닌 거점은 게임을 플레이하는 중이라도 공격당할 수 있습니다.\n게임에 오랫동안 접속하지 않는다면, 다른 사람들에게 더 많이 공격당하게 됩니다.","Any domain that you're not actively managing can be attacked, even when you're online.\nIf you stay offline for a long time, you will become vulnerable to attacks by others."
+name,39,18688,anchored,"게임을 하면서 내 거점들을 공격당하고 싶지 않다면, 보호 상태를 사용해보세요.","If you want to protect your domains while you're playing the game, you can activate Protection mode."
+name,40,18689,anchored,"장수 성장은 LV 증가 외에도 상위 직업으로 성장하는 승급, 장비를 성장시키고\n더 좋은 장비로 개량하는 강화, 재능 그 자체를 보완하는 훈련 등 다양한 요소가 있습니다.","There are numerous ways to improve your commander: promoting them to a higher class,\ngiving them better equipment, and training them to improve their base stats."
+name,41,18690,anchored,장수에 따라서는 직업이나 장수 자체의 잠재 능력에 의해 특수한 장수\n효과를 갖습니다. 승급할 때마다 새로운 장수 효과를 얻을 기회가 생기니 놓치지 마세요.,Special commander passives are available on some commanders based on their innate abilities.\nEvery promotion gives you a chance to obtain a new passive!
+name,42,18691,anchored,거점을 점령하면 전투에 참가한 장수 중 1명을 태수로 임명해 그 지역의\n내정을 맡겨야 합니다. 인재가 부족하다면 계보에서 새로운 인물을 미리 등용하세요.,"Once you capture a domain, you must assign one of the commanders that participate in the battle as the Prefect.\nIf you do not have any commanders that are talented at governing, you can recruit a new one from the Banner beforehand."
+name,43,18692,anchored,"거점을 보호하려면 방어 부대를 배치해야 합니다. 방어 부대를 배치하지\n않으면, 어렵게 얻은 거점을 금방 적에게 빼앗기고 말 겁니다.","You must assign defense units to your domain to protect it.\nIf you do not, you will lose your domains to your enemies."
+name,44,18693,anchored,VIP LV가 높아지면 더 많은 혜택이 제공됩니다.\n현재 VIP LV를 확인하려면 캐시샵의 VIP 메뉴를 확인해보세요.,Higher VIP Lv. gives you more benefits.\nCheck your VIP Lv. from Payment > Gold Coins > VIP Benefits.
+name,45,18694,anchored,"총위임으로 장수들이 알아서 판단해 움직이고 있더라도 문제가\n있다고 생각되면, 언제라도 위임해제를 선택하세요. 다시 직접 조작할 수 있습니다.",Your commanders and all other units will make their own decisions in Auto battle.\nYou can always cancel Auto Battle to take control of your units once again.
+name,46,18695,anchored,"전장에서 어떤 장수를 선택해야 할지 모르겠다면, 붉은색 장수를\n선택하세요. 붉은색은 조조의 부대를 상징하기에, 붉은 장수는 당신의 부대입니다.","If you don't know which commander to select in the battlefield, choose a red commander.\nCao Cao's forces are always in red, which means that the red commanders are your units."
+name,47,18696,anchored,전투 중에는 핀치 투 줌으로 카메라를 제어할 수 있습니다.\n두 손가락으로 벌리고 좁혀 카메라 배율을 조정해보세요.,You can use pinch-to-zoom to control the camera during a battle.\nZoom in and out of the camera with two fingers.
+name,48,18697,anchored,"전략편은 요약 지도로 시작하지만, 핀치 투 줌으로 확대해 볼 수도\n있습니다. 두 손가락을 벌리고 좁혀 카메라 배율을 조정해보세요.",Tap Change Map to see the current status of province occupations.\nYou can zoom the camera in and out and adjust the magnification.
+name,49,18698,anchored,"전장에 있는 건물들은 각각 기능이 있습니다. 종류에 따라\nHP, MP를 회복하거나, 아이템을 주기도 하고, 파괴되기도 합니다.","All buildings on the battlefield have a unique function.\nSome may recover HP and MP, while others give out items or are simply destroyed."
+name,50,18699,anchored,직업간 상성을 활용하면 적은 수로도\n다수의 적을 물리칠 수 있습니다.,Utilize class advantages to defeat multiple enemies with small numbers.
+name,51,18700,anchored,"연의편 일반 난이도에서만 전투 중 LV이 상승할 때\nHP, MP가 최대로 회복됩니다.",Your HP and MP fully are fully restored when you level up during a battle in normal difficulty.
+name,52,18701,anchored,"전장에서 지붕이 파란 건물은 점유가 가능한 건물입니다.\n해당 건물 위에선 매 턴마다 HP, MP 회복 등 다양한 효과가 발생합니다.","Buildings with blue roofs can be captured in battle.\nStopping on those buildings grants a variety of effects, including HP and MP recovery."
+name,53,18702,anchored,적의 주요 건물들은 전투 중 파괴가 가능합니다.\n건물을 부숴 목표를 달성하세요.,You can destroy the enemy's key buildings in battle.\nDestroying buildings allows you to achieve objectives.
+name,54,18703,anchored,"채팅 도중 외치기 모드로 전환하면, 메시지를 보낼 때마다 금전이\n소모되므로 필요한 외치기를 마치면 일반 대화 상태로 전환하셔야 합니다.","If you switch to Shout mode when chatting with other plays,\nmessages consume Gold Coins. Make sure to switch back to the normal chat!"
+name,55,18704,anchored,채팅은 자유롭게 채널 이동이 가능합니다.\n다른 국가 사용자를 만날 수 있는 공용 채팅 채널도 있답니다!,You can freely move between chat channels and talk to others.\nYou may even meet players from different countries!
+name,56,18705,anchored,업적은 장수의 해금 뿐만 아니라 전용 상점\n이용 등 다양한 곳에서 활용됩니다.,Feats are used to unlock commanders\nand purchase items from the Special Shop.
+name,57,18706,anchored,계보의 강화를 통해 최대 훈련 가능한도를 상승시킬 수 있습니다.,You can increase the max training limit by upgrading a commander's Banner.
+name,58,18707,anchored,"일반 장비는 착용 즉시 귀속되지만, 보물은 귀속되지 않으니\n보물을 재배치해 효율적으로 운용해보세요.","Normal equipment cannot be unequipped, but artifacts can.\nTry using different artifacts for each battle."
+name,59,18708,anchored,"상점에선 요일에 따라 거래하는 물품이 달라집니다.\n매일매일 어떤 물품들이 거래되고 있는지, 살펴보세요.",Different types of items can be purchased at the Shop every day.\nBe sure to check daily to see what's on sale.
+name,60,18709,anchored,내정 기능인 연구를 거듭하면 상점에서 판매하는\n물품이 더 다양해지고 고급품으로 변해갑니다.,Research upgrades the items sold in the Shop.
+name,61,18710,anchored,"항상 새로운 임무가 제공되므로, 접속할 때마다 임무 및\n업적을 살펴보고 다양한 보상을 받으세요.",Check out the missions and feats every time you log in to get a variety of rewards. You can always take on new missions.
+name,62,18711,anchored,"연대기에서 시나리오를 잇는 선은 시나리오의 분기를 상징합니다.\n붉은 색은 역사를, 푸른 색은 가상 역사 흐름입니다.","In Cao Cao's Story, the lines that connect scenarios represent the different paths the story can take.\nThe red lines represent history, while blue lines are fantasy scenarios."
+name,63,18712,anchored,게임 진행 시 프레임이 낮다면 사용 장비에 맞춰 설정을 변경하세요.,"If your frame rates are too low, adjust your settings."
+name,64,18713,anchored,쾌속 기능을 이용하면 AI 턴을 빠르게 넘길 수 있습니다.\n시간이 부족하다면 적절히 활용하세요!,Use the Fast Battle feature to quickly pass AI turns.\nUtilize it when you're short on time!
+name,65,18714,anchored,부대를 선택했을 때 이동 범위가 초록색으로 펼쳐지는\n부대는 조작할 수 없는 부대입니다.,You cannot control a unit whose movement range is green.
+name,66,18715,anchored,부대를 선택했을 때 이동 범위가 파란색으로 펼쳐지는\n부대는 조작 가능한 부대입니다.,You can control a unit whose movement range is blue.
+name,67,18716,anchored,행동을 마친 부대는 회색으로 표시됩니다.\n회색은 이번 턴에 행동을 마친 부대라는 의미랍니다.,Units that have completed their turn become gray.\nThey will be able to move again on the next turn.
+name,68,18717,anchored,중독에 걸리면 부대가 초록색으로 점멸합니다.\n책략이나 도구를 이용해 중독 상태이상을 치료해주세요.,Poisoned units flash green.\nUse tactics or items to cure them.
+name,69,18718,anchored,전장에서 머리 위에 마크가 붙은 부대는 각 세력의 대장을 의미합니다.,Units with a mark over them in battle represent the leaders of each faction.
+name,70,18719,anchored,연구에서 새로운 병사들을 영입해 성장시키면 보유 거점을 더 편하게 보호할 수 있습니다.,Recruit new soldiers through research to defend your occupied domains.
+name,71,18720,anchored,편성에서 부대 배치를 변경하면 적용된 모든 거점에 영향을 받습니다.,Assigning your troops to different places affects all battle maps.
+name,72,18721,anchored,편성에서 병사의 성장 한도를 높이기 위해서는 군주 Rank를 높여야 합니다,You must first raise your own Warlord Rank if you want your commanders to reach their full potential.
+name,73,18722,anchored,거점에서 내성을 강화하면 공성전 발생 시 내성도 강화되어 방어가 크게 유리해집니다.,Upgrading the Inner Castle gives you a huge advantage when defending your domain.
+name,74,18723,anchored,"편성에서 병사를 영입해 성장시킨 뒤, 부대 배치를 해야만 실제 공성전에서 배치된 병사가 효과를 발휘합니다. 배치를 잊지 마세요!","Once you've recruited new soldiers, be sure to level them up and assign them\nto a domain so they can participate in sieges."
+name,75,18724,anchored,관리 > 임무/업적 메뉴에서 업적 탭에 들어가면 그간 게임을 진행하며 얻은 다양한 업적을\n보상받을 수 있습니다. 자원이 부족하면 업적을 확인해보세요!,"Go to Manage > Mission/Feat to view and obtain rewards from the feats you've completed.\nMake sure you keep an eye on it, especially if you're short on resources!"
+name,76,18725,anchored,1단계라도 각 건물을 강화하는 것과 하지 않는 것의 재화 습득량의 차이가\n2배 이상 매우 크니 입수한 거점의 건물은 가능한 강화하는 것이 좋습니다.,"Upgrading buildings doubles their earnings,\nso make sure you do it regularly!"
+name,77,18726,anchored,"은전이나 군량이 부족할 경우, 금전을 대신 소모해 비용을 지불할 수 있습니다. 비용이 붉은 색으로 표시될 때 버튼을 누르면 금전 사용이 가능합니다.","If you're short on Silver Coins or Rations, you can use Gold Coins instead.\nTapping the button when the cost is red will use Gold Coins."
+name,78,18727,anchored,보물 강화에서 강화 단계 하락을 막아주는 강화 보존권을 은전 사건과 상점에서 얻을 수 있습니다.,An Upgrade Protection Ticket will prevent an artifact from downgrading when making an upgrade attempt. Can be obtained from Silver Coin Quests and Shops.
+name,79,18728,anchored,"매일 게임에 출석하고, 연의 전투에서 승리하는 것만으로도 VIP 경험치를 획득할 수 있습니다.",Log in to the game every day and win Story Battles to earn VIP EXP.
+name,80,18729,anchored,"채팅 도중 전체 모드로 전환하면, 모든 채널에 메시지를 보낼 수 있습니다.\n하지만 보낼 때마다 금전이 소모됩니다.","Switching to All Chat. Messages will be sent to all channels,\nbut each message costs Gold Coins."
+name,81,18730,anchored,자유롭게 채널을 이동하여 채팅이 가능합니다.,You can freely move around channels to chat with others.
+name,82,18731,anchored,거점을 점령하면 방어 부대에 속하지 않은 장수 중 1명을 태수로 임명해 그 지역의\n내정을 맡겨야 합니다. 인재가 부족하다면 계보에서 새로운 인물을 미리 등용하세요.,"After occupying a domain, you must assign a commander that is not part of the Defense\nas the prefect to govern the province. Recruit a commander from Banner if you need more."
+name,83,18732,anchored,연합을 통해 다른 군주들과 협력 활동을 할 수 있습니다.\n혼자서 하기 어려운 일들을 다른 군주들과 함께 해결해보세요.,"You can cooperate with other Warlords through an Alliance.\nWhen a problem is too large to handle alone, try working together!"
+name,84,18733,anchored,"출석 보상은 매일 자정 초기화 되며,\n전략 지도 화면에 재진입 해야 다음 보상이 서신으로 지급됩니다.","The Login Reward resets every day at midnight,\nand you must re-enter the War Map in order to have the next reward sent by letter."
+name,85,18734,anchored,몽매의 시련이 시작되면 공납을 통해 적장을 빠르게 소환할 수 있습니다.\n공납 시 참가권 1장을 얻을 수 있습니다.,"Once Meng Mei's Trial starts, you can rapidly summon enemies by making tributes.\nYou will obtain a ticket upon making a tribute."
+name,86,18735,anchored,몽매의 시련 속 적장은 경화 상태일 때 약점 무기나 책략 이외의 공격에 절반의 피해만 입습니다.,"During Meng Mei's Trial, Hardened enemies only receive full damage from attacks targeting their weakness and tactics. All other attacks do half damage."
+name,87,18736,anchored,"몽매의 시련 속 적장을 약점 무기나 책략으로 공격해서 경화 점수를 0으로 만들면,\n적장은 연화 상태가 되어 한 턴간 2배의 피해를 입힐 수 있습니다.","Once the enemy's Hardened score is reduced to 0 by attacking their weakness or using tactics,\nthe enemy becomes Softened and receives double damage for the turn."
+name,88,18737,anchored,몽매의 시련 속 적장과 관련된 장수들을 찾아 출진 시켜보세요.\n숨겨진 이벤트가 발생하여 특수 효과를 얻을 수 있습니다.,Try choosing commanders who are related to the enemies awaiting you in Meng Mei's Trial.\nYou may gain a special passive by activating hidden events.
+name,89,18738,anchored,"몽매의 시련에서 적장에게 준 피해량이 목표량을 달성하면 적장은 퇴각하게 되고, 모든 군주님은 토벌 보상을 수령할 수 있습니다.","Enemy leaders retreat once you deal the designated damage to them, and all participating commanders then receive expedition rewards."
+name,90,18739,anchored,몽매의 시련 속 적장에게 준 피해량에 따라 무훈을 얻게 됩니다.\n무훈은 논공행상 때 보상품을 살 수 있는 재화로 사용됩니다.,You receive Merit based on the amount of damage dealt to the enemy during Meng Mei's Trial.\nMerit can be used to purchase rewards during Just Rewards.
+name,91,18740,anchored,"몽매의 시련은 매달 1일에 시작하며, 20일이 지나면 논공행상이 진행됩니다.\n논공행상의 등급은 이름이 다른 적장 별 최대 피해를 준 순서로 정해집니다.","Meng Mei's Trial begins on the 1st of every month, and Just Rewards begins on the 20th of every month.\nJust Rewards ranks are determined by the maximum amount of damage dealt per battle."
+name,92,18741,anchored,몽매의 시련에서 논공행상 시 자신의 등급부터 낮은 등급의 보상품을 구입할 수 있습니다.\n최고 등급인 충무 공신은 모든 보상품을 구입할 권리를 가집니다.,"During Just Rewards of Meng Mei's Trial, you will be able to purchase rewards of equal or lower rank than you own.\nWhoever possesses the highest Utmost Contribution rank will have the privilege purchasing any reward they like."
+name,93,18742,anchored,섬멸전은 1주일에 한번 순위에 따라 보상이 지급됩니다.\n1회 참가만 해도 금전과 명예를 획득할 수 있으니 도전해보세요.,You receive a reward every week for your Annihilation ranking.\nParticipating just once is enough to earn Gold Coins and Fame.
+name,94,18743,anchored,"섬멸전은 산지, 설원, 초원, 사막, 도성, 장강 전장으로 구성되며,\n1주일에 단위로 전장이 바뀌게 됩니다.","Annihilation battlefields comprise Mountain, Snow, Grassland, Desert, Castle, and River maps.\nThe battlefield changes every week."
+name,95,18744,anchored,섬멸전에서 어떤 장수를 선호하는지 궁금하신가요?\n섬멸전 > 공략 정보 버튼을 눌러보세요. 전장 별 선호 장수의 순위를 알 수 있답니다.,Curious about which commanders other players are using in Annihilation?\nCheck out the Annihilation > Guide button. You will be able to see the preferred commanders for each battlefield.
+name,96,18745,anchored,섬멸전 > 부대 편집 버튼을 누르면 출진 장수와 진형을 바꿀 수 있습니다.\n진형 탭에서 효과정보를 누르면 진형을 강화하여 더 큰 피해를 줄 수 있습니다.,Tap the Annihilation > Edit Units button to change your commanders and formations.\nTap the Effect Info from the Formation tab to enhance formations and strengthen their effects.
+name,97,18746,anchored,섬멸전 전투 도중 무장 정보 버튼을 누르면 상대 장수들의 보물과 장수 효과를 한 눈에 볼 수 있습니다.,Tap the Commander Info button during Annihilation to view the commander's Artifacts and Commander Passives.
+name,98,18747,anchored,"섬멸전에서는 아이템을 사용할 수 없으며, 주머니 효과가 발동되지 않습니다.","You cannot use items during Annihilation, and Pouch accessories are disabled."
+name,99,18748,anchored,"섬멸전에서는 폭풍, 현혹, 사독, 해일, 회귀, 대회귀, 날씨 책략이 금지됩니다.","Typhoon, Intimidate, Viper Strike, Tsunami, Rally, Mass Rally, and Weather tactics cannot be used in Annihilation."
+name,100,18749,anchored,섬멸전에서 패왕의 전장 1등급(4000점 이상의 승점)에서는 가상 군주가 출현하지 않습니다.,"NPC warlords are unavailable in Rank 1 of Annihilation (4,000+ Match Points)."
+name,101,18750,anchored,"사신을 소환하기 위해서는 사신의 흔적이 필요합니다. 사신의 흔적은 격전지, 사건, 천리행 등에서 획득 가능합니다.","Four Gods Essence is required to summon the Four Gods. It can be obtained from Battlegrounds, Quests, and Trial of the Gates."
+name,102,18751,anchored,"사신을 토벌하게 되면, 토벌한 사신의 위패를 획득할 수 있습니다.\n획득한 위패는 계보 장수 활성화, 몽매의 시련 공납물 진상, 보패 회수에 사용됩니다.  ","Obtain Four Gods Ancestral Tablets by defeating the Four Gods.\nTablets are used to activate Commander Banners, Pay Tribute in Meng Mei's Trial, and retrieve relics.  "
+name,103,18752,anchored,"사신을 토벌하게 되면, 토벌한 사신의 영혼을 획득할 수 있습니다.\n획득한 영혼으로 계보 장수 등용, 보패 상자 개봉, 보패 강화에 사용됩니다.","Earn Four Gods Souls by defeating the Four Gods.\nSouls are used to recruit Banner Commanders, open Relic Chests, and upgrade relics."
+name,104,18753,anchored,토벌에 성공한 사신은 이후 토벌권 사용으로 빠른 토벌이 가능합니다.,Instantly defeat Four Gods you've already bested by using Tokens.
+name,105,18754,anchored,"각성 사신은 사신의 분노 점수를 사용하여 연합장이나 참모 등이 소환할 수 있으며, 각성 사신의 체력이 낮아질수록 강력해집니다.",Awakened Four Gods can be summoned by Alliance Leaders or Ministers using Wrath of the Four Gods. Awakened Four Gods become stronger as their HP falls.
+name,106,18755,anchored,사신전 > 보패 버튼을 누르면 획득한 사신의 영혼으로 보패 상자를 개봉할 수 있습니다. ,Tap the Four Gods Battle > Relics button to open Relic Chests with Four Gods Souls. 
+name,107,18756,anchored,보패는 관리 > 장수 > 보패 탭에서 착용하거나 변경할 수 있습니다.\n착용한 보패 조합에 따라 추가 효과를 얻을 수 있습니다.,Relics can be equipped and changed from Manage > Commanders > Relics tab.\nYou can gain additional effects based on the combination of equipped relics.
+name,108,18757,anchored,보패의 등급은 1~4등급으로 나뉘며 사신의 영혼을 사용하여 5레벨까지 강화를 할 수 있습니다.,"Relics typically range from 1-4★, but can be upgraded to 5★ with Four Gods Souls."
+name,109,18758,anchored,같은 속성의 4등급 보패 3개를 합성하면 원하는 속성의 보패 1개를 획득할 수 있습니다.,Can combine three 4★ relics of the same attribute to get one relic with an attribute of your choice.
+name,110,18759,anchored,착용하지 않은 보패를 분해하면 사신의 영혼을 획득할 수 있습니다.,Disassemble unused relics to obtain Four Gods Souls.
+name,111,18760,anchored,연의 목록에서 무극 달성이라고 표시된 연의만 무극을 진행할 수 있습니다.,You can only play the Eternal Stories marked with Eternal Achieved on the story list.
+name,112,18761,anchored,"연의는 난이도 일반이 기본이며 아이콘 클릭 시, 일반 > 극한 > 무극 > 일반 순으로 난이도가 바뀌게 됩니다.",The base difficulty for Story Mode is Standard. Tap the icon to cycle through difficulty from Standard > Extreme > Eternal > Standard.
+name,113,18762,anchored,연의 무극에서는 출진 장수의 LV가 시나리오에 맞게 자동으로 변경됩니다.\n변경된 LV에 맞게 부대 효과와 교본 적용 수치도 조정됩니다.,"During Extreme Story Mode, assigned commander levels are automatically adjusted to suit the scenario.\nCommander Passives and Training Scrolls are all adjusted to the level as well."
+name,114,18763,anchored,연의 무극에서는 연의에서 획득한 보물의 효과만 적용됩니다.\n착용 중인 전략 보물과 보패의 능력치 및 효과는 적용되지 않습니다.,"During Extreme Story Mode, only artifacts obtained from stories (unstarred) have their effects applied.\nStarred artifacts and relics have no effect even if they are equipped."
+name,115,18764,anchored,"격전지 거점에 따라 보물 제작 허가서, 강화 보존권,\n보물 강화 허가서 등 다양한 생산품을 얻을 수 있습니다.","Based on the Battleground Domains, you will be able to obtain various supplies\nsuch as Artifact Crafting Permits, Upgrade Protection Tickets, and Artifact Upgrade Permits."
+name,116,18765,anchored,격전지에 참여하여 다양한 생산품을 얻으려면 전략 지도 오른쪽 아래에 있는 거점들을 점령하면 됩니다. ,"If you wish to gain various supplies by participating in the Battleground, tap the Domains at the bottom right of the War Map to occupy them. "
+name,117,18766,anchored,격전지에서 승리 시 해당 전투에 참여한 장수들은 다른 격전지에서 사용할 수 없습니다.,"Once you win a Battleground, the commanders who participated in that battle can't participate in another Battleground until they reset."
+name,118,18767,anchored,점령한 격전지를 빼앗기게 되더라도 이미 생산된 자원의 50%는 받을 수 있습니다.,"Even if you lose occupied Domains, you will still receive 50% of the resources produced."
+name,119,18768,anchored,격전지에서 상대방의 거점을 빼앗으면 다양한 종류의 자원을 약탈할 수 있습니다.,"If you take over an opponent's domain in the Battleground, you can loot various resources from them."
+name,120,18769,anchored,천리행에선 관문 도전에 실패하더라도 얼마든지 재도전 할 수 있습니다. 단 관문 도전에 성공하면 해당 전투에 사용한 장수들은 사용할 수 없습니다.,"Even if you fail to break through a gate in Trial of the Gates, you can retry as much as you want. However, if you successfully complete a gate challenge, commanders who fought in that battle cannot participate in another challenge."
+name,121,18770,anchored,천리행에서 장수 회복 기능을 쓰면 이미 사용한 장수들을 다시 출전시킬 수 있습니다.,Use the Restore Commander feature in Trial of the Gates to use commanders who have already participated.
+name,122,18771,anchored,천리행에선 관문에 따라 출전 장수의 등급이 제한됩니다. 관문 정보 버튼을 눌러 관문 별 필요 승급을 확인해보세요.,The commander grade is limited based on the gates in Trial of the Gates. Tap the Gate Info to check the grade required for each gate.
+name,123,18772,anchored,천리행에서 일정 단계 이상의 관문을 통과했다면 다음 주에 돌파 기능을 써보세요. 낮은 단계의 관문은 군량만 지불하고 보상을 받을 수 있습니다!,"If you have passed a certain gate level in Trial of the Gates, try using the Breakthrough feature next week. You'll receive the rewards of lower level gates just by paying rations!"
+name,124,18773,anchored,"천리행에서 돌파가 적용되는 관문은 5, 10, 19관문으로, 다음 주에는 각각 4, 9, 18관문까지 돌파가 가능합니다.","Gates 5, 10, and 19 can be cleared with Breakthrough in Trial of the Gates, and are rotated with Gates 4, 9, and 18 the following week."
+name,125,18774,anchored,거점을 점령하면 민심 관리 > 진상품 수령 버튼을 눌러 정기적으로 진상품을 받을 수 있습니다. 70개 거점 모두를 점령해서 다양한 진상품을 받아 보세요.,"Once you occupy a domain, tap Manage Devotion > Receive Tributes to regularly receive tributes. Occupy all 70 Domains to receive a variety of tributes."
+name,126,18775,anchored,70개 거점과 모든 비거점을 점령하여 천하를 통일하면 매일 황제에게 금전을 하사 받을 수 있습니다!,"Once you unify the land by occupying all 70 Domains and Outposts, the Emperor rewards you with Gold Coins every day!"
+name,127,18776,anchored,장수 외형은 경쟁전 교환권이나 보물 상자 > 거함 개봉으로 획득할 수 있습니다. 만약 거함에서 특별 교환권을 얻었다면 교환소에서 외형을 구입할 수 있습니다.,"Commander skins can be obtained from PvP Vouchers or through Treasure Chest > Open Boxes. If you have obtained Boxes or Special Vouchers, you can purchase skins from the Exchange Center."
+name,128,18777,anchored,"4주마다 한 주씩, 경쟁전에서 난투가 진행됩니다.\n새로운 전장과 규칙으로 시원한 전투를 즐겨 보세요.",Brawls begin every four weeks in PvP.\nEnjoy fighting in a new battleground with brand new rules.
+name,129,18778,anchored,경쟁전 난투 전장에서는 부대를 교체해 가며 새로운 전략으로 1대 1 대전을 펼칠 수 있습니다.,You can switch out units in PvP Brawl Battlegrounds for 1-on-1 Duels to try out new strategies.
+name,130,18779,anchored,경쟁전에서 승리를 하면 일정 시간이 지나면 개봉되는 보상 상자를 얻게 됩니다.\n단 상자 슬롯이 가득차면 승리를 해도 보상 상자를 획득할 수 없습니다.,"If you win in PvP, you will receive Reward Chests that can be opened after some time has passed.\nHowever, if your chest slots are full, you won't obtain any reward chests even if you win."
+name,131,18780,anchored,경쟁전 > 친선전에서 승리를 한 경우에는 보상 상자는 획득할 수 없습니다. ,You won't earn any Reward Chests from winning PvP > Exhibition Match. 
+name,132,18781,anchored,인연의 끈을 이용해 인연의 잠금을 해제하고 새로운 시나리오를 감상해 보세요.\n인연은 군주 Rank 25부터 시작할 수 있습니다.,Try out new scenarios by using Twines of Friendship to unlock new friendships.\nFriendships can start from Warlord Rank 25.
+name,133,18782,anchored,인연이 성사된 장수가 함께 출전하면 추가 효과를 얻을 수 있습니다.,You will gain additional effects by going into battle with commanders who have formed Friendships.
+name,134,18783,anchored,인연 정보는 관리 > 인연 도감에서 확인할 수 있습니다.\n인연 활성화에 필요한 인연의 끈은 몽매의 시련 등에서 획득할 수 있습니다.,Check Friendship Info in Manage > Friendship Book.\nTwines of Friendship are used to activate friendships and can be obtained from Meng Mei's Trial.
+name,135,18784,anchored,연합 창고에서는 연합 활동을 통해 획득한 물품을 확인할 수 있습니다.\n연합 사령관이 연합원에게 물품을 수여해야 지급이 완료됩니다.,You can view all of the items obtained by the Alliance in the Storage.\nAlliance Commanders must distribute the items to members.
+name,136,18785,anchored,"Guest 계정을 이용하면 앱 삭제, 기기 변경 시 게임 기록이 사라집니다\n게임 내 설정에서 게임 기록을 SNS 계정에 연동해 안전하게 플레이해주세요.","If you use a Guest account, all game records will be deleted upon removing the app or changing devices.\nPlease link your social account from the Game Settings to protect your data."
+name,137,18786,anchored,사신 소환 시 24시간 동안 3회에 걸쳐 사신전을 이용할 수 있습니다.\n사신이 소환된 후 24시간이 지나면 더 이상 입장할 수 없으니 주의해주세요.,"Once you summon the Four Gods, you can participate in Four Gods Battle 3 times over the next 24 hours.\nPlease be aware that you won't be able to enter 24 hours after the Four Gods are summoned."
+name,138,18787,anchored,"무장전에서는 자신이 가지고 있지 않은 장수와 보물, 효과들로 무작위 적들을 상대하게 됩니다.","Face powerful enemies using random commanders, artifacts, and Passives in Officer Battle!"
+name,139,18788,anchored,"무장전은 세 번째 경기마다 강적이 등장하며, 더 많이 승리할수록 높은 등급의 보상을 얻을 수 있습니다.","In Officer Battle, especially powerful enemies appear every third match. Win more matches for a chance at better rewards!"
+name,140,18789,anchored,무장전에서는 자신의 앞에 있는 적을 가장 우선적으로 공격합니다. 따라서 신중한 배치와 순서 설정이 필요합니다.,"In Officer Battle, you'll have to think carefully about where you place your troops, as each unit attacks the enemy unit in front first!"
+name,141,18790,anchored,"출석 체크는 매일 자정에 초기화 되고, 전략 지도에 재진입해야 인정됩니다! ","Attendance resets every day at midnight. After it resets, you must quit and re-enter the War Map to raise your attendance count. "
+name,142,18791,anchored,"장기 연속 출석 결석 시 출석 보충을 포기하면, 연속 출석 일자가 초기화가 되어 1일부터 다시 시작되니 주의하세요. (이미 받은 보상은 초기화되지 않습니다!)","If you fail to make up for days you didn't check in, your login streak will reset to Day 1 (Previously acquired rewards will not be affected!)."
+name,143,18792,anchored,이거 참… 운이 좋아서 이겨버렸네요.,Oh... I won? That was pure luck.
+name,144,18793,anchored,당신도 내 먹잇감에 불과했나 보네요.,Ha! You were nothing more than an ant under my boot.
+name,145,18794,anchored,"이 거점, 내 잘 쓰도록 하지! 하하하!",I'll make good use of this domain! Thanks! Hahaha!
+name,146,18795,anchored,패배자 녀석! 거점은 잘 써주도록 하지!,"Don't worry, I'll treat this domain better than you did."
+name,147,18796,anchored,나의 승리로군. 좀 더 정진해보게나.,Perhaps you should train harder next time.
+name,148,18797,anchored,대단한 수비였네. 자네 조금 하는군?,Your defense was nearly impenetrable. Excellent fight.
+name,149,18798,anchored,창양항 전투 이후 이용할 수 있습니다.,Available after Battle at the Port of Changyang.
+name,150,18799,anchored,복양 탈환전 이후 이용할 수 있습니다.,Available after Reclaiming Puyang.
+name,151,18800,anchored,전투를 반복하여 일반 장비의 LV이 MAX가 되면 이용할 수 있습니다.,Available after a Normal Equipment level is maxed through repeated battles.
+name,152,18801,anchored,장수가 충분히 강화되지 않았습니다. 일반 장비와 장수의 LV을 최대로 강화해 보세요.,This Commander needs more upgrades. Upgrade a Normal Equipment level and Commander level to max.
+name,153,18802,anchored,도창 전투 이후 이용할 수 있습니다.,Available after Battle of Duchang.
+name,154,18803,anchored,진류 전투 이후 이용할 수 있습니다.,Available after Battle of Chenliu.
+name,155,18804,anchored,임치항 전투 이후 이용할 수 있습니다.,Available after Battle at the Port of Linzi.
+name,156,18805,anchored,북해 전투 이후 이용할 수 있습니다.,Available after Battle of Beihai.
+name,157,18806,anchored,하후돈 등용 학습 과정 후 이용할 수 있습니다.,Available after Xiahou Dun recruitment tutorial.
+name,158,18807,anchored,군주 Rank.10 부터 이용할 수 있습니다.,Available after Warlord Rank 10.
+name,159,18808,anchored,태산 전투 이후 이용할 수 있습니다.,Available after Battle of Taishan.
+name,160,18809,anchored,군주 Rank.18 부터 이용할 수 있습니다.,Available at Warlord Rank 18 or higher.
+name,161,18810,anchored,연주 통일 이후 이용할 수 있습니다.,Available after uniting Yanzhou.
+name,162,18811,anchored,군주 Rank.30 부터 이용할 수 있습니다.,Available after Warlord Rank 30.
+name,163,18812,anchored,군주 Rank.12 부터 이용할 수 있습니다.,Available at Warlord Rank 12 or higher.

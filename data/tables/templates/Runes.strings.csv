@@ -1,0 +1,43 @@
+column,seq,loc_row,confidence,ko,en
+name,1,19717,inferred,각,Horn
+name,2,19718,inferred,항,Neck
+name,3,19719,inferred,저,Heart
+name,4,19720,inferred,방,Belly
+name,5,19721,inferred,심,Heart
+name,6,19722,inferred,미,Tail
+name,7,19723,inferred,기,Flank
+name,8,19724,inferred,정,Crest
+name,9,19725,inferred,귀,Eyes
+name,10,19726,inferred,유,Beak
+name,11,19727,inferred,성i,Castle
+name,12,19728,inferred,장,Gut
+name,13,19729,inferred,익,Wings
+name,14,19730,inferred,진,Chariot
+name,15,19731,inferred,규,Legs
+name,16,19732,inferred,누,Bond
+name,17,19733,inferred,위i,Rank
+name,18,19734,inferred,묘,Hairy Head
+name,19,19735,inferred,필,Net
+name,20,19736,inferred,자,Turtle Beak
+name,21,19737,inferred,삼,Three Stars
+desc,1,19738,inferred,"동방을 관장하는 청룡의 별자리 중, 각의 힘이 내재된 보패.","A relic imbued with the power of Horn, one of the constellations for the Azure Dragon of the East."
+desc,2,19739,inferred,"동방을 관장하는 청룡의 별자리 중, 항의 힘이 내재된 보패.","A relic imbued with the power of Neck, one of the constellations for the Azure Dragon of the East."
+desc,3,19740,inferred,"동방을 관장하는 청룡의 별자리 중, 저의 힘이 내재된 보패.","A relic imbued with the power of Chest, one of the constellations for the Azure Dragon of the East."
+desc,4,19741,inferred,"동방을 관장하는 청룡의 별자리 중, 방의 힘이 내재된 보패.","A relic imbued with the power of Belly, one of the constellations for the Azure Dragon of the East."
+desc,5,19742,inferred,"동방을 관장하는 청룡의 별자리 중, 심의 힘이 내재된 보패.","A relic imbued with the power of Heart, one of the constellations for the Azure Dragon of the East."
+desc,6,19743,inferred,"동방을 관장하는 청룡의 별자리 중, 미의 힘이 내재된 보패.","A relic imbued with the power of Tail, one of the constellations for the Azure Dragon of the East."
+desc,7,19744,inferred,"동방을 관장하는 청룡의 별자리 중, 기의 힘이 내재된 보패.","A relic imbued with the power of the Flank, one of the constellations for the Azure Dragon of the East."
+desc,8,19745,inferred,"남방을 관장하는 주작의 별자리 중, 정의 힘이 내재된 보패.","A relic imbued with the power of the Crest, one of the constellations for the Vermilion Bird of the South."
+desc,9,19746,inferred,"남방을 관장하는 주작의 별자리 중, 귀의 힘이 내재된 보패.","A relic imbued with the power of the Eyes, one of the constellations for the Vermilion Bird of the South."
+desc,10,19747,inferred,"남방을 관장하는 주작의 별자리 중, 유의 힘이 내재된 보패.","A relic imbued with the power of the Beak, one of the constellations for the Vermilion Bird of the South."
+desc,11,19748,anchored,"남방을 관장하는 주작의 별자리 중, 성의 힘이 내재된 보패.","A relic imbued with the power of the Heart, one of the constellations for the Vermilion Bird of the South."
+desc,12,19749,inferred,"남방을 관장하는 주작의 별자리 중, 장의 힘이 내재된 보패.","A relic imbued with the power of the Gut, one of the constellations for the Vermilion Bird of the South."
+desc,13,19750,inferred,"남방을 관장하는 주작의 별자리 중, 익의 힘이 내재된 보패.","A relic imbued with the power of the Wings, one of the constellations for the Vermilion Bird of the South."
+desc,14,19751,inferred,"남방을 관장하는 주작의 별자리 중, 진의 힘이 내재된 보패.","A relic imbued with the power of the Tail, one of the constellations for the Vermilion Bird of the South."
+desc,15,19752,inferred,"서방을 관장하는 백호의 별자리 중, 규의 힘이 내재된 보패.","A relic imbued with the power of Legs, one of the constellations of the White Tiger of the West."
+desc,16,19753,inferred,"서방을 관장하는 백호의 별자리 중, 누의 힘이 내재된 보패.","A relic imbued with the power of Bond, one of the constellations of the White Tiger of the West."
+desc,17,19754,inferred,"서방을 관장하는 백호의 별자리 중, 위의 힘이 내재된 보패.","A relic imbued with the power of Stomach, one of the constellations of the White Tiger of the West."
+desc,18,19755,inferred,"서방을 관장하는 백호의 별자리 중, 묘의 힘이 내재된 보패.","A relic imbued with the power of Hairy Head, one of the constellations of the White Tiger of the West."
+desc,19,19756,inferred,"서방을 관장하는 백호의 별자리 중, 필의 힘이 내재된 보패.","A relic imbued with the power of Net, one of the constellations of the White Tiger of the West."
+desc,20,19757,inferred,"서방을 관장하는 백호의 별자리 중, 자의 힘이 내재된 보패.","A relic imbued with the power of Turtle Beak, one of the constellations of the White Tiger of the West."
+desc,21,19758,inferred,"서방을 관장하는 백호의 별자리 중, 삼의 힘이 내재된 보패.","A relic imbued with the power of Three Stars, one of the constellations of the White Tiger of the West."

@@ -1,0 +1,117 @@
+column,seq,loc_row,confidence,ko,en
+name,1,10921,anchored,내가 천하를 저버릴지언정,Forsaking the World
+name,2,10922,anchored,왕좌지재,Great Advisor
+name,3,10923,anchored,오자양장,Gathering of the Five
+name,4,10924,anchored,난형난제,"No Better, No Worse"
+name,5,10925,anchored,기묘한 우정,A Strange Friendship
+name,6,10926,anchored,도원의 맹세,Oath of the Peach Garden
+name,7,10927,anchored,촉한의 대들보,The Pillars of Shu
+name,8,10928,anchored,원한과 숙명,Resentment and Destiny
+name,9,10929,anchored,노장과 명장,"Old General, Great General"
+name,10,10930,anchored,괄목상대,Flourishing Intellect
+name,11,10931,anchored,군주와 노신,"New Lord, Aged Vassal"
+name,12,10932,anchored,칼날의 맹세,Oath of the Blade's Edge
+name,13,10933,anchored,강동이교,Two Qiaos of Jiangdong
+name,14,10934,anchored,고육지계,Desperate Countermeasure
+name,15,10935,anchored,황건적 토벌군,Yellow Turban Expedition
+name,16,10936,anchored,반 동탁 연합군,Anti-Dong Zhuo Coalition
+name,17,10937,anchored,수화불상용,Fire and Ice
+name,18,10938,anchored,대도독의 후계자,The Corsair's Successor
+name,19,10939,anchored,중황태을,Hail the Yellow Sky!
+name,20,10940,anchored,낙신부,Nymph of the Luo River
+name,21,10941,anchored,천생배필,A Match Made in Heaven
+name,22,10942,anchored,오래 된 인연,Old Bonds
+name,23,10943,anchored,신기묘산,Godly Tactics
+name,24,10944,anchored,천하장사,Peerless Warrior
+name,25,10945,anchored,불화의 씨앗,Seed of Discord
+name,26,10946,anchored,금석지교,Unwavering Friendship
+name,27,10947,anchored,황천의 시대,Era of the Yellow Sky
+name,28,10948,anchored,천하의 흐름을 타고,Riding the Wind
+name,29,10949,anchored,주군을 위하여,For the Lord
+name,30,10950,anchored,부수불공대천,A Son's Duty
+name,31,10951,anchored,남만의 한 쌍,Nanman Heritage
+name,32,10952,anchored,다가올 나날을 위해,Eyes Forward
+name,33,10953,anchored,금슬지락,Harmonious Union
+name,34,10954,anchored,해로동혈,Eternal Companionship
+name,35,10955,anchored,영웅의 배필,A Hero's Spouse
+name,36,10956,anchored,사항계,Feigned Surrender
+name,37,10957,anchored,서진의 용장,Sima Yan's Bravest
+name,38,10958,anchored,노당채의 여걸,Warrior Bandit
+name,39,10959,anchored,개국공신,Founding Fathers
+name,40,10960,anchored,장사의 딸,Warrior's Daughter
+name,41,10961,anchored,최후의 명장,The Last Great Commander
+name,42,10962,anchored,부위자강,Filial Respect
+name,43,10963,anchored,백운고비,Homesick
+name,44,10964,anchored,불초지부,Foolish Father
+name,45,10965,anchored,부부자자,Father and Son
+name,46,10966,anchored,고향으로 가는 길,The Way Back Home
+name,47,10967,anchored,그 많던 인재들은 어디에서 왔을까,Font of Talent
+name,48,10968,anchored,"결성, 오대장",Five Elite Generals
+name,49,10969,anchored,역지사지,In Their Shoes
+name,50,10970,anchored,은밀한 편지,A Confidential Letter
+name,51,10971,anchored,한 마리의 용과 두 마리의 호랑이,A Dragon and Two Tigers
+name,52,10972,anchored,기성 공방전,Siege of Jincheng
+name,53,10973,anchored,군량고 탈취전,Capturing the Stockpile
+name,54,10974,anchored,오하아몽,Wu's Dim-witted Brute
+name,55,10975,anchored,노신의 결심,Aged Vassal's Determination
+name,56,10976,anchored,예장 평정 전초전,Skirmish to Secure Yuzhang
+name,57,10977,anchored,환현 탈출전,Escape from Wanxian
+name,58,10978,anchored,노식 구출전,Saving Lu Zhi
+name,59,10979,anchored,연합군 결성!,The Alliance Forms
+name,60,10980,anchored,물과 불의 관계,Of Water and Fire
+name,61,10981,anchored,곡양 결전,Battle of Quyang
+name,62,10982,anchored,초선 구출전,Saving Diaochan
+name,63,10983,anchored,애타는 마음,Anxious Heart
+name,64,10984,anchored,몽매의 이야기 시간 1,Meng Mei's Tales 1
+name,65,10985,anchored,몽매의 이야기 시간 2,Meng Mei's Tales 2
+name,66,10986,anchored,끝나지 않는 갈등,Endless Conflict
+name,67,10987,anchored,오랜 벗은 없지만,Wish You Were Here
+name,68,10988,anchored,황건병 의기투합,Under the Yellow Sky
+name,69,10989,anchored,결단을 내리다,Tough Decisions
+name,70,10990,anchored,선성 방어전,Defending Xuancheng
+name,71,10991,anchored,아버지의 유지를 이어받아,A Father's Legacy
+desc,1,10992,anchored,"동탁 암살에 실패한 조조는 고향으로 도망치던 중, 중모 현의 현령인 진궁과 뜻을 같이 하게 되어 먼 길을 떠나게 된다. 그러던 어느 날, 둘은 조숭의 친구였던 여백사의 집에서 묵게 된다. ","After failing his mission to assassinate Dong Zhuo, Cao Cao joined with Chen Gong, the Prefect of Zhongmou, on a long journey home sharing the same cause. One day, the two spent a night together at the home of Lu Boxue, an old friend of Cao Song's. "
+desc,2,10993,anchored,"희지재가 죽자, 순욱은 조조에게 곽가를 등용할 것을 추천한다. 이후에도 순욱은 정욱, 유엽, 종요 등의 걸출한 인재들을 천거하고, 그들은 또다시 능력 있는 자신의 동문을 추천하는 등 세계 곳곳의 인재는 조조에게로 모여들게 된다.","After Xi Zhicai's passing, Xun Yu recommended the recruitment of Guo Jia to Cao Cao. His selection acumen thus proven, Xun Yu also recommended many more people of talent, such as Cheng Yu, Liu Ye, and Zhong Yao. They in turn recommended their peers, leading a legion of talented vassals under Cao Cao's banner."
+desc,3,10994,anchored,조조 휘하의 내로라하는 다섯 장수는 제각기 무공을 겨루기 위해 한자리에 모이게 된다.,Cao Cao's five most renowned commanders gathered together to see whose might was the greatest.
+desc,4,10995,anchored,"조조 거병 이후, 휘하 무장인 만기, 강보, 유궁은 서로의 임무에 대해 불만을 가지게 된다. 그러자 순유는 한 가지 제안을 한다.","After Cao Cao moved his army, Manji, Jiang Fu, and Liu Gong began to grow disgruntled with their stations. It was then that Xun You made them an offer."
+desc,5,10996,anchored,"263년, 종회는 한중을 점령하고 검각에서 대장군 강유와 대치하게 된다. 종회군은 날이 갈수록 보급에 지장이 생겨 더는 검각에서 머무를 수 없게 되자 퇴각을 결심한다.","In the year 263, Zhong Hui occupied Hanzhong and came to a stalemate with General-in-Chief Jiang Wei at Jiange. When Zhong Hui's army lost its supply line, however, they were forced to pull back."
+desc,6,10997,anchored,"후한 말 탁주, 어느 날 도축업자인 장비는 불그스레한 얼굴의 남자와 시비가 붙게 된다. 둘의 말다툼은 결국 몸싸움으로 이어졌으나 좀처럼 승부가 나지 않게 된다. 그러던 중….","One day in Zhuoxian during the Later Han, local butcher Zhang Fei picked a fight with a red-faced man. Their argument escalated to a brawl, wherein they found themselves evenly matched. Just then..."
+desc,7,10998,anchored,"원로 대신인 간옹, 손건, 미축은 각자의 역할을 충실히 해 온 촉의 유능한 문관들이었다. 그러던 어느 날, 형주 곳곳에 그들을 폄하하는 글이 나돌아다니기 시작한다. 그렇게 그들 사이에는 때아닌 신경전이 펼쳐지는데….","The veteran ministers Jian Yong, Sun Qian, and Mi Zhu were Shu's brightest officials, and performed their duty admirably. Then, one day, a mysterious notice began circulating all across Jingzhou, disparaging their work. Thus started a war of nerves among the three officials..."
+desc,8,10999,anchored,"마초가 기성을 포위하자 왕이는 직접 전장에 나서서 마초군을 무찌르려고 한다. 전세가 기울어지던 찰나, 왕이의 뜻밖의 등장에 마초군은 당황하기 시작하는데….","When Ma Chao surrounded Jincheng, Wang Yi joined the battle to defeat Ma Chao's army personally. The sieging forces had thought the battle all but won before Wang Yi's sudden appearance..."
+desc,9,11000,anchored,"황충은 조조군의 군량고를 탈취하기 위해 북산으로 진격하게 된다. 그러나 기한이 지났음에도 황충은 돌아올 기미가 보이지 않고, 이에 걱정한 조운은 몇 명의 기병만을 이끌고 황충을 찾아 나서게 된다.","Huang Zhong advanced towards Beishan to raid Cao Cao's stockpile of supplies. However, Huang Zhong failed to reappear after the mission's end, prompting Zhao Yun to lead a small contingent of cavalry in search of the famed general."
+desc,10,11001,anchored,뛰어난 무예와 용맹을 갖춘 여몽은 종종 노숙을 포함한 다른 문관들로부터 오하아몽(吳下阿蒙) 이라며 무시를 받는다. 어느 날 문(文)을 기르라는 손권의 말에 결심한 듯 여몽은 주야독경 학문에 힘을 쓰기 시작한다.,"Although Lu Meng possessed great might and martial strength, his lacking education made him the subject of mockery by officials like Lu Su. One day, however, Sun Quan advised the ""Brute of Wu"" to devote himself to a life of learning, and Lu Meng began to study day and night."
+desc,11,11002,anchored,"손책의 휘하에서부터 장소는 뛰어난 능력으로 강동의 국사를 담당했고, 손책이 죽은 이후에도 손권의 측근에서 쓴소리를 마다치 않고 엄격하게 손권을 보좌하기 시작한다. 이후 손권이 황제가 되고 얼마 되지 않은 날, 문득 장소가 손권의 공관을 찾아온다.","Zhang Zhao adroitly tended to Jiangdong's national matters under Sun Ce's rule. After his lord's death, he became very close to Sun Quan, assisting the new ruler with stern discipline. Soon after Sun Quan rose to the emperor's throne, Zhang Zhao came knocking on his door."
+desc,12,11003,anchored,"손책은 예장을 평정하기 위해 수십 명의 병사와 함께 태사자를 보낸다. 그러나 손책 휘하의 장수들은 태사자가 반드시 배신할 것이라고 하며, 손책을 말리기 시작한다.","Sun Ce sent Taishi Ci and a few dozen soldiers to secure Yuzhang. However, the commanders under Sun Ce begged him to reconsider, for Taishi Ci was sure to betray them."
+desc,13,11004,anchored,교현의 딸인 대교와 소교는 환현에 들이닥친 산적 떼를 피하기 위해 아버지가 있는 말릉으로 피난길에 오르게 된다.,"When bandits invaded Wanxian, Daqiao and Xiaoqiao—the daughters of Qiao Xuan—set upon a journey to Moling, where their father awaited them."
+desc,14,11005,anchored,"조조의 백만 대군에 맞선 승산 없는 싸움의 전세를 기울일 방법을 고심하는 대도독 주유에게, 황개가 나서서 사항계를 이용한 화공 전법을 쓸 것을 일러 준다.","While Corsair Zhou Yu agonized over a way to turn the tables against Cao Cao's colossal army, Huang Gai came forth with a brilliant idea that called for a false surrender...and true flames."
+desc,15,11006,anchored,"황건적의 난이 발발하자 노식, 황보숭, 주준은 중랑장으로서 함께 황건적 토벌에 나서기 시작한다. 이후 연전연승이라는 쾌거를 이루고 장각을 사로잡기 직전까지 이르게 되지만, 환관의 모함으로 노식의 지위가 박탈당하게 된다.","When the Yellow Turban Rebellion broke out, commanders Lu Zhi, Huangfu Song, and Zhu Jun set out on the Yellow Turban Expedition. Their repeated victories soon brought them on the cusp of capturing Zhang Jue. However, the traitorous eunuchs buried them in false accusations, leading to Lu Zhi being stripped of his position."
+desc,16,11007,anchored,"후한 말, 동탁의 폭정을 잠재우고 한나라의 황실을 굳건히 하기 위해 각지에서 제후들이 몰려드니, 그들을 18로 제후 혹은 반동탁 연합이라고 칭했다.","In the Later Han, warriors from across the land joined forces to end the tyranny of Dong Zhuo and to cement the foundation of the Han Dynasty. They were called the Challengers from Eighteen Roads, or the Anti-Dong Zhuo Coalition."
+desc,17,11008,anchored,"위연과 양의는 평소 화합하지 못하여 서로를 비난하기에 바빴다. 하지만 제갈량은 위연의 용맹과 양의의 계책 모두를 아까워했기에, 어느 한쪽 편도 들지 않고 그들 사이를 중재하기 위해 힘을 쓴다.","Wei Yan and Yang Yi could hardly stand one another, each constantly finding fault in the other's actions. However, Zhuge Liang was in dire need of both Wei Yan's strength and Yang Yi's plans. He never took sides and did his best to mend their relationship."
+desc,18,11009,anchored,"관우 사후, 분노한 유비는 대군을 이끌고 동오를 침공한다. 한 편, 여몽이 죽은 이후 군을 책임질 마땅할 인물을 두고 고민하던 찰나, 감택이 나서서 한 인물을 추천한다.","After Guan Yu's death, Liu Bei fell into a terrible rage and led a large force to invade Eastern Wu, which had no suitable military leader after Lu Meng's death. It was then that Kan Ze came forth with a suggestion."
+desc,19,11010,anchored,"관군의 공세에 의해 황건병의 입지는 위태로워지고, 장각은 동생 장량, 장보와 함께 최후의 결전을 앞두게 된다.","The advancing royal forces cornered the Yellow Turbans. With his brothers Zhang Liang and Zhang Bao at his side, Zhang Jue readied himself for the final battle."
+desc,20,11011,anchored,"원소 사후, 조비는 견희를 자신의 부인으로 맞이하려고 한다. 동생인 조식은 견희를 개인적으로 사모했지만 그 뜻을 밝히지 못하고, 아쉬움을 뒤로한 채 긴 시간이 흐르게 된다.","After Yuan Shao's death, Cao Pi decided to marry Zhenji. Though his brother Cao Zhi was infatuated with Zhenji, he could not reveal his true feelings. And so, he lived in regret."
+desc,21,11012,anchored,"왕윤과 초선은 여포를 꾀어내어 동탁 암살을 계획하고, 초선은 자신을 희생하여 동탁의 첩으로 들어가게 된다. 왕윤은 이 사실을 여포에게 전하게 된다.","Wang Yun and Diaochan lure out Lu Bu and devise a plot to assassinate Dong Zhuo. Diaochan sacrifices herself by becoming Dong Zhuo's concubine, which Wang Yun reports to Lu Bu."
+desc,22,11013,anchored,"174년, 하옹이 죽고 그의 뜻을 이어받은 조조와 하후돈은 영웅이 되기 위해 부단히 노력한다. 그러던 중, 좀처럼 변월향의 모습이 보이지 않자 걱정한 조조는 하후돈을 찾아가는데……","It's 174 in Qiaoxian. Cao Cao and Xiahou Dun work to preserve He Yong's legacy by becoming heroes. Concerned by Bian Yue Xiang's disappearance, Cao Cao visits Xiahou Dun."
+desc,23,11014,anchored,"일찍이 신선과도 같은 재주를 가진 이가 있었으니, 한고조 유방의 개국공신 장량이 바로 그였다. 시대가 바뀌고, 장량에 필적하는 재주를 가진 이가 오의 진채에 모습을 드러낸다.","Zhang Liang, who helped found Han on Liu Bang's behalf, is known for his unmatched wisdom. However, times have changed, and his rival arrives at the fortress of Wu."
+desc,24,11015,anchored,"한고조 유방의 최측근에는 용맹한 장수가 있었으니, 시대의 장사 번쾌였다. 그리고 세월이 흘러, 한고조에 못지 않은 야심을 지닌 조조에게 한 괴력의 사내가 모습을 드러낸다.","Liu Bang of Han has kept Fan Kuai close due to his bravery and unparalleled strength. After some time, a man of monstrous power appears before Cao Cao—a man intent on matching Liu Bang's accomplishments."
+desc,25,11016,anchored,"동북의 맹장 공손찬은 이민족들을 무력으로 토벌하며 자신의 세력을 확장하기 시작한다. 그러나 어진 인품에 이민족과 사이가 좋았던 유우는, 포악하게 행동하는 공손찬을 못마땅히 여겼기에 자주 충돌이 있었다.","Gongsun Zan starts to expand his reach by suppressing the barbarians. Liu Yu, ever a friend to the barbarians, clashes with Gongsun Zan numerous times over this violent behavior."
+desc,26,11017,anchored,"어려서부터 가까이 지낸 손책과 주유는, 손견이 죽은 후 함께 강동에서 세력을 넓혀갔다. 그러나 얼마 지나지 않아 손책이 단명하게 되고, 주유는 갈등하게 된다.","Childhood friends Sun Ce and Zhou Yu expand their forces in Jiangdong after Sun Jian's death. Unfortunately, Sun Ce dies in his youth, sending Zhou Yu into a spiral of turmoil."
+desc,27,11018,anchored,장각과 그 형제들의 지휘에 따라 각지에 구름처럼 모인 황건병들. 그 중심에 있던 다섯 장수가 의기투합하여 첫 번째 전투를 승리로 이끌려고 한다.,The Yellow Turbans have united under the command of Zhang Jue and his brothers. The five main generals come to a mutual understanding and plan for victory.
+desc,28,11019,anchored,"지략과 처세술이 뛰어난 가후는 장수를 보좌하며 큰 공을 세운다. 그러나 조조와 원소라는 커다란 세력이 충돌하는 가운데, 가후와 장수는 커다란 선택에 직면하게 된다.","Equal parts clever and wise, Jia Xu makes great contributions while serving Zhang Xiu. As the great forces of Cao Cao and Yuan Shao clash, Jia Xu and Zhang Xiu find themselves at a crossroads."
+desc,29,11020,anchored,"과거 수적으로서 노략질을 일삼던 주태와 장흠은 개과천선 후 뜻을 같이 하여 손책의 휘하로 들어가게 된다. 손책이 출정을 나간 후 손권과 함께 주둔지를 지키고 있던 찰나, 뜻밖의 위협에 손권의 생사가 불분명하게 된다.","Former pirates Zhou Tai and Jiang Qin have cleaned up their act and now serve Sun Ce together. After Sun Ce goes into battle, they face an unexpected threat while guarding their base with Sun Quan, whose sudden disappearance is a cause of great concern."
+desc,30,11021,anchored,"관우의 차남 관흥과 장비의 장남 장포는 아버지의 죽음에 애석해하며 출전할 날만을 손꼽아 기다리고 있었다. 첫 번째 전투가 시작되려던 찰나, 두 장수는 아버지의 원수를 값기 위해 서로가 선봉에 서기를 원하여 유비를 찾아간다.","Guan Yu's second son, Guan Xing, and Zhang Fei's oldest son, Zhang Bao, await the day they can avenge their fathers' deaths. With the first battle fast approaching, the two warriors visit Liu Bei in hopes of leading his vanguard."
+desc,31,11022,anchored,남만의 한 쌍인 맹획과 축융의 인연을 성사시켜야 합니다.,"Establish a Friendship between Meng Huo and Zhurong, the two from Nanman."
+desc,32,11023,anchored,와룡 제갈량과 그의 배필 황월영 인연을 성사시켜야 합니다.,"Establish a Friendship between Zhuge Liang and his partner, Huang Yueying."
+desc,33,11024,anchored,지략가 사마의와 여장부 장춘화의 인연을 성사시켜야 합니다.,"Establish a Friendship between Sima Yi, the strategist, and Zhang Chunhua, the warrior woman."
+desc,34,11025,anchored,유비와 손상향의 국경을 넘어선 인연을 성사시켜야 합니다.,Establish a Friendship that transcends the borders separating Liu Bei and Sun Shangxiang.
+desc,35,11026,anchored,초패왕과 그의 애첩이 될 우희의 인연을 성사시켜야 합니다.,"Establish a Friendship between Xiang Yu and his concubine, Yu Miaoyi."
+desc,36,11027,anchored,채씨 형제의 인연을 성사시켜야 합니다.,Establish a Friendship between the Cai siblings.
+desc,37,11028,anchored,용장 문앙과 동생 문호의 인연을 성사시켜야 합니다.,Establish a Friendship between the brave general Wen Yang and his brother Wen Hu.
+desc,38,11029,anchored,난세의 여걸 왕도와 왕열의 인연을 성사시켜야 합니다.,Establish a Friendship between Wang Du the heroine and Wang Yue.
+desc,39,11030,anchored,조조의 거병부터 함께한 개국공신인 두 장수의 인연을 성사시켜야 합니다.,Establish a Friendship between the two founding generals who have worked together since Cao Cao raised his army.
+desc,40,11031,anchored,만인지적 장비의 두 딸의 인연을 성사시켜야 합니다.,Establish a Friendship between Zhang Fei's two daughters.
+desc,41,11032,anchored,오의 명장 육손과 그의 차남 육항의 인연을 성사시켜야 합니다.,"Establish a Friendship between the great commander of Wu, Lu Xun, and his second son, Lu Kang."
+desc,42,11033,anchored,촉의 명장 조운과 그의 장남 조통의 인연을 성사시켜야 합니다,"Establish a Friendship between the great commander of Shu, Zhao Yun, and his oldest son, Zhao Tong."
+desc,43,11034,anchored,맹장 금마초와 재능 있는 딸 마요희의 인연을 성사시켜야 합니다.,Establish a Friendship between the great commander Ma Chao and the talented Ma Yaoji.
+desc,44,11035,anchored,폭군 동탁과 당차고 기센 딸 동백의 인연을 성사시켜야 합니다.,Establish a Friendship between the tyrannical Dong Zhuo and the strong-minded Dong Bai.
+desc,45,11036,anchored,군신 관우와 그를 따르는 양자 관평의 인연을 성사시켜야 합니다.,"Establish a Friendship between Guan Yu and his adopted son, Guan Ping."

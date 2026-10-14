@@ -1,0 +1,82 @@
+name,id,country,Tab,icon,group,positionX,positionY,previous,maxLv,cType,cVal,needRank,val,descType,effectDesc,#name_en,#loc_row,#confidence
+적에게 받는 모든 피해 증가 10%,,,,,,,,,,,,,,,,All Incoming Damage +10%,18011,inferred
+"물리 피해 감소 20%, 감소한 피해를 공격자에게 전가",,,,,,,,,,,,,,,,"Decrease physical damage by 20%, reflect the reduced amount back at the attacker",18012,inferred
+공격 시 이동한 거리 X 2% 만큼 추가 피해를 줌. 추가 피해 효과는 부대 행동이 종료될 때 초기화. '돌진 준비' 효과가 사라지면 1턴 동안 이동력이 1 만큼 감소,,,,,,,,,,,,,,,,"Deliver an additional 2% damage for each tile moved for 2 turns. Additional damage resets at the end of the affected unit's turn. Once Fearless Charge wears off, SPD decreases by 1 for 1 turn.",18013,inferred
+"적에게 받는 모든 책략 피해 감소 50%, 공격력 감소 20%",,,,,,,,,,,,,,,,"Decrease incoming tactics damage by 50%, decrease ATK by 20%.",18014,inferred
+"이동력 1 감소, 받는 물리 피해 감소 50%, 웅크리기가 사라질 때까지 본대가 피해를 입지 않으면 대분기 상태가 됨",,,,,,,,,,,,,,,,"Decrease SPD by 1, decrease physical damage taken by 50%, and gain Greater Provoke status effect if this unit does not take damage before Stalk disappears.",18015,inferred
+모든 책략 피해를 아군 {1} 장수가 대신 받음,,,,,,,,,,,,,,,,Ally {1} commander takes all tactics damage in place of their allies,18016,inferred
+주위 아군이 받는 물리 공격 명중률 증가 10%,,,,,,,,,,,,,,,,Reach Ally Physical ACC +10%.,18017,inferred
+"방어력 감소 10%, 공격력 증가 10%, 물리 공격 시 피해의 20%를 본대의 HP로 흡수",,,,,,,,,,,,,,,,"Decrease DEF by 10%, increase ATK by 10%, and physical attacks absorb 20% of damage dealt as HP",18018,inferred
+적 {1} 장수를 공격할 수 없음,,,,,,,,,,,,,,,,Cannot attack enemy {1} commander,18019,inferred
+"이동력 증가 1, ZOC 무력화",,,,,,,,,,,,,,,,"Increase SPD by 1, disable Reach",18020,inferred
+"선제 공격 상태가 되어 공격 범위 내의 적군이 본대를 공격할 때, 먼저 공격을 가한다. 단, '협공, 인도 공격, 파진 공격, 분전 공격' 시 발동하지 않는다.",,,,,,,,,,,,,,,,,18021,inferred
+공격 명중률 증가 10%,,,,,,,,,,,,,,,,Attack ACC +10%,18022,inferred
+간접 공격 피해 감소 30%,,,,,,,,,,,,,,,,Ranged Attack Damage -30%,18023,inferred
+지휘계통,,,,,,,,,,,,,,,,Chain of Command,18024,inferred
+통솔1,,,,,,,,,,,,,,,,Command 1,18025,inferred
+통솔2,,,,,,,,,,,,,,,,Command 2,18026,inferred
+검술 강화1,,,,,,,,,,,,,,,,Enhance Swordsmanship 1,18027,inferred
+검술 강화2,,,,,,,,,,,,,,,,Enhance Swordsmanship 2,18028,inferred
+방패술 강화1,,,,,,,,,,,,,,,,Enhance Shields 1,18029,inferred
+방패술 강화2,,,,,,,,,,,,,,,,Enhance Shields 2,18030,inferred
+창술 강화1,,,,,,,,,,,,,,,,Enhance Spearmanship 1,18031,inferred
+창술 강화2,,,,,,,,,,,,,,,,Enhance Spearmanship 2,18032,inferred
+습격1,,,,,,,,,,,,,,,,Ambush 1,18033,inferred
+습격2,,,,,,,,,,,,,,,,Ambush 2,18034,inferred
+궁술 강화1,,,,,,,,,,,,,,,,Enhance Archery 1,18035,inferred
+궁술 강화2,,,,,,,,,,,,,,,,Enhance Archery 2,18036,inferred
+반격 궁술1,,,,,,,,,,,,,,,,Counter Archery 1,18037,inferred
+반격 궁술2,,,,,,,,,,,,,,,,Counter Archery 2,18038,anchored
+무술 강화,,,,,,,,,,,,,,,,Enhance Staff Handling,18039,anchored
+책술 강화,,,,,,,,,,,,,,,,Enhance Tactics,18040,anchored
+포술 강화,,,,,,,,,,,,,,,,Enhance Artillery,18041,anchored
+공성술 강화1,,,,,,,,,,,,,,,,Enhance Siege 1,18042,anchored
+공성술 강화2,,,,,,,,,,,,,,,,Enhance Siege 2,18043,anchored
+손자병법,,,,,,,,,,,,,,,,The Art of War,18044,anchored
+조기 훈련,,,,,,,,,,,,,,,,Early Training,18045,anchored
+시장 부흥,,,,,,,,,,,,,,,,Market Recovery,18046,anchored
+무역술1,,,,,,,,,,,,,,,,Commerce 1,18047,anchored
+무역술2,,,,,,,,,,,,,,,,Commerce 2,18048,anchored
+기력 증진1,,,,,,,,,,,,,,,,Vitalize 1,18049,anchored
+기력 증진2,,,,,,,,,,,,,,,,Vitalize 2,18050,anchored
+내구 강화 [창고],,,,,,,,,,,,,,,,Enhance Durability [Storage],18051,anchored
+방위 강화 [창고],,,,,,,,,,,,,,,,Enhance Defense [Storage],18052,anchored
+내구 강화 [내성],,,,,,,,,,,,,,,,Enhance Durability [Keep],18053,anchored
+방위 강화 [내성],,,,,,,,,,,,,,,,Enhance Defense [Keep],18054,anchored
+거래 수완,,,,,,,,,,,,,,,,Trade Secrets,18055,anchored
+명성,,,,,,,,,,,,,,,,Silk Road,18056,anchored
+고속 전투,,,,,,,,,,,,,,,,Hasten Combat,18057,anchored
+수성 강화,,,,,,,,,,,,,,,,Enhance Defense,18058,anchored
+용병술 [수송대],,,,,,,,,,,,,,,,Training [Convoy],18059,anchored
+용병술 [황건병],,,,,,,,,,,,,,,,Training [Yellow Turban Soldier],18060,anchored
+용병술 [정규군],,,,,,,,,,,,,,,,Training [Spearman],18061,anchored
+용병술 [모사들],,,,,,,,,,,,,,,,Training [Tactician],18062,anchored
+용병술 [산악기병],,,,,,,,,,,,,,,,Training [Mountain Cavalry],18063,anchored
+용병술 [전차대],,,,,,,,,,,,,,,,Training [Chariot],18064,anchored
+용병술 [황건궁병],,,,,,,,,,,,,,,,Training [Yellow Turban Archer],18065,anchored
+용병술 [노병],,,,,,,,,,,,,,,,Training [Crossbowman],18066,anchored
+용병술 [궁기병],,,,,,,,,,,,,,,,Training [Horse Archer],18067,anchored
+용병술 [포병],,,,,,,,,,,,,,,,Training [Artillery],18068,anchored
+용병술 [황건 무인],,,,,,,,,,,,,,,,Training [Yellow Turban Warrior],18069,anchored
+용병술 [무희],,,,,,,,,,,,,,,,Training [Dancer],18070,anchored
+용병술 [산과 강],,,,,,,,,,,,,,,,Training [Bandit],18071,anchored
+용병술 [무인],,,,,,,,,,,,,,,,Training [Warrior],18072,anchored
+조련술 [초급],,,,,,,,,,,,,,,,Beast Taming [Novice],18073,anchored
+조련술 [중급],,,,,,,,,,,,,,,,Beast Taming [Intermediate],18074,anchored
+조련술 [고급],,,,,,,,,,,,,,,,Beast Taming [Expert],18075,inferred
+용병술 [조련사들],,,,,,,,,,,,,,,,Training [Beast Master],18076,inferred
+소환술 [토우병사],,,,,,,,,,,,,,,,Summoning [Clay Soldier],18077,inferred
+소환술 [토우장군],,,,,,,,,,,,,,,,Summoning [Clay General],18078,inferred
+조련술 [최고급],,,,,,,,,,,,,,,,Beast Taming [Master],18079,inferred
+진형 연구1,,,,,,,,,,,,,,,,Enhance Formations 1,18080,inferred
+진형 연구2,,,,,,,,,,,,,,,,Enhance Formation 2,18081,inferred
+반격 기마술,,,,,,,,,,,,,,,,Counter Riding,18082,inferred
+약점 저격,,,,,,,,,,,,,,,,Exploit Weakness,18083,inferred
+내성 증축,,,,,,,,,,,,,,,,Enhance Keep,18084,inferred
+말굽 개선,,,,,,,,,,,,,,,,Enhance Horsemanship,18085,inferred
+춤사위,,,,,,,,,,,,,,,,Dance Routine,18086,inferred
+몽충 건조,,,,,,,,,,,,,,,,Ship Construction,18087,inferred
+참마 창술,,,,,,,,,,,,,,,,Mount Slayer,18088,inferred
+관통 노술,,,,,,,,,,,,,,,,Piercing Crossbow,18089,inferred
+낙석 간파,,,,,,,,,,,,,,,,Assess Terrain,18090,inferred
+암습,,,,,,,,,,,,,,,,Shadow Strike,18091,inferred

@@ -1,0 +1,31 @@
+name,id,defUni,prefab,isFlip,state,cloud,position_X,position_Y,battleFieldDifficulty,seizeTurn,tacticCounts,battleMap,tileId,battleTime,baseOccupation,maxOccupation,productionType0,productionValue0,productionType1,productionValue1,npcName,npcRank,npcUnitLv,type0,reward0,#name_en,#loc_row,#confidence
+6성 이상 보물 획득,,,,,,,,,,,,,,,,,,,,,,,,,,Obtain 6-star or higher artifact,19215,inferred
+아군 2부대 미만 퇴각으로 섬멸전 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win an Annihilation battle without losing more than one unit,19216,inferred
+천리행 30관문 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Gate 30 in Trial of the Gates,19217,inferred
+강한 상대를 대상으로 섬멸전 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win an Annihilation battle against a strong opponent,19218,inferred
+혈투에 돌입하지 않고 섬멸전 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win an Annihilation battle without going into a bloody battle,19219,inferred
+전략/장수 보물을 사용하지 않고 연의 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win a Story battle without using a starred/commander-exclusive artifact,19220,inferred
+아군 전원 생존으로 연의 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win a Story battle without losing any units,19221,inferred
+장수 강화,,,,,,,,,,,,,,,,,,,,,,,,,,Upgrade commanders,19222,inferred
+요일 사건 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Daily Quests,19223,inferred
+은전 사건 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Silver Coin Quests,19224,inferred
+천리행 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Trial of the Gates,19225,inferred
+칙서 사용,,,,,,,,,,,,,,,,,,,,,,,,,,Use Edicts,19226,inferred
+섬멸전 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win Annihilation Battles,19227,inferred
+보물 생성,,,,,,,,,,,,,,,,,,,,,,,,,,Craft Artifacts,19228,inferred
+보물 합성,,,,,,,,,,,,,,,,,,,,,,,,,,Fuse Artifacts,19229,inferred
+가죽끈 획득,,,,,,,,,,,,,,,,,,,,,,,,,,Obtain leather strings,19230,inferred
+경기병계 처치,,,,,,,,,,,,,,,,,,,,,,,,,,Defeat light cavalry units,19231,inferred
+사건 토벌,,,,,,,,,,,,,,,,,,,,,,,,,,Quest Expedition,19232,inferred
+보물 상자 개봉,,,,,,,,,,,,,,,,,,,,,,,,,,Open Treasure Chests,19233,inferred
+은전 사용,,,,,,,,,,,,,,,,,,,,,,,,,,Spend Silver Coins,19234,inferred
+군량 사용,,,,,,,,,,,,,,,,,,,,,,,,,,Spend Rations,19235,inferred
+병종 처치,,,,,,,,,,,,,,,,,,,,,,,,,,Defeat units,19236,inferred
+재료 획득,,,,,,,,,,,,,,,,,,,,,,,,,,Obtain materials,19237,inferred
+격전지 참가,,,,,,,,,,,,,,,,,,,,,,,,,,Join Battleground,19238,inferred
+경쟁전 참가,,,,,,,,,,,,,,,,,,,,,,,,,,Join PvP Battles,19239,inferred
+경쟁전 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win PvP Battles,19240,inferred
+보물 강화 시도,,,,,,,,,,,,,,,,,,,,,,,,,,Attempt Artifact Upgrade,19241,inferred
+보물 강화 성공,,,,,,,,,,,,,,,,,,,,,,,,,,Complete Artifact Upgrade,19242,inferred
+3인장으로 연의 승리,,,,,,,,,,,,,,,,,,,,,,,,,,Win Story Mode with 3 Seals,19243,inferred
+동광,,,,,,,,,,,,,,,,,,,,,,,,,,Eastern Mine,19244,anchored

@@ -1,0 +1,67 @@
+column,seq,loc_row,confidence,ko,en
+name,1,21094,inferred,책사 군단,Tactician Troop
+name,2,21095,inferred,보급대 군단,Supply Troop
+name,3,21096,inferred,웅술사 군단,Ursari Troop
+name,4,21097,inferred,보병 군단,Footman Troop
+name,5,21098,anchored,참모대 군단,Minister Troop
+name,6,21099,anchored,근위병 군단,Guardian Troop
+name,7,21100,anchored,강창병 군단,Linesman Troop
+name,8,21101,anchored,수군 군단,First Mate Troop
+name,9,21102,anchored,무인 군단,Fighter Troop
+name,10,21103,anchored,검사 군단,Knight Errant Troop
+name,11,21104,anchored,투사 군단,Slayer Troop
+name,12,21105,anchored,중창병 군단,Heavy Spearman Troop
+name,13,21106,anchored,중기병 군단,Heavy Cavalry Troop
+name,14,21107,anchored,전차 군단,Chariot Troop
+name,15,21108,anchored,경기병 군단,Light Cavalry Troop
+name,16,21109,anchored,산악기병 군단,Rough Rider Troop
+name,17,21110,anchored,금위대 군단,Vanguard Troop
+name,18,21111,anchored,신위대 군단,Divine Plate Cavalry Troop
+name,19,21112,anchored,강궁병 군단,Marksman Troop
+name,20,21113,anchored,연노병 군단,Repeater Troop
+name,21,21114,anchored,궁기병 군단,Mounted Archer Troop
+name,22,21115,anchored,노전차 군단,Crossbow Chariot Troop
+name,23,21116,anchored,궁장대 군단,Sharpshooter Troop
+name,24,21117,inferred,원융노병 군단,Chu-Ko-Nu Troop
+name,25,21118,inferred,충차,Battering Ram
+name,26,21119,inferred,풍수대 군단,Geomancer Troop
+name,27,21120,inferred,상병 군단,Elephant Troop
+name,28,21121,inferred,도독 군단,Marauder Troop
+name,29,21122,inferred,검성 군단,Champion Troop
+name,30,21123,inferred,대전차 군단,Bladed Chariot Troop
+name,31,21124,inferred,결사대 군단,Mountainstrider Troop
+name,32,21125,inferred,테스트용 데이터,Test Data
+desc,1,21126,inferred,화계 책략을 사용해 반격을 받지 않고 적을 공격할 수 있는 방어대 군단. 바닥에 불을 지르거나 끌 수도 있다.\n5레벨 달성 시 '참모대'로 승급한다.,Defense troop who uses fire tactics against enemies and is immune to counterattacks. Can start and put out fires.\nPromoted to Minister at Lv. 5.
+desc,2,21127,inferred,"아군 군단의 병력이나 상태 이상 효과를 회복시키고, 바닥에 붙은 불을 끄는 등 아군 지원에 특화되어 있는 방어대 군단.\n5레벨 달성 시 '풍수대'로 승급한다.","Defense troop who specializes in ally support. Can restore HP, clear status effects, put out fires, and more.\nPromoted to Geomancer at Lv. 5."
+desc,3,21128,inferred,방어력이 높고 적 군단의 공격력과 이동력을 감소 시킬 수 있어 수비에 유리한 방어대 군단.\n5레벨 달성 시 '상병'으로 승급한다.,"Defense troop with a high DEF. This, along with their ability to decrease enemy ATK and SPD, makes them perfect for fortified positions.\nPromoted to Elephant at Lv. 5."
+desc,4,21129,inferred,"공격력이 높은 방어대 군단. 산지, 황무지, 잔도에서 낙석 책략을 사용할 수 있다.\n5레벨 달성 시 '근위병'으로 승급한다.","Defense troop with high ATK. Uses boulder tactics on mountains, wastelands, and mountain passes.\nPromoted to Guardian at Lv. 5."
+desc,5,21130,inferred,넓은 범위에 위치한 적 군단을 화계 책략을 사용하여 반격을 받지 않고 공격할 수 있는 상급 방어대 군단.,Advanced defense troop who can attack enemies at a distance without incurring counterattacks by using fire tactics.
+desc,6,21131,inferred,방어대 군단 중 공격력과 방어력이 가장 높은 상급 방어대 군단. 아군 군단을 보호할 수 있는 호위 책략을 사용할 수 있다.,Advanced defense troop with the highest ATK and DEF of all defense troops. Uses guard tactics to protect ally units.
+desc,7,21132,inferred,방어력이 높은 돌격대 군단. 적 군단을 밀어낼 수 있는 돌파 책략을 사용해 진형을 파괴할 수 있다. 기마대 군단에게 강하다.\n5레벨 달성 시 '중창병'으로 승급한다.,Assault troop with high ATK. Uses breakthrough tactics to displace enemies and destroy formations. Especially effective against mounted troops.\nPromoted to Heavy Spearman at Lv. 5.
+desc,8,21133,inferred,물과 관련된 지형에서 전투력이 증가하는 돌격대 군단. 기마대 군단에게 강하다.\n5레벨 달성 시 '도독'으로 승급한다.,Assault troop who gains increased Combat Power on water terrain. Especially effective against mounted troops.\nPromoted to Marauder at Lv. 5.
+desc,9,21134,anchored,적 군단을 중독시켜 지속적으로 피해를 줄 수 있는 돌격대 군단. 기마대 군단에게 강하다.\n5레벨 달성 시 '투사'로 승급한다.,Assault troop whose poison attacks deal continuous damage. Especially effective against mounted troops.\nPromoted to Slayer at Lv. 5.
+desc,10,21135,anchored,공격력이 높은 돌격대 군단. 상태 이상에 걸린 적 군단에게 큰 피해를 줄 수 있다. 기마대 군단에게 강하다.\n5레벨 달성 시 '검성'으로 승급한다.,Assault troop with high ATK who deals major damage to enemies with status effects. Especially effective against mounted troops.\nPromoted to Champion at Lv. 5.
+desc,11,21136,anchored,"중독 책략, 방해 책략 사용이 가능한 상급 돌격대 군단. 2칸 앞의 적을 공격할 수 있다. 기마대 군단에게 강하다.",Advanced assault troop who uses poison and interrupt tactics. Can attack enemies 2 tiles ahead and has an advantage against mounted troops.
+desc,12,21137,anchored,돌격대 군단 중 방어력이 가장 높은 상급 돌격대 군단. 2칸 앞의 적을 공격할 수  있다. 기마대 군단에게 강하다.,Advanced assault troop with the highest DEF of all assault troops. Can attack enemies 2 tiles ahead and has an advantage against mounted troops.
+desc,13,21138,anchored,방어력이 높은 기마대 군단. 사격대 군단에게 강하다.\n5레벨 달성 시 '신위대'로 승급한다.,Mounted troop with high DEF. Especially effective against ranged troops.\nPromoted to Divine Plate Cavalry at Lv. 5.
+desc,14,21139,anchored,적 군단을 관통해 행동 불가 상태로 만들 수 있는 기마대 군단. 사격대 군단에게 강하다.\n5레벨 달성 시 '대전차'로 승급한다.,Mounted troop who pierces and incapacitates enemies. Especially effective against ranged troops.\nPromoted to Bladed Chariot at Lv. 5.
+desc,15,21140,anchored,공격력이 높은 기마대 군단. 사격대 군단에게 강하다.\n5레벨 달성 시 '금위대'로 승급한다.,Mounted troop with high ATK. Especially effective against ranged troops.\nPromoted to Vanguard at Lv. 5.
+desc,16,21141,anchored,산과 관련된 지형에서 전투력이 증가하는 기마대 군단. 적 군단을 끌어당기는 갈퀴 책략을 사용해 진형을 파괴할 수 있다. 사격대 군단에게 강하다.\n5레벨 달성 시 '결사대'로 승급한다.,Mounted troop who gains increased Combat Power on mountain terrain. Uses Hook tactics to displace enemies and destroy formations. Especially effective against ranged troops.\nPromoted to Mountainstrider at Lv. 5.
+desc,17,21142,anchored,적을 연속으로 공격할 수 있는 연격 책략을 사용해 짧은 시간에 큰 피해를 줄 수 있는 상급 기마대 군단. 사격대 군단에게 강하다.,Advanced mounted troop who deals heavy damage to the enemy in a short time with the Thrash tactic. Especially effective against ranged troops.
+desc,18,21143,anchored,기마대 군단 중 방어력이 가장 높은 상급 기마대 군단. 적과 아군을 가리지 않고 자신 주변의 군단에게 피해를 주는 난격 책략을 사용할 수 있다. 사격대 군단에게 강하다.,Advanced mounted troop with the highest DEF of all mounted attack troops. Their Frenzy tactic indiscriminately deals damage to both nearby allies and enemies. Especially effective against ranged troops.
+desc,19,21144,anchored,공격력이 높은 사격대 군단. 돌격대 군단에게 강하다.\n5레벨 달성 시 '궁장대'로 승급한다.,Ranged troop with high ATK. Especially effective against assault troops.\nPromoted to Sharpshooter at Lv. 5.
+desc,20,21145,anchored,적을 연속으로 공격할 수 있는 연사를 사용해 짧은 시간에 적 군단에게 큰 피해를 줄 수 있는 사격대 군단. 돌격대 군단에게 강하다.\n5레벨 달성 시 '원융노병'으로 승급한다.,Ranged troop who deals heavy damage to the enemy with short and quick bursts of fire. Especially effective against assault troops.\nPromoted to Chu-Ko-Nu at Lv. 5.
+desc,21,21146,anchored,이동력이 뛰어난 사격대 군단. 돌격대 군단에게 강하다.\n5레벨 달성 시 '비사대'로 승급한다.,Ranged troop with high SPD. Especially effective against assault troops.\nPromoted to Mounted Sharpshooter at Lv. 5.
+desc,22,21147,anchored,적 군단을 관통해 행동 불가 상태로 만들 수 있는 사격대 군단. 돌격대 군단에게 강하다.\n5레벨 달성 시 '비룡거'로 승급한다.,"Ranged troop who can pierce enemies, incapacitating them. Especially effective against assault troops.\nPromoted to Flying Dragon Crossbow Chariot at Lv. 5."
+desc,23,21148,anchored,풍계 책략 사용이 가능한 상급 사격대 군단. 돌격대 군단에게 강하다.,Advanced ranged troop who uses wind tactics. Especially effective against assault troops.
+desc,24,21149,anchored,다수의 군단을 한 번에 공격할 수 있는 난사 책략 사용이 가능한 상급 사격대 군단. 돌격대 군단에게 강하다.,Advanced ranged troop whose wild shot tactics can strike multiple units at once. Especially effective against assault troops.
+desc,25,21150,anchored,발석거.,A trebuchet.
+desc,26,21151,anchored,충차.,A battering ram.
+desc,27,21152,anchored,"아군 군단의 병력이나 상태 이상 효과를 회복시키고, 바닥에 붙은 불을 끄는 등 아군 지원에 특화되어 있는 상급 방어대 군단.","Advanced defense troop who specializes in ally support. Can restore HP, clear status effects, put out fires, and more."
+desc,28,21153,inferred,방어력이 높고 적 군단의 공격력과 이동력을 감소 시킬 수 있으며 적 군단을 혼란시키는 허보 책략을 사용하는 상급 방어대 군단.,Advanced defense troop with high DEF who can reduce enemy ATK and SPD. Also uses the Diversion tactic to sow confusion among enemy troops.
+desc,29,21154,inferred,물과 관련된 지형에서 전투력이 증가하는 상급 돌격대 군단. 화계 책략을 사용하여 반격을 받지 않고 적을 공격할 수도 있다. 기마대 군단에게 강하다.,Advanced assault troop who gains increased Combat Power on water terrain. Uses fire tactics to attack the enemy without incurring counterattacks. Especially effective against mounted troops.
+desc,30,21155,inferred,공격력이 높은 상급 돌격대 군단. 상태 이상에 걸린 적 군단에게 큰 피해를 줄 수 있으며 방어력을 감소시키는 관통 책략을 사용할 수 있다. 기마대 군단에게 강하다.,Advanced assault troop with high ATK. Can deal major damage to enemies with status effects and uses Piercing tactics to reduce their DEF. Especially effective against mounted troops.
+desc,31,21156,inferred,적 군단을 관통해 행동 불가 상태로 만들 수 있는 상급 기마대 군단. 사격대 군단에게 강하다.,Advanced mounted troop who uses Piercing tactics to incapacitate enemies. Especially effective against ranged troops.
+desc,32,21157,inferred,산과 관련된 지형에서 전투력이 증가하는 상급 기마대 군단. 진형을 파괴하는 갈퀴 책략과 이동을 일시적으로 막는 포박 책략을 사용할 수 있다. 사격대 군단에게 강하다.,Advanced mounted troop who gains increased Combat Power on mountain terrain. Can use the Hook tactic to break enemy formations and the Entangle tactic to temporarily block enemy movement. Especially effective against ranged troops.
+desc,33,21158,inferred,이동력이 뛰어난 상급 사격대 군단. 적 군단에게 피해를 입히며 교란시키는 화살비 책략을 사용할 수 있다. 돌격대 군단에게 강하다.,Advanced ranged troop with high SPD. Can use the Arrow Rain tactic to distract and damage the enemy. Especially effective against assault troops.
+desc,34,21159,inferred,적 군단을 관통해 행동 불가 상태로 만들 수 있는 상급 사격대 군단. 돌격대 군단에게 강하다.,Advanced ranged troop who uses Piercing tactics to incapacitate enemies. Especially effective against assault troops.

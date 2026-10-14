@@ -1,0 +1,94 @@
+column,seq,loc_row,confidence,ko,en
+title,1,900,inferred,추석 기념 금전 꾸러미,Thanksgiving Gold Coin Bundle
+title,2,901,inferred,추석 기념 특별한 금전 꾸러미,Special Thanksgiving Gold Coin Bundle
+title,3,902,inferred,"금전, 은전, 교본 패키지","Gold Coins, Silver Coins, Training Scroll Package"
+title,4,903,inferred,"금전, 은전, 강화 보존권 패키지","Gold Coins, Silver Coins, Upgrade Protection Ticket Package"
+title,5,904,inferred,"금전, 은전, 보물 조각 패키지","Gold Coins, Silver Coins, Artifact Piece Package"
+title,6,905,inferred,"금전, 은전, 허가서 패키지","Gold Coins, Silver Coins, Permit Package"
+title,7,906,inferred,"금전, 은전, 청룡의 영혼, 청룡의 위패 패키지",Various currencies and Azure Dragon items.
+title,8,907,inferred,"금전, 은전, 교본이 포함된 특별한 패키지",A bundle overflowing with useful items.
+title,9,908,inferred,"금전, 은전이 포함된 특별한 패키지",A bundle overflowing with useful items.
+title,10,909,inferred,"금전, 허가서가 포함된 특별한 패키지",A bundle overflowing with useful items.
+desc,1,910,inferred,"금전, 청룡의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,2,911,inferred,"금전, 은전, 강화 보존권이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,3,912,inferred,"금전, 은전, 7등급 무기 확정권이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,4,913,inferred,"금전, 은전, 7등급 방어구 확정권이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,5,914,inferred,"금전, 은전, 교본이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,6,915,inferred,"금전, 은전, 강화 보존권, 청룡의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,7,916,inferred,"금전, 은전, 4등급 청룡의 보패 확정권이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,8,917,inferred,"500일 보물, 금전, 은전, 4등급 청룡의 보패 확정권이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,9,918,inferred,"[ffe400]500,000 은전\n[FF6000FF]강화 보존권 300개","[ffe400]500,000 Silver Coins\n[FF6000FF]Upgrade Protection Ticket x300"
+desc,10,919,inferred,"은전, 강화 보존권이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,11,920,inferred,"금전, 은전, 7등급 보물 조각이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,12,921,inferred,[ffe400]31일간 장수 기력이 소모되지 않도록 해주는 정기권.,[ffe400]A special pass that gives all commanders unlimited energy for 31 days.
+desc,13,922,inferred,"금전, 은전, 보물 조각이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,14,923,inferred,"금전, 은전, 허가서가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,15,924,inferred,"금전, 교본이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,16,925,inferred,"금전, 은전이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,17,926,inferred,"금전, 강화 보존권, 청룡의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,18,927,inferred,"금전, 강화 보존권이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,19,928,inferred,"금전, 청룡의 영혼, 4등급 보패가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,20,929,inferred,"[ffe400]1,000 금전\n500,000 은전\n500,000 군량\n[AF5BFFFF]장수 성장 비법서 (80) 1장\n[FF6000FF]쌀 주머니 1개\n회복의 쌀 200개\n[ffffff]1회 한정 판매!","[ffe400]1,000 Gold Coins\n500,000 Silver Coins\n500,000 Rations\n[AF5BFFFF]Secret Training Manual (80) x1\n[FF6000FF]Rice Pouch x1\nRice x200\n[ffffff]A one-time only offer!"
+desc,21,930,inferred,"[ffe400]10,000 금전\n3,000,000 은전\n3,000,000 군량\n[AF5BFFFF]장수 성장 비법서 (99) 1장\n[FF6000FF]밀 주머니 1개\n회복의 밀 200개\n[ffffff]1회 한정 판매!","[ffe400]10,000 Gold Coins\n3,000,000 Silver Coins\n3,000,000 Rations\n[AF5BFFFF]Secret Training Manual (Lv.99) x1\n[FF6000FF]Wheat Pouch x1\nWheat x200\n[ffffff]A one-time only offer!"
+desc,22,931,inferred,"금전, 은전, 5종의 교본이 포함된 특별한 패키지",A bundle overflowing with useful items.
+desc,23,932,inferred,"금전, 은전, 3종의 허가서가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,24,933,inferred,"금전, 은전, 주작의 영혼, 주작의 위패가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,25,934,inferred,"금전, 은전, 보물조각이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,26,935,inferred,"금전, 청룡의 영혼, 4등급 청룡의 보패가 포함된 특별한 패키지",A bundle overflowing with useful items.
+desc,27,936,inferred,"금전, 은전과 아이템으로 구성된 대교의 추천 상품","Contains Gold Coins, Silver Coins, and items."
+desc,28,937,inferred,금전과 아이템으로 구성된 소교의 추천 상품,Contains Gold Coins and items.
+desc,29,938,inferred,금전 및 5종의 교본이 포함된 특별한 패키지.,A bundle overflowing with useful items.
+desc,30,939,inferred,금전 및 청룡의 영혼이 포함된 특별한 패키지.,A bundle overflowing with useful items.
+desc,31,940,inferred,"금전, 강화보존권, 청룡의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,32,941,inferred,"금전, 은전 및 3종 허가서가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,33,942,inferred,"금전, 은전, 주작의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,34,943,inferred,"금전, 은전, 강화 보존권 및 주작의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,35,944,inferred,"금전, 청룡의 영혼, 4등급 청룡의 보패가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,36,945,inferred,"금전, 주작의 영혼, 4등급 주작의 보패가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,37,946,inferred,"금전, 주작의 영혼, 4등급 주작의 보패 그리고 600일 기념 보물이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,38,947,inferred,금전 및 주작의 영혼이 포함된 특별한 패키지.,A bundle overflowing with useful items.
+desc,39,948,inferred,"금전, 강화 보존권 및 청룡의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,40,949,inferred,"금전, 강화 보존권 및 주작의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,41,950,inferred,금전 및 강화보존권이 포함된 특별한 패키지.,A bundle overflowing with useful items.
+desc,42,951,inferred,"금전, 은전, 주작의 위패가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,43,952,inferred,"금전, 은전, 청룡의 위패가 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,44,953,inferred,"금전, 은전, 군량으로 구성된 패키지",A bundle overflowing with useful items.
+desc,45,954,inferred,"금전, 은전, 보물조각이 포함된 패키지.",A bundle overflowing with useful items.
+desc,46,955,inferred,"금전, 은전이 포함된 패키지.",A bundle overflowing with useful items.
+desc,47,956,inferred,"금전, 은전, 보물조각이 포함된 고급 패키지.",A bundle overflowing with useful items.
+desc,48,957,inferred,"금전, 은전, 5-7등급 보물 교환권이 포함된 패키지.",A bundle overflowing with useful items.
+desc,49,958,inferred,"금전, 은전 및 승급에 필요한 허가서 3종이 포함된 패키지.",A bundle overflowing with useful items.
+desc,50,959,inferred,"금전, 청룡의 영혼, 주작의 영혼이 포함된 특별한 패키지.",A bundle overflowing with useful items.
+desc,51,960,inferred,"금전, 은전, 군량, 80레벨 장수 성장권이 포함된 패키지","A Bundle that contains many useful items, including a Lv. 80 Secret Training Manual."
+desc,52,961,inferred,금전으로만 구성된 패키지,A bundle overflowing with Gold Coins.
+desc,53,962,inferred,기본 재화와 다양한 재료로 구성된 꾸러미.,A bundle overflowing with currency and various materials.
+desc,54,963,inferred,"강화 보존권, 금전, 은전으로 구성된 꾸러미.",A bundle overflowing with useful items.
+desc,55,964,inferred,"금전, 은전, 7등급 보물 교환권으로 구성된 꾸러미.",A bundle overflowing with useful items.
+desc,56,965,inferred,"7등급 무기 교환권, 7등급 방어구 교환권, 금전, 은전으로 구성된 꾸러미",A bundle overflowing with useful items.
+desc,57,966,inferred,대량의 군량과 다양한 재료로 구성된 꾸러미.,A bundle that's full with rations and materials.
+desc,58,967,inferred,금전과 보물 조각으로 구성된 꾸러미,A bundle overflowing with useful items.
+desc,59,968,inferred,"금전, 은전으로 구성된 꾸러미",A bundle to the brim with coins.
+desc,60,969,inferred,"금전, 은전, 6-7등급 보물 교환권 2개로 구성된 꾸러미",A bundle overflowing with useful items.
+desc,61,970,inferred,"금전, 청룡의 영혼으로 구성된 꾸러미",A bundle overflowing with useful items.
+desc,62,971,inferred,"금전, 은전, 교본으로 구성된 꾸러미",A bundle overflowing with useful items.
+desc,63,972,inferred,"금전, 은전, 허가서로 구성된 꾸러미",A bundle overflowing with useful items.
+desc,64,973,inferred,"금전, 은전, 군량으로 구성된 재화 꾸러미",A bundle overflowing with useful items.
+desc,65,974,inferred,"금전, 은전, 5-7등급 보물 교환권으로 구성된 재화 꾸러미",A bundle overflowing with useful items.
+desc,66,975,inferred,"[ffe400]1,500 금전\n[ffffff]1일 1회 한정 판매!","[ffe400]1,500 Gold Coins\n[ffffff]A limited-time daily offer!"
+desc,67,976,inferred,11종의 보물을 확인 후 구매할 수 있는 특별한 보물 상자. 11종 중 1종은 7성 보물 확정!,A special treasure chest containing 11 different possible artifacts. Use both free and paid rerolls to get the 7★ you want!
+desc,68,977,inferred,"[ffe400]4,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]500 금전 추가 지급","[ffe400]Get 4,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+500 Gold Coins"
+desc,69,978,inferred,"[ffe400]8,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]1,500 금전 추가 지급","[ffe400]Get 8,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+1,500 Gold Coins"
+desc,70,979,inferred,"[ffe400]24,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]5,000 금전 추가 지급","[ffe400]Get 24,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+5,000 Gold Coins"
+desc,71,980,inferred,"[ffe400]40,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]8,500 금전 추가 지급","[ffe400]Get 40,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+8,500 Gold Coins"
+desc,72,981,inferred,"[ffe400]80,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]18,000 금전 추가 지급","[ffe400]Get 80,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+18,000 Gold Coins"
+desc,73,982,inferred,"30% 추가지급 이벤트!\n[ffe400]4,500 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]1,350 금전 추가 지급\n[ffffff]매월 이벤트 기간동안 구매 가능","30% Bonus Event!\n[ffe400]Get 4,500 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+1,350 Gold Coins\n[ffffff]Refreshes on the 1st of every month."
+desc,74,983,inferred,"30% 추가지급 이벤트!\n[ffe400]9,500 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]2,850 금전 추가 지급\n[ffffff]매월 이벤트 기간동안 구매 가능","30% Additional Event!\n[ffe400]Get 9,500 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+2,850 Gold Coins\n[ffffff]Refreshes on the 1st of every month."
+desc,75,984,inferred,"30% 추가지급 이벤트!\n[ffe400]29,000 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]8,700 금전 추가 지급\n[ffffff]매월 이벤트 기간동안 구매 가능","30% Additional Event!\n[ffe400]Get 29,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+8,700 Gold Coins\n[ffffff]Refreshes on the 1st of every month."
+desc,76,985,inferred,"30% 추가지급 이벤트!\n[ffe400]48,500 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]14,550 금전 추가 지급\n[ffffff]매월 이벤트 기간동안 구매 가능","30% Additional Event!\n[ffe400]Get 48,500 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+14,550 Gold Coins\n[ffffff]Refreshes on the 1st of every month."
+desc,77,986,inferred,"30% 추가지급 이벤트!\n[ffe400]98,000 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]29,400 금전 추가 지급\n[ffffff]매월 이벤트 기간동안 구매 가능","30% Additional Event!\n[ffe400]Get 98,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+29,400 Gold Coins\n[ffffff]Refreshes on the 1st of every month."
+desc,78,987,inferred,"[FF6000FF]5,000 금전 즉시 지급\n[FF6000FF]31일간 총 37,200 금전 추가 지급\n\n[ffffff]접속하지 않으면 보상을 받을 수 없으니 주의하세요!","[FF6000FF]Get 5,000 Gold Coins now\n[FF6000FF]and 37,200 Gold Coins over 31 days\n\n[ffffff]Log in daily to receive all your rewards!"
+desc,79,988,inferred,"[FF6000FF]6,000,000 은전 즉시 지급\n[ffe400]31일간 총 9,300,000 군량 추가 지급\n점령 중인 주의 일반 사건, 특수 사건 보상 2배 지급\n쾌속, 기력 정기권 기능 활성화\n\n[ffffff]접속하지 않으면 보상을 받을 수 없으니 주의하세요! \n한정 사건에는 2배 효과가 적용되지 않습니다. ","[FF6000FF]6,000,000 Silver Coins Instantly\n[ffe400]9,300,000 Rations over 31 days\nDouble rewards for normal and special quests in occupied domains\nActivates Fast Battle Pass and Energy Season Pass\n\n[ffffff]Log in daily to receive all of your rewards! Double reward effect does not apply to Limited Quests. "
+desc,80,989,inferred,"금전, 5-7등급 보물 교환권으로 구성된 꾸러미.",A bundle with Gold Coins and a 5-7★ Artifact Voucher.
+desc,81,990,inferred,"금전, 은전, 4등급 청룡의 보패 확정권 4개로 구성된 꾸러미.",A bundle overflowing with useful items.
+desc,82,991,inferred,"금전, 은전, 4등급 주작의 보패 확정권 4개로 구성된 꾸러미.",A bundle overflowing with useful items.
+desc,83,992,inferred,"금전, 은전, 강화 보존권, 보물 조각으로 구성된 특별한 꾸러미.",A bundle overflowing with useful items.

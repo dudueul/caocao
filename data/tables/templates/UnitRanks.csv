@@ -1,0 +1,20 @@
+name,id,tier,icon,type,minPoint,rankValue,rankPercent,rankUpItem,rankUpItemCount,#name_en,#loc_row,#confidence
+오십인장,,,,,,,,,,50-man Commander,11037,anchored
+백인장,,,,,,,,,,100-man Commander,11038,anchored
+오백인장,,,,,,,,,,500-man Commander,11039,anchored
+천인장,,,,,,,,,,"1,000-man Commander",11040,anchored
+9품 장군,,,,,,,,,,9th Tier General,11041,anchored
+8품 장군,,,,,,,,,,8th Tier General,11042,anchored
+7품 장군,,,,,,,,,,7th Tier General,11043,anchored
+6품 장군,,,,,,,,,,6th Tier General,11044,anchored
+5품 장군,,,,,,,,,,5th Tier General,11045,anchored
+4품 장군,,,,,,,,,,4th Tier General,11046,anchored
+3품 장군,,,,,,,,,,3rd Tier General,11047,anchored
+2품 장군,,,,,,,,,,2nd Tier General,11048,anchored
+1품 장군,,,,,,,,,,1st Tier General,11049,anchored
+우장군,,,,,,,,,,General of the Right,11050,anchored
+좌장군,,,,,,,,,,General of the Left,11051,anchored
+위장군,,,,,,,,,,Guardian General,11052,anchored
+표기장군,,,,,,,,,,Cavalry General,11053,anchored
+대장군,,,,,,,,,,General-in-Chief,11054,anchored
+천하대장군,,,,,,,,,,Supreme Warlord,11055,anchored

@@ -1,0 +1,216 @@
+column,seq,loc_row,confidence,ko,en
+name,1,18129,inferred,모의전,Practice
+name,2,18130,inferred,군사력,Military Power
+name,3,18131,inferred,주간 경험치,Weekly EXP
+name,4,18132,inferred,경쟁전,PvP
+name,5,18133,inferred,경쟁전 승점,PvP (Points)
+name,6,18134,inferred,경쟁전 순위권,PvP Top Rank
+name,7,18135,inferred,섬멸전 순위권,Annihilation Top Rank
+name,8,18136,inferred,몽매의 시련,Meng Mei's Trial
+name,9,18137,inferred,연합 세력전,Alliance Faction War
+name,10,18138,inferred,섬멸전1위,Annihilation Rank 1
+name,11,18139,inferred,섬멸전2-10위,Annihilation Rank 2 - 10
+name,12,18140,inferred,섬멸전11-50위,Annihilation Rank 11 - 50
+name,13,18141,inferred,섬멸전51-100위,Annihilation Rank 51 - 100
+name,14,18142,inferred,섬멸전0-1%,Annihilation 0 - 1%
+name,15,18143,inferred,섬멸전2-5%,Annihilation 2 - 5%
+name,16,18144,inferred,섬멸전6-10%,Annihilation 6 - 10%
+name,17,18145,inferred,섬멸전11-20%,Annihilation 11 - 20%
+name,18,18146,inferred,섬멸전21-40%,Annihilation 21-40%
+name,19,18147,inferred,섬멸전41-60%,Annihilation 41 - 60%
+name,20,18148,inferred,섬멸전61-80%,Annihilation 61 - 80%
+name,21,18149,inferred,섬멸전81-100%,Annihilation 81 - 100%
+name,22,18150,inferred,10000이상,"10,000 or above"
+name,23,18151,inferred,5000이상,"5,000 or above"
+name,24,18152,inferred,3000이상,"3,000 or above"
+name,25,18153,inferred,2000이상,"2,000 or above"
+name,26,18154,inferred,1000이상,"1,000 or above"
+name,27,18155,inferred,500이상,500 or above
+name,28,18156,inferred,경쟁전1위,PvP Rank 1
+name,29,18157,inferred,경쟁전2위,PvP Rank 2
+name,30,18158,inferred,섬멸전(1)_1위,Annihilation (1)_Rank 1
+name,31,18159,inferred,섬멸전(1)_2-10위,Annihilation (1)_Rank 2-10
+name,32,18160,inferred,섬멸전(1)_0-1%,Annihilation (1)_0-1%
+name,33,18161,inferred,섬멸전(1)_2-5%,Annihilation (1)_2-5%
+name,34,18162,inferred,섬멸전(1)_6-10%,Annihilation (1)_6-10%
+name,35,18163,inferred,섬멸전(1)_11-20%,Annihilation (1)_11-20%
+name,36,18164,inferred,섬멸전(1)_21-40%,Annihilation (1)_21-40%
+name,37,18165,inferred,섬멸전(1)_41-60%,Annihilation (1)_41-60%
+name,38,18166,inferred,섬멸전(1)_61-80%,Annihilation (1)_61-80%
+name,39,18167,inferred,섬멸전(1)_81-100%,Annihilation (1)_81-100%
+name,40,18168,inferred,섬멸전(2)_1위,Annihilation (2)_Rank 1
+name,41,18169,inferred,섬멸전(2)_2-10위,Annihilation (2)_Rank 2-10
+name,42,18170,inferred,섬멸전(2)_0-1%,Annihilation (2)_0-1%
+name,43,18171,inferred,섬멸전(2)_2-5%,Annihilation (2)_2-5%
+name,44,18172,inferred,섬멸전(2)_6-10%,Annihilation (2)_6-10%
+name,45,18173,inferred,섬멸전(2)_11-20%,Annihilation (2)_11-20%
+name,46,18174,inferred,섬멸전(2)_21-40%,Annihilation (2)_21-40%
+name,47,18175,inferred,섬멸전(2)_41-60%,Annihilation (2)_41-60%
+name,48,18176,inferred,섬멸전(2)_61-80%,Annihilation (2)_61-80%
+name,49,18177,inferred,섬멸전(2)_81-100%,Annihilation (2)_81-100%
+name,50,18178,inferred,섬멸전(3)_1위,Annihilation (3)_Rank 1
+name,51,18179,inferred,섬멸전(3)_2-10위,Annihilation (3)_Rank 2-10
+name,52,18180,inferred,섬멸전(3)_0-1%,Annihilation (3)_0-1%
+name,53,18181,inferred,섬멸전(3)_2-5%,Annihilation (3)_2-5%
+name,54,18182,inferred,섬멸전(3)_6-10%,Annihilation (3)_6-10%
+name,55,18183,inferred,섬멸전(3)_11-20%,Annihilation (3)_11-20%
+name,56,18184,inferred,섬멸전(3)_21-40%,Annihilation (3)_21-40%
+name,57,18185,inferred,섬멸전(3)_41-60%,Annihilation (3)_41-60%
+name,58,18186,inferred,섬멸전(3)_61-80%,Annihilation (3)_61-80%
+name,59,18187,inferred,섬멸전(3)_81-100%,Annihilation (3)_81-100%
+name,60,18188,inferred,평지,Plains
+name,61,18189,inferred,초원,Grassland
+name,62,18190,inferred,숲,Forest
+name,63,18191,inferred,황무지,Wastelands
+name,64,18192,inferred,산지,Mountain
+name,65,18193,inferred,바위산,Rocky Mountain
+name,66,18194,inferred,설원,Snowy Field
+name,67,18195,inferred,얕은 여울,Shallows
+name,68,18196,inferred,습지,Swamp
+name,69,18197,inferred,연못,Pond
+name,70,18198,inferred,급류,Rapids
+name,71,18199,inferred,완류,River
+name,72,18200,anchored,울타리,Fence
+name,73,18201,anchored,성벽,Castle Wall
+name,74,18202,anchored,성내,Courtyard
+name,75,18203,anchored,성채,Fort
+name,76,18204,anchored,관문,Gate
+name,77,18205,anchored,요새,Fortress
+name,78,18206,anchored,마을,Town
+name,79,18207,anchored,가옥,House
+name,80,18208,anchored,보물창고,Artifact Storage
+name,81,18209,anchored,도랑,Ditch
+name,82,18210,anchored,불,Fire
+name,83,18211,anchored,배,Ship
+name,84,18212,anchored,지하,Underground
+name,85,18213,anchored,늪지,Marsh
+name,86,18214,anchored,사막,Desert
+name,87,18215,anchored,빙판,Ice
+name,88,18216,anchored,독천(아천),Toxic Pool (Silent Pond)
+name,89,18217,anchored,잔도,Mountain Pass
+name,90,18218,anchored,팔괘석,Bagua Stone
+name,91,18219,anchored,독천(유천),Toxic Pool (Whispering Pond)
+name,92,18220,anchored,독천(흑천),Toxic Pool (Black Pond)
+name,93,18221,anchored,독천(멸천),Toxic Pool (Deadly Pond)
+name,94,18222,anchored,문양,Crossroads
+name,95,18223,anchored,숲(눈),Forest (Snow)
+name,96,18224,anchored,숲(복숭아),Forest (Peach)
+name,97,18225,anchored,초원(갈대),Grassland (Reed)
+name,98,18226,anchored,초원(꽃),Grassland (Flower)
+name,99,18227,anchored,건물,Building
+name,100,18228,anchored,숲(야간),Forest (Night)
+name,101,18229,anchored,폐허,Ruins
+name,102,18230,anchored,청룡의 당내,Azure Temple
+name,103,18231,anchored,소환진(청룡),Summon Circle (Azure)
+name,104,18232,anchored,성내(2층),Courtyard (Floor 2)
+name,105,18233,anchored,토루,Earthwork
+name,106,18234,anchored,토루(2층),Earthwork (Floor 2)
+name,107,18235,anchored,주작의 화염,Vermilion Bird's Flame
+name,108,18236,anchored,주작의 당내,Vermilion Bird Temple Interior
+name,109,18237,anchored,난투장,Brawl Arena
+name,110,18238,anchored,격전지,Battleground
+name,111,18239,anchored,난투장 외곽,Brawl Arena Outskirts
+name,112,18240,anchored,염화,Burning Flame
+name,113,18241,anchored,결투장,Arena
+name,114,18242,anchored,태양,Yellow Sun
+name,115,18243,anchored,신록,Green Mountain
+name,116,18244,anchored,창천,Azure Sky
+name,117,18245,anchored,혹한,White Frost
+name,118,18246,anchored,능선,Blue Ridge
+name,119,18247,anchored,나루,Grey Dock
+name,120,18248,anchored,백호의 당내,White Tiger Temple
+name,121,18249,anchored,평지: 화염,Plains: Flame
+name,122,18250,anchored,초원: 화염,Grassland: Flame
+name,123,18251,anchored,숲: 화염,Forest: Flame
+name,124,18252,anchored,황무지: 화염,Wastelands: Flame
+name,125,18253,anchored,산지: 화염,Mountain: Flame
+name,126,18254,anchored,바위산: 화염,Rocky Mountain: Flame
+name,127,18255,anchored,절벽: 화염,Cliff: Flame
+name,128,18256,anchored,설원: 화염,Snow: Flame
+name,129,18257,anchored,다리: 화염,Bridge: Flame
+name,130,18258,anchored,얕은 여울: 화염,Shallows: Flame
+name,131,18259,anchored,습지: 화염,Swamp: Flame
+name,132,18260,anchored,연못: 화염,Pond: Flame
+name,133,18261,anchored,급류: 화염,Rapid: Flame
+name,134,18262,anchored,완류: 화염,River: Flame
+name,135,18263,anchored,울타리: 화염,Fence: Flame
+name,136,18264,anchored,성벽: 화염,Castle Wall: Flame
+name,137,18265,anchored,성내: 화염,Courtyard: Flame
+name,138,18266,anchored,성문: 화염,Castle Gate: Flame
+name,139,18267,anchored,성채: 화염,Fort: Flame
+name,140,18268,anchored,관문: 화염,Gate: Flame
+name,141,18269,anchored,요새: 화염,Fortress: Flame
+name,142,18270,anchored,마을: 화염,Town: Flame
+name,143,18271,anchored,병영: 화염,Barracks: Flame
+name,144,18272,anchored,가옥: 화염,House: Flame
+name,145,18273,anchored,보물창고: 화염,Artifact Storage: Flame
+name,146,18274,anchored,도랑: 화염,Ditch: Flame
+name,147,18275,anchored,불: 화염,Fire: Flame
+name,148,18276,anchored,배: 화염,Ship: Flame
+name,149,18277,anchored,제단: 화염,Altar: Flame
+name,150,18278,anchored,지하: 화염,Underground: Flame
+name,151,18279,anchored,늪지: 화염,Marsh: Flame
+name,152,18280,anchored,사막: 화염,Desert: Flame
+name,153,18281,anchored,빙판: 화염,Ice: Flame
+name,154,18282,anchored,독천(아천): 화염,Toxic Pool (Silent Pond): Flame
+name,155,18283,anchored,잔도: 화염,Mountain Pass: Flame
+name,156,18284,anchored,팔괘석: 화염,Bagua Stone: Flame
+name,157,18285,anchored,독천(유천): 화염,Toxic Pool (Whispering Pond): Flame
+name,158,18286,anchored,독천(흑천): 화염,Toxic Pool (Black Pond): Flame
+name,159,18287,anchored,독천(멸천): 화염,Toxic Pool (Deadly Pond): Flame
+name,160,18288,anchored,내성: 화염,Keep: Flame
+name,161,18289,anchored,문양: 화염,Crossroads: Flame
+name,162,18290,anchored,둑: 화염,Shore: Flame
+name,163,18291,anchored,바위: 화염,Rock: Flame
+name,164,18292,anchored,숲(눈): 화염,Forest (Snow): Flame
+name,165,18293,anchored,군량고: 화염,Stockpile: Flame
+name,166,18294,anchored,은전고: 화염,Treasury: Flame
+name,167,18295,anchored,숲(복숭아): 화염,Forest (Peach): Flame
+name,168,18296,anchored,초원(갈대): 화염,Grassland (Reed): Flame
+name,169,18297,anchored,초원(꽃): 화염,Grassland (Flower): Flame
+name,170,18298,anchored,건물: 화염,Building: Flame
+name,171,18299,anchored,숲(야간): 화염,Forest (Night): Flame
+name,172,18300,anchored,폐허: 화염,Ruins: Flame
+name,173,18301,anchored,청룡의 당내: 화염,Azure Temple: Flame
+name,174,18302,anchored,소환진(청룡): 화염,Summon Circle (Azure): Flame
+name,175,18303,anchored,성내(2층): 화염,Courtyard (Floor 2): Flame
+name,176,18304,anchored,토루: 화염,Earthwork: Flame
+name,177,18305,anchored,토루(2층): 화염,Earthwork (Floor 2): Flame
+name,178,18306,anchored,주작의 화염: 화염,Vermilion Bird's Flame: Flame
+name,179,18307,anchored,주작의 당내: 화염,Vermilion Bird Temple Interior: Flame
+name,180,18308,anchored,난투장: 화염,Brawl Arena: Fire
+name,181,18309,inferred,격전지: 화염,Battleground: Fire
+name,182,18310,inferred,난투장 외곽: 화염,Brawl Arena Outskirts: Fire
+name,183,18311,inferred,염화: 화염,Burning Flame: Fire
+name,184,18312,inferred,결투장: 화염,Arena: Fire
+name,185,18313,inferred,태양: 화염,Yellow Sun: Fire
+name,186,18314,inferred,신록: 화염,Green Mountain: Fire
+name,187,18315,inferred,창천: 화염,Azure Sky: Fire
+name,188,18316,inferred,혹한: 화염,White Frost: Fire
+name,189,18317,inferred,능선: 화염,Blue Ridge: Fire
+name,190,18318,inferred,나루: 화염,Grey Dock: Fire
+name,191,18319,inferred,백호의 당내: 화염,White Tiger Temple: Flame
+name,192,18320,inferred,연의편,Story
+name,193,18321,inferred,전략편,Strategy
+name,194,18322,inferred,설정,Settings
+name,195,18323,inferred,공격(화),Attack (Fire)
+name,196,18324,inferred,공격(수),Attack (Water)
+name,197,18325,inferred,공격(지),Attack (Earth)
+name,198,18326,inferred,공격(풍),Attack (Wind)
+name,199,18327,inferred,HP 흡수,Absorb HP
+name,200,18328,inferred,MP 흡수,Absorb MP
+name,201,18329,inferred,전투 능력 감소,Reduce Combat Ability
+name,202,18330,inferred,전투 능력 향상,Improve Combat Ability
+name,203,18331,inferred,방어력 향상,Improve DEF
+name,204,18332,inferred,순발력 향상,Improve AGI
+name,205,18333,inferred,사기 향상,Improve MRL
+name,206,18334,inferred,상태 회복,Recover Status
+name,207,18335,inferred,날씨 변화,Weather Change
+name,208,18336,inferred,수수께끼,Mystery
+name,209,18337,inferred,이동력 향상,Improve SPD
+name,210,18338,inferred,퇴각,Retreat
+name,211,18339,inferred,기사,Knight
+name,212,18340,inferred,난무,Rampage
+name,213,18341,inferred,내분,Strife
+name,214,18342,inferred,괴뢰 생성,Craft Marionette
+name,215,18343,inferred,이동 공격,Attack Move

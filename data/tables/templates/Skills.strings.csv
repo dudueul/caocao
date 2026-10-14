@@ -1,0 +1,406 @@
+column,seq,loc_row,confidence,ko,en
+name,1,11056,anchored,초열,Ember
+name,2,11057,anchored,업화,Blaze
+name,3,11058,anchored,화진,Inferno
+name,4,11059,anchored,화룡,Fire Dragon
+name,5,11060,anchored,폭염,Hell Fire
+name,6,11061,anchored,탁류,Mist
+name,7,11062,anchored,격류,Torrent
+name,8,11063,anchored,수진,Geyser
+name,9,11064,anchored,수룡,Water Dragon
+name,10,11065,anchored,해일,Tsunami
+name,11,11066,anchored,선풍,Gust
+name,12,11067,anchored,돌풍,Whirlwind
+name,13,11068,anchored,풍진,Tornado
+name,14,11069,anchored,풍룡,Wind Dragon
+name,15,11070,anchored,폭풍,Typhoon
+name,16,11071,anchored,낙석,Boulder
+name,17,11072,anchored,토석,Rockslide
+name,18,11073,anchored,지진,Earthquake
+name,19,11074,anchored,지룡,Earth Dragon
+name,20,11075,anchored,거암,Tectonic
+name,21,11076,anchored,현혹,Intimidate
+name,22,11077,anchored,첩보,Sabotage
+name,23,11078,anchored,둔병,Hamstring
+name,24,11079,anchored,둔대,Mass Hamstring
+name,25,11080,anchored,허탈,Demoralize
+name,26,11081,anchored,염전,Mass Dispirit
+name,27,11082,anchored,압박,Threaten
+name,28,11083,anchored,위압,Overpower
+name,29,11084,anchored,욕설,Insult
+name,30,11085,anchored,허보,Diversion
+name,31,11086,anchored,유언s,Mass Diversion
+name,32,11087,anchored,독연,Poison Gas
+name,33,11088,anchored,독무,Poison Cloud
+name,34,11089,anchored,포박,Entangle
+name,35,11090,anchored,주박,Mass Entangle
+name,36,11091,anchored,봉책,Seal Tactics
+name,37,11092,anchored,팔진도,Eightfold Maze
+name,38,11093,anchored,소보급,Resupply
+name,39,11094,anchored,대보급,Greater Resupply
+name,40,11095,anchored,구원대,Reinforcements
+name,41,11096,anchored,구원군,Greater Reinforcements
+name,42,11097,anchored,수송,Aid
+name,43,11098,anchored,조언,Advise
+name,44,11099,anchored,헌책,Counsel
+name,45,11100,anchored,각성,Awaken
+name,46,11101,anchored,대각성,Greater Awaken
+name,47,11102,anchored,강행,Hasten
+name,48,11103,anchored,연병,Drill
+name,49,11104,anchored,연대,United Front
+name,50,11105,anchored,고양,Enhance
+name,51,11106,anchored,환성,Commend
+name,52,11107,anchored,분기,Provoke
+name,53,11108,anchored,고무,Invigorate
+name,54,11109,anchored,견고,Holdfast
+name,55,11110,anchored,강진,Bolster
+name,56,11111,anchored,회귀,Rally
+name,57,11112,anchored,호우,Downpour
+name,58,11113,anchored,청천,Clear Sky
+name,59,11114,anchored,적운,Overcast
+name,60,11115,anchored,기합,Concentrate
+name,61,11116,anchored,명상,Meditate
+name,62,11117,anchored,패기,Inspire
+name,63,11118,anchored,호위,Guard
+name,64,11119,anchored,광폭,Berserk
+name,65,11120,anchored,대형탄,Giant Bomb
+name,66,11121,anchored,필살,Lethal Blow
+name,67,11122,anchored,저격,Snipe
+name,68,11123,anchored,파진,Overrun
+name,69,11124,anchored,배격,Condemn
+name,70,11125,anchored,갈퀴,Hook
+name,71,11126,anchored,돌격,Charge
+name,72,11127,anchored,저주,Curse
+name,73,11128,anchored,투척,Throw
+name,74,11129,anchored,육격,Hexa-Strike
+name,75,11130,anchored,고육진,Advanced Hex Formation
+name,76,11131,anchored,고육격,Advanced Hexa-Strike
+name,77,11132,anchored,난사,Wild Shot
+name,78,11133,anchored,폭우,Deluge
+name,79,11134,anchored,폭암,Rockslide
+name,80,11135,anchored,태풍,Hurricane
+name,81,11136,anchored,화시,Fire Arrow
+name,82,11137,anchored,금격,Blind
+name,83,11138,anchored,금구,Daze
+name,84,11139,anchored,제압,Suppress
+name,85,11140,anchored,저지,Cripple
+name,86,11141,anchored,행군,March
+name,87,11142,anchored,대회귀,Mass Rally
+name,88,11143,anchored,주작염,Vermilion Bird Fireball
+name,89,11144,anchored,청룡뢰,Azure Dragon Lightning
+name,90,11145,anchored,화염탄,Fire Shot
+name,91,11146,anchored,필격,Strike True
+name,92,11147,anchored,대헌책,Mass Counsel
+name,93,11148,anchored,괴뢰,Marionette
+name,94,11149,anchored,진격의 북,Assault Drum
+name,95,11150,anchored,방위의 북,Fortify Drum
+name,96,11151,anchored,사신의 북,Four Gods Drum
+name,97,11152,anchored,보급의 북,Supply Drum
+name,98,11153,anchored,스폰,Barrack
+name,99,11154,anchored,홍련탄,Crimson Lotus Shot
+name,100,11155,anchored,혈독,Blood Toxin
+name,101,11156,anchored,독룡,Toxic Cloud
+name,102,11157,anchored,독천,Toxic Pool
+name,103,11158,anchored,사독,Viper Strike
+name,104,11159,anchored,대둔병,Greater Confuse
+name,105,11160,anchored,대허탈,Greater Demoralize
+name,106,11161,anchored,대압박,Greater Threaten
+name,107,11162,anchored,대욕설,Greater Insult
+name,108,11163,anchored,대강행,Greater Hasten
+name,109,11164,anchored,대연병,Greater Drill
+name,110,11165,anchored,대고양,Greater Enhance
+name,111,11166,anchored,대분기,Greater Provoke
+name,112,11167,anchored,대견고,Greater Holdfast
+name,113,11168,anchored,분쇄,Pulverize
+name,114,11169,anchored,독살,Poison Blade
+name,115,11170,anchored,강습,Expose
+name,116,11171,anchored,강인,Tenacity
+name,117,11172,anchored,대책,Countermeasure
+name,118,11173,anchored,대연대,Greater United Front
+name,119,11174,anchored,대환성,Greater Applause
+name,120,11175,anchored,대고무,Greater Invigorate
+name,121,11176,anchored,대강진,Greater Bolster
+name,122,11177,anchored,강인가,Tenacity Song
+name,123,11178,anchored,대책가,Countermeasure Song
+name,124,11179,anchored,투지,Determination
+name,125,11180,anchored,정확,Precision
+name,126,11181,anchored,방해,Interrupt
+name,127,11182,anchored,위축,Wither
+name,128,11183,anchored,용조,Dragon Claw
+name,129,11184,anchored,용아,Dragon Fang
+name,130,11185,anchored,파동1,Energy Wave
+name,131,11186,anchored,파동2,Energy Wave
+name,132,11187,anchored,역린,Outrage
+name,133,11188,anchored,용안,Draconic Visage
+name,134,11189,anchored,용조 충전,Charge Dragon Claw
+name,135,11190,anchored,용아 충전,Charge Dragon Fang
+name,136,11191,anchored,파동1 충전,Charge Energy Wave
+name,137,11192,anchored,파동2 충전,Charge Energy Wave
+name,138,11193,anchored,역린 충전,Charge Outrage
+name,139,11194,anchored,용의 분노,Dragon's Wrath
+name,140,11195,anchored,충전 실패,Charge Failed
+name,141,11196,anchored,연환뢰,Thunderstorm
+name,142,11197,anchored,응축 <화염 확산>,Condense <Spread Fire>
+name,143,11198,anchored,응축 <화염 갈퀴>,Condense <Fire Claw>
+name,144,11199,anchored,화염 확산,Spread Fire
+name,145,11200,anchored,화염 갈퀴,Fire Claw
+name,146,11201,anchored,비상 <추인>,Ascend
+name,147,11202,anchored,비상 <추>,Ascend
+name,148,11203,anchored,비상 <인>,Ascend
+name,149,11204,anchored,비상,Ascend
+name,150,11205,anchored,비상 <추인> 준비,Ascend <Red/Blue> Preparation
+name,151,11206,anchored,비상 <추> 준비,Ascend <Red> Preparation
+name,152,11207,anchored,비상 <인> 준비,Ascend <Blue> Preparation
+name,153,11208,anchored,비상 준비,Ascend Preparation
+name,154,11209,anchored,화염뢰1,Scorching Lightning
+name,155,11210,anchored,화염뢰2,Scorching Lightning
+name,156,11211,anchored,순시,Blink Slash
+name,157,11212,anchored,화염회귀,Flame Blink
+name,158,11213,anchored,응축 <화염뢰1>,Condense <Scorching Lightning 1>
+name,159,11214,anchored,응축 <화염뢰2>,Condense <Scorching Lightning 2>
+name,160,11215,anchored,화절,Mortal Blaze
+name,161,11216,anchored,인내심,Patience
+name,162,11217,anchored,평정심,Tranquility
+name,163,11218,anchored,바람의 인도,Air Burst
+name,164,11219,anchored,각성의 바람,Awakening Wind
+name,165,11220,anchored,최후의 숨결,Final Breath
+name,166,11221,anchored,호령-주작,Command - Vermilion Bird
+name,167,11222,anchored,호령-현무,Command - Black Tortoise
+name,168,11223,anchored,호령-청룡,Command - Azure Dragon
+name,169,11224,anchored,호령-백호,Command - White Tiger
+name,170,11225,anchored,재생의 바람,Refreshing Wind
+name,171,11226,anchored,바람의 인도 준비,Prepare Air Burst
+name,172,11227,anchored,호령-주작 준비,Command - Vermilion Bird Prep.
+name,173,11228,anchored,호령-현무 준비,Command - Black Tortoise Prep.
+name,174,11229,anchored,호령-청룡 준비,Command - Azure Dragon Prep.
+name,175,11230,anchored,호령-백호 준비,Command - White Tiger Prep.
+name,176,11231,anchored,회복: 백호,Recovery: White Tiger
+name,177,11232,anchored,대회복: 백호,Grand Recovery: White Tiger
+name,178,11233,anchored,공격 명령,Focus Attack
+name,179,11234,anchored,가시 방패,Thorn Shield
+name,180,11235,anchored,급속 행군,Double Time
+name,181,11236,anchored,돌진 준비,Fearless Charge
+name,182,11237,anchored,방책,Defensive Stance
+name,183,11238,anchored,웅크리기,Stalk
+name,184,11239,anchored,후려치기,Slam
+name,185,11240,anchored,투창,Javelin
+name,186,11241,anchored,풍륜,Wind Wheel
+name,187,11242,anchored,일섬,Flicker Blade
+name,188,11243,anchored,백중가,Song of Thanks
+name,189,11244,anchored,간파,Anticipate
+name,190,11245,anchored,조준 노술,Take Aim
+name,191,11246,anchored,광분,Unleash
+name,192,11247,anchored,화살비,Arrow Rain
+name,193,11248,anchored,벽력탄,Thunder Bomb
+name,194,11249,anchored,발경,Ki Burst
+name,195,11250,anchored,보급진,Safe Haven
+name,196,11251,anchored,맹독우,Deadly Poison Rain
+name,197,11252,anchored,매혹,Charm
+name,198,11253,anchored,질주,Sprint
+name,199,11254,anchored,작렬탄,Burning Bomb
+name,200,11255,anchored,대홍수,Deluge
+name,201,11256,anchored,매복,Ambush
+name,202,11257,anchored,사격 준비,Eagle Eye
+name,203,11258,anchored,화살 쳐내기,Deflect Arrow
+desc,1,11259,anchored,"적 부대를 화계로 공격한다. 날씨가 비, 눈, 폭풍일 땐 사용할 수 없다. 또한, 황무지, 산지, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대엔 사용할 수 없다.","Attack an enemy unit with fire. Cannot be used during Rain, Blizzards, or Storms. Cannot affect units on Wastelands, Mountain, Shallows, Swamp, Rapids, River, or Snow."
+desc,2,11260,anchored,"적 부대를 강한 화계로 공격한다. 날씨가 비, 눈, 폭풍일 땐 사용할 수 없다. 또한, 황무지, 산지, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대엔 사용할 수 없다.","Attack an enemy unit with raging fire. Cannot be used during Rain, Blizzards, or Storms. Cannot affect units on Wastelands, Mountain, Shallows, Swamp, Rapids, River, or Snow."
+desc,3,11261,anchored,"복수의 적 부대를 화계로 공격한다. 날씨가 비, 눈, 폭풍일 땐 사용할 수 없다. 또한, 황무지, 산지, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대엔 사용할 수 없다.","Attack multiple enemy units with fire. Cannot be used during Rain, Blizzards, or Storms. Cannot affect units on Wastelands, Mountain, Shallows, Swamp, Rapids, River, or Snow."
+desc,4,11262,anchored,"복수의 적 부대를 강한 화계로 공격한다. 날씨가 비, 눈, 폭풍일 땐 사용할 수 없다. 또한, 황무지, 산지, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대엔 사용할 수 없다.","Attack multiple enemy units with raging fire. Cannot be used during Rain, Blizzards, or Storms. Cannot affect units on Wastelands, Mountain, Shallows, Swamp, Rapids, River, or Snow."
+desc,5,11263,anchored,"일직선으로 화염을 쏟아내 복수의 부대를 공격한다. 날씨가 비, 눈, 폭풍일 땐 사용할 수 없다. 또한, 황무지, 산지, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대엔 사용할 수 없다.","Attack multiple units in a line with fire. Cannot be used during Rain, Blizzards, or Storms. Cannot affect units on Wastelands, Mountain, Shallows, Swamp, Rapids, River, or Snow."
+desc,6,11264,anchored,"물의 흐름을 조작해 적 부대를 공격한다. 다리, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대에만 사용할 수 있다.","Channel a current of water to attack an enemy unit. Can only affect units on Bridges, Shallows, Swamp, Rapids, River, or Snow."
+desc,7,11265,anchored,"물의 흐름을 조작해 적 부대를 격류로 덮친다. 탁류보다 적에게 주는 피해가 크다. 다리, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대에만 사용할 수 있다.","Channel a rapid current of water to attack an enemy unit. Deals more damage in murky water. Can only affect units on Bridges, Shallows, Swamp, Rapids, River, or Snow."
+desc,8,11266,anchored,"물의 흐름을 조작해 복수의 적 부대를 공격한다. 다리, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대에만 사용할 수 있다.","Channel a current of water to attack multiple enemy units. Can only affect units on Bridges, Shallows, Swamp, Rapids, River, or Snow."
+desc,9,11267,anchored,"물의 흐름을 조작해 용처럼 보이는 솟아오르는 물기둥으로 복수의 적 부대를 공격한다. 다리, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대에만 사용할 수 있다.","Shape a current of water into a dragon to attack multiple enemy units. Can only affect units on Bridges, Shallows, Swamp, Rapids, River, or Snow."
+desc,10,11268,anchored,"적 부대를 일격에 퇴각시킬 수 있으나 성공 확률이 낮다. 다리, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대에만 사용할 수 있다.","Low chance to force an enemy unit to retreat. Can only affect units on Bridges, Shallow Water, Swamp, Rapids, River, or Snow."
+desc,11,11269,anchored,회오리를 일으켜 적 부대를 공격한다. 건물이나 숲 안에 있는 부대에는 사용할 수 없다.,Conjure a tornado to attack an enemy unit. Cannot affect units on Building or Forest.
+desc,12,11270,anchored,강한 회오리를 일으켜 적 부대를 공격한다. 건물이나 숲 안에 있는 부대에는 사용할 수 없다.,Conjure a powerful tornado to attack an enemy unit. Cannot affect units on Building or Forest.
+desc,13,11271,anchored,회오리를 일으켜 복수의 적 부대를 공격한다. 건물이나 숲 안에 있는 부대에는 사용할 수 없다.,Conjure a tornado to attack multiple enemy units. Cannot affect units on Building or Forest.
+desc,14,11272,anchored,용오름을 일으켜 복수의 적 부대를 공격한다. 건물이나 숲 안에 있는 부대에는 사용할 수 없다.,Conjure a whirlwind to attack multiple enemy units. Cannot affect units on Building or Forest.
+desc,15,11273,anchored,모래 폭풍을 발생시켜 숲이나 건물의 밖에 있는 모든 적 부대에 큰 피해를 준다.,Conjure a raging typhoon. Deals heavy damage to all units not on Building or Forest.
+desc,16,11274,anchored,적 부대에 바위를 떨어뜨려 공격한다. 산지나 황무지에 있는 부대에만 사용할 수 있다.,Attack an enemy unit by dropping rocks. Can only affect units on Mountain or Wastelands.
+desc,17,11275,anchored,복수의 적 부대에 바위를 떨어뜨려 공격한다. 산지나 황무지에 있는 부대에만 사용할 수 있다.,Attack multiple enemy units by dropping rocks. Can only affect units on Mountain or Wastelands.
+desc,18,11276,anchored,대규모 산사태로 복수의 적 부대를 공격한다. 산지나 황무지에 있는 부대에만 사용할 수 있다.,Trigger a landslide to attack multiple enemy units. Can only affect units on Mountain or Wastelands.
+desc,19,11277,anchored,적 부대에 거대한 암석을 떨어뜨려 큰 피해를 준다. 산지나 황무지에 있는 부대에만 사용할 수 있다.,Attack an enemy unit by dropping a giant rock. Can only affect units on Mountain or Wastelands.
+desc,20,11278,anchored,적 부대의 HP를 흡수해 자신의 HP를 회복시킨다.,Drain an enemy unit's HP to restore your own.
+desc,21,11279,anchored,적 부대의 전의를 상실시켜 퇴각시킨다. 성공 확률은 낮다.,"Demoralize the enemy, causing them to retreat. Has a low chance of success."
+desc,22,11280,anchored,적 부대의 MP를 흡수해 자신의 MP를 회복시킨다.,Drain an enemy unit's MP to restore your own.
+desc,23,11281,anchored,"범위 내에 있는 적 부대를 교란시켜, 일시적으로 순발력을 낮춰 공격 명중률과 회피율을 감소시킨다.",Confuse enemy units within range to lower their AGI. Decreases ACC and EVA.
+desc,24,11282,anchored,"넓은 범위 내에 있는 적 부대를 교란시켜, 일시적으로 순발력을 낮춰 공격 명중률과 회피율을 감소시킨다.",Confuse enemy units within a large range to lower their AGI. Decreases ACC and EVA.
+desc,25,11283,anchored,범위 내에 있는 적 부대의 사기를 일시적으로 낮춰 치명타 발생 확률을 감소시킨다.,Lower the MRL of enemy units within range. Decreases critical chance.
+desc,26,11284,anchored,넓은 범위 내에 있는 적 부대의 사기를 일시적으로 낮춰 치명타 발생 확률을 감소시킨다.,Temporarily lower the MRL of enemy units within a large range. Decreases critical chance.
+desc,27,11285,anchored,"적 부대를 위협해 일시적으로 공격력을 감소시킨다. 단, 책사계, 도사계, 풍수사계, 현자계 등 문관계의 부대는 정신력이 감소한다.","Threaten an enemy unit to decrease their ATK. Officials have their WIS decreased instead, while all-around units have both ATK and WIS decreased. "
+desc,28,11286,anchored,"복수의 적 부대를 위협해 일시적으로 공격력을 감소시킨다. 단, 책사계, 도사계, 풍수사계, 현자계 등 문관계의 부대는 정신력이 감소한다.","Threaten multiple enemy units to decrease their ATK. Officials have their WIS decreased instead, while balanced units have both ATK and WIS decreased. "
+desc,29,11287,anchored,적 부대를 흥분시켜 일시적으로 방어력이 감소한다.,Enrage an enemy unit to decrease their DEF.
+desc,30,11288,anchored,복수의 적 부대를 흥분시켜 일시적으로 방어력이 감소한다.,Enrage multiple enemy units to decrease their DEF.
+desc,31,11289,anchored,적 부대에 헛소문을 흘려 혼란 상태로 만든다.,"Send out false information to an enemy unit, Confusing them."
+desc,32,11290,anchored,복수의 적 부대에 헛소문을 흘려 혼란 상태로 만든다.,"Send out false information to multiple enemy units, Confusing them."
+desc,33,11291,anchored,적 부대를 중독시켜 HP를 감소시킨다.,Poison an enemy unit to decrease their HP.
+desc,34,11292,anchored,복수의 적 부대를 중독시켜 HP를 감소시킨다.,Poison multiple enemy units to decrease their HP.
+desc,35,11293,anchored,적 부대를 구속해 일시적으로 이동할 수 없게 만든다.,Bind an enemy unit to Immobilize them.
+desc,36,11294,anchored,복수의 적 부대를 구속해 일시적으로 움직일 수 없도록 만든다.,Bind multiple enemy units to Immobilize them.
+desc,37,11295,anchored,적 부대의 목을 상하게 해 일시적으로 책략을 사용할 수 없도록 만든다.,Damage an enemy unit's throat to prevent the use of tactics.
+desc,38,11296,anchored,"휴, 생, 상, 두, 경, 사, 경, 개의 팔문을 가진 석진으로 적 부대를 둘러싸, 다양한 영향을 끼친다.",Create a stone formation of eight gates to cause a variety of effects on an enemy unit.
+desc,39,11297,anchored,아군 부대의 HP를 조금 회복시킨다.,Restores a little HP of an ally unit.
+desc,40,11298,anchored,아군 부대의 HP를 회복시킨다.,Restores HP of an ally unit.
+desc,41,11299,anchored,복수의 아군 부대의 HP를 조금 회복시킨다.,Restores a little HP of multiple ally units.
+desc,42,11300,anchored,복수의 아군 부대의 HP를 회복시킨다.,Restores HP of multiple ally units.
+desc,43,11301,anchored,멀리 떨어진 아군 부대의 HP를 회복시킬 수 있다.,Restores HP of an ally unit from a distance.
+desc,44,11302,anchored,아군 부대의 MP를 조금 회복시킨다.,Slightly restores MP of an ally unit.
+desc,45,11303,anchored,아군 부대의 MP를 회복시킨다,Restores MP of an ally unit.
+desc,46,11304,anchored,해로운 상태이상과 능력 하강 상태인 아군의 상태이상을 회복시킨다.,Cures an ally unit of negative status effects and the stat reduction effects.
+desc,47,11305,anchored,해로운 상태이상과 능력 하강 상태인 복수의 아군의 상태이상을 회복시킨다.,Cures multiple allies of negative status effects and the stat reduction effects.
+desc,48,11306,anchored,지정한 아군 부대의 이동력을 일시적으로 상승시킨다.,Increase an ally unit's speed.
+desc,49,11307,anchored,"효과 범위 내 아군 지휘계통을 정비해, 일시적으로 순발력을 상승시킨다. 명중률과 회피율이 높아진다.",Rearrange the command structure of allies within range to improve AGI. Increases ACC and EVA.
+desc,50,11308,anchored,"더 넓은 효과 범위 내 아군 지휘계통을 정비해, 일시적으로 순발력을 상승시킨다. 명중률과 회피율이 높아진다.",Rearrange the command structure of allies within a large range to improve AGI. Increases ACC and EVA.
+desc,51,11309,anchored,효과 범위 내 아군의 전의를 높여 일시적으로 사기를 상승시킨다. 치명타 발생 확률이 높아진다.,Rally ally units within range to improve MRL. Increases critical chance.
+desc,52,11310,anchored,더 넓은 효과 범위 내 아군의 전의를 높여 일시적으로 사기를 상승시킨다. 치명타 발생 확률이 높아진다.,Rally ally units within a large range to improve MRL. Increases critical chance.
+desc,53,11311,anchored,"아군 부대를 분발시켜 일시적으로 공격력을 상승시킨다. 단, 문관계의 부대는 정신력이 상승하며, 만능계의 부대는 공격력과 정신력 둘 다 상승한다.","Fortify an ally unit to temporarily increase ATK. Officials have their WIS increased instead, while balanced units have both ATK and WIS increased."
+desc,54,11312,anchored,"복수의 아군 부대를 분발시켜 일시적으로 공격력을 상승시킨다. 단, 문관계의 부대는 정신력이 상승하며, 만능계의 부대는 공격력과 정신력 둘 다 상승한다.","Fortify multiple ally units to temporarily increase ATK. Officials have their WIS increased instead, while balanced units have both ATK and WIS increased."
+desc,55,11313,anchored,아군 부대의 진형을 정비해 일시적으로 방어력을 상승시킨다.,Reorganize an ally formation to increase DEF.
+desc,56,11314,anchored,복수의 아군 부대의 진형을 정비해 일시적으로 방어력을 상승시킨다.,Reorganize multiple ally formations to increase DEF.
+desc,57,11315,anchored,행동을 마친 아군 부대를 다시 행동 가능한 상태로 만든다.,Allow a unit to move again after ending their turn.
+desc,58,11316,anchored,기문둔갑의 술을 사용해 비를 내리게 한다.,Uses the Qi Men Dun Jia technique to summon rain.
+desc,59,11317,anchored,기문둔갑의 술을 사용해 맑은 날씨로 바꾼다.,Uses the Qi Men Dun Jia technique to clear the skies.
+desc,60,11318,anchored,기문둔갑의 술을 사용해 흐린 날씨로 바꾼다.,Uses the Qi Men Dun Jia technique to summon clouds.
+desc,61,11319,anchored,"본대의 공격력을 일시적으로 상승시킨다. 단, 문관계의 부대는 정신력이 상승하며 만능계의 부대는 공격력과 정신력 둘 다 상승한다.","Temporarily increase the ATK of this unit. Officials have their WIS increased instead, while balanced units have both ATK and WIS increased."
+desc,62,11320,anchored,본대의 HP를 소비해 MP를 회복한다.,Consume this unit's HP to restore its MP.
+desc,63,11321,anchored,"본대의 공격력, 방어력, 순발력, 사기를 일시적으로 높인다. 단, 문관계의 부대는 정신력이 상승하며, 만능계의 부대는 공격력과 정신력 둘 다 상승한다.","Temporarily increase this unit's ATK, DEF, AGI, and MRL. Officials have their WIS increased instead, while balanced units have both ATK and WIS increased."
+desc,64,11322,anchored,"청룡을 소환해 주위에 벼락을 떨어뜨린다. 날씨가 비, 폭풍, 눈일 때만 사용할 수 있다. 청룡 책략은 연속 책략이 발동하지 않는다. 청룡 보옥 장비 또는 사신 소환 효과 필요.","Summons the Azure Dragon to call upon lightning. Can only be used during Rain, Typhoons, and Blizzards. Azure Dragon Tactics do not activate a Double Tactic. Requires Azure Dragon Orb Equipment or the Four God Summoning Effect."
+desc,65,11323,anchored,주작을 소환해 주위를 불바다로 만든다. 날씨가 맑을 때만 사용할 수 있다. 주작 보옥 장비 또는 사신 소환 효과 필요.,Summon the Vermilion Bird to engulf the battlefield in flames. Can only be used during a clear day. Requires Vermilion Bird artifacts or the Four God Summoning Effect.
+desc,66,11324,anchored,현무를 소환해 주위 부대에 다양한 효과를 일으킨다. 현무에 의한 상태이상 효과는 상태이상 반사 효과를 무시한다. 날씨가 흐릴 때만 사용할 수 있다. 현무 보옥 장비 또는 사신 소환 효과 필요.,Summon the Black Tortoise to inflict various negative status effects on surrounding enemy units. Status effects caused by the Black Tortoise ignore status effect reflection. Can be used only during a cloudy day. Requires Black Tortoise artifacts or the Four God Summoning Effect.
+desc,67,11325,anchored,백호를 소환해 모든 아군 부대의 HP를 회복시키고 상태이상을 치료한다. 백호 보옥 또는 사신 소환 효과 필요.,Summon the White Tiger to restore HP and clear status effect of ally units. Requires White Tiger artifacts or the Four God Summoning Effect.
+desc,68,11326,anchored,본대에게 호위 효과를 받은 아군이 본대의 ZOC(주변 8타일)에 인접한 경우 피해를 대신 받는다.,"If Guard's recipient is in the 8 tiles surrounding the casting unit (Reach), then the casting unit will take damage in its place."
+desc,69,11327,anchored,일시적으로 본대의 공격력이 높아지고 흡혈효과를 가지는 대신 회복을 할 수 없게 만든다.,"Increase this unit's ATK and grant Lifesteal, but make this unit unable to recover HP by other means."
+desc,70,11328,anchored,본대의 공격력을 일시적으로 낮추는 대신 먼 거리에 대형포탄을 발사하여 복수의 적 부대를 강하게 공격한다.,"Lower this unit's ATK to fire a giant cannon, attacking multiple enemy units from far away."
+desc,71,11329,anchored,본대의 공격력을 일시적으로 낮추는 대신 적 부대를 매우 강하게 공격한다.,Lowers this unit's ATK to strike an enemy unit with incredible power.
+desc,72,11330,anchored,본대의 방어력을 일시적으로 낮추는 대신 적 부대를 매우 강하게 공격한다.,Lowers this unit's DEF to strike an enemy unit with incredible power.
+desc,73,11331,anchored,적 부대를 공격하여 적 부대를 관통한다. 관통할 위치에 부대가 있거나 이동불가 지역이면 사용할 수 없다.,"Attack an enemy unit, smashing through to the other side. Cannot be used if there is another unit or impassable terrain behind the target."
+desc,74,11332,anchored,적 부대를 공격하여 적 부대를 밀어낸다. 밀어낼 위치에 부대가 있거나 이동불가 지역이면 사용할 수 없다.,Attack and push back an enemy unit. Cannot use if there is another unit or impassable terrain behind the pushed target.
+desc,75,11333,anchored,적부대를 공격하여 적 부대를 끌어당긴다. 끌어당길 위치에 부대가 있거나 이동불가 지역이면 사용할 수 없다.,Attack and pull in an enemy. Cannot use if there is another unit or impassable terrain in front of the target.
+desc,76,11334,anchored,적부대를 공격하여 적 부대를 밀어내며 함께 이동한다. 밀어낼 위치에 부대가 있거나 이동불가 지역이면 사용할 수 없다.,Attack and push back an enemy unit. This unit moves with the pushed unit. Cannot be used if there is another unit or impassable terrain behind the target.
+desc,77,11335,anchored,적 부대에 저주를 걸어 본대와 상대 부대의 HP를 맞바꾼다.,Curse an enemy unit to switch HP with this unit.
+desc,78,11336,anchored,멀리 떨어진 복수의 아군 부대의 HP를 조금 회복시키고 상태이상을 회복시킨다.,Slightly recover HP and remove the status effects of multiple ally units from a distance.
+desc,79,11337,anchored,회복의 콩을 사용하여 적 부대를 공격한다. 회복의 콩을 보유하고 있지 않으면 사용할 수 없다.,Hurl a Soybean at an enemy unit to deal damage. Cannot be used if you are out of Soybeans.
+desc,80,11338,anchored,본대의 HP를 소비해 적 부대를 공격한다.,Consume HP to attack an enemy unit.
+desc,81,11339,anchored,본대의 HP를 소비해 복수의 적 부대를 공격한다.,Consume HP to attack multiple enemy units.
+desc,82,11340,anchored,본대의 HP를 소비해 적 부대를 강하게 공격한다.,Consume HP to attack an enemy unit with a powerful blow.
+desc,83,11341,anchored,넓은 범위 내에 있는 모든 적 부대를 공격한다.,Attack all enemy units in a large range.
+desc,84,11342,anchored,"물의 흐름을 조작해 일직선에 있는 복수의 적 부대를 공격한다. 다리, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대에만 사용할 수 있다.","Manipulate the flow of water to attack multiple enemy units in a line. Can only affect units on Bridges, Shallows, Swamp, Rapids, Rivers, or Snow."
+desc,85,11343,anchored,대량의 바위로 넓은 범위 내에 있는 복수의 적 부대를 공격한다. 산지나 황무지에 있는 부대에만 사용할 수 있다.,Crush multiple enemy units in an avalanche of rocks. Can only affect units on Mountain or Wastelands.
+desc,86,11344,anchored,"일직선으로 태풍을 일으켜 복수의 적 부대를 공격하고, 잠시동안 실명하게 만든다. 건물이나 숲 안에 있는 부대에는 사용할 수 없다.","Thrashes multiple enemy units in a line with a raging storm, damaging and temporarily Blinding them. Cannot be used on units inside Buildings or Forests."
+desc,87,11345,anchored,"화살에 불을 붙여 적 부대를 공격한다. 날씨가 비, 눈, 폭풍일 땐 사용할 수 없다. 또한, 황무지, 산지, 얕은 여울, 습지, 급류, 완류, 설원에 있는 부대엔 사용할 수 없다.","Rains fire arrows upon an enemy. Cannot be used during Rain, Blizzards, or Storms. It also cannot be used on units standing on Wastelands, Mountains, Shallows, Swamps, Rapids, Rivers, or Snow."
+desc,88,11346,anchored,적 부대의 팔을 상하게 해 일시적으로 공격할 수 없게 만든다.,Damage an enemy unit's eyesight to prevent them from attacking.
+desc,89,11347,anchored,적 부대의 가방을 상하게 해 일시적으로 도구를 사용할 수 없게 만든다.,Damage an enemy unit's supply line to prevent the use of items.
+desc,90,11348,anchored,"적 부대의 공격력, 방어력, 순발력, 사기를 일시적으로 낮춘다. 단, 문관계의 부대는 정신력이 하강하며, 만능계의 부대는 공격력과 정신력 둘 다 하강한다.","Temporarily decrease the ATK, DEF, AGI, and MRL of an enemy unit. Officials have their WIS decreased instead, while balanced units have both ATK and WIS decreased."
+desc,91,11349,anchored,적 부대의 발을 묶어 이동력을 일시적으로 감소시킨다.,"Injure an enemy unit's feet, lowering its SPD."
+desc,92,11350,anchored,본대의 HP를 소비해 일시적으로 이동력을 상승시킨다.,Consume HP to increase SPD.
+desc,93,11351,anchored,멀리 있는 행동을 마친 아군 부대를 다시 행동 가능한 상태로 만든다.,Allow a unit to move again after ending their turn. Can be used from range.
+desc,94,11352,anchored,주작염으로 넓은 범위를 불바다로 만든다.,Summon an inferno in a large area with Vermillion Fire.
+desc,95,11353,anchored,청룡뢰로 넓은 범위에 벼락을 떨어뜨린다.,Call down lightning in a large area with Azure Dragon Lightning.
+desc,96,11354,anchored,넓은 범위에 화염을 쏟아내 복수의 부대를 공격한다.,Burn multiple units in a large area with fire.
+desc,97,11355,anchored,100%의 명중률로 적 부대를 강하게 공격한다.,Attack an enemy unit with a mighty blow that cannot miss.
+desc,98,11356,anchored,복수의 아군 부대 MP를 회복시킨다.,Restore MP for multiple ally units.
+desc,99,11357,anchored,허수아비를 설치하여 범위 내의 적 부대의 공격을 유도한다.,Set up a scarecrow at target location to trick enemy units into attacking it.
+desc,100,11358,anchored,진격의 북을 울려 ZOC(주변 8칸)의 인접한 아군 부대의 공격력을 상승시킨다.," Sound the drum beat for advancement, increasing the ATK of allies in Reach (8 surrounding tiles)."
+desc,101,11359,anchored,방위의 북을 울려 ZOC(주변 8칸)의 인접한 아군 부대의 방어력을 상승시킨다.," Sound the drum beat for defense, increasing the DEF of allies in Reach (8 surrounding tiles)."
+desc,102,11360,anchored,"사신의 북을 울려 ZOC(주변 8칸)의 인접한 아군 부대의 공격력, 방어력, 순발력, 사기를 상승시킨다."," Sound the Four Gods Drum, increasing the ATK, DEF, AGI, and MRL of allies in Reach (8 surrounding tiles)."
+desc,103,11361,anchored,보급의 북을 울려 ZOC(주변 8칸)의 인접한 아군 부대의 HP를 매턴 회복시킨다.," Sound the drum beat for reinforcements, recovering HP for allies in Reach (8 surrounding tiles) every turn."
+desc,104,11362,anchored,적 부대를 강한 화약으로 공격하여 화상을 입힌다. 모든 지형에서 사용 가능하다.,"Attack an enemy unit with powerful explosions, inflicting Burn. This can be used in all terrain."
+desc,105,11363,anchored,"적 부대를 강한 독으로 공격하고, 중독시켜 HP를 감소시킨다.",Attack the enemy unit with a powerful poison that decreases HP.
+desc,106,11364,anchored,"복수의 적 부대를 강한 독으로 공격하고, 중독시켜 HP를 감소시킨다.",Attack multiple enemy units with a powerful poison that decreases HP.
+desc,107,11365,anchored,독천를 발생시켜 범위 내에 있는 다수의 적 부대를 중독시켜 HP를 감소시킨다.,"Create an expanse of virulent toxins to poison multiple enemies, decreasing their HP."
+desc,108,11366,anchored,"일직선으로 사독을 쏟아내 복수의 부대를 공격한다. 적 부대를 일격에 퇴각시킬 수 있으나 성공 확률이 낮으며, 실패 시에도 일정 확률로 맹독을 건다.",Inflict Deadly Poison to multiple units in a line. Has a low chance to cause enemy units to immediately retreat. It still has a chance of inflicting Deadly Poison on the enemy units even if it fails.
+desc,109,11367,anchored,"범위 내에 있는 적 부대를 교란시켜, 일시적으로 순발력을 낮춰 공격 명중률과 회피율을 대폭 감소시킨다.","Confuse enemy units within range, temporarily lowering their AGI. Greatly decreases ACC and EVA."
+desc,110,11368,anchored,범위 내에 있는 적 부대의 사기를 일시적으로 낮춰 치명타 발생 확률을 대폭 감소시킨다.,Temporarily lower the MRL of enemy units within range. Greatly decreases critical chance.
+desc,111,11369,anchored,"적 부대를 위협해 일시적으로 공격력을 대폭 감소시킨다. 단, 책사계, 도사계, 풍수사계, 현자계 등 문관계의 부대는 정신력이 감소한다.","Threatens an enemy unit to greatly decrease ATK. But, Tactician, Taoist, Geomancer, Sage and other Officials have their WIS decreased instead."
+desc,112,11370,anchored,적 부대를 흥분시켜 일시적으로 방어력을 대폭 감소시킨다.,"Enrage enemy units, greatly decreasing their DEF."
+desc,113,11371,anchored,지정한 아군 부대의 이동력을 일시적으로 대폭 상승시킨다.,Greatly increase the SPD of an ally unit.
+desc,114,11372,anchored,"효과 범위 내 아군 지휘계통을 정비해, 일시적으로 순발력을 대폭 상승시킨다. 명중률과 회피율이 높아진다.",Rearrange the command structure of allies within range to greatly improve AGI. Increases ACC and EVA
+desc,115,11373,anchored,효과 범위 내 아군의 전의를 높여 일시적으로 사기를 대폭 상승시킨다. 치명타 발생 확률이 높아진다.,Rally ally units within range to greatly improve MRL. Increase critical chance.
+desc,116,11374,anchored,"아군 부대를 분발시켜 일시적으로 공격력을 대폭 상승시킨다. 단, 문관계의 부대는 정신력이 상승하며, 만능계의 부대는 공격력과 정신력 둘 다 상승한다.","Fortify an ally unit to greatly increase ATK. Officials have their WIS increased instead, while balanced units have both ATK and WIS increased."
+desc,117,11375,anchored,아군 부대의 진형을 정비해 일시적으로 방어력을 대폭 상승시킨다.,Reorganize ally formations to greatly increase DEF.
+desc,118,11376,anchored,"적 부대에 큰 상처를 내어 피해를 입히고, 출혈 상태를 부여한다.","Attack enemy units, causing a large wound and inflicting Bleed."
+desc,119,11377,anchored,"적 부대에 독이 스며든 칼날로 피해를 입히고, 맹독 상태를 부여한다. 독살은 빗나가지 않는다.","Attack enemy units with a poisoned blade, inflicting Deadly Poison. Poison cannot miss."
+desc,120,11378,anchored,"적 부대의 약점을 노려 피해를 입힌다. 대상에게 출혈 또는 맹독 상태가 부여되어 있으면 각 상태마다 20%의 추가 피해를 입히고, 특수 공격 면역을 무시한다.",Detect enemy units' weaknesses and use them to your advantage. Deals 20% more damage and ignores Special Attack Immunity when enemy units are inflicted with Bleed or Deadly Poison.
+desc,121,11379,anchored,아군 부대의 진형을 정비해 일시적으로 대상이 받는 물리 피해를 감소시킨다.,Reorganize ally formations to temporarily decrease physical damage taken.
+desc,122,11380,anchored,아군 부대의 진형을 정비해 일시적으로 대상이 받는 책략 피해를 감소시킨다.,Reorganize ally formations to temporarily decrease tactics damage taken.
+desc,123,11381,anchored,"더 넓은 효과 범위 내 아군 지휘계통을 정비해, 일시적으로 순발력을 대폭 상승시킨다. 명중률과 회피율이 높아진다.",Rearrange the command structure of allies within a large range to greatly improve AGI. Increases ACC and EVA.
+desc,124,11382,anchored,더 넓은 효과 범위 내 아군의 전의를 높여 일시적으로 사기를 대폭 상승시킨다. 치명타 발생 확률이 높아진다.,Rally ally units within range to greatly improve MRL. Increase Critical Chance.
+desc,125,11383,anchored,"복수의 아군 부대를 분발시켜 일시적으로 공격력을 대폭 상승시킨다. 단, 문관계의 부대는 정신력이 상승하며, 만능계의 부대는 공격력과 정신력 둘 다 상승한다.","Fortify multiple ally units to temporarily increase ATK. Officials have their WIS increased instead, while balanced units have both ATK and WIS increased."
+desc,126,11384,anchored,복수의 아군 부대의 진형을 정비해 일시적으로 방어력을 대폭 상승시킨다.,Reorganize multiple ally formations to greatly increase DEF.
+desc,127,11385,anchored,"3턴 동안 본대 주변 내의 아군이 받는 물리 피해를 감소시킨다. 단, 다른 노래 책략과 동시에 사용할 수 없다.",Decrease all incoming physical damage for allies around the main unit for 3 turns. It cannot be used with other Song Tactics.
+desc,128,11386,anchored,"3턴 동안 본대 주변 내의 아군이 받는 책략 피해를 감소시킨다. 단, 다른 노래 책략과 동시에 사용할 수 없으며, 사신 책략은 피해 감소하지 않는다.","Decreases all incoming tactics damage for allies around the main unit for 3 turns. However, it cannot be used with other song tactics, and it does not reduce damage from the Four Gods Tactics."
+desc,129,11387,anchored,"3턴 동안 본대 주변 내의 아군이 주는 물리 피해를 증가시킨다. 단, 다른 통솔 책략과 동시에 사용할 수 없으며, 책략 모방이 불가능하다.","Increases Physical ATK of allies around targeted unit for 3 turns. However, it cannot be used together with other Command Tactics, and cannot be imitated."
+desc,130,11388,anchored,"3턴 동안 본대 주변 내의 아군이 공격 시 피격자의 공격 방어 확률을 감소시킨 후, 공격한다. 단, 다른 통솔 책략과 동시에 사용할 수 없으며, 책략 모방이 불가능하다.","For 3 turns, when allies around this unit attack, first reduces the target's Attack DEF Rate and then attacks. However, it cannot be used together with other CMD Tactics, and cannot be imitated."
+desc,131,11389,anchored,"적 부대의 간접 공격 면역 효과를 무력화시킨다. 단, 다른 명령 책략과 동시에 사용할 수 없으며, 책략 모방이 불가능하다.","Disables enemy's Ranged Attack Immunity effects. However, it cannot be used together with other Command Tactics, and cannot be imitated."
+desc,132,11390,anchored,"적 부대의 연속 책략 면역 효과를 무력화시킨다. 단, 다른 명령 책략과 동시에 사용할 수 없으며, 책략 모방이 불가능하다.","Disables enemy's Double Tactic Immunity effects. However, it cannot be used together with other Command Tactics, and cannot be imitated."
+desc,133,11391,anchored,"적 부대의 회심 공격 면역 효과를 무력화시킨다. 단, 다른 명령 책략과 동시에 사용할 수 없으며, 책략 모방이 불가능하다.","Disables enemy's Critical Attack Immunity effects. However, it cannot be used together with other Command Tactics, and cannot be imitated."
+desc,134,11392,anchored,"적 부대의 연속 공격 면역 효과를 무력화시킨다. 단, 다른 명령 책략과 동시에 사용할 수 없으며, 책략 모방이 불가능하다.","Disables enemy's Double Attack Immunity effects. However, it cannot be used together with other Command Tactics, and cannot be imitated."
+desc,135,11393,anchored,주위에 거대한 벼락을 떨어뜨린다. ,Calls down a giant bolt lightning to strike the surrounding area. 
+desc,136,11394,anchored,주위에 검과 함께 벼락을 떨어뜨린다.,Calls down a lightning-imbued sword to sunder the surrounding area.
+desc,137,11395,anchored,책략 공격에 성공하면 공격자의 반대방향으로 10칸 밀어낸다. 밀어낼 수 없는 경우 밀려나지 않는 1칸당 최대 체력의 10% 피해가 발생한다. ,"If a tactics attack hits, it pushes the target 10 tiles back from the attacker. If the target cannot be pushed back, it causes damage equal to 10% of Max HP for each tile it didn't move. "
+desc,138,11396,anchored,주위에 확산 가능한 거대한 벼락을 떨어뜨린다.,Calls down a tremendous arc of lightning that splinters to hit the surrounding area.
+desc,139,11397,anchored,"보물 금지 효과와 감전 효과를 부여하고, 청룡 환수를 소환한다.","Applies Artifact Seal and Electrocute, then summons the Azure Dragon Beast."
+desc,140,11398,anchored,용조를 충전한다.,Charges Dragon Claw.
+desc,141,11399,anchored,용아를 충전한다.,Charges Dragon Fang.
+desc,142,11400,anchored,파동을 충전한다.,Charges Energy Wave.
+desc,143,11401,anchored,역린을 충전한다.,Charges Outrage.
+desc,144,11402,anchored,"퇴각 시 ZOC 내의 부대에게 감전 공격을 한다. 단, 간접 공격으로 퇴각 시 발동하지 않는다.",Electrocutes enemy units within the 8 surrounding tiles when retreating. Does not activate when retreating from a ranged attack.
+desc,145,11403,anchored,충전 책략 사용 불가능할 경우 사용한다.,Used when charged tactics are not available.
+desc,146,11404,anchored,"적 부대에 벼락을 떨어뜨려 공격하며, 주위 최대 2명까지 확산된다. 날씨가 흐림, 비, 폭풍, 눈일 때만 사용할 수 있으며, 비, 폭풍, 눈일 경우 상대의 책략 방어 확률을 30% 감소시킨 후, 피해를 준다.","Summon a thunderstorm over enemy units, dealing damage to up to 2 enemies in Reach. Can only be used during Clouds, Rain, Storms, and Blizzards. Also decreases the target's Tactics Defense Rate by 30%."
+desc,147,11405,anchored,붉은 화염구가 응축하며 화염 확산을 준비한다. 다음 턴의 시작 시 확정적으로 화염 확산을 사용한다. 응축 상태에서 피해를 입을 시 혼란에 걸린다.,"A red fire orb condenses and begins to prepare Spread Fire, which it will cast at the beginning of the next turn. Any damage received while condensed will confuse it."
+desc,148,11406,anchored,푸른 화염구가 응축하며 화염 갈퀴를 준비한다. 다음 턴의 시작 시 확정적으로 화염 갈퀴를 사용한다. 응축 상태에서 피해를 입을 시 혼란에 걸린다.,"A blue fire orb condenses and begins to prepare Fire Claw, which it will cast at the beginning of the next turn. Any damage received while condensed will confuse it."
+desc,149,11407,anchored,"붉은 화염구가 폭발하며 화염 지형을 생성하는 강력한 화염 공격을 하고, 범위 내 화염 지형을 생성한다.","A red fire orb explodes in a powerful attack, creating fire terrain within its area of effect."
+desc,150,11408,anchored,"푸른 화염구가 폭발하며 범위 내 안으로 빨아들이는 강력한 화염 공격을 하고, 범위 내 화염 지형을 생성한다.","A blue fire orb explodes in a powerful attack, pulling in surrounding targets and creating fire terrain within its area of effect."
+desc,151,11409,anchored,"주작이 하늘 위로 날아올라 강력한 불의 비를 떨어뜨린다. 불의 비에 피해를 입은 범위 중 1/3에는 화염 지형이 발생한다. 적염, 청염의 생존 여부에 따라 적을 밀고 당기는 붉고 푸른 화염 공격이 선행된다.","The Vermilion Bird ascends to unleash a Rain of Fire, transforming 33% of the area damaged into fire terrain. Depending on the surviving red and blue flames, red and blue fire attacks resolve to pull and push enemies."
+desc,152,11410,anchored,주작이 붉은 화염구와 푸른 화염구를 흡수하고 비상을 준비한다.,The Vermilion Bird absorbs red and blue fire orbs and prepares to Ascend.
+desc,153,11411,anchored,주작이 붉은 화염구를 흡수하고 비상을 준비한다.,The Vermilion Bird absorbs red fire orbs and prepares to Ascend.
+desc,154,11412,anchored,주작이 푸른 화염구를 흡수하고 비상을 준비한다.,The Vermilion Bird absorbs blue fire orbs and prepares to Ascend.
+desc,155,11413,anchored,주작이 비상을 준비한다.,The Vermilion Bird prepares to Ascend.
+desc,156,11414,anchored,주작이 검기를 날려 화염의 꽃봉오리를 피우며 적을 베어 버린다. 가장 먼 거리의 적에게 책략 피해를 주고 대상의 주변에 화염을 생성한다.,"The Vermilion Bird wreaths her sword with a blazing aura that damages her enemies with fiery blossoms. Fire erupts around the target, dealing Tactics damage to farthest enemy away."
+desc,157,11415,anchored,찰나의 순간 잔상조차 남기지 않는 빠른 검술로 9회 공격한다. 명중할 때마다 피격자에게 화염의 표식을 부여한다.,Performs 9 consecutive slashes in an instant. Each hit leaves a Mark of Flame on the target.
+desc,158,11416,anchored,"주작이 먼 거리의 화염 지형으로 순간 이동하여, 행동을 시작한다. 화염 지형 혹은 화염 지형 주변 8칸 범위 내에 적군이 있는 경우에만 사용이 가능하다.",The Vermilion Bird teleports to distant fire terrain before acting. Only available if an enemy unit is standing on or within the 8 surrounding tiles of fire terrain.
+desc,159,11417,anchored,푸른 화염구의 일부가 가장 멀리 있는 적에게 적중하여 피해를 입히고 피격한 적을 기준으로 십자 범위에 화염 지형을 생성한다.,"Blue fire orbs attack the farthest enemy, dealing damage and creating fire terrain in a cross at the target's location."
+desc,160,11418,anchored,푸른 화염구의 일부가 가장 멀리 있는 적에게 적중하여 피해를 입히고 피격한 적을 기준으로 사선 범위에 화염 지형을 생성한다.,Several orbs of blue flame attack the farthest enemy to deal damage and create diagonal fire terrain.
+desc,161,11419,anchored,"화염조차 베어버리는 검술로 공격한다. 적 부대에 화염의 표식이 6개 이상 중첩되어야 사용 가능하다. 화염의 표식을 모두 제거하고, 제거한 표식 당 피격자 최대 체력의 10% 피해가 추가 발생한다. 무조건 명중하며 표식에 의한 추가 피해는 경감되지 않는다.","Unleashes an attack that penetrates even fire. Can only be used if the enemy unit has 6 or more stacks of Mark of Flame, all of which this attack removes to deal additional damage equal to 10% of the target's Max HP for each stack. This attack cannot miss, and the additional damage from Mark of Flames stacks cannot be reduced."
+desc,162,11420,anchored,"3턴 동안 받는 물리 피해 20% 감소, 받는 전 책략 피해 20% 증가. 단, 사신 책략 피해는 증가하지 않는다. 책략 모방이 불가능하다.",Decreases incoming physical damage by 20% and increases all incoming tactics damage by 20% for 3 turns (does does not increase Four Gods Tactics damage). Cannot be imitated.
+desc,163,11421,anchored,"3턴 동안 받는 전 책략 피해 20% 감소, 받는 물리 피해 20% 증가. 단, 사신 책략 피해는 감소하지 않는다. 책략 모방이 불가능하다.",Decreases all incoming tactics damage by 20% and increases incoming physical damage by 20% for 3 turns (does does not increase Four Gods Tactics damage). Cannot be imitated.
+desc,164,11422,anchored,"모든 부대를 시전자를 중심으로 전장 끝까지 밀어낸다. 부대의 충돌 효과에 의해서는 멈추지 않으며, 전장의 이동 불가 영역에 걸리는 경우에는 멈출 수 있다.",Sends all units surrounding the caster flying to the edge of the battlefield. Units sent flying will not stop if they collide with stationary units and will only stop once they collide with an impassable object.
+desc,165,11423,anchored,"대상 부대의 상태이상을 즉시 회복시키고, 대상 주변 8칸 지역에 있는 아군이 공격받을 때 상태이상에 {0}% 확률로 저항하도록 만든다.",Instantly clears the target unit's status effects. {0}% chance to resist status effects when allies in the 8 tiles surrounding the target are attacked.
+desc,166,11424,anchored,"대상 부대가 있는 지점을 절대 성역으로 만들어, 해당 타일에 위치해 있는 동안 부대의 HP가 1 미만으로 감소하지 않도록 만든다.","Makes the target unit's location holy ground, preventing their HP from dropping below 1 while on that tile."
+desc,167,11425,anchored,"책략 사용 후 다음 자신의 차례에, 본대 기준 남쪽으로 강력한 포효를 발산하여 대상의 최대 HP의 70%에 해당하는 피해를 입히고, 피해만큼 본대는 회복한다.","After using tactics, let out a powerful roar to the south of the main unit on your next turn. Deal damage equal to 70% of the target's max HP and restore the main unit by the amount of damage dealt."
+desc,168,11426,anchored,"책략 사용 후 다음 자신의 차례에, 본대 기준 북쪽으로 강력한 포효를 발산하여 대상의 최대 HP의 70%에 해당하는 피해를 입히고, 피해만큼 본대는 회복한다.","After using tactics, let out a powerful roar to the north of the main unit on your next turn. Deal damage equal to 70% of the target's max HP and restore the main unit by the amount of damage dealt."
+desc,169,11427,anchored,"책략 사용 후 다음 자신의 차례에, 본대 기준 동쪽으로 강력한 포효를 발산하여 대상의 최대 HP의 70%에 해당하는 피해를 입히고, 피해만큼 본대는 회복한다.","After using tactics, let out a powerful roar to the east of the main unit on your next turn. Deal damage equal to 70% of the target's max HP and restore the main unit by the amount of damage dealt."
+desc,170,11428,anchored,"책략 사용 후 다음 자신의 차례에, 본대 기준 서쪽으로 강력한 포효를 발산하여 대상의 최대 HP의 70%에 해당하는 피해를 입히고, 피해만큼 본대는 회복한다.","After using tactics, let out a powerful roar to the west of the main unit on your next turn. Deal damage equal to 70% of the target's max HP and restore the main unit by the amount of damage dealt."
+desc,171,11429,anchored,"대상을 포함한 주변 지역에 회복의 바람을 불러, 턴이 시작될 때 시전자 정신력의 비례하여 본대의 HP를 회복시킨다.","Call refreshing winds to the surrounding area, including the target. Restores the unit's HP in proportion to the caster's WIS when your turn begins."
+desc,172,11430,anchored,책략: 바람의 인도를 준비한다.,Tactics: Prepare Air Burst.
+desc,173,11431,anchored,주작의 호령을 준비한다.,Prepares Vermilion Bird's command.
+desc,174,11432,anchored,현무의 호령을 준비한다.,Prepares Black Tortoise's command.
+desc,175,11433,anchored,청룡의 호령을 준비한다.,Prepares Azure Dragon's command.
+desc,176,11434,anchored,백호의 호령을 준비한다.,Prepares White Tiger's command.
+desc,177,11435,anchored,공격 명령을 내린다. '공격 명령' 대상으로 지정된 적 부대는 2턴 동안 아군에게 받는 모든 피해가 10% 만큼 증가한다.,Focus the attacks of your units on a single target. The target of Focus Attack receives 10% additional damage from ally units for 2 turns.
+desc,178,11436,anchored,"1턴 동안 물리 공격 피격 시 피해가 20% 만큼 감소하고, 감소한 피해를 공격자에게 전가한다.","Decrease incoming physical damage by 20% 1 turn, and reflect the decreased amount back at the attacker."
+desc,179,11437,anchored,"불 붙은 화살로 적 부대를 공격해 피해를 입히고, 대상 지역에 화염 지형을 생성한다. 날씨가 비, 눈, 폭풍일 경우에는 사용할 수 없다. '연속 책략' 효과가 발동하지 않는다.","Attack the enemy with flaming arrows, dealing damage and setting the targeted tile on fire. Cannot use when the weather is rain, snow, or storm. Will not trigger Double Tactics."
+desc,180,11438,anchored,본대의 HP를 10% 소모해 3턴 동안 이동력을 2 만큼 증가시킨다.,Spend 10% of HP to increase MOV by 2 for 3 turns.
+desc,181,11439,anchored,2턴 동안 공격 시 이동한 거리 x 2% 만큼 추가 피해를 준다. 추가 피해 효과는 부대 행동이 종료될 때 초기화된다. '돌진 준비' 효과가 사라지면 1턴 동안 이동력이 1 만큼 감소한다.,"Deliver an additional 2% damage for each tile moved for 2 turns. Additional damage resets at the end of the affected unit's turn. Once Fearless Charge wears off, MOV decreases by 1 for 1 turn."
+desc,182,11440,anchored,"1턴 동안 사신 책략을 포함한 모든 책략에 대한 피해가 50% 만큼 감소하는 대신, 공격력이 20% 만큼 감소한다.","Decrease all incoming tactics damage (including Four Gods) by 50%, but also decrease ATK by 20%."
+desc,183,11441,anchored,	2턴 동안 이동력이 1 만큼 감소하는 대신 받는 물리 피해량이 20% 만큼 감소한다. 효과가 사라질 때까지 본대가 피해를 입지 않으면 대분기 상태가 된다.,
+desc,184,11442,anchored,대상을 후려쳐 피해를 입힌다. 피격자의 HP가 50% 이하이면 출혈 상태를 부여한다. '연속 책략' 효과가 발동하지 않는다.,"Administer a powerful blow to damage the enemy. If the target's HP is lower than 50%, apply Bleed. Will not trigger Double Tactics."
+desc,185,11443,anchored,"창을 던져 적 부대에 피해를 입히고, 정신력 감소 상태를 부여한다. '투창'으로 인한 정신력 감소 효과는 '상태이상 면역' 효과를 무시한다. '연속 책략' 효과가 발동하지 않는다.","Throw a javelin to damage the enemy, and also apply a WIS decreasing status effect that ignores Status Effect Immunity. Will not trigger Double Tactics."
+desc,186,11444,anchored,1턴 동안 '모사'로 지정한 아군이 받는 모든 책략 피해를 자신이 대신 입는다.,"For 1 turn, receive all tactics damage in place of the unit targeted by the Bodyguard tactic."
+desc,187,11445,anchored,바람을 일으켜 적 부대를 공격한다. '풍륜'은 피격자를 기준으로 몰우전 범위 내의 적에게 최대 2번까지 전이된다.,Attack enemy units with fearsome gusts of wind. Wind Wheel spreads to enemies within Featherless Arrow range of the target up to 2 times.
+desc,188,11446,anchored,"공격 대상을 관통해 지나가며 피해를 입히고, 피해량의 20%를 본대의 HP로 흡수한다. '일섬'으로 적 장수를 퇴각 시키면 모든 능력치 증가 상태가 된다. 위치 이동이 불가능할 경우에는 사용할 수 없으며, '연속 책략' 효과가 발동하지 않는다.","Administer a lightning fast strike to deal damage, and absorb 20% of damage dealt as HP. Defeating an enemy commander with Flicker Blade increases all stats. Casting unit must be able to move. Will not trigger Double Tactics."
+desc,189,11447,anchored,"3턴 동안 본대 주변 내의 아군의 물리 공격 명중률을 10% 만큼 증가시킨다. 단, 다른 노래 책략과 동시에 사용할 수 없다.",Increase physical attack ACC of nearby allies by 10% for 3 turns. Does not stack with other song tactics.
+desc,190,11448,anchored,"노를 발사해 적에게 피해를 입힌다. 남은 이동력 x 3% 만큼 추가 피해량과 공격 명중률이 증가한다. 최대 30%까지 증가하며, '연속 책략' 효과가 발동하지 않는다.",Take aimed show with your crossbow at the enemy. Damage and ACC increase by remaining SPD x3% to a maximum of +30%. Will not trigger Double Tactics.
+desc,191,11449,anchored,"2턴 동안 방어력이 10% 만큼 감소하는 대신 공격력이 10% 만큼 증가하고, 물리 공격 시 피해의 20%를 본대의 HP로 흡수한다.",Decrease DEF by 10% and increase ATK by 10% for 2 turns. Physical attacks absorb 20% of damage dealt as HP.
+desc,192,11450,anchored,다수의 화살을 한 번에 발사해 복수의 적 부대에게 피해를 입힌다. '연속 책략' 효과가 발동하지 않는다.,Deal damage to multiple enemy units by firing a volley of arrows. Will not trigger Double Tactics.
+desc,193,11451,anchored,단일 지정 대상의 방어력을 15% 만큼 무시하고 공격해 강력한 피해를 입히고 이동력을 1 만큼 감소시킨다. '연속 책략' 효과가 발동하지 않는다.,"Deal major damage to a single target, ignoring 15% of DEF and reducing SPD by 1. Will not trigger Double Tactics."
+desc,194,11452,anchored,"기를 방출해 적 부대에 피해를 입히고 공격자의 반대 방향으로 1칸 밀어낸다. 밀어낼 수 없는 경우에는 20%의 추가 피해가 발생한다. 발경은 빗나가지 않으며, '연속 책략' 효과가 발동하지 않는다.","Attack the enemy with a powerful burst of ki, pushing them 1 tile away from the attacker. Enemies that cannot be pushed are dealt 20% additional damage. This attack cannot miss and will not trigger Double Tactics."
+desc,195,11453,anchored,"아군 부대의 HP를 회복 시키고, 해당 위치를 1턴간 받는 모든 피해를 10% 만큼 감소 시켜주는 지역으로 만든다.",Restore HP of ally unit. Targeted area reduces all incoming damage by 10% for 1 turn.
+desc,196,11454,anchored,"맹독의 비를 내려 복수의 적 부대를 공격해 피해를 입히고, 맹독 상태를 부여한다.","Soak the enemy in a deluge of toxic rain, dealing damage to multiple enemy units and inflicting them with Deadly Poison."
+desc,197,11455,anchored,적을 매혹시킨다. 매혹된 적 부대는 2턴 동안 자신을 공격하지 않는다.,Charm the enemy. Charmed units will not attack the caster for 2 turns.
+desc,198,11456,anchored,2턴 동안 이동력이 1 만큼 증가하고 적군의 ZOC(공간제약)를 무력화한다.,Increase SPD by 1 and disable enemy Reach (nearby tile influence) for 2 turns.
+desc,199,11457,anchored,복수의 적 부대를 강한 화약으로 공격해 화상을 입힌다. 모든 지형에서 사용 가능하다.,"Attack multiple enemy units with powerful explosions, inflicting Burn. This can be used in all terrain."
+desc,200,11458,anchored,"1턴 동안 선제 공격 상태가 되어 공격 범위 내의 적군이 본대를 공격할 때, 먼저 공격을 가한다. 단, '협공, 인도 공격, 파진 공격, 분전 공격' 시 발동하지 않는다.",
+desc,201,11459,anchored,2턴 동안 공격 명중률이 10% 만큼 증가한다.,Physical attack ACC +10% for 2 turns.
+desc,202,11460,anchored,2턴 동안 간접 공격으로 받는 피해가 30% 만큼 감소한다.,-30% damage from ranged attacks for 2 turns.

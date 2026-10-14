@@ -1,0 +1,7 @@
+column,seq,loc_row,confidence,ko,en
+name,1,17817,inferred,병주,Bingzhou
+name,2,17818,inferred,기주,Jizhou
+name,3,17819,inferred,청주s,Qingzhou
+name,4,17820,inferred,양주(북),Liangzhou (N)
+name,5,17821,inferred,양주(남),Liangzhou (S)
+name,6,17822,anchored,형주(북),Jingzhou (N)

@@ -1,0 +1,73 @@
+column,seq,loc_row,confidence,ko,en
+name,1,21160,inferred,긴 사거리를 가지고 있으며 넓은 범위를 공격할 수 있는 병기,A long-range weapon with a wide attack area.
+name,2,21161,inferred,건물 전용 파괴 병기,A demolition weapon for buildings.
+name,3,21162,inferred,베기,Slash
+name,4,21163,inferred,돌진_구,Charge_Old
+name,5,21164,inferred,사격,Fire
+name,6,21165,inferred,치료,Heal
+name,7,21166,inferred,찌르기,Stab
+name,8,21167,inferred,방어 사격,Defensive Fire
+name,9,21168,inferred,건물: 부상 회복,Building: Injury Recovery
+name,10,21169,inferred,건물: 피로 회복,Building: Fatigue Recovery
+name,11,21170,inferred,건물: 징병,Building: Conscription
+name,12,21171,inferred,난격,Frenzy
+name,13,21172,inferred,연사,Rapid Fire
+name,14,21173,inferred,투석,Bombard
+name,15,21174,inferred,충격,Smash
+name,16,21175,inferred,발목 강타,Achilles Strike
+name,17,21176,inferred,때리기,Hit
+name,18,21177,inferred,할퀴기,Scratch
+name,19,21178,inferred,돌진,Charge
+name,20,21179,inferred,지르기,Set Fire
+name,21,21180,inferred,관통,Pierce
+name,22,21181,inferred,연격,Thrash
+name,23,21182,inferred,함대 지휘,Command Fleet
+desc,1,21183,inferred,적대적인 대상에게 근접 공격으로 피해를 입힌다.,Deal melee damage to hostile targets.
+desc,2,21184,inferred,적대적인 대상에게 돌진하여 피해를 입히고 일시적으로 대응 공격을 사용할 수 없도록 만든다.,Charge at hostile targets to deal damage and temporarily prevent interception.
+desc,3,21185,inferred,"적대적인 대상을 화계 책략으로 공격하고 해당 지역에 불을 지른다. 단, 사막, 설원, 빙판, 황무지, 절벽에 있는 부대엔 사용할 수 없고, 건물과 완류, 급류, 습지, 늪지, 독천 지형에는 불이 붙지 않는다.","Use fire tactics against hostile targets and set fire to the area. Does not effect units standing on Deserts, Snow, Ice, Wastelands, or Cliffs. Cannot set fire to buildings or Rivers, Rapids, Swamps, Marshes, or Toxic Pools."
+desc,4,21186,inferred,"적대적인 대상을 화계가 적용된 간접 공격으로 공격하고 해당 지역에 불을 지른다. 단, 사막, 설원, 빙판, 황무지, 절벽에 있는 부대엔 사용할 수 없다. 또한 건물과  완류, 급류, 습지, 늪지, 독천 지형에는 불이 붙지 않는다.","Use ranged fire tactics against hostile targets and set fire to the area. Does not effect units standing on Deserts, Snow, Ice, Wastelands, or Cliffs. Cannot set fire to buildings or Rivers, Rapids, Swamps, Marshes, or Toxic Pools."
+desc,5,21187,inferred,적대적인 대상에게 간접 공격으로 피해를 입힌다.,Deal ranged attack damage to hostile targets.
+desc,6,21188,inferred,자기자신 군단의 부상병을 치료하여 회복시킨다.,Heal and recover the injuries of your own troops.
+desc,7,21189,inferred,"적대적인 대상을 강력한 지계 책략으로 공격한다. 산지, 잔도 그리고 황무지에 있는 부대에만 사용할 수 있다.","Use powerful earth tactics against hostile targets. Only effects units on mountains, mountain passes, or wastelands."
+desc,8,21190,inferred,대상에게 연속 공격 효과를 부여하는 테스트 데이터.,Test data that adds a double attack effect to targets.
+desc,9,21191,inferred,특정 건물이 제공하는 기능으로 군단의 부상병을 치료하여 회복시킨다.,A building that heals and recovers troop injuries.
+desc,10,21192,inferred,특정 건물이 제공하는 기능으로 군단의 피로도를 회복시킨다.,A building for recovering troop fatigue.
+desc,11,21193,inferred,특정 건물이 제공하는 기능으로 군단의 병력을 추가시킨다.,A building for recruiting additional troops.
+desc,12,21194,inferred,"선택한 지역에 불을 지른다. 단, 건물에는 불이 붙지 않는다.",Set fire to the selected area. Cannot set fire to buildings.
+desc,13,21195,inferred,우호적인 군단의 부상병을 치료하여 회복시킨다.,Heal and recover friendly troop injuries.
+desc,14,21196,inferred,"적대적인 대상을 강력한 화계 책략으로 공격하고 해당 지역에 불을 지른다. 단, 사막, 설원, 빙판, 황무지, 절벽에 있는 부대엔 사용할 수 없고, 건물과 완류, 급류, 습지, 늪지, 독천 지형에는 불이 붙지 않는다.","Use powerful fire tactics against hostile targets and set fire to the area. Does not effect units standing on Deserts, Snow, Ice, Wastelands, or Cliffs. Cannot set fire to buildings or Rivers, Rapids, Swamps, Marshes, Or Toxic Pools."
+desc,15,21197,inferred,"적대적인 대상을 지계 책략으로 공격한다. 산지, 잔도 그리고 황무지에 있는 부대에만 사용할 수 있다.","Use earth tactics against hostile targets. Only effects units standing on Mountains, Mountain Passes, or Wastelands."
+desc,16,21198,inferred,"적대적인 대상을 강력한 수계 책략으로 공격한다. 설원, 빙판, 다리, 완류, 급류, 습지 그리고 늪지에 있는 부대에만 사용할 수 있다.","Use powerful water tactics against hostile targets. Only effect units standing on Snow, Ice, Bridges, Rivers, Rapids, Swamps, or Marshes."
+desc,17,21199,inferred,"적대적인 대상을 수계 책략으로 공격한다. 설원, 빙판, 다리, 완류, 급류, 습지 그리고 늪지에 있는 부대에만 사용할 수 있다.","Use water tactics against hostile targets. Only effects units standing on Snow, Ice, Bridges, Rivers, Rapids, Swamps, or Marshes."
+desc,18,21200,inferred,"적대적인 대상을 풍계 책략으로 공격한다. 단, 평지, 초원, 숲, 산지, 절벽, 독천, 성벽, 성내에 있는 부대엔 사용할 수 없다.","Use wind tactics against hostile targets. Does not effect units standing on Plains, Grasslands, Forests, Cliffs, Toxic Pools, Castle Walls, or Toxic Pools."
+desc,19,21201,inferred,"적대적인 대상을 강력한 풍계 책략으로 공격한다. 단, 평지, 초원, 숲, 산지, 절벽, 독천, 성벽, 성내에 있는 부대엔 사용할 수 없다.","Use powerful wind tactics against hostile targets. Does not effect units standing on Plains, Grasslands, Forests, Cliffs, Toxic Pools, Castle Walls, or Toxic Pools."
+desc,20,21202,inferred,우호적인 군단의 상태이상을 모두 회복시킨다.,Cleanse all friendly troops of status effects.
+desc,21,21203,inferred,적대적인 대상에게 피해를 입힌다. 공격 대상이 군단일 경우 공격자의 반대 방향으로 1칸 밀어내고 본대도 함께 이동한다.,"Deal damage to hostile targets. If the target is a troop, push the target 1 tile away from the attacker and move the main unit."
+desc,22,21204,inferred,적대적인 대상의 약점을 노려 피해를 입힌다. 적 대상에게 해로운 상태이상이 부여되어 있으면 30%의 추가 피해를 입힌다.,Detect the weaknesses of hostile targets to deal damage. Deal 30% additional damage to enemy targets with abnormal status effects.
+desc,23,21205,inferred,적대적인 대상에게 피해를 입힌다. 공격 대상이 군단일 경우 군단을 관통해 반대 방향으로 이동한다. 관통에 성공하면 적 군단을 혼란 상태로 만든다.,"Deal damage to hostile targets. If the target is a troop, pierce them and move in the opposite direction. Enemy troops become Confused when pierced."
+desc,24,21206,inferred,적대적인 대상에게 피해를 입힌다. 공격 대상이 군단일 경우 공격자의 방향으로 1칸 끌어당기고 본대도 함께 이동한다.,"Deal damage to hostile targets. If the target is a troop, pull the target 1 tile towards the attacker and move the main unit."
+desc,25,21207,inferred,본대 주위 6칸에 위치한 모든 대상에게 피해를 입힌다.,Deal damage to all targets within 6 surrounding tiles of the main unit.
+desc,26,21208,inferred,공격 대상과 공격 대상 주위 6칸에 존재하는 적대적인 대상에게 피해를 입힌다.,Deal damage to the target and any hostile targets within 6 surrounding tiles of the target.
+desc,27,21209,inferred,화계에 의해 불이 붙은 지역의 불을 진화한다.,Put out fires in the area started by fire tactics.
+desc,28,21210,inferred,적대적인 대상을 연속으로 공격해 피해를 입힌다.,Deal attack damage to hostile targets two times.
+desc,29,21211,inferred,적대적인 대상의 공격력을 감소시킨다.,Decrease hostile target ATK.
+desc,30,21212,inferred,적대적인 대상의 이동력을 감소시킨다.,Decrease hostile target SPD.
+desc,31,21213,inferred,본대의 공격력을 증가시킨다.,Increase main unit ATK.
+desc,32,21214,inferred,적대적인 대상을 이동 불가 상태로 만든다.,Immobilize hostile targets.
+desc,33,21215,inferred,적대적인 대상을 혼란 상태로 만든다.,Confuse hostile targets.
+desc,34,21216,inferred,본대 주위 6칸에 존재하는 아군 대상이 받는 모든 단일 피해를 자신이 대신 입는다. 대신 피해를 입을 경우 받는 피해량이 10% 만큼 감소한다.,Receive all single target damage dealt in the 6 surrounding tiles in place of his/her allies. Decrease damage taken by 10% when receiving damage.
+desc,35,21217,inferred,적대적인 대상을 교란시켜 행동 대기 시간을 3초 만큼 증가시킨다.,"Distract hostile targets, increasing their turn wait time by 3s."
+desc,36,21218,inferred,본대의 방어력을 증가시킨다.,Increase main unit DEF.
+desc,37,21219,inferred,적대적인 대상의 방어력을 감소시킨다.,Decrease the DEF of hostile targets.
+desc,38,21220,inferred,본대의 이동력을 증가시킨다.,Increase main unit SPD.
+desc,39,21221,inferred,적대적인 대상을 공격해 피해를 입히고 대상을 중독시킨다.,Deal damage on hostile targets and poison them.
+desc,40,21222,inferred,거대한 돌을 발사해 대상에게 피해를 입힌다.,Deal damage to targets by launching a giant rock.
+desc,41,21223,inferred,건물에 충격을 가하여 피해를 입힌다.,Smash buildings to deal damage.
+desc,42,21224,inferred,"평지, 초원, 황무지, 다리 지형에서 이동 시 행동 대기 시간이 1초로 변경된다.","Change turn wait time on Plains, Grassland, Wastelands, and Bridge terrains to 1s."
+desc,43,21225,inferred,"적대적인 대상에게 피해를 입힌다. 공격 대상이 군단일 경우 이동력을 1 만큼 감소시키고, 이동 시 이동 대기 시간을 2초 만큼 증가시킨다.","Deals damage to enemy target. If the target is a troop, decrease SPD by 1, and increase its movement wait time by 2 seconds."
+desc,44,21226,inferred,"공격 대상과 공격 대상 주위 6칸에 존재하는 적대적인 대상에게 화계 책략으로 공격하고 해당 지역에 불을 지른다. 단, 사막, 설원, 빙판, 황무지, 절벽에 있는 부대엔 사용할 수 없고, 건물과 완류, 급류, 습지, 늪지, 독천 지형에는 불이 붙지 않는다.","Use fire tactics against the designated target and enemy units in the 6 tiles surrounding the target, and set fire to the area. Does not affect units standing on desert, snow, ice, wasteland, or cliff terrain. Cannot set fire to buildings or rivers, rapids, swamps, marshes, or toxic pools."
+desc,45,21227,inferred,대상과 대상 주위 6칸에 존재하는 우호적인 군단의 부상병을 치료하여 회복시킨다.,Heal and recover injuries of friendly troops in the 6 tiles surrounding the target.
+desc,46,21228,inferred,적대적인 대상의 순발력을 감소시킨다.,Decrease the AGI of hostile units.
+desc,47,21229,inferred,적대적인 대상에게 근접 공격으로 피해를 입히고 대상의 방어력을 감소시킨다.,"Deal damage to hostile targets with melee attacks, and decrease the target's DEF."
+desc,48,21230,inferred,적대적인 대상에게 간접 공격으로 피해를 입히고 대상을 고란시켜 행동 대기 시간을 3초 만큼 증가시킨다.,"Deal damage to hostile units with ranged attacks, disrupting their movement and increasing their turn wait time by 3s."
+desc,49,21231,inferred,"완류, 습지 지형에서 이동 시 행동 대기 시간이 1초로 변경된다.",Change turn wait time on River and Swamp terrain to 1s.

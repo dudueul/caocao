@@ -1,0 +1,111 @@
+column,seq,loc_row,confidence,ko,en
+name,1,14113,anchored,진양,Jinyang
+name,2,14114,anchored,상당,Shangdang
+name,3,14115,anchored,상산,Mount Chang
+name,4,14116,anchored,북평,Beiping
+name,5,14117,anchored,계m,Ji
+name,6,14118,anchored,양평,Yangping
+name,7,14119,anchored,역m,Yi
+name,8,14120,anchored,업m,Ye
+name,9,14121,anchored,남피,Nanpi
+name,10,14122,anchored,평원,Pingyuan
+name,11,14123,anchored,복양,Puyang
+name,12,14124,anchored,진류,Chenliu
+name,13,14125,anchored,북해,Beihai
+name,14,14126,anchored,제남,Jinan
+name,15,14127,anchored,하비,Xiapi
+name,16,14128,anchored,팽성,Pengcheng
+name,17,14129,anchored,광릉,Guangling
+name,18,14130,anchored,회음,Huaiyin
+name,19,14131,anchored,여강,Lujiang
+name,20,14132,anchored,합비,Hefei
+name,21,14133,anchored,시상,Chaisang
+name,22,14134,anchored,남창,Nanchang
+name,23,14135,anchored,건업,Jianye
+name,24,14136,anchored,오m,Wu
+name,25,14137,anchored,회계,Huiji
+name,26,14138,anchored,부춘,Fuchun
+name,27,14139,anchored,건안,Jianan
+name,28,14140,anchored,여릉,Luling
+name,29,14141,anchored,임해,Linhai
+name,30,14142,anchored,양양,Xiangyang
+name,31,14143,anchored,완m,Wan
+name,32,14144,anchored,신야,Xinye
+name,33,14145,anchored,강하,Jiangxia
+name,34,14146,anchored,상용,Shangyong
+name,35,14147,anchored,번성,Fan Castle
+name,36,14148,anchored,강릉,Jiangling
+name,37,14149,anchored,무릉,Wuling
+name,38,14150,anchored,영릉,Lingling
+name,39,14151,anchored,계양,Guiyang
+name,40,14152,anchored,남해,Nanhai
+name,41,14153,anchored,창오,Cangwu
+name,42,14154,anchored,교지,Jiaozhi
+name,43,14155,anchored,흥고,Xinggu
+name,44,14156,anchored,낙양,Luoyang
+name,45,14157,anchored,허창,Xuchang
+name,46,14158,anchored,소패,Xiaopei
+name,47,14159,anchored,수춘,Shouchun
+name,48,14160,anchored,석정,Shi Ting
+name,49,14161,anchored,여남,Runan
+name,50,14162,anchored,안정,Anding
+name,51,14163,anchored,천수,Tianshui
+name,52,14164,anchored,가정,Jieting
+name,53,14165,anchored,건평,Jianping
+name,54,14166,anchored,성도,Chengdu
+name,55,14167,anchored,한중,Hanzhong
+name,56,14168,anchored,강주,Jiangzhou
+name,57,14169,anchored,자동,Zitong
+name,58,14170,anchored,강양,Jiangyang
+name,59,14171,anchored,영안,Yong'an
+name,60,14172,anchored,운남,Yunnan
+name,61,14173,anchored,건녕,Qujing
+name,62,14174,anchored,영창,Yongchang
+name,63,14175,anchored,무위,Wuei
+name,64,14176,anchored,서평,Xiping
+name,65,14177,anchored,적도,Didao
+name,66,14178,anchored,남안,Nanan
+name,67,14179,anchored,기성,Jincheng
+name,68,14180,anchored,하내,Henei
+name,69,14181,anchored,장안,Chang'an
+name,70,14182,anchored,안평항,Port of Anping
+name,71,14183,anchored,유성,Liu Castle
+name,72,14184,anchored,백마항,Port of Baima
+name,73,14185,anchored,고당항,Port of Gaotang
+name,74,14186,anchored,임치항,Port of Linzi
+name,75,14187,anchored,돈구항,Port of Dunqiu
+name,76,14188,anchored,창양항,Port of Changyang
+name,77,14189,anchored,도창,Duchang
+name,78,14190,anchored,유수구,Ruxukou
+name,79,14191,anchored,강도항,Port of Jiangdu
+name,80,14192,anchored,해릉항,Port of Hailing
+name,81,14193,anchored,곡아항,Port of Qua
+name,82,14194,anchored,호림항,Port of Hulin
+name,83,14195,anchored,파양항,Port of Poyang
+name,84,14196,anchored,육구항,Port of Xikou
+name,85,14197,anchored,무현항,Port of Wushan
+name,86,14198,anchored,하구항,Port of Xiakou
+name,87,14199,anchored,서성m,Xicheng
+name,88,14200,anchored,오림항,Port of Wulin
+name,89,14201,anchored,맥성,Mai Castle
+name,90,14202,anchored,나현항,Port of Luoxian
+name,91,14203,anchored,동정항,Port of Dongting
+name,92,14204,anchored,이릉,Yiling
+name,93,14205,anchored,시흥,Shixing
+name,94,14206,anchored,울림,Yulin
+name,95,14207,anchored,독룡동,Tulong Cave
+name,96,14208,anchored,검각,Jiange
+name,97,14209,anchored,가맹관,Jiameng Pass
+name,98,14210,anchored,양평관,Yangping Pass
+name,99,14211,anchored,사곡,Xiegu
+name,100,14212,anchored,사룡,Xielong
+name,101,14213,anchored,면죽관,Mianzhu Pass
+name,102,14214,anchored,기산,Qishan
+name,103,14215,anchored,주천,Jiuquan
+name,104,14216,anchored,장액,Zhangye
+name,105,14217,anchored,하동,Hadong
+name,106,14218,anchored,함곡관,Hangu Pass
+name,107,14219,anchored,호로관,Hulao Pass
+name,108,14220,anchored,동관,Tong Pass
+name,109,14221,anchored,무관,Wu Pass
+name,110,14222,anchored,호관,Hu Pass

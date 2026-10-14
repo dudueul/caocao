@@ -1,0 +1,119 @@
+column,seq,loc_row,confidence,ko,en
+name,1,18011,inferred,적에게 받는 모든 피해 증가 10%,All Incoming Damage +10%
+name,2,18012,inferred,"물리 피해 감소 20%, 감소한 피해를 공격자에게 전가","Decrease physical damage by 20%, reflect the reduced amount back at the attacker"
+name,3,18013,inferred,공격 시 이동한 거리 X 2% 만큼 추가 피해를 줌. 추가 피해 효과는 부대 행동이 종료될 때 초기화. '돌진 준비' 효과가 사라지면 1턴 동안 이동력이 1 만큼 감소,"Deliver an additional 2% damage for each tile moved for 2 turns. Additional damage resets at the end of the affected unit's turn. Once Fearless Charge wears off, SPD decreases by 1 for 1 turn."
+name,4,18014,inferred,"적에게 받는 모든 책략 피해 감소 50%, 공격력 감소 20%","Decrease incoming tactics damage by 50%, decrease ATK by 20%."
+name,5,18015,inferred,"이동력 1 감소, 받는 물리 피해 감소 50%, 웅크리기가 사라질 때까지 본대가 피해를 입지 않으면 대분기 상태가 됨","Decrease SPD by 1, decrease physical damage taken by 50%, and gain Greater Provoke status effect if this unit does not take damage before Stalk disappears."
+name,6,18016,inferred,모든 책략 피해를 아군 {1} 장수가 대신 받음,Ally {1} commander takes all tactics damage in place of their allies
+name,7,18017,inferred,주위 아군이 받는 물리 공격 명중률 증가 10%,Reach Ally Physical ACC +10%.
+name,8,18018,inferred,"방어력 감소 10%, 공격력 증가 10%, 물리 공격 시 피해의 20%를 본대의 HP로 흡수","Decrease DEF by 10%, increase ATK by 10%, and physical attacks absorb 20% of damage dealt as HP"
+name,9,18019,inferred,적 {1} 장수를 공격할 수 없음,Cannot attack enemy {1} commander
+name,10,18020,inferred,"이동력 증가 1, ZOC 무력화","Increase SPD by 1, disable Reach"
+name,11,18021,inferred,"선제 공격 상태가 되어 공격 범위 내의 적군이 본대를 공격할 때, 먼저 공격을 가한다. 단, '협공, 인도 공격, 파진 공격, 분전 공격' 시 발동하지 않는다.",
+name,12,18022,inferred,공격 명중률 증가 10%,Attack ACC +10%
+name,13,18023,inferred,간접 공격 피해 감소 30%,Ranged Attack Damage -30%
+name,14,18024,inferred,지휘계통,Chain of Command
+name,15,18025,inferred,통솔1,Command 1
+name,16,18026,inferred,통솔2,Command 2
+name,17,18027,inferred,검술 강화1,Enhance Swordsmanship 1
+name,18,18028,inferred,검술 강화2,Enhance Swordsmanship 2
+name,19,18029,inferred,방패술 강화1,Enhance Shields 1
+name,20,18030,inferred,방패술 강화2,Enhance Shields 2
+name,21,18031,inferred,창술 강화1,Enhance Spearmanship 1
+name,22,18032,inferred,창술 강화2,Enhance Spearmanship 2
+name,23,18033,inferred,습격1,Ambush 1
+name,24,18034,inferred,습격2,Ambush 2
+name,25,18035,inferred,궁술 강화1,Enhance Archery 1
+name,26,18036,inferred,궁술 강화2,Enhance Archery 2
+name,27,18037,inferred,반격 궁술1,Counter Archery 1
+name,28,18038,anchored,반격 궁술2,Counter Archery 2
+name,29,18039,anchored,무술 강화,Enhance Staff Handling
+name,30,18040,anchored,책술 강화,Enhance Tactics
+name,31,18041,anchored,포술 강화,Enhance Artillery
+name,32,18042,anchored,공성술 강화1,Enhance Siege 1
+name,33,18043,anchored,공성술 강화2,Enhance Siege 2
+name,34,18044,anchored,손자병법,The Art of War
+name,35,18045,anchored,조기 훈련,Early Training
+name,36,18046,anchored,시장 부흥,Market Recovery
+name,37,18047,anchored,무역술1,Commerce 1
+name,38,18048,anchored,무역술2,Commerce 2
+name,39,18049,anchored,기력 증진1,Vitalize 1
+name,40,18050,anchored,기력 증진2,Vitalize 2
+name,41,18051,anchored,내구 강화 [창고],Enhance Durability [Storage]
+name,42,18052,anchored,방위 강화 [창고],Enhance Defense [Storage]
+name,43,18053,anchored,내구 강화 [내성],Enhance Durability [Keep]
+name,44,18054,anchored,방위 강화 [내성],Enhance Defense [Keep]
+name,45,18055,anchored,거래 수완,Trade Secrets
+name,46,18056,anchored,명성,Silk Road
+name,47,18057,anchored,고속 전투,Hasten Combat
+name,48,18058,anchored,수성 강화,Enhance Defense
+name,49,18059,anchored,용병술 [수송대],Training [Convoy]
+name,50,18060,anchored,용병술 [황건병],Training [Yellow Turban Soldier]
+name,51,18061,anchored,용병술 [정규군],Training [Spearman]
+name,52,18062,anchored,용병술 [모사들],Training [Tactician]
+name,53,18063,anchored,용병술 [산악기병],Training [Mountain Cavalry]
+name,54,18064,anchored,용병술 [전차대],Training [Chariot]
+name,55,18065,anchored,용병술 [황건궁병],Training [Yellow Turban Archer]
+name,56,18066,anchored,용병술 [노병],Training [Crossbowman]
+name,57,18067,anchored,용병술 [궁기병],Training [Horse Archer]
+name,58,18068,anchored,용병술 [포병],Training [Artillery]
+name,59,18069,anchored,용병술 [황건 무인],Training [Yellow Turban Warrior]
+name,60,18070,anchored,용병술 [무희],Training [Dancer]
+name,61,18071,anchored,용병술 [산과 강],Training [Bandit]
+name,62,18072,anchored,용병술 [무인],Training [Warrior]
+name,63,18073,anchored,조련술 [초급],Beast Taming [Novice]
+name,64,18074,anchored,조련술 [중급],Beast Taming [Intermediate]
+name,65,18075,inferred,조련술 [고급],Beast Taming [Expert]
+name,66,18076,inferred,용병술 [조련사들],Training [Beast Master]
+name,67,18077,inferred,소환술 [토우병사],Summoning [Clay Soldier]
+name,68,18078,inferred,소환술 [토우장군],Summoning [Clay General]
+name,69,18079,inferred,조련술 [최고급],Beast Taming [Master]
+name,70,18080,inferred,진형 연구1,Enhance Formations 1
+name,71,18081,inferred,진형 연구2,Enhance Formation 2
+name,72,18082,inferred,반격 기마술,Counter Riding
+name,73,18083,inferred,약점 저격,Exploit Weakness
+name,74,18084,inferred,내성 증축,Enhance Keep
+name,75,18085,inferred,말굽 개선,Enhance Horsemanship
+name,76,18086,inferred,춤사위,Dance Routine
+name,77,18087,inferred,몽충 건조,Ship Construction
+name,78,18088,inferred,참마 창술,Mount Slayer
+name,79,18089,inferred,관통 노술,Piercing Crossbow
+name,80,18090,inferred,낙석 간파,Assess Terrain
+name,81,18091,inferred,암습,Shadow Strike
+effectDesc,1,18092,anchored,위임 시 책략을 더 적극적으로 사용합니다.,Uses tactics more actively during auto battle.
+effectDesc,2,18093,anchored,운용가능한 출진 COST가 {0} 증가합니다.,Increases max assignment cost by {0}.
+effectDesc,3,18094,anchored,검을 사용하는 장수의 공격력이 {0} 증가합니다.,Increases ATK by {0} when using a sword.
+effectDesc,4,18095,anchored,보병의 회피율이 {0}% 증가합니다.,Increases EVA by {0}% when attacked by footmen.
+effectDesc,5,18096,anchored,창을 사용하는 장수의 공격력이 {0} 증가합니다.,Increases ATK by {0} when using a spear.
+effectDesc,6,18097,anchored,숲에서 창으로 주는 피해량이 {0} 증가합니다.,Increases damage by {0} when a spear-wielding commander attacks from a forest.
+effectDesc,7,18098,anchored,궁과 노를 사용하는 장수의 공격력이 {0} 증가합니다.,Increases ATK by {0} when using a bow or a crossbow.
+effectDesc,8,18099,anchored,궁과 노를 사용하는 장수가 사방 공격 범위에서 {0}%의 피해량으로 반격합니다.,A commander with a bow or a crossbow counterattacks for {0}% damage in a four-directional attack range.
+effectDesc,9,18100,anchored,곤을 사용하는 장수의 공격력이 {0} 증가합니다.,Increases ATK by {0} when using a staff.
+effectDesc,10,18101,anchored,선과 보도를 사용하는 장수의 공격력이 {0} 증가합니다.,Increases ATK by {0} when using a fan or a jeweled sword.
+effectDesc,11,18102,anchored,포를 사용하는 장수의 공격력이 {0} 증가합니다.,Increases ATK by {0} when using artillery.
+effectDesc,12,18103,anchored,건물에 주는 피해량이 {0} 증가합니다.,Increases damage to buildings by {0}.
+effectDesc,13,18104,anchored,거점의 방어군에 편성되는 병사의 최대 LV이 {0} 증가합니다.,Increases max Lv. of defensive soldiers within a domain by {0}.
+effectDesc,14,18105,anchored,새롭게 등용하는 장수의 초기 LV이 {0} 증가합니다.,Increases the initial Lv. of newly recruited commanders by {0}.
+effectDesc,15,18106,anchored,시장에서 좋은 등급의 물건을 팔게 됩니다.,The Market starts to sell better quality items.
+effectDesc,16,18107,anchored,무역상에서 파는 상품의 개수가 증가합니다. (+{0}),Increases the number of items sold by the Trader by +{0}.
+effectDesc,17,18108,anchored,장수의 기력 최대치가 {0} 증가합니다.,Increases max energy of commanders by {0}.
+effectDesc,18,18109,anchored,"군량고, 은전고의 HP를 {0}% 강화합니다.",Increases HP of the Stockpile and Treasury by {0}%.
+effectDesc,19,18110,anchored,"군량고, 은전고가 공격을 {0}% 추가로 반격합니다.",Stockpile and Treasury perform {0}% additional damage during counterattacks.
+effectDesc,20,18111,anchored,내성의 HP를 {0}% 강화합니다.,Increases HP of the Keep by {0}%.
+effectDesc,21,18112,anchored,내성이 공격을 {0}% 추가로 반격합니다.,Keep performs {0}% additional counterattacks.
+effectDesc,22,18113,anchored,무역상에서 좋은 등급의 물건을 팔 확률이 소폭 증가합니다.,Slightly increases the chance of the Trader selling better items.
+effectDesc,23,18114,anchored,보부상에서 좋은 등급의 물건을 팔 확률이 소폭 증가합니다.,Slightly increases the chance of the Peddler selling better items.
+effectDesc,24,18115,anchored,{0}배속의 고속 진행을 사용할 수 있게 됩니다.,Allows the use of {0}x speed.
+effectDesc,25,18116,anchored,내성의 방위 시설의 LV이 {0} 증가합니다.,Increases domain defense Lv. by {0}.
+effectDesc,26,18117,anchored,{0}을(를) 거점의 방어군에 배치할 수 있게 됩니다.,Allows {0} defense troops in domains.
+effectDesc,27,18118,anchored,진형의 LV을 {0}까지 강화할 수 있습니다.,Allows enhancing formations up to Lv. {0}.
+effectDesc,28,18119,anchored,경기병계 장수가 교차 일격 범위에서 {0}%의 피해량으로 반격합니다.,A light cavalry commander within range counterattacks for {0}% damage.
+effectDesc,29,18120,anchored,궁과 노를 사용하는 장수가 {0}의 고정 피해량을 추가로 입힙니다. 고정 피해량은 회심에 영향을 받지 않습니다.,A commander with a bow or a crossbow deals {0} additional fixed damage. Fixed damage is not affected by critical attacks.
+effectDesc,30,18121,anchored,내성의 외벽을 강화합니다. 내성이 받는 피해량이 {0}%로 감소합니다.,Reinforces the outer walls of the Keep and reduces its damage taken by {0}.
+effectDesc,31,18122,anchored,"말굽을 개선하여 무거운 갑옷에도 중심을 잃지 않도록 합니다. 군주계, 중기병계, 궁기병계, 전차계, 노전차계, 천자계, 효기병계의 지형 상성이 {0} 증가합니다.","Upgrades horseshoes to improve balance, even in heavy armor. Increases terrain advantages for Warlords, Heavy Cavalry, Mounted Archers, Chariots, Crossbow Chariots, Emperors, and Swift Cavalry by {0}."
+effectDesc,32,18123,anchored,유연한 춤사위로 적군의 공격을 회피합니다. 무희계의 모든 회피율이 {0}% 증가합니다.,Avoid enemy attacks with agile dance moves. Increases evasion of all dancers by {0}%.
+effectDesc,33,18124,anchored,가죽 장갑을 두른 몽충을 건조합니다. 수군계 장수가 완류에서 받는 수계 책략 및 간접 공격 피해량이 {0}% 감소합니다.,Command a leather-armored ship. Reduce the damage received from water tactics and ranged attacks by navy commanders in rivers by {0}%.
+effectDesc,34,18125,anchored,기마계 부대의 말을 노려 큰 피해를 주는 창술을 연마합니다. 창병계 장수가 기마계 부대에게 주는 물리 피해량이 {0}% 증가합니다.,Train spearmen to target the vulnerable parts of warhorses. Increase physical damage against cavalry from Spearman commanders by {0}%.
+effectDesc,35,18126,anchored,"노전차계 장수가 범위 공격으로 2명 이상 공격 시, 주 대상의 회심 공격 면역과 간접 공격 면역 효과를 무시한다.","When a Crossbow Chariot Commander attacks 2 or more enemies with an AoE attack, they ignore the main target's Critical Attack and Ranged Attack immunity."
+effectDesc,36,18127,anchored,낙석의 위험을 간파하여 피해를 줄입니다. 적병계 장수가 받는 지계 책략 피해가 {0}% 감소합니다.,"Surveys the land for dangerous boulders, reducing earth tactics damage for Outlaw Commanders by {0}%."
+effectDesc,37,18128,anchored,은밀하게 적을 습격하여 적의 의표를 찌릅니다. 적병계 장수가 숲과 산지 지형에서 상대의 선제 공격 효과를 무시합니다.,Surprise the enemy with a sneak attack. Outlaw Commanders ignore First Strike effects when on forest and mountain terrain.

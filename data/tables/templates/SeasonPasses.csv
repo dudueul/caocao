@@ -1,0 +1,49 @@
+id,country,title,desc,warningDesc,startDate,endDate,maxLevel,maxExp,getTrainPoint,getPaidPoint,textMessage,#desc_en,#loc_row,#confidence
+,,,"[ffe400]9,500 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]9,500 금전 추가 지급\n[ffffff]계정별 1회 한정 판매",,,,,,,,,"[ffe400]Get 9,500 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+9,500 Gold Coins\n[ffffff]A one-time only offer!",1370,inferred
+,,,"[ffe400]29,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]29,000 금전 추가 지급\n[ffffff]계정별 1회 한정 판매",,,,,,,,,"[ffe400]Get 29,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+29,000 Gold Coins\n[ffffff]A one-time only offer!",1371,inferred
+,,,[ffe400]6-7등급 보물 교환권 지급\n[ffffff]8월 16일 ~ 8월 22일까지 1일 1회 한정 판매!,,,,,,,,,[ffe400]6-7★ Artifact Voucher\n[ffffff]1 purchase per account from August 16th - August 22nd!,1372,inferred
+,,,"[ffe400]15,000 금전 지급\n[ffffff]8월 29일 ~ 9월 15일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]15,000 Gold Coin\n[ffffff]Availability: August 29–September 15 (10 Times Only)",1373,inferred
+,,,"[ffe400]80,000 금전 지급\n[ffffff]8월 29일 ~ 9월 15일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]80,000 Gold Coin\n[ffffff]Availability: August 29–September 15 (10 Times Only)",1374,inferred
+,,,"[ffe400]80,000 금전 지급\n구백창 1개\n[ffffff]8월 29일 ~ 9월 15일까지 계정당 1회 구매 가능.",,,,,,,,,"[ffe400]80,000 Gold Coin\nJiubai Spear x1\n[ffffff]Availability: August 29–September 15 (1 Time only)",1375,inferred
+,,,"[ffe400]12,350 금전 지급\n[ffffff]9월 20일 ~ 9월 24일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]12,350 Gold Coin\n[ffffff]Availability: September 20–24 (5 Times only)",1376,inferred
+,,,"[ffe400]37,700 금전 지급\n[ffffff]9월 20일 ~ 9월 24일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]37,700 Gold Coin\n[ffffff]Availability: September 20–24 (5 Times only)",1377,inferred
+,,,"[ffe400]40,000 금전 지급\n효과 점수 350개[ffffff]9월 20일 ~ 9월 24일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]40,000 Gold Coin\nPassive Point x350[ffffff]Availability: September 20–24 (5 Times only)",1378,inferred
+,,,[ffe400]거함 교환권 3장 지급\n[ffffff]9월 24일 ~ 9월 30일까지 1일 1회 한정 판매!,,,,,,,,,[ffe400]War Box Voucher x3\n[ffffff]Availability: September 24–30 (Only once per day),1379,inferred
+,,,[ffe400]무장전 입장권 3장 지급\n[ffffff]9월 17일 ~ 9월 24일까지 1일 1회 한정 판매!,,,,,,,,,[ffe400]Officer Battle Voucher x3\n[ffffff]Availability: September 17–24 (Only once per day),1380,inferred
+,,,[ffe400]6-7등급 보물 교환권 지급\n[ffffff]9월 1일 ~ 9월 7일까지 1일 1회 한정 판매!,,,,,,,,,[ffe400]6-7★ Artifact Voucher x1\n[ffffff]Availability: September 1–7 (Only once per day),1381,inferred
+,,,"[ffe400]청룡의 영혼 3,300개, 청룡의 위패 1,100개\n[ffffff]10월 1일 ~ 10월 5일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]3,300 Azure Dragon Souls, 1,100 Azure Dragon Ancestral Tablets\n[ffffff]Can be purchased five times per account from October 1st - October 5th.",1382,inferred
+,,,"[ffe400]주작의 영혼 3,300개, 청룡의 주작 1,100개\n[ffffff]10월 1일 ~ 10월 5일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]3,300 Vermilion Bird Souls, 1,100 Vermilion Bird Ancestral Tablets\n[ffffff]Can be purchased five times per account from October 1st - October 5th.",1383,inferred
+,,,"[ffe400]청룡의 영혼 5,000개\n주작의 영혼 5,000개\n[ffffff]11월 11일 ~ 11월 17일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]5,000 Azure Dragon Souls\n5,000 Vermilion Bird Souls\n[ffffff]Can be purchased five times per account from Nov. 11 to 18.",1384,inferred
+,,,"[ffe400]15,000 금전 지급\n[ffffff]11월 11일 ~ 11월 17일까지 계정당 3회 구매 가능.",,,,,,,,,"[ffe400]15,000 Gold Coins\n[ffffff]Can be purchased 3 times per account from Nov. 11 to 18.",1385,inferred
+,,,"[ffe400]80,000 금전 지급\n[ffffff]11월 11일 ~ 11월 17일까지 계정당 3회 구매 가능.",,,,,,,,,"[ffe400]80,000 Gold Coins\n[ffffff]Can be purchased 3 times per account from Nov. 11 to 18.",1386,inferred
+,,,"[ffe400]20,000,000 은전 지급\n[ffffff]11월 11일 ~ 11월 17일까지 계정당 3회 구매 가능.",,,,,,,,,"[ffe400]20,000,000 Silver Coins\n[ffffff]Can be purchased 3 times per account from Nov. 11 to 18.",1387,inferred
+,,,"[ffe400]12,350 금전 지급\n[ffffff]11월 21일 ~ 11월 27일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]12,350 Gold Coins\n[ffffff]Can be purchased 5 times per account from Nov. 21 to 27.",1388,inferred
+,,,"[ffe400]35,100 금전 지급\n효과 점수 50개[ffffff]11월 21일 ~ 11월 27일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]35,100 Gold Coins\nPassive Point x50[ffffff]Can be purchased 5 times per account from Nov. 21 to 27.",1389,inferred
+,,,"[ffe400]21,000,000 은전 지급\n[ffffff]11월 21일 ~ 11월 27일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]21,000,000 Silver Coins\n[ffffff]Can be purchased 10 times per account from Nov. 21 to 27.",1390,inferred
+,,,"[ffe400]40,000,000 은전 지급\n[ffffff]11월 21일 ~ 11월 27일까지 계정당 3회 구매 가능.",,,,,,,,,"[ffe400]40,000,000 Silver Coins\n[ffffff]Can be purchased 3 times per account from Nov. 21 to 27.",1391,inferred
+,,,"[ffe400]3,000 금전 지급\n청룡의 영혼 3,000개[ffffff]12월 1일 ~ 12월 5일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]3,000 Gold Coins\n3,000 Azure Dragon Souls[ffffff]Can be purchased 10 times per account from Dec. 1 to 5.",1392,inferred
+,,,"[ffe400]3,000 금전 지급\n주작의 영혼 3,000개[ffffff]12월 1일 ~ 12월 5일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]3,000 Gold Coins\n3,000 Vermilion Bird Souls[ffffff]Can be purchased 10 times per account from Dec. 1 to 5.",1393,inferred
+,,,"[ffe400]7,000,000 은전 지급\n[ffffff]11월 21일 ~ 11월 27일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]7,000,000 Silver Coins\n[ffffff]Can be purchased 10 times per account from Nov. 21 to 27.",1394,inferred
+,,,"[ffe400]15,000 금전 지급\n[ffffff]12월 10일 ~ 12월 20일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]15,000 Gold Coins\n[ffffff]Can be purchased 10 times per account from Dec. 10 to 20.",1395,inferred
+,,,"[ffe400]80,000 금전 지급\n[ffffff]12월 10일 ~ 12월 20일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]80,000 Gold Coins\n[ffffff]Can be purchased 10 times per account from Dec. 10 to 20.",1396,inferred
+,,,"[ffe400]120,000 금전 지급\n천년검 1개\n[ffffff]12월 11일 ~ 12월 20일까지 계정당 1회 구매 가능.",,,,,,,,,"[ffe400]120,000 Gold Coins\nMillennial Sword x1\n[ffffff]Can be purchased 1 time per account from Dec. 11 to 20.",1397,inferred
+,,,"[ffe400]10,000,000 은전 지급\n[ffffff]12월 10일 ~ 12월 20일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]10,000,000 Silver Coins\n[ffffff]Can be purchased 10 times per account from Dec. 10 to 20.",1398,inferred
+,,,"[ffe400]15,000 금전 지급\n10,000,000 은전 지급\n백호의 영혼 5,000개\n백호의 위패 3,000개\n[ffffff]12월 10일 ~ 12월 20일까지 계정당 4회 구매 가능.",,,,,,,,,"[ffe400]15,000 Gold Coins\n10,000,000 Silver Coins\n5,000 White Tiger Souls\n3,000 White Tiger Ancestral Tablets\n[ffffff]Can be purchased 4 times per account from Dec. 10 to 20.",1399,inferred
+,,,"[ffe400]12,350 금전 지급\n[ffffff]12월 21일 ~ 12월 31일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]12,350 Gold Coins\n[ffffff]Can be purchased 5 times per account from Dec. 21 to 31.",1400,inferred
+,,,"[ffe400]37,700 금전 지급\n[ffffff]12월 21일 ~ 12월 31일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]37,700 Gold Coins\n[ffffff]Can be purchased 5 times per account from Dec. 21 to 31.",1401,inferred
+,,,"[ffe400]63,050 금전 지급\n[ffffff]12월 21일 ~ 12월 31일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]63,050 Gold Coins\n[ffffff]Can be purchased 5 times per account from Dec. 21 to 31.",1402,inferred
+,,,"[FF6000FF]35,000 금전 지급\n백호의 영혼 2,000개\n[ffffff]1월 16일 ~ 1월 20일까지 계정당 10회 구매 가능.",,,,,,,,,"[FF6000FF]35,000 Gold Coins\n2,000 White Tiger Souls\n[ffffff]Can be purchased 10 times per account from Jan. 16 to 20.",1403,inferred
+,,,"[ffe400]20,000 금전 지급\n10,000,000 은전 지급\n4등급 백호의 보패 확정권 3개\n[ffffff]1월 16일 ~ 1월 20일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]20,000 Gold Coins\n10,000,000 Silver Coins\n4★ White Tiger Relic Ticket x3\n[ffffff]Can be purchased 5 times per account from Jan. 16 to 20.",1404,inferred
+,,,"[ffe400]106,500 금전 지급\n[ffffff]1월 16일 ~ 1월 20일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]106,500 Gold Coins\n[ffffff]Can be purchased 5 times per account from Jan. 16 to 20.",1405,inferred
+,,,[FF6000FF]보물 상자 교환권 80개\n[ffffff]1월 21일 ~ 1월 24일까지 매일 1회 구매 가능.,,,,,,,,,[FF6000FF]Treasure Chest Voucher x80\n[ffffff]Can be purchased 1 time daily from Jan. 21 to 24.,1406,inferred
+,,,[FF6000FF]강화 보존권 200개\n[ffffff]1월 21일 ~ 1월 24일까지 매일 1회 구매 가능.,,,,,,,,,[FF6000FF]Upgrade Protection Ticket x200\n[ffffff]Can be purchased 1 time daily from Jan. 21 to 24.,1407,inferred
+,,,"[ffe400]22,400,000 은전 지급\n[ffffff]1월 25일 ~ 1월 31일까지 계정당 10회 구매 가능.",,,,,,,,,"[ffe400]22,400,000 Silver Coins\n[ffffff]Can be purchased 10 times per account from Jan. 25 to 31.",1408,inferred
+,,,"[ffe400]50,900,000 은전 지급\n[ffffff]1월 25일 ~ 1월 31일까지 계정당 1회 구매 가능.",,,,,,,,,"[ffe400]50,900,000 Silver Coins\n[ffffff]Can be purchased 1 time per account from Jan. 25 to 31.",1409,inferred
+,,,"[ffe400]130,000 금전 지급\n[ffffff]1월 25일 ~ 1월 31일까지 계정당 2회 구매 가능.",,,,,,,,,"[ffe400]130,000 Gold Coins\n[ffffff]Can be purchased 2 times per account from Jan. 25 to 31.",1410,inferred
+,,,"[ffe400]15,000 금전 지급\n[ffffff]1월 25일 ~ 1월 31일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]15,000 Gold Coins\n[ffffff]Can be purchased 5 times per account from Jan. 25 to 31.",1411,inferred
+,,,"[ffe400]45,000 금전 지급\n[ffffff]1월 25일 ~ 1월 31일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]45,000 Gold Coins\n[ffffff]Can be purchased 5 times per account from Jan. 25 to 31.",1412,inferred
+,,,[FF6000FF]효과 점수 90개\n[ffffff]2월 9일 ~ 2월 14일까지 매일 1회 구매 가능.,,,,,,,,,[FF6000FF]Passive Point x90\n[ffffff]Can be purchased 1 time daily from Feb. 9 to 14.,1413,inferred
+,,,"[FF6000FF]8,000금전 지급\n[ffffff]2월 9일 ~ 2월 14일까지 매일 1회 구매 가능.",,,,,,,,,"[FF6000FF]8,000 Gold Coins\n[ffffff]Can be purchased 1 time daily from Feb. 9 to 14.",1414,inferred
+,,,"[ffe400]12,350 금전 지급\n[ffffff]2월 15일 ~ 2월 19일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]12,350 Gold Coins\n[ffffff]Can be purchased 5 times per account from Feb. 15 to 19.",1415,inferred
+,,,"[ffe400]37,700 금전 지급\n[ffffff]2월 15일 ~ 2월 19일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]37,700 Gold Coins\n[ffffff]Can be purchased 5 times per account from Feb. 15 to 19.",1416,inferred
+,,,"[ffe400]63,050 금전 지급\n[ffffff]2월 15일 ~ 2월 19일까지 계정당 5회 구매 가능.",,,,,,,,,"[ffe400]63,050 Gold Coins\n[ffffff]Can be purchased 5 times per account from Feb. 15 to 19.",1417,inferred

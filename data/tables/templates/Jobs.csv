@@ -1,0 +1,260 @@
+name,id,move,targetArea,effectArea,isProjectile,isCatapult,hpPlus,mpPlus,skillFold,projectileFold,catapultFold,passive,passiveVal,aiPriority,aiRole,aiType,frontAdv,middleAdv,rearAdv,hasTurn,fireResist,itemType,canPincers,style,moveSE,selectSE,eMoveSE,moveSpeed,atkDelay,desc,#name_en,#loc_row,#confidence
+군주계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Warlord,10496,anchored
+보병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Footman,10497,anchored
+궁병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Archer,10498,anchored
+노병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Crossbowman,10499,anchored
+창병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Spearman,10500,anchored
+경기병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Light Cavalry,10501,anchored
+중기병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Heavy Cavalry,10502,anchored
+산악기병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain Cavalry,10503,anchored
+궁기병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mounted Archer,10504,anchored
+포차계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Catapult,10505,anchored
+무인계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soldier,10506,anchored
+적병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Outlaw,10507,anchored
+책사계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactician,10508,anchored
+풍수사계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Geomancer,10509,anchored
+도사계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Taoist,10510,anchored
+무희계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dancer,10511,anchored
+전차계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Chariot,10512,anchored
+황건병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yellow Turban Soldier,10513,anchored
+수군계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Navy,10514,anchored
+웅술사계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ursari,10515,anchored
+호술사계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pantheran,10516,anchored
+도독계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Marine,10517,anchored
+현자계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sage,10518,anchored
+선인계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sage,10519,anchored
+수송대계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Convoy,10520,anchored
+토우병사계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay Soldier,10521,anchored
+토우장군계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay General,10522,anchored
+황제계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Emperor,10523,anchored
+민중계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Peasant,10524,anchored
+늑대계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wolf,10525,anchored
+황건궁병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yellow Turban Archer,10526,anchored
+곰계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bear,10527,anchored
+마왕계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Demon,10528,anchored
+황건창병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yellow Turban Spearman,10529,anchored
+황건무인계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yellow Turban Warrior,10530,anchored
+코끼리계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Elephant,10531,anchored
+호랑이계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tiger,10532,anchored
+표범계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Leopard,10533,anchored
+돼지계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Boar,10534,anchored
+소계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ox,10535,anchored
+토우수병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay Water Soldier,10536,anchored
+토우수장계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay Water General,10537,anchored
+토우화병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay Fire Soldier,10538,anchored
+토우화장계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay Fire General,10539,anchored
+토우풍병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay Wind Soldier,10540,anchored
+토우풍장계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clay Wind General,10541,anchored
+검사계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Swordsman,10542,anchored
+군악대계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Musician,10543,anchored
+사신청룡계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Four Gods: Azure Dragon,10544,anchored
+청룡환수계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast: Azure Dragon,10545,anchored
+각성사신청룡계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Four Gods,10546,anchored
+각성청룡환수계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10547,anchored
+천자계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Emperor,10548,anchored
+노전차계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Crossbow Chariot,10549,anchored
+시설물,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Facility,10550,anchored
+사신주작계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Four Gods: Vermilion Bird,10551,anchored
+주작환수계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast: Vermilion Bird,10552,anchored
+각성사신주작계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Four Gods,10553,anchored
+각성주작환수계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10554,anchored
+적염계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Red Flame,10555,anchored
+청염계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blue Flame,10556,anchored
+효기병계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Swift Cavalry,10557,anchored
+사신백호계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Four Gods: White Tiger,10558,anchored
+백호령계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Soul Tactics,10559,anchored
+각성사신백호계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Four Gods,10560,anchored
+각성백호령계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger Soul Tactics,10561,anchored
+군주,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Aspirant,10562,anchored
+열후,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Adventurer,10563,anchored
+제후,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Challenger,10564,anchored
+효웅,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Conqueror,10565,anchored
+영웅,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Hero,10566,anchored
+단검보병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Conscript,10567,anchored
+장검보병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Guardsman,10568,anchored
+강검보병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defender,10569,anchored
+근위병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Guardian,10570,anchored
+어림군,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sentinel,10571,anchored
+단궁병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bowman,10572,anchored
+장궁병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Longbowman,10573,anchored
+강궁병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Marksman,10574,anchored
+원사대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Longshot,10575,anchored
+궁장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sharpshooter,10576,anchored
+단노병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arbalist,10577,anchored
+장노병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Quarreller,10578,anchored
+강노병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sniper,10579,anchored
+연노병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Repeater,10580,anchored
+원융노병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Chu-Ko-Nu,10581,anchored
+단창병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Town Guard,10582,anchored
+장창병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pikeman,10583,anchored
+강창병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Linesman,10584,anchored
+참마대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ji Bearer,10585,anchored
+백이병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Chargebreaker,10586,anchored
+단창기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Skirmisher,10587,anchored
+장창기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Lancer,10588,anchored
+강창기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Charger,10589,anchored
+금위대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vanguard,10590,anchored
+질풍기,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Linebreaker,10591,anchored
+경갑기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Lamellar Cavalry,10592,anchored
+중갑기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Scale Cavalry,10593,anchored
+철갑기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mail Cavalry,10594,anchored
+친위대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Plate Cavalry,10595,anchored
+신위대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Divine Plate Cavalry,10596,anchored
+수렵기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ranger,10597,anchored
+돌기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Cliff Bounder,10598,anchored
+표기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stonehoof,10599,anchored
+단궁기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mounted Bowman,10600,anchored
+장궁기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mounted Longbowman,10601,anchored
+강궁기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mounted Marksman,10602,anchored
+갑사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mounted Longshot,10603,anchored
+비사대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mounted Sharpshooter,10604,anchored
+경포차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Light Catapult,10605,anchored
+중포차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Heavy Catapult,10606,anchored
+대포차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Catapult,10607,anchored
+벽력차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Thunder Catapult,10608,anchored
+신포차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Divine Catapult,10609,anchored
+역사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Warrior,10610,anchored
+투사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Slayer,10611,anchored
+권사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dervish,10612,anchored
+권성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Swiftblade,10613,anchored
+도적,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Thug,10614,anchored
+흉적,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bandit,10615,anchored
+의적,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Brigand,10616,anchored
+두령,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blackguard,10617,anchored
+대도,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Kingpin,10618,anchored
+참모,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Minister,10619,anchored
+군사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Consul,10620,anchored
+대군사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Advisor,10621,anchored
+지낭,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vizier,10622,anchored
+방술사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Adept,10623,anchored
+선술사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ritualist,10624,anchored
+주술사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Channeler,10625,anchored
+명의,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Conduit,10626,anchored
+재사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Initiate,10627,anchored
+환술사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Monk,10628,anchored
+요술사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Enlightened,10629,anchored
+제사장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bagua Master,10630,anchored
+무용수,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Performer,10631,anchored
+무녀,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Enchantress,10632,anchored
+가희,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Songstress,10633,anchored
+가인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Siren,10634,anchored
+경전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Light Chariot,10635,anchored
+중전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Heavy Chariot,10636,anchored
+대전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bladed Chariot,10637,anchored
+철거병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Steel Chariot,10638,anchored
+쌍두전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grand Chariot,10639,anchored
+수병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Cadet,10640,anchored
+수사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sailor,10641,anchored
+수장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Captain,10642,anchored
+수신,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Admiral,10643,anchored
+곰부대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Cub,10644,anchored
+대웅대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Brown,10645,anchored
+흑웅대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grizzly,10646,anchored
+맹웅대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ancient,10647,anchored
+맹웅장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Titan,10648,anchored
+금수대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Clouded,10649,anchored
+맹수대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Caspian,10650,anchored
+맹호대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Javan,10651,anchored
+맹호장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bengal,10652,anchored
+백호대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Siberian,10653,anchored
+교위,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Raider,10654,anchored
+도위,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Buccaneer,10655,anchored
+도독,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Marauder,10656,anchored
+대도독,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Corsair,10657,anchored
+대원수,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Commandant,10658,anchored
+은자,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Hermit,10659,anchored
+군자,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Disciple,10660,anchored
+현자,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Scholar,10661,anchored
+현인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Diviner,10662,anchored
+성인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Celestial,10663,anchored
+선인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sage,10664,anchored
+황제,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Emperor,10665,anchored
+야차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Imp,10666,anchored
+마군,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Hellion,10667,anchored
+마신,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fiend,10668,anchored
+수라,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Archfiend,10669,anchored
+검객,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Squire,10670,anchored
+협객,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fencer,10671,anchored
+검술가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Duelist,10672,anchored
+검성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Champion,10673,anchored
+악사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Instrumentalist,10674,anchored
+연주가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Minstrel,10675,anchored
+응원대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Troubadour,10676,anchored
+고취대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Balladeer,10677,anchored
+군악대,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,War Cantor,10678,anchored
+청룡1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10679,anchored
+청룡2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10680,anchored
+청룡3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10681,anchored
+청룡4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10682,anchored
+청룡5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10683,anchored
+청룡환수1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10684,anchored
+청룡환수2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10685,anchored
+청룡환수3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10686,anchored
+청룡환수4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10687,anchored
+청룡환수5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10688,anchored
+귀인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Noble,10689,anchored
+영걸,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Heir,10690,anchored
+천자,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sovereign,10691,anchored
+성천자,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Divine Ruler,10692,anchored
+단노전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Short Crossbow Chariot,10693,anchored
+장노전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Long Crossbow Chariot,10694,anchored
+강노전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Heavy Crossbow Chariot,10695,anchored
+연노전차,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Repeating Crossbow Chariot,10696,anchored
+비룡거,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Flying Dragon Crossbow Chariot,10697,anchored
+각성청룡1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10698,anchored
+각성청룡2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10699,anchored
+각성청룡3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10700,anchored
+각성청룡4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10701,anchored
+각성청룡5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10702,anchored
+각성청룡환수1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10703,anchored
+각성청룡환수2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10704,anchored
+각성청룡환수3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10705,anchored
+각성청룡환수4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10706,anchored
+각성청룡환수5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10707,anchored
+주작1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10708,anchored
+주작2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10709,anchored
+주작3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10710,anchored
+주작4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10711,anchored
+주작5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Four Gods,10712,anchored
+주작환수1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10713,anchored
+주작환수2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10714,anchored
+주작환수3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10715,anchored
+주작환수4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10716,anchored
+주작환수5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10717,anchored
+각성주작1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10718,anchored
+각성주작2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10719,anchored
+각성주작3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10720,anchored
+각성주작4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10721,anchored
+각성주작5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened Four Gods,10722,anchored
+각성주작환수1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10723,anchored
+각성주작환수2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10724,anchored
+각성주작환수3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10725,anchored
+각성주작환수4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10726,anchored
+각성주작환수5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystical Beast,10727,anchored
+붉은 화염구,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Orb,10728,anchored
+푸른 화염구,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Orb,10729,anchored
+선기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Striker,10730,anchored
+진기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dragoon,10731,anchored
+용기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wind Rider,10732,anchored
+폭기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stormhoof,10733,anchored
+효기병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sky Strider,10734,anchored
+백호1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger 1,10735,anchored
+백호2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger 2,10736,anchored
+백호3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger 3,10737,anchored
+백호4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger 4,10738,anchored
+백호5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger 5,10739,anchored
+백호령1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Soul 1,10740,anchored
+백호령2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Soul 2,10741,anchored
+백호령3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Soul 3,10742,anchored
+백호령4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Soul 4,10743,anchored
+백호령5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Soul 5,10744,anchored
+각성백호1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger 1,10745,anchored
+각성백호2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger 2,10746,anchored
+각성백호3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger 3,10747,anchored
+각성백호4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger 4,10748,anchored
+각성백호5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger 5,10749,anchored
+각성백호령1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger Soul 1,10750,anchored
+각성백호령2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger Soul 2,10751,anchored
+각성백호령3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger Soul 3,10752,anchored
+각성백호령4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger Soul 4,10753,anchored
+각성백호령5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Awakened White Tiger Soul 5,10754,anchored

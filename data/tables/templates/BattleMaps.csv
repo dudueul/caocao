@@ -1,0 +1,978 @@
+name,id,mapTitle,mapType,turn,lvCorrect,minLv,maxLv,lvCorrectH,minLvH,maxLvH,lvClassicMy,lvCorrectC,maxUnits,eventScript,prefab,mapLoader,weather,ignition,BGM,kingdoms,year,month,mainTile,#name_en,#loc_row,#confidence
+영천 황건병 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yingchuan Yellow Turban Expedition,13136,anchored
+사수관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Sishui Pass,13137,anchored
+호로관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hulao Pass,13138,anchored
+동탁 추격전,,,,,,,,,,,,,,,,,,,,,,,,Dong Zhuo Pursuit,13139,anchored
+청주 황건병 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Qingzhou Yellow Turban Expedition,13140,anchored
+서주 보복전,,,,,,,,,,,,,,,,,,,,,,,,Xuzhou Retaliation,13141,anchored
+복양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Puyang,13142,anchored
+복양 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Puyang 2,13143,anchored
+복양 전투3,,,,,,,,,,,,,,,,,,,,,,,,Battle of Puyang 3,13144,anchored
+헌제 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Emperor Xian,13145,anchored
+장수 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhang Xiu Expedition,13146,anchored
+원술 정벌전,,,,,,,,,,,,,,,,,,,,,,,,Yuan Shu Conquest,13147,anchored
+장수 토벌전 2,,,,,,,,,,,,,,,,,,,,,,,,Zhang Xiu Expedition 2,13148,anchored
+서주 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Xuzhou,13149,anchored
+여포 포위전,,,,,,,,,,,,,,,,,,,,,,,,Siege of Lu Bu,13150,anchored
+서주 침공전,,,,,,,,,,,,,,,,,,,,,,,,Xuzhou Invasion,13151,anchored
+백마 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Baima,13152,anchored
+연진 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yan Ford,13153,anchored
+관도 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guandu,13154,anchored
+창정 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Cangting,13155,anchored
+양산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Rangshan,13156,anchored
+여양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Liyang,13157,anchored
+업성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ye Castle,13158,anchored
+남피 공략전,,,,,,,,,,,,,,,,,,,,,,,,Nanpi Campaign,13159,anchored
+유성 평정전,,,,,,,,,,,,,,,,,,,,,,,,Liu Castle Suppression,13160,anchored
+박망파 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Bowanpo,13161,anchored
+장판파 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Changban,13162,anchored
+적벽 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Red Cliffs,13163,anchored
+적벽 탈출,,,,,,,,,,,,,,,,,,,,,,,,Escape from Red Cliffs,13164,anchored
+합비 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hefei,13165,anchored
+마초 요격전,,,,,,,,,,,,,,,,,,,,,,,,Intercepting Ma Chao,13166,anchored
+장노 정벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhang Lu Conquest,13167,anchored
+소요진 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiaoyao Ford,13168,anchored
+유수구 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ruxukou,13169,anchored
+정군산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Dingjun,13170,anchored
+한수 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Han River,13171,anchored
+사곡 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiegu,13172,anchored
+번성 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Fan Castle,13173,anchored
+양평관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yangping Pass,13174,anchored
+검각 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiange,13175,anchored
+성도 침공전,,,,,,,,,,,,,,,,,,,,,,,,Chengdu Invasion,13176,anchored
+백제성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Baidi Castle,13177,anchored
+적벽 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Red Cliffs 2,13178,anchored
+건업 침공전,,,,,,,,,,,,,,,,,,,,,,,,Jianye Invasion,13179,anchored
+맥성 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Mai Castle,13180,anchored
+강릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiangling,13181,anchored
+적벽전투3,,,,,,,,,,,,,,,,,,,,,,,,Battle of Red Cliffs 3,13182,anchored
+어복포 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yufupu,13183,anchored
+오장원 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wuzhang Plains,13184,anchored
+오장원 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wuzhang Plains 2,13185,anchored
+업 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ye,13186,anchored
+남피 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Nanpi,13187,anchored
+북평 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Beiping,13188,anchored
+계 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ji,13189,anchored
+양평 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yangping,13190,anchored
+진양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jinyang,13191,anchored
+평원 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Pingyuan,13192,anchored
+북해 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Beihai,13193,anchored
+상당 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Shangdang,13194,anchored
+하내 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Henei,13195,anchored
+제남 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jinan,13196,anchored
+역 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yi,13197,anchored
+상산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Chang,13198,anchored
+하비 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiapi,13199,anchored
+팽성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Pengcheng,13200,anchored
+소패 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiaopei,13201,anchored
+회음 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Huaiyin,13202,anchored
+광릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guangling,13203,anchored
+수춘 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Shouchun,13204,anchored
+여강 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Lujiang,13205,anchored
+석정 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Shi Ting,13206,anchored
+건업 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jianye,13207,anchored
+오 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wu,13208,anchored
+회계 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Huiji,13209,anchored
+시상 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Chaisang,13210,anchored
+부춘 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fuchun,13211,anchored
+남창 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Nanchang,13212,anchored
+건안 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jianan,13213,anchored
+여릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Luling,13214,anchored
+임해 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Linhai,13215,anchored
+양양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiangyang,13216,anchored
+완 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wan,13217,anchored
+신야 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xinye,13218,anchored
+강하 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiangxia,13219,anchored
+상용 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Shangyong,13220,anchored
+번성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fan Castle,13221,anchored
+무릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wuling,13222,anchored
+영릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Lingling,13223,anchored
+장사 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Changsha,13224,anchored
+계양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guiyang,13225,anchored
+남해 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Nanhai,13226,anchored
+성도 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Chengdu,13227,anchored
+한중 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hanzhong,13228,anchored
+강주 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiangzhou,13229,anchored
+자동 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Zitong,13230,anchored
+강양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiangyang,13231,anchored
+영안 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yong'an,13232,anchored
+운남 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yunnan,13233,anchored
+건녕 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qujing,13234,anchored
+교지 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiaozhi,13235,anchored
+영창 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yongchang,13236,anchored
+흥고 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xinggu,13237,anchored
+장안 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Chang'an,13238,anchored
+무위 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wuei,13239,anchored
+안정 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Anding,13240,anchored
+천수 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Tianshui,13241,anchored
+서평 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiping,13242,anchored
+가정 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jieting,13243,anchored
+적도 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Didao,13244,anchored
+남안 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Nanan,13245,anchored
+기성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jincheng,13246,anchored
+낙양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Luoyang,13247,anchored
+허창 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xuchang,13248,anchored
+진류 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Chenliu,13249,anchored
+여남 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Runan,13250,anchored
+유성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Liu Castle,13251,anchored
+하동 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hadong,13252,anchored
+호관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hu Pass,13253,anchored
+항산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Heng (Shanxi),13254,anchored
+백랑산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of White Wolf Mountain,13255,anchored
+태산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Taishan,13256,anchored
+안평항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Anping,13257,anchored
+백마항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Baima,13258,anchored
+고당항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Gaotang,13259,anchored
+돈구항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Dunqiu,13260,anchored
+임치항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Linzi,13261,anchored
+창양항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Changyang,13262,anchored
+도창 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Duchang,13263,anchored
+백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Temple,13264,anchored
+해릉항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Hailing,13265,anchored
+강도항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Jiangdu,13266,anchored
+서새산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Xisai,13267,anchored
+곡아항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Qua,13268,anchored
+파양항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Poyang,13269,anchored
+호림항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Hulin,13270,anchored
+육구항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Xikou,13271,anchored
+청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon Temple,13272,anchored
+이릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yiling,13273,anchored
+하구항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Xiakou,13274,anchored
+화용도 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Huarong Road,13275,anchored
+창오 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Cangwu,13276,anchored
+합포 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hepu,13277,anchored
+맥성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mai Castle,13278,anchored
+형산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Heng (Hunan),13279,anchored
+나현항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Luoxian,13280,anchored
+동정항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Dongting,13281,anchored
+오림항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Wulin,13282,anchored
+곡강 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qujiang,13283,anchored
+가맹관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiameng Pass,13284,anchored
+면죽관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mianzhu Pass,13285,anchored
+무현항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Wushan,13286,anchored
+낙봉파 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Luo Feng Po,13287,anchored
+사룡 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xielong,13288,anchored
+노수 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Lushui,13289,anchored
+오계봉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wuxifeng,13290,anchored
+독룡동 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Tulong Cave,13291,anchored
+현무의 사당,,,,,,,,,,,,,,,,,,,,,,,,Black Tortoise Temple,13292,anchored
+기산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qishan,13293,anchored
+주천 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiuquan,13294,anchored
+동관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Tong Pass,13295,anchored
+무관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wu Pass,13296,anchored
+화산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Huashan,13297,anchored
+자오곡 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ziwugu,13298,anchored
+주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird Temple,13299,anchored
+함곡관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hangu Pass,13300,anchored
+숭산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Songshan,13301,anchored
+관도항 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle at the Port of Guandu,13302,anchored
+울림 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yulin,13303,anchored
+장액 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Zhangye,13304,anchored
+서성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xicheng,13305,anchored
+건평 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jianping,13306,anchored
+시흥 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Shixing,13307,anchored
+임치항 제사 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Port of Linzi Ritual Expedition,13308,anchored
+도창 제사 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Duchang Ritual Expedition,13309,anchored
+태산 장패 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Taishan Zang Ba Expedition,13310,anchored
+돈구항 장패 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Raiding Zang Ba at the Port of Dunqiu,13311,anchored
+창양항 수적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Port of Changyang Pirate Expedition,13312,anchored
+북해 부패 척결전,,,,,,,,,,,,,,,,,,,,,,,,Preserving Order at Beihai,13313,anchored
+낙양 북문 순찰전,,,,,,,,,,,,,,,,,,,,,,,,Scouting the North Gate of Luoyang,13314,anchored
+낙양 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Luoyang Bandit Crackdown,13315,anchored
+진류 연주 제패전,,,,,,,,,,,,,,,,,,,,,,,,Chenliu Yanzhou Conquest,13316,anchored
+호로관 부패 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Cleansing Hulao Pass's Corruption,13317,anchored
+관도항 부패 척결전,,,,,,,,,,,,,,,,,,,,,,,,Preserving Order at the Port of Guandu,13318,anchored
+화산 늑대 사냥,,,,,,,,,,,,,,,,,,,,,,,,Huashan Wolf Hunt,13319,anchored
+낙양 십상시 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Eunuch Raid at Luoyang,13320,anchored
+청주 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Qingzhou Wolf Extermination,13321,anchored
+테스트_북해2,,,,,,,,,,,,,,,,,,,,,,,,Test_Beihai2,13322,anchored
+테스트_제남3,,,,,,,,,,,,,,,,,,,,,,,,Test_Jinan3,13323,anchored
+테스트_도창3,,,,,,,,,,,,,,,,,,,,,,,,Test_Duchang3,13324,anchored
+테스트_북해3,,,,,,,,,,,,,,,,,,,,,,,,Test_Beihai3,13325,anchored
+도성 외곽 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle on the Outskirts of Luoyang,13326,anchored
+낙양 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Luoyang,13327,anchored
+제남 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Jinan Locust Extermination,13328,anchored
+도창 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Duchang Wolf Extermination,13329,anchored
+도창 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Duchang Bandit Crackdown,13330,anchored
+제남 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jinan Yellow Turban Expedition,13331,anchored
+창양항 황건군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Port of Changyang Defensive—Yellow Turbans,13332,anchored
+청주 보부상 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving the Qingzhou Peddler,13333,anchored
+창양 군사 훈련,,,,,,,,,,,,,,,,,,,,,,,,Changyang Military Drills,13334,anchored
+도창 관군 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Duchang's Royal Forces,13335,anchored
+북해 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Beihai Traitor,13336,anchored
+제남 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Jinan Herb,13337,anchored
+제남 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Jinan,13338,anchored
+도창 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Duchang Silver Coin Collecting,13339,anchored
+제남 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Jinan Inspection,13340,anchored
+제남 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Jinan Assassination,13341,anchored
+북해 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Beihai,13342,anchored
+도창 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Duchang Yellow Turban Expedition,13343,anchored
+북해 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Beihai Yellow Turban Expedition,13344,anchored
+복양 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Puyang Locust Extermination,13345,anchored
+진류 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Chenliu Wolf Extermination,13346,anchored
+돈구항 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Port of Dunqiu Bandit Crackdown,13347,anchored
+진류 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Chenliu Yellow Turban Expedition,13348,anchored
+진류 황건군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Chenliu Defensive—Yellow Turbans,13349,anchored
+연주 보부상 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving the Yanzhou Peddler,13350,anchored
+복양 군사 훈련,,,,,,,,,,,,,,,,,,,,,,,,Puyang Military Drills,13351,anchored
+태산 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Taishan Bandit Crackdown,13352,anchored
+팽성 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Pengcheng Traitor,13353,anchored
+복양 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Puyang Herb,13354,anchored
+팽성 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Pengcheng,13355,anchored
+복양 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Puyang Silver Coin Collecting,13356,anchored
+복양 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Puyang Inspection,13357,anchored
+복양 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Puyang Assassination,13358,anchored
+복양 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Puyang,13359,anchored
+돈구항 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Port of Dunqiu Yellow Turban Expedition,13360,anchored
+복양 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Puyang Yellow Turban Expedition,13361,anchored
+팽성 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Pengcheng Locust Extermination,13362,anchored
+하비 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Xiapi Wolf Extermination,13363,anchored
+팽성 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Pengcheng Yellow Turban Expedition,13364,anchored
+해릉항 황건군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Port of Hailing Defensive—Yellow Turbans,13365,anchored
+서주 보부상 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving the Xuzhou Peddler,13366,anchored
+팽성 관군 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Pengcheng's Royal Forces,13367,anchored
+하비 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Xiapi Herb,13368,anchored
+해릉항 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on the Port of Hailing,13369,anchored
+팽성 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Pengcheng Silver Coin Collecting,13370,anchored
+팽성 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Pengcheng Inspection,13371,anchored
+팽성 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Pengcheng Assassination,13372,anchored
+팽성 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Pengcheng,13373,anchored
+해릉항 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Port of Hailing Yellow Turban Expedition,13374,anchored
+하비 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xiapi Yellow Turban Expedition,13375,anchored
+수춘 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Shouchun Locust Extermination,13376,anchored
+소패 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Xiaopei Wolf Extermination,13377,anchored
+소패 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xiaopei Yellow Turban Expedition,13378,anchored
+여남 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Runan Defensive—Rebels,13379,anchored
+예주 보부상 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving the Yuzhou Peddler,13380,anchored
+소패 관군 지원전,,,,,,,,,,,,,,,,,,,,,,,,Supporting Xiaopei's Royal Guard,13381,anchored
+여남 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Runan Traitor,13382,anchored
+여남 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Runan Herb,13383,anchored
+석정 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Shi Ting,13384,anchored
+석정 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Shi Ting Silver Coin Collecting,13385,anchored
+소패 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Xiaopei Inspection,13386,anchored
+소패 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Xiaopei Assassination,13387,anchored
+여남 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Runan,13388,anchored
+석정 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Shi Ting Yellow Turban Expedition,13389,anchored
+여남 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Runan Yellow Turban Expedition,13390,anchored
+업 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Ye Locust Extermination,13391,anchored
+평원 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Pingyuan Wolf Extermination,13392,anchored
+평원 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Pingyuan Yellow Turban Expedition,13393,anchored
+남피 황건군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Nanpi Defensive—Yellow Turbans,13394,anchored
+기주 보부상 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving the Jizhou Peddler,13395,anchored
+평원 관군 지원전,,,,,,,,,,,,,,,,,,,,,,,,Supporting Pingyuan's Royal Guard,13396,anchored
+고당항 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Port of Gaotang Traitor,13397,anchored
+평원 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Pingyuan Herb,13398,anchored
+백마항 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on the Port of Baima,13399,anchored
+평원 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Pingyuan Silver Coin Collecting,13400,anchored
+업 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Ye Inspection,13401,anchored
+업 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Ye Assassination,13402,anchored
+평원 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Pingyuan,13403,anchored
+남피 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Nanpi Yellow Turban Expedition,13404,anchored
+백마 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Baima Yellow Turban Expedition,13405,anchored
+진양 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Jinyang Locust Extermination,13406,anchored
+진양 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Jinyang Wolf Extermination,13407,anchored
+상산 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Mount Chang Yellow Turban Expedition,13408,anchored
+진양 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Jinyang Defensive—Rebels,13409,anchored
+항산 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Mount Heng (Shanxi) Bandit Crackdown,13410,anchored
+상당 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Shangdang Traitor,13411,anchored
+상산 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Mount Chang Herb,13412,anchored
+상산 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Mount Chang,13413,anchored
+진양 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Jinyang Silver Coin Collecting,13414,anchored
+상당 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Shangdang Inspection,13415,anchored
+상당 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Shangdang Assassination,13416,anchored
+진양 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Jinyang,13417,anchored
+호관 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Hu Pass Yellow Turban Expedition,13418,anchored
+진양 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jinyang Yellow Turban Expedition,13419,anchored
+북평 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Beiping Locust Extermination,13420,anchored
+북평 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Beiping Wolf Extermination,13421,anchored
+유성 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Liu Castle Yellow Turban Expedition,13422,anchored
+역 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Yi Defensive—Rebels,13423,anchored
+백랑산 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,White Wolf Mountain Bandit Crackdown,13424,anchored
+유성 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Liu Castle Traitor,13425,anchored
+양평 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Yangping Herb,13426,anchored
+역 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Yi,13427,anchored
+안평항 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Port of Anping Silver Coin Collecting,13428,anchored
+계 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Ji Inspection,13429,anchored
+계 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Ji Assassination,13430,anchored
+양평 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Yangping,13431,anchored
+안평항 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Port of Anping Yellow Turban Expedition,13432,anchored
+계 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Ji Yellow Turban Expedition,13433,anchored
+여강 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Lujiang Locust Extermination,13434,anchored
+광릉 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Guangling Wolf Extermination,13435,anchored
+유수구 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Ruxukou Yellow Turban Expedition,13436,anchored
+합비 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Hefei Defensive—Rebels,13437,anchored
+서새산 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Mount Xisai Bandit Crackdown,13438,anchored
+시상 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Chaisang Traitor,13439,anchored
+회음 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Huaiyin Herb,13440,anchored
+회음 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Huaiyin,13441,anchored
+회음 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Huaiyin Silver Coin Collecting,13442,anchored
+시상 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Chaisang Inspection,13443,anchored
+시상 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Chaisang Assassination,13444,anchored
+회음 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Huaiyin,13445,anchored
+합비 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Hefei Yellow Turban Expedition,13446,anchored
+남창 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Nanchang Yellow Turban Expedition,13447,anchored
+강릉 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Jiangling Locust Extermination,13448,anchored
+신야 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Xinye Wolf Extermination,13449,anchored
+신야 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xinye Yellow Turban Expedition,13450,anchored
+강릉 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Jiangling Defensive—Rebels,13451,anchored
+신야 관군 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Xinye's Royal Forces,13452,anchored
+완 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Wan Traitor,13453,anchored
+신야 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Xinye Herb,13454,anchored
+상용 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Shangyong,13455,anchored
+서성 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Xicheng Silver Coin Collecting,13456,anchored
+신야 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Xinye Inspection,13457,anchored
+신야 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Xinye Assassination,13458,anchored
+강하 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Jiangxia,13459,anchored
+상용 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Shangyong Yellow Turban Expedition,13460,anchored
+번성 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Fan Castle Yellow Turban Expedition,13461,anchored
+계양 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Guiyang Locust Extermination,13462,anchored
+영릉 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Lingling Wolf Extermination,13463,anchored
+무릉 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Wuling Yellow Turban Expedition,13464,anchored
+장사 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Changsha Defensive—Rebels,13465,anchored
+무릉 관군 지원전,,,,,,,,,,,,,,,,,,,,,,,,Supporting Wuling's Royal Guard,13466,anchored
+무릉 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Wuling Traitor,13467,anchored
+영릉 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Lingling Herb,13468,anchored
+장사 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Changsha,13469,anchored
+무릉 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Wuling Silver Coin Collecting,13470,anchored
+영릉 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Lingling Inspection,13471,anchored
+영릉 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Lingling Assassination,13472,anchored
+무릉 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Wuling,13473,anchored
+계양 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Guiyang Yellow Turban Expedition,13474,anchored
+영릉 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Lingling Yellow Turban Expedition,13475,anchored
+남해 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Nanhai Locust Extermination,13476,anchored
+교지 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Jiaozhi Wolf Extermination,13477,anchored
+교지 수성전,,,,,,,,,,,,,,,,,,,,,,,,Jiaozhi Defensive,13478,anchored
+창오 관군 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Cangwu's Royal Force,13479,anchored
+울림 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Yulin Traitor,13480,anchored
+교지 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Jiaozhi Herb,13481,anchored
+합포 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Hepu,13482,anchored
+흥고 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Xinggu Silver Coin Collecting,13483,anchored
+남해 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Nanhai Inspection,13484,anchored
+남해 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Nanhai Assassination,13485,anchored
+남해 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Nanhai,13486,anchored
+울림 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yulin Barbarian Expedition,13487,anchored
+흥고 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xinggu Barbarian Expedition,13488,anchored
+교지 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jiaozhi Barbarian Expedition,13489,anchored
+건안 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Jianan Locust Extermination,13490,anchored
+여릉 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Luling Wolf Extermination,13491,anchored
+회계 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Huiji Yellow Turban Expedition,13492,anchored
+건안 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Jianan Defensive—Defensive—Rebels,13493,anchored
+여릉 관군 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Luling's Royal Forces,13494,anchored
+오 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Wu Traitor,13495,anchored
+여릉 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Luling Herb,13496,anchored
+회계 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Huiji,13497,anchored
+여릉 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Luling Silver Coin Collecting,13498,anchored
+오 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Wu Inspection,13499,anchored
+오 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Wu Assassination,13500,anchored
+회계 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Huiji,13501,anchored
+건안 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jianan Yellow Turban Expedition,13502,anchored
+임해 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Linhai Yellow Turban Expedition,13503,anchored
+성도 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Chengdu Locust Extermination,13504,anchored
+강주 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Jiangzhou Wolf Extermination,13505,anchored
+건평 남만군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Jianping Defensive—Nanman Army,13506,anchored
+강주 관군 지원전,,,,,,,,,,,,,,,,,,,,,,,,Supporting Jiangzhou's Royal Guard,13507,anchored
+건평 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Jianping Traitor,13508,anchored
+강주 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Jiangzhou Herb,13509,anchored
+영안 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Yong'an,13510,anchored
+강양 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Jiangyang Silver Coin Collecting,13511,anchored
+강양 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Jiangyang Inspection,13512,anchored
+강양 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Jiangyang Assassination,13513,anchored
+건평 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Jianping,13514,anchored
+건평 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jianping Barbarian Expedition,13515,anchored
+강양 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jiangyang Barbarian Expedition,13516,anchored
+영안 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yong'an Barbarian Expedition,13517,anchored
+운남 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Yunnan Locust Extermination,13518,anchored
+영창 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Yongchang Wolf Extermination,13519,anchored
+영창 남만군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Yongchang Defensive—Nanman Army,13520,anchored
+독룡동 관군 지원전,,,,,,,,,,,,,,,,,,,,,,,,Supporting Tulong Cave's Royal Guard,13521,anchored
+사룡 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Xielong Traitor,13522,anchored
+사룡 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Xielong Herb,13523,anchored
+건녕 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Qujing,13524,anchored
+사룡 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Xielong Silver Coin Collecting,13525,anchored
+건녕 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Qujing Inspection,13526,anchored
+건녕 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Qujing Assassination,13527,anchored
+영창 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Yongchang,13528,anchored
+사룡 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xielong Barbarian Expedition,13529,anchored
+건녕 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Qujing Barbarian Expedition,13530,anchored
+영창 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yongchang Barbarian Expedition,13531,anchored
+사곡 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Xiegu Locust Extermination,13532,anchored
+자동 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Zitong Wolf Extermination,13533,anchored
+한중 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Defensive—Rebels,13534,anchored
+정군산 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Mount Dingjun Bandit Crackdown,13535,anchored
+양평관 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Yangping Pass Traitor,13536,anchored
+한중 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Hanzhong Herb,13537,anchored
+검각 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Jiange,13538,anchored
+가맹관 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Jiameng Pass Silver Coin Collecting,13539,anchored
+자동 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Zitong Inspection,13540,anchored
+자동 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Zitong Assassination,13541,anchored
+자동 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Zitong,13542,anchored
+사곡 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xiegu Barbarian Expedition,13543,anchored
+자동 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zitong Barbarian Expedition,13544,anchored
+한중 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Barbarian Expedition,13545,anchored
+적도 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Didao Locust Extermination,13546,anchored
+기산 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Qishan Wolf Extermination,13547,anchored
+서평 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Xiping Defensive—Rebels,13548,anchored
+남안 관군 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Nanan's Royal Forces,13549,anchored
+적도 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Didao Traitor,13550,anchored
+무위 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Wuei Herb,13551,anchored
+무위 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Wuei,13552,anchored
+적도 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Didao Silver Coin Collecting,13553,anchored
+무위 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Wuei Inspection,13554,anchored
+무위 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Wuei Assassination,13555,anchored
+남안 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Nanan,13556,anchored
+기성 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jincheng Barbarian Expedition,13557,anchored
+적도 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Didao Barbarian Expedition,13558,anchored
+남안 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Nanan Barbarian Expedition,13559,anchored
+동관 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Tong Pass Locust Extermination,13560,anchored
+안정 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Anding Wolf Extermination,13561,anchored
+천수 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Tianshui Defensive—Rebels,13562,anchored
+가정 관군 지원전,,,,,,,,,,,,,,,,,,,,,,,,Supporting Jieting's Royal Guard,13563,anchored
+동관 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Tong Pass Traitor,13564,anchored
+가정 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Jieting Herb,13565,anchored
+가정 민중 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving the People of Jieting,13566,anchored
+천수 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Tianshui Silver Coin Collecting,13567,anchored
+천수 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Tianshui Inspection,13568,anchored
+천수 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Tianshui Assassination,13569,anchored
+안정 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Anding,13570,anchored
+동관 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Tong Pass Barbarian Expedition,13571,anchored
+천수 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Tianshui Barbarian Expedition,13572,anchored
+안정 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Anding Barbarian Expedition,13573,anchored
+하내 황충 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Henei Locust Extermination,13574,anchored
+하동 늑대 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Hadong Wolf Extermination,13575,anchored
+낙양 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Luoyang Yellow Turban Expedition,13576,anchored
+하내 반란군 수성전,,,,,,,,,,,,,,,,,,,,,,,,Henei Defensive—Rebels,13577,anchored
+하동 관군 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Hadong's Royal Forces,13578,anchored
+호로관 배반자 색출전,,,,,,,,,,,,,,,,,,,,,,,,Hunting the Hulao Pass Traitor,13579,anchored
+함곡관 약초 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Hangu Pass Herb,13580,anchored
+허창 습격전,,,,,,,,,,,,,,,,,,,,,,,,Assault on Xuchang,13581,anchored
+하동 은전 수집전,,,,,,,,,,,,,,,,,,,,,,,,Hadong Silver Coin Collecting,13582,anchored
+하내 정보 수집전,,,,,,,,,,,,,,,,,,,,,,,,Henei Inspection,13583,anchored
+하내 요인 습격전,,,,,,,,,,,,,,,,,,,,,,,,Henei Assassination,13584,anchored
+하내 도적 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Raid at Henei,13585,anchored
+하내 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Henei Yellow Turban Expedition,13586,anchored
+함곡관 황건 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Hangu Pass Yellow Turban Expedition,13587,anchored
+하구 전격전,,,,,,,,,,,,,,,,,,,,,,,,Xiakou Blitz,13588,anchored
+산악 방위전,,,,,,,,,,,,,,,,,,,,,,,,Mountain Defense,13589,anchored
+해안 포위전,,,,,,,,,,,,,,,,,,,,,,,,Coastal Siege,13590,anchored
+맹수 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Beast Extermination,13591,anchored
+산악 기습전,,,,,,,,,,,,,,,,,,,,,,,,Mountain Raid,13592,anchored
+도하 요격전,,,,,,,,,,,,,,,,,,,,,,,,Interception at the River,13593,anchored
+삼림 유인전,,,,,,,,,,,,,,,,,,,,,,,,Forest Ambush,13594,anchored
+진류 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Chenliu Mock Battle,13595,anchored
+완 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Wan Mock Battle,13596,anchored
+계양 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Guiyang Mock Battle,13597,anchored
+영안 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Yong'an Mock Battle,13598,anchored
+자동 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Zitong Mock Battle,13599,anchored
+천수 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Tianshui Mock Battle,13600,anchored
+하내 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Henei Mock Battle,13601,anchored
+사룡 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Xielong Mock Battle,13602,anchored
+한중 군사 훈련전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Mock Battle,13603,anchored
+사마휘의 의뢰,,,,,,,,,,,,,,,,,,,,,,,,Sima Hui's Request,13604,anchored
+몽매의 시련1,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 1,13605,anchored
+몽매의 시련2,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 2,13606,anchored
+몽매의 시련3,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 3,13607,anchored
+몽매의 시련4,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 4,13608,anchored
+몽매의 시련5,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 5,13609,anchored
+몽매의 시련6,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 6,13610,anchored
+몽매의 시련7,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 7,13611,anchored
+몽매의 시련8,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 8,13612,anchored
+몽매의 시련9,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 9,13613,anchored
+몽매의 시련10,,,,,,,,,,,,,,,,,,,,,,,,Meng Mei's Trial 10,13614,anchored
+장각 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhang Jue Expedition,13615,anchored
+금성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jincheng,13616,anchored
+황제 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Search for the Emperor,13617,anchored
+낙양 근교전,,,,,,,,,,,,,,,,,,,,,,,,Luoyang Provincial Battle,13618,anchored
+강족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Qiang Tribe Expedition,13619,anchored
+황궁 장악전,,,,,,,,,,,,,,,,,,,,,,,,Capturing the Royal Palace,13620,anchored
+낙양 약탈,,,,,,,,,,,,,,,,,,,,,,,,Looting of Luoyang,13621,anchored
+황궁 진입전,,,,,,,,,,,,,,,,,,,,,,,,Entering the Royal Palace,13622,anchored
+적도 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Didao,13623,anchored
+후화 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Houhe,13624,anchored
+답중 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Tazhong,13625,anchored
+면죽관 돌파전,,,,,,,,,,,,,,,,,,,,,,,,Mianzhu Pass Breakthrough,13626,anchored
+양무 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yangwu,13627,anchored
+조서 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Taoxi,13628,anchored
+단곡 패퇴,,,,,,,,,,,,,,,,,,,,,,,,Defeat at Duan Valley,13629,anchored
+후화 공격전,,,,,,,,,,,,,,,,,,,,,,,,Attack on Houhe,13630,anchored
+답중 후퇴전,,,,,,,,,,,,,,,,,,,,,,,,Retreat from Tazhong,13631,anchored
+검각 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Jiange,13632,anchored
+성도 수복전,,,,,,,,,,,,,,,,,,,,,,,,Recovering Chengdu,13633,anchored
+병주 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Bingzhou Bandit Crackdown,13634,anchored
+동탁 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Dong Zhuo Expedition,13635,anchored
+형양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xingyang,13636,anchored
+장안 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Chang'an,13637,anchored
+연주 제압전,,,,,,,,,,,,,,,,,,,,,,,,Yanzhou Suppression,13638,anchored
+복양 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Puyang 1,13639,anchored
+서주 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xuzhou,13640,anchored
+소패 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Xiaopei,13641,anchored
+하비 혈투1,,,,,,,,,,,,,,,,,,,,,,,,Bloody Battle of Xiapi 1,13642,anchored
+하비 혈투2,,,,,,,,,,,,,,,,,,,,,,,,Bloody Battle of Xiapi 2,13643,anchored
+장안 침공,,,,,,,,,,,,,,,,,,,,,,,,Chang'an Invasion,13644,anchored
+동관 공격,,,,,,,,,,,,,,,,,,,,,,,,Tong Pass Assault,13645,anchored
+동관 격돌,,,,,,,,,,,,,,,,,,,,,,,,Clash at Tong Pass,13646,anchored
+동관 나루 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Tong Pass Dock,13647,anchored
+위수 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Weishui,13648,anchored
+위수 패퇴,,,,,,,,,,,,,,,,,,,,,,,,Defeat at Weishui,13649,anchored
+기성 공격,,,,,,,,,,,,,,,,,,,,,,,,Jincheng Assault,13650,anchored
+하후연 격퇴,,,,,,,,,,,,,,,,,,,,,,,,Defeat Xiahou Yuan,13651,anchored
+기성 탈출,,,,,,,,,,,,,,,,,,,,,,,,Escape from Jincheng,13652,anchored
+유장 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Liu Zhang,13653,anchored
+오소 기습전,,,,,,,,,,,,,,,,,,,,,,,,Wuchao Raid,13654,anchored
+적벽 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Red Cliffs,13655,anchored
+합비 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hefei 1,13656,anchored
+합비 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Hefei 2,13657,anchored
+수적 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Pirate Extermination,13658,anchored
+완성 황건병 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Wancheng Yellow Turban Expedition,13659,anchored
+장사 반란군 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Changsha Rebellion Expedition,13660,anchored
+노양 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Luyang,13661,anchored
+조무 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Zu Mao,13662,anchored
+양인 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yangren,13663,anchored
+낙양 수복전,,,,,,,,,,,,,,,,,,,,,,,,Recovering Luoyang,13664,anchored
+양양 근교전,,,,,,,,,,,,,,,,,,,,,,,,Xiangyang Provincial Battle,13665,anchored
+신선의 시험,,,,,,,,,,,,,,,,,,,,,,,,The Hermit's Test,13666,anchored
+백성 구원,,,,,,,,,,,,,,,,,,,,,,,,Save the People,13667,anchored
+관청 기습,,,,,,,,,,,,,,,,,,,,,,,,Government Surprise Attack,13668,anchored
+강릉 교외전,,,,,,,,,,,,,,,,,,,,,,,,The Outskirts of Jiangling,13669,anchored
+양양 교외전,,,,,,,,,,,,,,,,,,,,,,,,The Outskirts of Xiangyang,13670,anchored
+청니 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qingni,13671,anchored
+익양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yiyang,13672,anchored
+번성 교외전,,,,,,,,,,,,,,,,,,,,,,,,The Outskirts of Fan Castle,13673,anchored
+번성 수몰,,,,,,,,,,,,,,,,,,,,,,,,Flooding Fan Castle,13674,anchored
+번성 함락전,,,,,,,,,,,,,,,,,,,,,,,,Fall of Fan Castle,13675,anchored
+남군 후퇴전,,,,,,,,,,,,,,,,,,,,,,,,Retreat from Nanjun,13676,anchored
+맥성 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Mai Castle,13677,anchored
+하동 부패 척결전,,,,,,,,,,,,,,,,,,,,,,,,Preserving Order at Hadong,13678,anchored
+유주 황건병 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Youzhou Yellow Turban Expedition,13679,anchored
+북해 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Beihai,13680,anchored
+여포 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Lu Bu Expedition,13681,anchored
+허도 맹수 사냥,,,,,,,,,,,,,,,,,,,,,,,,Xudou Beast Hunt,13682,anchored
+유비 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Liu Bei,13683,anchored
+오관 돌파전,,,,,,,,,,,,,,,,,,,,,,,,Wu Pass Breakthrough,13684,anchored
+당양 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Dangyang,13685,anchored
+메뚜기 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Locust Extermination,13686,anchored
+적벽 유람전,,,,,,,,,,,,,,,,,,,,,,,,Red Cliffs Tour,13687,anchored
+허창 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Xuchang Reconnaissance,13688,anchored
+오장원 탐색전,,,,,,,,,,,,,,,,,,,,,,,,Wuzhang Plains Reconnaissance,13689,anchored
+신야성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xinye Castle,13690,anchored
+장강 도피전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Yangtze,13691,anchored
+적벽 기도전,,,,,,,,,,,,,,,,,,,,,,,,Prayers of Red Cliffs,13692,anchored
+형남 평정전,,,,,,,,,,,,,,,,,,,,,,,,Jingnan Suppression,13693,anchored
+주유 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhou Yu Expedition,13694,anchored
+마왕 각성전,,,,,,,,,,,,,,,,,,,,,,,,An Evil Awakens,13695,anchored
+익주 평정전,,,,,,,,,,,,,,,,,,,,,,,,Yizhou Suppression,13696,anchored
+형주 암략전,,,,,,,,,,,,,,,,,,,,,,,,Jingzhou Secret Plans,13697,anchored
+공명 장악전1,,,,,,,,,,,,,,,,,,,,,,,,Capturing Kongming 1,13698,anchored
+마왕 도피전,,,,,,,,,,,,,,,,,,,,,,,,The Demon Escapes,13699,anchored
+공명 장악전2,,,,,,,,,,,,,,,,,,,,,,,,Capturing Kongming 2,13700,anchored
+탁현 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhuoxian Bandit Crackdown,13701,anchored
+대흥산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Daixingshan,13702,anchored
+청주성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qingzhou Castle,13703,anchored
+광종 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guangzong,13704,anchored
+양성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiangcheng,13705,anchored
+장거 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhang Ju Expedition,13706,anchored
+계교 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Jieqiao,13707,anchored
+서주 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Xuzhou,13708,anchored
+팽성 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Pengcheng Bandit Crackdown,13709,anchored
+소패 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Xiaopei,13710,anchored
+수춘 포위전,,,,,,,,,,,,,,,,,,,,,,,,Siege of Shouchun,13711,anchored
+소패 요격전,,,,,,,,,,,,,,,,,,,,,,,,Interception at Xiaopei,13712,anchored
+하후돈 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Xiahou Dun,13713,anchored
+팽성 근교전,,,,,,,,,,,,,,,,,,,,,,,,Pencheng Provincial Battle,13714,anchored
+하비 포위전,,,,,,,,,,,,,,,,,,,,,,,,Siege of Xiapi,13715,anchored
+원술 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yuan Shu Expedition,13716,anchored
+서주 탈취전,,,,,,,,,,,,,,,,,,,,,,,,Capturing Xuzhou,13717,anchored
+소패 근교전,,,,,,,,,,,,,,,,,,,,,,,,Xiaopei Provincial Battle,13718,anchored
+소패 탈출전 2,,,,,,,,,,,,,,,,,,,,,,,,Escape from Xiaopei 2,13719,anchored
+남판 근교전,,,,,,,,,,,,,,,,,,,,,,,,Nanpan Provincial Battle,13720,anchored
+여남 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Runan,13721,anchored
+팔문금쇄진 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of the Eight Gates Formation,13722,anchored
+당양 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Dangyang,13723,anchored
+부수관 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Fushui Pass,13724,anchored
+낙성 전투 1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Luo Castle 1,13725,anchored
+낙성 전투 2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Luo Castle 2,13726,anchored
+자귀성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ziguicheng,13727,anchored
+이도 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yidu,13728,anchored
+이릉 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Yiling,13729,anchored
+관청 잠입,,,,,,,,,,,,,,,,,,,,,,,,Government Infiltration,13730,anchored
+서주 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Xuzhou,13731,anchored
+하후홍 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Xiahou Shi,13732,anchored
+장판교 방어,,,,,,,,,,,,,,,,,,,,,,,,Changban Bridge Defense,13733,anchored
+파군 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Bajun,13734,anchored
+탕거 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Dangqu,13735,anchored
+와구관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wakou Pass,13736,anchored
+하변 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiabian,13737,anchored
+양평관 기습,,,,,,,,,,,,,,,,,,,,,,,,Ambush at Yangping Pass,13738,anchored
+자오곡 약탈,,,,,,,,,,,,,,,,,,,,,,,,Looting of Ziwugu,13739,anchored
+한중 정벌전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Conquest,13740,anchored
+삼로 수송전,,,,,,,,,,,,,,,,,,,,,,,,Three Route Transportation,13741,anchored
+형주 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Jingzhou,13742,anchored
+맹달 기습전,,,,,,,,,,,,,,,,,,,,,,,,Meng Da Raid,13743,anchored
+조진 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Cao Zhen,13744,anchored
+공손연 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Gongsun Yuan Expedition,13745,anchored
+왕릉 평정전,,,,,,,,,,,,,,,,,,,,,,,,Wang Ling Suppression,13746,anchored
+와우산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wuniushan,13747,anchored
+허도 순찰,,,,,,,,,,,,,,,,,,,,,,,,Xudou Scout,13748,anchored
+제단 설치전,,,,,,,,,,,,,,,,,,,,,,,,Altar Installation,13749,anchored
+여강 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Lujiang Bandit Crackdown,13750,anchored
+단양 거병전,,,,,,,,,,,,,,,,,,,,,,,,Rise from Danyang,13751,anchored
+원술 설득전,,,,,,,,,,,,,,,,,,,,,,,,Yuan Shu Persuasion,13752,anchored
+여강 공격전,,,,,,,,,,,,,,,,,,,,,,,,Attack on Lujiang,13753,anchored
+오경 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Wu Jing,13754,anchored
+단양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Danyang,13755,anchored
+말릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Moling,13756,anchored
+경현 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jingxian,13757,anchored
+예장 공격전,,,,,,,,,,,,,,,,,,,,,,,,Attack on Yuzhang,13758,anchored
+사독 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Zhadu,13759,anchored
+오군 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wujun,13760,anchored
+엄백호 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yan Baihu Expedition,13761,anchored
+계교 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jieqiao,13762,anchored
+상산 흑산적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Mount Chang Heishan Bandit Crackdown,13763,anchored
+역경 교외전,,,,,,,,,,,,,,,,,,,,,,,,The Outskirts of Yijing,13764,anchored
+역경 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yijing,13765,anchored
+회계 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Huiji Bandit Crackdown,13766,anchored
+반림 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Pan Lin Expedition,13767,anchored
+여릉 반란군 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Luling Rebellion Expedition,13768,anchored
+형주 공략전,,,,,,,,,,,,,,,,,,,,,,,,Jingzhou Campaign,13769,anchored
+관우 생포전,,,,,,,,,,,,,,,,,,,,,,,,Capturing Guan Yu,13770,anchored
+이릉 대전,,,,,,,,,,,,,,,,,,,,,,,,Great Battle of Yiling,13771,anchored
+공손찬 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Gongsun Zan,13772,anchored
+역경루 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yijinglou,13773,anchored
+도적 잔당 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Remnant Crackdown,13774,anchored
+강하 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jiangxia Bandit Crackdown,13775,anchored
+계양 점령전,,,,,,,,,,,,,,,,,,,,,,,,Guiyang Occupation,13776,anchored
+손상향 추격전,,,,,,,,,,,,,,,,,,,,,,,,Sun Shangxiang Pursuit,13777,anchored
+마초 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Ma Chao Raid,13778,anchored
+옹개 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yong Kai Expedition,13779,anchored
+남중 평정전,,,,,,,,,,,,,,,,,,,,,,,,Nanzhong Suppression,13780,anchored
+기곡 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jigu,13781,anchored
+한중 퇴각전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Withdrawal,13782,anchored
+무릉만 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Wuling Expedition,13783,anchored
+장사 근교전,,,,,,,,,,,,,,,,,,,,,,,,Changsha Provincial Battle,13784,anchored
+낙성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Luo Castle,13785,anchored
+천탕산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Tiandangshan,13786,anchored
+북산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Beishan,13787,anchored
+미창산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Micang Mountains,13788,anchored
+사냥 내기 전투,,,,,,,,,,,,,,,,,,,,,,,,Hunting Bet Battle,13789,anchored
+한수 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Han River Expedition,13790,anchored
+마차 호위전,,,,,,,,,,,,,,,,,,,,,,,,Escorting the Wagon,13791,anchored
+장순 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhang Chun Expedition,13792,anchored
+북방 이민족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,N. Barbarians Expedition,13793,anchored
+북방 이민족 토벌전2,,,,,,,,,,,,,,,,,,,,,,,,N. Barbarians Expedition 2,13794,anchored
+반란 진압전,,,,,,,,,,,,,,,,,,,,,,,,Rebellion Subjugation,13795,anchored
+당양 후퇴전,,,,,,,,,,,,,,,,,,,,,,,,Retreat from Dangyang,13796,anchored
+형성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jingcheng,13797,anchored
+강주 함락전,,,,,,,,,,,,,,,,,,,,,,,,Fall of Jiangzhou,13798,anchored
+고정 반란 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Gao Ding Rebellion Expedition,13799,anchored
+옹개 반란 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Yong Kai Rebellion Expedition,13800,anchored
+사이호 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of West Lake,13801,anchored
+삼강성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Sanjiang Castle,13802,anchored
+은갱동 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yinkendong,13803,anchored
+반사곡 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Panshegu,13804,anchored
+기산 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qishan 1,13805,anchored
+옹주 서부 평정전,,,,,,,,,,,,,,,,,,,,,,,,West Yongzhou Suppression,13806,anchored
+한중 후퇴전,,,,,,,,,,,,,,,,,,,,,,,,Retreat from Hanzhong,13807,anchored
+진창 교외전,,,,,,,,,,,,,,,,,,,,,,,,The Outskirts of Chenchang,13808,anchored
+진창 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Chenchang 1,13809,anchored
+진창 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Chenchang 2,13810,anchored
+서한수 진격전,,,,,,,,,,,,,,,,,,,,,,,,West Han River Advancement,13811,anchored
+한중 대치전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Confrontation,13812,anchored
+강중 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qiangzhong,13813,anchored
+기산 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Qishan 2,13814,anchored
+상규 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Shanggui,13815,anchored
+노성 대치전,,,,,,,,,,,,,,,,,,,,,,,,Lucheng Confrontation,13816,anchored
+장합 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Zhang He Raid,13817,anchored
+목문 후퇴전,,,,,,,,,,,,,,,,,,,,,,,,Retreat from Mumen,13818,anchored
+위수 진출전,,,,,,,,,,,,,,,,,,,,,,,,Weishui Advance,13819,anchored
+북원 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Beiyuan,13820,anchored
+양수 기습전,,,,,,,,,,,,,,,,,,,,,,,,Yang Xiu Raid,13821,anchored
+오장원 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Wuzhang Plains,13822,anchored
+오장원 후퇴전,,,,,,,,,,,,,,,,,,,,,,,,Retreat from Wuzhang Plains,13823,anchored
+북해 진입전,,,,,,,,,,,,,,,,,,,,,,,,Entering Beihai,13824,anchored
+공융 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Kong Rong,13825,anchored
+유요 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Liu Yao,13826,anchored
+손책 격퇴전,,,,,,,,,,,,,,,,,,,,,,,,Sun Ce Raid,13827,anchored
+예장 평정전,,,,,,,,,,,,,,,,,,,,,,,,Yuzhang Suppression,13828,anchored
+주유 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Zhou Yu,13829,anchored
+합비 전초전,,,,,,,,,,,,,,,,,,,,,,,,Hefei Skirmish,13830,anchored
+관우 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Guan Yu Expedition,13831,anchored
+메뚜기 퇴치,,,,,,,,,,,,,,,,,,,,,,,,Locust Culling,13832,anchored
+산월족 토벌,,,,,,,,,,,,,,,,,,,,,,,,Shanyue Tribe Expedition,13833,anchored
+맹수 사냥,,,,,,,,,,,,,,,,,,,,,,,,Beast Hunt,13834,anchored
+오군 수복전,,,,,,,,,,,,,,,,,,,,,,,,Recovering Wujun,13835,anchored
+오군 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Wujun,13836,anchored
+축융 쟁탈전,,,,,,,,,,,,,,,,,,,,,,,,Contest for Zhurong,13837,anchored
+팔납동 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Panadong,13838,anchored
+서주 황건적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xuzhou Yellow Turban Expedition,13839,anchored
+발간 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fagan,13840,anchored
+하비 반란군 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Xiapi Rebellion Expedition,13841,anchored
+조숭 습격,,,,,,,,,,,,,,,,,,,,,,,,Cao Song Assassination,13842,anchored
+제남 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Jinan,13843,anchored
+여남 기습전,,,,,,,,,,,,,,,,,,,,,,,,Runan Raid,13844,anchored
+기주 군량 수송,,,,,,,,,,,,,,,,,,,,,,,,Jizhou Ration Transportation,13845,anchored
+남피 흑산적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Nanpi Heishan Bandit Crackdown,13846,anchored
+동작대 무술 대회,,,,,,,,,,,,,,,,,,,,,,,,Bronze Bird Pavilion Tournament,13847,anchored
+안정 기습전,,,,,,,,,,,,,,,,,,,,,,,,Anding Raid,13848,anchored
+관서 평정전,,,,,,,,,,,,,,,,,,,,,,,,Guanxi Suppression,13849,anchored
+한중 교외전,,,,,,,,,,,,,,,,,,,,,,,,The Outskirts of Hanzhong,13850,anchored
+한중 평정전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Suppression,13851,anchored
+장소 탐색,,,,,,,,,,,,,,,,,,,,,,,,Zhang Zhao Investigation,13852,anchored
+군사 훈련,,,,,,,,,,,,,,,,,,,,,,,,Military Drills,13853,anchored
+호족 회유,,,,,,,,,,,,,,,,,,,,,,,,Appeasing the Clans,13854,anchored
+손보 재산 몰수전,,,,,,,,,,,,,,,,,,,,,,,,Sun Fu's Property Confiscation,13855,anchored
+황조 토벌전1,,,,,,,,,,,,,,,,,,,,,,,,Huang Zu Expedition 1,13856,anchored
+산월 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Shanyue Expedition,13857,anchored
+황조 토벌전2,,,,,,,,,,,,,,,,,,,,,,,,Huang Zu Expedition 2,13858,anchored
+적벽 전초전,,,,,,,,,,,,,,,,,,,,,,,,Red Cliffs Skirmish,13859,anchored
+적벽 대전,,,,,,,,,,,,,,,,,,,,,,,,Great Battle of Red Cliffs,13860,anchored
+조조 추격전,,,,,,,,,,,,,,,,,,,,,,,,Cao Cao Pursuit,13861,anchored
+한중 추격전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Pursuit,13862,anchored
+촉군 추격전,,,,,,,,,,,,,,,,,,,,,,,,Shu Forces Pursuit,13863,anchored
+번성 공방전,,,,,,,,,,,,,,,,,,,,,,,,Siege of Fan Castle,13864,anchored
+여강 기습전,,,,,,,,,,,,,,,,,,,,,,,,Lujiang Raid,13865,anchored
+낙곡 후퇴전,,,,,,,,,,,,,,,,,,,,,,,,Retreat from Luogu,13866,anchored
+낙양 제압전,,,,,,,,,,,,,,,,,,,,,,,,Luoyang Suppression,13867,anchored
+조상 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Cao Shuang Expedition,13868,anchored
+왕릉 진압전,,,,,,,,,,,,,,,,,,,,,,,,Wang Ling Subjugation,13869,anchored
+동흥 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Dongxing,13870,anchored
+관구검 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Guanqiu Jian Expedition,13871,anchored
+제갈탄 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Zhuge Dan Expedition,13872,anchored
+조모 기습전,,,,,,,,,,,,,,,,,,,,,,,,Cao Mao Raid,13873,anchored
+하구 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xiakou,13874,anchored
+손보 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Sun Fu Expedition,13875,anchored
+여강 반란군 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Lujiang Rebellion Expedition,13876,anchored
+강하 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiangxia 1,13877,anchored
+건안 반란군 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jianan Rebellion Expedition,13878,anchored
+강하 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiangxia 2,13879,anchored
+오림 전초전,,,,,,,,,,,,,,,,,,,,,,,,Wulin Skirmish,13880,anchored
+서구 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xikou,13881,anchored
+교주 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Jiaozhou,13882,anchored
+유수구 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ruxukou 1,13883,anchored
+환성 공방전,,,,,,,,,,,,,,,,,,,,,,,,Siege of Huan Castle,13884,anchored
+유수구 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ruxukou 2,13885,anchored
+유수구 전투3,,,,,,,,,,,,,,,,,,,,,,,,Battle of Ruxukou 3,13886,anchored
+동구 대치,,,,,,,,,,,,,,,,,,,,,,,,Dongkou Confrontation,13887,anchored
+유수 요격전,,,,,,,,,,,,,,,,,,,,,,,,Interception at Ruxu,13888,anchored
+남군 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Nanjun,13889,anchored
+광릉 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guangling 1,13890,anchored
+광릉 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guangling 2,13891,anchored
+강하 전투3,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jiangxia 3,13892,anchored
+교주 반란군 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Jiaozhou Rebellion Expedition,13893,anchored
+환성 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Huan Castle,13894,anchored
+뜻밖의 만남,,,,,,,,,,,,,,,,,,,,,,,,An Unexpected Encounter,13895,anchored
+초현 도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Qiaoxian Bandit Crackdown,13896,anchored
+조숭 호위전,,,,,,,,,,,,,,,,,,,,,,,,Escorting Cao Song,13897,anchored
+변월향 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Bian Yue Xiang,13898,anchored
+하옹 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving He Yong,13899,anchored
+합비 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Hefei,13900,anchored
+조령 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Cao Ying,13901,anchored
+낙가성 전투1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Lejia 1,13902,anchored
+낙가성 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Lejia 2,13903,anchored
+수춘 구원전,,,,,,,,,,,,,,,,,,,,,,,,Shouchun Rescue,13904,anchored
+조령 구출전2,,,,,,,,,,,,,,,,,,,,,,,,Saving Cao Ying 2,13905,anchored
+금산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Jinshan,13906,anchored
+허도 방어전,,,,,,,,,,,,,,,,,,,,,,,,Defending Xudou,13907,anchored
+운명의 수레바퀴,,,,,,,,,,,,,,,,,,,,,,,,Fortune's Wheel,13908,anchored
+망탕산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Mangdang,13909,anchored
+망탕산 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Mangdang 2,13910,anchored
+패현 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Peixian,13911,anchored
+풍읍 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fengyi,13912,anchored
+풍읍 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fengyi 2,13913,anchored
+동아 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Dong'e,13914,anchored
+사마흔 추격전,,,,,,,,,,,,,,,,,,,,,,,,Sima Xin Pursuit,13915,anchored
+강리 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Gang Li,13916,anchored
+환원 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Huanyuan,13917,anchored
+함양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xianyang,13918,anchored
+홍문연 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from the Feast at Hong Gate,13919,anchored
+호치 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Haozhi,13920,anchored
+고노 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Kao-nu,13921,anchored
+역양 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Yueyang,13922,anchored
+패현 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Peixian,13923,anchored
+수수 대전,,,,,,,,,,,,,,,,,,,,,,,,Great Battle of Pengcheng,13924,anchored
+형양 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xingyang 2,13925,anchored
+형양 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Xingyang,13926,anchored
+성고 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Chenggao,13927,anchored
+형양 전투3,,,,,,,,,,,,,,,,,,,,,,,,Battle of Xingyang 3,13928,anchored
+광무산 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mount Guangwu,13929,anchored
+고릉 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guling,13930,anchored
+패현 전투2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Peixian 2,13931,anchored
+해하 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Gaixia,13932,anchored
+오강 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Wu River,13933,anchored
+정군산 전초전,,,,,,,,,,,,,,,,,,,,,,,,Mount Dingjun Skirmish,13934,anchored
+유비 기습전,,,,,,,,,,,,,,,,,,,,,,,,Liu Bei Raid,13935,anchored
+한중 섬멸전,,,,,,,,,,,,,,,,,,,,,,,,Hanzhong Annihilation,13936,anchored
+전투 훈련,,,,,,,,,,,,,,,,,,,,,,,,Battle Training,13937,anchored
+강남 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Huanan,13938,anchored
+자각몽,,,,,,,,,,,,,,,,,,,,,,,,Lucid Dream,13939,anchored
+건업 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Jianye,13940,anchored
+형주 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Jingzhou,13941,anchored
+촉한 복귀전,,,,,,,,,,,,,,,,,,,,,,,,Return to Shu,13942,anchored
+요기 이식전,,,,,,,,,,,,,,,,,,,,,,,,Dark Energy,13943,anchored
+제단 파괴전,,,,,,,,,,,,,,,,,,,,,,,,Altar Destruction,13944,anchored
+자아 쟁탈전,,,,,,,,,,,,,,,,,,,,,,,,Battle of Egos,13945,anchored
+봉인 해제,,,,,,,,,,,,,,,,,,,,,,,,Break the Seal,13946,anchored
+가제1,,,,,,,,,,,,,,,,,,,,,,,,Title 1,13947,anchored
+가제2,,,,,,,,,,,,,,,,,,,,,,,,Title 2,13948,anchored
+융중 이동전,,,,,,,,,,,,,,,,,,,,,,,,Longzhong Transportation,13949,anchored
+장판파 이동전,,,,,,,,,,,,,,,,,,,,,,,,Changban Battle,13950,anchored
+설전군유,,,,,,,,,,,,,,,,,,,,,,,,Legends of Cao Cao Quiz,13951,anchored
+화용도 매복전,,,,,,,,,,,,,,,,,,,,,,,,Huarong Road Ambush,13952,anchored
+형주 쟁탈전上,,,,,,,,,,,,,,,,,,,,,,,,Strife over Jingzhou (Ch.1),13953,anchored
+형주 쟁탈전下,,,,,,,,,,,,,,,,,,,,,,,,Strife over Jingzhou (Ch.2),13954,anchored
+부수관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fushui Pass,13955,anchored
+한중 공방전上,,,,,,,,,,,,,,,,,,,,,,,,The Battle for Hanzhong (Ch.1),13956,anchored
+한중 공방전下,,,,,,,,,,,,,,,,,,,,,,,,The Battle for Hanzhong (Ch.2),13957,anchored
+악몽,,,,,,,,,,,,,,,,,,,,,,,,Nightmare,13958,anchored
+맹달 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Meng Da,13959,anchored
+북벌 전초전上,,,,,,,,,,,,,,,,,,,,,,,,Northern Expedition Skirmish (Ch.1),13960,anchored
+북벌 전초전中,,,,,,,,,,,,,,,,,,,,,,,,Northern Expedition Skirmish (Ch.2),13961,anchored
+북벌 전초전下,,,,,,,,,,,,,,,,,,,,,,,,Northern Expedition Skirmish (Ch.3),13962,anchored
+1차 북벌上,,,,,,,,,,,,,,,,,,,,,,,,The First Northern Expedition (Ch.1),13963,anchored
+1차 북벌下,,,,,,,,,,,,,,,,,,,,,,,,The First Northern Expedition (Ch.2),13964,anchored
+2차 북벌,,,,,,,,,,,,,,,,,,,,,,,,The Second Northern Expedition,13965,anchored
+3차 북벌,,,,,,,,,,,,,,,,,,,,,,,,The Third Northern Expedition,13966,anchored
+4차 북벌上,,,,,,,,,,,,,,,,,,,,,,,,The Fourth Northern Expedition (Ch.1),13967,anchored
+4차 북벌下,,,,,,,,,,,,,,,,,,,,,,,,The Fourth Northern Expedition (Ch.2),13968,anchored
+5차 북벌上,,,,,,,,,,,,,,,,,,,,,,,,The Fifth Northern Expedition (Ch.1),13969,anchored
+5차 북벌中,,,,,,,,,,,,,,,,,,,,,,,,The Fifth Northern Expedition (Ch.2),13970,anchored
+5차 북벌下,,,,,,,,,,,,,,,,,,,,,,,,The Fifth Northern Expedition (Ch.3),13971,anchored
+사마가 수비전,,,,,,,,,,,,,,,,,,,,,,,,Shamoke's Defense,13972,anchored
+육혼산 도주전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Luhun Mountain,13973,anchored
+흉몽,,,,,,,,,,,,,,,,,,,,,,,,Nightmare,13974,anchored
+장강 퇴각전,,,,,,,,,,,,,,,,,,,,,,,,Yangtze Withdrawal,13975,anchored
+한중 정벌전上,,,,,,,,,,,,,,,,,,,,,,,,"Hanzhong Conquest, Part 1",13976,anchored
+한중 정벌전下,,,,,,,,,,,,,,,,,,,,,,,,"Hanzhong Conquest, Part 2",13977,anchored
+동오 설득전,,,,,,,,,,,,,,,,,,,,,,,,Persuasion in Eastern Wu,13978,anchored
+무위 반란 진압전,,,,,,,,,,,,,,,,,,,,,,,,Wuei Rebellion Subjugation,13979,anchored
+동구 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Dongkou,13980,anchored
+맹달 처단전,,,,,,,,,,,,,,,,,,,,,,,,Execution of Meng Da,13981,anchored
+양평관 추격전,,,,,,,,,,,,,,,,,,,,,,,,Yangping Pass Pursuit,13982,anchored
+목둔 골짜기 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Mukden Valley,13983,anchored
+위수 수비전,,,,,,,,,,,,,,,,,,,,,,,,Weishui's Defense,13984,anchored
+호로곡 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Hulugu,13985,anchored
+오장원 추격전,,,,,,,,,,,,,,,,,,,,,,,,Wuzhang Plains Pursuit,13986,anchored
+수경장 입문 시험,,,,,,,,,,,,,,,,,,,,,,,,School of Shuijing Entry Exam,13987,anchored
+서서 구출전,,,,,,,,,,,,,,,,,,,,,,,,Saving Xu Shu,13988,anchored
+저잣거리 전투,,,,,,,,,,,,,,,,,,,,,,,,Marketplace Battle,13989,anchored
+수채 잠입,,,,,,,,,,,,,,,,,,,,,,,,Sewer Infiltration,13990,anchored
+연환 작전,,,,,,,,,,,,,,,,,,,,,,,,Chains of Fate,13991,anchored
+화용도 유인전,,,,,,,,,,,,,,,,,,,,,,,,Lured to Huarong Road,13992,anchored
+마차 운구전,,,,,,,,,,,,,,,,,,,,,,,,Wagon Warfare,13993,anchored
+뇌양현 공무 처리,,,,,,,,,,,,,,,,,,,,,,,,Leiyang Bureaucracy,13994,anchored
+만족 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Manzu Expedition,13995,anchored
+백수관 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Baishui Pass,13996,anchored
+부수관 근교전,,,,,,,,,,,,,,,,,,,,,,,,Fushui Pass Provincial Battle,13997,anchored
+부현 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fuxuan,13998,anchored
+부강 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Fu River,13999,anchored
+낙성 근교전,,,,,,,,,,,,,,,,,,,,,,,,Luo Castle Provincial Battle,14000,anchored
+패왕 증명전,,,,,,,,,,,,,,,,,,,,,,,,Battle of the Overlords,14001,anchored
+오장원 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Wuzhang Plains,14002,anchored
+손책 추격전,,,,,,,,,,,,,,,,,,,,,,,,Sun Ce Pursuit,14003,anchored
+서주 공방전,,,,,,,,,,,,,,,,,,,,,,,,Siege of Xuzhou,14004,anchored
+예주 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Yuzhou,14005,anchored
+요수 전투,,,,,,,,,,,,,,,,,,,,,,,,Battle of Liaosui,14006,anchored
+공손연 진압전,,,,,,,,,,,,,,,,,,,,,,,,Gongsun Yuan Subjugation,14007,anchored
+환성 점령전,,,,,,,,,,,,,,,,,,,,,,,,Huan Castle Occupation,14008,anchored
+낙곡 대전,,,,,,,,,,,,,,,,,,,,,,,,Great Battle of Luogu,14009,anchored
+낙양 점령전,,,,,,,,,,,,,,,,,,,,,,,,Luoyang Occupation,14010,anchored
+"기주, 초원의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Jizhou, Grassland Battle",14011,anchored
+"양주, 유역의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Liangzhou, River Valley Battle",14012,anchored
+"익주, 2개의 진",,,,,,,,,,,,,,,,,,,,,,,,"Yizhou, 2 Formations",14013,anchored
+"장강, 2개의 진",,,,,,,,,,,,,,,,,,,,,,,,"Yangtze, 2 Formations",14014,anchored
+"옹주, 2개의 진",,,,,,,,,,,,,,,,,,,,,,,,"Yongzhou, 2 Formations",14015,anchored
+"병주, 2개의 진",,,,,,,,,,,,,,,,,,,,,,,,"Bingzhou, 2 Formations",14016,anchored
+"예주, 습지의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Yuzhou, Swamp Battle",14017,anchored
+"익주, 협곡의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Yizhou, Valley Battle",14018,anchored
+"옹주, 사막의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Yongzhou, Desert Battle",14019,anchored
+"병주, 설원의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Bingzhou, Snowy Battle",14020,anchored
+"익주, 남만의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Yizhou, Battle with the Nanman",14021,anchored
+"사주, 도성의 전투",,,,,,,,,,,,,,,,,,,,,,,,"Sizhou, Castle Battle",14022,anchored
+"기주, 초원 전투",,,,,,,,,,,,,,,,,,,,,,,,"Jizhou, Grassland Battle",14023,anchored
+"옹주, 사막 전투",,,,,,,,,,,,,,,,,,,,,,,,"Yongzhou, Desert Battle",14024,anchored
+"사주, 도성 전투",,,,,,,,,,,,,,,,,,,,,,,,"Sizhou, Castle Battle",14025,anchored
+"양주, 유역 전투",,,,,,,,,,,,,,,,,,,,,,,,"Liangzhou, River Valley Battle",14026,anchored
+"익주, 산지 전투",,,,,,,,,,,,,,,,,,,,,,,,"Yizhou, Mountain Battle",14027,anchored
+"병주, 설원 전투",,,,,,,,,,,,,,,,,,,,,,,,"Bingzhou, Snowy Battle",14028,anchored
+연합전1,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 1,14029,anchored
+연합전2,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 2,14030,anchored
+연합전3,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 3,14031,anchored
+연합전4,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 4,14032,anchored
+연합전5,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 5,14033,anchored
+연합전6,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 6,14034,anchored
+연합전7,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 7,14035,anchored
+연합전8,,,,,,,,,,,,,,,,,,,,,,,,Alliance Battle 8,14036,anchored
+초원의 관문,,,,,,,,,,,,,,,,,,,,,,,,Grassland Gate,14037,anchored
+사막의 관문,,,,,,,,,,,,,,,,,,,,,,,,Desert Gate,14038,anchored
+산지의 관문,,,,,,,,,,,,,,,,,,,,,,,,Mountain Gate,14039,anchored
+완류의 관문,,,,,,,,,,,,,,,,,,,,,,,,River Gate,14040,anchored
+설원의 관문,,,,,,,,,,,,,,,,,,,,,,,,Snow Gate,14041,anchored
+가화만사성 <아들편>,,,,,,,,,,,,,,,,,,,,,,,,Family Matters: The Son's Story,14042,anchored
+가화만사성 <딸편>,,,,,,,,,,,,,,,,,,,,,,,,Family Matters: Daughter's Tale,14043,anchored
+가화만사성 <토벌편>,,,,,,,,,,,,,,,,,,,,,,,,Family Matters: Battle,14044,anchored
+호랑이 장가보내기1,,,,,,,,,,,,,,,,,,,,,,,,To Marry a Tiger 1,14045,anchored
+호랑이 장가보내기2,,,,,,,,,,,,,,,,,,,,,,,,To Marry a Tiger 2,14046,anchored
+호랑이 장가보내기3,,,,,,,,,,,,,,,,,,,,,,,,To Marry a Tiger 3,14047,anchored
+완류와 초원의 동광,,,,,,,,,,,,,,,,,,,,,,,,Eastern Mine (River and Grasslands),14048,anchored
+습지와 산지의 서광,,,,,,,,,,,,,,,,,,,,,,,,Western Mine (Swamps and Mountains),14049,anchored
+황무지와 사막과 독천의 남광,,,,,,,,,,,,,,,,,,,,,,,,Southern Mine (Wastelands and Deserts),14050,anchored
+설원과 숲의 북광,,,,,,,,,,,,,,,,,,,,,,,,Northern Mine (Snowy Field and Forests),14051,anchored
+빙판과 잔도와 산지의 중광,,,,,,,,,,,,,,,,,,,,,,,,"Central Mine (Ice, Mountain Pass, and Mountains)",14052,anchored
+하급 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Minor Azure Dragon Temple,14053,anchored
+중급 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Intermediate Azure Dragon Temple,14054,anchored
+상급 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Advanced Azure Dragon Temple,14055,anchored
+최상급 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Master Azure Dragon Temple,14056,anchored
+하급 각성 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Minor Awakened Azure Dragon Temple,14057,anchored
+중급 각성 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Intermediate Awakened Azure Dragon Temple,14058,anchored
+상급 각성 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Advanced Awakened Azure Dragon Temple,14059,anchored
+최상급 각성 청룡의 사당,,,,,,,,,,,,,,,,,,,,,,,,Master Awakened Azure Dragon Temple,14060,anchored
+하급 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Minor Vermilion Bird Temple,14061,anchored
+중급 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Intermediate Vermilion Bird Temple,14062,anchored
+상급 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Advanced Vermilion Bird Temple,14063,anchored
+최상급 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Master Vermilion Bird Temple,14064,anchored
+하급 각성 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Minor Awakened Vermilion Bird Temple,14065,anchored
+중급 각성 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Intermediate Awakened Vermilion Bird Temple,14066,anchored
+상급 각성 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Advanced Awakened Vermilion Bird Temple,14067,anchored
+최상급 각성 주작의 사당,,,,,,,,,,,,,,,,,,,,,,,,Master Awakened Vermilion Bird Temple,14068,anchored
+주정뱅이 퇴치전,,,,,,,,,,,,,,,,,,,,,,,,Cleaning Up the Drunks,14069,anchored
+해독제 탈취전,,,,,,,,,,,,,,,,,,,,,,,,Finding the Antidote,14070,anchored
+투기장 개최,,,,,,,,,,,,,,,,,,,,,,,,Open Arena,14071,anchored
+겨울 상인1,,,,,,,,,,,,,,,,,,,,,,,,Winter Merchant 1,14072,anchored
+겨울 상인2,,,,,,,,,,,,,,,,,,,,,,,,Winter Merchant 2,14073,anchored
+겨울 상인3,,,,,,,,,,,,,,,,,,,,,,,,Winter Merchant 3,14074,anchored
+초원과 설원의 동광,,,,,,,,,,,,,,,,,,,,,,,,Eastern Mine (Grasslands and Snow),14075,anchored
+사막과 평지의 서광,,,,,,,,,,,,,,,,,,,,,,,,Western Mine (Deserts and Plains),14076,anchored
+완류와 황무지의 남광,,,,,,,,,,,,,,,,,,,,,,,,Southern Mine (Rivers and Wastelands),14077,anchored
+산지와 완류의 중광,,,,,,,,,,,,,,,,,,,,,,,,Central Mine (Mountains and Rivers),14078,anchored
+하급 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Minor White Tiger Temple,14079,anchored
+중급 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Intermediate White Tiger Temple,14080,anchored
+상급 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Advanced White Tiger Temple,14081,anchored
+최상급 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Master White Tiger Temple,14082,anchored
+하급 각성 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Minor Awakened White Tiger Temple,14083,anchored
+중급 각성 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Intermediate Awakened White Tiger Temple,14084,anchored
+상급 각성 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Advanced Awakened White Tiger Temple,14085,anchored
+최상급 각성 백호의 사당,,,,,,,,,,,,,,,,,,,,,,,,Master Awakened White Tiger Temple,14086,anchored
+난투,,,,,,,,,,,,,,,,,,,,,,,,Brawl,14087,anchored
+성고 탈출전,,,,,,,,,,,,,,,,,,,,,,,,Escape from Chenggao,14088,anchored
+섬멸전,,,,,,,,,,,,,,,,,,,,,,,,Annihilation,14089,anchored
+삼파설전,,,,,,,,,,,,,,,,,,,,,,,,Three-Way Argument,14090,anchored
+황충 구원전,,,,,,,,,,,,,,,,,,,,,,,,Rescue Huang Zhong,14091,anchored
+꽃 채집,,,,,,,,,,,,,,,,,,,,,,,,Flower Collection,14092,anchored
+도적 토벌전,,,,,,,,,,,,,,,,,,,,,,,,Bandit Crackdown,14093,anchored
+"공손찬, 유우 대전",,,,,,,,,,,,,,,,,,,,,,,,Battle of Gongsun Zan and Liu Yu,14094,anchored
+무예 대결,,,,,,,,,,,,,,,,,,,,,,,,Martial Arts Square-Off,14095,anchored
+인연을 찾아서,,,,,,,,,,,,,,,,,,,,,,,,Searching for Friendship,14096,anchored
+장각 토벌전1,,,,,,,,,,,,,,,,,,,,,,,,Zhang Jue Expedition 1,14097,anchored
+장각 토벌전2,,,,,,,,,,,,,,,,,,,,,,,,Zhang Jue Expedition 2,14098,anchored
+낙양 구원전1,,,,,,,,,,,,,,,,,,,,,,,,Rescue at Luoyang 1,14099,anchored
+가짜 황제 정벌전,,,,,,,,,,,,,,,,,,,,,,,,Fake Emperor Conquest,14100,anchored
+관도 대전1,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guandu 1,14101,anchored
+관도 대전2,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guandu 2,14102,anchored
+관도 대전,,,,,,,,,,,,,,,,,,,,,,,,Battle of Guandu,14103,anchored
+민폐 황제 토벌전,,,,,,,,,,,,,,,,,,,,,,,,To Kill a King,14104,anchored
+최후의 질풍,,,,,,,,,,,,,,,,,,,,,,,,The Final Storm,14105,anchored
+진창 공방전1,,,,,,,,,,,,,,,,,,,,,,,,Siege of Chenchang 1,14106,anchored
+진창 공방전2,,,,,,,,,,,,,,,,,,,,,,,,Siege of Chenchang 2,14107,anchored
+태양의 결투장,,,,,,,,,,,,,,,,,,,,,,,,Yellow Sun Arena,14108,anchored
+창천의 결투장,,,,,,,,,,,,,,,,,,,,,,,,Azure Sky Arena,14109,anchored
+신록의 결투장,,,,,,,,,,,,,,,,,,,,,,,,Green Mountain Arena,14110,anchored
+혹한의 결투장,,,,,,,,,,,,,,,,,,,,,,,,White Frost Arena,14111,anchored
+영웅의 결투장,,,,,,,,,,,,,,,,,,,,,,,,Hero Arena,14112,anchored

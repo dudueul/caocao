@@ -1,0 +1,690 @@
+name,id,inheritId,triggerType,triggerTileValue,type,atlas,icon,iconDeco,groupingCriterion,postFixEffect,applyEffect,waitApplyEffect,effect,showIconInGame,aiTarget,displayType,aiBonusType,atkVal,tier,silver,gold,mainBaseStat,divisorVal,shortestDesc,desc,accumulate,passiveId,triggerWeatherValue,#name_en,#loc_row,#confidence
+원거리 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ranged Attack,11593,anchored
+도구 범위 확장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Item Range +,11594,anchored
+책략 범위 확장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Range +,11595,anchored
+분노 축적%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Rage +%,11596,anchored
+일기당천,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Unstoppable,11597,anchored
+일치단결,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Union,11598,anchored
+돌진 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,% Charge Attack,11599,anchored
+행동 봉쇄,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stop Move,11600,anchored
+전화위복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Good from Evil,11601,anchored
+금격 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blind Attack %,11602,anchored
+물리 공격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Physical Attack Immunity,11603,anchored
+공격 책략 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Offensive Tactics Immunity,11604,anchored
+완전 책략 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Immunity,11605,anchored
+공격 필중,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Attack Certain Hit,11606,anchored
+물리 필중,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Physical Certain Hit,11607,anchored
+책략 필중,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Certain Hit,11608,anchored
+간접 공격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ranged Attack Immunity,11609,anchored
+책략 방어,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Defense,11610,anchored
+연속 책략,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Double Tactics,11611,anchored
+연속 공격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Double ATK Immunity,11612,anchored
+연속 책략 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Double Tactics Immunity,11613,anchored
+특수 공격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Special Attack Immunity,11614,anchored
+공격 명중률 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Attack ACC +,11615,anchored
+공격 방어율 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ATK DEF Rate +,11616,anchored
+책략 명중률 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics ACC +,11617,anchored
+유혹 책략 명중률 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Seduce ACC +,11618,anchored
+책략 방어율 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics DEF Rate +,11619,anchored
+전 방어율 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,All DEF Rate +,11620,anchored
+관통 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Piercing Attack,11621,anchored
+관통 책략,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Piercing Tactics,11622,anchored
+수전 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Naval Battle +,11623,anchored
+지형 효과 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Terrain Effect +,11624,anchored
+천하무쌍%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Second Wind %,11625,anchored
+국사무쌍%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Peerless %,11626,anchored
+역전용사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Veteran,11627,anchored
+직업 상성 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Type Advantage,11628,anchored
+기마 공격 강화 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Mounted Attack+,11629,anchored
+기마 공격 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mounted ATK +%,11630,anchored
+물리 공격 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Physical Attack +%,11631,anchored
+물리 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Physical Damage -%,11632,anchored
+간접 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ranged DMG -%,11633,anchored
+화계 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Tactics +%,11634,anchored
+풍계 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wind Tactics +%,11635,anchored
+수계 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Water Tactics+ %,11636,anchored
+지계 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Earth Tactics+ %,11637,anchored
+방해계 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Interrupt Tactics +%,11638,anchored
+보급계 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Supply Tactics +%,11639,anchored
+원소 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Elemental Tactics +%,11640,anchored
+공격 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Offensive Tactics +%,11641,anchored
+책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Damage -%,11642,anchored
+MP 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Attack,11643,anchored
+유혹 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Seduce +%,11644,anchored
+연속 책략 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Double Tactics +%,11645,anchored
+회심 공격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Critical Attack Immunity,11646,anchored
+회심 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Critical Attack,11647,anchored
+회심 공격 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Critical Attack+,11648,anchored
+MP 방어,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Defense,11649,anchored
+MP 절약%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Saving %,11650,anchored
+피해 전가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Damage Transfer,11651,anchored
+상태이상 반사,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Status Effect Reflection,11652,anchored
+상태이상 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Status Effect Immunity,11653,anchored
+무작위 하강 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Random- Attack,11654,anchored
+공격력 하강 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ATK- Attack,11655,anchored
+방어력 하강 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,DEF- Attack,11656,anchored
+정신력 하강 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,WIS- Attack,11657,anchored
+순발력 하강 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AGI- Attack,11658,anchored
+사기 하강 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MRL- Attack,11659,anchored
+이동력 하강 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SPD- Attack,11660,anchored
+능력 파괴 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stat Destruction Attack %,11661,anchored
+장비 파괴 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Equipment Destruction Attack %,11662,anchored
+물리 피해 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Physical Damage Reflection %,11663,anchored
+책략 피해 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Damage Reflection %,11664,anchored
+돌파 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Forceful Blow,11665,anchored
+소모품 자동 사용,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Auto Use Consumables,11666,anchored
+무반격 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oppressive Assault,11667,anchored
+반격 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Counterattack+,11668,anchored
+지원 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Phalanx Strike,11669,anchored
+우군 협공,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ally Joint Attack,11670,anchored
+무한 파진 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Penetration Attack,11671,anchored
+분전 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desperate Attack,11672,anchored
+연속 행동,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Double Move,11673,anchored
+공격 능력 전환,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Attack Stat Switch,11674,anchored
+방어 능력 전환,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense Stat Switch,11675,anchored
+적군 전능력 하강,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Enemy Stat Reduction,11676,anchored
+공격력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ATK Boost,11677,anchored
+공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ATK Boost %,11678,anchored
+정신력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,WIS Boost,11679,anchored
+정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,WIS Boost %,11680,anchored
+방어력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,DEF Boost,11681,anchored
+방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,DEF Boost %,11682,anchored
+순발력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AGI Boost,11683,anchored
+순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AGI Boost %,11684,anchored
+사기 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MRL Boost,11685,anchored
+사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MRL Boost %,11686,anchored
+이동력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SPD Boost,11687,anchored
+HP 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,HP Boost,11688,anchored
+HP 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,HP Boost %,11689,anchored
+MP 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Boost,11690,anchored
+MP 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Boost %,11691,anchored
+장수 EXP 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Unit EXP Boost %,11692,anchored
+무기 EXP 보조 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weapon EXP Boost ,11693,anchored
+방어구 EXP 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Armor EXP Boost,11694,anchored
+HP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,HP Recovery,11695,anchored
+HP 회복%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,HP Recovery %,11696,anchored
+MP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Recovery,11697,anchored
+MP 회복%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Recovery %,11698,anchored
+본대 각성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Awaken,11699,anchored
+장수 EXP 획득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Unit EXP Gain,11700,anchored
+무기 EXP 획득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weapon EXP Gain,11701,anchored
+방어구 EXP 획득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Armor EXP Gain,11702,anchored
+본대 기합,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Concentrate,11703,anchored
+본대 견고,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Holdfast,11704,anchored
+본대 집중,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Focus,11705,anchored
+본대 연병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Drill,11706,anchored
+본대 고양,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Enhance,11707,anchored
+본대 강행,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Hasten,11708,anchored
+본대 패기,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Inspire,11709,anchored
+주위 HP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach HP Restore,11710,anchored
+주위 HP 회복%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach HP Restore %,11711,anchored
+주위 MP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach MP Restore,11712,anchored
+주위 MP 회복%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach MP Restore %,11713,anchored
+주위 각성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Awaken,11714,anchored
+주위 압박,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Threaten,11715,anchored
+주위 욕설,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Insult,11716,anchored
+주위 방해,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Interrupt,11717,anchored
+주위 둔병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Hamstring,11718,anchored
+주위 허탈,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Demoralize,11719,anchored
+주위 저지,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Deterrence,11720,anchored
+주위 제압,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Suppress,11721,anchored
+주위 기합,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Concentrate,11722,anchored
+주위 견고,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Holdfast,11723,anchored
+주위 집중,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Focus,11724,anchored
+주위 연병,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Military Drill,11725,anchored
+주위 고양,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Enhance,11726,anchored
+주위 강행,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Hasten,11727,anchored
+주위 패기,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Reach Inspire,11728,anchored
+아군 패기,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ally Inspire,11729,anchored
+신출귀몰,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Elusive,11730,anchored
+경공,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Water Walking,11731,anchored
+돌격 이동,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Charge Move,11732,anchored
+험로 이동,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Rough Terrain Move,11733,anchored
+도약 이동,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Jump Move,11734,anchored
+비행 이동,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fly Move,11735,anchored
+책략 날씨 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Tactics Weather,11736,anchored
+책략 지형 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Tactics Terrain,11737,anchored
+책략 조건 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Tactics Condition,11738,anchored
+책략 모방,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Imitate Tactics,11739,anchored
+원소계 책략 습득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Learn Elemental Tactics,11740,anchored
+감소계 책략 습득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Learn Reduction Tactics,11741,anchored
+방해계 책략 습득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Learn Interrupt Tactics,11742,anchored
+회복계 책략 습득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Learn Recovery Tactics,11743,anchored
+증가계 책략 습득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Learn Buff Tactics,11744,anchored
+날씨계 책략 습득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Learn Weather Tactics,11745,anchored
+사신 소환,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Summon the Four Gods,11746,anchored
+전 책략 습득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Learn All Tactics,11747,anchored
+행동 저지%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stop Move %,11748,anchored
+분신 소환,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Summon Decoy,11749,anchored
+무한 인도 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Infinite Guiding Attack,11750,anchored
+중독 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Poison Immunity,11751,anchored
+혼란 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Confusion Immunity,11752,anchored
+부동 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Immobilization Immunity,11753,anchored
+금책 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Silence Immunity,11754,anchored
+박살공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Shattering Attack,11755,anchored
+허점공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Punish the Weak,11756,anchored
+혼돈공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dazing Attack,11757,anchored
+도발공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Taunting Blow,11758,anchored
+위치전환공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dancing Strike,11759,anchored
+병량 약탈,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pillage Supply,11760,anchored
+배후공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Rear Attack,11761,anchored
+실명공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blinding Strike,11762,anchored
+위풍공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Imposing Assault,11763,anchored
+약화공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weakening Blow,11764,anchored
+사기증진,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Improve MRL,11765,anchored
+공격무효,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Perfect Defense,11766,anchored
+약육강식,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dog Eat Dog,11767,anchored
+강활,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Strong Bow,11768,anchored
+동족상잔,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Battlefield Diplomacy,11769,anchored
+연환책략,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Chain Tactics,11770,anchored
+문무겸비,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pen and Sword,11771,anchored
+금강,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Diamond,11772,anchored
+구사일생,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Narrow Escape,11773,anchored
+피해격감,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Thick Armor,11774,anchored
+피해반감,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Iron Guard,11775,anchored
+기력회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Energy Recovery,11776,anchored
+독의가호,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Poison Protection,11777,anchored
+독의무구,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Poisoned Weapon,11778,anchored
+난투전문,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Expert Brawler,11779,anchored
+파쇄공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Crush,11780,anchored
+공성공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Siege Specialist,11781,anchored
+분쇄공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vault Breaker,11782,anchored
+특공 방어(최대),,,,,,,,,,,,,,,,,,,,,,,,,,,,,Special Attack Defense (Max),11783,anchored
+특공 방어(대),,,,,,,,,,,,,,,,,,,,,,,,,,,,,Special Attack Defense (L),11784,anchored
+특공 방어(중),,,,,,,,,,,,,,,,,,,,,,,,,,,,,Special Attack Defense (M),11785,anchored
+특공 방어(소),,,,,,,,,,,,,,,,,,,,,,,,,,,,,Special Attack Defense (S),11786,anchored
+동귀어진,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Die Together,11787,anchored
+관통 이동 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Piercing Strikes,11788,anchored
+돌출 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Knockback,11789,anchored
+갈퀴 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Raking Blow,11790,anchored
+돌격 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Body Check,11791,anchored
+이동 공격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Move Attack Immunity,11792,anchored
+(혈투)물리 공격 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Bloody Battle) Enhanced Physical Attack %,11793,anchored
+(혈투)공격 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Bloody Battle) Enhanced Offensive Tactics %,11794,anchored
+(혈투)연속 공격률 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Bloody Battle) Increase Double Attack Rate %,11795,anchored
+(혈투)연속 책략률 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Bloody Battle) Increase Double Tactics Rate %,11796,anchored
+(혈투)회심 공격률 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Bloody Battle) Increase Critical Attack Rate %,11797,anchored
+(진형효과)주는 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Damage Dealt,11798,anchored
+(진형효과)물리 공격 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Enhanced Physical Attack,11799,anchored
+(진형효과)공격 책략 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Enhanced Offensive Tactics,11800,anchored
+(진형효과)주는 근접 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Melee Damage Dealt,11801,anchored
+(진형효과)주는 간접 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Ranged Damage Dealt,11802,anchored
+(진형효과)주는 일반책략 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Normal Tactics Damage Dealt,11803,anchored
+(진형효과)주는 사신책략 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Four Gods Tactics Damage Dealt,11804,anchored
+(진형효과)주는 기마공격 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Mounted Damage Dealt,11805,anchored
+(진형효과)받는 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Damage Taken,11806,anchored
+(진형효과)받는 물리 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Physical Damage Taken,11807,anchored
+(진형효과)받는 책략 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Tactics Damage Taken,11808,anchored
+(진형효과)받는 근접 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Melee Damage Taken,11809,anchored
+(진형효과)받는 간접 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Ranged Damage Taken,11810,anchored
+(진형효과)받는 일반책략 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Normal Tactics Damage Taken,11811,anchored
+(진형효과)받는 사신책략 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Four Gods Tactics Damage Taken,11812,anchored
+(진형효과)받는 기마공격 피해량,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Mounted Damage Taken,11813,anchored
+(진형효과)이동력,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) SPD,11814,anchored
+(진형효과)상태이상 회복률%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Status Effect Recovery Rate %,11815,anchored
+(진형효과)매 턴 HP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) HP Recovery per Turn,11816,anchored
+(진형효과)매 턴 MP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) MP Recovery per Turn,11817,anchored
+(진형효과)불리 지형 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Rough Terrain Boost,11818,anchored
+최대 물리 피해 방어,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Max Physical Damage,11819,anchored
+최대 책략 피해 방어,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Max Tactics Damage,11820,anchored
+최대 공격 피해 방어,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Max Attack Damage Defense,11821,anchored
+선제 공격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,First Strike Immunity,11822,anchored
+책략 봉인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Seal,11823,anchored
+화계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Fire Tactics Damage %,11824,anchored
+풍계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Wind Tactics Damage %,11825,anchored
+수계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Water Tactics Damage %,11826,anchored
+지계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Earth Tactics Damage %,11827,anchored
+상태이상 반사 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Status Effect Reflection,11828,anchored
+상태이상 면역 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Status Effect Immunity,11829,anchored
+장수 EXP 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Unit EXP Boost,11830,anchored
+피해 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Attack Damage %,11831,anchored
+상태이상 피해 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Status Effect Attack Damage %,11832,anchored
+흡수 피해 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Absorb Attack Damage %,11833,anchored
+양날의 검%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Double-edged Sword %,11834,anchored
+연환 효과%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Chain Effect %,11835,anchored
+상태이상 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Status Effect Tactics %,11836,anchored
+최대 피해 방어%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Max Damage Defense %,11837,anchored
+방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fortification %,11838,anchored
+실명 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blinding Strike %,11839,anchored
+화상 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Burn Attack %,11840,anchored
+흡수 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Absorb Tactics %,11841,anchored
+HP 보급%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,HP Supply%,11842,anchored
+MP 보급%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Supply%,11843,anchored
+책략 피해 감소,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Tactics Damage,11844,anchored
+물리 피해 감소,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Physical Damage,11845,anchored
+바람의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wind Weapons %,11846,anchored
+화염의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Weapons %,11847,anchored
+물의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Water Weapons %,11848,anchored
+대지의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Earth Weapons %,11849,anchored
+폭발의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Explosive Weapons %,11850,anchored
+귀문의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Spectral Weapons %,11851,anchored
+중독의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Poisoning Weapons %,11852,anchored
+부동의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Immobilization Weapons %,11853,anchored
+금책의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Silence Weapons %,11854,anchored
+금격의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blind Weapons %,11855,anchored
+혼란의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Confusion Weapons %,11856,anchored
+실명의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blinding Weapons %,11857,anchored
+화상의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Burning Weapons %,11858,anchored
+흡수 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Absorb Attack %,11859,anchored
+필사의 일격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Deadly Strike %,11860,anchored
+필사의 움직임%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desperate Movement %,11861,anchored
+공격력 증가 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ATK+ Tactics %,11862,anchored
+방어력 증가 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,DEF+ Tactics %,11863,anchored
+정신력 증가 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,WIS+ Tactics %,11864,anchored
+순발력 증가 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AGI+ Tactics %,11865,anchored
+사기 증가 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MRL+ Tactics %,11866,anchored
+이동력 증가 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SPD+ Tactics %,11867,anchored
+전능력 증가 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,All Stats+ Tactics %,11868,anchored
+부동 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Immobilization Tactics %,11869,anchored
+중독 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Poison Tactics %,11870,anchored
+금책 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Silence Tactics %,11871,anchored
+금격 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blind Tactics %,11872,anchored
+금구 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Daze Tactics %,11873,anchored
+맹독 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Deadly Poison Tactics %,11874,anchored
+혼란 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Confusion Tactics %,11875,anchored
+흡혈 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vampiric Tactics %,11876,anchored
+실명 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blind Tactics %,11877,anchored
+화상 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Burn Tactics %,11878,anchored
+공격력 감소 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ATK- Tactics %,11879,anchored
+방어력 감소 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,DEF- Tactics %,11880,anchored
+정신력 감소 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,WIS- Tactics %,11881,anchored
+순발력 감소 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AGI- Tactics %,11882,anchored
+사기 감소 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MRL- Tactics %,11883,anchored
+이동력 감소 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SPD- Tactics %,11884,anchored
+전능력 감소 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Stat- Tactics %,11885,anchored
+방어: 최대 피해 방어%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Max Damage Defense %,11886,anchored
+방어: 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Tactics Damage %,11887,anchored
+방어: 물리 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Physical Damage %,11888,anchored
+방어: 책략 피해 감소,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Tactics Damage,11889,anchored
+방어: 물리 피해 감소,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Physical Damage,11890,anchored
+방어: 공격력 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: ATK Reduction Fortification %,11891,anchored
+방어: 금격 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Blind Fortification %,11892,anchored
+방어: 순발력 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: AGI Reduction Fortification %,11893,anchored
+방어: 부동 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Immobilization Fortification %,11894,anchored
+방어: 중독 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Poison Fortification %,11895,anchored
+방어: 화계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Fire Tactics Damage %,11896,anchored
+방어: 수계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Water Tactics Damage %,11897,anchored
+방어: 지계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Earth Tactics Damage %,11898,anchored
+방어: 풍계 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Wind Tactics Damage %,11899,anchored
+방어: 중독 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Poison Immunity,11900,anchored
+방어: 혼란 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Confuse Immunity,11901,anchored
+방어: 부동 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Immobilization Immunity,11902,anchored
+방어: 금책 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Silence Immunity,11903,anchored
+방어: 피해 전가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Damage Transfer,11904,anchored
+방어: 간접 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Decrease Ranged Damage %,11905,anchored
+방어: 물리 피해 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Physical Damage Reflection %,11906,anchored
+방어: 책략 피해 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Tactics Damage Reflection %,11907,anchored
+초원: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: ATK Boost %,11908,anchored
+초원: 방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: DEF Boost %,11909,anchored
+초원: 정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grasslands: WIS Boost %,11910,anchored
+초원: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: AGI Boost %,11911,anchored
+초원: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: MRL Boost %,11912,anchored
+초원: 공격력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: ATK Boost,11913,anchored
+초원: 방어력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: DEF Boost,11914,anchored
+초원: 정신력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grasslands: WIS Boost,11915,anchored
+초원: 순발력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: AGI Boost,11916,anchored
+초원: 사기 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Grassland: MRL Boost,11917,anchored
+완류: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: ATK Boost %,11918,anchored
+완류: 방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: DEF Boost %,11919,anchored
+완류: 정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: WIS Boost %,11920,anchored
+완류: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: AGI Boost %,11921,anchored
+완류: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: MRL Boost %,11922,anchored
+완류: 공격력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: ATK Boost,11923,anchored
+완류: 방어력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: DEF Boost,11924,anchored
+완류: 정신력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: WIS Boost,11925,anchored
+완류: 순발력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: AGI Boost,11926,anchored
+완류: 사기 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River: MRL Boost,11927,anchored
+사막: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: ATK Boost %,11928,anchored
+사막: 방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: DEF Boost %,11929,anchored
+사막: 정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: WIS Boost %,11930,anchored
+사막: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: AGI Boost %,11931,anchored
+사막: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: MRL Boost %,11932,anchored
+사막: 공격력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: ATK Boost,11933,anchored
+사막: 방어력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: DEF Boost,11934,anchored
+사막: 정신력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: WIS Boost,11935,anchored
+사막: 순발력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: AGI Boost,11936,anchored
+사막: 사기 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert: MRL Boost,11937,anchored
+설원: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: ATK Boost %,11938,anchored
+설원: 방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: DEF Boost %,11939,anchored
+설원: 정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: WIS Boost %,11940,anchored
+설원: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: AGI Boost %,11941,anchored
+설원: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: MRL Boost %,11942,anchored
+설원: 공격력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: ATK Boost,11943,anchored
+설원: 방어력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: DEF Boost,11944,anchored
+설원: 정신력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: WIS Boost,11945,anchored
+설원: 순발력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: AGI Boost,11946,anchored
+설원: 사기 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow: MRL Boost,11947,anchored
+산지: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: ATK Boost %,11948,anchored
+산지: 방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: DEF Boost %,11949,anchored
+산지: 정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: WIS Boost %,11950,anchored
+산지: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: AGI Boost %,11951,anchored
+산지: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: MRL Boost %,11952,anchored
+산지: 공격력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: ATK Boost,11953,anchored
+산지: 방어력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: DEF Boost,11954,anchored
+산지: 정신력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: WIS Boost,11955,anchored
+산지: 순발력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: AGI Boost,11956,anchored
+산지: 사기 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain: MRL Boost,11957,anchored
+맹독의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Deadly Poison Weapons %,11958,anchored
+화계 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Tactics Preparation %,11959,anchored
+풍계 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wind Tactics Preparation %,11960,anchored
+수계 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Water Tactics Preparation %,11961,anchored
+지계 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Earth Tactics Preparation %,11962,anchored
+방해계 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Interrupt Tactics Preparation %,11963,anchored
+보급계 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Supply Tactics Preparation %,11964,anchored
+원소 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Elemental Tactics Preparation %,11965,anchored
+공격 책략 준비%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Offensive Tactic Preparation %,11966,anchored
+책략 피해 간파,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Tactics Damage,11967,anchored
+(진형효과)공격 방어율 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Attack DEF Rate +%,11968,anchored
+(진형효과)책략 방어율 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Tactics DEF Rate +%,11969,anchored
+(진형효과)전 방어율 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) All DEF Rate +%,11970,anchored
+(진형효과)공격 명중률 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Attack ACC +%,11971,anchored
+(진형효과)책략 명중률 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) Tactics ACC +%,11972,anchored
+(진형효과)전 명중률 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,(Formation Effect) All ACC +%,11973,anchored
+포용,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Embrace,11974,anchored
+가무,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Song and Dance,11975,anchored
+물리 공격 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Enhanced Physical Attack,11976,anchored
+공격 책략 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Enhanced Offensive Tactics,11977,anchored
+기습 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Surprise Attack,11978,anchored
+격파,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Smash,11979,anchored
+공격 방어율 관통,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Attack DEF Rate Pierce,11980,anchored
+책략 방어율 관통,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics DEF Rate Pierce,11981,anchored
+일격 필살,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Deadly Attack,11982,anchored
+운기조식,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mental Exhaustion,11983,anchored
+범위 책략 피해 감소,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Decrease Area Tactics Damage,11984,anchored
+노래: 물리 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Song: Physical Damage -%,11985,anchored
+노래: 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Song: Tactics Damage -%,11986,anchored
+성내: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: ATK Boost %,11987,anchored
+성내: 방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: DEF Boost %,11988,anchored
+성내: 정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: WIS Boost %,11989,anchored
+성내: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: AGI Boost %,11990,anchored
+성내: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: MRL Boost %,11991,anchored
+성내: 공격력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: ATK Boost,11992,anchored
+성내: 방어력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: DEF Boost,11993,anchored
+성내: 정신력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: WIS Boost,11994,anchored
+성내: 순발력 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: AGI Boost,11995,anchored
+성내: 사기 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Courtyard: MRL Boost,11996,anchored
+사기충천,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MRL Surge,11997,anchored
+위풍,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Impose,11998,anchored
+권위,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dignity,11999,anchored
+회심 공격 면역 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Critical Attack Immunity,12000,anchored
+간접 공격 면역 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Ranged Attack Immunity,12001,anchored
+귀문,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Hell Gate,12002,anchored
+다다익선,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Quantify,12003,anchored
+EP 절약%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EP Saving %,12004,anchored
+파부침주,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Give and Take,12005,anchored
+역발산기개세,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Overwhelm,12006,anchored
+권토중래,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Comeback,12007,anchored
+계포일낙,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Oathkeeper,12008,anchored
+통솔: 물리 공격 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,CMD: Physical Attack +%,12009,anchored
+통솔: 공격 방어율 관통,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Command: Attack DEF Rate Pierce,12010,anchored
+청룡의 가호,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon's Protection,12011,anchored
+청룡의 축복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon's Blessing,12012,anchored
+충전,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Charge,12013,anchored
+청룡의 포효,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon's Roar,12014,anchored
+산전 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain Battle Boost,12015,anchored
+산전 특화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain Battle Specialization,12016,anchored
+인과응보(폭발),,,,,,,,,,,,,,,,,,,,,,,,,,,,,What Goes Around Comes Around (Explosion),12017,anchored
+인과응보(상태이상),,,,,,,,,,,,,,,,,,,,,,,,,,,,,What Goes Around Comes Around (Status Effect),12018,anchored
+하강 전이,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Transfer Down,12019,anchored
+상승 전이,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Transfer Up,12020,anchored
+진형 파쇄 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Terrain Crush Attack,12021,anchored
+전장 HP 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Battlefield HP Boost,12022,anchored
+본공격 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Main Attack +,12023,anchored
+상태이상 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Status Effect +,12024,anchored
+근거리 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Melee +,12025,anchored
+청룡: 귀문의 무구,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon: Spectral Weapon,12026,anchored
+백호: 최대 피해 방어%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger: Max Damage Defense %,12027,anchored
+청룡: 공격 책략 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon: Offensive Tactics +%,12028,anchored
+청룡: 귀문,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon: Infernal Gate,12029,anchored
+백호의 힘 폭주,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Power Burst,12030,anchored
+무신,,,,,,,,,,,,,,,,,,,,,,,,,,,,,God of War,12031,anchored
+방어: 정신력 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: WIS Reduction Fortification %,12032,anchored
+방어: 금책 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense: Silence Fortification %,12033,anchored
+장애물,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Barricade,12034,anchored
+유격전,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Guerrilla War,12035,anchored
+무견제,,,,,,,,,,,,,,,,,,,,,,,,,,,,,No Containment,12036,anchored
+MP 파괴 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Destruction Attack,12037,anchored
+재충전,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Recharge,12038,anchored
+감전 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Electrocute Attack %,12039,anchored
+감전 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Electrocute Immunity,12040,anchored
+용아의 무구,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dragon Fang Weapons,12041,anchored
+파동의 무구,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Energy Wave Weapons,12042,anchored
+확산 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Spread Attack,12043,anchored
+보패: 혼란 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Confusion Immunity,12044,anchored
+보패: 물리 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Decrease Physical Damage %,12045,anchored
+보패: MP 파괴 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: MP Destruction Attack %,12046,anchored
+보패: 재충전%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Charge %,12047,anchored
+보패: 용의 분노,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Dragon's Wrath,12048,anchored
+보패: 감전 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Electrocute Attack %,12049,anchored
+보패: 감전 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Electrocute Tactics %,12050,anchored
+보패: 감전 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Electrocute Immunity,12051,anchored
+보패: 용조의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Dragon Claw Weapons %,12052,anchored
+보패: 용아의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Dragon Fang Weapons %,12053,anchored
+보패: 파동의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Energy Wave Weapons %,12054,anchored
+보패: 역린의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Outrage Weapons %,12055,anchored
+보패: 근접 공격 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Melee Attack +,12056,anchored
+보패: 간접 공격 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Ranged Attack +,12057,anchored
+보패: 공격 책략 증폭,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Amplify Offensive Tactics,12058,anchored
+보패: 보급계 책략 강화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Supply Tactics +,12059,anchored
+보패: 근접 피해 감소,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Melee Damage -,12060,anchored
+보패: 간접 피해 감소,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Ranged Damage -,12061,anchored
+보패: 책략 피해 간파,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Decrease Tactics Damage,12062,anchored
+보패: HP 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: HP Boost,12063,anchored
+보패: MP 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: MP Boost,12064,anchored
+보패: 근접 공격 방어율 관통,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Melee Attack DEF Rate Pierce,12065,anchored
+보패: 간접 공격 방어율 관통,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Ranged Attack DEF Rate Pierce,12066,anchored
+보패: 책략 방어율 관통,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Tactics DEF Rate Pierce,12067,anchored
+보패: 근접 공격 방어율 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Melee Attack DEF Rate +,12068,anchored
+보패: 간접 공격 방어율 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Ranged Attack DEF Rate +,12069,anchored
+보패: 책략 방어율 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Tactics DEF Rate +,12070,anchored
+보패: 능력 이상 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Abnormality Attack %,12071,anchored
+보패: 상태 이상 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Status Effect Attack %,12072,anchored
+보패: 근접 공격 피해 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Melee Attack Damage Reflection %,12073,anchored
+보패: 간접 공격 피해 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Ranged Attack Damage Reflection %,12074,anchored
+보패: 책략 피해 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Tactics Damage Reflection %,12075,anchored
+보패: HP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: HP Recovery,12076,anchored
+보패: MP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: MP Recovery,12077,anchored
+보패: 흡혈 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Lifesteal Attack %,12078,anchored
+보패: 흡혈 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Lifesteal Tactics %,12079,anchored
+화계 책략 특화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Tactics Specialization %,12080,anchored
+인사유명: 화염,,,,,,,,,,,,,,,,,,,,,,,,,,,,,The Names We Leave Behind: Fire,12081,anchored
+주작: 화염 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Fire Attack %,12082,anchored
+주작: 주작의 단검,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Scarlet Dagger,12083,anchored
+주작: 화염의 띠,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Band of Fire,12084,anchored
+주작: 화염의 무구,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Fire Weapons,12085,anchored
+주작: 화염의 의지,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Will of Flame,12086,anchored
+회심 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Critical Hit Damage -%,12087,anchored
+주작: 화염의 가호,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Dancing Flame,12088,anchored
+주작: 화염의 통찰,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Burning Insight,12089,anchored
+지형 약화 무시,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Terrain Weakening,12090,anchored
+주작: 화염 친화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Fire Affinity,12091,anchored
+주작: 화염의 장벽,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Wall of Fire,12092,anchored
+주작: 재빠른 대처,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Quick Reflexes,12093,anchored
+주작: 권능,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Might,12094,anchored
+일당백,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Match for a Hundred Strong,12095,anchored
+학살,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Massacre,12096,anchored
+고금무쌍,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Hero of the Ages,12097,anchored
+주작: 반격 회피 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Counterattack EVA Boost %,12098,anchored
+화염의 분노,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire's Wrath,12099,anchored
+화염의 보복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire's Vengeance,12100,anchored
+화염 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Attack %,12101,anchored
+확산 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Spread Plan %,12102,anchored
+갈퀴 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Claw Plan %,12103,anchored
+화염 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Plan %,12104,anchored
+화염뢰 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Scorching Lightning Plan %,12105,anchored
+화폭 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Eruption Plan %,12106,anchored
+화검 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Flame Sword Plan %,12107,anchored
+진화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Evolution,12108,anchored
+보패: 금책 면역%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Silence Immunity %,12109,anchored
+보패: 책략 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Decrease Tactics Damage %,12110,anchored
+보패: 화염의 분노,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Fire's Wrath,12111,anchored
+보패: 화염의 보복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Fire's Vengeance,12112,anchored
+보패: 재빠른 대처%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Quick Reflexes %,12113,anchored
+보패: 화염의 장벽%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Wall of Fire %,12114,anchored
+보패: 화염 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Fire Attack %,12115,anchored
+보패: 화절,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Mortal Blaze,12116,anchored
+보패: 확산 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Spread Plan %,12117,anchored
+보패: 갈퀴 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Claw Plan %,12118,anchored
+보패: 화염 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Fire Plan %,12119,anchored
+보패: 화염뢰 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Scorching Lightning Plan %,12120,anchored
+보패: 화폭 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Eruption Plan %,12121,anchored
+보패: 화검 계책%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Flame Sword Plan %,12122,anchored
+보패: 진화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Evolution,12123,anchored
+주작: 화염의 지배자,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Queen of Flame,12124,anchored
+화염의 장벽,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wall of Fire,12125,anchored
+방해 책략 전문화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Interrupt Tactics Mastery %,12126,anchored
+상태이상 반사 무시%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ignore Status Effect Reflection %,12127,anchored
+바퀴 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wheel Upgrade %,12128,anchored
+장거리 궁술,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Long-Range Archery,12129,anchored
+풍계 책략 전문화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wind Tactics Mastery %,12130,anchored
+화계 책략 극대화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Tactics Synergy %,12131,anchored
+풍계 책략 극대화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wind Tactics Synergy %,12132,anchored
+방해계 책략 극대화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Interrupt Tactics Synergy %,12133,anchored
+일책 필살,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Deadly Tactics,12134,anchored
+피해 분배%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Redirect Damage %,12135,anchored
+풍계 책략 특화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wind Tactics Specialization %,12136,anchored
+사신 보옥 착용,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Four Gods Orb Master,12137,anchored
+불가침,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sanctuary,12138,anchored
+재빠른 대처%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Quick Reflexes %,12139,anchored
+책략 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Defense Skill %,12140,anchored
+관성제군,,,,,,,,,,,,,,,,,,,,,,,,,,,,,God of War Guan Yu,12141,anchored
+만인지적,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Overwhelming Strength,12142,anchored
+조가창술,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Zhao Family Triple Strike,12143,anchored
+화계 책략 전문화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fire Tactics Mastery %,12144,anchored
+연환계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Falling Like Dominoes,12145,anchored
+책략 파쇄%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Offset %,12146,anchored
+소패왕,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Little Conquerer,12147,anchored
+수계 책략 특화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Water Tactics Specialization %,12148,anchored
+수전 특화,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Naval Battle Specialization,12149,anchored
+필마단기,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Solitary Ride,12150,anchored
+근거리 궁술,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Short-Range Archery,12151,anchored
+관통 사격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Piercing Shot,12152,anchored
+돌진 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Charge Fortification %,12153,anchored
+출혈 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Bleed Attack %,12154,anchored
+수계 책략 전문화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Water Tactics Mastery %,12155,anchored
+방어 특화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense Specialization %,12156,anchored
+장계취계,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dimming Mirror,12157,anchored
+집중의 일격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Focusing Strike %,12158,anchored
+기합의 일격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Concentrating Strike %,12159,anchored
+접근 사격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Approaching Shot,12160,anchored
+후퇴 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Retreating Attack,12161,anchored
+조준 사격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Aimed Shot %,12162,anchored
+홍련탄 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Crimson Lotus Upgrade %,12163,anchored
+MP 공격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MP Attack %,12164,anchored
+조롱,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Insult,12165,anchored
+방어진,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defensive Formation,12166,anchored
+특수 공격 방어%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Special Attack Defense %,12167,anchored
+강공,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fierce Attack,12168,anchored
+파괴,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Destroy,12169,anchored
+독살 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Poison Attack,12170,anchored
+강격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fierce Strike,12171,anchored
+교란 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Distracting Attack,12172,anchored
+습격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Lucky Feint,12173,anchored
+일거양득,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Two Birds, One Stone",12174,anchored
+산지 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mountain Boost,12175,anchored
+황무지 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wasteland Boost,12176,anchored
+도성 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Castle Boost,12177,anchored
+설원 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Snow Boost,12178,anchored
+장강 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,River Boost,12179,anchored
+받는 피해량 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Damage Taken +%,12180,anchored
+일진광풍%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gale %,12181,anchored
+특기: 재빠른 대처%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Special: Quick Reflexes %,12182,anchored
+금마초,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ma Chao of Xiliang,12183,anchored
+사막전 보조,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Desert Battle+,12184,anchored
+금격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blind Immunity,12185,anchored
+방어 능력 특화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Defense Specialization %,12186,anchored
+책략 취약%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactics Vulnerability %,12187,anchored
+방해계 책략 취약%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Interrupt Tactics Vulnerability %,12188,anchored
+원소계 책략 취약%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Elemental Tactics Vulnerability %,12189,anchored
+간접 공격 취약%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ranged Attack Vulnerability %,12190,anchored
+보물 파괴 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Artifact Destruction Attack,12191,anchored
+책략 대형,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tactical Formation,12192,anchored
+궁술 대형,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Archery Formation,12193,anchored
+기병 대형,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Cavalry Formation,12194,anchored
+협동 전술,,,,,,,,,,,,,,,,,,,,,,,,,,,,,United Front,12195,anchored
+수계 책략 극대화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Water Tactics Synergy %,12196,anchored
+견고의 일격%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Solid Strike %,12197,anchored
+날씨 적응: 흐림,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weather Adaptation: Clouds,12198,anchored
+날씨 적응: 비,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weather Adaptation: Rain,12199,anchored
+날씨 적응: 폭풍,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weather Adaptation: Storm,12200,anchored
+날씨 적응: 눈,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weather Adaptation: Blizzard,12201,anchored
+날씨 적응: 안개,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weather Adaptation: Fog,12202,anchored
+용조의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dragon Claw Weapons %,12203,anchored
+감전 책략%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Electrocution Tactics %,12204,anchored
+공격력 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ATK Reduction Fortification %,12205,anchored
+방어력 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,DEF Reduction Fortification %,12206,anchored
+정신력 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,WIS Reduction Fortification %,12207,anchored
+순발력 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,AGI Reduction Fortification %,12208,anchored
+사기 감소 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,MRL Reduction Fortification %,12209,anchored
+금격 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blind Fortification %,12210,anchored
+금책 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Silence Fortification %,12211,anchored
+부동 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Immobilization Fortification %,12212,anchored
+중독 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Poison Fortification %,12213,anchored
+결투장 특화: 태양,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena Specialization: Yellow Sun,12214,anchored
+결투장 특화: 신록,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena Specialization: Green Mountain,12215,anchored
+결투장 특화: 창천,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena Specialization: Azure Sky,12216,anchored
+결투장 특화: 혹한,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena Specialization: White Frost,12217,anchored
+날씨 적응,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weather Adaptation,12218,anchored
+결투장: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena: ATK Boost %,12219,anchored
+결투장: 방어력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena: DEF Boost %,12220,anchored
+결투장: 정신력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena: WIS Boost %,12221,anchored
+결투장: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena: AGI Boost %,12222,anchored
+결투장: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Arena: MRL Boost %,12223,anchored
+태양: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yellow Sun: ATK Boost %,12224,anchored
+태양: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yellow Sun: AGI Boost %,12225,anchored
+태양: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yellow Sun: MRL Boost %,12226,anchored
+혹한: 공격력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Frost: ATK Boost %,12227,anchored
+혹한: 순발력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Frost: AGI Boost %,12228,anchored
+혹한: 사기 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Frost: MRL Boost %,12229,anchored
+야생의 기민함,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Wild Agility,12230,anchored
+신기묘재,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Godly Miaocai,12231,anchored
+결속,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Unity,12232,anchored
+마무리 일격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Finishing Strike,12233,anchored
+임기응변,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Rolling with the Punches,12234,anchored
+문답무용,,,,,,,,,,,,,,,,,,,,,,,,,,,,,No Excuses,12235,anchored
+반격 강화%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Counterattack %,12236,anchored
+맹독 방어술%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Deadly Poison Fortification %,12237,anchored
+과잉성장,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Overflow,12238,anchored
+본대 중재,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self Yin to Yang,12239,anchored
+항상성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Equilibrium,12240,anchored
+재생의 바람: HP 회복,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Refreshing Wind: HP Recovery,12241,anchored
+최소 피해량 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Min Damage +,12242,anchored
+약점 공격,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Weakness Assault,12243,anchored
+설상가상,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Exacerbate,12244,anchored
+분서갱유,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Burning Books, Burying Scholars",12245,anchored
+금성천리,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Impregnable,12246,anchored
+수완가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Capitalize,12247,anchored
+변칙 전술,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Strange Tactics,12248,anchored
+활성 제어,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Discipline,12249,anchored
+알 수 없는 효과,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Mystery Effect,12250,anchored
+봉인된 효과,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Sealed Effect,12251,anchored
+전투력 보조%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Combat Power Boost %,12252,anchored
+백호의 사당: 항상성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Temple: Equilibrium,12253,anchored
+백호의 사당: 자연,,,,,,,,,,,,,,,,,,,,,,,,,,,,,White Tiger Temple: Nature,12254,anchored
+용아의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dragon Fang Weapons %,12255,anchored
+철옹성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Unassailable,12256,anchored
+지원 공격 반사%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Phalanx Strike Reflection %,12257,anchored
+지원 공격 피해 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Phalanx Strike Damage Dealt %,12258,anchored
+쌍검술,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Dual Swordsmanship,12259,anchored
+삼고초려,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Three Visits,12260,anchored
+보패: 백호의 가호,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Blessings of the White Tiger,12261,anchored
+보패: 포용,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Embrace,12262,anchored
+보패: 호령,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Command,12263,anchored
+보패: 재생의 바람%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Refreshing Wind %,12264,anchored
+보패: 각성의 바람,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Awakening Wind,12265,anchored
+보패: 최후의 숨결,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Final Breath,12266,anchored
+보패: 최후의 항전,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Final Resistance,12267,anchored
+보패: 최후의 계책,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Final Plan,12268,anchored
+보패: 최후의 각성,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Final Awakening,12269,anchored
+보패: 회심 피해 감소%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Critical Hit Damage -%,12270,anchored
+보패: 금격 면역,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Relic: Blind Immunity,12271,anchored
+주위상,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Strategic Retreat,12272,anchored
+귀모,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Infernal Cunning,12273,anchored
+와룡,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Crouching Dragon,12274,anchored
+노래: 물리 명중률 증가,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Song: Physical ACC +,12275,anchored
+정속 이동,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Steady Movement,12276,anchored
+역린의 무구%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,12277,anchored
+백호의 가호,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blessings of the White Tiger,12278,anchored
+무기 효과 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,12279,anchored
+방어구 효과 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,12280,anchored
+보조구 효과 증가%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,12281,anchored

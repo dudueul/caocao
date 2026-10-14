@@ -1,0 +1,11 @@
+id,title,name,order,type,tabInfo,rankUpGiftID,pType,rType,atlas,texture,saleRibbon,is1st,nextId,saleType,saleCount,startDate,endDate,goodType,cost,country,type0,reward0,mailId,desc,market,#title_en,#loc_row,#confidence
+,추석 기념 금전 꾸러미,,,,,,,,,,,,,,,,,,,,,,,,,Thanksgiving Gold Coin Bundle,900,inferred
+,추석 기념 특별한 금전 꾸러미,,,,,,,,,,,,,,,,,,,,,,,,,Special Thanksgiving Gold Coin Bundle,901,inferred
+,"금전, 은전, 교본 패키지",,,,,,,,,,,,,,,,,,,,,,,,,"Gold Coins, Silver Coins, Training Scroll Package",902,inferred
+,"금전, 은전, 강화 보존권 패키지",,,,,,,,,,,,,,,,,,,,,,,,,"Gold Coins, Silver Coins, Upgrade Protection Ticket Package",903,inferred
+,"금전, 은전, 보물 조각 패키지",,,,,,,,,,,,,,,,,,,,,,,,,"Gold Coins, Silver Coins, Artifact Piece Package",904,inferred
+,"금전, 은전, 허가서 패키지",,,,,,,,,,,,,,,,,,,,,,,,,"Gold Coins, Silver Coins, Permit Package",905,inferred
+,"금전, 은전, 청룡의 영혼, 청룡의 위패 패키지",,,,,,,,,,,,,,,,,,,,,,,,,Various currencies and Azure Dragon items.,906,inferred
+,"금전, 은전, 교본이 포함된 특별한 패키지",,,,,,,,,,,,,,,,,,,,,,,,,A bundle overflowing with useful items.,907,inferred
+,"금전, 은전이 포함된 특별한 패키지",,,,,,,,,,,,,,,,,,,,,,,,,A bundle overflowing with useful items.,908,inferred
+,"금전, 허가서가 포함된 특별한 패키지",,,,,,,,,,,,,,,,,,,,,,,,,A bundle overflowing with useful items.,909,inferred

@@ -1,0 +1,30 @@
+column,seq,loc_row,confidence,ko,en
+quickText1,1,7295,anchored,장수 계보,Banner
+quickText1,2,7296,anchored,상점,Shop
+quickText1,3,7297,anchored,사건,Quest
+quickText1,4,7298,anchored,민심 관리,Manage Devotion
+quickText1,5,7299,anchored,장수 관리,Commanders
+quickText1,6,7300,anchored,바로 가기 없음,No Shortcuts
+quickText1,7,7301,anchored,보물 강화,Upgrade Artifact
+quickText1,8,7302,anchored,사신전,Four Gods
+quickText1,9,7303,anchored,연의,Story
+quickText1,10,7304,anchored,인연 도감,Friendship Book
+quickText1,11,7305,anchored,보물 제작,Artifact
+quickText1,12,7306,anchored,무장전,Officer Battle
+quickText1,13,7307,anchored,보패 상자,Relic Chests
+popupDesc,1,7308,anchored,"사신을 물리치고 얻을 수 있는 사신의 영혼입니다.\n획득한 영혼은 일부 계보의 장수를 등용하거나, 해당 사신의 속성을 가진 보패 상자를 개봉하는 데 사용할 수 있습니다.",Four Gods Souls obtained from defeating the Four Gods.\nCan be used to recruit commanders from certain banners or to open the matching God's relic chests.
+popupDesc,2,7309,anchored,사신을 물리치고 얻을 수 있는 사신의 위패입니다.\n획득한 위패는 일부 계보의 장수를 활성화하는 데 사용할 수 있습니다.,Four Gods Ancestral Tablets obtained from defeating the Four Gods.\nUsed to recruit commanders from certain banners.
+popupDesc,3,7310,anchored,"공적은 장수 훈련, 승급 장비 강화에 사용됩니다.\n주로 주 사건을 해결하여 획득할 수 있습니다.",Jade Seals are used to train commanders and quickly enhance equipment for promotion.\nObtained by completing quests.
+popupDesc,4,7311,anchored,명예는 명품 아이템 구매 등에 사용할 수 있습니다.\n주로 모의전과 섬멸전을 통해 획득할 수 있습니다.,Fame can be used to buy Premium items.\nObtained from practice and Annihilation matches.
+popupDesc,5,7312,anchored,"사신 소환에 사용되는 사신의 흔적입니다.\n전투를 반복하여 충분한 흔적이 모이면 이용할 수 있으며, 우측 [?]버튼으로 획득 가능한 컨텐츠와 수량을 확인할 수 있습니다.",Four Gods Essence used to summon the Four Gods.\nYou must collect enough through repeated battles before using it. Tap [?] for more information.
+popupDesc,6,7313,anchored,기력 무제한 기능을 사용합니다.,Using Unlimited Energy.
+popupDesc,7,7314,anchored,쾌속 무제한 기능을 사용합니다.,Use to activate Unlimited Fast Battle for a set duration. 
+popupDesc,8,7315,anchored,"점령 중인 주의 일반 사건, 특수 사건 보상을 2배로 획득합니다. ",Doubles rewards for Normal Quests and Special Quests in occupied states. 
+popupDesc,9,7316,anchored,인연의 끈은 인연의 잠금을 해제하는 데 사용할 수 있습니다.,Twines of Friendship can be used to unlock a Friendship.
+popupDesc,10,7317,anchored,전용 보물 제작 및 효과 부여에 사용됩니다.,Used to craft and add passives on exclusive artifacts.
+popupDesc,11,7318,anchored,무장전 입장에 사용됩니다.,An item required to enter an Officer Battle.
+popupDesc,12,7319,anchored,장수의 LV을 20으로 만듭니다. 장수 LV 20이상의 장수에게는 사용할 수 없습니다.,A secret book used to train commanders to Lv. 20. It cannot be used on commanders Lv. 20 or above.
+popupDesc,13,7320,anchored,장수의 LV을 40으로 만듭니다. 장수 LV 40이상의 장수에게는 사용할 수 없습니다..,A secret book used to train commanders to Lv. 40. It cannot be used on commanders Lv. 40 or above.
+popupDesc,14,7321,anchored,장수의 LV을 60으로 만듭니다. 장수 LV 60이상의 장수에게는 사용할 수 없습니다..,A secret book used to train commanders to Lv. 60. It cannot be used on commanders Lv. 60 or above.
+popupDesc,15,7322,anchored,장수의 LV을 80으로 만듭니다. 장수 LV 80이상의 장수에게는 사용할 수 없습니다..,A secret book used to train commanders to Lv. 80. It cannot be used on commanders Lv. 80 or above.
+popupDesc,16,7323,anchored,장수의 LV을 99으로 만듭니다. 장수 LV 99이상의 장수에게는 사용할 수 없습니다..,A secret book used to train commanders to Lv. 99. It cannot be used on commanders Lv. 99 or above.

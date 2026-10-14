@@ -1,0 +1,100 @@
+column,seq,loc_row,confidence,ko,en
+name,1,11461,anchored,은전 징세 보조,Silver Coin Tax+
+name,2,11462,anchored,군량 징세 보조,Ration Tax+
+name,3,11463,anchored,병주 징세 보조,Bingzhou Tax+
+name,4,11464,anchored,유주 징세 보조,Youzhou Tax+
+name,5,11465,anchored,기주 징세 보조,Jizhou Tax+
+name,6,11466,anchored,연주 징세 보조,Yanzhou Tax+
+name,7,11467,anchored,청주 징세 보조,Qingzhou Tax+
+name,8,11468,anchored,서주 징세 보조,Xuzhou Tax+
+name,9,11469,anchored,양주(북) 징세 보조,Liangzhou-N Tax+
+name,10,11470,anchored,양주(남) 징세 보조,Liangzhou-S Tax+
+name,11,11471,anchored,형주(북) 징세 보조,Jingzhou-N Tax+
+name,12,11472,anchored,형주(남) 징세 보조,Jingzhou-S Tax+
+name,13,11473,anchored,교주 징세 보조,Jiaozhou Tax+
+name,14,11474,anchored,익주(북) 징세 보조,Yizhou-N Tax+
+name,15,11475,anchored,익주(중) 징세 보조,Yizhou-C Tax+
+name,16,11476,anchored,익주(남) 징세 보조,Yizhou-S Tax+
+name,17,11477,anchored,옹주(서) 징세 보조,Yongzhou-W Tax+
+name,18,11478,anchored,사주 징세 보조,Sizhou Tax+
+name,19,11479,anchored,예주 징세 보조,Yuzhou Tax+
+name,20,11480,anchored,옹주(동) 징세 보조,Yongzhou-E Tax+
+name,21,11481,anchored,전 징세 보조,General Tax+
+name,22,11482,anchored,무역 상점 보조,Trader+
+name,23,11483,anchored,명품 상점 보조,Premium Shop+
+name,24,11484,anchored,출진 군량 보조,Battle Rations+
+name,25,11485,anchored,모의전 보조,Practice Battle+
+name,26,11486,anchored,점령 보조,Occupation+
+name,27,11487,anchored,은전 약탈 보조,Silver Coin Loot+
+name,28,11488,anchored,군량 약탈 보조,Ration Loot+
+name,29,11489,anchored,병주 약탈 보조,Bingzhou Loot+
+name,30,11490,anchored,유주 약탈 보조,Youzhou Loot+
+name,31,11491,anchored,기주 약탈 보조,Jizhou Loot+
+name,32,11492,anchored,연주 약탈 보조,Yanzhou Loot+
+name,33,11493,anchored,청주 약탈 보조,Qingzhou Loot+
+name,34,11494,anchored,서주 약탈 보조,Xuzhou Loot+
+name,35,11495,anchored,양주(북) 약탈 보조,Liangzhou-N Loot+
+name,36,11496,anchored,양주(남) 약탈 보조,Liangzhou-S Loot+
+name,37,11497,anchored,형주(북) 약탈 보조,Jingzhou-N Loot+
+name,38,11498,anchored,형주(남) 약탈 보조,Jingzhou-S Loot+
+name,39,11499,anchored,교주 약탈 보조,Jiaozhou Loot+
+name,40,11500,anchored,익주(북) 약탈 보조,Yizhou-N Loot+
+name,41,11501,anchored,익주(중) 약탈 보조,Yizhou-C Loot+
+name,42,11502,anchored,익주(남) 약탈 보조,Yizhou-S Loot+
+name,43,11503,anchored,옹주(서) 약탈 보조,Yongzhou-W Loot+
+name,44,11504,anchored,사주 약탈 보조,Sizhou Loot+
+name,45,11505,anchored,예주 약탈 보조,Yuzhou Loot+
+name,46,11506,anchored,옹주(동) 약탈 보조,Yongzhou-E Loot+
+name,47,11507,anchored,전 약탈 보조,All Loot+
+name,48,11508,anchored,정찰 보조,Scout+
+name,49,11509,anchored,이주 약탈 보조+,Yizhou Pillage Boost+
+name,50,11510,anchored,설명,Description
+desc,1,11511,anchored,전 지역 징세 은전 {0}% 증가,Silver Coin taxes from all areas +{0}%
+desc,2,11512,anchored,전 지역 징세 군량 {0}% 증가,Ration taxes from all areas +{0}%
+desc,3,11513,anchored,병주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Bingzhou +{0}%
+desc,4,11514,anchored,유주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Youzhou +{0}%
+desc,5,11515,anchored,기주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Jizhou +{0}%
+desc,6,11516,anchored,연주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Yanzhou +{0}%
+desc,7,11517,anchored,청주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Qingzhou +{0}%
+desc,8,11518,anchored,서주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Xuzhou +{0}%
+desc,9,11519,anchored,양주(북) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Liangzhou (N) +{0}%
+desc,10,11520,anchored,양주(남) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Liangzhou (S) +{0}%
+desc,11,11521,anchored,형주(북) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Jingzhou (N) +{0}%
+desc,12,11522,anchored,형주(남) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Jingzhou (S) +{0}%
+desc,13,11523,anchored,교주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Jiaozhou +{0}%
+desc,14,11524,anchored,익주(북) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Yizhou (N) +{0}%
+desc,15,11525,anchored,익주(중) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Yizhou (C) +{0}%
+desc,16,11526,anchored,익주(남) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Yizhou (S) +{0}%
+desc,17,11527,anchored,옹주(서) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Yongzhou (W) +{0}%
+desc,18,11528,anchored,사주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Sizhou +{0}%
+desc,19,11529,anchored,예주 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Yuzhou +{0}%
+desc,20,11530,anchored,옹주(동) 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from Yongzhou (E) +{0}%
+desc,21,11531,anchored,전 지역 징세 은전 및 군량 {0}% 증가,Silver Coin and Ration taxes from all areas +{0}%
+desc,22,11532,anchored,무역 상점 갱신 소모 금전 {0}% 감소,Gold Coin cost to refresh Trader -{0}%
+desc,23,11533,anchored,명품 상점 갱신 소모 금전 {0}% 감소,Gold Coin cost to refresh Premium Shop -{0}%
+desc,24,11534,anchored,출진 시 소모 군량 {0}% 감소,Battle Ration cost -{0}%
+desc,25,11535,anchored,모의전 대기 시간 {0}% 감소,Practice battle waiting time -{0}%
+desc,26,11536,anchored,공성전 전투 결과에 상관없이 점령률 {0}% 증가,"Occupation rate +{0}%, regardless of siege battle results"
+desc,27,11537,anchored,공성전 시 약탈 은전 {0}% 증가,Siege battle Silver Coin loot +{0}%
+desc,28,11538,anchored,공성전 시 약탈 군량 {0}% 증가,Siege battle Ration loot +{0}%
+desc,29,11539,anchored,병주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Bingzhou +{0}%
+desc,30,11540,anchored,유주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Youzhou +{0}%
+desc,31,11541,anchored,기주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Jizhou +{0}%
+desc,32,11542,anchored,연주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Yanzhou +{0}%
+desc,33,11543,anchored,청주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Qingzhou +{0}%
+desc,34,11544,anchored,서주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Xuzhou +{0}%
+desc,35,11545,anchored,양주(북) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Liangzhou (N) +{0}%
+desc,36,11546,anchored,양주(남) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Liangzhou (S) +{0}%
+desc,37,11547,anchored,형주(북) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Jingzhou (N) +{0}%
+desc,38,11548,anchored,형주(남) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Jingzhou (S) +{0}%
+desc,39,11549,anchored,교주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Jiaozhou +{0}%
+desc,40,11550,anchored,익주(북) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Yizhou (N) +{0}%
+desc,41,11551,anchored,익주(중) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Yizhou (C) +{0}%
+desc,42,11552,anchored,익주(남) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Yizhou (S) +{0}%
+desc,43,11553,anchored,옹주(서) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Yongzhou (W) +{0}%
+desc,44,11554,anchored,사주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Sizhou +{0}%
+desc,45,11555,anchored,예주 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Yuzhou +{0}%
+desc,46,11556,anchored,옹주(동) 지역 공성전 시 약탈 은전 및 군량 {0}% 증가,Silver Coin and Ration loot when sieging Yongzhou (E) +{0}%
+desc,47,11557,anchored,공성전 시 약탈 은전 및 군량 {0}% 증가,Siege battle Silver Coin and Ration loot +{0}%
+desc,48,11558,anchored,매칭변경 시 소모 은전 {0}% 감소,Silver Coin cost for switching opponents -{0}%
+desc,49,11559,anchored,이주 지역 공성전 시 약탈 재화 {0}% 증가,Silver Coin and Ration loot when sieging Yizhou +{0}%

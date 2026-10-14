@@ -1,0 +1,178 @@
+name,id,mapTitle,prefab,isFlip,weather,#mapTitle_en,#loc_row,#confidence
+,,1일차 접속,,,,Day 1 Login,17625,inferred
+,,2일차 접속,,,,Day 2 Login,17626,inferred
+,,3일차 접속,,,,Day 3 Login,17627,inferred
+,,6등급 이상 보물 강화를 1회 시도하세요.,,,,Attempt to upgrade 6★+ artifact 1 time.,17628,inferred
+,,경쟁전에 1회 참여하세요.,,,,Test your might in PvP.,17629,inferred
+,,징세 시도,,,,Collect,17630,inferred
+,,하후연 등용,,,,Recruit Xiahou Yuan,17631,inferred
+,,임치항 전투 승리,,,,Victory at the Port of Linzi,17632,inferred
+,,하후돈 등용,,,,Recruit Xiahou Dun,17633,inferred
+,,도창 전투 승리,,,,Victory in Duchang,17634,inferred
+,,국가 은전고 강화,,,,Upgrade Central Treasury,17635,inferred
+,,창양항 전투 승리,,,,Victory at the Port of Changyang,17636,inferred
+,,국가 군량고 강화,,,,Upgrade Central Stockpile,17637,inferred
+,,북해 전투 승리,,,,Victory in Beihai,17638,inferred
+,,거점 전역 징세,,,,Collect All Domains,17639,inferred
+,,연주 탐색,,,,Investigate Yanzhou,17640,inferred
+,,돈구항 전투 승리,,,,Victory at the Port of Dunqiu,17641,inferred
+,,복양성 승리,,,,Puyang Win,17642,inferred
+,,태산 전투 승리,,,,Victory in Taishan,17643,inferred
+,,진류 전투 승리,,,,Victory in Chenliu,17644,inferred
+,,청주 사건,,,,Qingzhou Quest,17645,inferred
+,,북부위전 [신임 북부위],,,,Northern District Captain Story [The New Captain],17646,inferred
+,,보물 [콩주머니] 착용,,,,Equip Artifact [Soybean Pouch],17647,inferred
+,,시장 [회복의 콩] 구입,,,,Purchase [Soybeans] from the Market.,17648,inferred
+,,서주 탐색,,,,Investigate Xuzhou,17649,inferred
+,,북부위전 [주군을 만나다],,,,Northern District Captain Story [Meeting the Lord],17650,inferred
+,,연주 사건,,,,Yanzhou Quest,17651,inferred
+,,내정 [시장 부흥] 연구,,,,Govern [Market Recovery] Research,17652,inferred
+,,북부위전 [복수자],,,,Northern District Captain Story [Avenger],17653,inferred
+,,전위 등용,,,,Recruit Dian Wei,17654,inferred
+,,해릉항 점령,,,,Occupy the Port of Hailing,17655,inferred
+,,서주 통일,,,,Unite Xuzhou,17656,inferred
+,,예주 탐색,,,,Investigate Yuzhou,17657,inferred
+,,모의전 승리,,,,Win a Practice Battle,17658,inferred
+,,서주 사건,,,,Xuzhou Quest,17659,inferred
+,,북부위전 [토벌],,,,Northern District Captain Story [Expedition],17660,inferred
+,,순욱 등용,,,,Recruit Xun Yu,17661,inferred
+,,소패 점령,,,,Occupy Xiaopei,17662,inferred
+,,북부위전 [늑대사냥],,,,Northern District Captain Story [Wolf Hunt],17663,inferred
+,,조조 승급,,,,Promote Cao Cao,17664,inferred
+,,장수 효과,,,,Commander Passives,17665,inferred
+,,조조전 [황건병 토벌],,,,Cao Cao Story [Yellow Turban Expedition],17666,inferred
+,,허저 등용,,,,Recruit Xu Chu,17667,inferred
+,,사건 10회 승리,,,,Clear 10 Quests,17668,inferred
+,,북부위전 [십상시의 숙부],,,,Northern District Captain Story [The Eunuch's Uncle],17669,inferred
+,,내정 [통솔 1] 연구,,,,Govern [Command 1] Research,17670,inferred
+,,석정 점령,,,,Occupy Shi Ting,17671,inferred
+,,예주 통일,,,,Unite Yuzhou,17672,inferred
+,,기주 탐색,,,,Investigate Jizhou,17673,inferred
+,,장료 등용,,,,Recruit Zhang Liao,17674,inferred
+,,조조전 [연환지계],,,,Cao Cao Story [Falling Like Dominoes],17675,inferred
+,,사건 15회 승리,,,,Clear 15 Quests,17676,inferred
+,,평원 점령,,,,Occupy Pingyuan,17677,inferred
+,,사마의 등용,,,,Recruit Sima Yi,17678,inferred
+,,조조전 [헌제],,,,Cao Cao Story [Emperor Xian],17679,inferred
+,,기주 통일,,,,Unite Jizhou,17680,inferred
+,,유주 탐색,,,,Investigate Youzhou,17681,inferred
+,,관해 등용,,,,Recruit Guan Hai,17682,inferred
+,,조조전 [적은 여포],,,,Cao Cao Story [Lu Bu is our Enemy],17683,inferred
+,,유주 통일,,,,Unite Youzhou,17684,inferred
+,,유주 사건 완료,,,,Complete Youzhou Quest,17685,inferred
+,,양주(북) 탐색,,,,Investigate Liangzhou (N),17686,inferred
+,,조안민 등용,,,,Recruit Cao Anmin,17687,inferred
+,,조조전 [관우의 의리],,,,Cao Cao Story [Loyalty of Guan Yu],17688,inferred
+,,합비 점령,,,,Occupy Xiapi,17689,inferred
+,,방덕 등용,,,,Recruit Pang De,17690,inferred
+,,형주(북) 통일,,,,Unite Jingzhou (N),17691,inferred
+,,조조전 [이별],,,,Cao Cao Story [Separation],17692,inferred
+,,조앙 등용,,,,Recruit Cao Ang,17693,inferred
+,,형주(남) 사건 완료,,,,Complete Jingzhou (S) Quest,17694,inferred
+,,교주 탐색,,,,Investigate Jiaozhou,17695,inferred
+,,조창 등용,,,,Recruit Cao Zhang,17696,inferred
+,,조조전 [원소의 죽음],,,,Cao Cao Story [Death of Yuan Shao],17697,inferred
+,,양주(남) 탐색,,,,Investigate Liangzhou (South),17698,inferred
+,,관우 등용,,,,Recruit Guan Yu,17699,inferred
+,,조조전 [제갈공명 등장!],,,,Cao Cao Story [Zhuge Liang!],17700,inferred
+,,익주(중) 탐색,,,,Investigate Yizhou (Central),17701,inferred
+,,익주(중) 통일,,,,Unite Yizhou (Central),17702,inferred
+,,익주(남) 사건 완료,,,,Complete Yizhou (S) Quest,17703,inferred
+,,조조전 [서량의 대장부],,,,Cao Cao Story [A Mighty Warrior of Xiliang],17704,inferred
+,,익주(북) 탐색,,,,Investigate Yizhou (N),17705,inferred
+,,유비 등용,,,,Recruit Liu Bei,17706,inferred
+,,옹주(서) 통일,,,,Unite Yongzhou (W),17707,inferred
+,,제갈량 등용,,,,Recruit Zhuge Liang,17708,inferred
+,,옹주(동) 사건 완료,,,,Complete Yongzhou (E) Quest,17709,inferred
+,,여포 등용,,,,Recruit Lu Bu,17710,inferred
+,,사주 탐색,,,,Investigate Sizhou,17711,inferred
+,,사주 통일,,,,Unite Sizhou,17712,inferred
+,,조조전 [마지막 결전],,,,Cao Cao Story [The Final Battle],17713,inferred
+,,조조전 [통일! 여정의 끝],,,,Cao Cao Story [Unification! The Journey's End],17714,inferred
+,,연의 전투에서 승리하세요.,,,,Win story battles.,17715,inferred
+,,장수 등용,,,,Recruit Commander,17716,inferred
+,,장수 승급,,,,Promote commanders,17717,inferred
+,,섬멸전에 참여하세요.,,,,Test your might in Annihilation.,17718,inferred
+,,전리품 상점에서 보물 상자를 1회 구매하세요.,,,,Purchase a Treasure Chest at the Loot Shop.,17719,inferred
+,,군주 Rank를 달성하세요.,,,,Reach the specified Warlord Rank.,17720,inferred
+,,진류 여포 저택,,,,"Lu Bu's Mansion, Chenliu",17721,inferred
+,,진류 조승 저택,,,,"Cao Sheng's Mansion, Chenliu",17722,inferred
+,,하비 초선 저택,,,,"Diaochan's Mansion, Xiapi",17723,inferred
+,,장안 왕윤 저택,,,,"Wang Yun's Mansion, Chang'an",17724,inferred
+,,저택,,,,Mansion,17725,inferred
+,,남피 곽가 저택,,,,"Guo Jia's Mansion, Nanpi",17726,inferred
+,,허도 서서 본가,,,,"Xu Shu's Home, Xudou",17727,inferred
+,,한중 방덕 숙소,,,,"Pang De's Lodge, Hanzhong",17728,inferred
+,,낙양 왕윤 저택,,,,"Wang Yun's Mansion, Luoyang",17729,inferred
+,,장안 동탁 저택,,,,"Dong Zhuo's Mansion, Chang'an",17730,inferred
+,,북평 공손찬 공관,,,,"Gongsun Zan's Residence, Beiping",17731,inferred
+,,신도 원소 공관,,,,"Yuan Shao's Residence, Guangchuan",17732,anchored
+,,복양 여포 공관-허도 상부,,,,"Lu Bu's Residence - Xudou Estate, Puyang",17733,anchored
+,,낙양 상부 내부,,,,Inside Luoyang Estate,17734,anchored
+,,오나라 손권 공관,,,,"Sun Quan's Residence, Wu",17735,anchored
+,,회의장,,,,Conference Hall,17736,anchored
+,,복양 조조 공관,,,,"Cao Cao's Residence, Puyang",17737,anchored
+,,장안 궁궐,,,,"Palace, Chang'an",17738,anchored
+,,건업 회의장,,,,"Conference Hall, Jianye",17739,anchored
+,,남피 원담 공관,,,,"Yuan Tan's Residence, Nanpi",17740,anchored
+,,한중 가상부,,,,"Temporary Base, Hanzhong",17741,anchored
+,,유성 원성 공관,,,,"Yuan Cheng's Residence, Liu Castle",17742,anchored
+,,수춘 가상부,,,,"Temporary Base, Shouchun",17743,anchored
+,,완 장수 공관,,,,"Zhang Xiu's Residence, Wan",17744,anchored
+,,강릉 가상부,,,,"Temporary Base, Jiangling",17745,anchored
+,,건업 손권 공관,,,,"Sun Quan's Residence, Jianye",17746,anchored
+,,막사,,,,Quarters,17747,anchored
+,,장안 근교 서황 본진,,,,"Xu Huang's Main Camp, Outskirts of Chang'an",17748,anchored
+,,형양 조조군 막사,,,,"Cao Cao's Quarters, Xingyang",17749,anchored
+,,박망파 조조군 본진,,,,"Cao Cao's Main Camp, Bowanpo",17750,anchored
+,,낙양 근교 동맹군 본진,,,,"Alliance Main Camp, Outskirts of Luoyang",17751,anchored
+,,합비 오군 본진,,,,"Wu's Main Camp, Hefei",17752,anchored
+,,백제성 교외 산길,,,,"Mountain Trail, Outskirts of Baidi Castle",17753,anchored
+,,장안 교외 산길,,,,"Mountain Trail, Outskirts of Chang'an",17754,anchored
+,,오장원 제단,,,,Wuzhang Plains Altar,17755,anchored
+,,제단,,,,Altar,17756,anchored
+,,허도 상부 정원,,,,"Garden, Xudou Estate",17757,anchored
+,,허도 상부 정원-후원,,,,"Back Garden, Xudou Estate",17758,anchored
+,,낙양 성문 앞,,,,In Front of Luoyang Gate,17759,anchored
+,,복양 조조 공관 앞,,,,"In Front of Cao Cao's Residence, Puyang",17760,anchored
+,,업 원상 공관 앞,,,,"In Front of Yuan Shang's Residence, Ye",17761,anchored
+,,허도 상부문 앞,,,,"In Front of Gate, Xudou Estate",17762,anchored
+,,허도 상부 관우 숙소,,,,"Guan Yu's Lodge, Xudou Estate",17763,anchored
+,,저잣거리,,,,Marketplace,17764,anchored
+,,저잣거리 ,,,,Marketplace ,17765,anchored
+,,서주 교외 산길,,,,"Mountain Trail, Outskirts of Xuzhou",17766,anchored
+,,복양 교외 산길,,,,"Mountain Trail, Outskirts of Puyang",17767,anchored
+,,오장원 산위,,,,Wuzhang Plains Mountain Peak,17768,anchored
+,,절벽,,,,Cliff,17769,anchored
+,,허도 교외 묘지,,,,"Graveyard, Outskirts of Xudou",17770,anchored
+,,무덤,,,,Grave,17771,anchored
+,,다리,,,,Bridge,17772,anchored
+,,완 강변,,,,"River Bank, Wan",17773,anchored
+,,관도 근방,,,,Near Guandu,17774,anchored
+,,창정강변,,,,"River Bank, Cangting",17775,anchored
+,,완 누각,,,,"Pavilion, Wan",17776,anchored
+,,허도 사마의 저택,,,,"Sima Yi's Mansion, Xudou",17777,anchored
+,,업 조조 공관,,,,"Cao Cao's Residence, Ye",17778,anchored
+,,중국지도,,,,Map of China,17779,anchored
+,,복숭아 숲,,,,Peach Tree Garden,17780,anchored
+,,낡은 집,,,,Old House,17781,anchored
+,,몽매의 거처,,,,Meng Mei's Residence,17782,anchored
+,,낡은 집_밤,,,,Old House_Night,17783,anchored
+,,북평 공손찬 공관_낮,,,,"Gongsun Zan's Residence, Beiping_Day",17784,anchored
+,,회의장_비,,,,Conference Hall_Rain,17785,anchored
+,,하구 정원_밤,,,,Xiakou Garden_Night,17786,anchored
+,,낙양 상부 내부_비,,,,Inside Luoyang Estate_Rain,17787,inferred
+,,진류 조승 저택_밤,,,,"Cao Sheng's Mansion, Chenliu_Night",17788,inferred
+,,남피 곽가 저택_비,,,,"Guo Jia's Mansion, Nanpi_Rain",17789,inferred
+,,국가군량고,,,,Central Stockpile,17790,inferred
+,,국가은전고,,,,Central Treasury,17791,inferred
+,,수산물,,,,Fishery,17792,inferred
+,,양돈,,,,Pig Farm,17793,inferred
+,,과수,,,,Fruit Grove,17794,inferred
+,,경작,,,,Farm,17795,inferred
+,,공방,,,,Pottery Works,17796,inferred
+,,견직,,,,Tailor,17797,inferred
+,,시장,,,,Market,17798,inferred
+,,제재소,,,,Lumbermill,17799,inferred
+,,항만,,,,Port,17800,inferred
+,,금고,,,,Vault,17801,inferred

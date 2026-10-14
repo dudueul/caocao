@@ -1,0 +1,40 @@
+column,seq,loc_row,confidence,ko,en
+name,1,12950,anchored,공격 범위 변경,Change Attack Range
+desc,1,12951,anchored,공격 범위가 자기 자신으로 제한되어 일반 공격을 사용할 수 없게 된다.,"Attack range is reduced to the single tile the unit is on, disabling normal attacks."
+desc,2,12952,anchored,공격 범위가 십자 1칸으로 변경된다.,Attack range changes to 1-tile cross.
+desc,3,12953,anchored,공격 범위가 반경 1칸 전체로 변경된다.,Attack range changes to 1-tile full radius.
+desc,4,12954,anchored,공격 범위가 십자 2칸과 대각선 1칸으로 변경된다.,Attack range changes to 2-tile cross and 1-tile diagonal.
+desc,5,12955,anchored,"공격 범위가 마름모꼴 2,3 칸으로 변경된다.","Attack range changes to 2, 3-tile rhombuses."
+desc,6,12956,anchored,"공격 범위가 마름모꼴 2, 3, 4칸으로 변경된다.","Attack range changes to 2, 3, 4-tile rhombuses."
+desc,7,12957,anchored,공격 범위가 십자 2칸으로 변경된다.,Attack range changes to 2-tile cross.
+desc,8,12958,anchored,공격 범위가 마름모꼴 2칸 전체로 변경된다.,Attack range changes to 2-tile full rhombus.
+desc,9,12959,anchored,공격 범위가 마름모꼴 3칸 전체로 변경된다.,Attack range changes to 3-tile full rhombus.
+desc,10,12960,anchored,공격 범위가 마름모꼴 4칸 전체로 변경된다.,Attack range changes to 4-tile full rhombus.
+desc,11,12961,anchored,공격 범위가 마름모꼴 4칸으로 변경된다.,Attack range changes to 4-tile rhombus.
+desc,12,12962,anchored,"공격 범위가 마름모꼴 4, 5칸으로 변경된다.","Attack range changes to 4, 5-tile rhombuses."
+desc,13,12963,anchored,공격 범위가 십자 1칸 너머로 변경된다.,Attack range changes to over 1-tile cross.
+desc,14,12964,anchored,공격 범위가 전장 전체로 변경된다.,Attack range changes to the entire battlefield.
+desc,15,12965,anchored,공격 범위가 2칸 너머의 3열로 변경된다.,Attack range changes to 3 rows over 2-tile.
+desc,16,12966,anchored,공격 범위가 2칸 너머의 5열로 변경된다.,Attack range changes to 5 rows over 2-tile.
+desc,17,12967,anchored,공격 범위가 십자 3칸 전체로 변경된다.,Attack range changes to 3-tile full cross.
+desc,18,12968,anchored,공격 범위가 대각선으로 변경된다.,Attack range changes to diagonal.
+desc,19,12969,anchored,공격 범위가 대각선 2칸 전체로 변경된다.,Attack range changes to 2-tile full diagonal.
+desc,20,12970,anchored,공격 범위가 십자 2칸과 대각선 2칸으로 변경된다.,Attack range changes to 2-tile cross and 2-tile diagonal.
+desc,21,12971,anchored,공격 범위가 2칸으로 변경된다.,Attack range changes to 2-tile.
+desc,22,12972,anchored,공격 범위가 2칸과 대각선으로 변경된다.,Attack range changes to 2-tile and diagonal.
+desc,23,12973,anchored,공격 범위가 대각선 2칸으로 변경된다.,Attack range changes to 2-tile diagonal.
+desc,24,12974,anchored,공격 범위가 1칸 너머의 사각형으로 변경된다.,Attack range changes to over 1-tile square.
+desc,25,12975,anchored,공격 범위가 십자 3칸으로 변경된다,Attack range changes to 3-tile cross.
+desc,26,12976,anchored,"공격 범위가 십자 2, 3칸으로 변경된다.","Attack range changes to 2, 3-tile crosses."
+desc,27,12977,anchored,공격 범위가 반경 1칸 전체와 대각선 2칸으로 변경된다.,Attack range changes to 1-tile full radius and 2-tile diagonal.
+desc,28,12978,anchored,공격 범위가 마름모꼴 3칸으로 변경된다.,Attack range changes to 3-tile rhombus.
+desc,29,12979,anchored,"공격 범위가 3, 4칸으로 변경된다.","Attack range changes to 3, 4-tiles."
+desc,30,12980,anchored,"공격 범위가 3, 4, 5칸으로 변경된다.","Attack range changes to 3, 4, 5-tiles."
+desc,31,12981,anchored,공격 범위가 1칸 너머의 3열과 반경 1칸 전체로 변경된다.,Attack range changes to 3 rows over 1-tile and 1-tile full radius.
+desc,32,12982,anchored,공격 범위가 3칸 너머의 5열과 대각선 3칸으로 변경된다.,Attack range changes to 5 rows over 3-tile and 3-tile diagonal.
+desc,33,12983,anchored,공격 범위가 3칸 너머의 5열과 반경 3칸 전체로 변경된다.,Attack range changes to 5 rows over 3-tile and 3-tile full radius.
+desc,34,12984,anchored,공격 범위가 십자 파동 범위로 변경된다.,Attack range changes to cross direction.
+desc,35,12985,anchored,공격 범위가 대각선 파동 범위로 변경된다.,Attack range changes to diagonal direction.
+desc,36,12986,anchored,공격 범위가 마름모꼴 5칸 전체로 변경된다.,Attack range changes to 5-tile full rhombus.
+desc,37,12987,anchored,공격 범위가 십자 7칸으로 변경된다.,Attack range changes to 7-tile cross.
+desc,38,12988,anchored,공격 범위가 마름모꼴 2칸을 제외한 전장 전체로 변경된다.,Attack range changes to the entire battlefield except 2-tile rhombus.

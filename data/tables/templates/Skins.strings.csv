@@ -1,0 +1,95 @@
+column,seq,loc_row,confidence,ko,en
+name,1,7333,inferred,[사용] 연의,[Use] Story
+name,2,7334,inferred,[사용] 교환소,[Use] Exchange Center
+name,3,7335,inferred,[획득] 섬멸전,[Obtain] Annihilation
+name,4,7336,inferred,[획득] 천리행,[Obtain] Trial of the Gates
+name,5,7337,inferred,[사용] 사건,[Use] Quest
+name,6,7338,inferred,[사용] 보패 상자,[Use] Relic Chest
+name,7,7339,inferred,[사용] 인연 도감,[Use] Friendship Book
+name,8,7340,inferred,[사용] 전용 보물,[Use] Exclusive Artifact
+name,9,7341,inferred,[사용] 무장전,[Use] Officer Battle
+name,10,7342,inferred,[사용] 성장 비법서,[Use] Training Manual
+name,11,7343,inferred,[사용] 강화 효과 부여,[Use] Add Upgrade Effects
+name,12,7344,inferred,[획득] 무장전,[Obtain] Officer Battle
+name,13,7345,inferred,[획득] 경쟁전,[Obtain] PvP
+name,14,7346,inferred,스킨_여포1,skin_lubu1
+name,15,7347,inferred,스킨_초선1,skin_diaochan1
+name,16,7348,inferred,스킨_여령기1,skin_lulingqi1
+name,17,7349,inferred,스킨_동백1,skin_dongbai1
+name,18,7350,inferred,스킨_왕도1,skin_wangdu1
+name,19,7351,inferred,스킨_왕열1,skin_wangyue1
+name,20,7352,inferred,스킨_소교1,skin_xiaoqiao1
+name,21,7353,anchored,스킨_관흥1,Skin_Guan Xing1
+name,22,7354,anchored,스킨_관평1,Skin_Guan Ping1
+name,23,7355,anchored,스킨_왕보1,Skin_Wang Fu1
+name,24,7356,anchored,스킨_관우1,Skin_Guan Yu1
+name,25,7357,anchored,스킨_장비1,Skin_Zhang Fei1
+name,26,7358,anchored,스킨_조운1,Skin_Zhao Yun1
+name,27,7359,anchored,스킨_주창1,Skin_Zhou Cang1
+name,28,7360,anchored,스킨_관색1,Skin_Guan Suo1
+name,29,7361,anchored,스킨_손건1,Skin_Sun Qian1
+name,30,7362,anchored,스킨_화만1,Skin_Hua Man1
+name,31,7363,anchored,스킨_왕평1,Skin_Wang Ping1
+name,32,7364,anchored,스킨_노숙1,Skin_Lu Su1
+name,33,7365,anchored,스킨_서성1,Skin_Xu Sheng1
+name,34,7366,anchored,스킨_한당1,Skin_Han Dang1
+name,35,7367,anchored,스킨_장소1,Skin_Zhang Zhao1
+name,36,7368,anchored,스킨_주치1,Skin_Zhu Zhi1
+name,37,7369,anchored,스킨_주환1,Skin_Zhu Huan1
+name,38,7370,anchored,스킨_주태1,Skin_Zhou Tai1
+name,39,7371,anchored,스킨_손상향1,Skin_Sun Shangxiang1
+name,40,7372,anchored,스킨_손책1,Skin_Sun Ce1
+name,41,7373,anchored,스킨_주유1,Skin_Zhou Yu1
+name,42,7374,anchored,스킨_감녕1,Skin_Gan Ning1
+name,43,7375,anchored,스킨_황개1,Skin_Huang Gai1
+name,44,7376,anchored,스킨_곽가1,Skin_Guo Jia1
+name,45,7377,anchored,스킨_서황1,Skin_Xu Huang1
+name,46,7378,anchored,스킨_견희1,Skin_Zhenji1
+name,47,7379,anchored,스킨_원소1,Skin_Yuan Shao1
+name,48,7380,anchored,스킨_안량1,Skin_Yan Liang1
+name,49,7381,anchored,스킨_문추1,Skin_Wen Chou1
+name,50,7382,anchored,스킨_이전1,Skin_Li Dian1
+name,51,7383,anchored,스킨_우금1,Skin_Yu Jin1
+name,52,7384,anchored,스킨_마초1,Skin_Ma Chao1
+name,53,7385,anchored,스킨_황충1,Skin_Huang Zhong1
+name,54,7386,anchored,스킨_방통1,Skin_Pang Tong1
+name,55,7387,anchored,스킨_마대1,Skin_Ma Dai1
+name,56,7388,anchored,스킨_마운록1,Skin_Ma Yunlu1
+name,57,7389,anchored,스킨_마요희1,Skin_Ma Yaoji1
+name,58,7390,anchored,스킨_장임1,Skin_Zhang Ren1
+name,59,7391,anchored,스킨_엄안1,Skin_Yan Yan1
+name,60,7392,anchored,스킨_서서1,Skin_Xu Shu1
+name,61,7393,anchored,스킨_장춘화1,Skin_Zhang Chunhua1
+name,62,7394,anchored,스킨_사마의1,Skin_Sima Yi1
+name,63,7395,anchored,스킨_장합1,Skin_Zhang He1
+name,64,7396,anchored,스킨_종회1,Skin_Zhong Hui1
+name,65,7397,anchored,스킨_등애1,Skin_Deng Ai1
+name,66,7398,anchored,스킨_진군1,Skin_Chen Qun1
+name,67,7399,anchored,스킨_조진1,Skin_Cao Zhen1
+name,68,7400,anchored,스킨_조휴1,Skin_Cao Xiu1
+name,69,7401,anchored,스킨_곽회1,Skin_Guo Huai1
+name,70,7402,anchored,스킨_조조1,Skin_Cao Cao 1
+name,71,7403,anchored,스킨_전위1,Skin_Dian Wei 1
+name,72,7404,anchored,스킨_순욱1,Skin_Xun Yu 1
+name,73,7405,anchored,스킨_조홍1,Skin_Cao Hong 1
+name,74,7406,anchored,스킨_조인1,Skin_Cao Ren 1
+name,75,7407,anchored,스킨_정욱1,Skin_Cheng Yu 1
+name,76,7408,anchored,스킨_조식1,Skin_Cao Zhi 1
+name,77,7409,anchored,스킨_유비1,Skin_Liu Bei1
+name,78,7410,anchored,스킨_육손1,Skin_Lu Xun1
+name,79,7411,anchored,스킨_보연사1,Skin_Bu Lianshi1
+name,80,7412,anchored,스킨_요화1,Skin_Liao Hua1
+name,81,7413,anchored,스킨_오반1,Skin_Wu Ban1
+name,82,7414,anchored,스킨_마량1,Skin_Ma Liang1
+name,83,7415,anchored,스킨_정봉1,Skin_Ding Feng1
+name,84,7416,anchored,스킨_손환1,Skin_Sun Huan1
+name,85,7417,anchored,스킨_주연1,Skin_Zhu Ran1
+name,86,7418,anchored,스킨_조참1,Skin_Cao Shen1
+name,87,7419,anchored,스킨_제갈량1,Skin_Zhuge Liang1
+name,88,7420,anchored,스킨_황월영1,Skin_Huang Yueying1
+name,89,7421,anchored,스킨_위연1,Skin_Wei Yan1
+name,90,7422,anchored,스킨_강유1,Skin_Jiang Wei1
+name,91,7423,anchored,스킨_마속1,Skin_Ma Su1
+name,92,7424,anchored,스킨_장포1,Skin_Zhang Bao1
+name,93,7425,anchored,스킨_계포1,Skin_Ji Bu1
+name,94,7426,anchored,스킨_이사1,Skin_Li Si1

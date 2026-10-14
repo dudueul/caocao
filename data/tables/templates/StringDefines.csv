@@ -1,0 +1,222 @@
+txt,id,#txt_en,#loc_row,#confidence
+노래,,Song,18344,anchored
+검술,,Swordsmanship,18345,anchored
+보물 금지,,Artifact Seal,18346,anchored
+통솔,,CMD,18347,anchored
+명령,,Command,18348,anchored
+방어술,,Fortification,18349,anchored
+각성회복,,Restore Awakening,18350,anchored
+받는 피해량 증가,,,18351,anchored
+내성 HP 증가,,Increase Keep HP,18352,anchored
+군량 공출,,Rations,18353,anchored
+은전 징세,,Silver Coin Tax,18354,anchored
+군량 저장고,,Stockpile,18355,anchored
+은전 저장고,,Treasury,18356,anchored
+안전보관율,,Secure Resources,18357,anchored
+도시 군량,,City Rations,18358,anchored
+도시 은전,,Silver Coins in City,18359,anchored
+시간,,h,18360,anchored
+정보,,Info,18361,anchored
+예상 약탈 자원,,Estimated Resources Pillages,18362,anchored
+현재 보유 자원,,Current Resources,18363,anchored
+획득(강화 시),,Obtain (Upon upgrading),18364,anchored
+이상 필요합니다.,,Requires more resources.,18365,anchored
+건물 기능,,Building Function,18366,anchored
+가득,,Full,18367,anchored
+군주 LV,,Warlord Rank,18368,anchored
+필요,,Required,18369,anchored
+"주공, 명령을.",,Issue a command to a unit.,18370,anchored
+"주공, 공격 대상을 선택해 주십시오.",,Select attack target.,18371,anchored
+"주공, 공격 대상 범위를 확인해 주십시오.",,Check target range.,18372,anchored
+"주공, 협공 대상을 선택해 주십시오.",,Select joint attack target.,18373,anchored
+"주공, 책략 대상을 선택해 주십시오.",,Select tactics target.,18374,anchored
+"주공, 책략 대상 범위를 확인해 주십시오.",,Check tactics target range.,18375,anchored
+"주공, 사용 대상을 선택해 주십시오.",,Select a target to use on.,18376,anchored
+"주공, 사용 대상 범위를 확인해 주십시오.",,Check the item use range.,18377,anchored
+필수 출진 장수는 변경할 수 없습니다.,,Required commanders cannot be changed.,18378,anchored
+이번 전투에 출진할 수 없는 장수입니다.,,This commander cannot join the battle.,18379,anchored
+출진 Cost가 부족합니다.,,Insufficient amount to pay cost.,18380,anchored
+최적 장수로 자동 배치합니다.,,Auto assign the optimal commanders.,18381,anchored
+더 출진할 수 없습니다.\n다른 장수를 출진 취소하고 새 장수를 선택하세요.,,No additional commanders can join.\nRemove one to add a new commander.,18382,anchored
+비용이 부족합니다.,,You cannot pay the price.,18383,anchored
+부족한 자원을 금전으로 구매하시겠습니까?,,Do you want to buy the missing resources with Gold Coins?,18384,anchored
+자원 부족,,Insufficient resources,18385,anchored
+구매,,Purchase,18386,anchored
+금전이 부족합니다.,,Insufficient Gold Coins.,18387,anchored
+상점 이동,,Go to Shop,18388,anchored
+은전고가 가득 차 수거할 수 없습니다.,,Your Treasury is full and cannot be collected.,18389,anchored
+군량고가 가득 차 수거할 수 없습니다.,,Your Stockpile is full and cannot be collected.,18390,anchored
+을(를) 수도로 정하시겠습니까?,,Change the Capital City?,18391,anchored
+수도는 공격당해도 빼앗기지 않습니다.,,"Your Capital City will not be lost, even when attacked.",18392,anchored
+새로운 장수를 영입하였습니다.,,You have recruited a new commander.,18393,anchored
+년,,Y,18394,anchored
+월,,M,18395,anchored
+일,,D,18396,anchored
+분,,m,18397,anchored
+남음,,left,18398,anchored
+추가,,Add,18399,anchored
+결제 명세,,Payment Details,18400,anchored
+결제 비율,,Billing Rate,18401,anchored
+다음 LV까지 남은 점수,,Points until next level,18402,anchored
+현재 누적 점수,,Current Accumulated Points,18403,anchored
+혜택,,Benefits,18404,anchored
+유료,,Paid,18405,anchored
+무료,,Free,18406,anchored
+획득,,Obtain,18407,anchored
+소모,,Use,18408,anchored
+잔액,,Balance,18409,anchored
+획득한 VIP 점수,,Obtained VIP EXP,18410,anchored
+무료 금전은 환급되지 않습니다.,,Free Gold Coins cannot be refunded.,18411,anchored
+충전한 유료 금전만큼 VIP 점수가 증가합니다.,,Spend Gold Coins to earn VIP EXP.,18412,anchored
+슬롯 확장,,Expand Slot,18413,anchored
+슬롯을 확장하면 연의편 내 모든 전투에서 아군 장수의 추가 배치가 가능합니다.,,Additional allies can be selected in Story mode with expanded slots.,18414,anchored
+님을 우군으로 요청하였습니다.,,has requested reinforcements.,18415,anchored
+필수 장수가 부족합니다.,,Insufficient required commanders.,18416,anchored
+필수 장수,,Required Commander,18417,anchored
+필수 장수는 이전 편에서 입수 가능합니다.,,The required commanders can be recruited from the previous episode.,18418,anchored
+아이템을 획득했습니다.,,Obtained reward.,18419,anchored
+개,,x,18420,anchored
+오늘은 그만 보겠습니다,,Do not show again today.,18421,anchored
+총 금전,,Total Gold Coins,18422,anchored
+을(를) 매일 1회 서신으로 지급합니다. (매일 밤 12시 초기화됩니다)\n\n지금 결제하시면,,will be given once daily by letter. (Resets every night at midnight.)\n\nPurchase now,18423,anchored
+기간,,Period,18424,anchored
+지형 효과,,Terrain Effect,18425,anchored
+소모 이동력,,SPD Cost,18426,anchored
+전장 정보,,Battle Info,18427,anchored
+적 부대 전멸,,Eliminate Enemies,18428,anchored
+의 퇴각,,'s Defeat,18429,anchored
+턴 경과,,Turn Over,18430,anchored
+아군 전멸,,Allies Eliminated,18431,anchored
+아군,,Ally,18432,anchored
+우군,,Friendly,18433,anchored
+적군,,Enemy,18434,anchored
+원군,,Reinforcement,18435,anchored
+아군과 우군,,Ally and Friendly,18436,anchored
+모든 부대,,All Units,18437,anchored
+중립,,Neutral,18438,anchored
+점유 불가,,Cannot Occupy,18439,anchored
+턴 이내,,Within Turn,18440,anchored
+전투 승리,,Victorious,18441,anchored
+출진 장수,,Assigned Commanders,18442,anchored
+단기접전,,Duel,18443,anchored
+회 이상 진행,,or more times,18444,anchored
+인 이하,,or fewer people,18445,anchored
+진행,,Progress,18446,anchored
+의 대화,,'s conversation,18447,anchored
+이(가),,has,18448,anchored
+처치,,Defeat,18449,anchored
+부대 이상 퇴각,,or more units defeated,18450,anchored
+전원 퇴각,,Defeat all units,18451,anchored
+생존,,Survive,18452,anchored
+전원 생존,,All units survive,18453,anchored
+사망,,Defeat,18454,anchored
+무승부,,Draw,18455,anchored
+이미 수령,,Already claimed,18456,anchored
+적군 전멸,,Enemies eliminated,18457,anchored
+선택 결과,,Results,18458,anchored
+선택에 따라 승리 시 다음 중 1개를 얻습니다.,,You will obtain one of the following upon winning based on your choice:,18459,anchored
+적군 복병,,Enemy Ambush,18460,anchored
+복병,,Ambush,18461,anchored
+부대 미만 퇴각,,or fewer units defeated,18462,anchored
+이상 획득,,or more obtained,18463,anchored
+무소속,,Independent,18464,anchored
+조조군,,Cao Cao's Forces,18465,anchored
+유비군,,Liu Bei's Forces,18466,anchored
+손오군,,Sun Wu's Forces,18467,anchored
+원소군,,Yuan Shao's Forces,18468,anchored
+원술군,,Yuan Shu's Forces,18469,anchored
+동탁군,,Dong Zhuo's Forces,18470,anchored
+여포군,,Lu Bu's Forces,18471,anchored
+도겸군,,Tao Qian's Forces,18472,anchored
+서량군,,Xiliang's Forces,18473,anchored
+장로군,,Zhang Lu's Forces,18474,anchored
+장수군,,Zhang Xiu's Forces,18475,anchored
+태평도,,Taiping Dao,18476,anchored
+원담군,,Yuan Tan's Forces,18477,anchored
+유표군,,Liu Biao's Forces,18478,anchored
+공손찬군,,Gongsun Zan's Forces,18479,anchored
+산월군,,Shanyue's Forces,18480,anchored
+아주 쉬움,,Very Easy,18481,anchored
+쉬움,,Easy,18482,anchored
+어려움,,Hard,18483,anchored
+몹시 어려움,,Very Hard,18484,anchored
+고지,,High Ground,18485,anchored
+공성,,Siege,18486,anchored
+돌파,,Breakthrough,18487,anchored
+미로,,Maze,18488,anchored
+수상,,Sea Battle,18489,anchored
+탈출,,Escape,18490,anchored
+협곡,,Valley,18491,anchored
+시간당 징수량,,Taxes per Hour,18492,anchored
+현재 저장량,,Current Storage,18493,anchored
+최대 저장량,,Max Storage,18494,anchored
+도시를 점령하면 더 많은 군량을 얻을 수 있습니다.,,Occupy more cities to obtain more Rations.,18495,anchored
+도시를 점령하면 더 많은 은전을 얻을 수 있습니다.,,Occupy more cities to obtain more Silver Coins.,18496,anchored
+군량이 ,,When your Rations are ,18497,anchored
+이하일 경우 자동으로 매시간,,"or below, they automatically fill up",18498,anchored
+씩 채워집니다.,,every hour.,18499,anchored
+남은 시간,,Time left,18500,anchored
+종류,,Type,18501,anchored
+착용 조건,,Equipment Required,18502,anchored
+[ffff00]효과[ffffff],,[ffff00]Effect[ffffff],18503,anchored
+[ffff00]설명[ffffff],,[ffff00]Description[ffffff],18504,anchored
+공격력,,ATK,18505,anchored
+방어력,,DEF,18506,anchored
+LV 당,,per Lv.,18507,anchored
+현금,,Cash,18508,anchored
+평범,,Common,18509,anchored
+비범,,Uncommon,18510,anchored
+준수,,Rare,18511,anchored
+백미,,Epic,18512,anchored
+전설,,Legendary,18513,anchored
+무력,,STR,18514,anchored
+지력,,INT,18515,anchored
+민첩,,DEX,18516,anchored
+행운,,LCK,18517,anchored
+정신력,,WIS,18518,anchored
+순발력,,AGI,18519,anchored
+사기,,MRL,18520,anchored
+이동력,,SPD,18521,anchored
+병종,,Unit Type,18522,anchored
+예,,Okay,18523,anchored
+아니오,,Cancel,18524,anchored
+메뉴,,Menu,18525,anchored
+지형 정보,,Terrain Info,18526,anchored
+부대 일람,,Unit List,18527,anchored
+턴 종료,,End Turn,18528,anchored
+한 수 무르기,,Undo Move,18529,anchored
+한 턴 무르기,,Undo Turn,18530,anchored
+고속 진행,,Fast Forward,18531,anchored
+관리,,Manage,18532,anchored
+천도,,Transfer Capital,18533,anchored
+실록,,Annals,18534,anchored
+자원 수거,,Retrieve Resources,18535,anchored
+정찰,,Scout,18536,anchored
+변경,,Select,18537,anchored
+턴 추가,,Add Turns,18538,anchored
+포기,,Forfeit,18539,anchored
+전장 배치 변경,,Unit Assignment,18540,anchored
+행동을 마치지 않은 부대가 남아 있습니다.\n정말 턴을 종료하시겠습니까?,,Some of your units may still take an action.\nEnd the turn anyway?,18541,anchored
+모든 부대의 명령을 종료합니다.,,All unit assignments will end.,18542,anchored
+바로 종료,,End Now,18543,inferred
+전투 위임,,Auto Battle,18544,inferred
+야망,,Ambition,18545,inferred
+정말 퇴각하시겠습니까? 전투 중 얻게 된 보상과 재화를 모두 잃고 전투 중 소모한 재화는 소모한 상태가 유지됩니다.,,"If you retreat, all rewards and resources from the battle will be lost. Spent resources will not be refunded. Retreat anyway?",18546,inferred
+전투에서 패배했습니다!\n기회를 얻어 상황을 만회하시겠습니까? 아니면 패배를 받아들이겠습니까?,,The day has been lost!\nWould you like the opportunity to redeem your honor? Or have you tasted enough loss on this day?,18547,inferred
+상태이상 회복,,Restore Status Effect,18548,inferred
+능력 상승,,Increase Stats,18549,inferred
+소모품,,Consumables,18550,inferred
+책략서,,Tactics Book,18551,inferred
+조합재료,,Material,18552,inferred
+재화,,Currency,18553,inferred
+보상,,Rewards,18554,inferred
+[ff0000]화계 [ffffff]책략의 위력이 향상됩니다.,,[ff0000]Fire[ffffff] Tactics powers are boosted.,18555,inferred
+[ffff00]지계 [ffffff]책략의 위력이 향상됩니다.,,[ffff00]Earth[ffffff] Tactics powers are boosted.,18556,inferred
+[004eff]수계 [ffffff]책략의 위력이 향상됩니다.,,[004eff]Water[ffffff] Tactics powers are boosted.,18557,inferred
+[004eff]수계 [ffffff]책략의 사용 가능 지형이 증가합니다.,,Increases the available terrain for [004eff]Water[ffffff] Tactics.,18558,inferred
+화계 책략을 사용할 수 없습니다.,,Cannot use Fire Tactics.,18559,inferred
+[00fff0]풍계 [ffffff]책략의 위력이 향상됩니다.,,[00fff0]Wind[ffffff] Tactics powers are boosted.,18560,inferred
+[22f517]말[ff0000]을 탄 병종의 [22f517]이동력[ff0000]이 감소합니다.,,Reduces the [22f517]SPD[ff0000] of all [22f517]horse[ff0000] units.,18561,inferred
+"[004eff]수계[ffffff], [00fff0]풍계 [ffffff]책략의 위력이 향상됩니다.",,[004eff]Water[ffffff] and [00fff0]Wind[ffffff] Tactics are boosted.,18562,inferred
+[ff0000]모든 [ffb400]원거리 공격[ff0000]의 [22f517]명중률[ff0000]이 감소합니다.,,Reduces [22f517]ACC[ff0000] of [ff0000]all [ffb400]ranged attacks[ff0000].,18563,inferred
+[ff0000]모든 [ffb400]책략[ff0000]의 [22f517]명중률[ff0000]이 감소합니다.,,Reduces [22f517]ACC[ff0000] of [ff0000]all [ffb400]tactics[ff0000].,18564,inferred

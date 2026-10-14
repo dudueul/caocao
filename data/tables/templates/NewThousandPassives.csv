@@ -1,0 +1,135 @@
+name,id,PassiveId1,value1,Type1,PassiveId2,value2,Type2,Projectile,Magical,Melee,getType,desc1,desc2,exception,jobType,#name_en,#loc_row,#confidence
+복양관군,,,,,,,,,,,,,,,,Puyang Force,18823,inferred
+어린진,,,,,,,,,,,,,,,,Herringbone Formation,18824,inferred
+안행진,,,,,,,,,,,,,,,,Echelon Formation,18825,inferred
+방진,,,,,,,,,,,,,,,,Square Formation,18826,inferred
+추행진,,,,,,,,,,,,,,,,Pursuit Formation,18827,inferred
+학익진,,,,,,,,,,,,,,,,Crane Formation,18828,inferred
+언월진,,,,,,,,,,,,,,,,Half Moon Formation,18829,inferred
+"양주, 장강 전투",,,,,,,,,,,,,,,,"Liangzhou, River Battle",18830,inferred
+"익주, 두개의 진",,,,,,,,,,,,,,,,"Yizhou, Two Formations",18831,inferred
+"양주, 두개의 진",,,,,,,,,,,,,,,,"Liangzhou, Two Formations",18832,inferred
+"양주, 장강의 전투",,,,,,,,,,,,,,,,"Liangzhou, Battle of Yangtze",18833,inferred
+십인장,,,,,,,,,,,,,,,,10-man Commander,18834,inferred
+삼백인장,,,,,,,,,,,,,,,,300-man Commander,18835,inferred
+장군,,,,,,,,,,,,,,,,General,18836,inferred
+투사의 전장,,,,,,,,,,,,,,,,Slayer,18837,inferred
+협객의 전장,,,,,,,,,,,,,,,,Fencer,18838,inferred
+명공의 전장,,,,,,,,,,,,,,,,Craftsman,18839,inferred
+성군의 전장,,,,,,,,,,,,,,,,Sage King,18840,inferred
+군신의 전장,,,,,,,,,,,,,,,,God of War,18841,inferred
+패왕의 전장,,,,,,,,,,,,,,,,Conqueror,18842,inferred
+진격하는,,,,,,,,,,,,,,,,Forward March,18843,inferred
+철벽의,,,,,,,,,,,,,,,,Iron Wall,18844,inferred
+불패의,,,,,,,,,,,,,,,,Invincible,18845,inferred
+풋내기,,,,,,,,,,,,,,,,Rookie,18846,inferred
+강력한,,,,,,,,,,,,,,,,Powerful,18847,inferred
+연약한,,,,,,,,,,,,,,,,Feeble,18848,inferred
+의용군,,,,,,,,,,,,,,,,Militia,18849,inferred
+정규군,,,,,,,,,,,,,,,,Official Army,18850,inferred
+황실군,,,,,,,,,,,,,,,,Royal Army,18851,inferred
+동령관,,,,,,,,,,,,,,,,,18852,inferred
+공격 범위 확장(몰우전),,,,,,,,,,,,,,,,Expand Attack RNG (Featherless Arrow),18853,inferred
+공격 범위 확장(거대 몰우전),,,,,,,,,,,,,,,,Expand Attack RNG (Giant Featherless Arrow),18854,inferred
+책략 범위 확장(거대 몰우전),,,,,,,,,,,,,,,,Expand Tactics RNG (Giant Featherless Arrow),18855,inferred
+피해 범위 확장(십자),,,,,,,,,,,,,,,,Expand AoE (Cross),18856,inferred
+피해 범위 확장(구궁),,,,,,,,,,,,,,,,Expand AoE (Nonagong),18857,inferred
+피해 범위 확장(몰우전),,,,,,,,,,,,,,,,Expand AoE (Featherless Arrow),18858,inferred
+분노 축적 5%,,,,,,,,,,,,,,,,Rage +5%,18859,inferred
+분노 축적 10%,,,,,,,,,,,,,,,,Rage +10%,18860,inferred
+돌진 공격 4%,,,,,,,,,,,,,,,,4% Charge Attack,18861,inferred
+돌진 공격 7%,,,,,,,,,,,,,,,,7% Charge Attack,18862,inferred
+돌진 공격 10%,,,,,,,,,,,,,,,,10% Charge Attack,18863,inferred
+금격 공격 30%,,,,,,,,,,,,,,,,30% Blind,18864,inferred
+금격 공격 50%,,,,,,,,,,,,,,,,50% Blind,18865,inferred
+공격 명중률 20% 증가,,,,,,,,,,,,,,,,Attack ACC +20%,18866,anchored
+공격 명중률 50% 증가,,,,,,,,,,,,,,,,Attack ACC +50%,18867,anchored
+공격 방어율 20% 증가,,,,,,,,,,,,,,,,Attack DEF Rate +20%,18868,anchored
+공격 방어율 50% 증가,,,,,,,,,,,,,,,,Attack DEF Rate +50%,18869,anchored
+책략 명중률 20% 증가,,,,,,,,,,,,,,,,Tactics ACC +20%,18870,anchored
+책략 명중률 50% 증가,,,,,,,,,,,,,,,,Tactics ACC +50%,18871,anchored
+책략 방어율 20% 증가,,,,,,,,,,,,,,,,Tactics DEF Rate +20%,18872,anchored
+책략 방어율 50% 증가,,,,,,,,,,,,,,,,Tactics DEF Rate +50%,18873,anchored
+전 방어율 15% 증가,,,,,,,,,,,,,,,,All DEF Rate +15%,18874,anchored
+전 방어율 25% 증가,,,,,,,,,,,,,,,,All DEF Rate +25%,18875,anchored
+관통 공격 15%,,,,,,,,,,,,,,,,15% Piercing Attack,18876,anchored
+관통 공격 25%,,,,,,,,,,,,,,,,25% Piercing Attack,18877,anchored
+관통 책략 15%,,,,,,,,,,,,,,,,15% Piercing Tactics,18878,anchored
+관통 책략 25%,,,,,,,,,,,,,,,,25% Piercing Tactics,18879,anchored
+천하무쌍 40%,,,,,,,,,,,,,,,,40% Second Wind,18880,anchored
+천하무쌍 80%,,,,,,,,,,,,,,,,80% Second Wind,18881,anchored
+국사무쌍 40%,,,,,,,,,,,,,,,,40% Peerless,18882,anchored
+국사무쌍 80%,,,,,,,,,,,,,,,,80% Peerless,18883,anchored
+기마 공격 강화 30%,,,,,,,,,,,,,,,,Mounted Attack +30%,18884,anchored
+기마 공격 강화 50%,,,,,,,,,,,,,,,,Mounted Attack +50%,18885,anchored
+물리 공격 강화 30%,,,,,,,,,,,,,,,,Physical Attack +30%,18886,anchored
+물리 공격 강화 50%,,,,,,,,,,,,,,,,Physical Attack +50%,18887,anchored
+물리 피해 감소 15%,,,,,,,,,,,,,,,,Physical Damage -15%,18888,anchored
+물리 피해 감소 30%,,,,,,,,,,,,,,,,Physical Damage -30%,18889,anchored
+간접 피해 감소 20%,,,,,,,,,,,,,,,,Ranged Damage -20%,18890,anchored
+간접 피해 감소 40%,,,,,,,,,,,,,,,,Ranged Damage -40%,18891,anchored
+연속 공격 강화 40%,,,,,,,,,,,,,,,,Double Attack +40%,18892,anchored
+연속 공격 강화 70%,,,,,,,,,,,,,,,,Double Attack +70%,18893,anchored
+화계 책략 강화 30%,,,,,,,,,,,,,,,,Fire Tactics +30%,18894,anchored
+풍계 책략 강화 30%,,,,,,,,,,,,,,,,Wind Tactics +30%,18895,anchored
+수계 책략 강화 30%,,,,,,,,,,,,,,,,Water Tactics +30%,18896,anchored
+지계 책략 강화 30%,,,,,,,,,,,,,,,,Earth Tactics +30%,18897,anchored
+방해계 책략 강화 30%,,,,,,,,,,,,,,,,Interrupt Tactics +30%,18898,anchored
+보급계 책략 강화 30%,,,,,,,,,,,,,,,,Supply Tactics +30%,18899,anchored
+원소 책략 강화 30%,,,,,,,,,,,,,,,,Elemental Tactics +30%,18900,anchored
+공격 책략 강화 15%,,,,,,,,,,,,,,,,Offensive Tactics +15%,18901,anchored
+공격 책략 강화 30%,,,,,,,,,,,,,,,,Offensive Tactics +30%,18902,anchored
+책략 피해 감소 15%,,,,,,,,,,,,,,,,Tactics Damage -15%,18903,anchored
+책략 피해 감소 30%,,,,,,,,,,,,,,,,Tactics Damage -30%,18904,anchored
+MP 절약 30%,,,,,,,,,,,,,,,,30% MP Reduction,18905,anchored
+흡혈 공격 20%,,,,,,,,,,,,,,,,20% Lifesteal,18906,anchored
+흡혈 공격 40%,,,,,,,,,,,,,,,,40% Lifesteal,18907,anchored
+맹독 공격 30%,,,,,,,,,,,,,,,,30% Deadly Poison,18908,anchored
+맹독 공격 100%,,,,,,,,,,,,,,,,100% Deadly Poison,18909,anchored
+혼란 공격 30%,,,,,,,,,,,,,,,,30% Confuse,18910,anchored
+혼란 공격 100%,,,,,,,,,,,,,,,,100% Confuse,18911,anchored
+중독 공격 40%,,,,,,,,,,,,,,,,40% Poison,18912,anchored
+중독 공격 100%,,,,,,,,,,,,,,,,100% Poison,18913,anchored
+금책 공격 40%,,,,,,,,,,,,,,,,40% Silence,18914,anchored
+금책 공격 100%,,,,,,,,,,,,,,,,100% Silence,18915,anchored
+부동 공격 40%,,,,,,,,,,,,,,,,40% Immobilize,18916,anchored
+부동 공격 100%,,,,,,,,,,,,,,,,100% Immobilize,18917,anchored
+상태이상 공격 30%,,,,,,,,,,,,,,,,30% Status Effect,18918,anchored
+상태이상 공격 100%,,,,,,,,,,,,,,,,100% Status Effect,18919,anchored
+물리 피해 반사 20%,,,,,,,,,,,,,,,,20% Physical Damage Reflect,18920,anchored
+물리 피해 반사 40%,,,,,,,,,,,,,,,,40% Physical Damage Reflect,18921,anchored
+책략 피해 반사 20%,,,,,,,,,,,,,,,,20% Tactics Damage Reflect,18922,anchored
+책략 피해 반사 40%,,,,,,,,,,,,,,,,40% Tactics Damage Reflect,18923,anchored
+회복의 콩 자동 사용,,,,,,,,,,,,,,,,Auto Use Soybean,18924,anchored
+회복의 기장 자동 사용,,,,,,,,,,,,,,,,Auto Use Millet,18925,anchored
+회복의 쌀 자동 사용,,,,,,,,,,,,,,,,Auto Use Rice,18926,anchored
+공격력 보조 +15%,,,,,,,,,,,,,,,,ATK Boost +15%,18927,anchored
+공격력 보조 +30%,,,,,,,,,,,,,,,,ATK Boost +30%,18928,anchored
+정신력 보조 +15%,,,,,,,,,,,,,,,,WIS Boost +15%,18929,anchored
+정신력 보조 +30%,,,,,,,,,,,,,,,,WIS Boost +30%,18930,anchored
+방어력 보조 +15%,,,,,,,,,,,,,,,,DEF Boost +15%,18931,anchored
+방어력 보조 +30%,,,,,,,,,,,,,,,,DEF Boost +30%,18932,anchored
+순발력 보조 +15%,,,,,,,,,,,,,,,,AGI Boost +15%,18933,anchored
+순발력 보조 +30%,,,,,,,,,,,,,,,,AGI Boost +30%,18934,anchored
+사기 보조 +15%,,,,,,,,,,,,,,,,MRL Boost +15%,18935,anchored
+사기 보조 +30%,,,,,,,,,,,,,,,,MRL Boost +30%,18936,anchored
+이동력 보조 +2,,,,,,,,,,,,,,,,SPD Boost +2,18937,anchored
+이동력 보조 +3,,,,,,,,,,,,,,,,SPD Boost +3,18938,anchored
+HP 보조 +15%,,,,,,,,,,,,,,,,HP Boost +15%,18939,inferred
+HP 보조 +30%,,,,,,,,,,,,,,,,HP Boost +30%,18940,inferred
+MP 보조 +15%,,,,,,,,,,,,,,,,MP Boost +15%,18941,inferred
+MP 보조 +30%,,,,,,,,,,,,,,,,MP Boost +30%,18942,inferred
+HP 회복 15%,,,,,,,,,,,,,,,,15% HP Recovery,18943,inferred
+HP 회복 30%,,,,,,,,,,,,,,,,30% HP Recovery,18944,inferred
+MP 회복 20%,,,,,,,,,,,,,,,,20% MP Recovery,18945,inferred
+MP 회복 40%,,,,,,,,,,,,,,,,40% MP Recovery,18946,inferred
+주위 HP 회복 15%,,,,,,,,,,,,,,,,15% Reach HP Recovery,18947,inferred
+주위 HP 회복 30%,,,,,,,,,,,,,,,,30% Reach HP Recovery,18948,inferred
+주위 MP 회복 15%,,,,,,,,,,,,,,,,15% Reach MP Recovery,18949,inferred
+주위 MP 회복 30%,,,,,,,,,,,,,,,,30% Reach MP Recovery,18950,inferred
+행동 저지 6%,,,,,,,,,,,,,,,,6% Stop Move,18951,inferred
+금구 공격 30%,,,,,,,,,,,,,,,,30% Daze,18952,inferred
+금구 공격 50%,,,,,,,,,,,,,,,,50% Daze,18953,inferred
+피해 범위 확장(이격),,,,,,,,,,,,,,,,Expand AoE (Double Strike),18954,inferred
+피해 범위 확장(삼격),,,,,,,,,,,,,,,,Expand AoE (Triple Strike),18955,inferred
+피해 범위 확장(육격),,,,,,,,,,,,,,,,Expand AoE (Hexa-Strike),18956,inferred

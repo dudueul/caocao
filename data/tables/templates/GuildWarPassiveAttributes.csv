@@ -1,0 +1,182 @@
+id,passiveName,passiveId,accumulate,orderNumber,valueDisplayType,atlas,icon,desc,#passiveName_en,#loc_row,#confidence
+,공격력 증가 {0}%,,,,,,,,ATK +{0}%,21232,inferred
+,책략: 공격력 증가 {0}%,,,,,,,,Tactics: ATK +{0}%,21233,inferred
+,방어력 증가 {0}%,,,,,,,,DEF +{0}%,21234,inferred
+,책략: 방어력 증가 {0}%,,,,,,,,Tactics: DEF +{0}%,21235,inferred
+,정신력 증가 {0}%,,,,,,,,WIS +{0}%,21236,inferred
+,책략: 정신력 증가 {0}%,,,,,,,,Tactics: WIS +{0}%,21237,inferred
+,순발력 증가 {0}%,,,,,,,,AGI +{0}%,21238,inferred
+,책략: 순발력 증가 {0}%,,,,,,,,Tactics: AGI +{0}%,21239,inferred
+,사기 증가 {0}%,,,,,,,,MRL +{0}%,21240,inferred
+,책략: 사기 증가 {0}%,,,,,,,,Tactics: MRL +{0}%,21241,inferred
+,주는 근접 공격 강화 {0}%,,,,,,,,Melee Damage Dealt +{0}%,21242,anchored
+,책략: 주는 근접 공격 강화 {0}%,,,,,,,,Tactics: Melee Damage Dealt +{0}%,21243,inferred
+,받는 근접 공격 피해 감소 {0}%,,,,,,,,Melee Damage Taken -{0}%,21244,inferred
+,책략: 받는 근접 공격 피해 감소 {0}%,,,,,,,,Tactics: Melee Damage Taken -{0}%,21245,inferred
+,받는 근접 공격 피해 면역,,,,,,,,Melee Damage Immunity,21246,inferred
+,주는 간접 공격 강화 {0}%,,,,,,,,Ranged Damage Dealt +{0}%,21247,inferred
+,책략: 주는 간접 공격 강화 {0}%,,,,,,,,Tactics: Ranged Damage Dealt +{0}%,21248,inferred
+,받는 간접 공격 피해 감소 {0}%,,,,,,,,Ranged Damage Taken -{0}%,21249,inferred
+,책략: 받는 간접 공격 피해 감소 {0}%,,,,,,,,Tactics: Ranged Damage Taken -{0}%,21250,inferred
+,받는 간접 공격 피해 면역,,,,,,,,Ranged Damage Immunity,21251,inferred
+,주는 공격 피해 증가 {0}%,,,,,,,,Attack Damage Dealt +{0}%,21252,inferred
+,책략: 주는 공격 피해 증가 {0}%,,,,,,,,Tactics: Attack Damage Dealt +{0}%,21253,inferred
+,받는 공격 피해 감소 {0}%,,,,,,,,Attack Damage Taken -{0}%,21254,inferred
+,책략: 받는 공격 피해 감소 {0}%,,,,,,,,Tactics: Attack Damage Taken -{0}%,21255,inferred
+,받는 공격 피해 면역,,,,,,,,Attack Damage Immunity,21256,inferred
+,주는 책략 피해 증가 {0}%,,,,,,,,Tactics Damage Dealt +{0}%,21257,inferred
+,책략: 주는 책략 피해 증가 {0}%,,,,,,,,Tactics: Tactics Damage Dealt +{0}%,21258,inferred
+,받는 책략 피해 감소 {0}%,,,,,,,,Tactics Damage Taken -{0}%,21259,inferred
+,책략: 받는 책략 피해 감소 {0}%,,,,,,,,Tactics: Tactics Damage Taken -{0}%,21260,inferred
+,받는 책략 피해 면역,,,,,,,,Tactics Damage Immunity,21261,inferred
+,주는 모든 피해 증가 {0}%,,,,,,,,All Damage Dealt +{0}%,21262,inferred
+,책략: 주는 모든 피해 증가 {0}%,,,,,,,,Tactics: All Damage Dealt +{0}%,21263,inferred
+,받는 모든 피해 감소 {0}%,,,,,,,,All Damage Taken -{0}%,21264,inferred
+,책략: 받는 모든 피해 감소 {0}%,,,,,,,,Tactics: All Damage Taken -{0}%,21265,inferred
+,받는 모든 피해 면역,,,,,,,,All Damage Immunity,21266,inferred
+,반격 강화 {0}%,,,,,,,,Counterattack +{0}%,21267,inferred
+,책략: 반격 강화 {0}%,,,,,,,,Tactics: Counterattack +{0}%,21268,inferred
+,주는 대응 공격 강화 {0}%,,,,,,,,Intercept Damage Dealt +{0}%,21269,inferred
+,책략: 주는 대응 공격 강화 {0}%,,,,,,,,Tactics: Intercept Damage Dealt +{0}%,21270,inferred
+,받는 대응 공격 면역,,,,,,,,Intercept Immunity,21271,inferred
+,연속 공격,,,,,,,,Double Attack,21272,inferred
+,연속 공격 강화 {0}%,,,,,,,,Double Attack +{0}%,21273,inferred
+,책략: 연속 공격 강화 {0}%,,,,,,,,Tactics: Double Attack +{0}%,21274,inferred
+,연속 책략 강화 {0}%,,,,,,,,Double Tactics +{0}%,21275,inferred
+,책략: 연속 책략 강화 {0}%,,,,,,,,Tactics: Double Tactics +{0}%,21276,inferred
+,연속 반격 강화 {0}%,,,,,,,,Double Counter +{0}%,21277,inferred
+,책략: 연속 반격 강화 {0}%,,,,,,,,Tactics: Double Counter +{0}%,21278,inferred
+,연속 반격 면역,,,,,,,,Double Counter Immunity,21279,inferred
+,연속 대응 공격,,,,,,,,Double Intercept,21280,inferred
+,연속 대응 공격 강화 {0}%,,,,,,,,Double Intercept +{0}%,21281,inferred
+,책략: 연속 대응 공격 강화 {0}%,,,,,,,,Tactics: Double Intercept +{0}%,21282,inferred
+,연속 대응 공격 면역,,,,,,,,Double Intercept Immunity,21283,inferred
+,사용하지 않는 패시브,,,,,,,,Unused Passives,21284,inferred
+,주는 군단 피해 증가 {0}%,,,,,,,,Troop Damage Dealt +{0}%,21285,inferred
+,책략: 주는 군단 피해 증가 {0}%,,,,,,,,Tactics: Troop Damage Dealt +{0}%,21286,inferred
+,주는 건물 피해 증가 {0}%,,,,,,,,Building Damage Dealt +{0}%,21287,inferred
+,책략: 주는 건물 피해 증가 {0}%,,,,,,,,Tactics: Building Damage Dealt +{0}%,21288,inferred
+,원소 공격 강화 {0}%,,,,,,,,Elemental Attack +{0}%,21289,inferred
+,책략: 원소 공격 강화 {0}%,,,,,,,,Tactics: Elemental Attack +{0}%,21290,inferred
+,원소 책략 강화 {0}%,,,,,,,,Elemental Tactics +{0}%,21291,inferred
+,책략: 원소 책략 강화 {0}%,,,,,,,,Tactics: Elemental Tactics +{0}%,21292,inferred
+,주는 원소 피해 증가 {0}%,,,,,,,,Elemental Damage Dealt +{0}%,21293,inferred
+,책략: 주는 원소 피해 증가 {0}%,,,,,,,,Tactics: Elemental Damage Dealt +{0}%,21294,inferred
+,받는 원소 피해 감소 {0}%,,,,,,,,Elemental Damage Taken -{0}%,21295,inferred
+,책략: 받는 원소 피해 감소 {0}%,,,,,,,,Tactics: Elemental Damage Taken -{0}%,21296,inferred
+,받는 원소 피해 증가 {0}%,,,,,,,,Elemental Damage Taken +{0}%,21297,inferred
+,책략: 받는 원소 피해 증가 {0}%,,,,,,,,Tactics: Elemental Damage Taken +{0}%,21298,inferred
+,원소 공격 면역,,,,,,,,Elemental Attack Immunity,21299,inferred
+,원소 책략 면역,,,,,,,,Elemental Tactics Immunity,21300,inferred
+,원소 피해 면역,,,,,,,,Elemental Damage Immunity,21301,inferred
+,화계 공격 강화 {0}%,,,,,,,,Fire Attack +{0}%,21302,inferred
+,책략: 화계 공격 강화 {0}%,,,,,,,,Tactics: Fire Attack +{0}%,21303,inferred
+,화계 책략 강화 {0}%,,,,,,,,Fire Tactics +{0}%,21304,inferred
+,책략: 화계 책략 강화 {0}%,,,,,,,,Tactics: Fire Tactics +{0}%,21305,inferred
+,주는 화계 피해 증가 {0}%,,,,,,,,Fire Damage Dealt +{0}%,21306,inferred
+,책략: 주는 화계 피해 증가 {0}%,,,,,,,,Tactics: Fire Damage Dealt +{0}%,21307,inferred
+,받는 화계 피해 감소 {0}%,,,,,,,,Fire Damage Taken -{0}%,21308,inferred
+,책략: 받는 화계 피해 감소 {0}%,,,,,,,,Tactics: Fire Damage Taken -{0}%,21309,inferred
+,받는 화계 피해 증가 {0}%,,,,,,,,Fire Damage Taken +{0}%,21310,inferred
+,책략: 받는 화계 피해 증가 {0}%,,,,,,,,Tactics: Fire Damage Taken +{0}%,21311,inferred
+,화계 공격 면역,,,,,,,,Fire Attack Immunity,21312,inferred
+,화계 책략 면역,,,,,,,,Fire Tactics Immunity,21313,inferred
+,화계 피해 면역,,,,,,,,Fire Damage Immunity,21314,inferred
+,수계 공격 강화 {0}%,,,,,,,,Water Attack +{0}%,21315,inferred
+,책략: 수계 공격 강화 {0}%,,,,,,,,Tactics: Water Attack +{0}%,21316,inferred
+,수계 책략 강화 {0}%,,,,,,,,Water Tactics +{0}%,21317,inferred
+,책략: 수계 책략 강화 {0}%,,,,,,,,Tactics: Water Tactics +{0}%,21318,inferred
+,주는 수계 피해 증가 {0}%,,,,,,,,Water Damage Dealt +{0}%,21319,inferred
+,책략: 주는 수계 피해 증가 {0}%,,,,,,,,Tactics: Water Damage Dealt +{0}%,21320,inferred
+,받는 수계 피해 감소 {0}%,,,,,,,,Water Damage Taken -{0}%,21321,inferred
+,책략: 받는 수계 피해 감소 {0}%,,,,,,,,Tactics: Water Damage Taken -{0}%,21322,inferred
+,받는 수계 피해 증가 {0}%,,,,,,,,Water Damage Taken +{0}%,21323,inferred
+,책략: 받는 수계 피해 증가 {0}%,,,,,,,,Tactics: Water Damage Taken +{0}%,21324,inferred
+,수계 공격 면역,,,,,,,,Water Attack Immunity,21325,inferred
+,수계 책략 면역,,,,,,,,Water Tactics Immunity,21326,inferred
+,수계 피해 면역,,,,,,,,Water Damage Immunity,21327,inferred
+,풍계 공격 강화 {0}%,,,,,,,,Wind Attack +{0}%,21328,inferred
+,책략: 풍계 공격 강화 {0}%,,,,,,,,Tactics: Wind Attack +{0}%,21329,inferred
+,풍계 책략 강화 {0}%,,,,,,,,Wind Tactics +{0}%,21330,inferred
+,책략: 풍계 책략 강화 {0}%,,,,,,,,Tactics: Wind Tactics +{0}%,21331,inferred
+,주는 풍계 피해 증가 {0}%,,,,,,,,Wind Damage Dealt +{0}%,21332,inferred
+,책략: 주는 풍계 피해 증가 {0}%,,,,,,,,Tactics: Wind Damage Dealt +{0}%,21333,inferred
+,받는 풍계 피해 감소 {0}%,,,,,,,,Wind Damage Taken -{0}%,21334,inferred
+,책략: 받는 풍계 피해 감소 {0}%,,,,,,,,Tactics: Wind Damage Taken -{0}%,21335,inferred
+,받는 풍계 피해 증가 {0}%,,,,,,,,Wind Damage Taken +{0}%,21336,inferred
+,책략: 받는 풍계 피해 증가 {0}%,,,,,,,,Tactics: Wind Damage Taken +{0}%,21337,inferred
+,풍계 공격 면역,,,,,,,,Wind Attack Immunity,21338,inferred
+,풍계 책략 면역,,,,,,,,Wind Tactics Immunity,21339,inferred
+,풍계 피해 면역,,,,,,,,Wind Damage Immunity,21340,inferred
+,지계 공격 강화 {0}%,,,,,,,,Earth Attack +{0}%,21341,inferred
+,책략: 지계 공격 강화 {0}%,,,,,,,,Tactics: Earth Attack +{0}%,21342,inferred
+,지계 책략 강화 {0}%,,,,,,,,Earth Tactics +{0}%,21343,inferred
+,책략: 지계 책략 강화 {0}%,,,,,,,,Tactics: Earth Tactics +{0}%,21344,inferred
+,주는 지계 피해 증가 {0}%,,,,,,,,Earth Damage Dealt +{0}%,21345,inferred
+,책략: 주는 지계 피해 증가 {0}%,,,,,,,,Tactics: Earth Damage Dealt +{0}%,21346,inferred
+,받는 지계 피해 감소 {0}%,,,,,,,,Earth Damage Taken -{0}%,21347,inferred
+,책략: 받는 지계 피해 감소 {0}%,,,,,,,,Tactics: Earth Damage Taken -{0}%,21348,inferred
+,받는 지계 피해 증가 {0}%,,,,,,,,Earth Damage Taken +{0}%,21349,inferred
+,책략: 받는 지계 피해 증가 {0}%,,,,,,,,Tactics: Earth Damage Taken +{0}%,21350,inferred
+,지계 공격 면역,,,,,,,,Earth Attack Immunity,21351,inferred
+,지계 책략 면역,,,,,,,,Earth Tactics Immunity,21352,inferred
+,지계 피해 면역,,,,,,,,Earth Damage Immunity,21353,inferred
+,보급계 책략 강화 {0}%,,,,,,,,Supply Tactics +{0}%,21354,inferred
+,책략: 보급계 책략 강화 {0}%,,,,,,,,Tactics: Supply Tactics +{0}%,21355,inferred
+,책략 불가,,,,,,,,Disable Tactics,21356,inferred
+,반격 불가,,,,,,,,Disable Counterattack,21357,inferred
+,대응 공격 불가,,,,,,,,Disable Intercept,21358,inferred
+,받는 모든 피해 증가 {0}%,,,,,,,,All Damage Taken +{0}%,21359,inferred
+,책략: 받는 모든 피해 증가 {0}%,,,,,,,,Tactics: All Damage Taken +{0}%,21360,inferred
+,군단의 지형 이동력 소모량 감소,,,,,,,,Decrease Troop SPD Cost,21361,inferred
+,군단의 지형 피로도 소모량 감소,,,,,,,,Decrease Troop Fatigue Cost,21362,inferred
+,효과 내성,,,,,,,,Keep Effect,21363,inferred
+,공격력 감소 {0}%,,,,,,,,ATK -{0}%,21364,inferred
+,책략: 공격력 감소 {0}%,,,,,,,,Tactics: ATK -{0}%,21365,inferred
+,방어력 감소 {0}%,,,,,,,,DEF -{0}%,21366,inferred
+,책략: 방어력 감소 {0}%,,,,,,,,Tactics: DEF -{0}%,21367,inferred
+,정신력 감소 {0}%,,,,,,,,WIS -{0}%,21368,inferred
+,책략: 정신력 감소 {0}%,,,,,,,,Tactics: WIS -{0}%,21369,inferred
+,순발력 감소 {0}%,,,,,,,,AGI -{0}%,21370,inferred
+,책략: 순발력 감소 {0}%,,,,,,,,Tactics: AGI -{0}%,21371,inferred
+,사기 감소 {0}%,,,,,,,,MRL -{0}%,21372,inferred
+,책략: 사기 감소 {0}%,,,,,,,,Tactics: MRL -{0}%,21373,inferred
+,이동력 감소 {0},,,,,,,,SPD -{0},21374,inferred
+,책략: 이동력 감소 {0},,,,,,,,Tactics: SPD -{0},21375,inferred
+,이동력 증가 {0},,,,,,,,SPD +{0},21376,inferred
+,책략: 이동력 증가 {0},,,,,,,,Tactics: SPD +{0},21377,inferred
+,기마대 공격 강화 {0}%,,,,,,,,Mounted Attack +{0}%,21378,inferred
+,책략: 기마대 공격 강화 {0}%,,,,,,,,Tactics: Mounted Attack +{0}%,21379,inferred
+,사격대 공격 강화 {0}%,,,,,,,,Ranged Attack +{0}%,21380,inferred
+,책략: 사격대 공격 강화 {0}%,,,,,,,,Tactics: Ranged Attack +{0}%,21381,inferred
+,돌격대 공격 강화 {0}%,,,,,,,,Assault Attack +{0}%,21382,inferred
+,책략: 돌격대 공격 강화 {0}%,,,,,,,,Tactics: Assault Attack +{0}%,21383,inferred
+,주는 모든 피해 감소 {0}%,,,,,,,,All Damage Dealt -{0}%,21384,inferred
+,책략: 주는 모든 피해 감소 {0}%,,,,,,,,Tactics: All Damage Dealt -{0}%,21385,inferred
+,공격 범위 {0}칸 증가,,,,,,,,Attack RNG +{0} Tiles,21386,inferred
+,수전 보조 {0}%,,,,,,,,Naval Battle +{0}%,21387,inferred
+,산전 보조 {0}%,,,,,,,,Mountain Battle +{0}%,21388,inferred
+,사막전 보조 {0}%,,,,,,,,Desert Battle +{0}%,21389,inferred
+,발석거 조립,,,,,,,,Assemble Trebuchet,21390,inferred
+,공성 병기: 발석거,,,,,,,,Siege Weapon: Trebuchet,21391,inferred
+,충차 조립,,,,,,,,Assemble Battering Ram,21392,inferred
+,공성 병기: 충차,,,,,,,,Siege Weapon: Battering Ram,21393,inferred
+,기마대 공격 방어 {0}%,,,,,,,,Mounted Attack DEF {0}%,21394,inferred
+,책략: 기마대 공격 방어 {0}%,,,,,,,,Tactics: Mounted Attack DEF {0}%,21395,inferred
+,사격대 공격 방어 {0}%,,,,,,,,Ranged Attack DEF {0}%,21396,inferred
+,책략: 사격대 공격 방어 {0}%,,,,,,,,Tactics: Ranged Attack DEF {0}%,21397,inferred
+,돌격대 공격 방어 {0}%,,,,,,,,Assault Attack DEF {0}%,21398,inferred
+,책략: 돌격대 공격 방어 {0}%,,,,,,,,Tactics: Assault Attack DEF {0}%,21399,inferred
+,위치 강제 이동 효과 면역,,,,,,,,Displace Immunity,21400,inferred
+,모든 공격거리 {0}칸,,,,,,,,All Attack RNG {0} Tiles,21401,inferred
+,반격 위력 고정 {0}%,,,,,,,,Fixed Counterattack Damage {0}%,21402,inferred
+,방어 진형,,,,,,,,Defense Formation,21403,inferred
+,진형 구성,,,,,,,,Formation Layout,21404,inferred
+,방어대 공격 방어 {0}%,,,,,,,,Defense Attack DEF {0}%,21405,inferred
+,책략: 방어대 공격 방어 {0}%,,,,,,,,Tactics: Defense Attack DEF {0}%,21406,inferred
+,받는 군단 피해 증가%,,,,,,,,Troop Damage Taken +%,21407,inferred
+,책략: 받는 군단 피해 증가%,,,,,,,,Tactics: Troop Damage Taken +%,21408,inferred
+,이동 시간 증가 {0},,,,,,,,Movement Time +{0},21409,inferred
+,책략: 이동 시간 증가 {0},,,,,,,,Tactics: Movement Time +{0},21410,inferred
+,이동 시간 감소 {0},,,,,,,,Movement Time -{0},21411,inferred
+,책략: 이동 시간 감소 {0},,,,,,,,Tactics: Movement Time -{0},21412,inferred

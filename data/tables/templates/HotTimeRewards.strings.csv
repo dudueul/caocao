@@ -1,0 +1,11 @@
+column,seq,loc_row,confidence,ko,en
+title,1,20822,inferred,보상 지급,Reward
+title,2,20823,inferred,상자 업그레이드,Box Upgrade
+title,3,20824,inferred,승점 50% 증가,+50% Match Points
+title,4,20825,inferred,승점 10점 증가,+10 Match Points
+title,5,20826,inferred,패배 상자 제거,Box removed upon defeat
+desc,1,20827,inferred,상자 획득 시 [ffe400]전장의 패 5개[ffffff] 추가 지급.,Earn [ffe400]5 more Battlefield Flags[ffffff] when obtaining a box.
+desc,2,20828,inferred,[ffe400]백인장의 상자 상향[ffffff] 지급. ,Improved [ffe400]100-man Commander Boxes[ffffff]. 
+desc,3,20829,inferred,승리시 [ffe400]승점 50%[ffffff] 추가 지급.,Earn [ffe400]50% more points[ffffff] for winning a match.
+desc,4,20830,inferred,승리시 [ffe400]승점 10점[ffffff] 추가 지급.,Earn [ffe400]10 more points[ffffff] for winning a match.
+desc,5,20831,inferred,[ffffff]패배 시 오십인장의 상자를 획득하지 않음.,"[ffffff]If defeated, no 50-man Commander Boxes will be awarded."

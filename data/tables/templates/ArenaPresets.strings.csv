@@ -1,0 +1,471 @@
+column,seq,loc_row,confidence,ko,en
+presetName,1,19987,inferred,검술의 달인 Ⅲ,Master Swordsman III
+presetName,2,19988,inferred,검술의 달인 Ⅳ,Master Swordsman IV
+presetName,3,19989,inferred,반격술 Ⅲ,Art of Counterattacking III
+presetName,4,19990,inferred,반격술 Ⅳ,Art of Counterattacking IV
+presetName,5,19991,inferred,검성 ,Champion 
+presetName,6,19992,inferred,필사의 검술 ,Lethal Sword Technique 
+presetName,7,19993,inferred,아만 Ⅰ,Aman I
+presetName,8,19994,inferred,아만 Ⅱ,Aman II
+presetName,9,19995,inferred,아만 Ⅲ,Aman III
+presetName,10,19996,inferred,아만 Ⅳ,Aman IV
+presetName,11,19997,inferred,기병 결집 Ⅰ,Cavalry Line I
+presetName,12,19998,inferred,기병 결집 Ⅱ,Cavalry Line II
+presetName,13,19999,inferred,기병 결집 Ⅲ,Cavalry Line III
+presetName,14,20000,inferred,기병 결집 Ⅳ,Cavalry Line IV
+presetName,15,20001,inferred,장창기병 Ⅰ,Lancer I
+presetName,16,20002,inferred,장창기병 Ⅱ,Lancer II
+presetName,17,20003,inferred,장창기병 Ⅲ,Lancer III
+presetName,18,20004,inferred,장창기병 Ⅳ,Lancer IV
+presetName,19,20005,inferred,파죽지세 Ⅰ,Unstoppable I
+presetName,20,20006,inferred,파죽지세 Ⅱ,Unstoppable II
+presetName,21,20007,inferred,파죽지세 Ⅲ,Unstoppable III
+presetName,22,20008,inferred,파죽지세 Ⅳ,Unstoppable IV
+presetName,23,20009,inferred,비장의 창술 Ⅰ,Deadly Spear Technique I
+presetName,24,20010,inferred,비장의 창술 Ⅱ,Deadly Spear Technique II
+presetName,25,20011,inferred,비장의 창술 Ⅲ,Deadly Spear Technique III
+presetName,26,20012,inferred,비장의 창술 Ⅳ,Deadly Spear Technique IV
+presetName,27,20013,inferred,질풍기 ,Linebreaker 
+presetName,28,20014,inferred,유격대 ,Guerilla 
+presetName,29,20015,inferred,료래 ,Zhang Liao's Arrival 
+presetName,30,20016,inferred,난형난제 Ⅰ,"No Better, No Worse I"
+presetName,31,20017,inferred,난형난제 Ⅱ,"No Better, No Worse II"
+presetName,32,20018,inferred,난형난제 Ⅲ,"No Better, No Worse III"
+presetName,33,20019,inferred,난형난제 Ⅳ,"No Better, No Worse IV"
+presetName,34,20020,inferred,만인지적 Ⅱ,Overwhelming Strength II
+presetName,35,20021,inferred,만인지적 Ⅲ,Overwhelming Strength III
+presetName,36,20022,inferred,만인지적 Ⅳ,Overwhelming Strength IV
+presetName,37,20023,inferred,의원 Ⅰ,Healing Hands I
+presetName,38,20024,inferred,의원 Ⅱ,Healing Hands II
+presetName,39,20025,inferred,의원 Ⅲ,Healing Hands III
+presetName,40,20026,inferred,의원 Ⅳ,Healing Hands IV
+presetName,41,20027,inferred,가희 Ⅰ,Songstress I
+presetName,42,20028,inferred,가희 Ⅱ,Songstress II
+presetName,43,20029,inferred,가희 Ⅲ,Songstress III
+presetName,44,20030,inferred,가희 Ⅳ,Songstress IV
+presetName,45,20031,inferred,금성옥진 ,Of Heart and Mind 
+presetName,46,20032,inferred,우미인 ,Consort Yu 
+presetName,47,20033,inferred,선봉장 Ⅰ,Vanguard I
+presetName,48,20034,inferred,선봉장 Ⅱ,Vanguard II
+presetName,49,20035,inferred,선봉장 Ⅲ,Vanguard III
+presetName,50,20036,inferred,선봉장 Ⅳ,Vanguard IV
+presetName,51,20037,inferred,지휘관 Ⅰ,Commander I
+presetName,52,20038,inferred,지휘관 Ⅱ,Commander II
+presetName,53,20039,inferred,지휘관 Ⅲ,Commander III
+presetName,54,20040,inferred,지휘관 Ⅳ,Commander IV
+presetName,55,20041,inferred,군주의 친정 Ⅰ,Direct Control I
+presetName,56,20042,inferred,군주의 친정 Ⅱ,Direct Control II
+presetName,57,20043,inferred,군주의 친정 Ⅲ,Direct Control III
+presetName,58,20044,inferred,군주의 친정 Ⅳ,Direct Control IV
+presetName,59,20045,inferred,대군주 ,Warlord-in-Chief 
+presetName,60,20046,inferred,대장군 ,General-in-Chief 
+presetName,61,20047,inferred,무제 ,Emperor Wu 
+presetName,62,20048,inferred,강동의 맹호 Ⅲ,Fierce Tiger of Jiangdong III
+presetName,63,20049,inferred,강동의 지배자 Ⅳ,Ruler of Jiangdong IV
+presetName,64,20050,inferred,후계자 손권 Ⅱ,Successor Sun Quan II
+presetName,65,20051,inferred,오주 손권 Ⅲ,Sun Quan the Lord of Wu III
+presetName,66,20052,inferred,오왕 손권 Ⅳ,Sun Quan the King of Wu IV
+presetName,67,20053,inferred,북부위 조조 Ⅱ,Northern District Captain Cao Cao II
+presetName,68,20054,inferred,승상 조조 Ⅲ,Chancellor Cao Cao III
+presetName,69,20055,inferred,위왕 조조 Ⅳ,Cao Cao the King of Wei IV
+presetName,70,20056,inferred,한중왕 유비 Ⅲ,Liu Bei the King of Hanzhong III
+presetName,71,20057,inferred,촉 황제 유비 Ⅳ,Liu Bei the Emperor of Shu IV
+presetName,72,20058,inferred,기마궁술 Ⅰ,Mounted Archery I
+presetName,73,20059,inferred,기마궁술 Ⅱ,Mounted Archery II
+presetName,74,20060,inferred,기마궁술 Ⅲ,Mounted Archery III
+presetName,75,20061,inferred,기마궁술 Ⅳ,Mounted Archery IV
+presetName,76,20062,inferred,말에는 말 Ⅰ,A Horse for a Horse I
+presetName,77,20063,inferred,말에는 말 Ⅱ,A Horse for a Horse II
+presetName,78,20064,inferred,말에는 말 Ⅲ,A Horse for a Horse III
+presetName,79,20065,inferred,말에는 말 Ⅳ,A Horse for a Horse IV
+presetName,80,20066,inferred,수상궁술 Ⅰ,Sea Battle Archery I
+presetName,81,20067,inferred,수상궁술 Ⅱ,Sea Battle Archery II
+presetName,82,20068,inferred,수상궁술 Ⅲ,Sea Battle Archery III
+presetName,83,20069,inferred,수상궁술 Ⅳ,Sea Battle Archery IV
+presetName,84,20070,inferred,비사대 ,Mounted Sharpshooter 
+presetName,85,20071,inferred,용기병 ,Wind Rider 
+presetName,86,20072,inferred,장년의 저력 ,Age Is But a Number 
+presetName,87,20073,inferred,정예 궁병 Ⅰ,Elite Archer I
+presetName,88,20074,inferred,정예 궁병 Ⅱ,Elite Archer II
+presetName,89,20075,inferred,정예 궁병 Ⅲ,Elite Archer III
+presetName,90,20076,inferred,정예 궁병 Ⅳ,Elite Archer IV
+presetName,91,20077,inferred,변칙 화살 Ⅰ,Erratic Arrow I
+presetName,92,20078,inferred,변칙 화살 Ⅱ,Erratic Arrow II
+presetName,93,20079,inferred,변칙 화살 Ⅲ,Erratic Arrow III
+presetName,94,20080,inferred,변칙 화살 Ⅳ,Erratic Arrow IV
+presetName,95,20081,inferred,사격 개시 Ⅰ,Let Loose I
+presetName,96,20082,inferred,사격 개시 Ⅱ,Let Loose II
+presetName,97,20083,inferred,사격 개시 Ⅲ,Let Loose III
+presetName,98,20084,inferred,사격 개시 Ⅳ,Let Loose IV
+presetName,99,20085,inferred,반격 궁술 Ⅰ,Counter Archery I
+presetName,100,20086,inferred,반격 궁술 Ⅱ,Counter Archery II
+presetName,101,20087,inferred,반격 궁술 Ⅲ,Counter Archery III
+presetName,102,20088,inferred,반격 궁술 Ⅳ,Counter Archery IV
+presetName,103,20089,inferred,탄궁 ,Pellet Bow 
+presetName,104,20090,inferred,벽력궁 ,Thunderbolt Bow 
+presetName,105,20091,inferred,낙곡의 용장 ,Wardrum Commander 
+presetName,106,20092,inferred,촉한의 대들보 Ⅰ,The Pillars of Shu I
+presetName,107,20093,inferred,촉한의 대들보 Ⅱ,The Pillars of Shu II
+presetName,108,20094,inferred,촉한의 대들보 Ⅲ,The Pillars of Shu III
+presetName,109,20095,inferred,촉한의 대들보 Ⅳ,The Pillars of Shu IV
+presetName,110,20096,inferred,노당채의 여걸 Ⅱ,Warrior Bandit II
+presetName,111,20097,inferred,노당채의 여걸 Ⅲ,Warrior Bandit III
+presetName,112,20098,inferred,노당채의 여걸 Ⅳ,Warrior Bandit IV
+presetName,113,20099,inferred,필사의 노병 Ⅰ,An Old Soldier's Desperation I
+presetName,114,20100,inferred,필사의 노병 Ⅱ,An Old Soldier's Desperation II
+presetName,115,20101,inferred,필사의 노병 Ⅲ,An Old Soldier's Desperation III
+presetName,116,20102,inferred,필사의 노병 Ⅳ,An Old Soldier's Desperation IV
+presetName,117,20103,inferred,책략 붕괴술 Ⅰ,Tactics Breaker I
+presetName,118,20104,inferred,책략 붕괴술 Ⅱ,Tactics Breaker II
+presetName,119,20105,inferred,책략 붕괴술 Ⅲ,Tactics Breaker III
+presetName,120,20106,inferred,책략 붕괴술 Ⅳ,Tactics Breaker IV
+presetName,121,20107,inferred,연발식 쇠뇌 Ⅰ,Repeating Crossbow I
+presetName,122,20108,inferred,연발식 쇠뇌 Ⅱ,Repeating Crossbow II
+presetName,123,20109,inferred,연발식 쇠뇌 Ⅲ,Repeating Crossbow III
+presetName,124,20110,inferred,연발식 쇠뇌 Ⅳ,Repeating Crossbow IV
+presetName,125,20111,inferred,고정 쇠뇌 ,Fixed Crossbow 
+presetName,126,20112,inferred,역전의 명장 ,Comeback Commander 
+presetName,127,20113,inferred,"이것이, 전차의 힘! Ⅲ",Chariot Mastery III
+presetName,128,20114,inferred,"이것이, 전차의 힘! Ⅳ",Chariot Mastery IV
+presetName,129,20115,inferred,비룡거 ,Flying Dragon Crossbow Chariot 
+presetName,130,20116,inferred,예리한 보도 Ⅰ,The Sharpest Sword I
+presetName,131,20117,inferred,예리한 보도 Ⅱ,The Sharpest Sword II
+presetName,132,20118,inferred,예리한 보도 Ⅲ,The Sharpest Sword III
+presetName,133,20119,inferred,예리한 보도 Ⅳ,The Sharpest Sword IV
+presetName,134,20120,inferred,치명적인 물살 Ⅰ,Lethal Current I
+presetName,135,20121,inferred,치명적인 물살 Ⅱ,Lethal Current II
+presetName,136,20122,inferred,치명적인 물살 Ⅲ,Lethal Current III
+presetName,137,20123,inferred,치명적인 물살 Ⅳ,Lethal Current IV
+presetName,138,20124,inferred,수전의 달인 Ⅰ,Naval Master I
+presetName,139,20125,inferred,수전의 달인 Ⅱ,Naval Master II
+presetName,140,20126,inferred,수전의 달인 Ⅲ,Naval Master III
+presetName,141,20127,inferred,수전의 달인 Ⅳ,Naval Master IV
+presetName,142,20128,inferred,대도독 ,Corsair 
+presetName,143,20129,inferred,국사무쌍 ,Peerless 
+presetName,144,20130,inferred,동오의 명장 Ⅱ,Great General of Eastern Wu II
+presetName,145,20131,inferred,동오의 명장 Ⅲ,Great General of Eastern Wu III
+presetName,146,20132,inferred,동오의 명장 Ⅳ,Great General of Eastern Wu IV
+presetName,147,20133,inferred,독부림 Ⅰ,Venom Wielder I
+presetName,148,20134,inferred,독부림 Ⅱ,Venom Wielder II
+presetName,149,20135,inferred,독부림 Ⅲ,Venom Wielder III
+presetName,150,20136,inferred,독부림 Ⅳ,Venom Wielder IV
+presetName,151,20137,inferred,무력화 Ⅰ,Debilitate I
+presetName,152,20138,inferred,무력화 Ⅱ,Debilitate II
+presetName,153,20139,inferred,무력화 Ⅲ,Debilitate III
+presetName,154,20140,inferred,무력화 Ⅳ,Debilitate IV
+presetName,155,20141,inferred,전염병 술사 Ⅰ,Plague Sorcerer I
+presetName,156,20142,inferred,전염병 술사 Ⅱ,Plague Sorcerer II
+presetName,157,20143,inferred,전염병 술사 Ⅲ,Plague Sorcerer III
+presetName,158,20144,inferred,전염병 술사 Ⅳ,Plague Sorcerer IV
+presetName,159,20145,inferred,독무 ,Poison Cloud 
+presetName,160,20146,inferred,환술사 ,Monk 
+presetName,161,20147,inferred,봉효 ,Fengxiao 
+presetName,162,20148,inferred,마왕 현신 ,Demonic Reincarnation 
+presetName,163,20149,inferred,마왕 재림 ,Demonic Revival 
+presetName,164,20150,inferred,봉인된 마왕 Ⅰ,Sealed Demon I
+presetName,165,20151,inferred,봉인된 마왕 Ⅱ,Sealed Demon II
+presetName,166,20152,inferred,봉인된 마왕 Ⅲ,Sealed Demon III
+presetName,167,20153,inferred,깨어난 마왕 Ⅳ,Awakened Demon IV
+presetName,168,20154,inferred,혹한의 강자 Ⅰ,White Frost Champion I
+presetName,169,20155,inferred,혹한의 강자 Ⅱ,White Frost Champion II
+presetName,170,20156,inferred,혹한의 강자 Ⅲ,White Frost Champion III
+presetName,171,20157,inferred,혹한의 강자 Ⅳ,White Frost Champion IV
+presetName,172,20158,inferred,책략 파쇄술 Ⅰ,Tactics Crusher I
+presetName,173,20159,inferred,책략 파쇄술 Ⅱ,Tactics Crusher II
+presetName,174,20160,inferred,책략 파쇄술 Ⅲ,Tactics Crusher III
+presetName,175,20161,inferred,책략 파쇄술 Ⅳ,Tactics Crusher IV
+presetName,176,20162,inferred,튕겨내기 Ⅰ,Deflection Division I
+presetName,177,20163,inferred,튕겨내기 Ⅱ,Deflection Division II
+presetName,178,20164,inferred,튕겨내기 Ⅲ,Deflection Division III
+presetName,179,20165,inferred,튕겨내기 Ⅳ,Deflection Division IV
+presetName,180,20166,inferred,권성 ,Swiftblade 
+presetName,181,20167,inferred,혹한의 맹장 ,White Frost Warrior 
+presetName,182,20168,inferred,백전노장 Ⅱ,Seasoned Veteran II
+presetName,183,20169,inferred,백전노장 Ⅲ,Seasoned Veteran III
+presetName,184,20170,inferred,백전노장 Ⅳ,Seasoned Veteran IV
+presetName,185,20171,inferred,투희 Ⅰ,Warrior Princess I
+presetName,186,20172,inferred,투희 Ⅱ,Warrior Princess II
+presetName,187,20173,inferred,투희 Ⅲ,Warrior Princess III
+presetName,188,20174,inferred,투희 Ⅳ,Warrior Princess IV
+presetName,189,20175,inferred,경국지색 Ⅱ,Paragon of Beauty II
+presetName,190,20176,inferred,경국지색 Ⅲ,Paragon of Beauty III
+presetName,191,20177,inferred,경국지색 Ⅳ,Paragon of Beauty IV
+presetName,192,20178,inferred,홍일점 Ⅰ,The Only Woman I
+presetName,193,20179,inferred,홍일점 Ⅱ,The Only Woman II
+presetName,194,20180,inferred,홍일점 Ⅲ,The Only Woman III
+presetName,195,20181,inferred,홍일점 Ⅳ,The Only Woman IV
+presetName,196,20182,inferred,구밀복검 ,Two-Faced Intentions 
+presetName,197,20183,inferred,경성지미 ,Peerless Beauty 
+presetName,198,20184,inferred,폐월 ,Lunar Eclipse 
+presetName,199,20185,inferred,등갑병 Ⅰ,Rattan-Armored Soldier I
+presetName,200,20186,inferred,등갑병 Ⅱ,Rattan-Armored Soldier II
+presetName,201,20187,inferred,등갑병 Ⅲ,Rattan-Armored Soldier III
+presetName,202,20188,inferred,등갑병 Ⅳ,Rattan-Armored Soldier IV
+presetName,203,20189,inferred,수호병 Ⅰ,Guardian I
+presetName,204,20190,inferred,수호병 Ⅱ,Guardian II
+presetName,205,20191,inferred,수호병 Ⅲ,Guardian III
+presetName,206,20192,inferred,수호병 Ⅳ,Guardian IV
+presetName,207,20193,inferred,가시 돋친 방패 Ⅰ,Thorn Shield I
+presetName,208,20194,inferred,가시 돋친 방패 Ⅱ,Thorn Shield II
+presetName,209,20195,inferred,가시 돋친 방패 Ⅲ,Thorn Shield III
+presetName,210,20196,inferred,가시 돋친 방패 Ⅳ,Thorn Shield IV
+presetName,211,20197,inferred,철옹성 ,Unassailable 
+presetName,212,20198,inferred,분노의 방패술 ,Wrath Shield Technique 
+presetName,213,20199,inferred,난공불락 ,Impregnable 
+presetName,214,20200,inferred,험지 전문 Ⅰ,Rough Terrain Specialist I
+presetName,215,20201,inferred,험지 전문 Ⅱ,Rough Terrain Specialist II
+presetName,216,20202,inferred,험지 전문 Ⅲ,Rough Terrain Specialist III
+presetName,217,20203,inferred,험지 전문 Ⅳ,Rough Terrain Specialist IV
+presetName,218,20204,inferred,화염 질주 Ⅰ,Flaming Spring I
+presetName,219,20205,inferred,화염 질주 Ⅱ,Flaming Spring II
+presetName,220,20206,inferred,화염 질주 Ⅲ,Flaming Spring III
+presetName,221,20207,inferred,화염 질주 Ⅳ,Flaming Spring IV
+presetName,222,20208,inferred,발산개세 ,Indomitable Spirit 
+presetName,223,20209,inferred,궁극의 창술 ,Ultimate Spear Technique 
+presetName,224,20210,inferred,무신 ,God of War 
+presetName,225,20211,inferred,백병술 Ⅰ,Melee Technique I
+presetName,226,20212,inferred,백병술 Ⅱ,Melee Technique II
+presetName,227,20213,inferred,백병술 Ⅲ,Melee Technique III
+presetName,228,20214,inferred,백병술 Ⅳ,Melee Technique IV
+presetName,229,20215,inferred,치명상 Ⅰ,Critical Wound I
+presetName,230,20216,inferred,치명상 Ⅱ,Critical Wound II
+presetName,231,20217,inferred,치명상 Ⅲ,Critical Wound III
+presetName,232,20218,inferred,치명상 Ⅳ,Critical Wound IV
+presetName,233,20219,inferred,권토중래 Ⅰ,Comeback I
+presetName,234,20220,inferred,권토중래 Ⅱ,Comeback II
+presetName,235,20221,inferred,권토중래 Ⅲ,Comeback III
+presetName,236,20222,inferred,권토중래 Ⅳ,Comeback IV
+presetName,237,20223,inferred,폭풍의 강자 Ⅰ,Typhoon Champion I
+presetName,238,20224,inferred,폭풍의 강자 Ⅱ,Typhoon Champion II
+presetName,239,20225,inferred,폭풍의 강자 Ⅲ,Typhoon Champion III
+presetName,240,20226,inferred,폭풍의 강자 Ⅳ,Typhoon Champion IV
+presetName,241,20227,inferred,용의 분노 ,Dragon's Wrath 
+presetName,242,20228,inferred,수객 ,Chrysanthemum 
+presetName,243,20229,inferred,일진광풍 ,Gale 
+presetName,244,20230,inferred,꿰뚫는 발톱 Ⅱ,Piercing Claws II
+presetName,245,20231,inferred,꿰뚫는 발톱 Ⅲ,Piercing Claws III
+presetName,246,20232,inferred,꿰뚫는 발톱 Ⅳ,Piercing Claws IV
+presetName,247,20233,inferred,신목부웅 Ⅱ,Stabbed in the Back II
+presetName,248,20234,inferred,신목부웅 Ⅲ,Stabbed in the Back III
+presetName,249,20235,inferred,신목부웅 Ⅳ,Stabbed in the Back IV
+presetName,250,20236,inferred,야성 해방 ,Unleash the Beast 
+presetName,251,20237,inferred,맹수불군 ,Unstoppable Beasts 
+presetName,252,20238,inferred,부족장 맹획 Ⅱ,Tribe Chieftain Meng Huo II
+presetName,253,20239,inferred,부족장 맹획 Ⅲ,Tribe Chieftain Meng Huo III
+presetName,254,20240,inferred,남만왕 맹획 Ⅳ,"Meng Huo, King of Nanman IV"
+presetName,255,20241,inferred,황무지 약탈자 Ⅰ,Wastelands Plunderer I
+presetName,256,20242,inferred,황무지 약탈자 Ⅱ,Wastelands Plunderer II
+presetName,257,20243,inferred,황무지 약탈자 Ⅲ,Wastelands Plunderer III
+presetName,258,20244,inferred,황무지 약탈자 Ⅳ,Wastelands Plunderer IV
+presetName,259,20245,inferred,건곤일척 Ⅰ,All In I
+presetName,260,20246,inferred,건곤일척 Ⅱ,All In II
+presetName,261,20247,inferred,건곤일척 Ⅲ,All In III
+presetName,262,20248,inferred,건곤일척 Ⅳ,All In IV
+presetName,263,20249,inferred,고육계 Ⅰ,Last Resort I
+presetName,264,20250,inferred,고육계 Ⅱ,Last Resort II
+presetName,265,20251,inferred,고육계 Ⅲ,Last Resort III
+presetName,266,20252,inferred,고육계 Ⅳ,Last Resort IV
+presetName,267,20253,inferred,필사즉생 ,Die to Live 
+presetName,268,20254,inferred,일도할단 ,A Split-Second Decision 
+presetName,269,20255,inferred,짓밟기 Ⅰ,Trample I
+presetName,270,20256,inferred,짓밟기 Ⅱ,Trample II
+presetName,271,20257,inferred,짓밟기 Ⅲ,Trample III
+presetName,272,20258,inferred,짓밟기 Ⅳ,Trample IV
+presetName,273,20259,inferred,결투장 지배자 Ⅰ,Arena Master I
+presetName,274,20260,inferred,결투장 지배자 Ⅱ,Arena Master II
+presetName,275,20261,inferred,결투장 지배자 Ⅲ,Arena Master III
+presetName,276,20262,inferred,결투장 지배자 Ⅳ,Arena Master IV
+presetName,277,20263,inferred,화염 전차 Ⅰ,Fire Chariot I
+presetName,278,20264,inferred,화염 전차 Ⅱ,Fire Chariot II
+presetName,279,20265,inferred,화염 전차 Ⅲ,Fire Chariot III
+presetName,280,20266,inferred,화염 전차 Ⅳ,Fire Chariot IV
+presetName,281,20267,inferred,만부부당 ,"Stronger than 10,000 Men "
+presetName,282,20268,inferred,초토화 ,Scorched Earth
+presetName,283,20269,inferred,철의 기병 Ⅰ,Steel Cavalry I
+presetName,284,20270,inferred,철의 기병 Ⅱ,Steel Cavalry II
+presetName,285,20271,inferred,철의 기병 Ⅲ,Steel Cavalry III
+presetName,286,20272,inferred,철의 기병 Ⅳ,Steel Cavalry IV
+presetName,287,20273,inferred,호위 대형 Ⅰ,Guard Formation I
+presetName,288,20274,inferred,호위 대형 Ⅱ,Guard Formation II
+presetName,289,20275,inferred,호위 대형 Ⅲ,Guard Formation III
+presetName,290,20276,inferred,호위 대형 Ⅳ,Guard Formation IV
+presetName,291,20277,inferred,불요불굴 Ⅰ,Unwavering Resolve I
+presetName,292,20278,inferred,불요불굴 Ⅱ,Unwavering Resolve II
+presetName,293,20279,inferred,불요불굴 Ⅲ,Unwavering Resolve III
+presetName,294,20280,inferred,불요불굴 Ⅳ,Unwavering Resolve IV
+presetName,295,20281,inferred,신위대 ,Divine Plate Cavalry 
+presetName,296,20282,inferred,일신시담 ,Iron Nerve 
+presetName,297,20283,inferred,군신 ,God of War 
+presetName,298,20284,inferred,관운장 Ⅲ,Guan Yunchang III
+presetName,299,20285,inferred,군신 Ⅳ,God of War IV
+presetName,300,20286,inferred,달궈낸 창 Ⅰ,Forged Spear I
+presetName,301,20287,inferred,달궈낸 창 Ⅱ,Forged Spear II
+presetName,302,20288,inferred,달궈낸 창 Ⅲ,Forged Spear III
+presetName,303,20289,inferred,달궈낸 창 Ⅳ,Forged Spear IV
+presetName,304,20290,inferred,독이 스며든 창 Ⅰ,Venomous Spear I
+presetName,305,20291,inferred,독이 스며든 창 Ⅱ,Venomous Spear II
+presetName,306,20292,inferred,독이 스며든 창 Ⅲ,Venomous Spear III
+presetName,307,20293,inferred,독이 스며든 창 Ⅳ,Venomous Spear IV
+presetName,308,20294,inferred,기병 와해 Ⅰ,Cavalry Breaker I
+presetName,309,20295,inferred,기병 와해 Ⅱ,Cavalry Breaker II
+presetName,310,20296,inferred,기병 와해 Ⅲ,Cavalry Breaker III
+presetName,311,20297,inferred,기병 와해 Ⅳ,Cavalry Breaker IV
+presetName,312,20298,inferred,장창병 Ⅰ,Pikeman I
+presetName,313,20299,inferred,장창병 Ⅱ,Pikeman II
+presetName,314,20300,inferred,장창병 Ⅲ,Pikeman III
+presetName,315,20301,inferred,장창병 Ⅳ,Pikeman IV
+presetName,316,20302,inferred,청룡의 창 ,Azure Dragon Spear 
+presetName,317,20303,inferred,기병 전복 ,Toppling Cavalry 
+presetName,318,20304,inferred,오행상생 ,Five Elements in Harmony 
+presetName,319,20305,inferred,만전지책 Ⅰ,Foolproof Plan I
+presetName,320,20306,inferred,만전지책 Ⅱ,Foolproof Plan II
+presetName,321,20307,inferred,만전지책 Ⅲ,Foolproof Plan III
+presetName,322,20308,inferred,만전지책 Ⅳ,Foolproof Plan IV
+presetName,323,20309,inferred,화광충천 Ⅰ,Piercing Spirit I
+presetName,324,20310,inferred,화광충천 Ⅱ,Piercing Spirit II
+presetName,325,20311,inferred,화광충천 Ⅲ,Piercing Spirit III
+presetName,326,20312,inferred,화광충천 Ⅳ,Piercing Spirit IV
+presetName,327,20313,inferred,홍련의 업화 Ⅰ,Crimson Blaze I
+presetName,328,20314,inferred,홍련의 업화 Ⅱ,Crimson Blaze II
+presetName,329,20315,inferred,홍련의 업화 Ⅲ,Crimson Blaze III
+presetName,330,20316,inferred,홍련의 업화 Ⅳ,Crimson Blaze IV
+presetName,331,20317,inferred,책략과 바다 Ⅰ,Tactics and the Sea I
+presetName,332,20318,inferred,책략과 바다 Ⅱ,Tactics and the Sea II
+presetName,333,20319,inferred,책략과 바다 Ⅲ,Tactics and the Sea III
+presetName,334,20320,inferred,책략과 바다 Ⅳ,Tactics and the Sea IV
+presetName,335,20321,inferred,주작의 시대 ,Dawn of the Vermilion Bird 
+presetName,336,20322,inferred,만경창파 ,Boundless Ocean 
+presetName,337,20323,inferred,고육책 ,Advanced Hexa-Plan 
+presetName,338,20324,inferred,무신의 심복 Ⅰ,God of War's Right-Hand Man I
+presetName,339,20325,inferred,무신의 심복 Ⅱ,God of War's Right-Hand Man II
+presetName,340,20326,inferred,무신의 심복 Ⅲ,God of War's Right-Hand Man III
+presetName,341,20327,inferred,무신의 심복 Ⅳ,God of War's Right-Hand Man IV
+presetName,342,20328,inferred,태조고제 ,Ancient Emperor 
+presetName,343,20329,inferred,선풍포 Ⅰ,Whirlwind Cannon I
+presetName,344,20330,inferred,선풍포 Ⅱ,Whirlwind Cannon II
+presetName,345,20331,inferred,선풍포 Ⅲ,Whirlwind Cannon III
+presetName,346,20332,inferred,선풍포 Ⅳ,Whirlwind Cannon IV
+presetName,347,20333,inferred,분포관포 Ⅰ,Disruptive Catapult I
+presetName,348,20334,inferred,분포관포 Ⅱ,Disruptive Catapult II
+presetName,349,20335,inferred,분포관포 Ⅲ,Disruptive Catapult III
+presetName,350,20336,inferred,분포관포 Ⅳ,Disruptive Catapult IV
+presetName,351,20337,inferred,맹화유궤 Ⅰ,Flame Geyser Tank I
+presetName,352,20338,inferred,맹화유궤 Ⅱ,Flame Geyser Tank II
+presetName,353,20339,inferred,맹화유궤 Ⅲ,Flame Geyser Tank III
+presetName,354,20340,inferred,맹화유궤 Ⅳ,Flame Geyser Tank IV
+presetName,355,20341,inferred,독각선풍포 ,Poison Catapult 
+presetName,356,20342,inferred,비공사통 ,Fei Gong Sha Tong 
+presetName,357,20343,inferred,태의 Ⅰ,A Grand Cause I
+presetName,358,20344,inferred,태의 Ⅱ,A Grand Cause II
+presetName,359,20345,inferred,태의 Ⅲ,A Grand Cause III
+presetName,360,20346,inferred,태의 Ⅳ,A Grand Cause IV
+presetName,361,20347,inferred,신선 Ⅰ,Mystic I
+presetName,362,20348,inferred,신선 Ⅱ,Mystic II
+presetName,363,20349,inferred,신선 Ⅲ,Mystic III
+presetName,364,20350,inferred,신선 Ⅳ,Mystic IV
+presetName,365,20351,inferred,생존주의 Ⅰ,Survivalism I
+presetName,366,20352,inferred,생존주의 Ⅱ,Survivalism II
+presetName,367,20353,inferred,생존주의 Ⅲ,Survivalism III
+presetName,368,20354,inferred,생존주의 Ⅳ,Survivalism IV
+presetName,369,20355,inferred,응원군 Ⅰ,Reinforcements I
+presetName,370,20356,inferred,응원군 Ⅱ,Reinforcements II
+presetName,371,20357,inferred,응원군 Ⅲ,Reinforcements III
+presetName,372,20358,inferred,응원군 Ⅳ,Reinforcements IV
+presetName,373,20359,inferred,명의 ,Conduit 
+presetName,374,20360,inferred,태사 ,Taishi 
+presetName,375,20361,inferred,백호의 가호 ,Blessings of the White Tiger 
+presetName,376,20362,inferred,대현자 Ⅱ,Great Sage II
+presetName,377,20363,inferred,대현자 Ⅲ,Great Sage III
+presetName,378,20364,inferred,대현자 Ⅳ,Great Sage IV
+presetName,379,20365,inferred,거룩한 은사 Ⅱ,Divine Teacher II
+presetName,380,20366,inferred,거룩한 은사 Ⅲ,Divine Teacher III
+presetName,381,20367,inferred,거룩한 은사 Ⅳ,Divine Teacher IV
+presetName,382,20368,inferred,풍술지학 Ⅱ,The Voice of the Earth II
+presetName,383,20369,inferred,풍술지학 Ⅲ,The Voice of the Earth III
+presetName,384,20370,inferred,풍술지학 Ⅳ,The Voice of the Earth IV
+presetName,385,20371,inferred,호위 계책 ,Defensive Plan 
+presetName,386,20372,inferred,천문비책 ,Astronomical Plan 
+presetName,387,20373,inferred,자방 ,Zifang 
+presetName,388,20374,inferred,공명 ,Kongming 
+presetName,389,20375,inferred,낭고중달 Ⅱ,Sima Yi II
+presetName,390,20376,inferred,낭고중달 Ⅲ,Sima Yi III
+presetName,391,20377,inferred,최후의 승자 Ⅳ,The Final Victor IV
+presetName,392,20378,inferred,제갈량 Ⅲ,Zhuge Liang III
+presetName,393,20379,inferred,제갈량 Ⅳ,Zhuge Liang IV
+presetName,394,20380,inferred,천공장군 Ⅲ,General of the Heavens III
+presetName,395,20381,inferred,천공장군 Ⅳ,General of the Heavens IV
+presetName,396,20382,inferred,몽매의 제자 Ⅱ,Meng Mei's Pupil II
+presetName,397,20383,inferred,몽매의 제자 Ⅲ,Meng Mei's Pupil III
+presetName,398,20384,inferred,몽매의 제자 Ⅳ,Meng Mei's Pupil IV
+presetName,399,20385,inferred,치명적인 발톱 Ⅰ,Lethal Claws I
+presetName,400,20386,inferred,치명적인 발톱 Ⅱ,Lethal Claws II
+presetName,401,20387,inferred,치명적인 발톱 Ⅲ,Lethal Claws III
+presetName,402,20388,inferred,치명적인 발톱 Ⅳ,Lethal Claws IV
+presetName,403,20389,inferred,기호지세 Ⅰ,Tenacity of the Tiger I
+presetName,404,20390,inferred,기호지세 Ⅱ,Tenacity of the Tiger II
+presetName,405,20391,inferred,기호지세 Ⅲ,Tenacity of the Tiger III
+presetName,406,20392,inferred,기호지세 Ⅳ,Tenacity of the Tiger IV
+presetName,407,20393,inferred,호소풍생 ,Rise Up 
+presetName,408,20394,inferred,용전호쟁 ,Warring Tiger and Dragon 
+presetName,409,20395,inferred,학살 Ⅲ,Massacre III
+presetName,410,20396,inferred,학살 Ⅳ,Massacre IV
+presetName,411,20397,inferred,용장 ,Great General 
+presetName,412,20398,inferred,패왕 ,Overlord 
+presetName,413,20399,inferred,원양 Ⅱ,Yuanrang II
+presetName,414,20400,inferred,원양 Ⅲ,Yuanrang III
+presetName,415,20401,inferred,원양 Ⅳ,Yuanrang IV
+presetName,416,20402,inferred,도위 주치 Ⅰ,Buccaneer Zhu Zhi I
+presetName,417,20403,inferred,교위 주치 Ⅱ,Raider Zhu Zhi II
+presetName,418,20404,inferred,태수 주치 Ⅲ,Prefect Zhu Zhi III
+presetName,419,20405,inferred,장군 주치 Ⅳ,General Zhu Zhi IV
+presetName,420,20406,inferred,황숙 유비 Ⅱ,Emperor's Uncle Liu Bei II
+presetName,421,20407,inferred,백부인 Ⅱ,
+presetName,422,20408,inferred,백부인 Ⅲ,
+presetName,423,20409,inferred,백부인 Ⅳ,
+presetName,424,20410,inferred,선목황후 Ⅱ,
+presetName,425,20411,inferred,선목황후 Ⅲ,
+presetName,426,20412,inferred,선목황후 Ⅳ,
+presetName,427,20413,inferred,백인장 이신 Ⅰ,
+presetName,428,20414,inferred,천인장 이신 Ⅱ,
+presetName,429,20415,inferred,오천인장 이신 Ⅲ,
+presetName,430,20416,inferred,이신 장군 Ⅳ,
+presetName,431,20417,inferred,사마팔달 Ⅰ,
+presetName,432,20418,inferred,사마팔달 Ⅱ,
+presetName,433,20419,inferred,사마팔달 Ⅲ,
+presetName,434,20420,inferred,사마팔달 Ⅳ,
+presetName,435,20421,inferred,천공장군 Ⅱ,
+presetName,436,20422,inferred,황건당립 Ⅰ,
+presetName,437,20423,inferred,황건당립 Ⅱ,
+presetName,438,20424,inferred,황건당립 Ⅲ,
+presetName,439,20425,inferred,황건당립 Ⅳ,
+presetName,440,20426,inferred,관운장 Ⅱ,
+presetName,441,20427,inferred,관평태자 Ⅱ,
+presetName,442,20428,inferred,관평태자 Ⅲ,
+presetName,443,20429,inferred,관평태자 Ⅳ,
+presetName,444,20430,inferred,태수 요화 Ⅱ,
+presetName,445,20431,inferred,참군 요화 Ⅲ,
+presetName,446,20432,inferred,대장 요화 Ⅳ,
+presetName,447,20433,inferred,공손기 ,
+presetName,448,20434,inferred,시황제 ,
+presetName,449,20435,inferred,문명황후 Ⅰ,
+presetName,450,20436,inferred,문명황후 Ⅱ,
+presetName,451,20437,inferred,문명황후 Ⅲ,
+presetName,452,20438,inferred,문명황후 Ⅳ,
+presetName,453,20439,inferred,미자방 Ⅰ,
+presetName,454,20440,inferred,미자방 Ⅱ,
+presetName,455,20441,inferred,미자방 Ⅲ,
+presetName,456,20442,inferred,미자방 Ⅳ,
+presetName,457,20443,inferred,무작위 장수,Random Commander
+presetName,458,20444,inferred,최후의 승자,The Final Victor
+presetName,459,20445,inferred,도원의 꿈,Dreams of the Peach Garden
+presetName,460,20446,inferred,군신운장,Guan Yu
+presetName,461,20447,inferred,촉한의 불꽃,Flame of Shu Han
+presetName,462,20448,inferred,강동의 기틀,Jiangdong Infrastructure
+presetName,463,20449,inferred,손오,Sun Wu
+presetName,464,20450,inferred,동오의 영웅,Hero of Eastern Wu
+presetName,465,20451,inferred,무신의 천하,The God of War's World
+presetName,466,20452,inferred,황건당립,Yellow Sky
+presetName,467,20453,inferred,남만의 기세,Nanman's Spirit
+presetName,468,20454,inferred,난세여걸 Ⅰ,Women of War I
+presetName,469,20455,inferred,난세여걸 Ⅱ,Women of War II
+presetName,470,20456,inferred,봉인된 마왕,Sealed Demon

@@ -1,0 +1,778 @@
+column,seq,loc_row,confidence,ko,en
+name,1,123,anchored,금전 뭉치,Gold Coin Pile
+name,2,124,anchored,금전 주머니,Gold Coin Pouch
+name,3,125,anchored,금전 항아리,Gold Coin Pot
+name,4,126,anchored,금전 상자,Gold Coin Chest
+name,5,127,anchored,금전 수레,Gold Coin Cart
+name,6,128,anchored,정기권,Season Pass
+name,7,129,anchored,정기권(최초),Season Pass (Initial purchase)
+name,8,130,anchored,재료 꾸러미,Material Bundle
+name,9,131,anchored,도구 꾸러미,Tool Bundle
+name,10,132,anchored,한정 꾸러미1,Limited Bundle 1
+name,11,133,anchored,한정 꾸러미2,Limited Bundle 2
+name,12,134,anchored,한정 꾸러미3,Limited Bundle 3
+name,13,135,anchored,한정 꾸러미4,Limited Bundle 4
+name,14,136,anchored,초급 꾸러미,Novice Bundle
+name,15,137,anchored,중급 꾸러미,Intermediate Bundle
+name,16,138,anchored,고급 꾸러미,Advanced Bundle
+name,17,139,anchored,최고급 꾸러미,First Class Bundle
+name,18,140,anchored,시작 꾸러미,Beginner Bundle
+name,19,141,anchored,성장 꾸러미,Growth Bundle
+name,20,142,anchored,중급 재료 꾸러미,Intermediate Material Bundle
+name,21,143,anchored,고급 재료 꾸러미,Advanced Material Bundle
+name,22,144,anchored,교환권 꾸러미,Voucher Bundle
+name,23,145,anchored,고급 은전 꾸러미,Advanced Silver Coin Bundle
+name,24,146,anchored,고급 정기권,Adv Season Pass
+name,25,147,anchored,초급 정착 꾸러미,Novice Settlement Bundle
+name,26,148,anchored,중급 정착 꾸러미,Intermediate Settlement Bundle
+name,27,149,anchored,고급 정착 꾸러미,Advanced Settlement Bundle
+name,28,150,anchored,회복 꾸러미,Recovery Bundle
+name,29,151,anchored,효과 꾸러미,Effect Bundle
+name,30,152,anchored,제련 꾸러미,Refinement Bundle
+name,31,153,anchored,고급 제련 꾸러미,Advanced Refinement Bundle
+name,32,154,anchored,고급 100일 꾸러미,Advanced 100-Day Bundle
+name,33,155,anchored,특별한 100일 꾸러미,Special 100-Day Bundle
+name,34,156,anchored,100일 꾸러미,100-Day Bundle
+name,35,157,anchored,고급 교환권 꾸러미,Advanced Voucher Bundle
+name,36,158,anchored,토벌권 꾸러미,Token Bundle
+name,37,159,anchored,고급 토벌권 꾸러미,Advanced Token Bundle
+name,38,160,anchored,정기 교환권,Season Trade Pass
+name,39,161,anchored,고급 정기 교환권,Adv Season Trade Pass
+name,40,162,anchored,설날 꾸러미,New Years Bundle
+name,41,163,anchored,중급 설날 꾸러미,Intermediate New Years Bundle
+name,42,164,anchored,고급 설날 꾸러미,Advanced New Years Bundle
+name,43,165,anchored,교본 꾸러미,Training Scroll Bundle
+name,44,166,anchored,고급 교본 꾸러미,Advanced Training Scroll Bundle
+name,45,167,anchored,한정 은전 꾸러미,Limited Silver Coin Bundle
+name,46,168,anchored,대보름 꾸러미,Full Moon Bundle
+name,47,169,anchored,고급 대보름 꾸러미,Advanced Full Moon Bundle
+name,48,170,anchored,Rank 꾸러미2,Rank Bundle 2
+name,49,171,anchored,Rank 꾸러미3,Rank Bundle 3
+name,50,172,anchored,최고급 은전 꾸러미,First Class Silver Coin Bundle
+name,51,173,anchored,Rank 꾸러미5,Rank Bundle 5
+name,52,174,anchored,특별한 금전 수레,Special Gold Coin Wagon
+name,53,175,anchored,특별한 꾸러미,Special Bundle
+name,54,176,anchored,Rank 꾸러미1,Rank Bundle 1
+name,55,177,anchored,고급 특수 꾸러미,Advanced Special Bundle
+name,56,178,anchored,Rank 꾸러미4,Rank Bundle 4
+name,57,179,anchored,전설의 꾸러미,Legendary Bundle
+name,58,180,anchored,대박 꾸러미,Jackpot Bundle
+name,59,181,anchored,청룡 꾸러미,Azure Dragon Bundle
+name,60,182,anchored,고급 군량 꾸러미,Advanced Ration Bundle
+name,61,183,anchored,고급 알찬 꾸러미,Advanced Loaded Bundle
+name,62,184,anchored,주작 꾸러미,Vermilion Bird Bundle
+name,63,185,anchored,고급 주작 꾸러미,Advanced Vermilion Bird Bundle
+name,64,186,anchored,군량 꾸러미,Ration Bundle
+name,65,187,anchored,특별한 200일 꾸러미,Special 200-Day Bundle
+name,66,188,anchored,고급 200일 꾸러미,Advanced 200-Day Bundle
+name,67,189,anchored,200일 꾸러미,200-Day Bundle
+name,68,190,anchored,군주 꾸러미,Warlord Bundle
+name,69,191,anchored,군주의 은전 꾸러미,Warlord's Silver Coin Bundle
+name,70,192,anchored,오호대장군 조운 꾸러미,Five Tiger General Zhao Yun Bundle
+name,71,193,anchored,오호대장군 마초 꾸러미,Five Tiger General Ma Chao Bundle
+name,72,194,anchored,오호대장군 장비 꾸러미,Five Tiger General Zhang Fei Bundle
+name,73,195,anchored,오호대장군 관우 꾸러미,Five Tiger General Guan Yu Bundle
+name,74,196,anchored,여포의 상급 강화권,Advanced Lu Bu Upgrade Voucher
+name,75,197,anchored,여포의 최상급 강화권,Master Lu Bu Upgrade Voucher
+name,76,198,anchored,초선의 특별한 보물 조각,Diaochan's Special Artifact Piece
+name,77,199,anchored,특별한 300일 꾸러미,Special 300-Day Bundle
+name,78,200,anchored,고급 300일 꾸러미,Advanced 300-Day Bundle
+name,79,201,anchored,300일 꾸러미,300-Day Bundle
+name,80,202,anchored,교본 회수권,Training Scroll Reset Voucher
+name,81,203,anchored,쾌속 정기권,Fast Battle Season Pass
+name,82,204,anchored,군주 꾸러미2,Warlord Bundle 2
+name,83,205,anchored,1주년 초급 패키지,1st Anniversary Novice Package
+name,84,206,anchored,1주년 중급 패키지,1st Anniversary Intermediate Package
+name,85,207,anchored,1주년 고급 패키지,1st Anniversary Advanced Package
+name,86,208,anchored,1주년 최고급 패키지,1st Anniversary Master Package
+name,87,209,anchored,현무 꾸러미,Black Tortoise Bundle
+name,88,210,anchored,백호 꾸러미,White Tiger Bundle
+name,89,211,anchored,제갈량 패키지,Zhuge Liang Package
+name,90,212,anchored,황개 패키지,Huang Gai Package
+name,91,213,anchored,주유 패키지,Zhou Yu Package
+name,92,214,anchored,아듀 2017 초급 패키지,Farewell 2017 Novice Package
+name,93,215,anchored,아듀 2017 중급 패키지,Farewell 2017 Intermediate Package
+name,94,216,anchored,아듀 2017 고급 패키지,Farewell 2017 Advanced Package
+name,95,217,anchored,아듀 2017 최고급 패키지,Farewell 2017 Master Package
+name,96,218,anchored,청룡의 신년 꾸러미,Azure Dragon's New Year Bundle
+name,97,219,anchored,청룡의 고급 신년 꾸러미,Azure Dragon's Adv. New Year Bundle
+name,98,220,anchored,청룡의 특별한 신년 꾸러미,Azure Dragon's Special New Year Bundle
+name,99,221,anchored,한신 꾸러미,Han Xin Bundle
+name,100,222,anchored,소하 꾸러미,Xiao He Bundle
+name,101,223,anchored,장량 꾸러미,Zhang Liang Bundle
+name,102,224,anchored,허저의 영혼 꾸러미,Xu Chu's Soul Bundle
+name,103,225,anchored,허저의 강화 꾸러미,Xu Chu's Enhance Bundle
+name,104,226,anchored,허저의 무기 꾸러미,Xu Chu's Weapon Bundle
+name,105,227,anchored,허저의 방어구 꾸러미,Xu Chu's Armor Bundle
+name,106,228,anchored,2018 설 교본 꾸러미,2018 New Year's Scroll Bundle
+name,107,229,anchored,2018 설 강화 꾸러미,2018 New Year's Enhance Bundle
+name,108,230,anchored,2018 설 보패 꾸러미,2018 New Year's Relic Bundle
+name,109,231,anchored,2018 특별한 설 보패 꾸러미,2018 Special New Year's Relic Bundle
+name,110,232,anchored,고급 강화 꾸러미,Advanced Enhance Bundle
+name,111,233,anchored,장료의 강화 꾸러미,Zhang Liao's Enhance Bundle
+name,112,234,anchored,장료의 고급 강화 꾸러미,Zhang Liao's Advanced Enhance Bundle
+name,113,235,anchored,황금빛 보물 꾸러미,Golden Artifact Bundle
+name,114,236,anchored,기력 정기권,Energy Season Pass
+name,115,237,anchored,정월 대보름 영혼 꾸러미,Lunar New Year's Soul Bundle
+name,116,238,anchored,정월 대보름 고급 영혼 꾸러미,Lunar New Year's Advanced Soul Bundle
+name,117,239,anchored,정월 대보름 보물 꾸러미,Lunar New Year's Artifact Bundle
+name,118,240,anchored,정월 대보름 허가서 꾸러미,Lunar New Year's Permit Bundle
+name,119,241,anchored,전위의 교본 꾸러미,Dian Wei's Scroll Bundle
+name,120,242,anchored,전위의 은전 꾸러미,Dian Wei's Silver Coin Bundle
+name,121,243,anchored,전위의 실속 꾸러미,Dian Wei's Bountiful Bundle
+name,122,244,anchored,순욱의 강화 꾸러미,Xun Yu's Enhance Bundle
+name,123,245,anchored,순욱의 보패 꾸러미,Xun Yu's Relic Bundle
+name,124,246,anchored,순욱의 무기 꾸러미,Xun Yu's Weapon Bundle
+name,125,247,anchored,순욱의 방어구 꾸러미,Xun Yu's Armor Bundle
+name,126,248,anchored,초급 성장 꾸러미,Novice Growth Bundle
+name,127,249,anchored,고급 성장 꾸러미,Adv. Growth Bundle
+name,128,250,anchored,주작의 교본 꾸러미,Vermilion Bird's Scroll Bundle
+name,129,251,anchored,주작의 강화 꾸러미,Vermilion Bird's Enhance Bundle
+name,130,252,anchored,주작의 허가서 꾸러미,Vermilion Bird's Permit Bundle
+name,131,253,anchored,주작의 위패 꾸러미,Vermilion Bird's Ancestral Tablet Bundle
+name,132,254,anchored,관영의 보물 꾸러미,Guan Ying's Artifact Bundle
+name,133,255,anchored,관영의 보패 꾸러미,Guan Ying's Relic Bundle
+name,134,256,anchored,관영의 은전 꾸러미,Guan Ying's Silver Coin Bundle
+name,135,257,anchored,관영의 강화 꾸러미,Guan Ying's Enhance Bundle
+name,136,258,anchored,대교의 은총 꾸러미,Daqiao's Grace Bundle
+name,137,259,anchored,소교의 축복 꾸러미,Xiaoqiao's Blessing Bundle
+name,138,260,anchored,범증의 교본 꾸러미,Fan Zeng's Scroll Bundle
+name,139,261,anchored,범증의 청룡 영혼 꾸러미,Fan Zeng's Azure Soul Bundle
+name,140,262,anchored,범증의 실속 꾸러미,Fan Zeng's Bountiful Bundle
+name,141,263,anchored,범증의 허가서 꾸러미,Fan Zeng's Permit Bundle
+name,142,264,anchored,용저의 보물 꾸러미,Long Ju's Artifact Bundle
+name,143,265,anchored,용저의 주작 영혼 꾸러미,Long Ju's Vermilion Soul Bundle
+name,144,266,anchored,용저의 실속 꾸러미,Long Ju's Bountiful Bundle
+name,145,267,anchored,용저의 허가서 꾸러미,Long Ju's Permit Bundle
+name,146,268,anchored,600일 기념 강화 꾸러미,600-Day Upgrade Bundle
+name,147,269,anchored,600일 기념 청룡 보패 꾸러미,600-Day Azure Relic Bundle
+name,148,270,anchored,600일 기념 주작 보패 꾸러미,600-Day Vermilion Relic Bundle
+name,149,271,anchored,600일 기념 특별한 주작 보패 꾸러미,600-Day Special Vermilion Relic Bundle
+name,150,272,anchored,손견의 청룡 영혼 꾸러미,Sun Jian's Azure Soul Bundle
+name,151,273,anchored,손견의 주작 영혼 꾸러미,Sun Jian's Vermilion Soul Bundle
+name,152,274,anchored,손견의 무기 꾸러미,Sun Jian's Weapon Bundle
+name,153,275,anchored,손견의 방어구 꾸러미,Sun Jian's Armor Bundle
+name,154,276,anchored,손책의 교본 꾸러미,Sun Ce's Scroll Bundle
+name,155,277,anchored,손책의 허가서 꾸러미,Sun Ce's Permit Bundle
+name,156,278,anchored,손책의 실속 꾸러미1,Sun Ce's Bountiful Bundle 1
+name,157,279,anchored,손책의 실속 꾸러미2,Sun Ce's Bountiful Bundle 2
+name,158,280,anchored,손권의 청룡 보패 꾸러미,Sun Quan's Azure Relic Bundle
+name,159,281,anchored,손권의 주작 보패 꾸러미,Sun Quan's Vermilion Relic Bundle
+name,160,282,anchored,손권의 강화 꾸러미,Sun Quan's Enhance Bundle
+name,161,283,anchored,손권의 은전 꾸러미,Sun Quan's Silver Coin Bundle
+name,162,284,anchored,손권의 보물 꾸러미,Sun Quan's Artifact Bundle
+name,163,285,anchored,손권의 고급 보물 꾸러미,Sun Quan's Adv. Artifact Bundle
+name,164,286,anchored,손권의 주작 위패 꾸러미,Sun Quan's Vermilion Tablet Bundle
+name,165,287,anchored,손권의 청룡 위패 꾸러미,Sun Quan's Azure Tablet Bundle
+name,166,288,anchored,아만의 내정 꾸러미,Aman’s Govern Bundle
+name,167,289,anchored,아만의 보물 꾸러미,Aman's Artifact Bundle
+name,168,290,anchored,아만의 은전 꾸러미,Aman's Silver Coin Bundle
+name,169,291,anchored,아만의 고급 보물 꾸러미,Aman's Adv. Artifact Bundle
+name,170,292,anchored,하후돈의 보물 꾸러미,Xiahou Dun's Artifact Bundle
+name,171,293,anchored,하후돈의 허가서 꾸러미,Xiahou Dun’s Permit Bundle
+name,172,294,anchored,하후돈의 강화 꾸러미,Xiahou Dun's Enhance Bundle
+name,173,295,anchored,하후돈의 영혼 꾸러미,Xiahou Dun's Soul Bundle
+name,174,296,anchored,변월향의 초보자 꾸러미,Bian Yue Xiang's Beginner Bundle
+name,175,297,anchored,변월향의 은전 꾸러미,Bian Yue Xiang's Silver Coin Bundle
+name,176,298,anchored,변월향의 고급 보물 꾸러미,Bian Yue Xiang's Adv. Artifact Bundle
+name,177,299,anchored,초선의 깜짝 주말 꾸러미,Diaochan's Surprise Weekend Bundle
+name,178,300,anchored,초선의 깜짝 금전 꾸러미,Diaochan's Surprise Gold Coin Bundle
+name,179,301,anchored,손상향의 초보자 꾸러미,Sun Shangxiang's Beginner Bundle
+name,180,302,anchored,손상향의 강화 꾸러미,Sun Shangxiang's Upgrade Bundle
+name,181,303,anchored,손상향의 보물 꾸러미,Sun Shangxiang's Artifact Bundle
+name,182,304,anchored,"손상향의 무기, 방어구 꾸러미",Sun Shangxiang's Weapon/Armor Bundle
+name,183,305,anchored,유화의 초보자 군량 꾸러미,Liu He's Beginner Ration Bundle
+name,184,306,anchored,유화의 작은 보물조각 꾸러미,Liu He's Small Artifact Bundle
+name,185,307,anchored,유화의 은전 꾸러미,Liu He's Silver Coin Bundle
+name,186,308,anchored,유화의 큰 보물 꾸러미,Liu He's Big Artifact Bundle
+name,187,309,anchored,아린의 은전 꾸러미,Arin's Silver Coin Bundle
+name,188,310,anchored,아린의 청룡 영혼 꾸러미,Arin's Azure Soul Bundle
+name,189,311,anchored,아린의 교본 꾸러미,Arin's Scroll Bundle
+name,190,312,anchored,아린의 허가서 꾸러미,Arin's Permit Bundle
+name,191,313,anchored,초선의 재화 꾸러미,Diaochan's Currency Bundle
+name,192,314,anchored,초선의 보물 꾸러미,Diaochan's Artifact Bundle
+name,193,315,anchored,한정 금전 꾸러미,Limited Gold Coin Bundle
+name,194,316,anchored,선별 보물 상자,Chosen Treasure Chest
+name,195,317,anchored,특별 금전 뭉치,Special Gold Coin Pile
+name,196,318,anchored,특별 금전 주머니,Special Gold Coin Pouch
+name,197,319,anchored,특별 금전 항아리,Special Gold Coin Pot
+name,198,320,anchored,특별 금전 상자,Special Gold Coin Chest
+name,199,321,anchored,특별 금전 수레,Special Gold Coin Wagon
+name,200,322,anchored,新고급 정기권,New Adv Season Pass
+name,201,323,anchored,사건 정기권,Quest Season Pass
+name,202,324,anchored,700일 기념 보물 꾸러미,700-Day Artifact Bundle
+name,203,325,anchored,700일 기념 청룡 보패 꾸러미,700-Day Azure Relic Bundle
+name,204,326,anchored,700일 기념 주작 보패 꾸러미,700-Day Vermilion Relic Bundle
+name,205,327,anchored,700일 기념 700 꾸러미,700-Day Celebration Bundle
+name,206,328,anchored,왕도의 초보자 꾸러미,Wang Du's Beginner Bundle
+name,207,329,anchored,왕도의 작은 보물 꾸러미,Wang Du's Small Artifact Bundle
+name,208,330,anchored,왕도의 방어구 꾸러미,Wang Du's Armor Bundle
+name,209,331,anchored,왕도의 무기 꾸러미,Wang Du's Weapon Bundle
+name,210,332,anchored,조령의 초보자 지원 꾸러미,Cao Ying's Beginner Bundle
+name,211,333,anchored,조령의 허가서 꾸러미,Cao Ying's Permit Bundle
+name,212,334,anchored,조령의 강화 지원 꾸러미,Cao Ying's Upgrade Support Bundle
+name,213,335,anchored,조령의 특별한 교본 꾸러미,Cao Ying's Special Scroll Bundle
+name,214,336,anchored,여포의 강화 꾸러미,Lu Bu's Upgrade Bundle
+name,215,337,anchored,여포의 청룡 영혼 꾸러미,Lu Bu's Azure Soul Bundle
+name,216,338,anchored,여포의 주작 영혼 꾸러미,Lu Bu's Vermilion Soul Bundle
+name,217,339,anchored,초선의 재물 꾸러미,Diaochan's Treasure Bundle
+name,218,340,anchored,초선의 허가서 꾸러미,Diaochan's Permit Bundle
+name,219,341,anchored,여령기의 작은 보물 꾸러미,Lu Lingqi's Small Artifact Bundle
+name,220,342,anchored,여령기의 허가서 꾸러미,Lu Lingqi's Permit Bundle
+name,221,343,anchored,관우의 재물 꾸러미,Guan Yu's Treasure Bundle
+name,222,344,anchored,관우의 강화 보존권 꾸러미,Guan Yu's Upgrade Protection Bundle
+name,223,345,anchored,조운의 재물 꾸러미,Zhao Yun's Treasure Bundle
+name,224,346,anchored,조운의 주작의 영혼 꾸러미,Zhao Yun's Vermilion Soul Bundle
+name,225,347,anchored,조운의 청룡의 영혼 꾸러미,Zhao Yun's Azure Soul Bundle
+name,226,348,anchored,조운의 작은 금전 꾸러미,Zhao Yun's Gold Coin Bundle
+name,227,349,anchored,800일 기념 성장 꾸러미,800-Day Quick Level Bundle
+name,228,350,anchored,800일 기념 교본 꾸러미,800-Day Training Scroll Bundle
+name,229,351,anchored,800일 기념 특별 꾸러미,800-Day Special Bundle.
+name,230,352,anchored,육손의 보물 꾸러미,Lu Xun's Artifact Bundle
+name,231,353,anchored,육손의 장수 효과 꾸러미,Lu Xun's Passives Bundle
+name,232,354,anchored,육손의 청룡 꾸러미,Lu Xun's Azure Dragon Bundle
+name,233,355,anchored,육손의 주작 꾸러미,Lu Xun's Vermilion Bird Bundle
+name,234,356,anchored,장량의 효과 점수 꾸러미,Zhang Liang's Passive Point Bundle
+name,235,357,anchored,장량의 허가서 꾸러미,Zhang Liang's Permit Bundle
+name,236,358,anchored,장량의 주작 꾸러미,Zhang Liang's Vermilion Bird Bundle
+name,237,359,anchored,장량의 청룡 꾸러미,Zhang Liang's Azure Dragon Bundle
+name,238,360,anchored,주유의 성장 꾸러미,Zhou Yu's Quick Level Bundle
+name,239,361,anchored,주유의 국사무쌍 꾸러미,Zhou Yu's Peerless Bundle
+name,240,362,anchored,주유의 특별 강화 꾸러미,Zhou Yu's Special Upgrade Bundle
+name,241,363,anchored,주유의 재화 꾸러미,Zhou Yu's Currency Bundle
+name,242,364,anchored,특별한 설 은전 패키지,Special New Year's Silver Coin Package
+name,243,365,anchored,특별한 설 패키지,Special New Year's Package
+name,244,366,anchored,특별한 설 고급 패키지,Special New Year's Advanced Package
+name,245,367,anchored,감녕의 재화 꾸러미,Gan Ning's Currency Bundle
+name,246,368,anchored,감녕의 커다란 재화 꾸러미,Gan Ning's Huge Currency Bundle
+name,247,369,anchored,손책의 재화 꾸러미,Sun Ce's Currency Bundle
+name,248,370,anchored,손책의 커다란 재화 꾸러미,Sun Ce's Huge Currency Bundle
+name,249,371,anchored,손상향의 작은 재화 꾸러미,Sun Shangxiang's Small Currency Bundle
+name,250,372,anchored,손상향의 재화 꾸러미,Sun Shangxiang's Currency Bundle
+name,251,373,anchored,900일 기념 작은 금전 꾸러미,900-Day Small Gold Coin Bundle
+name,252,374,anchored,900일 기념 금전 꾸러미,900-Day Gold Coin Bundle
+name,253,375,anchored,900일 기념 특별 꾸러미,900-Day Special Bundle
+name,254,376,anchored,4-7등급 보물 교환권,4-7★ Artifact Voucher
+name,255,377,anchored,5-7등급 보물 교환권,5-7★ Artifact Voucher
+name,256,378,anchored,보물 조각 120개,Artifact Piece x120
+name,257,379,anchored,6-7등급 보물 교환권,6-7★ Artifact Voucher
+name,258,380,anchored,7등급 보물 교환권,7★ Artifact Voucher
+name,259,381,anchored,출사표,To Battle
+name,260,382,anchored,견희의 재화 꾸러미,Zhenji's Currency Bundle
+name,261,383,anchored,견희의 큰 재화 꾸러미,Zhenji's Currency Bundle (L)
+name,262,384,anchored,곽가의 작은 재화 꾸러미,Guo Jia's Currency Bundle (s)
+name,263,385,anchored,곽가의 재화 꾸러미,Guo Jia's Currency Bundle
+name,264,386,anchored,곽가의 영혼 꾸러미,Guo Jia's Soul Bundle
+name,265,387,anchored,안량의 재화 꾸러미,Yan Liang Currency Bundle
+name,266,388,anchored,안량의 큰 재화 꾸러미,Yan Liang Currency Bundle (L)
+name,267,389,anchored,안량의 보물 강화 꾸러미,Yan Liang Artifact Bundle
+name,268,390,anchored,문추의 작은 재화 꾸러미,Wen Chou Currency Bundle (s)
+name,269,391,anchored,문추의 재화 꾸러미,Wen Chou Currency Bundle
+name,270,392,anchored,황충의 재화 꾸러미,Huang Zhong Currency Pack
+name,271,393,anchored,황충의 큰 재화 꾸러미,Huang Zhong Currency Pack (L)
+name,272,394,anchored,황충의 보물 강화 꾸러미,Huang Zhong Artifact Pack
+name,273,395,anchored,1000일 금전 꾸러미,"1,000-Day Gold Coin Bundle"
+name,274,396,anchored,1000일 특별 금전 꾸러미,"1,000-Day LTD Gold Coin Bundle"
+name,275,397,anchored,1000일 기념 보물 꾸러미,"1,000-Day Artifact Bundle"
+name,276,398,anchored,1000일 기념 은전 꾸러미,"1,000-Day Silver Coin Bundle"
+name,277,399,anchored,마운록의 재화 꾸러미,Ma Yunlu's Currency Bundle
+name,278,400,anchored,마운록의 큰 재화 꾸러미,Ma Yunlu's Currency Bundle (L)
+name,279,401,anchored,마운록의 보물 강화 꾸러미,Ma Yunlu's Upgrade Bundle
+name,280,402,anchored,1000일 초급 성장 꾸러미,"1,000-Day Quick Level Bundle 1"
+name,281,403,anchored,1000일 중급 성장 꾸러미,"1,000-Day Quick Level Bundle 2"
+name,282,404,anchored,1000일 고급 성장 꾸러미,"1,000-Day Quick Level Bundle 3"
+name,283,405,anchored,곽여왕의 특별 보물 조각 꾸러미,Guo Nuwang Artifact Pc. Pack
+name,284,406,anchored,마왕 가남풍의 재화 꾸러미,D. Jia Nanfeng Currency Pack
+name,285,407,anchored,마왕 가남풍의 큰 재화 꾸러미,D. Jia Nanfeng Currency Pack L
+name,286,408,anchored,마왕 가남풍의 효과 재화 꾸러미,D. Jia Nanfeng Passive Pack
+name,287,409,anchored,특별 효과 점수 꾸러미,Special Passive Point Bundle
+name,288,410,anchored,사마의의 재화 꾸러미,Sima Yi's Supply Pack
+name,289,411,anchored,사마의의 큰 재화 꾸러미,Sima Yi's Supply Pack (L)
+name,290,412,anchored,사마의의 효과 재화 꾸러미,Sima Yi's Supply Effect Pack
+name,291,413,anchored,장춘화의 재화 꾸러미,Zhang Chunhua Supply Pack
+name,292,414,anchored,장춘화의 큰 재화 꾸러미,Zhang Chunhua Supply Pack (L)
+name,293,415,anchored,조조의 특별 재화 꾸러미,Cao Cao's Sp. Currency Bundle
+name,294,416,anchored,조조의 특별 거함 꾸러미,Cao Cao's Sp. War Box Bundle
+name,295,417,anchored,3주년 꾸러미,3-Year Anniversary Bundle
+name,296,418,anchored,추석 금전 주머니,Autumn Gold Coin Pouch
+name,297,419,anchored,추석 금전 항아리,Autumn Gold Coin Pot
+name,298,420,anchored,추석 특별 금전 상자,Autumn Gold Coin Chest
+name,299,421,anchored,3주년 금전 주머니1,3-Year Gold Coin Pouch 1
+name,300,422,anchored,3주년 금전 상자1,3-Year Gold Coin Chest 1
+name,301,423,anchored,3주년 기념 보물 꾸러미1,3-Year Artifact Bundle 1
+name,302,424,anchored,3주년 금전 주머니2,3-Year Gold Coin Pouch 2
+name,303,425,anchored,3주년 금전 상자2,3-Year Gold Coin Chest 2
+name,304,426,anchored,3주년 기념 보물 꾸러미2,3-Year Artifact Bundle 2
+name,305,427,anchored,전위의 재화 꾸러미,Dian Wei Currency Bundle
+name,306,428,anchored,전위의 효과 재화 꾸러미,Dian Wei Passive Currency Pack
+name,307,429,anchored,전위의 특별 은전 꾸러미,Dian Wei Special Silver Coin Bundle
+name,308,430,anchored,초선의 청룡 꾸러미,Diaochan Azure Dragon Bundle
+name,309,431,anchored,초선의 주작 꾸러미,Diaochan Vermilion Bird Bundle
+name,310,432,anchored,초선의 특별 영혼 꾸러미,Diaochan Special Soul Bundle
+name,311,433,anchored,백호의 특별한 꾸러미,White Tiger Special Bundle
+name,312,434,anchored,백호의 금전 꾸러미,White Tiger Gold Coin Bundle
+name,313,435,anchored,백호의 효과 점수 꾸러미,White Tiger Passive Pt. Bundle
+name,314,436,anchored,황제의 재화 꾸러미,Emperor Currency Bundle
+name,315,437,anchored,황제의 효과 재화 꾸러미,Emperor Passive Currency Pack
+name,316,438,anchored,황제의 특별 은전 꾸러미,Emperor Sp. Silver Coin Bundle
+name,317,439,anchored,청룡 영혼 특별 꾸러미,Azure Dragon Soul Special Pack
+name,318,440,anchored,주작 영혼 특별 꾸러미,Vermilion Bird Soul Sp. Pack
+name,319,441,anchored,동백의 매일 재화 꾸러미,Dong Bai Daily Currency Bundle
+name,320,442,anchored,동백의 매일 성장 꾸러미,Dong Bai Daily Quick Lv. Pack
+name,321,443,anchored,동백의 매일 효과 꾸러미,Dong Bai Daily Passive Bundle
+name,322,444,anchored,유비의 백호 보패 꾸러미,Liu Bei White Tiger Relic Pack
+name,323,445,anchored,유비의 영혼 금전 꾸러미,Liu Bei Soul/Gold Coin Pack
+name,324,446,anchored,유비의 효과 재화 꾸러미,Liu Bei Passive Currency Pack
+name,325,447,anchored,성탄절 백호 보패 꾸러미,Xmas White Tiger Relic Pack
+name,326,448,anchored,성탄절 금전 꾸러미,Xmas Gold Coin Pack
+name,327,449,anchored,성탄절 특별 보물 꾸러미,Xmas Artifact Pack
+name,328,450,anchored,일일 특별 금전 꾸러미,Daily Gold Coin Bundle
+name,329,451,anchored,일일 특별 효과점수 꾸러미,Daily Passive Point Bundle
+name,330,452,anchored,일일 특별 보물 교환권 꾸러미,Daily Artifact Voucher Bundle
+name,331,453,anchored,일일 특별 보물 꾸러미,Daily Artifact Bundle
+name,332,454,anchored,일일 특별 강화 꾸러미,Daily Upgrade Bundle
+name,333,455,anchored,보연사의 백호 보패 꾸러미,Bu Lianshi W.Tiger Relic Pack
+name,334,456,anchored,보연사의 영혼 금전 꾸러미,Bu Lianshi Soul/Gold Coin Pack
+name,335,457,anchored,보연사의 효과 점수 꾸러미,Bu Lianshi Passive Point Pack
+name,336,458,anchored,소교의 설 금전 주머니,Xiaoqiao New Year G.Coin Pouch
+name,337,459,anchored,소교의 설 금전 항아리,Xiaoqiao New Year G.Coin Pot
+name,338,460,anchored,소교의 설 금전 상자,Xiaoqiao New Year G.Coin Chest
+name,339,461,anchored,소교의 설 금전 수레,Xiaoqiao New Year G.Coin Wagon
+name,340,462,anchored,방통의 효과 주머니,Pang Tong Passive Pouch
+name,341,463,anchored,방통의 금전 상자,Pang Tong's Gold Coin Chest
+name,342,464,anchored,방통의 백호 주머니,Pang Tong White Tiger Pouch
+name,343,465,anchored,은전 꾸러미,Silver Coin Bundle
+name,344,466,anchored,여름 꾸러미,Summer Bundle
+name,345,467,anchored,고급 여름 꾸러미,Advanced Summer Bundle
+name,346,468,anchored,구글 프로모션1,Google Promotion 1
+name,347,469,anchored,구글 프로모션2,Google Promotion 2
+name,348,470,anchored,구글 프로모션3,Google Promotion 3
+name,349,471,anchored,은전 가득가득 꾸러미,Overflowing Silver Coin Bundle
+name,350,472,anchored,최 고급 교환권 꾸러미,Best Voucher Bundle
+name,351,473,anchored,출사표 꾸러미,To Battle Bundle
+name,352,474,anchored,고급 청룡 꾸러미,Advanced Azure Dragon Bundle
+name,353,475,anchored,여포 상급 강화,Advanced Lu Bu Upgrade
+name,354,476,anchored,여포 최상급 강화,Master Lu Bu Upgrade
+name,355,477,anchored,초선의 특별한 보물조각,Diaochan's Special Artifact Piece
+name,356,478,anchored,추석 금전 패키지,Thanksgiving Gold Coin Package
+name,357,479,anchored,추석 특별 금전 패키지,Special Thanksgiving Gold Coin Package
+name,358,480,anchored,고급 백호 꾸러미,Advanced White Tiger Bundle
+name,359,481,anchored,고급 현무 꾸러미,Advanced Black Tortoise Bundle
+name,360,482,anchored,오호대장군 조운 꾸러미2,Five Tiger General Zhao Yun Bundle 2
+name,361,483,anchored,오호대장군 마초 꾸러미2,Five Tiger General Ma Chao Bundle 2
+name,362,484,anchored,오호대장군 장비 꾸러미2,Five Tiger General Zhang Fei Bundle 2
+name,363,485,anchored,오호대장군 관우 꾸러미2,Five Tiger General Guan Yu Bundle 2
+name,364,486,anchored,2017 초급 연말 패키지,2017 Novice Year End Package
+name,365,487,anchored,2017 중급 연말 패키지,2017 Intermediate Year End Package
+name,366,488,anchored,2017 고급 연말 패키지,2017 Advanced Year End Package
+name,367,489,anchored,2017 최고급 연말 패키지,2017 Master Year End Package
+name,368,490,anchored,맹획 훈련 교본 패키지,Meng Huo's Scroll Package
+name,369,491,anchored,맹획 럭셔리 재화 패키지,Meng Huo's Luxury Goods Package
+name,370,492,anchored,맹획 승급 교전 패키지,Meng Huo's Promotion Package
+name,371,493,anchored,맹획 7성 보물 합성 패키지,Meng Huo's 7-Star Artifact Fusion Package
+name,372,494,anchored,청룡의 신년 패키지,Azure Dragon New Year's Package
+name,373,495,anchored,청룡의 고급 신년 패키지,Azure Dragon Adv. New Year's Package
+name,374,496,anchored,청룡의 특별한 신년 패키지,Azure Dragon Special New Year's Package
+name,375,497,anchored,1주년 특별 패키지,1-Year Anniversary Special Package
+name,376,498,anchored,2018 설 교본 패키지,2018 New Year's Scroll Package
+name,377,499,anchored,2018 설 강화 패키지,2018 New Year's Enhance Package
+name,378,500,anchored,2018 설 보패 패키지,2018 New Year's Relic Package
+name,379,501,anchored,초보자 6등급 무기 지원 패키지,Beginner 6★ Weapon Support Package
+name,380,502,anchored,초보자 6등급 방어구 지원 패키지 ,Beginner 6★ Armor Support Package 
+name,381,503,anchored,(대만)4-7등급 보물 교환권,(Taiwan) 4-7★ Artifact Voucher
+name,382,504,anchored,(대만)500일 기념 한정 특별 패키지,(Taiwan) 500 Day Celebration Special Package
+name,383,505,anchored,군주의 무기 꾸러미,Warlord's Weapon Bundle
+name,384,506,anchored,군주의 방어구 꾸러미,Warlord's Armor Bundle
+name,385,507,anchored,군주의 교본 꾸러미,Warlord's Scroll Bundle
+name,386,508,anchored,손상향의 황금 주머니(소),Sun Shangxiang's Golden Pouch (S)
+name,387,509,anchored,손상향의 황금 주머니(중),Sun Shangxiang's Golden Pouch (M)
+name,388,510,anchored,손상향의 황금 주머니(대),Sun Shangxiang's Golden Pouch (L)
+name,389,511,anchored,은전 꾸러미(소),Silver Coin Bundle (S)
+name,390,512,anchored,은전 꾸러미(중),Silver Coin Bundle (M)
+name,391,513,anchored,은전 꾸러미(대),Silver Coin Bundle (L)
+name,392,514,anchored,한정 은전 꾸러미(소),Limited Silver Coin Bundle (S)
+name,393,515,anchored,한정 은전 꾸러미(중),Limited Silver Coin Bundle (M)
+name,394,516,anchored,한정 은전 꾸러미(대),Limited Silver Coin Bundle (L)
+name,395,517,anchored,보물 강화 패키지,Artifact Upgrade Package
+name,396,518,anchored,(일본)200일 주머니(소),(Japan) 200-Day Pouch (S)
+name,397,519,anchored,(일본)장수 육성 꾸러미(소),(Japan) Commander Growth Bundle (S)
+name,398,520,anchored,(일본)200일 주머니(대),(Japan) 200-Day Pouch (L)
+name,399,521,anchored,(일본)양백경 주머니,(Japan) Nickel Silver Mirror Pouch
+name,400,522,anchored,(일본)장수 육성 꾸러미(대),(Japan) Commander Growth Bundle (L)
+name,401,523,anchored,묘월 한정 무기 주머니,Feb Limited Edition Weapon Pouch
+name,402,524,anchored,묘월 한정 보물 주머니,Feb Limited Edition Artifact Pouch
+name,403,525,anchored,성장 지원 상자(소),Growth Support Chest (S)
+name,404,526,anchored,성장 지원 상자(대),Growth Support Chest (L)
+name,405,527,anchored,7등급 보물 조각 상자(대),7★ Artifact Piece Chest (L)
+name,406,528,anchored,보물강화 패키지,Artifact Upgrade Package
+name,407,529,anchored,보물조각 패키지,Artifact Piece Package
+name,408,530,anchored,금은 패키지,Gold and Silver Package
+name,409,531,anchored,4등급 각의 보패 패키지,4★ Horn Relic Package
+name,410,532,anchored,4등급 항의 보패 패키지,4★ Neck Relic Package
+name,411,533,anchored,4등급 심의 보패 패키지,4★ Chest Relic Package
+name,412,534,anchored,4등급 미의 보패 패키지,4★ Tail Relic Package
+name,413,535,anchored,4등급 저의 보패 패키지,4★ Heart Relic Package
+name,414,536,anchored,4등급 방의 보패 패키지,4★ Belly Relic Package
+name,415,537,anchored,4등급 심의 보패 패키지2,4★ Chest Relic Package 2
+name,416,538,anchored,4등급 각의 보패 패키지2,4★ Horn Relic Package 2
+name,417,539,anchored,4등급 방의 보패 패키지2,4★ Belly Relic Package 2
+name,418,540,anchored,4등급 기의 보패 패키지,4★ Rear Relic Package
+name,419,541,anchored,4등급 항의 보패 패키지2,4★ Neck Relic Package 2
+name,420,542,anchored,4등급 각의 보패 패키지3,4★ Horn Relic Package 3
+name,421,543,anchored,(일본)삼백일 주머니(소),(Japan) 300-Day Pouch (S)
+name,422,544,anchored,(일본)삼백일 주머니(대),(Japan) 300-Day Pouch (L)
+name,423,545,anchored,(일본)삼백향 주머니,(Japan) 300 Incense Pouch
+name,424,546,anchored,(일본)4등급 정의 보패 패키지,(Japan) 4★ Crest Relic Package
+name,425,547,anchored,(일본)4등급 유의 보패 패키지,(Japan) 4★ Beak Relic Package
+name,426,548,anchored,(일본)4등급 성의 보패 패키지,(Japan) 4★ Heart Relic Package
+name,427,549,anchored,(일본)4등급 귀의 보패 패키지,(Japan) 4★ Eyes Relic Package
+name,428,550,anchored,(일본)4등급 장의 보패 패키지,(Japan) 4★ Craw Relic Package
+name,429,551,anchored,(일본)4등급 익의 보패 패키지,(Japan) 4★ Wings Relic Package
+name,430,552,anchored,(일본)4등급 진의 보패 패키지,(Japan) 4★ Tail Relic Package
+name,431,553,anchored,(일본)4등급 정의 보패 패키지2,(Japan) 4★ Crest Relic Package 2
+name,432,554,anchored,(일본)4등급 유의 보패 패키지2,(Japan) 4★ Beak Relic Package 2
+name,433,555,anchored,(일본)4등급 성의 보패 패키지2,(Japan) 4★ Heart Relic Package 2
+name,434,556,anchored,(일본)4등급 귀의 보패 패키지2,(Japan) 4★ Eyes Relic Package 2
+name,435,557,anchored,(일본)4등급 장의 보패 패키지2,(Japan) 4★ Craw Relic Package 2
+name,436,558,anchored,(일본)4등급 익의 보패 패키지2,(Japan) 4★ Wings Relic Package 2
+name,437,559,anchored,(일본)4등급 진의 보패 패키지2,(Japan) 4★ Tail Relic Package 2
+name,438,560,anchored,(일본)장수 강화 주머니(소),(Japan) Commander Upgrade Pouch (S)
+name,439,561,anchored,(일본)장수 강화 주머니(대),(Japan) Commander Upgrade Pouch (L)
+name,440,562,anchored,한정 방어구 주머니,Limited Armor Pouch
+name,441,563,anchored,(일본)1주년 주머니(소),(Japan) 1-Year Anniversary Pouch (S)
+name,442,564,anchored,(일본)1주년 주머니(대),(Japan) 1-Year Anniversary Pouch (L)
+name,443,565,anchored,(일본)일년곤 주머니,(Japan) Annual Club Pouch
+name,444,566,anchored,(일본)일년패 주머니,(Japan) Annual Shield Pouch
+name,445,567,anchored,(일본)4-7등급 보물교환권 세트,(Japan) 4-7★ Artifact Voucher Set
+name,446,568,anchored,(일본)보물 강화 키트,(Japan) Upgrade Artifact Kit
+name,447,569,anchored,(일본)400일 꾸러미,(Japan) 400-Day Bundle
+name,448,570,anchored,(일본)400일 강화 꾸러미,(Japan) 400-Day Upgrade Bundle
+name,449,571,anchored,(일본)400일 보물 꾸러미,(Japan) 400-Day Artifact Bundle
+name,450,572,anchored,(일본)7등급 무기 꾸러미,(Japan) 7★ Weapon Bundle
+name,451,573,anchored,가을 장수 육성 꾸러미,Autumn Commander Training Bundle
+name,452,574,anchored,가을 보물 강화 꾸러미,Autumn Upgrade Artifact Bundle
+name,453,575,anchored,가을 한정 방어구 꾸러미,Autumn Limited Armor Bundle
+name,454,576,anchored,상월의 보물 세트,Frost Moon Artifact Set
+name,455,577,anchored,상월의 보물강화 세트,Frost Moon Artifact Upgrade Set
+name,456,578,anchored,상월의 장수육성 세트,Frost Moon Commander Training Set
+name,457,579,anchored,(일본)겨울 한정 강화 꾸러미,(Japan) Winter Limited Upgrade Bundle
+name,458,580,anchored,(일본)가을 한정 금은 꾸러미,(Japan) Fall Limited Gold & Silver Bundle
+name,459,581,anchored,허가서 꾸러미,Permit Bundle
+name,460,582,anchored,사마의의 보물 조각 꾸러미,Sima Yi Artifact Pc. Pack
+name,461,583,anchored,사마의의 고급 보물 조각 꾸러미,Sima Yi Adv. Artifact Pc. Pack
+name,462,584,anchored,사마의의 은전 꾸러미,Sima Yi Silver Coin Pack
+name,463,585,anchored,사마의의 허가서 꾸러미,Sima Yi Permit Pack
+name,464,586,anchored,사마의의 교본 꾸러미,Sima Yi Scroll Pack
+name,465,587,anchored,사마의의 고급 교본 꾸러미,Sima Yi Adv. Scroll Pack
+name,466,588,anchored,원소의 보물 꾸러미,Yuan Shao Artifact Bundle
+name,467,589,anchored,원소의 고급 보물 꾸러미,Yuan Shao Adv. Artifact Bundle
+name,468,590,anchored,원소의 교본 꾸러미,Yuan Shao Scroll Bundle
+name,469,591,anchored,원소의 허가서 꾸러미,Yuan Shao Permit Bundle
+name,470,592,anchored,원소의 은전 꾸러미,Yuan Shao Silver Coin Bundle
+name,471,593,anchored,등애의 무기 꾸러미,Deng Ai's Weapon Bundle
+name,472,594,anchored,등애의 방어구 꾸러미,Deng Ai's Armor Bundle
+name,473,595,anchored,등애의 허가서 꾸러미,Deng Ai's Permit Bundle
+name,474,596,anchored,등애의 교본 꾸러미,Deng Ai's Scroll Bundle
+name,475,597,anchored,등애의 은전 꾸러미,Deng Ai's Silver Coin Bundle
+name,476,598,anchored,여몽의 보물 꾸러미,Lu Meng's Artifact Bundle
+name,477,599,anchored,여몽의 고급 보물 꾸러미,Lu Meng's Adv. Artifact Bundle
+name,478,600,anchored,엄백호의 내정 꾸러미,Yan Baihu’s Govern Bundle
+name,479,601,anchored,엄백호의 성장 꾸러미,Yan Baihu’s Quick Level Bundle
+name,480,602,anchored,엄백호의 고급 내정 꾸러미,Yan Baihu’s Adv. Govern Bundle
+name,481,603,anchored,엄백호의 최상급 성장 꾸러미,Yan Baihu’s Rapid Level Bundle
+name,482,604,anchored,엄백호의 금전 꾸러미,Yan Baihu’s Gold Coin Bundle
+name,483,605,anchored,엄백호의 허가서 꾸러미,Yan Baihu’s Permit Bundle
+name,484,606,anchored,엄백호의 특급 무기 꾸러미,Yan Baihu’s Weapon Bundle
+name,485,607,anchored,엄백호의 특급 방어구 꾸러미,Yan Baihu’s Armor Bundle
+name,486,608,anchored,(글로벌)공손찬의 기본 내정 꾸러미,(Global) Gongsun Zan's Governing Bundle
+name,487,609,anchored,(글로벌)공손찬의 보물 조각 꾸러미,(Global) Gongsun Zan's Artifact Pc. Bundle
+name,488,610,anchored,(글로벌)공손찬의 장수 꾸러미,(Global) Gongsun Zan's Commander Bundle
+name,489,611,anchored,(글로벌)공손찬의 고급 은전 꾸러미,(Global) Gongsun Zan's Adv. Silver Coin Bundle
+name,490,612,anchored,(글로벌)손견의 은전 꾸러미,(Global) Sun Jian's Silver Coin Bundle
+name,491,613,anchored,(글로벌)손견의 허가서 꾸러미,(Global) Sun Jian's Permit Bundle
+name,492,614,anchored,(글로벌)손견의 재화 꾸러미,(Global) Sun Jian's Currency Bundle
+name,493,615,anchored,(글로벌)손견의 특급 보물 꾸러미,(Global) Sun Jian's Adv. Artifact Bundle
+name,494,616,anchored,육손의 초보자 지원 꾸러미,Lu Xun's Beginner Support Bundle
+name,495,617,anchored,육손의 교본 꾸러미,Lu Xun's Scroll Bundle
+name,496,618,anchored,육손의 강화 꾸러미,Lu Xun's Upgrade Bundle
+name,497,619,anchored,육손의 특별 강화 지원 꾸러미,Lu Xun's Special Upgrade Bundle
+name,498,620,anchored,최고급 200일 꾸러미,First-Class 200-Day Bundle
+name,499,621,anchored,손책의 보물 꾸러미,Sun Ce's Artifact Bundle
+name,500,622,anchored,손책의 특별 성장 꾸러미,Sun Ce's Special Quick Level Bundle
+name,501,623,anchored,손책의 은전 꾸러미,Sun Ce's Silver Coin Bundle
+name,502,624,anchored,손책의 큰 보물 꾸러미,Sun Ce's Big Artifact Bundle
+name,503,625,anchored,한정 보물 교환권,Limited Artifact Voucher
+name,504,626,anchored,대교의 성장 꾸러미,Daqiao's Quick Level Bundle
+name,505,627,anchored,대교의 작은 보물 꾸러미,Daqiao's Small Artifact Bundle
+name,506,628,anchored,대교의 강화 꾸러미,Daqiao's Upgrade Bundle
+name,507,629,anchored,대교의 강화 보조 꾸러미,Daqiao's Upgrade Support Bundle
+name,508,630,anchored,청룡의 초보자 지원 꾸러미,Azure Dragon Beginner Bundle
+name,509,631,anchored,청룡의 영혼 꾸러미,Azure Dragon's Soul Bundle
+name,510,632,anchored,청룡의 강화 꾸러미,Azure Dragon Upgrade Bundle
+name,511,633,anchored,청룡의 위패 꾸러미,Azure Dragon Ancestral Tablet Bundle
+name,512,634,anchored,장비의 기본 내정 꾸러미,Zhang Fei's Governing Bundle
+name,513,635,anchored,장비의 강화 꾸러미,Zhang Fei's Upgrade Bundle
+name,514,636,anchored,장비의 영혼 꾸러미,Zhang Fei's Soul Bundle
+name,515,637,anchored,장비의 교본 꾸러미,Zhang Fei's Scroll Bundle
+name,516,638,anchored,서서의 성장 꾸러미,Xu Shu's Quick Level Bundle
+name,517,639,anchored,서서의 작은 보물 꾸러미,Xu Shu's Small Artifact Bundle
+name,518,640,anchored,서서의 강화 꾸러미,Xu Shu's Upgrade Bundle
+name,519,641,anchored,서서의 청룡 영혼 꾸러미,Xu Shu's Azure Soul Bundle
+name,520,642,anchored,주작의 초보자 지원 꾸러미,Vermilion Bird Beginner Bundle
+name,521,643,anchored,주작의 영혼 꾸러미,Vermilion Bird's Soul Bundle
+name,522,644,anchored,아린의 기본 내정 꾸러미,Arin's Governing Bundle
+name,523,645,anchored,아린의 강화 꾸러미,Arin's Upgrade Bundle
+name,524,646,anchored,아린의 주작 영혼 꾸러미,Arin's Vermilion Soul Bundle
+name,525,647,anchored,종합 정기권,Combined Season Pass
+name,526,648,anchored,여포의 고급 강화 꾸러미,Lu Bu's Adv. Upgrade Bundle
+name,527,649,anchored,초선의 알찬 꾸러미,Diaochan's Bounty Bundle
+name,528,650,anchored,성장 지원 꾸러미,Leveling Support Bundle
+name,529,651,anchored,보물 교환권 꾸러미,Artifact Voucher Bundle
+name,530,652,anchored,특별 금전 꾸러미,Special Gold Coin Bundle
+name,531,653,anchored,크리스마스 강화 허가서 꾸러미,Xmas Upgrade Permit Bundle
+name,532,654,anchored,크리스마스 청룡의 영혼 꾸러미,Xmas Azure Soul Bundle
+name,533,655,anchored,크리스마스 보물 꾸러미,Xmas Artifact Bundle
+name,534,656,anchored,크리스마스 강화 꾸러미,Xmas Upgrade Bundle
+name,535,657,anchored,크리스마스 특별 성장 꾸러미,Xmas Quick Level Bundle
+name,536,658,anchored,7등급 무기 꾸러미,7★ Weapon Bundle
+name,537,659,anchored,새해 작은 재화 꾸러미,New Year Small Currency Bundle
+name,538,660,anchored,새해 재화 꾸러미,New Year Currency Bundle
+name,539,661,anchored,새해 보물 꾸러미,New Year Artifact Bundle
+name,540,662,anchored,새해 주작 꾸러미,New Year Vermilion Bird Bundle
+name,541,663,anchored,새해 청룡 꾸러미,New Year Azure Dragon Bundle
+name,542,664,anchored,조령의 재화 꾸러미,Cao Ying's Currency Bundle
+name,543,665,anchored,조령의 특별한 재화 꾸러미,Cao Ying's Special Currency Bundle
+name,544,666,anchored,조령의 특별 강화 꾸러미,Cao Ying's Special Upgrade Bundle
+name,545,667,anchored,조령의 교본 꾸러미,Cao Ying's Training Scroll Bundle
+name,546,668,anchored,특별한 설 재화 꾸러미,Special New Year's Currency Bundle
+name,547,669,anchored,특별한 설 강화 패키지,Special New Year's Upgrade Package
+name,548,670,anchored,700일 재화 꾸러미 小,700-Day Currency Bundle (S)
+name,549,671,anchored,700일 재화 꾸러미 大 ,700-Day Currency Bundle (L) 
+name,550,672,anchored,700일 특별 보물 꾸러미,700-Day Special Artifact Bundle
+name,551,673,anchored,700일 특별 기념 꾸러미,700-Day Special Bundle
+name,552,674,anchored,700일 특별 은전 꾸러미,700-Day Special Silver Coin Bundle
+name,553,675,anchored,관우의 재화 꾸러미,Guan Yu's Currency Bundle
+name,554,676,anchored,관우의 커다란 재화 꾸러미,Guan Yu's Huge Currency Bundle
+name,555,677,anchored,2주년 은전 꾸러미,2-Year Anniversary Silver Coin Bundle
+name,556,678,anchored,2주년 작은 금전 꾸러미,2-Year Anniversary Small Gold Coin Bundle
+name,557,679,anchored,2주년 금전 꾸러미,2-Year Anniversary Gold Coin Bundle
+name,558,680,anchored,2주년 무기 꾸러미,2-Year Anniversary Weapon Bundle
+name,559,681,anchored,주유의 작은 재화 꾸러미,Zhou Yu's Small Currency Bundle
+name,560,682,anchored,감녕의 금전 주머니,Gan Ning's Gold Coin Pouch
+name,561,683,anchored,감녕의 금전 상자,Gan Ning's Gold Coin Chest
+name,562,684,anchored,화만의 금전 뭉치,Hua Man's Gold Coin Pile
+name,563,685,anchored,화만의 금전 항아리,Hua Man's Gold Coin Pot
+name,564,686,anchored,화만의 금전 수레,Hua Man's Gold Coin Wagon
+name,565,687,anchored,일년곤 고급 패키지,Annual Club Advanced Package
+name,566,688,anchored,일년패 고급 패키지,Annual Shield Advanced Package
+name,567,689,anchored,견희의 금전 주머니,Zhenji's Gold Coin Pouch
+name,568,690,anchored,견희의 금전 상자,Zhenji's Gold Coin Chest
+name,569,691,anchored,견희의 강화 재화 꾸러미,Zhenji's Upgrade Currency Bundle
+name,570,692,anchored,원소의 금전 주머니,Yuan Shao's Gold Coin Pouch
+name,571,693,anchored,원소의 금전 상자,Yuan Shao's Gold Coin Chest
+name,572,694,anchored,원소의 강화 재화 꾸러미,Yuan Shao's Upgrade Bundle
+name,573,695,anchored,방통의 금전 주머니,Pang Tong's Gold Coin Pouch
+name,574,696,anchored,방통의 금전 수레,Pang Tong's Gold Coin Wagon
+name,575,697,anchored,서황의 영혼 꾸러미,Xu Huang's Soul Bundle
+name,576,698,anchored,마초의 작은 금전 꾸러미,Ma Chao's Gold Coin Bundle
+name,577,699,anchored,마초의 은전 꾸러미,Ma Chao's Silver Coin Bundle
+name,578,700,anchored,500일 기념 꾸러미,500-Day Celebration Bundle
+name,579,701,anchored,마운록의 금전 주머니,Ma Yunlu's Gold Coin Pouch
+name,580,702,anchored,마운록의 금전 상자,Ma Yunlu's Gold Coin Chest
+name,581,703,anchored,마운록의 강화 재화 꾸러미,Ma Yunlu's Upgrade Bundle
+name,582,704,anchored,마요희의 금전 주머니,Ma Yaoji's Gold Coin Pouch
+name,583,705,anchored,마요희의 금전 상자,Ma Yaoji's Gold Coin Chest
+name,584,706,anchored,마요희의 금전 수레,Ma Yaoji's Gold Coin Wagon
+name,585,707,anchored,초선의 금전 주머니,Diaochan's Gold Coin Pouch
+name,586,708,anchored,초선의 금전 항아리,Diaochan's Gold Coin Pot
+name,587,709,anchored,초선의 효과 재화 꾸러미,Diaochan Passive Currency Pack
+name,588,710,anchored,조조의 한정 보물,Cao Cao's Limited Artifact
+name,589,711,anchored,여령기의 금전 주머니,Lu Lingqi's Gold Coin Pouch
+name,590,712,anchored,여령기의 금전 상자,Lu Lingqi's Gold Coin Chest
+name,591,713,anchored,여령기의 금전 수레,Lu Lingqi's Gold Coin Wagon
+name,592,714,anchored,중급 성장 꾸러미,Intermediate Growth Bundle
+name,593,715,anchored,중추절 특별 군량 꾸러미,Harvest Special Ration Bundle
+name,594,716,anchored,중추절 특별 은전 꾸러미,Harvest Special S.Coin Bundle
+name,595,717,anchored,중추절 금전 꾸러미,Harvest Gold Coin Bundle
+name,596,718,anchored,중추절 기념 보물 꾸러미,Harvest Sp. Artifact Bundle
+name,597,719,anchored,무장전 업데이트 기념 꾸러미,Officer Battle Special Bundle
+name,598,720,anchored,사마의 금전 꾸러미,Sima Yi Gold Coin Bundle
+name,599,721,anchored,사마의 특별 금전 꾸러미,Sima Yi Sp. Gold Coin Bundle
+name,600,722,anchored,사마의 특별 효과 꾸러미,Sima Yi Sp. Diagram Bundle
+name,601,723,anchored,조조의 한정 거함 꾸러미,Cao Cao's LTD War Box Voucher
+name,602,724,anchored,장춘화 금전 꾸러미,Zhang Chunhua G.Coin Pack
+name,603,725,anchored,장춘화 특별 금전 꾸러미,Zhang Chunhua Sp. G.Coin Pack
+name,604,726,anchored,장춘화 특별 효과 꾸러미,Zhang Chunhua Sp. Diagram Pack
+name,605,727,anchored,조조의 특별 한정 보물,Cao Cao Sp. Limited Artifact
+name,606,728,anchored,할로윈 특별 금전 주머니,Halloween Sp. G.Coin Pouch
+name,607,729,anchored,할로윈 특별 금전 상자,Halloween Sp. G.Coin Chest
+name,608,730,anchored,할로윈 특별 금전 수레,Halloween Sp. G.Coin Wagon
+name,609,731,anchored,할로윈 특별 은전 꾸러미,Halloween Sp. S.Coin Pack
+name,610,732,anchored,할로윈 선별 보물 상자,Halloween Sp. Chosen Chest
+name,611,733,anchored,추수 감사절 특별 영혼 꾸러미,Thanksgiving Sp. Soul Pack
+name,612,734,anchored,추수 감사절 특별 금전 주머니,Thanksgiving Sp. G.Coin Pack
+name,613,735,anchored,추수 감사절 특별 금전 상자,Thanksgiving Sp. G.Coin Chest
+name,614,736,anchored,추수 감사절 특별 은전 꾸러미,Thanksgiving Sp. S.Coin Pack
+name,615,737,anchored,순욱의 작은 금전 꾸러미,Xun Yu Small Gold Coin Bundle
+name,616,738,anchored,순욱의 금전 꾸러미,Xun Yu Gold Coin Bundle
+name,617,739,anchored,순욱의 은전 꾸러미,Xun Yu Silver Coin Bundle
+name,618,740,anchored,순욱의 대량 은전 꾸러미,Xun Yu Big Silver Coin Bundle
+name,619,741,anchored,12월 청룡 꾸러미,December Azure Dragon Bundle
+name,620,742,anchored,12월 주작 꾸러미,December Vermilion Bird Bundle
+name,621,743,anchored,12월 은전 꾸러미,December Silver Coin Bundle
+name,622,744,anchored,초급 특별 꾸러미,Novice Special Bundle
+name,623,745,anchored,중급 특별 꾸러미,Intermediate Special Bundle
+name,624,746,anchored,고급 특별 꾸러미,Advanced Special Bundle
+name,625,747,anchored,1000일 대형 금전 꾸러미,"1,000-Day Gold Coin Bundle (L)"
+name,626,748,anchored,1000일 기념 백호 꾸러미,"1,000-Day White Tiger Bundle"
+name,627,749,anchored,크리스마스 특별 금전 꾸러미,Christmas Gold Coin Bundle
+name,628,750,anchored,크리스마스 특별 금전 항아리,Christmas Gold Coin Pot
+name,629,751,anchored,크리스마스 특별 금전 상자,Christmas Gold Coin Chest
+name,630,752,anchored,신년 성장 재화꾸러미,New Year Quick Lvl Supply Pack
+name,631,753,anchored,유비의 영혼 보패 꾸러미,Liu Bei Soul Relic Pack
+name,632,754,anchored,유비의 보물재화 꾸러미,Liu Bei Artifact Currency Pack
+name,633,755,anchored,유비의 특별 금전 꾸러미,Liu Bei Sp. Gold Coin Pack
+name,634,756,anchored,설맞이 은전 꾸러미,2020 Silver Coin Bundle
+name,635,757,anchored,설맞이 은전 상자,2020 Silver Coin Chest
+name,636,758,anchored,설맞이 금전 수레,2020 Gold Coin Wagon
+name,637,759,anchored,설맞이 금전 꾸러미,2020 Gold Coin Pack
+name,638,760,anchored,설맞이 금전 항아리,2020 Gold Coin Pot
+name,639,761,anchored,일일 특별 효과 점수 꾸러미,Daily Passive Point Bundle
+name,640,762,anchored,육손의 특별 금전 꾸러미,Lu Xun Sp. Gold Coin Bundle
+name,641,763,anchored,육손의 특별 금전 항아리,Lu Xun Sp. Gold Coin Pot
+name,642,764,anchored,육손의 특별 금전 상자,Lu Xun Sp. Gold Coin Chest
+name,643,765,anchored,중추절 작은 금전 꾸러미,Harvest Sp.Small Gold Coin Bundle
+name,644,766,anchored,중추절 큰 금전 꾸러미,Harvest Sp.Big Gold Coin Bundle
+name,645,767,anchored,사마의 작은 금전 꾸러미,Sima Yi Gold Small Coin Bundle
+name,646,768,anchored,사마의 큰 금전 꾸러미,Sima Yi Gold Big Coin Bundle
+name,647,769,anchored,장합의 청룡 꾸러미,Zhang He Azure Dragon Pack
+name,648,770,anchored,장합의 주작 꾸러미,Zhang He Vermilion Bird Pack
+name,649,771,anchored,"[FFE200FF]합계 17,500[-]","[FFE200FF]Total 17,500[-]"
+name,650,772,anchored,"[FFE200FF]합계 1,500[-]","[FFE200FF]1,500 Total[-]"
+name,651,773,anchored,"[FFE200FF]합계 42,200[-]","[FFE200FF]42,200 Total[-]"
+name,652,774,anchored,"[FFE200FF]합계 10,300[-]","[FFE200FF]10,300 Total[-]"
+name,653,775,anchored,"[FFE200FF]합계 20,600[-]","[FFE200FF]20,600 Total[-]"
+price,1,776,anchored,"1,100원","1,100 KRW"
+price,2,777,anchored,"5,500원","5,500 KRW"
+price,3,778,anchored,"11,000원","11,000 KRW"
+price,4,779,anchored,"33,000원","33,000 KRW"
+price,5,780,anchored,"55,000원","55,000 KRW"
+price,6,781,anchored,"110,000원","110,000 KRW"
+price,7,782,anchored,"22,000원","22,000 KRW"
+price,8,783,anchored,"44,000원","44,000 KRW"
+price,9,784,anchored,"3,300원","3,300 KRW"
+price,10,785,anchored,"88,000원","88,000 KRW"
+price,11,786,anchored,"77,000원","77,000 KRW"
+price,12,787,anchored,"66,000원","KRW 66,000"
+price,13,788,anchored,"1,200원","1,200 KRW"
+price,14,789,anchored,"5,900원","5,900 KRW"
+price,15,790,anchored,"109,000원","109,000 KRW"
+price,16,791,anchored,"3,900원","3,900 KRW"
+price,17,792,anchored,"89,000원","89,000 KRW"
+price,18,793,anchored,"75,000원","75,000 KRW"
+desc,1,794,anchored,"[ffe400]2,000 금전","[ffe400]2,000 Gold Coins"
+desc,2,795,anchored,"[ffe400]4,000 금전 기본 지급\n[FF6000FF]600 금전 추가 지급","[ffe400]Get 4,000 Gold Coins\n[FF6000FF]+600 Bonus Gold Coins"
+desc,3,796,anchored,"[ffe400]12,000 금전 기본 지급\n[FF6000FF]1,800 금전 추가 지급","[ffe400]Get 12,000 Gold Coins\n[FF6000FF]+1,800 Bonus Gold Coins"
+desc,4,797,anchored,"[ffe400]20,000 금전 기본 지급\n[FF6000FF]3,600 금전 추가 지급","[ffe400]Get 20,000 Gold Coins\n[FF6000FF]+3,600 Bonus Gold Coins"
+desc,5,798,anchored,"[ffe400]40,000 금전 기본 지급\n[FF6000FF]7,200 금전 추가 지급","[ffe400]Get 40,000 Gold Coins\n[FF6000FF]+7,200 Bonus Gold Coins"
+desc,6,799,anchored,"한정 판매!\n[ffe400]2,000 금전 기본 지급\n[FF6000FF]400 금전 추가 지급","Limited-time offer!\n[ffe400]Get 2,000 Gold Coins\n[FF6000FF]+400 Bonus Gold Coins"
+desc,7,800,anchored,"한정 판매!\n[ffe400]4,000 금전 기본 지급\n[FF6000FF]900 금전 추가 지급","Limited-time offer!\n[ffe400]Get 4,000 Gold Coins\n[FF6000FF]+900 Bonus Gold Coins"
+desc,8,801,anchored,"한정 판매!\n[ffe400]12,000 금전 기본 지급\n[FF6000FF]2,700 금전 추가 지급","Limited-time offer!\n[ffe400]Get 12,000 Gold Coins\n[FF6000FF]+2,700 Bonus Gold Coins"
+desc,9,802,anchored,"한정 판매!\n[ffe400]20,000 금전 기본 지급\n[FF6000FF]4,800 금전 추가 지급","Limited-time offer!\n[ffe400]Get 20,000 Gold Coins\n[FF6000FF]+4,800 Bonus Gold Coins"
+desc,10,803,inferred,"한정 판매!\n[ffe400]40,000 금전 기본 지급\n[FF6000FF]10,000 금전 추가 지급","Limited-time offer!\n[ffe400]Get 40,000 Gold Coins\n[FF6000FF]+10,000 Bonus Gold Coins"
+desc,11,804,inferred,"[ffe400]1,000 금전 즉시 지급\n[FF6000FF]31일간 9,300 금전 지급\n\n[ffffff]접속하지 않으면 보상을 받을 수 없으니 주의하세요!","[ffe400]Get 1,000 Gold Coins now\n[FF6000FF]and 9,300 Gold Coins over 31 days\n\n[ffffff]Log in daily to receive all your rewards!"
+desc,12,805,inferred,"1회 한정! 금전 2배 지급!!\n[ffe400]2,000 금전 즉시 지급\n[FF6000FF]31일간 18,600 금전 지급\n\n[ffffff]접속하지 않으면 보상을 받을 수 없으니 주의하세요!","Limited one-time offer! Get 2x Gold Coins!\n[ffe400]2,000 Gold Coins now\n[FF6000FF]and 18,600 Gold Coins over 31 days\n\n[ffffff]Log in daily to receive all your rewards!"
+desc,13,806,inferred,"[ffe400]2,000 금전\n[FF6000FF]100,000 은전\n[ffffff]광석 15개\n목재 15개\n가죽 15개","[ffe400]2,000 Gold Coins\n[FF6000FF]100,000 Silver Coins\n[ffffff]15 Ore\n15 Wood\n15 Leather"
+desc,14,807,inferred,"[ffe400]2,000 금전\n[FF6000FF]100,000 군량\n[ffffff]제련 도구 2개\n공예 도구 2개","[ffe400]2,000 Gold Coins\n[FF6000FF]100,000 Rations\n[ffffff]2 Refinement Tools\n2 Crafting Tools"
+desc,15,808,inferred,"한정 판매!\n[ffe400]4,000 금전\n[FF6000FF]100 공적\n[ffffff]광석 40개\n제련 도구 4개","Limited-time offer!\n[ffe400]4,000 Gold Coins\n[FF6000FF]100 Jade Seals\n[ffffff]40 Ores\n4 Refinement Tools"
+desc,16,809,inferred,"한정 판매!\n[ffe400]4,000 금전\n[FF6000FF]100 공적\n[ffffff]목재 40개\n공예 도구 4개","Limited-time offer!\n[ffe400]4,000 Gold Coins\n[FF6000FF]100 Jade Seals\n[ffffff]40 Wood\n4 Crafting Tools"
+desc,17,810,inferred,"한정 판매!\n[ffe400]4,000 금전\n[FF6000FF]100 공적\n[ffffff]가죽 40개\n공예 도구 4개","Limited-time offer!\n[ffe400]4,000 Gold Coins\n[FF6000FF]100 Jade Seals\n[ffffff]40 Leather\n4 Crafting Tools"
+desc,18,811,inferred,"한정 판매!\n[ffe400]12,000 금전\n[FF6000FF]300 공적\n[ffffff]제련 도구 10개\n공예 도구 10개","Limited-time offer!\n[ffe400]12,000 Gold Coins\n[FF6000FF]300 Jade Seals\n[ffffff]10 Refinement Tools\n10 Crafting Tools"
+desc,19,812,inferred,"한정 판매!\n[ffe400]4,000 금전\n[FF6000FF]10,000 은전\n10,000 군량\n[ffffff]무력 교본 1개\n지력 교본 1개\n통솔 교본 1개\n민첩 교본 1개\n행운 교본 1개","Limited-time offer!\n[ffe400]4,000 Gold Coins\n[FF6000FF]10,000 Silver Coins\n10,000 Rations\n[ffffff]STR Scroll x1\nINT Scroll x1\nCMD Scroll x1\nDEX Scroll x1\nLCK Scroll x1"
+desc,20,813,inferred,"한정 판매!\n[ffe400]12,000 금전\n[FF6000FF]50,000 은전\n50,000 군량\n[ffffff]무력 교본 2개\n지력 교본 2개\n통솔 교본 2개\n민첩 교본 2개\n행운 교본 2개","Limited-time offer!\n[ffe400]12,000 Gold Coins\n[FF6000FF]50,000 Silver Coins\n50,000 Rations\n[ffffff]STR Scroll x2\nINT Scroll x2\nCMD Scroll x2\nDEX Scroll x2\nLCK Scroll x2"
+desc,21,814,inferred,"한정 판매!\n[ffe400]20,000 금전\n[FF6000FF]100,000 은전\n100,000 군량\n[ffffff]무력 교본 3개\n지력 교본 3개\n통솔 교본 3개\n민첩 교본 3개\n행운 교본 3개","Limited-time offer!\n[ffe400]20,000 Gold Coins\n[FF6000FF]100,000 Silver Coins\n100,000 Rations\n[ffffff]STR Scroll x3\nINT Scroll x3\nCMD Scroll x3\nDEX Scroll x3\nLCK Scroll x3"
+desc,22,815,inferred,"한정 판매!\n[ffe400]40,000 금전\n[FF6000FF]200,000 은전\n200,000 군량\n[ffffff]무력 교본 5개\n지력 교본 5개\n통솔 교본 5개\n민첩 교본 5개\n행운 교본 5개","Limited-time offer!\n[ffe400]40,000 Gold Coins\n[FF6000FF]200,000 Silver Coins\n200,000 Rations\n[ffffff]STR Scroll x5\nINT Scroll x5\nCMD Scroll x5\nDEX Scroll x5\nLCK Scroll x5"
+desc,23,816,inferred,[ffe400]400 금전\n[AF5BFFFF]1등급 전략 보물 검 1개\n1등급 전략 보물 갑옷 1개\n1등급 전략 보물 보조구 1개,[ffe400]400 Gold Coins\n[AF5BFFFF]1★ Legendary Sword Artifact x1\n1★ Armor Artifact x1\n1★ Accessory Artifact x1
+desc,24,817,inferred,군주 RANK 30이하만 구매할 수 있습니다.\n구매 후 군주 RANK를 달성하면 금전을 획득 할 수 있습니다.,Only Warlords under Rank 30 can purchase this item.\nDoing so generates Gold Coins each time you improve your Warlord Rank.
+desc,25,818,inferred,"[FF6000FF]100,000 은전\n[ffffff]나무끈 20개\n종이끈 20개\n가죽끈 20개\n제련 도구 20개\n공예 도구 20개","[FF6000FF]100,000 Silver Coins\n[ffffff]Wooden Twine x20\nPaper Twine x20\nLeather Twine x20\nRefinement Tool x20\nCrafting Tool x20"
+desc,26,819,inferred,"[FF6000FF]100,000 은전\n[ffffff]나무끈 40개\n종이끈 40개\n가죽끈 40개\n제련 도구 50개\n공예 도구 50개","[FF6000FF]100,000 Silver Coins\n[ffffff]Wooden Twine x40\nPaper Twine x40\nLeather Twine x40\nRefinement Tool x50\nCrafting Tool x50"
+desc,27,820,inferred,"[ffe400]4,000 금전\n[FF6000FF]보물상자 교환권 50개","[ffe400]4,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x50"
+desc,28,821,inferred,"[FF6000FF]2,500,000 은전\n[FF6000FF]보물상자 교환권 30개\n매월 1일 갱신","[FF6000FF]2,500,000 Silver Coins\n[FF6000FF]Treasure Chest Voucher x30\nRefreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,29,822,inferred,"[ffe400]4,000 금전 즉시 지급\n[FF6000FF]31일간 27,900 금전 지급\n[FF6000FF]31일간 제련 도구 186개 지급\n[FF6000FF]31일간 공예 도구 186개 지급\n\n[ffffff]접속하지 않으면 보상을 받을 수 없으니 주의하세요!","[ffe400]Get 4,000 Gold Coins now\n[FF6000FF]and 27,900 Gold Coins over 31 days\n[FF6000FF]Refinement Tool x186 over 31 days\n[FF6000FF]Crafting Tool x186 over 31 days\n\n[ffffff]Log in daily to receive all your rewards!"
+desc,30,823,inferred,"한정 판매!\n[ffe400]100,000 은전\n[FF6000FF]보물상자 교환권 10개\n[ffffff]제련 도구 10개\n공예 도구 10개\n회복의 천도 10개","Limited-time offer!\n[ffe400]100,000 Silver Coins\n[FF6000FF]Treasure Chest Voucher x10\n[ffffff]Refinement Tool x10\nCrafting Tool x10\nHeavenly Peach x10"
+desc,31,824,inferred,"한정 판매!\n[ffe400]200,000 은전\n[FF6000FF]보물상자 교환권 20개\n[ffffff]제련 도구 20개\n공예 도구 20개\n회복의 천도 20개","Limited-time offer!\n[ffe400]200,000 Silver Coins\n[FF6000FF]Treasure Chest Voucher x20\n[ffffff]Refinement Tool x20\nCrafting Tool x20\nHeavenly Peach x20"
+desc,32,825,inferred,"한정 판매!\n[ffe400]300,000 은전\n[FF6000FF]보물상자 교환권 30개\n[ffffff]제련 도구 30개\n공예 도구 30개\n회복의 천도 30개","Limited-time offer!\n[ffe400]300,000 Silver Coins\n[FF6000FF]Treasure Chest Voucher x30\n[ffffff]Refinement Tool x30\nCrafting Tool x30\nHeavenly Peach x30"
+desc,33,826,inferred,"한정 판매!\n[ffe400]1,000 금전\n[ffffff]회복의 천도 30개\n오량액 30개\n구원군서 10개\n수송서 10개","Limited-time offer!\n[ffe400]1,000 Gold Coins\n[ffffff]Heavenly Peach x30\nWuliangye x30\nReinforcements Scroll x10\nTransportation Scroll x10"
+desc,34,827,inferred,"한정 판매!\n[ffe400]4,000 금전\n[FF6000FF]보물상자 교환권 30개","Limited-time offer!\n[ffe400]4,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x30"
+desc,35,828,inferred,"한정 판매!\n[ffe400]12,000 금전\n[FF6000FF]보물상자 교환권 100개","Limited-time offer!\n[ffe400]12,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x100"
+desc,36,829,inferred,"한정 판매!\n[ffe400]1,500 금전\n[ffffff]십자비서 5개\n사방비서 3개\n삼격비서 5개\n사격비서 3개","Limited-time offer!\n[ffe400]1,500 Gold Coins\n[ffffff]Cross Diagram x5\nFour Cross Diagram x3\nTriple-Strike Diagram x5\nQuadra-Strike Diagram x3"
+desc,37,830,inferred,"[FF6000FF]100,000 은전\n[ffffff]청동 30개\n구리 30개\n제련 도구 20개\n공예 도구 20개","[FF6000FF]100,000 Silver Coins\n[ffffff]Bronze x30\nCopper x30\nRefinement Tool x20\nCrafting Tool x20"
+desc,38,831,inferred,"[FF6000FF]100,000 은전\n[ffffff]청동 70개\n구리 70개\n제련 도구 50개\n공예 도구 50개","[FF6000FF]100,000 Silver Coins\n[ffffff]Bronze x70\nCopper x70\nRefinement Tool x50\nCrafting Tool x50"
+desc,39,832,inferred,"[ffe400]10,000 금전\n[FF6000FF]보물상자 교환권 100개\n[ffffff]무력 교본 10개\n지력 교본 10개\n통솔 교본 10개\n민첩 교본 10개\n행운 교본 10개","[ffe400]10,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x100\n[ffffff]STR Scroll x10\nINT Scroll x10\nCMD Scroll x10\nDEX Scroll x10\nLCK Scroll x10"
+desc,40,833,inferred,"[ffe400]10,000 금전\n[FF6000FF]보물상자 교환권 100개\n[AF5BFFFF]백일환[연의 보물]\n[ffffff](HP 보조 100)\n무력 교본 10개\n지력 교본 10개\n통솔 교본 10개\n민첩 교본 10개\n행운 교본 10개","[ffe400]10,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x100\n[AF5BFFFF]100 Day Ring [Story Artifact]\n[ffffff](HP Boost 100)\nSTR Scroll x10\nINT Scroll x10\nCMD Scroll x10\nDEX Scroll x10\nLCK Scroll x10"
+desc,41,834,inferred,"[ffe400]3,000 금전\n[FF6000FF]보물상자 교환권 30개\n[ffffff]무력 교본 3개\n지력 교본 3개\n통솔 교본 3개\n민첩 교본 3개\n행운 교본 3개","[ffe400]3,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x30\n[ffffff]STR Scroll x3\nINT Scroll x3\nCMD Scroll x3\nDEX Scroll x3\nLCK Scroll x3"
+desc,42,835,inferred,"[ffe400]2,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]600 금전 추가 지급","[ffe400]Get 2,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+600 Gold Coins"
+desc,43,836,inferred,"[ffe400]4,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]1,600 금전 추가 지급","[ffe400]Get 4,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+1,600 Gold Coins"
+desc,44,837,inferred,"[ffe400]12,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]5,400 금전 추가 지급","[ffe400]Get 12,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+5,400 Gold Coins"
+desc,45,838,inferred,"[ffe400]20,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]9,000 금전 추가 지급","[ffe400]Get 20,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+9,000 Gold Coins"
+desc,46,839,inferred,"[ffe400]40,000 금전 기본 지급\n[FF6000FF]보너스\n[FF6000FF]20,000 금전 추가 지급","[ffe400]Get 40,000 Gold Coins\n[FF6000FF]Bonus\n[FF6000FF]+20,000 Gold Coins"
+desc,47,840,inferred,"한정 판매!\n[ffe400]2,000 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]1,600 금전 추가 지급\n[ffffff]매월 1일 재구매 가능","Limited-time offer!\n[ffe400]Get 2,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+1,600 Gold Coins\n[ffffff]Refreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,48,841,inferred,"한정 판매!\n[ffe400]4,000 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]3,200 금전 추가 지급\n[ffffff]매월 1일 재구매 가능","Limited-time offer!\n[ffe400]Get 4,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+3,200 Gold Coins\n[ffffff]Refreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,49,842,inferred,"한정 판매!\n[ffe400]12,000 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]9,600 금전 추가 지급\n[ffffff]매월 1일 재구매 가능","Limited-time offer!\n[ffe400]Get 12,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+9,600 Gold Coins\n[ffffff]Refreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,50,843,inferred,"한정 판매!\n[ffe400]20,000 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]16,000 금전 추가 지급\n[ffffff]매월 1일 재구매 가능","Limited-time offer!\n[ffe400]Get 20,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+16,000 Gold Coins\n[ffffff]Refreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,51,844,inferred,"한정 판매!\n[ffe400]40,000 금전 기본 지급\n[FF6000FF]특별 보너스\n[FF6000FF]32,000 금전 추가 지급\n[ffffff]매월 1일 재구매 가능","Limited-time offer!\n[ffe400]Get 40,000 Gold Coins\n[FF6000FF]Special Bonus\n[FF6000FF]+32,000 Gold Coins\n[ffffff]Refreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,52,845,inferred,"[ffe400]12,000 금전\n[FF6000FF]보물상자 교환권 100개","[ffe400]12,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x100"
+desc,53,846,inferred,"한정 판매!\n[ffe400]4,000 금전\n[AF5BFFFF]토벌권 50개\n매월 1일 갱신","Limited-time offer!\n[ffe400]4,000 Gold Coins\n[AF5BFFFF]Token x50\nRefreshes on the 1st of every month (Standard time: UTC+8)"
+desc,54,847,inferred,"한정 판매!\n[ffe400]12,000 금전\n[AF5BFFFF]토벌권 150개\n매월 1일 갱신","Limited-time offer!\n[ffe400]12,000 Gold Coins\n[AF5BFFFF]Token x150\nRefreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,55,848,inferred,"[ffe400]10,000 금전 즉시 지급\n[FF6000FF]31일간 보물상자 교환권\n465개 지급\n\n[ffffff]접속하지 않으면 보상을 받을 수 없으니 주의하세요!","[ffe400]Get 10,000 Gold Coins now\n[FF6000FF]Treasure Chest Voucher x465 over 31 days\n\n[ffffff]Log in daily to receive all your rewards!"
+desc,56,849,inferred,"[ffe400]20,000 금전 즉시 지급\n[FF6000FF]31일간 보물상자 교환권\n775개 지급\n\n[ffffff]접속하지 않으면 보상을 받을 수 없으니 주의하세요!","[ffe400]Get 20,000 Gold Coins now\n[FF6000FF]Treasure Chest Voucher x775 over 31 days\n\n[ffffff]Log in daily to receive all your rewards!"
+desc,57,850,inferred,"[ffe400]8,000 금전\n[FF6000FF]보물상자 교환권 50개\n[AF5BFFFF]상방령의 허가서 1개\n[AF5BFFFF]고공령의 허가서 1개\n[AF5BFFFF]태복의 허가서 1개\n[AF5BFFFF]보물 제작 허가서 1개\n[FF6000FF]떡국 10개\n[ffffff](매턴 장수 EXP 200 획득)","[ffe400]8,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x50\n[AF5BFFFF]Weapon Crafting Permit x1\n[AF5BFFFF]Armor Crafting Permit x1\n[AF5BFFFF]Accessory Crafting Permit x1\n[AF5BFFFF]Artifact Crafting Permit x1\n[FF6000FF]Rice Cake Soup x10\n[ffffff](+200 Commander EXP every turn)"
+desc,58,851,inferred,"[ffe400]20,000 금전\n[FF6000FF]보물상자 교환권 125개\n[AF5BFFFF]상방령의 허가서 3개\n[AF5BFFFF]고공령의 허가서 3개\n[AF5BFFFF]태복의 허가서 3개\n[AF5BFFFF]보물 제작 허가서 3개\n[FF6000FF]떡국 20개\n[ffffff](매턴 장수 EXP 200 획득)","[ffe400]20,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x125\n[AF5BFFFF]Weapon Crafting Permit x3\n[AF5BFFFF]Armor Crafting Permit x3\n[AF5BFFFF]Accessory Crafting Permit x3\n[AF5BFFFF]Artifact Crafting Permit x3\n[FF6000FF]Rice Cake Soup x20\n[ffffff](+200 Commander EXP every turn)"
+desc,59,852,inferred,"[ffe400]32,000 금전\n[FF6000FF]보물상자 교환권 200개\n[AF5BFFFF]상방령의 허가서 5개\n[AF5BFFFF]고공령의 허가서 5개\n[AF5BFFFF]태복의 허가서 5개\n[AF5BFFFF]보물 제작 허가서 5개\n[FF6000FF]떡국 30개\n[ffffff](매턴 장수 EXP 200 획득)","[ffe400]32,000 Gold Coins\n[FF6000FF]Treasure Chest Voucher x200\n[AF5BFFFF]Weapon Crafting Permit x5\n[AF5BFFFF]Armor Crafting Permit x5\n[AF5BFFFF]Accessory Crafting Permit x5\n[AF5BFFFF]Artifact Crafting Permit x5\n[FF6000FF]Rice Cake Soup x30\n[ffffff](+200 Commander EXP every turn)"
+desc,60,853,inferred,"[FF6000FF]100,000 은전\n[ffffff]나무끈 30개\n종이끈 30개\n가죽끈 30개\n제련 도구 30개\n공예 도구 30개","[FF6000FF]100,000 Silver Coins\n[ffffff]Wooden Twine x30\nPaper Twine x30\nLeather Twine x30\nRefinement Tool x30\nCrafting Tool x30"
+desc,61,854,inferred,"[FF6000FF]300,000 은전\n[ffffff]나무끈 60개\n종이끈 60개\n가죽끈 60개\n제련 도구 70개\n공예 도구 70개","[FF6000FF]300,000 Silver Coins\n[ffffff]Wooden Twine x60\nPaper Twine x60\nLeather Twine x60\nRefinement Tool x70\nCrafting Tool x70"
+desc,62,855,inferred,"[FF6000FF]100,000 은전\n[ffffff]청동 45개\n구리 45개\n제련 도구 30개\n공예 도구 30개","[FF6000FF]100,000 Silver Coins\n[ffffff]Bronze x45\nCopper x45\nRefinement Tool x30\nCrafting Tool x30"
+desc,63,856,inferred,"[FF6000FF]300,000 은전\n[ffffff]청동 90개\n구리 90개\n제련 도구 70개\n공예 도구 70개","[FF6000FF]300,000 Silver Coins\n[ffffff]Bronze x90\nCopper x90\nRefinement Tool x70\nCrafting Tool x70"
+desc,64,857,inferred,"[ffe400]3,000 금전\n[ffffff]무력 교본 8개\n지력 교본 8개\n통솔 교본 8개\n민첩 교본 8개\n행운 교본 8개","[ffe400]3,000 Gold Coins\n[ffffff]STR Scroll x8\nINT Scroll x8\nCMD Scroll x8\nDEX Scroll x8\nLCK Scroll x8"
+desc,65,858,inferred,"[ffe400]10,000 금전\n[ffffff]무력 교본 25개\n지력 교본 25개\n통솔 교본 25개\n민첩 교본 25개\n행운 교본 25개","[ffe400]10,000 Gold Coins\n[ffffff]STR Scroll x25\nINT Scroll x25\nCMD Scroll x25\nDEX Scroll x25\nLCK Scroll x25"
+desc,66,859,inferred,"[FF6000FF]1,000,000 은전\n[FF6000FF]보물상자 교환권 15개\n매월 1일 갱신","[FF6000FF]1,000,000 Silver Coins\n[FF6000FF]Treasure Chest Voucher x15\nRefreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,67,860,inferred,"[ffe400]5,000 금전\n[FF6000FF]보물 제작 허가서 12개\n[AF5BFFFF]금사 3개\n[AF5BFFFF]은사 3개\n[FF6000FF]300,000 은전","[ffe400]5,000 Gold Coins\n[FF6000FF]Artifact Crafting Permit x12\n[AF5BFFFF]Gold Twine x3\n[AF5BFFFF]Silver Twine x3\n[FF6000FF]300,000 Silver Coins"
+desc,68,861,inferred,"[ffe400]15,000 금전\n[FF6000FF]보물 제작 허가서 36개\n[AF5BFFFF]금사 10개\n[AF5BFFFF]은사 10개\n[FF6000FF]900,000 은전","[ffe400]15,000 Gold Coins\n[FF6000FF]Artifact Crafting Permit x36\n[AF5BFFFF]Gold Twine x10\n[AF5BFFFF]Silver Twine x10\n[FF6000FF]900,000 Silver Coins"
+desc,69,862,inferred,"[ffe400]10,000 금전\n[FF6000FF]1,500,000 은전\n[FF6000FF]2,000 공적\n[FF6000FF]보물상자 교환권 40개\n[ffffff]나무끈 50개\n종이끈 50개\n가죽끈 50개\n청동 50개\n구리 50개","[ffe400]10,000 Gold Coins\n[FF6000FF]1,500,000 Silver Coins\n[FF6000FF]2,000 Jade Seals\n[FF6000FF]Treasure Chest Voucher x40\n[ffffff]Wooden Twine x50\nPaper Twine x50\nLeather Twine x50\nBronze x50\nCopper x50"
+desc,70,863,inferred,"[ffe400]20,000 금전\n[FF6000FF]3,500,000 은전\n[FF6000FF]4,000 공적\n[FF6000FF]보물상자 교환권 100개\n[ffffff]나무끈 100개\n종이끈 100개\n가죽끈 100개\n청동 100개\n구리 100개","[ffe400]20,000 Gold Coins\n[FF6000FF]3,500,000 Silver Coins\n[FF6000FF]4,000 Jade Seals\n[FF6000FF]Treasure Chest Voucher x100\n[ffffff]Wooden Twine x100\nPaper Twine x100\nLeather Twine x100\nBronze x100\nCopper x100"
+desc,71,864,inferred,"[FF6000FF]8,500,000 은전\n[FF6000FF]보물상자 교환권 90개\n매월 1일 갱신","[FF6000FF]8,500,000 Silver Coins\n[FF6000FF]Treasure Chest Voucher x90\nRefreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,72,865,inferred,"[ffe400]25,000 금전\n[FF6000FF]5,000,000 은전\n[FF6000FF]5,500 공적\n[ffffff]무력 교본 40개\n지력 교본 40개\n통솔 교본 40개\n민첩 교본 40개\n행운 교본 40개","[ffe400]25,000 Gold Coins\n[FF6000FF]5,000,000 Silver Coins\n[FF6000FF]5,500 Jade Seals\n[ffffff]STR Scroll x40\nINT Scroll x40\nCMD Scroll x40\nDEX Scroll x40\nLCK Scroll x40"
+desc,73,866,inferred,"한정 판매!\n[ffe400]2,000 금전\n[ffffff]십자비서 5개\n사방비서 3개\n삼격비서 5개\n사격비서 3개\n매월 1일 갱신","Limited-time offer!\n[ffe400]2,000 Gold Coins\n[ffffff]Cross Scroll x5\nFour Cross Scroll x3\nTriple-Strike Scroll x5\nQuadra-Strike Scroll x3\nRefreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,74,867,inferred,"[ffe400]80,000 금전\n[FF6000FF]7등급 보물 조각 1개\n[ffffff]조각 5개 당\n7등급 보물 제작 가능\n(조각 조합에서 제작)","[ffe400]80,000 Gold Coins\n[FF6000FF]7★ Artifact Piece x1\n[ffffff]5 Pieces\nrequired to create a 7★ Artifact\n(Craft from combining pieces)"
+desc,75,868,inferred,"[ffe400]20,000 금전\n[FF6000FF]1,000,000 은전\n[AF5BFFFF]공문서 200개\n[ffffff]제련 도구 100개\n공예 도구 100개\n매월 1일 갱신","[ffe400]20,000 Gold Coins\n[FF6000FF]1,000,000 Silver Coins\n[AF5BFFFF]Archive x200\n[ffffff]Refinement Tool x100\nCrafting Tool x100\nRefreshes on the 1st of every month. (Standard time: UTC+8)"
+desc,76,869,inferred,"[ffe400]5,000 금전\n[FF6000FF]500,000 은전\n[FF6000FF]1,000 공적\n[FF6000FF]보물상자 교환권 20개\n[ffffff]나무끈 25개\n종이끈 25개\n가죽끈 25개\n청동 25개\n구리 25개","[ffe400]5,000 Gold Coins\n[FF6000FF]500,000 Silver Coins\n[FF6000FF]1,000 Jade Seals\n[FF6000FF]Treasure Chest Voucher x20\n[ffffff]Wooden Twine x25\nPaper Twine x25\nLeather Twine x25\nBronze x25\nCopper x25"
+desc,77,870,inferred,"[ffe400]1,000 금전\n[FF6000FF]강화 보존권 200개","[ffe400]1,000 Gold Coins\n[FF6000FF]Upgrade Protection Ticket x200"
+desc,78,871,inferred,"[ffe400]20,000 금전\n[FF6000FF]3,500,000 은전\n[FF6000FF]4,000 공적\n[ffffff]무력 교본 30개\n지력 교본 30개\n통솔 교본 30개\n민첩 교본 30개\n행운 교본 30개","[ffe400]20,000 Gold Coins\n[FF6000FF]3,500,000 Silver Coins\n[FF6000FF]4,000 Jade Seals\n[ffffff]STR Scroll x30\nINT Scroll x30\nCMD Scroll x30\nDEX Scroll x30\nLCK Scroll x30"
+desc,79,872,inferred,다양한 상품으로 구성된 전설 꾸러미.,A legendary bundle containing various items.
+desc,80,873,inferred,"[FF6000FF]500,000 은전\n[FF6000FF]보물상자 교환권 50개\n[ffffff]회복의 천도 60개","[FF6000FF]500,000 Silver Coins\n[FF6000FF]Treasure Chest Voucher x50\n[ffffff]Heavenly Peach x60"
+desc,81,874,inferred,청룡의 기운이 깃든 꾸러미.,A bundle containing the Azure Dragon's vitality.
+desc,82,875,inferred,"[FF6000FF]9,000,000 군량\n[FF6000FF]보물상자 교환권 90개","[FF6000FF]9,000,000 Rations\n[FF6000FF]Treasure Chest Voucher x90"
+desc,83,876,inferred,"[FF6000FF]7,000,000 은전\n[AF5BFFFF]상방령의 허가서 7개\n[AF5BFFFF]고공령의 허가서 7개\n[AF5BFFFF]태복의 허가서 7개","[FF6000FF]7,000,000 Silver Coins\n[AF5BFFFF]Weapon Crafting Permit x7\n[AF5BFFFF]Armor Crafting Permit x7\n[AF5BFFFF]Accessory Crafting Permit x7"
+desc,84,877,inferred,주작의 기운이 깃든 꾸러미.,A bundle containing the Vermilion Bird's vitality.
+desc,85,878,inferred,주작의 기운이 깃든 고급 꾸러미.,An advanced bundle containing the Vermilion Bird's vitality.
+desc,86,879,inferred,"[FF6000FF]3,000,000 군량\n[FF6000FF]보물상자 교환권 30개","[FF6000FF]3,000,000 Rations\n[FF6000FF]Treasure Chest Voucher x30"
+desc,87,880,inferred,"[ffe400]20,000 금전\n[FF6000FF]200 공적\n[FF6000FF]200 명예\n[FF6000FF]보물 조각 200개\n[FF6000FF]보물상자 교환권 200개\n[AF5BFFFF]양백경[연의 보물]\n[ffffff](분노 축적 15%)","[ffe400]20,000 Gold Coins\n[FF6000FF]200 Jade Seals\n[FF6000FF]200 Honor\n[FF6000FF]Artifact Piece x200\n[FF6000FF]Treasure Chest Voucher x200\n[AF5BFFFF]Silver Coin Mirror [Story Artifact]\n[ffffff](Rage +15%)"
+desc,88,881,inferred,"[ffe400]20,000 금전\n[FF6000FF]200 공적\n[FF6000FF]200 명예\n[FF6000FF]보물 조각 200개\n[FF6000FF]보물상자 교환권 200개","[ffe400]20,000 Gold Coins\n[FF6000FF]200 Jade Seals\n[FF6000FF]200 Honor\n[FF6000FF]Artifact Piece x200\n[FF6000FF]Treasure Chest Voucher x200"
+desc,89,882,inferred,"[ffe400]8,000 금전\n[FF6000FF]80 공적\n[FF6000FF]80 명예\n[FF6000FF]보물 조각 70개\n[FF6000FF]보물상자 교환권 70개","[ffe400]8,000 Gold Coins\n[FF6000FF]80 Jade Seals\n[FF6000FF]80 Honor\n[FF6000FF]Artifact Piece x70\n[FF6000FF]Treasure Chest Voucher x70"
+desc,90,883,inferred,구매 후 군주 RANK를 달성하면 보상을 획득 할 수 있습니다.,"After purchasing, you'll receive a reward whenever you improve your Warlord rank."
+desc,91,884,inferred,"한정 판매!\n[ffe400]4,500 금전\n[FF6000FF]2,000,000 은전\n[AF5BFFFF]토벌권 30개\n[FF6000FF]보물상자 교환권 30개","Limited-time offer!\n[ffe400]4,500 Gold Coins\n[FF6000FF]2,000,000 Silver Coins\n[AF5BFFFF]Token x30\n[FF6000FF]Treasure Chest Voucher x30"
+desc,92,885,inferred,"한정 판매!\n[ffe400]13,000 금전\n[FF6000FF]5,000,000 은전\n[FF6000FF]보물 조각 600개","Limited-time offer!\n[ffe400]13,000 Gold Coins\n[FF6000FF]5,000,000 Silver Coins\n[FF6000FF]Artifact Piece x600"
+desc,93,886,inferred,"한정 판매!\n[ffe400]15,000 금전\n[FF6000FF]5,000,000 은전\n[AF5BFFFF]공문서 260개\n[FF6000FF]보물 조각 300개","Limited-time offer!\n[ffe400]15,000 Gold Coins\n[FF6000FF]5,000,000 Silver Coins\n[AF5BFFFF]Archive x260\n[FF6000FF]Artifact Piece x300"
+desc,94,887,inferred,"한정 판매!\n[ffe400]13,000 금전\n[FF6000FF]5,000,000 은전\n[FF6000FF]보물 조각 600개\n[AF5BFFFF]상방령의 허가서 3개\n[AF5BFFFF]고공령의 허가서 3개\n[AF5BFFFF]태복의 허가서 3개","Limited-time offer!\n[ffe400]13,000 Gold Coins\n[FF6000FF]5,000,000 Silver Coins\n[FF6000FF]Artifact Piece x600\n[AF5BFFFF]Weapon Crafting Permit x3\n[AF5BFFFF]Armor Crafting Permit x3\n[AF5BFFFF]Accessory Crafting Permit x3"
+desc,95,888,inferred,여포의 상급 강화권 꾸러미.,Advanced Lu Bu Upgrade Voucher Bundle
+desc,96,889,inferred,여포의 최상급 강화권 꾸러미.,Master Lu Bu Upgrade Voucher Bundle
+desc,97,890,inferred,"[ffe400]80,000 금전\n[FF6000FF]7등급 보물 조각 3개\n[ffffff]조각 5개 당\n7등급 보물 제작 가능\n(조각 조합에서 제작)","[ffe400]80,000 Gold Coins\n[FF6000FF]7★ Artifact Piece x3\n[ffffff]5 Pieces\nrequired to create a 7★ Artifact\n(Craft from combining pieces)"
+desc,98,891,inferred,300일 기념 특별한 꾸러미.,A special 300-day celebratory bundle.
+desc,99,892,inferred,300일 기념 고급 꾸러미.,An advanced 300-day celebratory bundle.
+desc,100,893,inferred,300일 기념 꾸러미.,A 300-day celebratory bundle.
+desc,101,894,inferred,[ffe400]장수에게 훈련된 교본을 회수할 수 있는 상품권.,[ffe400]A voucher that allows you to retrieve the Training Scroll used on a commander.
+desc,102,895,inferred,[ffe400]31일간 쾌속을 무료로 사용할 수 있는 정기권.,[ffe400]A pass for free Fast Battles. Lasts for 31 days.
+desc,103,896,inferred,특별한 1주년 초급 패키지.,A special 1st anniversary novice package.
+desc,104,897,inferred,특별한 1주년 중급 패키지.,A special 1st anniversary intermediate package.
+desc,105,898,inferred,특별한 1주년 고급 패키지.,A special 1st anniversary advanced package.
+desc,106,899,inferred,특별한 1주년 최고급 패키지.,A special 1st anniversary master package.

@@ -1,0 +1,9 @@
+column,seq,loc_row,confidence,ko,en
+perDesc,1,19825,inferred,[AF5BFFFF]1등급 청룡의 보패 : 60%\n2등급 청룡의 보패 : 25%\n3등급 청룡의 보패 : 10%\n4등급 청룡의 보패 : 5%[ffffff],[AF5BFFFF]1★ Azure Dragon's Relic: 60%\n2★ Azure Dragon's Relic: 25%\n3★ Azure Dragon's Relic: 10%\n4★ Azure Dragon's Relic: 5%[ffffff]
+perDesc,2,19826,inferred,[AF5BFFFF]1등급 주작의 보패 : 60%\n2등급 주작의 보패 : 25%\n3등급 주작의 보패 : 10%\n4등급 주작의 보패 : 5%[ffffff],[AF5BFFFF]1★ Vermilion Bird's Relic: 60%\n2★ Vermilion Bird's Relic: 25%\n3★ Vermilion Bird's Relic: 10%\n4★ Vermilion Bird's Relic: 5%[ffffff]
+perDesc,3,19827,inferred,[AF5BFFFF]1등급 백호의 보패 : 60%\n2등급 백호의 보패 : 25%\n3등급 백호의 보패 : 10%\n4등급 백호의 보패 : 5%[ffffff],[AF5BFFFF]1★ White Tiger's Relic: 60%\n2★ White Tiger's Relic: 25%\n3★ White Tiger's Relic: 10%\n4★ White Tiger's Relic: 5%[ffffff]
+perDesc,4,19828,inferred,[AF5BFFFF]1등급 현무의 보패 : 60%\n2등급 현무의 보패 : 25%\n3등급 현무의 보패 : 10%\n4등급 현무의 보패 : 5%[ffffff],[AF5BFFFF]1★ Black Tortoise's Relic: 60%\n2★ Black Tortoise's Relic: 25%\n3★ Black Tortoise's Relic: 10%\n4★ Black Tortoise's Relic: 5%[ffffff]
+perDesc,5,19829,inferred,'청룡의 영혼'이 부족합니다.,Insufficient Azure Dragon's Souls.
+perDesc,6,19830,inferred,'주작의 영혼'이 부족합니다.,Insufficient Vermilion Bird's Souls.
+perDesc,7,19831,inferred,'백호의 영혼'이 부족합니다.,Insufficient White Tiger's Souls.
+perDesc,8,19832,inferred,'현무의 영혼'이 부족합니다.,Insufficient Black Tortoise's Souls.

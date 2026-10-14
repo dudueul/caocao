@@ -37,13 +37,17 @@ Workers/D1/DO), and a lab textbook generated from the actual work.
 
 ## Key facts cheat-sheet
 
-- Server hosts (dead, reference): `nxm-caocao-ww.nexon.com:9080`, CDN
-  `nxm-caocao-ww.akamaized.net` — **packets were encrypted** (USE_PACKET_ENCRYPT=1)
+- Server hosts (dead, reference): this APK is the **KOR Live build** (revision
+  78592): game server `nxm-caocao.nexon.com:9080`, CDN
+  `dxu1t8x55g49k.cloudfront.net`; the Global build used `nxm-caocao-ww.nexon.com:9080`
+  / `nxm-caocao-ww.akamaized.net` — **packets were encrypted** (USE_PACKET_ENCRYPT=1).
+  Download flow, bundle crypto and recovery playbook: `docs/re/CDN_ASSET_BUNDLES.md`
 - Login wire: `["login", {userId, authKey}]`; rooms: `enterToWorld`/
   `want_room_id`/`broadcastTo`; controls: JSON `BattleControl` records
 - Military power coefs (recovered): Almighty {100,100,75,65,60},
   Military {100,100,25,85,85}, Civil {10,75,135,50,100}, ETC flat
-- Item schema: 49 fields (`Item.cs`); balance data was server-side (lost) —
+- Item schema: 49 fields (`Item.cs`); all 239 table schemas + localization-prefilled
+  templates in `data/tables/`. Balance values shipped in CDN bundles (lost) —
   catalog content is author-supplied (`server/seed/items.json`)
 - fndid.bytes: encrypted local file, not yet cracked (bonus lab)
 

@@ -1,0 +1,9 @@
+column,seq,loc_row,confidence,ko,en
+name,1,17220,inferred,달성 보상 (25),25 Points Achievement Reward
+name,2,17221,inferred,달성 보상 (50),50 Points Achievement Reward
+name,3,17222,inferred,달성 보상 (75),75 Points Achievement Reward
+name,4,17223,inferred,달성 보상 (100),100 Points Achievement Reward
+desc,1,17224,inferred,"임무로 얻은 달성 점수로, 첫 번째 달성 보상을 획득했습니다.",You have acquired the first achievement reward from points earned by completing missions.
+desc,2,17225,inferred,"임무로 얻은 달성 점수로, 두 번째 달성 보상을 획득했습니다.",You have acquired the second achievement reward from points earned by completing missions.
+desc,3,17226,inferred,"임무로 얻은 달성 점수로, 세 번째 달성 보상을 획득했습니다.",You have acquired the third achievement reward from points earned by completing missions.
+desc,4,17227,inferred,"임무로 얻은 달성 점수로, 네 번째 달성 보상을 획득했습니다.",You have acquired the fourth achievement reward from points earned by completing missions.

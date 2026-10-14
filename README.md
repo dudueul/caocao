@@ -15,12 +15,14 @@ extracted/       dump outputs (never edit — regenerable)
   jadx/          Java decompile (5,205 files)
   unity_export/  AssetRipper export (3,615 assets, 0 failed)
 analysis/        evidence log, protocol docs, event catalog, recovered .fbs
+data/tables/      239 data-table schemas + templates pre-filled from localization
 docs/
-  re/            reconstruction blueprints (REBUILD_PLAN.md)
+  re/            reconstruction blueprints (REBUILD_PLAN.md, CDN_ASSET_BUNDLES.md)
   server/        online architecture review + game-server practices
                  (GAME_SERVER_PRACTICES.md) and scaling memo (HYPERSCALE_ROADMAP.md)
   lab/           THE TEXTBOOK: labs 00–08, dsa-01–08, exercises, solutions
-scripts/         reproducible pipeline + verify-lab.sh (auto-grading)
+scripts/         reproducible pipeline + verify-lab.sh (auto-grading);
+                 tables/ (template build), bundles/ (bundle + list decryption)
 tools/           (~/tools) JDK 21, Ghidra 12.1.4, jadx, dotnet, REA — no sudo
 ```
 

@@ -1,0 +1,19 @@
+column,seq,loc_row,confidence,ko,en
+name,1,19833,inferred,사신의 가호 (4등급 확정),The Four Gods Protection (4★ Guaranteed)
+name,2,19834,inferred,청룡의 가호 (4등급 확정),Azure Dragon's Protection (4★ Guaranteed)
+name,3,19835,inferred,주작의 가호 (4등급 확정),Vermilion Bird's Protection (4★ Guaranteed)
+name,4,19836,inferred,백호의 가호 (4등급 확정),White Tiger's Protection (4★ Guaranteed)
+name,5,19837,inferred,현무의 가호 (4등급 확정),Black Tortoise's Protection (4★ Guaranteed)
+name,6,19838,anchored,영웅의 여정,Heroic Journey
+name,7,19839,inferred,영웅의 출정,Dispatch Heroes
+name,8,19840,inferred,천하통일의 길,Path of Unification
+name,9,19841,inferred,공성의 달인 I,Siege Mastery I
+name,10,19842,inferred,공성의 달인 II,Siege Mastery II
+name,11,19843,inferred,군주 랭크 달성 I,Achieve Warlord Rank I
+name,12,19844,inferred,군주 랭크 달성 II,Achieve Warlord Rank II
+desc,1,19845,inferred,영웅의 여정 임무를 모두 완료하세요.,Complete all of the Heroic Journey missions.
+desc,2,19846,inferred,3일 출석하시고 [E34FFFFF] [의천검] [-]을 받으세요.,Log in for 3 days and receive the [E34FFFFF][Heavenly Sword][-].
+desc,3,19847,inferred,모든 주를 점령하고 천하통일을 달성하세요.,Occupy all Provinces to unify the land.
+desc,4,19848,inferred,천하 통일을 위해 각 성을 점령하세요.,Occupy each castle for unification.
+desc,5,19849,inferred,99랭크를 달성하세요.,Reach Rank 99.
+desc,6,19850,inferred,랭크를 달성하고 다양한 보물을 획득하세요.,Achieve noted rank to obtain various artifacts.

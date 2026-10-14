@@ -1,0 +1,545 @@
+id,faceId,charType,state,kingdom,birth,death,criticalMsg,defeatMsg,gender,prefab,voice,modmain,modsub,passive,relation,canDesc,desc,#criticalMsg_en,#loc_row,#confidence
+,,,,,,,받아라!\n이것이 하늘의 검이다!,,,,,,,,,,,The heavens\nguide my blade!,7427,anchored
+,,,,,,,"비켜라, 비켜!",,,,,,,,,,,Out of the way!,7428,anchored
+,,,,,,,각오해라!,,,,,,,,,,,You're good as dead!,7429,anchored
+,,,,,,,기억해 둬라!\n내가 관운장이다!,,,,,,,,,,,I am Guan Yunchang!\nRemember it well!,7430,anchored
+,,,,,,,여기냐!,,,,,,,,,,,None escape my blade!,7431,anchored
+,,,,,,,좋아!\n기회다!,,,,,,,,,,,I've got you now!,7432,anchored
+,,,,,,,"울어라, 활아!\n불타라, 화살촉아!",,,,,,,,,,,"My bow wails,\nmy arrow burns!",7433,anchored
+,,,,,,,정신 집중!\n이랴아앗!,,,,,,,,,,,Never lose focus!\nUraaah!,7434,anchored
+,,,,,,,이때다!,,,,,,,,,,,Time to strike!,7435,anchored
+,,,,,,,필사의 일격!,,,,,,,,,,,A deadly strike!,7436,anchored
+,,,,,,,효용과단!,,,,,,,,,,,Ferocity! Speed! Determination!,7437,anchored
+,,,,,,,이쪽인가!,,,,,,,,,,,I see every hole in your defense!,7438,anchored
+,,,,,,,좌절을 맛봐라!,,,,,,,,,,,Have a taste of defeat!,7439,anchored
+,,,,,,,"내 도끼가 얼마나 무서운지, 잘 맛봐라!",,,,,,,,,,,Feel the fearsome\nswing of my axe!,7440,anchored
+,,,,,,,바람은 극복하는 것이다.,,,,,,,,,,,Mine is the arrow\nthat tames the wind.,7441,anchored
+,,,,,,,한 방!,,,,,,,,,,,One! Shot!,7442,anchored
+,,,,,,,강력 초래!,,,,,,,,,,,Power flows through me!,7443,anchored
+,,,,,,,초선 난무!\n받아라!,,,,,,,,,,,My blades dance\nto the rhythm of battle!,7444,anchored
+,,,,,,,역시! 빈틈 발견!,,,,,,,,,,,Just I expected!\nYou left your side open!,7445,anchored
+,,,,,,,때가 왔다!,,,,,,,,,,,My moment has come!,7446,anchored
+,,,,,,,약점인가요?,,,,,,,,,,,Ah! A weak point!,7447,anchored
+,,,,,,,허허실실!,,,,,,,,,,,Roll with the punches!,7448,anchored
+,,,,,,,"자, 쓰러지거라.",,,,,,,,,,,This is the part\nwhere you fall on your face.,7449,anchored
+,,,,,,,예측대로군.,,,,,,,,,,,Just as I expected.,7450,anchored
+,,,,,,,기회입니다!,,,,,,,,,,,This is my chance!,7451,anchored
+,,,,,,,하하하하!,,,,,,,,,,,Hahahaha!,7452,anchored
+,,,,,,,창끝에 온 정신을 집중하겠다!,,,,,,,,,,,My strength courses \nhrough my spear!,7453,anchored
+,,,,,,,내 칼에 자비란 없다!,,,,,,,,,,,My blade knows no mercy!,7454,anchored
+,,,,,,,죽고 싶지 않다면 비켜라!,,,,,,,,,,,Step aside or die!,7455,anchored
+,,,,,,,어리석은 녀석!,,,,,,,,,,,Pathetic fool!,7456,anchored
+,,,,,,,이쪽이로군!,,,,,,,,,,,This is the way!,7457,anchored
+,,,,,,,내가 바로 조조 맹덕의 장자!\n조앙 자수니라!,,,,,,,,,,,"You face Cao Ang,\neldest son of Cao Cao!",7458,anchored
+,,,,,,,이것이 백성의 분노다!,,,,,,,,,,,Feel the people's wrath!,7459,anchored
+,,,,,,,으라차!\n간다!,,,,,,,,,,,"All right,\nhere I go!",7460,anchored
+,,,,,,,이 조자룡의 창을 받아낼 수 있겠느냐!,,,,,,,,,,,None can escape\nthe wrath of my spear!,7461,anchored
+,,,,,,,이것이 신기 묘산!,,,,,,,,,,,My ruse shall deceive\neven the gods!,7462,anchored
+,,,,,,,장년의 저력을 보여주마!,,,,,,,,,,,Age means\nnothing to me!,7463,anchored
+,,,,,,,내 분노를 맛봐라!,,,,,,,,,,,Feel my wrath!,7464,anchored
+,,,,,,,이것은 복수다!,,,,,,,,,,,I shall have my revenge!,7465,anchored
+,,,,,,,질 수야 없지!,,,,,,,,,,,I won't go down\nso easily!,7466,anchored
+,,,,,,,협상의 시간!,,,,,,,,,,,Force is the best\nbargaining tool!,7467,anchored
+,,,,,,,이게 본 실력이지요!,,,,,,,,,,,This is my true strength!,7468,anchored
+,,,,,,,오지 마!\n오지 말라고!,,,,,,,,,,,Don't come any closer!\nStop! I'm warning you!,7469,anchored
+,,,,,,,"오호, 빈틈!",,,,,,,,,,,"Aha, an opening!",7470,anchored
+,,,,,,,받아라! 나의 혼신의 일격을!,,,,,,,,,,,Fear me! All tremble\nbefore my might blade!,7471,anchored
+,,,,,,,막을 수 있다면 막아 보거라!,,,,,,,,,,,Just try and stop me!,7472,anchored
+,,,,,,,전력이다!,,,,,,,,,,,I won't hold back!,7473,anchored
+,,,,,,,내가 바로 군신의 오른팔!,,,,,,,,,,,I am the right hand\nof the god of war!,7474,anchored
+,,,,,,,내가 아직 늙지 않았다는 걸 알려주마!,,,,,,,,,,,Old age hasn't\nslowed me down!,7475,anchored
+,,,,,,,백미란 명성이 헛되지 않게 하겠습니다.,,,,,,,,,,,"See why ""White Brow""\nis a name to be feared!",7476,anchored
+,,,,,,,난 절대 틀리지 않았다!,,,,,,,,,,,I did no wrong!,7477,anchored
+,,,,,,,이대로 물러설 수는 없다!,,,,,,,,,,,I will not back down!,7478,anchored
+,,,,,,,만왕 사마가가 바로 나다!,,,,,,,,,,,"I am Shamoke,\nthe Blue-Eyed King!",7479,anchored
+,,,,,,,아버님의 이름을 욕되게 할 수 없다!,,,,,,,,,,,I shall not sully\nmy father's name!,7480,anchored
+,,,,,,,아버님의 이름을 걸고…!,,,,,,,,,,,"By my father's name,\nI strike you down!",7481,anchored
+,,,,,,,당신은 지금 실수하시는 겁니다.,,,,,,,,,,,You're making a huge mistake.,7482,anchored
+,,,,,,,전력을 다해야겠군요.,,,,,,,,,,,I'll hit 'em with\neverything I got!,7483,anchored
+,,,,,,,맹렬한 일격!\n받아 보아라!,,,,,,,,,,,Brace yourself—\nNow falls my blade!,7484,anchored
+,,,,,,,한 칼이다!,,,,,,,,,,,I shall end you with\na single swing!,7485,anchored
+,,,,,,,이 화살 하나로 끝내겠다!,,,,,,,,,,,A single arrow is all it takes!,7486,anchored
+,,,,,,,책임을 지는 것이 진정한 사나이!,,,,,,,,,,,I will not rest until\nI fulfill my duty!,7487,anchored
+,,,,,,,극한의 오의를 보여주지!,,,,,,,,,,,Witness swordplay\nof the highest order!,7488,anchored
+,,,,,,,덤벼! 오란 말이야!,,,,,,,,,,,Come on! I dare you!,7489,anchored
+,,,,,,,촉의 위상을 보여주자!,,,,,,,,,,,Shu Han shall prevail!,7490,anchored
+,,,,,,,콜록콜록! 아직 쓰러질 수 없다!,,,,,,,,,,,"*Cough, cough* I can still fight!",7491,anchored
+,,,,,,,상당히 귀찮게 하는군!,,,,,,,,,,,You're a thorn in my side!,7492,anchored
+,,,,,,,이 화살에 혼신은 담겠다!,,,,,,,,,,,I'll put all my strength\nbehind this single shot!,7493,anchored
+,,,,,,,히이이익! 다가오지 마!,,,,,,,,,,,Nooo! Stay back!,7494,anchored
+,,,,,,,넌 이미 죽어있다!,,,,,,,,,,,You're already dead!,7495,anchored
+,,,,,,,기회가 왔다!,,,,,,,,,,,I've been waiting for this!,7496,anchored
+,,,,,,,얕보지 않는 게 좋을걸?,,,,,,,,,,,Underestimate me at your peril!,7497,anchored
+,,,,,,,이번엔 좀 아플걸?\n으라차!,,,,,,,,,,,This is going to hurt!\nHyaah!,7498,anchored
+,,,,,,,"호호호, 날 더 즐겁게 해달라고!",,,,,,,,,,,Haha! Yes!\nHow entertaining!,7499,anchored
+,,,,,,,내가 바로 남만왕의 아우 맹우니라!,,,,,,,,,,,"I am Meng You,\nbrother of the King of Nanman!",7500,anchored
+,,,,,,,창천이사\n황건당립!,,,,,,,,,,,The Azure Sky has died!\nThe Yellow Sky rises!,7501,anchored
+,,,,,,,이 지긋지긋한 전쟁도 마무리다!,,,,,,,,,,,I'll put an end\nto this cursed war!,7502,anchored
+,,,,,,,이것이 나의 미학!,,,,,,,,,,,Fight with style!,7503,anchored
+,,,,,,,모든 것은 예측대로!,,,,,,,,,,,All is going according to plan!,7504,anchored
+,,,,,,,더 이상 말로 하지 않겠다!,,,,,,,,,,,No more talk!,7505,anchored
+,,,,,,,눈을 비비고 다시 봐라!,,,,,,,,,,,I am not the man I once was!,7506,anchored
+,,,,,,,이것은 불의 노래!,,,,,,,,,,,Sing the song of fire!,7507,anchored
+,,,,,,,단단히 묶어주마!,,,,,,,,,,,Now you're really in a bind!,7508,anchored
+,,,,,,,그 실력으로는 내 상대가 될 수 없다!,,,,,,,,,,,You are no match for my skills!,7509,anchored
+,,,,,,,"야, 야, 야! 난 성질이 급해!",,,,,,,,,,,"Come on, now! We haven't got all day!",7510,anchored
+,,,,,,,내 창을 받아라!,,,,,,,,,,,My spear shall pierce your heart!,7511,anchored
+,,,,,,,겨우 그 정도냐!,,,,,,,,,,,Do your worst!,7512,anchored
+,,,,,,,나를 상대하겠다고?,,,,,,,,,,,You would fight me?,7513,anchored
+,,,,,,,늙은이라고 무시했는가?,,,,,,,,,,,Did you just\ncall me old?,7514,anchored
+,,,,,,,"하하하, 상대가 되질 않는군!",,,,,,,,,,,Hahaha! How weak!,7515,anchored
+,,,,,,,이것이 신의 한수!,,,,,,,,,,,I control the flow of battle\nwith a single strike!,7516,anchored
+,,,,,,,이 일격을 받아낼 수 있겠느냐!,,,,,,,,,,,Try and survive this!,7517,anchored
+,,,,,,,너의 약점이 훤히 보이는군!,,,,,,,,,,,All your weaknesses\nare laid bare before me!,7518,anchored
+,,,,,,,여기서 포기할 수 없다!,,,,,,,,,,,I will not admit defeat...\nNot here!,7519,anchored
+,,,,,,,이 불한당 같은 놈들!\n모조리 쓸어주마!,,,,,,,,,,,Impudent brutes!\nYour pathetic lives end now!,7520,anchored
+,,,,,,,이것이 나 정승연의 무예니라!,,,,,,,,,,,You can learn something\nfrom Ding Chengyuan!,7521,anchored
+,,,,,,,아직은 쓰러질 수 없다!,,,,,,,,,,,This will not be my last battle!,7522,anchored
+,,,,,,,이것이 나의 일격!,,,,,,,,,,,Now to deal\nthe finishing blow!,7523,anchored
+,,,,,,,내가 강동의 맹호다!,,,,,,,,,,,Tremble before the Fierce\nTiger of Jiangdong!,7524,anchored
+,,,,,,,한번 받아봐라!,,,,,,,,,,,Just try and dodge this!,7525,anchored
+,,,,,,,이것이 원씨 가문의 힘이다!,,,,,,,,,,,Witness the power of House Yuan!,7526,anchored
+,,,,,,,이놈이고 저놈이고 마음에 들지 않는군!,,,,,,,,,,,"Worthless, all of you!",7527,anchored
+,,,,,,,어떻게 죽여줄까?,,,,,,,,,,,How do you want to be killed?,7528,anchored
+,,,,,,,방해하지 마라!,,,,,,,,,,,Stay out of my way!,7529,anchored
+,,,,,,,이 정도면 문제없겠군.,,,,,,,,,,,This will do just fine.,7530,anchored
+,,,,,,,이런 애송이들!,,,,,,,,,,,"Amateurs, the lot of you!",7531,anchored
+,,,,,,,날 상대하려면 아직 멀었다!,,,,,,,,,,,You will never be my equal!,7532,anchored
+,,,,,,,꺼져라!\n이 자슥아!,,,,,,,,,,,"Get out of my face,\nyou dimwit!",7533,anchored
+,,,,,,,니는 고마 디지뿟다!,,,,,,,,,,,Time to die!,7534,anchored
+,,,,,,,어디 놓칠까 보냐!,,,,,,,,,,,You're not getting away this time!,7535,anchored
+,,,,,,,그 정도로는 어림없다!,,,,,,,,,,,Is that the best you've got?,7536,anchored
+,,,,,,,"피를 보고 싶진 않지만, 전력을 다하겠다!",,,,,,,,,,,I hate violence...\nbut I'll make an exception for you!,7537,anchored
+,,,,,,,너 따위는 내 상대가 못 된다!,,,,,,,,,,,You're no match for me!,7538,anchored
+,,,,,,,날 얕보지 마라!,,,,,,,,,,,Do not underestimate me!,7539,anchored
+,,,,,,,내게 대적하면 죽음뿐이다!,,,,,,,,,,,Death awaits those who oppose me!,7540,anchored
+,,,,,,,더는 피하지 않겠다.,,,,,,,,,,,I will run no longer.,7541,anchored
+,,,,,,,날 대적할 자가 네 녀석인가?,,,,,,,,,,,You'd face me in battle?,7542,anchored
+,,,,,,,이것이 실력이다!,,,,,,,,,,,You have a long way to go!,7543,anchored
+,,,,,,,넌 여기서 죽는다!,,,,,,,,,,,This battleground is your grave!,7544,anchored
+,,,,,,,거기 가만히 있거라!,,,,,,,,,,,Don't move!,7545,anchored
+,,,,,,,돌격하라!\n적의 진을 무너뜨려라!,,,,,,,,,,,Charge!\nDestroy them!,7546,anchored
+,,,,,,,나는 술 안 먹었다고!,,,,,,,,,,,I ain't drunk! This is how I walk!,7547,anchored
+,,,,,,,화살은 이렇게 쏘는 거라고!,,,,,,,,,,,This is the proper way\nto shoot an arrow!,7548,anchored
+,,,,,,,덤벼! 안 오면 내가 간다?,,,,,,,,,,,Bring it on! You do not\nwant to make me come to you!,7549,anchored
+,,,,,,,전략은 냉혹하오!,,,,,,,,,,,"In a war, there is no room for emotion.",7550,anchored
+,,,,,,,크하하!\n모두 죽어라!,,,,,,,,,,,Mwahaha!\nYou're all dead!,7551,anchored
+,,,,,,,오늘이 네 제삿날인 줄 알아라!,,,,,,,,,,,Your family will remember this as the day you died!,7552,anchored
+,,,,,,,황천길로 보내주지!,,,,,,,,,,,I'll send you to hell!,7553,anchored
+,,,,,,,어리석은 놈!\n나를 상대하겠다고?,,,,,,,,,,,"You would oppose me?\nYour ""courage"" is simple foolishness!",7554,anchored
+,,,,,,,오늘 나의 점괘는 대길!,,,,,,,,,,,Fate smiles on this day!,7555,anchored
+,,,,,,,계산대로 척척 맞아떨어지는군.,,,,,,,,,,,My calculations are never wrong.,7556,anchored
+,,,,,,,약해빠진 녀석 주제에!,,,,,,,,,,,You're as feeble as they come!,7557,anchored
+,,,,,,,어찌 닭 잡는 데 소 잡는 칼을 쓰랴!,,,,,,,,,,,You're not worthy\nof dying by my blade!,7558,anchored
+,,,,,,,우히히히!\n걸려들었구나!,,,,,,,,,,,Yes! Haha!\nI've got you under my thumb!,7559,anchored
+,,,,,,,천자의 검이다!,,,,,,,,,,,"Behold, the emperor's sword!",7560,anchored
+,,,,,,,"하하하, 삼첨도라고 들어봤나?",,,,,,,,,,,Ever seen a three-pronged blade?,7561,anchored
+,,,,,,,마류 창술의 오의를 보여주마!,,,,,,,,,,,My spearmanship is unequaled!,7562,anchored
+,,,,,,,돌격하라! 서량의 용사들이여!,,,,,,,,,,,"Charge, Xiliang warriors!",7563,anchored
+,,,,,,,하늘 앞에 죄를 회개하라!,,,,,,,,,,,Confess your sins before the heavens!,7564,anchored
+,,,,,,,절대로 굽히지 않겠다!,,,,,,,,,,,My will is unbreakable!,7565,anchored
+,,,,,,,죗값을 치르시지요.,,,,,,,,,,,You shall answer\nfor your crimes.,7566,anchored
+,,,,,,,사내란 굽힐 때를 알아야 하는 법!,,,,,,,,,,,The key to victory\nis knowing when to be flexible!,7567,anchored
+,,,,,,,싸움이란 이렇게 하는 것이다!,,,,,,,,,,,This is how you fight!,7568,anchored
+,,,,,,,서주의 백성들을 위해서라면!,,,,,,,,,,,For the people of Xuzhou!,7569,anchored
+,,,,,,,"보아라, 이것이 지공장군의 힘이다!",,,,,,,,,,,Behold the power of\nthe General Earth!,7570,anchored
+,,,,,,,"보아라, 이것이 인공장군의 힘이다!",,,,,,,,,,,Behold the power of\nthe General of Humanity!,7571,anchored
+,,,,,,,하늘이 두렵지 않으냐!,,,,,,,,,,,Tremble before heaven's wrath!,7572,anchored
+,,,,,,,이미 모든 답을 적어두었습니다.,,,,,,,,,,,I have all the answers\nright here.,7573,anchored
+,,,,,,,활로 발견!,,,,,,,,,,,I have found the path to victory!,7574,anchored
+,,,,,,,받아낼 수 있겠나?,,,,,,,,,,,Think you can survive this?,7575,anchored
+,,,,,,,좋은 시제가 떠오르는군.,,,,,,,,,,,You've inspired me to write a poem!,7576,anchored
+,,,,,,,히이이익!,,,,,,,,,,,Yeeesss!,7577,anchored
+,,,,,,,백마장사의 힘을 보아라!,,,,,,,,,,,Kneel before the power of\nthe White Horse General!,7578,anchored
+,,,,,,,재물이 되어라!,,,,,,,,,,,You will be the offering for my ritual!,7579,anchored
+,,,,,,,침착하게….\n그리고 강력하게!,,,,,,,,,,,Calm...\nyet decisive!,7580,anchored
+,,,,,,,"자자, 흥분하지 말라고.",,,,,,,,,,,"Now, now...\nLet's not get carried away.",7581,anchored
+,,,,,,,싸워야만 한다면!,,,,,,,,,,,I will fight if I must!,7582,anchored
+,,,,,,,심판의 시간이다!,,,,,,,,,,,Your judgment has arrived!,7583,anchored
+,,,,,,,요동의 힘을 느껴봐라!,,,,,,,,,,,Feel the might of Liaodong!,7584,anchored
+,,,,,,,누가 연왕의 앞을 가로막는가!,,,,,,,,,,,Who dares stand before the King of Yan?!,7585,anchored
+,,,,,,,좋은 생각이 떠올랐다.,,,,,,,,,,,I have an idea.,7586,anchored
+,,,,,,,싸우고 싶진 않지만 어쩔 수 없군!,,,,,,,,,,,"I don't want to fight you,\nbut you leave me no choice!",7587,anchored
+,,,,,,,이 일격이 곧 나의 의지다!,,,,,,,,,,,You cannot shake my conviction!,7588,anchored
+,,,,,,,죽기 좋은 날이로군!,,,,,,,,,,,It's a good day to die!,7589,anchored
+,,,,,,,"후후, 불행을 자초하는군!",,,,,,,,,,,You had this coming!,7590,anchored
+,,,,,,,약점을 파고드는 것이 병법!,,,,,,,,,,,Exploiting the enemy's weakness\nis the art of war!,7591,anchored
+,,,,,,,어디 무명소졸이 함부로 설치느냐!,,,,,,,,,,,This is no place\nfor a nameless pawn like you!,7592,anchored
+,,,,,,,끝까지 포기할 수 없다!,,,,,,,,,,,I will see it through!,7593,anchored
+,,,,,,,한방에 보내주지!,,,,,,,,,,,I shall end you in one swing!,7594,anchored
+,,,,,,,역적에게는 내일이 없는 법!,,,,,,,,,,,Traitors shall be shown\nno mercy!,7595,anchored
+,,,,,,,내가 누군지 알고!,,,,,,,,,,,You don't know who I am?\nAllow me to show you!,7596,anchored
+,,,,,,,오환을 위하여!,,,,,,,,,,,For Wuhuan!,7597,anchored
+,,,,,,,이 방법은 어떠냐!,,,,,,,,,,,How does that taste?!,7598,anchored
+,,,,,,,이번엔 누구의 힘을 빌려볼까?,,,,,,,,,,,Whose power shall we call on this time?,7599,anchored
+,,,,,,,준비 완료!,,,,,,,,,,,I'm always ready!,7600,anchored
+,,,,,,,허점투성이군!,,,,,,,,,,,You've left me an easy opening!,7601,anchored
+,,,,,,,황제 폐하……!\n절대로 지지 않겠나이다.,,,,,,,,,,,My Emperor...\nI will win in your honor!,7602,anchored
+,,,,,,,아직 해야할 일이 많다!,,,,,,,,,,,Get out of my way!\nYou're wasting my time!,7603,anchored
+,,,,,,,힘을 내자!,,,,,,,,,,,"Keep it up, men!",7604,anchored
+,,,,,,,깨달아라! 나의 강함을!,,,,,,,,,,,See just how strong I really am!,7605,anchored
+,,,,,,,결사의 일격!,,,,,,,,,,,I shall put my life on the line!,7606,anchored
+,,,,,,,허점 발견!,,,,,,,,,,,I've found your weakness!,7607,anchored
+,,,,,,,사나이에게 필요한 것은 담력!,,,,,,,,,,,A man is nothing without courage!,7608,anchored
+,,,,,,,꺼져라!,,,,,,,,,,,Begone!,7609,anchored
+,,,,,,,후회하게 해주마!,,,,,,,,,,,I will make you regret\never coming here!,7610,anchored
+,,,,,,,기세를 꺾어주마!,,,,,,,,,,,I will shatter your spirit!,7611,anchored
+,,,,,,,박살을 내주지!,,,,,,,,,,,I'll rip you to pieces!,7612,anchored
+,,,,,,,이 창을 받아라!,,,,,,,,,,,Dodge this if you can!,7613,anchored
+,,,,,,,이 창에 나의 모든 힘을 싣겠다!,,,,,,,,,,,You're gonna feel this one!,7614,anchored
+,,,,,,,"하하하, 너무 뻔하군.",,,,,,,,,,,"Ahh, how predictable.",7615,anchored
+,,,,,,,거기까지다!,,,,,,,,,,,Your fight ends here!,7616,anchored
+,,,,,,,더 높게!\n더 웅장하게!,,,,,,,,,,,Greater! Higher!\nWith incomparable splendor!,7617,anchored
+,,,,,,,반으로 쪼개주마!,,,,,,,,,,,I'll split you in half!,7618,anchored
+,,,,,,,빈틈으로군요.,,,,,,,,,,,Your guard is wide open.,7619,anchored
+,,,,,,,귀찮게 구는군!,,,,,,,,,,,How infuriating!,7620,anchored
+,,,,,,,이것이 사마팔달의 힘이다!,,,,,,,,,,,None can stand before House Sima!,7621,anchored
+,,,,,,,경전에 이르기를…!,,,,,,,,,,,According to scripture...,7622,anchored
+,,,,,,,천하는 이 손안에 있다!,,,,,,,,,,,The world is within my grasp!,7623,anchored
+,,,,,,,이걸로 마지막이다!,,,,,,,,,,,This is the final blow!,7624,anchored
+,,,,,,,통일을 위하여!,,,,,,,,,,,For a united kingdom!,7625,anchored
+,,,,,,,더 이상 화나게 하지 마라!,,,,,,,,,,,Do not anger me further!,7626,anchored
+,,,,,,,교주 백성들의 안녕을 위해!,,,,,,,,,,,For the people of Jiaozhou!,7627,anchored
+,,,,,,,이건 원래 내 것이었어!,,,,,,,,,,,I am the rightful owner!,7628,anchored
+,,,,,,,좋은 수가 떠올랐습니다.,,,,,,,,,,,I just had\na brilliant idea.,7629,anchored
+,,,,,,,혼신을 담은 일격!,,,,,,,,,,,I'll hit you with everything I've got!,7630,anchored
+,,,,,,,잔챙이는 필요 없다!,,,,,,,,,,,I don't have time for lackeys like you!,7631,anchored
+,,,,,,,"하하, 이건 어떠냐!",,,,,,,,,,,Haha! How about...this?!,7632,anchored
+,,,,,,,다 때려눕혀 주마!,,,,,,,,,,,Time for a good ol' pummeling!,7633,anchored
+,,,,,,,내가 나설 차례인가!,,,,,,,,,,,It's finally my turn!,7634,anchored
+,,,,,,,기운을 내자!,,,,,,,,,,,"Keep your spirits high, men!",7635,anchored
+,,,,,,,내가 바로 강동맹호의 아들!,,,,,,,,,,,I am the son\nof Jiangdong's Tiger!,7636,anchored
+,,,,,,,"이놈도 죽이고, 저놈도 죽여라!",,,,,,,,,,,Slay them all!,7637,anchored
+,,,,,,,이때를 기다렸다!,,,,,,,,,,,I've been waiting for this moment!,7638,anchored
+,,,,,,,"자, 이때다!",,,,,,,,,,,"Now, strike!",7639,anchored
+,,,,,,,불구로 만들어주마!,,,,,,,,,,,You won't get up from this one!,7640,anchored
+,,,,,,,허를 찌르는 수!,,,,,,,,,,,My next move will be\nthe last you ever see!,7641,anchored
+,,,,,,,"낄낄, 돈이 없으면 죽어야지!",,,,,,,,,,,"I just might spare you!\n...If you had more money, that is.",7642,anchored
+,,,,,,,"워워, 얌전히 있거라!",,,,,,,,,,,"Hey, hey!\nStand down!",7643,anchored
+,,,,,,,애송이 녀석 주제에!,,,,,,,,,,,Your inexperience is...vexing!,7644,anchored
+,,,,,,,날 넘어설 수는 없을 것이다.,,,,,,,,,,,You shall never surpass me.,7645,anchored
+,,,,,,,내가 바로 맹장 엄강님이시다!,,,,,,,,,,,I am Yan Gang!\nRemember that name!,7646,anchored
+,,,,,,,"어흥, 잡았다!",,,,,,,,,,,"ROAR! Hah, you're too easy!",7647,anchored
+,,,,,,,적의 약점은 바로…!,,,,,,,,,,,I've found the enemy's weakness...!,7648,anchored
+,,,,,,,바람처럼 빠르게!,,,,,,,,,,,Like the wind!,7649,anchored
+,,,,,,,무의미한 살생은 원치 않지만….\n어쩔 수 없군!,,,,,,,,,,,Meaningless violence is\nnot what I want...\nBut you leave me no choice!,7650,anchored
+,,,,,,,"하하하, 뻔한 수작이로군!",,,,,,,,,,,Haha! Please. You're not fooling anyone!,7651,anchored
+,,,,,,,묵사발을 내주마!,,,,,,,,,,,I'll beat you to a pulp!,7652,anchored
+,,,,,,,허점 투성이로군!,,,,,,,,,,,So many places to attack...!,7653,anchored
+,,,,,,,"하하하, 간지럽구나!",,,,,,,,,,,Haha! That tickles!,7654,anchored
+,,,,,,,"흠, 이쯤인가!",,,,,,,,,,,"Ah, there you are!",7655,anchored
+,,,,,,,이 궤적이라면…!,,,,,,,,,,,Judging from the trajectory...,7656,anchored
+,,,,,,,전쟁이라면 지긋지긋하다!,,,,,,,,,,,I've had enough of this war!,7657,anchored
+,,,,,,,인의로써 무지를 다스릴지어다!,,,,,,,,,,,Honor and justice always\nprevail over ignorance!,7658,anchored
+,,,,,,,무의미한 싸움은 여기서 끝내도록 하지!,,,,,,,,,,,I will put an end to this meaningless fight!,7659,anchored
+,,,,,,,일격필살!,,,,,,,,,,,"One shot, one kill!",7660,anchored
+,,,,,,,과감한 결정이군!,,,,,,,,,,,A bold decision!,7661,anchored
+,,,,,,,싸우겠습니다!,,,,,,,,,,,No time for hesitation!,7662,anchored
+,,,,,,,죽음을 각오하는 게 좋을 것이다!,,,,,,,,,,,Are you prepared to die?,7663,anchored
+,,,,,,,흙으로 돌아가라.,,,,,,,,,,,Dust to dust.,7664,anchored
+,,,,,,,제대로 상대해주지!,,,,,,,,,,,No more playing around!,7665,anchored
+,,,,,,,더 싸울 테냐?,,,,,,,,,,,There's more where that came from!,7666,anchored
+,,,,,,,더는 말이 필요 없겠군.,,,,,,,,,,,It is too late for words.,7667,anchored
+,,,,,,,각오는 됐나?,,,,,,,,,,,Are you ready for what's coming?,7668,anchored
+,,,,,,,"잘 가시게, 친구!",,,,,,,,,,,"So long, friend!",7669,anchored
+,,,,,,,저승으로 가는 길을 안내해주지!,,,,,,,,,,,I will send you to\nthe gates of hell!,7670,anchored
+,,,,,,,감히 내 앞을 가로막다니…!,,,,,,,,,,,You will rue the moment\nyou crossed blades with me!,7671,anchored
+,,,,,,,모든 정신을 쏟겠다!,,,,,,,,,,,You won't distract me so easily!,7672,anchored
+,,,,,,,아버님의 유지를 잇고야 말겠다!,,,,,,,,,,,I will protect my father's legacy\nat all costs!,7673,anchored
+,,,,,,,지루해서 하품이 다 나는군!,,,,,,,,,,,Are you trying\nto bore me to death?,7674,anchored
+,,,,,,,내 속도를 따라올 수 있겠느냐!,,,,,,,,,,,Think you can match my speed?,7675,anchored
+,,,,,,,어딜 감히!,,,,,,,,,,,Oh no you don't!,7676,anchored
+,,,,,,,내가 누군지 똑똑히 보아라!,,,,,,,,,,,Take a good look!\nI'm the last thing you'll ever see!,7677,anchored
+,,,,,,,비겁한 자들이로구나!,,,,,,,,,,,"Cowards, all of you!",7678,anchored
+,,,,,,,"호표기여, 돌격하라!",,,,,,,,,,,"Tiger Cavalry, charge!",7679,anchored
+,,,,,,,봐주지 않겠다!,,,,,,,,,,,I will not hold back!,7680,anchored
+,,,,,,,내게 자비를 바라지 마라!,,,,,,,,,,,Do not expect mercy!,7681,anchored
+,,,,,,,뒤늦게 후회해봐야 소용없다!,,,,,,,,,,,Regrets have no place here!,7682,anchored
+,,,,,,,거기 당신.\n죽어줘야겠어요.,,,,,,,,,,,You there! I'm afraid\ntoday's the day you die!,7683,anchored
+,,,,,,,날 화나게 하지 말라고 했을 텐데!,,,,,,,,,,,I warned you not to make me mad!,7684,anchored
+,,,,,,,무식한 자들에겐 매가 약이지!,,,,,,,,,,,A good beating can cure any ignorance!,7685,anchored
+,,,,,,,당신은 날 쓰러트릴 수 없소.,,,,,,,,,,,You will never beat me.,7686,anchored
+,,,,,,,역시나 걸려들었군!,,,,,,,,,,,Hah! I knew you would fall for that!,7687,anchored
+,,,,,,,다 덤벼라! 하하하,,,,,,,,,,,I'll fight you all at once! Hahaha!,7688,anchored
+,,,,,,,벌써 지쳤느냐?,,,,,,,,,,,Tired already?,7689,anchored
+,,,,,,,"하하하, 완벽히 속았군!",,,,,,,,,,,Hahaha! I can fight\ncircles around you!,7690,anchored
+,,,,,,,날 대적하려 하다니….\n어리석군.,,,,,,,,,,,You think you can\nhold your own against me...?\nHow foolish.,7691,anchored
+,,,,,,,"자, 이 일격을 피할 수 있겠나?",,,,,,,,,,,You really think you can dodge\nmy attack head on?,7692,anchored
+,,,,,,,내 화살은 피할 수 없을걸?,,,,,,,,,,,My arrow always strikes true!,7693,anchored
+,,,,,,,이것은 어떻습니까?,,,,,,,,,,,But what if I attack...\nlike THIS!,7694,anchored
+,,,,,,,지혜는 절대 늙지 않는 법이지!,,,,,,,,,,,Wisdom knows no age.,7695,anchored
+,,,,,,,비겁한 녀석들! ,,,,,,,,,,,You fight without honor! ,7696,anchored
+,,,,,,,이것은 기회!,,,,,,,,,,,I won't waste this opportunity!,7697,anchored
+,,,,,,,"자, 간다!",,,,,,,,,,,Here goes nothing!,7698,anchored
+,,,,,,,포기해라.\n날 넘어설 수는 없다.,,,,,,,,,,,Give up. You will never\nsurpass me.,7699,anchored
+,,,,,,,다음 계책은…!,,,,,,,,,,,Now for the next phase of my plan...!,7700,anchored
+,,,,,,,"자, 받아라!",,,,,,,,,,,Take this!,7701,anchored
+,,,,,,,내 손에 죽는 걸 영광으로 알아라!,,,,,,,,,,,You're lucky! It is an honor\nto die by my hands!,7702,anchored
+,,,,,,,그렇게도 죽는 게 소원이라면…!,,,,,,,,,,,If you're so desperate to end your life...!,7703,anchored
+,,,,,,,비켜서지 못하겠느냐!,,,,,,,,,,,I won't say it again—\nStep aside!,7704,anchored
+,,,,,,,그런 뻔한 수법은 통하지 않는다.,,,,,,,,,,,No one is foolish enough\nto fall for that.,7705,anchored
+,,,,,,,내가 두려운가!,,,,,,,,,,,Do you fear me?,7706,anchored
+,,,,,,,지금이 기회로군요.,,,,,,,,,,,My chance has finally come.,7707,anchored
+,,,,,,,"자, 지금부터가 시작이다!",,,,,,,,,,,I'm just\ngetting started!,7708,anchored
+,,,,,,,날 대적할 수 없을 것이다!,,,,,,,,,,,You can't\nwithstand my attacks!,7709,anchored
+,,,,,,,이 화살을 피할 수 있겠느냐?,,,,,,,,,,,Dodge my arrow? Hah!\nJust try it!,7710,anchored
+,,,,,,,후회는 늦었다!,,,,,,,,,,,It's too late for regrets!,7711,anchored
+,,,,,,,"자, 잠시 내 얘길 들어보시게.",,,,,,,,,,,"Come, sit,\nand listen.",7712,anchored
+,,,,,,,끝까지 밀어붙여라!,,,,,,,,,,,Do not give them room to breathe!,7713,anchored
+,,,,,,,황실의 명예를 위해!,,,,,,,,,,,For the Emperor's honor!,7714,anchored
+,,,,,,,히이이익!\n저리 가라!,,,,,,,,,,,"No, no, no!\nStay back!",7715,anchored
+,,,,,,,다음 목표는….\n바로 너다!,,,,,,,,,,,Let's see... My next target...\nis you!,7716,anchored
+,,,,,,,"자, 엎드리세요!",,,,,,,,,,,Get down!,7717,anchored
+,,,,,,,"자, 비켜서세요!",,,,,,,,,,,Move out of the way!,7718,anchored
+,,,,,,,작다고 얕봤겠다!,,,,,,,,,,,What was that? I'm too short for what?!,7719,anchored
+,,,,,,,거기가 빈틈인가요?,,,,,,,,,,,Is your defense always\nso full of holes?,7720,anchored
+,,,,,,,비천한 것들!,,,,,,,,,,,You scum!,7721,anchored
+,,,,,,,빈틈 발견!,,,,,,,,,,,I've got you marked!,7722,anchored
+,,,,,,,"호호호, 어떻게 요리해줄까?",,,,,,,,,,,So! How would you like to die?!,7723,anchored
+,,,,,,,이건 어떨까요?,,,,,,,,,,,How's that for an attack?!,7724,anchored
+,,,,,,,쪼매 아플게다!,,,,,,,,,,,This might sting a little!,7725,anchored
+,,,,,,,야! 저리 비켜!,,,,,,,,,,,"Hey! Outta the way, or else!",7726,anchored
+,,,,,,,"헤헤, 어디를 맞춰줄까?",,,,,,,,,,,"Now, where shall I pierce you?",7727,anchored
+,,,,,,,내가 바로 군신의 딸!,,,,,,,,,,,I share the blood of the war god!,7728,anchored
+,,,,,,,다가오지 마세요!,,,,,,,,,,,That's close enough!,7729,anchored
+,,,,,,,사라져라!,,,,,,,,,,,Vanish!,7730,anchored
+,,,,,,,예쁘게 울부짖어봐!,,,,,,,,,,,Your screams are music\nto my ears!,7731,anchored
+,,,,,,,"자, 계산대로에요!",,,,,,,,,,,Just as I calculated!,7732,anchored
+,,,,,,,이건 좀 아플걸!,,,,,,,,,,,This is gonna hurt!,7733,anchored
+,,,,,,,최선을 다해 상대하겠어요.,,,,,,,,,,,I will give it my all.,7734,anchored
+,,,,,,,상대로 부족함이 없군요. ,,,,,,,,,,,You are a worthy opponent. ,7735,anchored
+,,,,,,,으랴앗!,,,,,,,,,,,Uraaah!,7736,anchored
+,,,,,,,왔군!,,,,,,,,,,,Hoorah!,7737,anchored
+,,,,,,,간다앗!,,,,,,,,,,,Onward!,7738,anchored
+,,,,,,,팔건장의 힘을 보여주마!,,,,,,,,,,,This is the power\nof the Mighty Eight!,7739,anchored
+,,,,,,,뜨거운 맛 좀 봐라!,,,,,,,,,,,You're not gonna like this!,7740,anchored
+,,,,,,,등 뒤를 조심하라고!,,,,,,,,,,,Watch your back!,7741,anchored
+,,,,,,,날 믿어보라고!,,,,,,,,,,,You can count on me!,7742,anchored
+,,,,,,,수군의 긍지를 보여주마!,,,,,,,,,,,I'm a proud\nman of the sea!,7743,anchored
+,,,,,,,붓은 칼보다 강하다!,,,,,,,,,,,The pen is mightier than sword!,7744,anchored
+,,,,,,,겨우 그 정도로 날 막을 수 있겠느냐!,,,,,,,,,,,You'll have to do better\nif you want to stop me!,7745,anchored
+,,,,,,,동정 따윈 필요 없다!,,,,,,,,,,,I don't need\nyour sympathy!,7746,anchored
+,,,,,,,뒤통수 조심해라!,,,,,,,,,,,You'd best watch your back!,7747,anchored
+,,,,,,,밤길 조심해라!,,,,,,,,,,,My wrath will haunt you\nfor years to come!,7748,anchored
+,,,,,,,나를 얕보지 마라!,,,,,,,,,,,Don't let my appearance fool you!,7749,anchored
+,,,,,,,다음은 누구냐!\n너냐?,,,,,,,,,,,Who's next? Don't be shy!\nCome out and fight!,7750,anchored
+,,,,,,,형님께 짐만 될 수는 없다!,,,,,,,,,,,I will not live\nin my brother's shadow!,7751,anchored
+,,,,,,,크아아악!,,,,,,,,,,,Arrrgh!,7752,anchored
+,,,,,,,전쟁만으로는 절대 태평성대가 오지 않는다!,,,,,,,,,,,War will not\nbring peace to our land!,7753,anchored
+,,,,,,,"자, 기습이다!",,,,,,,,,,,"One deadly ambush, coming up!",7754,anchored
+,,,,,,,넌 내 상대가 되지 않는다!,,,,,,,,,,,I'll stomp you out like an ant!,7755,anchored
+,,,,,,,좀 더 힘을 내볼까?,,,,,,,,,,,Time to get serious!,7756,anchored
+,,,,,,,본 실력을 보여주마!,,,,,,,,,,,This is what true strength is!,7757,anchored
+,,,,,,,장난은 여기까지다!,,,,,,,,,,,Play time is over!,7758,anchored
+,,,,,,,나는 상산 조자룡의 장남이다!,,,,,,,,,,,You face the eldest son\nof Zhao Zilong!,7759,anchored
+,,,,,,,아버님의 명예를 위해서!,,,,,,,,,,,For my father's honor!,7760,anchored
+,,,,,,,뿌리를 뽑아주마!,,,,,,,,,,,I'll smash you into oblivion!,7761,anchored
+,,,,,,,곤죽을 만들어주마!,,,,,,,,,,,I'll break every bone in your body!,7762,anchored
+,,,,,,,나비처럼 날아서 벌처럼 쏜다!,,,,,,,,,,,"Fly like a butterfly,\nsting like a bee!",7763,anchored
+,,,,,,,묘안이 떠올랐다!,,,,,,,,,,,I have a plan!,7764,anchored
+,,,,,,,욕이라면 누구에게도 지지 않지!,,,,,,,,,,,Throwing insults\nis my specialty!,7765,anchored
+,,,,,,,나 전만이 상대해주마!,,,,,,,,,,,"I, Dian Man,\nwill stop you!",7766,anchored
+,,,,,,,좋은 각도로군.,,,,,,,,,,,Hm... An excellent angle.,7767,anchored
+,,,,,,,상대가 되질 않는군!,,,,,,,,,,,You're no match for me!,7768,anchored
+,,,,,,,나 화났어!,,,,,,,,,,,Now I'm really angry!,7769,anchored
+,,,,,,,제대로 눌러주마!,,,,,,,,,,,This wound will be your last!,7770,anchored
+,,,,,,,새로운 세상이 올 것이다!,,,,,,,,,,,A new world\nwill dawn!,7771,anchored
+,,,,,,,변변치 않은 녀석들!,,,,,,,,,,,You worthless dogs!,7772,anchored
+,,,,,,,별 것도 아닌 것들이!,,,,,,,,,,,I eat weaklings like you for breakfast!,7773,anchored
+,,,,,,,이 지독한 녀석들!,,,,,,,,,,,"Quit your skittering, insects!",7774,anchored
+,,,,,,,이것이 훈련의 성과!,,,,,,,,,,,My training finally pays off!,7775,anchored
+,,,,,,,장호가 간다!,,,,,,,,,,,Make way for Zhang Hu!,7776,anchored
+,,,,,,,깨끗이 먹어치워라!,,,,,,,,,,,Eat 'em up!,7777,anchored
+,,,,,,,등 뒤가 비었군!,,,,,,,,,,,Your back is exposed!,7778,anchored
+,,,,,,,이건 몰랐을걸?,,,,,,,,,,,Betcha didn't see\nthat one coming!,7779,anchored
+,,,,,,,풍습이 왔다!,,,,,,,,,,,Feng Xi has arrived!,7780,anchored
+,,,,,,,모두 쓸어주마!,,,,,,,,,,,I'll sweep your forces off the map!,7781,anchored
+,,,,,,,"너, 참 무식하게 생겼군!",,,,,,,,,,,Your ignorance is\nwrit right across your brow!,7782,anchored
+,,,,,,,이 애송이 녀석!,,,,,,,,,,,You have much to learn!,7783,anchored
+,,,,,,,"소녀, 더 싸울 수 있습니다!",,,,,,,,,,,I can do this\nall day!,7784,anchored
+,,,,,,,지금은 싸울 때로군요.,,,,,,,,,,,"Today, we fight!",7785,anchored
+,,,,,,,여기까지입니다!,,,,,,,,,,,Time for you to retire!,7786,anchored
+,,,,,,,"소녀의 일격, 받아보시지요!",,,,,,,,,,,You think you can stand\nbefore my attacks?!,7787,anchored
+,,,,,,,"어이, 조심하라고!",,,,,,,,,,,"Hey, watch out!",7788,anchored
+,,,,,,,황실의 지엄함을 아느냐!,,,,,,,,,,,You dare disrespect\nthe royal court?,7789,anchored
+,,,,,,,끝까지 싸우겠어!,,,,,,,,,,,I will fight to the bitter end!,7790,anchored
+,,,,,,,아직 끝이 아니야!,,,,,,,,,,,I'm not done just yet!,7791,anchored
+,,,,,,,"좋다, 빈틈이로군!",,,,,,,,,,,Your weak spots are as plain as day!,7792,anchored
+,,,,,,,이 극악무도한 역적 무리들아!,,,,,,,,,,,"Die, vile enemies\nof the empire!",7793,anchored
+,,,,,,,내가 일당백의 사나이다!,,,,,,,,,,,"Face me! One or a hundred,\nit doesn't matter!",7794,anchored
+,,,,,,,내 실력을 보여주마!,,,,,,,,,,,This is my true strength!,7795,anchored
+,,,,,,,"자, 물어!",,,,,,,,,,,Sic 'em!,7796,anchored
+,,,,,,,모두 쓸어버려라!,,,,,,,,,,,Wipe them out!,7797,anchored
+,,,,,,,가진 걸 모두 내놓아라. 목숨까지도!,,,,,,,,,,,I'll take everything you have...\nStarting with your life!,7798,anchored
+,,,,,,,"자, 식사시간이다!",,,,,,,,,,,"It's feeding time, boys!",7799,anchored
+,,,,,,,받아라!,,,,,,,,,,,Eat this!,7800,anchored
+,,,,,,,까불지 마라!,,,,,,,,,,,Don't be so cocky!,7801,anchored
+,,,,,,,조준 완료!,,,,,,,,,,,Target acquired!,7802,anchored
+,,,,,,,과연 그렇군!,,,,,,,,,,,Have at you!,7803,anchored
+,,,,,,,온 정신을 집중한다!,,,,,,,,,,,My spirit is focused!,7804,anchored
+,,,,,,,다 죽여버리겠다!,,,,,,,,,,,None shall survive!,7805,anchored
+,,,,,,,내가 천하를 평정하겠다!,,,,,,,,,,,I will have the whole world\nunder my feet!,7806,anchored
+,,,,,,,쉽게 죽진 않는다!,,,,,,,,,,,I'm not going down that easy!,7807,anchored
+,,,,,,,이것이 용의 일격이다!,,,,,,,,,,,Face the dragon's strike!,7808,anchored
+,,,,,,,이것은 절호의 기회!,,,,,,,,,,,Hah! A golden opportunity!,7809,anchored
+,,,,,,,이것으로 또 승리다!,,,,,,,,,,,To victory!,7810,anchored
+,,,,,,,마무리!,,,,,,,,,,,This shall be the final blow!,7811,anchored
+,,,,,,,전차의 힘이다!,,,,,,,,,,,"Behold, the chariot's wrath!",7812,anchored
+,,,,,,,"이 공격 역시, 순리의 하나!",,,,,,,,,,,My attacks just can't be beat!,7813,anchored
+,,,,,,,"이 공격, 막을 수 있겠느냐!",,,,,,,,,,,Try and block this one! Haha!,7814,anchored
+,,,,,,,급습이다!,,,,,,,,,,,Ha! An ambush!,7815,anchored
+,,,,,,,용맹하게 돌진해라!,,,,,,,,,,,Go with courage!,7816,anchored
+,,,,,,,정복하겠다!,,,,,,,,,,,I shall conquer!,7817,anchored
+,,,,,,,더욱 빠르게!,,,,,,,,,,,"Faster, faster!",7818,anchored
+,,,,,,,항복해라!,,,,,,,,,,,Surrender!,7819,anchored
+,,,,,,,기다려라!,,,,,,,,,,,You're not going anywhere!,7820,anchored
+,,,,,,,전투도 즐겁게!,,,,,,,,,,,Who says battles can't be fun?,7821,anchored
+,,,,,,,몸조심하는 게 좋을 것이다!,,,,,,,,,,,I'd be more worried\nif I were you!,7822,anchored
+,,,,,,,갈기갈기 찢어주마!,,,,,,,,,,,I will shred you to pieces!,7823,anchored
+,,,,,,,실패는 없다!,,,,,,,,,,,I'm through with defeat!,7824,anchored
+,,,,,,,이것이 패왕의 힘이다!,,,,,,,,,,,Behold the power of an overlord!,7825,anchored
+,,,,,,,늦지 않았다.\n제거하라!,,,,,,,,,,,It's not too late.\nEliminate them!,7826,anchored
+,,,,,,,이것은 어떠신가요!,,,,,,,,,,,How about this?!,7827,anchored
+,,,,,,,나도 한번 이겨보자!,,,,,,,,,,,Let me win just this once!,7828,anchored
+,,,,,,,"워메, 받아보거라잉?",,,,,,,,,,,Hah! Just try to block this!,7829,anchored
+,,,,,,,압도적인 힘으로 공격한다!,,,,,,,,,,,strike them with\noverwhelming force!,7830,anchored
+,,,,,,,결사항전!,,,,,,,,,,,Fight back as if\nyour life depended on it!,7831,anchored
+,,,,,,,백제의 영광을 위하여!,,,,,,,,,,,For Baekje!\nFor glory!,7832,anchored
+,,,,,,,주제를 알아야 하는 법!,,,,,,,,,,,A man should\nknow his place!,7833,anchored
+,,,,,,,최선을 다해서!,,,,,,,,,,,I'll do my best!,7834,anchored
+,,,,,,,귀신 같은 신속함으로!,,,,,,,,,,,Quick as an arrow!,7835,anchored
+,,,,,,,나의 힘을 느껴보거라!,,,,,,,,,,,Here's just a taste\nof my strength!,7836,anchored
+,,,,,,,반드시 물리치겠다!,,,,,,,,,,,I will see you crushed!,7837,anchored
+,,,,,,,하늘의 기운을 받아!,,,,,,,,,,,The heavens have blessed me!,7838,anchored
+,,,,,,,내 앞길을 막지 마라!,,,,,,,,,,,Do not stand\nin my way!,7839,anchored
+,,,,,,,지금이라도 포기하시지!,,,,,,,,,,,It's never late\nto give up!,7840,anchored
+,,,,,,,꼭 이겨야 한다!,,,,,,,,,,,Defeat is not an option!,7841,anchored
+,,,,,,,백성을 위하여!,,,,,,,,,,,For the people!,7842,anchored
+,,,,,,,우리는 승리한다!,,,,,,,,,,,We shall prevail!,7843,anchored
+,,,,,,,돌진 앞으로!,,,,,,,,,,,Onward! Ever onward!,7844,anchored
+,,,,,,,시황제의 힘을 보여주마!,,,,,,,,,,,See it with your own eyes!\nQin Shi Huang's power!,7845,anchored
+,,,,,,,모두 죽여버리겠다!,,,,,,,,,,,"Die, all of you!",7846,anchored
+,,,,,,,따끔한 맛을 보여주마!,,,,,,,,,,,Let me beat some\nsense into you!,7847,anchored
+,,,,,,,수단과 방법을 가리지 않고!,,,,,,,,,,,I will do\nwhatever it takes!,7848,anchored
+,,,,,,,반드시 공을 세우겠다!,,,,,,,,,,,I will win this battle\nsinglehandedly!,7849,anchored
+,,,,,,,가문의 영광을 위하여!,,,,,,,,,,,For the glory\nof my family!,7850,anchored
+,,,,,,,죽을 각오로 돌격!,,,,,,,,,,,You must be willing to die\nto truly live!,7851,anchored
+,,,,,,,힘을 모아서!,,,,,,,,,,,Gather your strength!,7852,anchored
+,,,,,,,이쪽일까? 저쪽일까!,,,,,,,,,,,"Where in the...?\nAha, there you are!",7853,anchored
+,,,,,,,조국을 위해!,,,,,,,,,,,For the kingdom!,7854,anchored
+,,,,,,,모두 없애주마!,,,,,,,,,,,Say goodbye to this world!,7855,anchored
+,,,,,,,여자라고 무시하지 마라!,,,,,,,,,,,You think you can best me?\nThink again!,7856,anchored
+,,,,,,,교룡득수!,,,,,,,,,,,Ha! Like a dragon to the skies!,7857,anchored
+,,,,,,,수준 차이를 보여주마!,,,,,,,,,,,You will\nnever reach my level!,7858,anchored
+,,,,,,,이것이 대왕의 힘이다!,,,,,,,,,,,Bow before\nthe king!,7859,anchored
+,,,,,,,다 쓸어 버리겠다!,,,,,,,,,,,You will be obliterated!,7860,anchored
+,,,,,,,미륵의 힘으로!,,,,,,,,,,,Buddha watches over me!,7861,anchored
+,,,,,,,선두에 서겠다! 돌격!,,,,,,,,,,,I will lead the charge.\nAttack!,7862,anchored
+,,,,,,,이 놈! 저리 비켜라!,,,,,,,,,,,"You there! Move aside,\nor face my wrath!",7863,anchored
+,,,,,,,조준 발사!,,,,,,,,,,,Ready! Aim! Fire!,7864,anchored
+,,,,,,,내가 기병대장 복지겸이다!,,,,,,,,,,,"I am Bok Jigyeom,\nthe cavalry commander!",7865,anchored
+,,,,,,,어리석은 자로구나!,,,,,,,,,,,Pitiful fool!,7866,anchored
+,,,,,,,하하하! 모두 죽여주마!,,,,,,,,,,,Hahaha! Really?!\nJust die already!,7867,anchored
+,,,,,,,통일의 대업을 이루겠다!,,,,,,,,,,,I will unite all lands\nunder the sky!,7868,anchored
+,,,,,,,나의 힘을 선보이겠다!,,,,,,,,,,,The world fill finally\nwitness my strength!,7869,anchored
+,,,,,,,"후후, 상대할 수 있겠는가?",,,,,,,,,,,Haha! Do you really think\nyou are up for this?,7870,anchored
+,,,,,,,돌격! 돌격! 돌격!,,,,,,,,,,,Charge! Charge! Charge!,7871,anchored
+,,,,,,,내가 앞장 서겠다!,,,,,,,,,,,I will ride in the front!,7872,anchored
+,,,,,,,감히 나에게 덤비다니!,,,,,,,,,,,You dare\ntaunt me?!,7873,anchored
+,,,,,,,없애 주겠다!,,,,,,,,,,,I will destroy you!,7874,anchored
+,,,,,,,지금이다!,,,,,,,,,,,Now!,7875,anchored
+,,,,,,,저리 꺼져라!,,,,,,,,,,,Make yourself scarce!,7876,anchored
+,,,,,,,풍림화산!,,,,,,,,,,,"Swift, yet silent! Fierce, yet stable!",7877,anchored
+,,,,,,,나의 창술을 보여주지!,,,,,,,,,,,Marvel at\nmy spearmanship!,7878,anchored
+,,,,,,,앞만 보고 달려라! 돌격!,,,,,,,,,,,Charge!\nDon't look back!,7879,anchored
+,,,,,,,살기 위해서!,,,,,,,,,,,For our very survival!,7880,anchored
+,,,,,,,비키란 말이다!,,,,,,,,,,,I said MOVE!,7881,anchored
+,,,,,,,가문의 보존을 위해!,,,,,,,,,,,The Sanada clan shall not fall!,7882,anchored
+,,,,,,,걸렸구나!,,,,,,,,,,,My plan worked!,7883,anchored
+,,,,,,,나의 전법을 막을 수 있겠느냐!,,,,,,,,,,,You will never see\nthrough my strategy!,7884,anchored
+,,,,,,,나의 필살 일격을 맛봐라!,,,,,,,,,,,Your death shall be swift!,7885,anchored
+,,,,,,,좋아! 이때다!,,,,,,,,,,,Excellent! Our time has come!,7886,anchored
+,,,,,,,네 이놈!,,,,,,,,,,,Damn you!,7887,anchored
+,,,,,,,뒷걸음치지 마라! 돌격!,,,,,,,,,,,Do not back down!\nForward!,7888,anchored
+,,,,,,,감히 나를 무시하다니!,,,,,,,,,,,I'll wipe that smug look\nclean off your face!,7889,anchored
+,,,,,,,가소로운 놈!,,,,,,,,,,,Hah! Are you trying\nto make me laugh?!,7890,anchored
+,,,,,,,가까이 오지마라!,,,,,,,,,,,Come no closer!,7891,anchored
+,,,,,,,싸그리 뭉게주지!,,,,,,,,,,,I will erase you from this world!,7892,anchored
+,,,,,,,포기하지마라!,,,,,,,,,,,It's too early to give up!,7893,anchored
+,,,,,,,모두 물리쳐주마!,,,,,,,,,,,I shall crush you all!,7894,anchored
+,,,,,,,나의 한수! 받아보시지요.,,,,,,,,,,,My turn!\nAre you ready for this?,7895,anchored
+,,,,,,,최후의 최후까지 항전!,,,,,,,,,,,Fight! Fight\nto the last man!,7896,anchored
+,,,,,,,아버지의 위용! 내가 잇는다!,,,,,,,,,,,I shall bring pride\nto my father's name!,7897,anchored
+,,,,,,,상산엔 조자룡만 있는게 아니다!,,,,,,,,,,,Zilong is not\nthe only hero of Mount Chang!,7898,anchored
+,,,,,,,새로운 세상을 받아들여라!,,,,,,,,,,,Embrace the new world!,7899,anchored
+,,,,,,,길을 비켜라!,,,,,,,,,,,Get out of the way!,7900,anchored
+,,,,,,,틈을 보이지 말아라!,,,,,,,,,,,Don't let your guard down!,7901,anchored
+,,,,,,,맛 좀 봐라!,,,,,,,,,,,Try this on for size!,7902,anchored
+,,,,,,,부숴주마! 으라차차!,,,,,,,,,,,Crush! Destroy!\nGraaah!,7903,anchored
+,,,,,,,오과국의 힘을 보여주지!,,,,,,,,,,,Bear witness to\nthe power of the Wuge!,7904,anchored
+,,,,,,,목을 내어놓아라!,,,,,,,,,,,Your head is mine!,7905,anchored
+,,,,,,,어쩔 수 없이 널 없애주마!,,,,,,,,,,,I have no choice\nbut to destroy you!,7906,anchored
+,,,,,,,침착하게 처리한다!,,,,,,,,,,,Don't panic!,7907,anchored
+,,,,,,,우리는 지지 않는다!,,,,,,,,,,,It will take more than\nthat to stop me!,7908,anchored
+,,,,,,,죽어라! 죽어라! 죽어라!,,,,,,,,,,,"Just...die!\nDie, die, DIE!",7909,anchored
+,,,,,,,내 칼을 받아라!,,,,,,,,,,,My blade thirsts for your blood!,7910,anchored
+,,,,,,,"약초가 어디있더라….\n에잇, 이거나 먹어랏!",,,,,,,,,,,"Now, where did I put that herb...?\nAHA! Sneak attack!",7911,anchored
+,,,,,,,음과 양의 조화가 중요하지요.,,,,,,,,,,,The harmony of yin and yang\nis all that matters.,7912,anchored
+,,,,,,,"하하, 이건 어떤가?",,,,,,,,,,,Haha! How do you like that?,7913,anchored
+,,,,,,,절대 실망시키지 않겠습니다!,,,,,,,,,,,I will never let you down!,7914,anchored
+,,,,,,,내 주먹을 받아라!,,,,,,,,,,,Taste my fist!,7915,anchored
+,,,,,,,평정심을 잃지 않아야 합니다.,,,,,,,,,,,Always keep a calm mind.,7916,anchored
+,,,,,,,어디에 있을까…?,,,,,,,,,,,Where are you...?,7917,anchored
+,,,,,,,어디 한번 날뛰어볼까?,,,,,,,,,,,Who's ready for a rampage?!,7918,anchored
+,,,,,,,내가 믿는 건 내 창과 굳은 의지뿐이다!,,,,,,,,,,,I trust two things…\nMy spear and my resolve!,7919,anchored
+,,,,,,,"이 곡조, 들어주시길!",,,,,,,,,,,Please listen to this melody!,7920,anchored
+,,,,,,,천하의 희생양이 되어라!,,,,,,,,,,,You're the villain of this world!,7921,anchored
+,,,,,,,맹덕을 위해서라면!,,,,,,,,,,,Anything for Cao Cao!,7922,anchored
+,,,,,,,제 노래에 취하셨군요?,,,,,,,,,,,"Oh, do you like one of my songs?",7923,anchored
+,,,,,,,똑같이 만들어주마!,,,,,,,,,,,I'll make sure you don't get up again!,7924,anchored
+,,,,,,,썩 꺼지지 못하겠느냐!,,,,,,,,,,,Get out of my way!,7925,anchored
+,,,,,,,이것이 선비족의 저력이다!,,,,,,,,,,,Behold the power of the Seonbi tribe!,7926,anchored
+,,,,,,,두 동강 내주마!,,,,,,,,,,,I'll cut you in half!,7927,anchored
+,,,,,,,이것으로 끝이다!,,,,,,,,,,,This is it!,7928,anchored
+,,,,,,,돌파의 정석을 보여주마!,,,,,,,,,,,Here's a real breakthrough!,7929,anchored
+,,,,,,,약속된 시간이 왔군!,,,,,,,,,,,The time has come!,7930,anchored
+,,,,,,,"궁술이란, 바로 이런 것이다!",,,,,,,,,,,This is true archery!,7931,anchored
+,,,,,,,하하! 내 앞에서 무릎 꿇어라!,,,,,,,,,,,Haha! Kneel before me!,7932,anchored
+,,,,,,,의심해 보아라!,,,,,,,,,,,To face me is to doubt yourself!,7933,anchored
+,,,,,,,내 기마술을 따라갈 수 있겠느냐!,,,,,,,,,,,Just try and keep up!,7934,anchored
+,,,,,,,구워 삶아질 차례네?,,,,,,,,,,,I'll burn you to a crisp!,7935,anchored
+,,,,,,,문답무용!,,,,,,,,,,,No excuses!,7936,anchored
+,,,,,,,"활활, 타올라라!",,,,,,,,,,,Burn! Everything must BURN!,7937,anchored
+,,,,,,,저항하지 마세요.,,,,,,,,,,,Do not resist.,7938,anchored
+,,,,,,,어리석은 존재여!,,,,,,,,,,,How pathetic!,7939,anchored
+,,,,,,,현무,,,,,,,,,,,Black Tortoise,7940,anchored
+,,,,,,,각성현무,,,,,,,,,,,Awakened Black Tortoise,7941,anchored
+,,,,,,,조심하시오.,,,,,,,,,,,Hm. You should be more careful.,7942,anchored
+,,,,,,,내 칼을 받을 수 있겠느냐!,,,,,,,,,,,Taste my blade!,7943,anchored
+,,,,,,,"저 멀리, 날아가!",,,,,,,,,,,Fly away from here!,7944,anchored
+,,,,,,,"자, 끝입니다.",,,,,,,,,,,This ends here!,7945,anchored
+,,,,,,,자근자근 밟아줄께!,,,,,,,,,,,I'll crush you into dust!,7946,anchored
+,,,,,,,"바로, 이 순간이야!",,,,,,,,,,,The moment I've been waiting for!,7947,anchored
+,,,,,,,제 품에서 죽여드리죠.,,,,,,,,,,,My embrace will be your undoing.,7948,anchored
+,,,,,,,활로는 여기다!,,,,,,,,,,,We will break through!,7949,anchored
+,,,,,,,나쁜 놈아아-!!,,,,,,,,,,,You bastard!,7950,anchored
+,,,,,,,방해된다!,,,,,,,,,,,You're in my way!,7951,anchored
+,,,,,,,머리를 조아려라!,,,,,,,,,,,Bow before me!,7952,anchored
+,,,,,,,"여기서, 승부!",,,,,,,,,,,The moment of truth has arrived!,7953,anchored
+,,,,,,,바보는 매가 약이지!,,,,,,,,,,,The foolish deserve to be punished!,7954,anchored
+,,,,,,,"이것이, 의리의 검!",,,,,,,,,,,Mine is the blade of honor!,7955,anchored
+,,,,,,,"펴, 편히 쉬세요!",,,,,,,,,,,Rest in peace!,7956,anchored
+,,,,,,,이것이 짐의 천하!,,,,,,,,,,,You're in my world now!,7957,anchored
+,,,,,,,실패란 없소!,,,,,,,,,,,There's no such thing as failure in my book!,7958,anchored
+,,,,,,,산 채로 묻어 주마!,,,,,,,,,,,I'll bury you alive!,7959,anchored
+,,,,,,,"끝입니다, 여기서!",,,,,,,,,,,"This ends right here, right now!",7960,anchored
+,,,,,,,이걸로 역전이오!,,,,,,,,,,,The tide has turned!,7961,anchored
+,,,,,,,약진! 앞으로!,,,,,,,,,,,Charge! Onward!,7962,anchored
+,,,,,,,잘 가라구!,,,,,,,,,,,Farewell!,7963,anchored
+,,,,,,,대마를 잡겠군!,,,,,,,,,,,The demon shall fall!,7964,anchored
+,,,,,,,모순은 없다!,,,,,,,,,,,For honor!,7965,anchored
+,,,,,,,장군의 일격이다!,,,,,,,,,,,Take my weapon!,7966,anchored
+,,,,,,,그것은 안 되오!,,,,,,,,,,,Impossible!,7967,anchored
+,,,,,,,날 만족시켜라!,,,,,,,,,,,Make me feel alive!,7968,anchored
+,,,,,,,영원한 안식을!,,,,,,,,,,,Find peace in death!,7969,anchored
+,,,,,,,돌격! 앞으로~,,,,,,,,,,,Charge! Ever onward!,7970,anchored

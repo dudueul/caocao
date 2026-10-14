@@ -1,0 +1,1414 @@
+column,seq,loc_row,confidence,ko,en
+name,1,15807,inferred,관통 책략 40,Piercing Tactics 40
+name,2,15808,inferred,원술 방어 특화% (2),Yuan Shu Defense Specialization % (2)
+name,3,15809,inferred,엄백호 방어 특화%,Yan Baihu Defense Specialization %
+name,4,15810,inferred,관통 책략 20,Piercing Tactics 20
+name,5,15811,inferred,회심 피해 감소 50,Critical Hit Damage 50
+name,6,15812,inferred,손권 방어 특화%,Sun Quan Defense Specialization %
+name,7,15813,inferred,하후연 방어 특화%,Xiahou Yuan Defense Specialization %
+name,8,15814,inferred,은갱동_맹획 방어 특화%,Yinkendong_Meng Huo Defense Specialization %
+name,9,15815,inferred,관통 공격 24,Piercing Attack 24
+name,10,15816,inferred,조인1 방어 특화%,Cao Ren 1 Defense Specialization %
+name,11,15817,inferred,조인2 방어 특화%,Cao Ren 2 Defense Specialization %
+name,12,15818,inferred,공격 명중률 증가 50,Attack ACC +50
+name,13,15819,inferred,학소1 방어 특화%,Hao Zhao 1 Defense Specialization %
+name,14,15820,inferred,학소2 방어 특화%,Hao Zhao 2 Defense Specialization %
+name,15,15821,inferred,독룡동_맹획 방어 특화%,Tulong Cave_Meng Huo Defense Specialization %
+name,16,15822,inferred,강유 방어 특화%,Jiang Wei Defense Specialization %
+name,17,15823,inferred,관통 공격 5,Piercing Attack 5
+name,18,15824,inferred,관통 공격 6,
+name,19,15825,inferred,마남풍 방어 특화%,
+name,20,15826,inferred,연의 정복자 Ⅰ-Ⅰ,Legend Maker I-I
+name,21,15827,inferred,연의 정복자 Ⅰ-Ⅱ,Legend Maker I-II
+name,22,15828,inferred,연의 정복자 Ⅰ-Ⅲ,Legend Maker I-III
+name,23,15829,inferred,연의 정복자 Ⅱ-Ⅰ,Legend Maker II-I
+name,24,15830,inferred,연의 정복자 Ⅱ-Ⅱ,Legend Maker II-II
+name,25,15831,inferred,연의 정복자 Ⅱ-Ⅲ,Legend Maker II-III
+name,26,15832,inferred,연의 정복자(극한) Ⅰ-Ⅰ,Legend Maker (Extreme) I-I
+name,27,15833,inferred,연의 정복자(극한) Ⅰ-Ⅱ,Legend Maker (Extreme) I-II
+name,28,15834,inferred,연의 정복자(극한) Ⅰ-Ⅲ,Legend Maker (Extreme) I-III
+name,29,15835,inferred,연의 정복자(극한) Ⅱ-Ⅰ,Legend Maker (Extreme) II-I
+name,30,15836,inferred,연의 정복자(극한) Ⅱ-Ⅱ,Legend Maker (Extreme) II-II
+name,31,15837,inferred,연의 정복자(극한) Ⅱ-Ⅲ,Legend Maker (Extreme) II-III
+name,32,15838,inferred,연의 정복자(극한) Ⅲ-Ⅰ,Legend Maker (Extreme) III-I
+name,33,15839,inferred,연의 정복자(극한) Ⅲ-Ⅱ,Legend Maker (Extreme) III-II
+name,34,15840,inferred,연의 정복자(극한) Ⅲ-Ⅲ,Legend Maker (Extreme) III-III
+name,35,15841,inferred,연의 승리(극한) Ⅰ,Victorious (Extreme) I
+name,36,15842,anchored,연의 승리(극한) Ⅱ,Victorious (Extreme) II
+name,37,15843,anchored,연의 승리(극한) Ⅲ,Victorious (Extreme) III
+name,38,15844,anchored,승리 Ⅰ-Ⅰ,Conqueror I-I
+name,39,15845,anchored,승리 Ⅰ-Ⅱ,Conqueror I-II
+name,40,15846,anchored,승리 Ⅰ-Ⅲ,Conqueror I-III
+name,41,15847,anchored,승리 Ⅱ-Ⅰ,Conqueror II-I
+name,42,15848,anchored,승리 Ⅱ-Ⅱ,Conqueror II-II
+name,43,15849,anchored,승리 Ⅱ-Ⅲ,Conqueror II-III
+name,44,15850,anchored,좌절감이 사나이를 키운다!,A man is forged by his defeats!
+name,45,15851,anchored,공성전 Ⅰ-Ⅰ,Siege Battle I-I
+name,46,15852,anchored,공성전 Ⅰ-Ⅱ,Siege Battle I-II
+name,47,15853,anchored,공성전 Ⅰ-Ⅲ,Siege Battle I-III
+name,48,15854,anchored,공성전 Ⅱ-Ⅰ,Siege Battle II-I
+name,49,15855,anchored,공성전 Ⅱ-Ⅱ,Siege Battle II-II
+name,50,15856,anchored,공성전 Ⅱ-Ⅲ,Siege Battle II-III
+name,51,15857,anchored,모의전 Ⅰ-Ⅰ,Practice I-I
+name,52,15858,anchored,모의전 Ⅰ-Ⅱ,Practice I-II
+name,53,15859,anchored,모의전 Ⅰ-Ⅲ,Practice I-III
+name,54,15860,anchored,모의전 Ⅱ-Ⅰ,Practice II-I
+name,55,15861,anchored,모의전 Ⅱ-Ⅱ,Practice II-II
+name,56,15862,anchored,모의전 Ⅱ-Ⅲ,Practice II-III
+name,57,15863,anchored,토벌왕 Ⅰ-Ⅰ,Subjugator I-I
+name,58,15864,anchored,토벌왕 Ⅰ-Ⅱ,Subjugator I-II
+name,59,15865,anchored,토벌왕 Ⅰ-Ⅲ,Subjugator I-III
+name,60,15866,anchored,토벌왕 Ⅱ-Ⅰ,Subjugator II-I
+name,61,15867,anchored,토벌왕 Ⅱ-Ⅱ,Subjugator II-II
+name,62,15868,anchored,토벌왕 Ⅱ-Ⅲ,Subjugator II-III
+name,63,15869,anchored,적병! 물리쳤다! Ⅰ-Ⅰ,Unstoppable Force I-I
+name,64,15870,anchored,적병! 물리쳤다! Ⅰ-Ⅱ,Unstoppable Force I-II
+name,65,15871,anchored,적병! 물리쳤다! Ⅰ-Ⅲ,Unstoppable Force I-III
+name,66,15872,anchored,적병! 물리쳤다! Ⅱ-Ⅰ,Unstoppable Force II-I
+name,67,15873,anchored,적병! 물리쳤다! Ⅱ-Ⅱ,Unstoppable Force II-II
+name,68,15874,anchored,적병! 물리쳤다! Ⅱ-Ⅲ,Unstoppable Force II-III
+name,69,15875,anchored,적장! 물리쳤다!,Head of the Snake
+name,70,15876,anchored,가짜 황제,False Emperor
+name,71,15877,anchored,여장부 Ⅰ,Woman Warrior I
+name,72,15878,anchored,여장부 Ⅱ,Woman Warrior II
+name,73,15879,anchored,여장부 Ⅲ,Woman Warrior III
+name,74,15880,anchored,공격하라! Ⅰ,Assault I
+name,75,15881,anchored,공격하라! Ⅱ,Assault II
+name,76,15882,anchored,공격하라! Ⅲ,Assault III
+name,77,15883,anchored,"공격, 또 공격",Endless Onslaught
+name,78,15884,anchored,약점 간파,Identify Weakness
+name,79,15885,anchored,단생산사,Stronger Together
+name,80,15886,anchored,공격 책략 Ⅰ,Tactical Assault I
+name,81,15887,anchored,공격 책략 Ⅱ,Tactical Assault II
+name,82,15888,anchored,공격 책략 Ⅲ,Tactical Assault III
+name,83,15889,anchored,구원 Ⅰ,Rescue I
+name,84,15890,anchored,구원 Ⅱ,Rescue II
+name,85,15891,anchored,구원 Ⅲ,Rescue III
+name,86,15892,anchored,"책략, 또 책략",Maneuvers
+name,87,15893,anchored,지략 간파,See it Through
+name,88,15894,anchored,피하면 그만,You Missed!
+name,89,15895,anchored,물집 잡힌 발,Tired Feet
+name,90,15896,anchored,장수 성장 Ⅰ-Ⅰ,Train Commanders I-I
+name,91,15897,anchored,장수 성장 Ⅰ-Ⅱ,Train Commanders I-II
+name,92,15898,anchored,장수 성장 Ⅰ-Ⅲ,Train Commanders I-III
+name,93,15899,anchored,장수 성장 Ⅱ-Ⅰ,Train Commanders II-I
+name,94,15900,anchored,장수 성장 Ⅱ-Ⅱ,Train Commanders II-II
+name,95,15901,anchored,장수 성장 Ⅱ-Ⅲ,Train Commanders II-III
+name,96,15902,anchored,장수 획득 Ⅰ-Ⅰ,Recruit Commanders I-I
+name,97,15903,anchored,장수 획득 Ⅰ-Ⅱ,Recruit Commanders I-II
+name,98,15904,anchored,장수 획득 Ⅰ-Ⅲ,Recruit Commanders I-III
+name,99,15905,anchored,장수 강화 Ⅰ-Ⅰ,Upgrade Commanders I-I
+name,100,15906,anchored,장수 강화 Ⅰ-Ⅱ,Upgrade Commanders I-II
+name,101,15907,anchored,장수 강화 Ⅰ-Ⅲ,Upgrade Commanders I-III
+name,102,15908,anchored,구호병! Ⅰ,Healer I
+name,103,15909,anchored,구호병! Ⅱ,Healer II
+name,104,15910,anchored,구호병! Ⅲ,Healer III
+name,105,15911,anchored,부귀영화 Ⅰ,Great Riches I
+name,106,15912,anchored,부귀영화 Ⅱ,Great Riches II
+name,107,15913,anchored,부귀영화 Ⅲ,Great Riches III
+name,108,15914,anchored,종명정식 Ⅰ,"Well Fed, Well Bred I"
+name,109,15915,anchored,종명정식 Ⅱ,"Well Fed, Well Bred II"
+name,110,15916,anchored,종명정식 Ⅲ,"Well Fed, Well Bred III"
+name,111,15917,anchored,논공행상 Ⅰ,Just Rewards I
+name,112,15918,anchored,논공행상 Ⅱ,Just Rewards II
+name,113,15919,anchored,논공행상 Ⅲ,Just Rewards III
+name,114,15920,anchored,대부호 Ⅰ-Ⅰ,Capitalist I-I
+name,115,15921,anchored,대부호 Ⅰ-Ⅱ,Capitalist I-II
+name,116,15922,anchored,대부호 Ⅰ-Ⅲ,Capitalist I-III
+name,117,15923,anchored,대부호 Ⅱ-Ⅰ,Capitalist II-I
+name,118,15924,anchored,대부호 Ⅱ-Ⅱ,Capitalist II-II
+name,119,15925,anchored,대부호 Ⅱ-Ⅲ,Capitalist II-III
+name,120,15926,anchored,미도 Ⅰ-Ⅰ,Bread Winner I-I
+name,121,15927,anchored,미도 Ⅰ-Ⅱ,Bread Winner I-II
+name,122,15928,anchored,미도 Ⅰ-Ⅲ,Bread Winner I-III
+name,123,15929,anchored,미도 Ⅱ-Ⅰ,Bread Winner II-I
+name,124,15930,anchored,미도 Ⅱ-Ⅱ,Bread Winner II-II
+name,125,15931,anchored,미도 Ⅱ-Ⅲ,Bread Winner II-III
+name,126,15932,anchored,전장의 공신 Ⅰ-Ⅰ,MVP I-I
+name,127,15933,anchored,전장의 공신 Ⅰ-Ⅱ,MVP I-II
+name,128,15934,anchored,전장의 공신 Ⅰ-Ⅲ,MVP I-III
+name,129,15935,anchored,전장의 공신 Ⅱ-Ⅰ,MVP II-I
+name,130,15936,anchored,전장의 공신 Ⅱ-Ⅱ,MVP II-II
+name,131,15937,anchored,전장의 공신 Ⅱ-Ⅲ,MVP II-III
+name,132,15938,anchored,제작의 달인 Ⅰ,Master Craftsman I
+name,133,15939,anchored,제작의 달인 Ⅱ,Master Craftsman II
+name,134,15940,anchored,제작의 달인 Ⅲ,Master Craftsman III
+name,135,15941,anchored,거점 점령 Ⅰ-Ⅰ,The Course of Empire I-I
+name,136,15942,anchored,거점 점령 Ⅰ-Ⅱ,The Course of Empire I-II
+name,137,15943,anchored,거점 점령 Ⅰ-Ⅲ,The Course of Empire I-III
+name,138,15944,anchored,거점 점령 Ⅱ-Ⅰ,The Course of Empire II-I
+name,139,15945,anchored,거점 점령 Ⅱ-Ⅱ,The Course of Empire II-II
+name,140,15946,anchored,거점 점령 Ⅱ-Ⅲ,The Course of Empire II-III
+name,141,15947,anchored,시설 증축 Ⅰ,Construction I
+name,142,15948,anchored,시설 증축 Ⅱ,Construction II
+name,143,15949,anchored,시설 증축 Ⅲ,Construction III
+name,144,15950,anchored,일취월장 Ⅰ-Ⅰ,Marching Forward I-I
+name,145,15951,anchored,일취월장 Ⅰ-Ⅱ,Marching Forward I-II
+name,146,15952,anchored,일취월장 Ⅰ-Ⅲ,Marching Forward I-III
+name,147,15953,anchored,일취월장 Ⅱ-Ⅰ,Marching Forward II-I
+name,148,15954,anchored,일취월장 Ⅱ-Ⅱ,Marching Forward II-II
+name,149,15955,anchored,일취월장 Ⅱ-Ⅲ,Marching Forward II-III
+name,150,15956,anchored,일취월장 Ⅲ-Ⅰ,Marching Forward III-I
+name,151,15957,anchored,일취월장 Ⅲ-Ⅱ,Marching Forward III-II
+name,152,15958,anchored,일취월장 Ⅲ-Ⅲ,Marching Forward III-III
+name,153,15959,anchored,계보의 완성 Ⅰ-Ⅰ,Complete Banners I-I
+name,154,15960,anchored,계보의 완성 Ⅰ-Ⅱ,Complete Banners I-II
+name,155,15961,anchored,계보의 완성 Ⅰ-Ⅲ,Complete Banners I-III
+name,156,15962,anchored,계보의 완성 Ⅱ-Ⅰ,Complete Banners II-I
+name,157,15963,anchored,계보의 완성 Ⅱ-Ⅱ,Complete Banners II-II
+name,158,15964,anchored,계보의 완성 Ⅱ-Ⅲ,Complete Banners II-III
+name,159,15965,anchored,성장의 끝 Ⅰ-Ⅰ,Ultimate Level I-I
+name,160,15966,anchored,성장의 끝 Ⅰ-Ⅱ,Ultimate Level I-II
+name,161,15967,anchored,성장의 끝 Ⅰ-Ⅲ,Ultimate Level I-III
+name,162,15968,anchored,성장의 끝 Ⅱ-Ⅰ,Ultimate Level II-I
+name,163,15969,anchored,성장의 끝 Ⅱ-Ⅱ,Ultimate Level II-II
+name,164,15970,anchored,성장의 끝 Ⅱ-Ⅲ,Ultimate Level II-III
+name,165,15971,anchored,강화 Ⅰ-Ⅰ,Upgrade I-I
+name,166,15972,anchored,강화 Ⅰ-Ⅱ,Upgrade I-II
+name,167,15973,anchored,강화 Ⅰ-Ⅲ,Upgrade I-III
+name,168,15974,anchored,강화 Ⅱ-Ⅰ,Upgrade II-I
+name,169,15975,anchored,강화 Ⅱ-Ⅱ,Upgrade II-II
+name,170,15976,anchored,강화 Ⅱ-Ⅲ,Upgrade II-III
+name,171,15977,anchored,훈련의 성과 Ⅰ-Ⅰ,Training Payoff I-I
+name,172,15978,anchored,훈련의 성과 Ⅰ-Ⅱ,Training Payoff I-II
+name,173,15979,anchored,훈련의 성과 Ⅰ-Ⅲ,Training Payoff I-III
+name,174,15980,anchored,훈련의 성과 Ⅱ-Ⅰ,Training Payoff II-I
+name,175,15981,anchored,훈련의 성과 Ⅱ-Ⅱ,Training Payoff II-II
+name,176,15982,anchored,훈련의 성과 Ⅱ-Ⅲ,Training Payoff II-III
+name,177,15983,anchored,비기 수련 Ⅰ-Ⅰ,Esoterica I-I
+name,178,15984,anchored,비기 수련 Ⅰ-Ⅱ,Esoterica I-II
+name,179,15985,anchored,비기 수련 Ⅰ-Ⅲ,Esoterica I-III
+name,180,15986,anchored,비기 수련 Ⅱ-Ⅰ,Esoterica II-I
+name,181,15987,anchored,비기 수련 Ⅱ-Ⅱ,Esoterica II-II
+name,182,15988,anchored,비기 수련 Ⅱ-Ⅲ,Esoterica II-III
+name,183,15989,anchored,등용 Ⅰ-Ⅰ,Recruit I-I
+name,184,15990,anchored,등용 Ⅰ-Ⅱ,Recruit I-II
+name,185,15991,anchored,등용 Ⅰ-Ⅲ,Recruit I-III
+name,186,15992,anchored,등용 Ⅱ-Ⅰ,Recruit II-I
+name,187,15993,anchored,등용 Ⅱ-Ⅱ,Recruit II-II
+name,188,15994,anchored,등용 Ⅱ-Ⅲ,Recruit II-III
+name,189,15995,anchored,증여 Ⅰ-Ⅰ,Headhunter I-I
+name,190,15996,anchored,증여 Ⅰ-Ⅱ,Headhunter I-II
+name,191,15997,anchored,증여 Ⅰ-Ⅲ,Headhunter I-III
+name,192,15998,anchored,증여 Ⅱ-Ⅰ,Headhunter II-I
+name,193,15999,anchored,증여 Ⅱ-Ⅱ,Headhunter II-II
+name,194,16000,anchored,증여 Ⅱ-Ⅲ,Headhunter II-III
+name,195,16001,anchored,승급 Ⅰ-Ⅰ,Promotion I-I
+name,196,16002,anchored,승급 Ⅰ-Ⅱ,Promotion I-II
+name,197,16003,anchored,승급 Ⅰ-Ⅲ,Promotion I-III
+name,198,16004,anchored,승급 Ⅱ-Ⅰ,Promotion II-I
+name,199,16005,anchored,승급 Ⅱ-Ⅱ,Promotion II-II
+name,200,16006,anchored,승급 Ⅱ-Ⅲ,Promotion II-III
+name,201,16007,anchored,포상 Ⅰ,Prize I
+name,202,16008,anchored,포상 Ⅱ,Prize II
+name,203,16009,anchored,포상 Ⅲ,Prize III
+name,204,16010,anchored,전장의 명예 Ⅰ-Ⅰ,Honor in Battle I-I
+name,205,16011,anchored,전장의 명예 Ⅰ-Ⅱ,Honor in Battle I-II
+name,206,16012,anchored,전장의 명예 Ⅰ-Ⅲ,Honor in Battle I-III
+name,207,16013,anchored,전장의 명예 Ⅱ-Ⅰ,Honor in Battle II-I
+name,208,16014,anchored,전장의 명예 Ⅱ-Ⅱ,Honor in Battle II-II
+name,209,16015,anchored,전장의 명예 Ⅱ-Ⅲ,Honor in Battle II-III
+name,210,16016,anchored,조조전 사실 정복  I,Cao Cao Historic Story I
+name,211,16017,anchored,조조전 사실 정복  II,Cao Cao Historic Story II
+name,212,16018,anchored,조조전 사실 정복(극한)  I,Cao Cao Historic Story (Extreme) I
+name,213,16019,anchored,조조전 사실 정복(극한)  II,Cao Cao Historic Story (Extreme) II
+name,214,16020,anchored,조조전 가상 정복  I,Cao Cao Alternative Story I
+name,215,16021,anchored,조조전 가상 정복  II,Cao Cao Alternative Story II
+name,216,16022,anchored,조조전 가상 정복(극한)  I,Cao Cao Alternative Story (Extreme) I
+name,217,16023,anchored,조조전 가상 정복(극한)  II,Cao Cao Alternative Story (Extreme) II
+name,218,16024,anchored,북부위전 정복  I,Legend of the Northern District Captain I
+name,219,16025,anchored,북부위전 정복  II,Legend of the Northern District Captain II
+name,220,16026,anchored,북부위전 정복(극한)  I,Legend of the Northern District Captain (Extreme) I
+name,221,16027,anchored,북부위전 정복(극한)  II,Legend of the Northern District Captain (Extreme) II
+name,222,16028,anchored,장각전 정복  I,Legend of Zhang Jue I
+name,223,16029,anchored,장각전 정복  II,Legend of Zhang Jue II
+name,224,16030,anchored,장각전 정복(극한)  I,Legend of Zhang Jue (Extreme) I
+name,225,16031,anchored,장각전 정복(극한)  II,Legend of Zhang Jue (Extreme) II
+name,226,16032,anchored,사마의전(상) 정복  I,Legend of Sima Yi (Ch.1) I
+name,227,16033,anchored,사마의전(상) 정복  II,Legend of Sima Yi (Ch.1) II
+name,228,16034,anchored,사마의전(상) 정복(극한)  I,Legend of Sima Yi (Ch.1)(Extreme) I
+name,229,16035,anchored,사마의전(상) 정복(극한)  II,Legend of Sima Yi (Ch.1)(Extreme) II
+name,230,16036,anchored,장료전 정복  I,Legend of Zhang Liao I
+name,231,16037,anchored,장료전 정복  II,Legend of Zhang Liao II
+name,232,16038,anchored,장료전 정복(극한)  I,Legend of Zhang Liao (Extreme) I
+name,233,16039,anchored,장료전 정복(극한)  II,Legend of Zhang Liao (Extreme) II
+name,234,16040,anchored,관우전(상) 정복  I,Legend of Guan Yu (Ch.1) I
+name,235,16041,anchored,관우전(상) 정복  II,Legend of Guan Yu (Ch.1) II
+name,236,16042,anchored,관우전(상) 정복(극한)  I,Legend of Guan Yu (Ch.1) (Extreme) I
+name,237,16043,anchored,관우전(상) 정복(극한)  II,Legend of Guan Yu (Ch.1) (Extreme) II
+name,238,16044,anchored,서서전 정복  I,Legend of Xu Shu I
+name,239,16045,anchored,서서전 정복  II,Legend of Xu Shu II
+name,240,16046,anchored,서서전 정복(극한)  I,Legend of Xu Shu (Extreme) I
+name,241,16047,anchored,서서전 정복(극한)  II,Legend of Xu Shu (Extreme) II
+name,242,16048,anchored,원소전 정복  I,Legend of Yuan Shao I
+name,243,16049,anchored,원소전 정복  II,Legend of Yuan Shao II
+name,244,16050,anchored,원소전 정복(극한)  I,Legend of Yuan Shao (Extreme) I
+name,245,16051,anchored,원소전 정복(극한)  II,Legend of Yuan Shao (Extreme) II
+name,246,16052,anchored,등애전 정복  I,Legend of Deng Ai I
+name,247,16053,anchored,등애전 정복  II,Legend of Deng Ai II
+name,248,16054,anchored,등애전 정복(극한)  I,Legend of Deng Ai (Extreme) I
+name,249,16055,anchored,등애전 정복(극한)  II,Legend of Deng Ai (Extreme) II
+name,250,16056,anchored,조운전 정복  I,Legend of Zhao Yun I
+name,251,16057,anchored,조운전 정복  II,Legend of Zhao Yun II
+name,252,16058,anchored,조운전 정복(극한)  I,Legend of Zhao Yun (Extreme) I
+name,253,16059,anchored,조운전 정복(극한)  II,Legend of Zhao Yun (Extreme) II
+name,254,16060,anchored,공손찬전 정복  I,Legend of Gongsun Zan I
+name,255,16061,anchored,공손찬전 정복  II,Legend of Gongsun Zan II
+name,256,16062,anchored,공손찬전 정복(극한)  I,Legend of Gongsun Zan (Extreme) I
+name,257,16063,anchored,공손찬전 정복(극한)  II,Legend of Gongsun Zan (Extreme) II
+name,258,16064,anchored,육손전 정복  I,Legend of Lu Xun I
+name,259,16065,anchored,육손전 정복  II,Legend of Lu Xun II
+name,260,16066,anchored,육손전 정복(극한)  I,Legend of Lu Xun (Extreme) I
+name,261,16067,anchored,육손전 정복(극한)  II,Legend of Lu Xun (Extreme) II
+name,262,16068,anchored,손견전 정복  I,Legend of Sun Jian I
+name,263,16069,anchored,손견전 정복  II,Legend of Sun Jian II
+name,264,16070,anchored,손견전 정복(극한)  I,Legend of Sun Jian (Extreme) I
+name,265,16071,anchored,손견전 정복(극한)  II,Legend of Sun Jian (Extreme) II
+name,266,16072,anchored,손책전 정복  I,Legend of Sun Ce I
+name,267,16073,anchored,손책전 정복  II,Legend of Sun Ce II
+name,268,16074,anchored,손책전 정복(극한)  I,Legend of Sun Ce (Extreme) I
+name,269,16075,anchored,손책전 정복(극한)  II,Legend of Sun Ce (Extreme) II
+name,270,16076,anchored,황충전 정복  I,Legend of Huang Zhong I
+name,271,16077,anchored,황충전 정복  II,Legend of Huang Zhong II
+name,272,16078,anchored,황충전 정복(극한)  I,Legend of Huang Zhong (Extreme) I
+name,273,16079,anchored,황충전 정복(극한)  II,Legend of Huang Zhong (Extreme) II
+name,274,16080,anchored,마왕 제갈량전 정복  I,Zhuge Liang and the Demon I
+name,275,16081,anchored,마왕 제갈량전 정복  II,Zhuge Liang and the Demon II
+name,276,16082,anchored,마왕 제갈량전 정복(극한)  I,Zhuge Liang and the Demon (Extreme) I
+name,277,16083,anchored,마왕 제갈량전 정복(극한)  II,Zhuge Liang and the Demon (Extreme) II
+name,278,16084,anchored,장비전 정복  I,Legend of Zhang Fei I
+name,279,16085,anchored,장비전 정복  II,Legend of Zhang Fei II
+name,280,16086,anchored,장비전 정복(극한)  I,Legend of Zhang Fei (Extreme) I
+name,281,16087,anchored,장비전 정복(극한)  II,Legend of Zhang Fei (Extreme) II
+name,282,16088,anchored,마초전 정복  I,Legend of Ma Chao I
+name,283,16089,anchored,마초전 정복  II,Legend of Ma Chao II
+name,284,16090,anchored,마초전 정복(극한)  I,Legend of Ma Chao (Extreme) I
+name,285,16091,anchored,마초전 정복(극한)  II,Legend of Ma Chao (Extreme) II
+name,286,16092,anchored,유비전 정복  I,Legend of Liu Bei I
+name,287,16093,anchored,유비전 정복  II,Legend of Liu Bei II
+name,288,16094,anchored,유비전 정복(극한)  I,Legend of Liu Bei (Extreme) I
+name,289,16095,anchored,유비전 정복(극한)  II,Legend of Liu Bei (Extreme) II
+name,290,16096,anchored,제갈량전(상) 정복  I,Legend of Zhuge Liang (Ch.1) I
+name,291,16097,anchored,제갈량전(상) 정복  II,Legend of Zhuge Liang (Ch.1) II
+name,292,16098,anchored,제갈량전(상) 정복(극한)  I,Legend of Zhuge Liang (Ch.1)(Extreme) I
+name,293,16099,anchored,제갈량전(상) 정복(극한)  II,Legend of Zhuge Liang (Ch.1)(Extreme) II
+name,294,16100,anchored,강유전 정복  I,Legend of Jiang Wei I
+name,295,16101,anchored,강유전 정복  II,Legend of Jiang Wei II
+name,296,16102,anchored,강유전 정복(극한)  I,Legend of Jiang Wei (Extreme) I
+name,297,16103,anchored,강유전 정복(극한)  II,Legend of Jiang Wei (Extreme) II
+name,298,16104,anchored,여포전 정복  I,Legend of Lu Bu I
+name,299,16105,anchored,여포전 정복  II,Legend of Lu Bu II
+name,300,16106,anchored,여포전 정복(극한)  I,Legend of Lu Bu (Extreme) I
+name,301,16107,anchored,여포전 정복(극한)  II,Legend of Lu Bu (Extreme) II
+name,302,16108,anchored,동탁전 정복  I,Legend of Dong Zhuo I
+name,303,16109,anchored,동탁전 정복  II,Legend of Dong Zhuo II
+name,304,16110,anchored,동탁전 정복(극한)  I,Legend of Dong Zhuo (Extreme) I
+name,305,16111,anchored,동탁전 정복(극한)  II,Legend of Dong Zhuo (Extreme) II
+name,306,16112,anchored,하후연전 정복  I,Legend of Xiahou Yuan I
+name,307,16113,anchored,하후연전 정복  II,Legend of Xiahou Yuan II
+name,308,16114,anchored,하후연전 정복(극한)  I,Legend of Xiahou Yuan (Extreme) I
+name,309,16115,anchored,하후연전 정복(극한)  II,Legend of Xiahou Yuan (Extreme) II
+name,310,16116,anchored,태사자전 정복  I,Legend of Taishi Ci I
+name,311,16117,anchored,태사자전 정복  II,Legend of Taishi Ci II
+name,312,16118,anchored,태사자전 정복(극한)  I,Legend of Taishi Ci (Extreme) I
+name,313,16119,anchored,태사자전 정복(극한)  II,Legend of Taishi Ci (Extreme) II
+name,314,16120,anchored,여몽전 정복  I,Legend of Lu Meng I
+name,315,16121,anchored,여몽전 정복  II,Legend of Lu Meng II
+name,316,16122,anchored,여몽전 정복(극한)  I,Legend of Lu Meng (Extreme) I
+name,317,16123,anchored,여몽전 정복(극한)  II,Legend of Lu Meng (Extreme) II
+name,318,16124,anchored,엄백호전 정복  I,Legend of Yan Baihu I
+name,319,16125,anchored,엄백호전 정복  II,Legend of Yan Baihu II
+name,320,16126,anchored,엄백호전 정복(극한)  I,Legend of Yan Baihu (Extreme) I
+name,321,16127,anchored,엄백호전 정복(극한)  II,Legend of Yan Baihu (Extreme) II
+name,322,16128,anchored,맹획전 정복  I,Legend of Meng Huo I
+name,323,16129,anchored,맹획전 정복  II,Legend of Meng Huo II
+name,324,16130,anchored,맹획전 정복(극한)  I,Legend of Meng Huo II (Extreme) I
+name,325,16131,anchored,맹획전 정복(극한)  II,Legend of Meng Huo II (Extreme) II
+name,326,16132,anchored,도겸전 정복  I,Legend of Tao Qian I
+name,327,16133,anchored,도겸전 정복  II,Legend of Tao Qian II
+name,328,16134,anchored,도겸전 정복(극한)  I,Legend of Tao Qian (Extreme) I
+name,329,16135,anchored,도겸전 정복(극한)  II,Legend of Tao Qian (Extreme) II
+name,330,16136,anchored,주유전 정복  I,Legend of Zhou Yu I
+name,331,16137,anchored,주유전 정복  II,Legend of Zhou Yu II
+name,332,16138,anchored,주유전 정복(극한)  I,Legend of Zhou Yu (Extreme) I
+name,333,16139,anchored,주유전 정복(극한)  II,Legend of Zhou Yu (Extreme) II
+name,334,16140,anchored,아만전 정복  I,Legend of Aman I
+name,335,16141,anchored,아만전 정복  II,Legend of Aman II
+name,336,16142,anchored,아만전 정복(극한)  I,Legend of Aman (Extreme) I
+name,337,16143,anchored,아만전 정복(극한)  II,Legend of Aman (Extreme) II
+name,338,16144,anchored,문앙전 정복  I,Legend of Wen Yang I
+name,339,16145,anchored,문앙전 정복  II,Legend of Wen Yang II
+name,340,16146,anchored,문앙전 정복(극한)  I,Legend of Wen Yang (Extreme) I
+name,341,16147,anchored,문앙전 정복(극한)  II,Legend of Wen Yang (Extreme) II
+name,342,16148,anchored,관우전(하) 정복  I,Legend of Guan Yu (Ch.2) I
+name,343,16149,anchored,관우전(하) 정복  II,Legend of Guan Yu (Ch.2) II
+name,344,16150,anchored,관우전(하) 정복(극한)  I,Legend of Guan Yu (Ch.2) (Extreme) I
+name,345,16151,anchored,관우전(하) 정복(극한)  II,Legend of Guan Yu (Ch.2) (Extreme) II
+name,346,16152,anchored,서서전(외전) 정복  I,Legend of Xu Shu (Prequel) I
+name,347,16153,anchored,서서전(외전) 정복  II,Legend of Xu Shu (Prequel) II
+name,348,16154,anchored,서서전(외전) 정복(극한)  I,Legend of Xu Shu (Prequel) (Extreme) I
+name,349,16155,anchored,서서전(외전) 정복(극한)  II,Legend of Xu Shu (Prequel) (Extreme) II
+name,350,16156,anchored,유방전(상) 정복  I,Liu Bang Story (ch.1) I
+name,351,16157,anchored,유방전(상) 정복  II,Liu Bang Story (ch.1) II
+name,352,16158,anchored,유방전(상) 정복(극한)  I,Liu Bang Story (ch.1) (Extreme) I
+name,353,16159,anchored,유방전(상) 정복(극한)  II,Liu Bang Story (ch.1) (Extreme) II
+name,354,16160,anchored,유방전(하) 정복  I,Legend of Liu Bang (Ch.2) I
+name,355,16161,anchored,유방전(하) 정복  II,Legend of Liu Bang (Ch.2) II
+name,356,16162,anchored,유방전(하) 정복(극한)  I,Legend of Liu Bang (Ch.2) (Extreme) I
+name,357,16163,anchored,유방전(하) 정복(극한)  II,Legend of Liu Bang (Ch.2) (Extreme) II
+name,358,16164,anchored,손상향전 정복  I,Legend of Sun Shangxiang I
+name,359,16165,anchored,손상향전 정복  II,Legend of Sun Shangxiang II
+name,360,16166,anchored,손상향전 정복(극한)  I,Legend of Sun Shangxiang (Extreme) I
+name,361,16167,anchored,손상향전 정복(극한)  II,Legend of Sun Shangxiang (Extreme) II
+name,362,16168,anchored,심신단련 Ⅰ-Ⅰ,Conditioning I-I
+name,363,16169,anchored,심신단련 Ⅰ-Ⅱ,Conditioning I-II
+name,364,16170,anchored,심신단련 Ⅰ-Ⅲ,Conditioning I-III
+name,365,16171,anchored,심신단련 Ⅱ-Ⅰ,Conditioning II-I
+name,366,16172,anchored,심신단련 Ⅱ-Ⅱ,Conditioning II-II
+name,367,16173,anchored,심신단련 Ⅱ-Ⅲ,Conditioning II-III
+name,368,16174,anchored,보물 수집가 Ⅰ-Ⅰ,Artifact Hunter I-I
+name,369,16175,anchored,보물 수집가 Ⅰ-Ⅱ,Artifact Hunter I-II
+name,370,16176,anchored,보물 수집가 Ⅰ-Ⅲ,Artifact Hunter I-III
+name,371,16177,anchored,보물 수집가 Ⅱ-Ⅰ,Artifact Hunter II-I
+name,372,16178,anchored,보물 수집가 Ⅱ-Ⅱ,Artifact Hunter II-II
+name,373,16179,anchored,보물 수집가 Ⅱ-Ⅲ,Artifact Hunter II-III
+name,374,16180,anchored,대박 기원 Ⅰ-Ⅰ,Fingers Crossed I-I
+name,375,16181,anchored,대박 기원 Ⅰ-Ⅱ,Fingers Crossed I-II
+name,376,16182,anchored,대박 기원 Ⅰ-Ⅲ,Fingers Crossed I-III
+name,377,16183,anchored,대박 기원 Ⅱ-Ⅰ,Fingers Crossed II-I
+name,378,16184,anchored,대박 기원 Ⅱ-Ⅱ,Fingers Crossed II-II
+name,379,16185,anchored,대박 기원 Ⅱ-Ⅲ,Fingers Crossed II-III
+name,380,16186,anchored,전문 수집가 Ⅰ,Expert Collector I
+name,381,16187,anchored,전문 수집가 Ⅱ,Expert Collector II
+name,382,16188,anchored,전문 수집가 Ⅲ,Expert Collector III
+name,383,16189,anchored,전문 수집가 Ⅳ,Expert Collector IV
+name,384,16190,anchored,전문 수집가 Ⅴ,Expert Collector V
+name,385,16191,anchored,전문 수집가 Ⅵ,Expert Collector VI
+name,386,16192,anchored,전문 수집가 Ⅶ,Expert Collector VII
+name,387,16193,anchored,전문 수집가 Ⅷ,Expert Collector VIII
+name,388,16194,anchored,전문 수집가 Ⅸ,Expert Collector IX
+name,389,16195,anchored,전문 수집가 Ⅹ,Expert Collector X
+name,390,16196,anchored,수집의 대가 Ⅰ,Master Collector I
+name,391,16197,anchored,수집의 대가 Ⅱ,Master Collector II
+name,392,16198,anchored,수집의 대가 Ⅲ,Master Collector III
+name,393,16199,anchored,수집의 대가 Ⅳ,Master Collector IV
+name,394,16200,anchored,수집의 대가 Ⅴ,Master Collector V
+name,395,16201,anchored,수집의 대가 Ⅵ,Master Collector VI
+name,396,16202,anchored,수집의 대가 Ⅶ,Master Collector VII
+name,397,16203,anchored,수집의 대가 Ⅷ,Master Collector VIII
+name,398,16204,anchored,수집의 대가 Ⅸ,Master Collector IX
+name,399,16205,anchored,수집의 대가 Ⅹ,Master Collector X
+name,400,16206,anchored,구입 Ⅰ-Ⅰ,Purchase I-I
+name,401,16207,anchored,구입 Ⅰ-Ⅱ,Purchase I-II
+name,402,16208,anchored,구입 Ⅰ-Ⅲ,Purchase I-III
+name,403,16209,anchored,구입 Ⅱ-Ⅰ,Purchase II-I
+name,404,16210,anchored,구입 Ⅱ-Ⅱ,Purchase II-II
+name,405,16211,anchored,구입 Ⅱ-Ⅲ,Purchase II-III
+name,406,16212,anchored,큰손 Ⅰ-Ⅰ,Valued Customer I-I
+name,407,16213,anchored,큰손 Ⅰ-Ⅱ,Valued Customer I-II
+name,408,16214,anchored,큰손 Ⅰ-Ⅲ,Valued Customer I-III
+name,409,16215,anchored,큰손 Ⅱ-Ⅰ,Valued Customer II-I
+name,410,16216,anchored,큰손 Ⅱ-Ⅱ,Valued Customer II-II
+name,411,16217,anchored,큰손 Ⅱ-Ⅲ,Valued Customer II-III
+name,412,16218,anchored,시급지사 Ⅰ,Urgent Business I
+name,413,16219,anchored,시급지사 Ⅱ,Urgent Business II
+name,414,16220,anchored,시급지사 Ⅲ,Urgent Business III
+name,415,16221,anchored,수집의 장인 Ⅰ,Collector I
+name,416,16222,anchored,수집의 장인 Ⅱ,Collector II
+name,417,16223,anchored,수집의 장인 Ⅲ,Collector III
+name,418,16224,anchored,수집의 장인 Ⅳ,Collector IV
+name,419,16225,anchored,수집의 장인 Ⅴ,Collector V
+name,420,16226,anchored,수집의 장인 Ⅵ,Collector VI
+name,421,16227,anchored,수집의 장인 Ⅶ,Collector VII
+name,422,16228,anchored,수집의 장인 Ⅷ,Collector VIII
+name,423,16229,anchored,수집의 장인 Ⅸ,Collector IX
+name,424,16230,anchored,수집의 장인 Ⅹ,Collector X
+name,425,16231,anchored,군주 Rank 달성 Ⅰ,Warlord Rank Up I
+name,426,16232,anchored,군주 Rank 달성 Ⅱ,Warlord Rank Up II
+name,427,16233,anchored,군주 Rank 달성 Ⅲ,Warlord Rank Up III
+name,428,16234,anchored,군주 Rank 달성 Ⅳ,Warlord Rank Up IV
+name,429,16235,anchored,군주 Rank 달성 Ⅴ,Warlord Rank Up V
+name,430,16236,anchored,군주 Rank 달성 Ⅵ,Warlord Rank Up VI
+name,431,16237,anchored,군주 Rank 달성 Ⅶ,Warlord Rank Up VII
+name,432,16238,anchored,군주 Rank 달성 Ⅷ,Warlord Rank Up VIII
+name,433,16239,anchored,군주 Rank 달성 Ⅸ,Warlord Rank Up IX
+name,434,16240,anchored,VIP LV 달성 Ⅰ,VIP Lv. Up I
+name,435,16241,anchored,VIP LV 달성 Ⅱ,VIP Lv. Up II
+name,436,16242,anchored,VIP LV 달성 Ⅲ,VIP Lv. Up III
+name,437,16243,anchored,VIP LV 달성 Ⅳ,VIP Lv. Up IV
+name,438,16244,anchored,VIP LV 달성 Ⅴ,VIP Lv. Up V
+name,439,16245,anchored,VIP LV 달성 Ⅵ,VIP Lv. Up VI
+name,440,16246,anchored,VIP LV 달성 Ⅶ,VIP Lv. Up VII
+name,441,16247,anchored,VIP LV 달성 Ⅷ,VIP Lv. Up VIII
+name,442,16248,anchored,VIP LV 달성 Ⅸ,VIP Lv. Up IX
+name,443,16249,anchored,섬멸하라! Ⅰ-Ⅰ,Annihilate! I-I
+name,444,16250,anchored,섬멸하라! Ⅰ-Ⅱ,Annihilate! I-II
+name,445,16251,anchored,섬멸하라! Ⅰ-Ⅲ,Annihilate! I-III
+name,446,16252,anchored,섬멸하라! Ⅱ-Ⅰ,Annihilate! II-I
+name,447,16253,anchored,섬멸하라! Ⅱ-Ⅱ,Annihilate! II-II
+name,448,16254,anchored,섬멸하라! Ⅱ-Ⅲ,Annihilate! II-III
+name,449,16255,anchored,상자 수령 Ⅰ,Claim Chests I
+name,450,16256,anchored,상자 수령 Ⅱ,Claim Chests II
+name,451,16257,anchored,상자 수령 Ⅲ,Claim Chests III
+name,452,16258,anchored,상자 수령 Ⅳ,Claim Chests IV
+name,453,16259,anchored,상자 수령 Ⅴ,Claim Chests V
+name,454,16260,anchored,상자 수령 Ⅵ,Claim Chests VI
+name,455,16261,anchored,상자 수령 Ⅶ,Claim Chests VII
+name,456,16262,anchored,상자 수령 Ⅷ,Claim Chests VIII
+name,457,16263,anchored,상자 수령 Ⅸ,Claim Chests IX
+name,458,16264,anchored,상자 수령 Ⅹ,Claim Chests X
+name,459,16265,anchored,부지런한 수집가 Ⅰ,Diligent Collector I
+name,460,16266,anchored,부지런한 수집가 Ⅱ,Diligent Collector II
+name,461,16267,anchored,부지런한 수집가 Ⅲ,Diligent Collector III
+name,462,16268,anchored,부지런한 수집가 Ⅳ,Diligent Collector IV
+name,463,16269,anchored,부지런한 수집가 Ⅴ,Diligent Collector V
+name,464,16270,anchored,노련한 수집가 Ⅰ,Veteran Collector I
+name,465,16271,anchored,노련한 수집가 Ⅱ,Veteran Collector II
+name,466,16272,anchored,노련한 수집가 Ⅲ,Veteran Collector III
+name,467,16273,anchored,노련한 수집가 Ⅳ,Veteran Collector IV
+name,468,16274,anchored,노련한 수집가 Ⅴ,Veteran Collector V
+name,469,16275,anchored,복귀 유저 임무 Ⅰ,Veteran Mission I
+name,470,16276,anchored,복귀 유저 임무 Ⅱ,Veteran Mission II
+name,471,16277,anchored,복귀 유저 임무 Ⅲ,Veteran Mission III
+name,472,16278,anchored,복귀 유저 임무 Ⅳ,Veteran Mission IV
+name,473,16279,anchored,복귀 유저 임무 Ⅴ,Veteran Mission V
+name,474,16280,anchored,복귀 유저 임무 Ⅵ,Veteran Mission VI
+name,475,16281,anchored,복귀 유저 임무 완료,Veteran Mission Complete
+name,476,16282,anchored,복귀 유저 임무 Ⅶ,Veteran Mission VII
+name,477,16283,anchored,복귀 유저 임무 Ⅷ,Veteran Mission VIII
+name,478,16284,anchored,복귀 유저 임무 Ⅸ,Veteran Mission IX
+name,479,16285,anchored,복귀 유저 임무 Ⅹ,Veteran Mission X
+name,480,16286,anchored,복귀 유저 임무 ⅩⅠ,Veteran Mission XI
+name,481,16287,anchored,복귀 유저 임무 ⅩⅡ,Veteran Mission XII
+name,482,16288,anchored,마부작침 Ⅰ,Nose to the Grindstone I
+name,483,16289,anchored,마부작침 Ⅱ,Nose to the Grindstone II
+name,484,16290,anchored,마부작침 Ⅲ,Nose to the Grindstone III
+name,485,16291,anchored,마부작침 Ⅳ,Nose to the Grindstone IV
+name,486,16292,anchored,마부작침 Ⅴ,Nose to the Grindstone V
+name,487,16293,anchored,마부작침 Ⅵ,Nose to the Grindstone VI
+name,488,16294,anchored,백련천마 Ⅰ,Practice Makes Perfect I
+name,489,16295,anchored,백련천마 Ⅱ,Practice Makes Perfect II
+name,490,16296,anchored,백련천마 Ⅲ,Practice Makes Perfect III
+name,491,16297,anchored,백련천마 Ⅳ,Practice Makes Perfect IV
+name,492,16298,anchored,백련천마 Ⅴ,Practice Makes Perfect V
+name,493,16299,anchored,백련천마 Ⅵ,Practice Makes Perfect VI
+name,494,16300,anchored,경천동지 Ⅰ,Shock and Awe I
+name,495,16301,anchored,경천동지 Ⅱ,Shock and Awe II
+name,496,16302,anchored,경천동지 Ⅲ,Shock and Awe III
+name,497,16303,anchored,동광 점령 Ⅰ,Eastern Mine Occupation I
+name,498,16304,anchored,동광 점령 Ⅱ,Eastern Mine Occupation II
+name,499,16305,anchored,동광 점령 Ⅲ,Eastern Mine Occupation III
+name,500,16306,anchored,동광 점령 Ⅳ,Eastern Mine Occupation IV
+name,501,16307,anchored,동광 점령 Ⅴ,Eastern Mine Occupation V
+name,502,16308,anchored,동광 점령 Ⅵ,Eastern Mine Occupation VI
+name,503,16309,anchored,서광 점령 Ⅰ,Western Mine Occupation I
+name,504,16310,anchored,서광 점령 Ⅱ,Western Mine Occupation II
+name,505,16311,anchored,서광 점령 Ⅲ,Western Mine Occupation III
+name,506,16312,anchored,서광 점령 Ⅳ,Western Mine Occupation IV
+name,507,16313,anchored,서광 점령 Ⅴ,Western Mine Occupation V
+name,508,16314,anchored,서광 점령 Ⅵ,Western Mine Occupation VI
+name,509,16315,anchored,남광 점령 Ⅰ,Southern Mine Occupation I
+name,510,16316,anchored,남광 점령 Ⅱ,Southern Mine Occupation II
+name,511,16317,anchored,남광 점령 Ⅲ,Southern Mine Occupation III
+name,512,16318,anchored,남광 점령 Ⅳ,Southern Mine Occupation IV
+name,513,16319,anchored,남광 점령 Ⅴ,Southern Mine Occupation V
+name,514,16320,anchored,남광 점령 Ⅵ,Southern Mine Occupation VI
+name,515,16321,anchored,북광 점령 Ⅰ,Northern Mine Occupation I
+name,516,16322,anchored,북광 점령 Ⅱ,Northern Mine Occupation II
+name,517,16323,anchored,북광 점령 Ⅲ,Northern Mine Occupation III
+name,518,16324,anchored,북광 점령 Ⅳ,Northern Mine Occupation IV
+name,519,16325,anchored,북광 점령 Ⅴ,Northern Mine Occupation V
+name,520,16326,anchored,북광 점령 Ⅵ,Northern Mine Occupation VI
+name,521,16327,anchored,중광 점령 Ⅰ,Central Mine Occupation I
+name,522,16328,anchored,중광 점령 Ⅱ,Central Mine Occupation II
+name,523,16329,anchored,중광 점령 Ⅲ,Central Mine Occupation III
+name,524,16330,anchored,중광 점령 Ⅳ,Central Mine Occupation IV
+name,525,16331,anchored,중광 점령 Ⅴ,Central Mine Occupation V
+name,526,16332,anchored,중광 점령 Ⅵ,Central Mine Occupation VI
+name,527,16333,anchored,격전지 완전 점령 Ⅰ,Battleground Complete Occupation I
+name,528,16334,anchored,격전지 완전 점령 Ⅱ,Battleground Complete Occupation II
+name,529,16335,anchored,격전지 완전 점령 Ⅲ,Battleground Complete Occupation III
+name,530,16336,anchored,격전지 완전 점령 Ⅳ,Battleground Complete Occupation IV
+name,531,16337,anchored,격전지 완전 점령 Ⅴ,Battleground Complete Occupation V
+name,532,16338,anchored,격전지 완전 점령 Ⅵ,Battleground Complete Occupation VI
+name,533,16339,anchored,서광 완전 점령 Ⅰ,Western Mine Takeover I
+name,534,16340,anchored,서광 완전 점령 Ⅱ,Western Mine Takeover II
+name,535,16341,anchored,서광 완전 점령 Ⅲ,Western Mine Takeover III
+name,536,16342,anchored,서광 완전 점령 Ⅳ,Western Mine Takeover IV
+name,537,16343,anchored,서광 완전 점령 Ⅴ,Western Mine Takeover V
+name,538,16344,anchored,서광 완전 점령 Ⅵ,Western Mine Takeover VI
+name,539,16345,anchored,남광 완전 점령 Ⅰ,Southern Mine Takeover I
+name,540,16346,anchored,남광 완전 점령 Ⅱ,Southern Mine Takeover II
+name,541,16347,anchored,남광 완전 점령 Ⅲ,Southern Mine Takeover III
+name,542,16348,anchored,남광 완전 점령 Ⅳ,Southern Mine Takeover IV
+name,543,16349,anchored,남광 완전 점령 Ⅴ,Southern Mine Takeover V
+name,544,16350,anchored,남광 완전 점령 Ⅵ,Southern Mine Takeover VI
+name,545,16351,anchored,북광 완전 점령 Ⅰ,Northern Mine Takeover I
+name,546,16352,anchored,북광 완전 점령 Ⅱ,Northern Mine Takeover II
+name,547,16353,anchored,북광 완전 점령 Ⅲ,Northern Mine Takeover III
+name,548,16354,anchored,북광 완전 점령 Ⅳ,Northern Mine Takeover IV
+name,549,16355,anchored,북광 완전 점령 Ⅴ,Northern Mine Takeover V
+name,550,16356,anchored,북광 완전 점령 Ⅵ,Northern Mine Takeover VI
+name,551,16357,anchored,중광 완전 점령 Ⅰ,Central Mine Takeover I
+name,552,16358,anchored,중광 완전 점령 Ⅱ,Central Mine Takeover II
+name,553,16359,anchored,중광 완전 점령 Ⅲ,Central Mine Takeover III
+name,554,16360,anchored,중광 완전 점령 Ⅳ,Central Mine Takeover IV
+name,555,16361,anchored,중광 완전 점령 Ⅴ,Central Mine Takeover V
+name,556,16362,anchored,중광 완전 점령 Ⅵ,Central Mine Takeover VI
+name,557,16363,anchored,연합 가입,Join Alliance
+name,558,16364,anchored,청룡 토벌 Ⅰ,Azure Dragon Expedition I
+name,559,16365,anchored,청룡 토벌 Ⅱ,Azure Dragon Expedition II
+name,560,16366,anchored,청룡 토벌 Ⅲ,Azure Dragon Expedition III
+name,561,16367,anchored,청룡 토벌 Ⅳ,Azure Dragon Expedition IV
+name,562,16368,anchored,청룡 환수 도살자 Ⅰ,Azure Dragon Slayer I
+name,563,16369,anchored,청룡 환수 도살자 Ⅱ,Azure Dragon Slayer II
+name,564,16370,anchored,청룡 환수 도살자 Ⅲ,Azure Dragon Slayer III
+name,565,16371,anchored,청룡 환수 도살자 Ⅳ,Azure Dragon Slayer IV
+name,566,16372,anchored,청룡 환수 도살자 Ⅴ,Azure Dragon Slayer V
+name,567,16373,anchored,청룡 환수 도살자 Ⅵ,Azure Dragon Slayer VI
+name,568,16374,anchored,청룡 환수 도살자 Ⅶ,Azure Dragon Slayer VII
+name,569,16375,anchored,청룡 환수 도살자 Ⅷ,Azure Dragon Slayer VIII
+name,570,16376,anchored,청룡 환수 도살자 Ⅸ,Azure Dragon Slayer IX
+name,571,16377,anchored,청룡 환수 도살자 Ⅹ,Azure Dragon Slayer X
+name,572,16378,anchored,하급 청룡 토벌자 Ⅰ,Minor Azure Dragon Expedition I
+name,573,16379,anchored,하급 청룡 토벌자 Ⅱ,Minor Azure Dragon Expedition II
+name,574,16380,anchored,하급 청룡 토벌자 Ⅲ,Minor Azure Dragon Expedition III
+name,575,16381,anchored,하급 청룡 토벌자 Ⅳ,Minor Azure Dragon Expedition IV
+name,576,16382,anchored,하급 청룡 토벌자 Ⅴ,Minor Azure Dragon Expedition V
+name,577,16383,anchored,하급 청룡 토벌자 Ⅵ,Minor Azure Dragon Expedition VI
+name,578,16384,anchored,하급 청룡 토벌자 Ⅶ,Minor Azure Dragon Expedition VII
+name,579,16385,anchored,하급 청룡 토벌자 Ⅷ,Minor Azure Dragon Expedition VIII
+name,580,16386,anchored,하급 청룡 토벌자 Ⅸ,Minor Azure Dragon Expedition IX
+name,581,16387,anchored,하급 청룡 토벌자 Ⅹ,Minor Azure Dragon Expedition X
+name,582,16388,anchored,중급 청룡 토벌자 Ⅰ,Intermediate Azure Dragon Expedition I
+name,583,16389,anchored,중급 청룡 토벌자 Ⅱ,Intermediate Azure Dragon Expedition II
+name,584,16390,anchored,중급 청룡 토벌자 Ⅲ,Intermediate Azure Dragon Expedition III
+name,585,16391,anchored,중급 청룡 토벌자 Ⅳ,Intermediate Azure Dragon Expedition IV
+name,586,16392,anchored,중급 청룡 토벌자 Ⅴ,Intermediate Azure Dragon Expedition V
+name,587,16393,anchored,중급 청룡 토벌자 Ⅵ,Intermediate Azure Dragon Expedition VI
+name,588,16394,anchored,중급 청룡 토벌자 Ⅶ,Intermediate Azure Dragon Expedition VII
+name,589,16395,anchored,중급 청룡 토벌자 Ⅷ,Intermediate Azure Dragon Expedition VIII
+name,590,16396,anchored,중급 청룡 토벌자 Ⅸ,Intermediate Azure Dragon Expedition IX
+name,591,16397,anchored,중급 청룡 토벌자 Ⅹ,Intermediate Azure Dragon Expedition X
+name,592,16398,anchored,상급 청룡 토벌자 Ⅰ,Advanced Azure Dragon Expedition I
+name,593,16399,anchored,상급 청룡 토벌자 Ⅱ,Advanced Azure Dragon Expedition II
+name,594,16400,anchored,상급 청룡 토벌자 Ⅲ,Advanced Azure Dragon Expedition III
+name,595,16401,anchored,상급 청룡 토벌자 Ⅳ,Advanced Azure Dragon Expedition IV
+name,596,16402,anchored,상급 청룡 토벌자 Ⅴ,Advanced Azure Dragon Expedition V
+name,597,16403,anchored,상급 청룡 토벌자 Ⅵ,Advanced Azure Dragon Expedition VI
+name,598,16404,anchored,상급 청룡 토벌자 Ⅶ,Advanced Azure Dragon Expedition VII
+name,599,16405,anchored,상급 청룡 토벌자 Ⅷ,Advanced Azure Dragon Expedition VIII
+name,600,16406,anchored,상급 청룡 토벌자 Ⅸ,Advanced Azure Dragon Expedition IX
+name,601,16407,anchored,상급 청룡 토벌자 Ⅹ,Advanced Azure Dragon Expedition X
+name,602,16408,anchored,최상급 청룡 토벌자 Ⅰ,Master Azure Dragon Expedition I
+name,603,16409,anchored,최상급 청룡 토벌자 Ⅱ,Master Azure Dragon Expedition II
+name,604,16410,anchored,최상급 청룡 토벌자 Ⅲ,Master Azure Dragon Expedition III
+name,605,16411,anchored,최상급 청룡 토벌자 Ⅳ,Master Azure Dragon Expedition IV
+name,606,16412,anchored,최상급 청룡 토벌자 Ⅴ,Master Azure Dragon Expedition V
+name,607,16413,anchored,최상급 청룡 토벌자 Ⅵ,Master Azure Dragon Expedition VI
+name,608,16414,anchored,최상급 청룡 토벌자 Ⅶ,Master Azure Dragon Expedition VII
+name,609,16415,anchored,최상급 청룡 토벌자 Ⅷ,Master Azure Dragon Expedition VIII
+name,610,16416,anchored,최상급 청룡 토벌자 Ⅸ,Master Azure Dragon Expedition IX
+name,611,16417,anchored,최상급 청룡 토벌자 Ⅹ,Master Azure Dragon Expedition X
+name,612,16418,anchored,계정 연동,Link Account
+name,613,16419,anchored,VIP LV 달성 Ⅹ,VIP Lv. Up X
+name,614,16420,anchored,VIP LV 달성 ⅩⅠ,VIP Lv. Up XI
+name,615,16421,anchored,주작 토벌 Ⅰ,Vermilion Bird Expedition I
+name,616,16422,anchored,주작 토벌 Ⅱ,Vermilion Bird Expedition II
+name,617,16423,anchored,주작 토벌 Ⅲ,Vermilion Bird Expedition III
+name,618,16424,anchored,주작 토벌 Ⅳ,Vermilion Bird Expedition IV
+name,619,16425,anchored,주작 환수 도살자 Ⅰ,Vermilion Bird Slayer I
+name,620,16426,anchored,주작 환수 도살자 Ⅱ,Vermilion Bird Slayer II
+name,621,16427,anchored,주작 환수 도살자 Ⅲ,Vermilion Bird Slayer III
+name,622,16428,anchored,주작 환수 도살자 Ⅳ,Vermilion Bird Slayer IV
+name,623,16429,anchored,주작 환수 도살자 Ⅴ,Vermilion Bird Slayer V
+name,624,16430,anchored,주작 환수 도살자 Ⅵ,Vermilion Bird Slayer VI
+name,625,16431,anchored,주작 환수 도살자 Ⅶ,Vermilion Bird Slayer VII
+name,626,16432,anchored,주작 환수 도살자 Ⅷ,Vermilion Bird Slayer VIII
+name,627,16433,anchored,주작 환수 도살자 Ⅸ,Vermilion Bird Slayer IX
+name,628,16434,anchored,주작 환수 도살자 Ⅹ,Vermilion Bird Slayer X
+name,629,16435,anchored,하급 주작 토벌자 Ⅰ,Minor Vermilion Bird Expedition I
+name,630,16436,anchored,하급 주작 토벌자 Ⅱ,Minor Vermilion Bird Expedition II
+name,631,16437,anchored,하급 주작 토벌자 Ⅲ,Minor Vermilion Bird Expedition III
+name,632,16438,anchored,하급 주작 토벌자 Ⅳ,Minor Vermilion Bird Expedition IV
+name,633,16439,anchored,하급 주작 토벌자 Ⅴ,Minor Vermilion Bird Expedition V
+name,634,16440,anchored,하급 주작 토벌자 Ⅵ,Minor Vermilion Bird Expedition VI
+name,635,16441,anchored,하급 주작 토벌자 Ⅶ,Minor Vermilion Bird Expedition VII
+name,636,16442,anchored,하급 주작 토벌자 Ⅷ,Minor Vermilion Bird Expedition VIII
+name,637,16443,anchored,하급 주작 토벌자 Ⅸ,Minor Vermilion Bird Expedition IX
+name,638,16444,anchored,하급 주작 토벌자 Ⅹ,Minor Vermilion Bird Expedition X
+name,639,16445,anchored,중급 주작 토벌자 Ⅰ,Intermediate Vermilion Bird Expedition I
+name,640,16446,anchored,중급 주작 토벌자 Ⅱ,Intermediate Vermilion Bird Expedition II
+name,641,16447,anchored,중급 주작 토벌자 Ⅲ,Intermediate Vermilion Bird Expedition III
+name,642,16448,anchored,중급 주작 토벌자 Ⅳ,Intermediate Vermilion Bird Expedition IV
+name,643,16449,anchored,중급 주작 토벌자 Ⅴ,Intermediate Vermilion Bird Expedition V
+name,644,16450,anchored,중급 주작 토벌자 Ⅵ,Intermediate Vermilion Bird Expedition VI
+name,645,16451,anchored,중급 주작 토벌자 Ⅶ,Intermediate Vermilion Bird Expedition VII
+name,646,16452,anchored,중급 주작 토벌자 Ⅷ,Intermediate Vermilion Bird Expedition VIII
+name,647,16453,anchored,중급 주작 토벌자 Ⅸ,Intermediate Vermilion Bird Expedition IX
+name,648,16454,anchored,중급 주작 토벌자 Ⅹ,Intermediate Vermilion Bird Expedition X
+name,649,16455,anchored,상급 주작 토벌자 Ⅰ,Advanced Vermilion Bird Expedition I
+name,650,16456,anchored,상급 주작 토벌자 Ⅱ,Advanced Vermilion Bird Expedition II
+name,651,16457,anchored,상급 주작 토벌자 Ⅲ,Advanced Vermilion Bird Expedition III
+name,652,16458,anchored,상급 주작 토벌자 Ⅳ,Advanced Vermilion Bird Expedition IV
+name,653,16459,anchored,상급 주작 토벌자 Ⅴ,Advanced Vermilion Bird Expedition V
+name,654,16460,anchored,상급 주작 토벌자 Ⅵ,Advanced Vermilion Bird Expedition VI
+name,655,16461,anchored,상급 주작 토벌자 Ⅶ,Advanced Vermilion Bird Expedition VII
+name,656,16462,anchored,상급 주작 토벌자 Ⅷ,Advanced Vermilion Bird Expedition VIII
+name,657,16463,anchored,상급 주작 토벌자 Ⅸ,Advanced Vermilion Bird Expedition IX
+name,658,16464,anchored,상급 주작 토벌자 Ⅹ,Advanced Vermilion Bird Expedition X
+name,659,16465,anchored,최상급 주작 토벌자 Ⅰ,Master Vermilion Bird Expedition I
+name,660,16466,anchored,최상급 주작 토벌자 Ⅱ,Master Vermilion Bird Expedition II
+name,661,16467,anchored,최상급 주작 토벌자 Ⅲ,Master Vermilion Bird Expedition III
+name,662,16468,anchored,최상급 주작 토벌자 Ⅳ,Master Vermilion Bird Expedition IV
+name,663,16469,anchored,최상급 주작 토벌자 Ⅴ,Master Vermilion Bird Expedition V
+name,664,16470,anchored,최상급 주작 토벌자 Ⅵ,Master Vermilion Bird Expedition VI
+name,665,16471,anchored,최상급 주작 토벌자 Ⅶ,Master Vermilion Bird Expedition VII
+name,666,16472,anchored,최상급 주작 토벌자 Ⅷ,Master Vermilion Bird Expedition VIII
+name,667,16473,anchored,최상급 주작 토벌자 Ⅸ,Master Vermilion Bird Expedition IX
+name,668,16474,anchored,최상급 주작 토벌자 Ⅹ,Master Vermilion Bird Expedition X
+name,669,16475,anchored,조조전 사실 정복(무극)  I,Cao Cao Historic Story (Eternal) I
+name,670,16476,anchored,조조전 사실 정복(무극)  II,Cao Cao Historic Story (Eternal) II
+name,671,16477,anchored,조조전 가상 정복(무극)  I,Cao Cao Alternative Story (Eternal) I
+name,672,16478,anchored,조조전 가상 정복(무극)  II,Cao Cao Alternative Story (Eternal) II
+name,673,16479,anchored,북부위전 정복(무극)  I,Legend of the Northern District Captain (Eternal) I
+name,674,16480,anchored,북부위전 정복(무극)  II,Legend of the Northern District Captain (Eternal) II
+name,675,16481,anchored,장각전 정복(무극)  I,Legend of Zhang Jue (Eternal) I
+name,676,16482,anchored,장각전 정복(무극)  II,Legend of Zhang Jue (Eternal) II
+name,677,16483,anchored,사마의전 정복(무극)  I,Legend of Sima Yi (Eternal) I
+name,678,16484,anchored,사마의전 정복(무극)  II,Legend of Sima Yi (Eternal) II
+name,679,16485,anchored,장료전 정복(무극)  I,Legend of Zhang Liao (Eternal) I
+name,680,16486,anchored,장료전 정복(무극)  II,Legend of Zhang Liao (Eternal) II
+name,681,16487,anchored,관우전(상) 정복(무극)  I,Legend of Guan Yu (Ch.1) (Eternal) I
+name,682,16488,anchored,관우전(상) 정복(무극)  II,Legend of Guan Yu (Ch.1) (Eternal) II
+name,683,16489,anchored,서서전 정복(무극)  I,Legend of Xu Shu (Eternal) I
+name,684,16490,anchored,서서전 정복(무극)  II,Legend of Xu Shu (Eternal) II
+name,685,16491,anchored,원소전 정복(무극)  I,Legend of Yuan Shao (Eternal) I
+name,686,16492,anchored,원소전 정복(무극)  II,Legend of Yuan Shao (Eternal) II
+name,687,16493,anchored,등애전 정복(무극)  I,Legend of Deng Ai (Eternal) I
+name,688,16494,anchored,등애전 정복(무극)  II,Legend of Deng Ai (Eternal) II
+name,689,16495,anchored,조운전 정복(무극)  I,Legend of Zhao Yun (Eternal) I
+name,690,16496,anchored,조운전 정복(무극)  II,Legend of Zhao Yun (Eternal) II
+name,691,16497,anchored,공손찬전 정복(무극)  I,Legend of Gongsun Zan (Eternal) I
+name,692,16498,anchored,공손찬전 정복(무극)  II,Legend of Gongsun Zan (Eternal) II
+name,693,16499,anchored,육손전 정복(무극)  I,Legend of Lu Xun (Eternal) I
+name,694,16500,anchored,육손전 정복(무극)  II,Legend of Lu Xun (Eternal) II
+name,695,16501,anchored,손견전 정복(무극)  I,Legend of Sun Jian (Eternal) I
+name,696,16502,anchored,손견전 정복(무극)  II,Legend of Sun Jian (Eternal) II
+name,697,16503,anchored,손책전 정복(무극)  I,Legend of Sun Ce (Eternal) I
+name,698,16504,anchored,손책전 정복(무극)  II,Legend of Sun Ce (Eternal) II
+name,699,16505,anchored,황충전 정복(무극)  I,Legend of Huang Zhong (Eternal) I
+name,700,16506,anchored,황충전 정복(무극)  II,Legend of Huang Zhong (Eternal) II
+name,701,16507,anchored,마왕 제갈량전 정복(무극)  I,Zhuge Liang and the Demon (Eternal) I
+name,702,16508,anchored,마왕 제갈량전 정복(무극)  II,Zhuge Liang and the Demon (Eternal) II
+name,703,16509,anchored,장비전 정복(무극)  I,Legend of Zhang Fei (Eternal) I
+name,704,16510,anchored,장비전 정복(무극)  II,Legend of Zhang Fei (Eternal) II
+name,705,16511,anchored,마초전 정복(무극)  I,Legend of Ma Chao (Eternal) I
+name,706,16512,anchored,마초전 정복(무극)  II,Legend of Ma Chao (Eternal) II
+name,707,16513,anchored,유비전 정복(무극)  I,Legend of Liu Bei (Eternal) I
+name,708,16514,anchored,유비전 정복(무극)  II,Legend of Liu Bei (Eternal) II
+name,709,16515,anchored,제갈량전 정복(무극)  I,Legend of Zhuge Liang (Eternal) I
+name,710,16516,anchored,제갈량전 정복(무극)  II,Legend of Zhuge Liang (Eternal) II
+name,711,16517,anchored,강유전 정복(무극)  I,Legend of Jiang Wei (Eternal) I
+name,712,16518,anchored,강유전 정복(무극)  II,Legend of Jiang Wei (Eternal) II
+name,713,16519,anchored,여포전 정복(무극)  I,Legend of Lu Bu (Eternal) I
+name,714,16520,anchored,여포전 정복(무극)  II,Legend of Lu Bu (Eternal) II
+name,715,16521,anchored,동탁전 정복(무극)  I,Legend of Dong Zhuo (Eternal) I
+name,716,16522,anchored,동탁전 정복(무극)  II,Legend of Dong Zhuo (Eternal) II
+name,717,16523,anchored,하후연전 정복(무극)  I,Legend of Xiahou Yuan (Eternal) I
+name,718,16524,anchored,하후연전 정복(무극)  II,Legend of Xiahou Yuan (Eternal) II
+name,719,16525,anchored,태사자전 정복(무극)  I,Legend of Taishi Ci (Eternal) I
+name,720,16526,anchored,태사자전 정복(무극)  II,Legend of Taishi Ci (Eternal) II
+name,721,16527,anchored,여몽전 정복(무극)  I,Legend of Lu Meng (Eternal) I
+name,722,16528,anchored,여몽전 정복(무극)  II,Legend of Lu Meng (Eternal) II
+name,723,16529,anchored,엄백호전 정복(무극)  I,Legend of Yan Baihu (Eternal) I
+name,724,16530,anchored,엄백호전 정복(무극)  II,Legend of Yan Baihu (Eternal) II
+name,725,16531,anchored,맹획전 정복(무극)  I,Legend of Meng Huo (Eternal) I
+name,726,16532,anchored,맹획전 정복(무극)  II,Legend of Meng Huo (Eternal) II
+name,727,16533,anchored,도겸전 정복(무극)  I,Legend of Tao Qian (Eternal) I
+name,728,16534,anchored,도겸전 정복(무극)  II,Legend of Tao Qian (Eternal) II
+name,729,16535,anchored,주유전 정복(무극)  I,Legend of Zhou Yu (Eternal) I
+name,730,16536,anchored,주유전 정복(무극)  II,Legend of Zhou Yu (Eternal) II
+name,731,16537,anchored,아만전 정복(무극)  I,Legend of Aman (Eternal) I
+name,732,16538,anchored,아만전 정복(무극)  II,Legend of Aman (Eternal) II
+name,733,16539,anchored,문앙전 정복(무극)  I,Legend of Wen Yang (Eternal) I
+name,734,16540,anchored,문앙전 정복(무극)  II,Legend of Wen Yang (Eternal) II
+name,735,16541,anchored,관우전(하) 정복(무극)  I,Legend of Guan Yu (Ch.2) (Eternal) I
+name,736,16542,anchored,관우전(하) 정복(무극)  II,Legend of Guan Yu (Ch.2) (Eternal) II
+name,737,16543,anchored,서서전(외전) 정복(무극)  I,Legend of Xu Shu (Prequel) (Eternal) I
+name,738,16544,anchored,서서전(외전) 정복(무극)  II,Legend of Xu Shu (Prequel) (Eternal) II
+name,739,16545,anchored,유방전(상) 정복(무극)  I,Liu Bang Story (1) (Eternal) I
+name,740,16546,anchored,유방전(상) 정복(무극)  II,Liu Bang Story (1) (Eternal) II
+name,741,16547,anchored,손상향전 정복(무극)  I,Legend of Sun Shangxiang (Eternal) I
+name,742,16548,anchored,손상향전 정복(무극)  II,Legend of Sun Shangxiang (Eternal) II
+name,743,16549,anchored,연의 정복자(무극) Ⅰ,Legend Maker (Eternal) I
+name,744,16550,anchored,연의 정복자(무극) Ⅱ,Legend Maker (Eternal) II
+name,745,16551,anchored,연의 정복자(무극) Ⅲ,Legend Maker (Eternal) III
+name,746,16552,anchored,연의 정복자(무극) Ⅳ,Legend Maker (Eternal) IV
+name,747,16553,anchored,연의 정복자(무극) Ⅴ,Legend Maker (Eternal) V
+name,748,16554,anchored,자강불식 Ⅰ,Ceaseless Endeavors I
+name,749,16555,anchored,자강불식 Ⅱ,Ceaseless Endeavors II
+name,750,16556,anchored,자강불식 Ⅲ,Ceaseless Endeavors III
+name,751,16557,anchored,자강불식 Ⅳ,Ceaseless Endeavors IV
+name,752,16558,anchored,자강불식 Ⅴ,Ceaseless Endeavors V
+name,753,16559,anchored,자강불식 Ⅵ,Ceaseless Endeavors VI
+name,754,16560,anchored,자강불식 Ⅶ,Ceaseless Endeavors VII
+name,755,16561,anchored,자강불식 Ⅷ,Ceaseless Endeavors VIII
+name,756,16562,anchored,백전불태 Ⅰ,Untouchable I
+name,757,16563,anchored,백전불태 Ⅱ,Untouchable II
+name,758,16564,anchored,백전불태 Ⅲ,Untouchable III
+name,759,16565,anchored,백전불태 Ⅳ,Untouchable IV
+name,760,16566,anchored,백전불태 Ⅴ,Untouchable V
+name,761,16567,anchored,파부침주 Ⅰ,Unwavering Resolution I
+name,762,16568,anchored,파부침주 Ⅱ,Unwavering Resolution II
+name,763,16569,anchored,파부침주 Ⅲ,Unwavering Resolution III
+name,764,16570,anchored,파부침주 Ⅳ,Unwavering Resolution IV
+name,765,16571,anchored,파부침주 Ⅴ,Unwavering Resolution V
+name,766,16572,anchored,군계일학 Ⅰ,A Rose Among Daisies I
+name,767,16573,anchored,군계일학 Ⅱ,A Rose Among Daisies II
+name,768,16574,anchored,군계일학 Ⅲ,A Rose Among Daisies III
+name,769,16575,anchored,군계일학 Ⅳ,A Rose Among Daisies IV
+name,770,16576,anchored,배수지진,No Retreat
+name,771,16577,anchored,백중지세,Well-Matched
+name,772,16578,anchored,만전지책,Foolproof Plan
+name,773,16579,anchored,건곤일척,All In
+name,774,16580,anchored,몽매의 시련 소환 Ⅰ,Meng Mei's Trial Summon I
+name,775,16581,anchored,몽매의 시련 소환 Ⅱ,Meng Mei's Trial Summon II
+name,776,16582,anchored,몽매의 시련 소환 Ⅲ,Meng Mei's Trial Summon III
+name,777,16583,anchored,몽매의 시련 소환 Ⅳ,Meng Mei's Trial Summon IV
+name,778,16584,anchored,몽매의 시련 소환 Ⅴ,Meng Mei's Trial Summon V
+name,779,16585,anchored,몽매의 시련 소환 Ⅵ,Meng Mei's Trial Summon VI
+name,780,16586,anchored,몽매의 시련 소환 Ⅶ,Meng Mei's Trial Summon VII
+name,781,16587,anchored,몽매의 시련 소환 Ⅷ,Meng Mei's Trial Summon VIII
+name,782,16588,anchored,몽매의 시련 소환 Ⅸ,Meng Mei's Trial Summon IX
+name,783,16589,anchored,몽매의 시련 소환 Ⅹ,Meng Mei's Trial Summon X
+name,784,16590,anchored,시련의 토벌자 Ⅰ,Trial Expedition I
+name,785,16591,anchored,시련의 토벌자 Ⅱ,Trial Expedition II
+name,786,16592,anchored,시련의 토벌자 Ⅲ,Trial Expedition III
+name,787,16593,anchored,시련의 토벌자 Ⅳ,Trial Expedition IV
+name,788,16594,anchored,시련의 토벌자 Ⅴ,Trial Expedition V
+name,789,16595,anchored,시련의 토벌자 Ⅵ,Trial Expedition VI
+name,790,16596,anchored,시련의 토벌자 Ⅶ,Trial Expedition VII
+name,791,16597,anchored,시련의 토벌자 Ⅷ,Trial Expedition VIII
+name,792,16598,anchored,시련의 토벌자 Ⅸ,Trial Expedition IX
+name,793,16599,anchored,시련의 토벌자 Ⅹ,Trial Expedition X
+name,794,16600,anchored,시련의 정복자 Ⅰ,Trial Conquest I
+name,795,16601,anchored,시련의 정복자 Ⅱ,Trial Conquest II
+name,796,16602,anchored,시련의 정복자 Ⅲ,Trial Conquest III
+name,797,16603,anchored,시련의 정복자 Ⅳ,Trial Conquest IV
+name,798,16604,anchored,시련의 정복자 Ⅴ,Trial Conquest V
+name,799,16605,anchored,시련의 정복자 Ⅵ,Trial Conquest VI
+name,800,16606,anchored,시련의 정복자 Ⅶ,Trial Conquest VII
+name,801,16607,anchored,시련의 정복자 Ⅷ,Trial Conquest VIII
+name,802,16608,anchored,시련의 정복자 Ⅸ,Trial Conquest IX
+name,803,16609,anchored,시련의 정복자 Ⅹ,Trial Conquest X
+name,804,16610,anchored,논공행상 고객 Ⅰ,Just Rewards - Honored I
+name,805,16611,anchored,논공행상 고객 Ⅱ,Just Rewards - Honored II
+name,806,16612,anchored,논공행상 고객 Ⅲ,Just Rewards - Honored III
+name,807,16613,anchored,논공행상 고객 Ⅳ,Just Rewards - Honored IV
+name,808,16614,anchored,논공행상 고객 Ⅴ,Just Rewards - Honored V
+name,809,16615,anchored,논공행상 고객 Ⅵ,Just Rewards - Honored VI
+name,810,16616,anchored,논공행상 고객 Ⅶ,Just Rewards - Honored VII
+name,811,16617,anchored,논공행상 고객 Ⅷ,Just Rewards - Honored VIII
+name,812,16618,anchored,논공행상 고객 Ⅸ,Just Rewards - Honored IX
+name,813,16619,anchored,논공행상 고객 Ⅹ,Just Rewards - Honored X
+name,814,16620,anchored,제갈량전(하) 정복  I,Zhuge Liang Story (Ch.3) Conquest I
+name,815,16621,anchored,제갈량전(하) 정복  II,Zhuge Liang Story (Ch.3) Conquest II
+name,816,16622,anchored,제갈량전(하) 정복(극한)  I,Zhuge Liang Story (Ch.3) Conquest (Extreme) I
+name,817,16623,anchored,제갈량전(하) 정복(극한)  II,Zhuge Liang Story (Ch.3) Conquest (Extreme) II
+name,818,16624,anchored,VIP LV 달성 ⅩⅡ,VIP Lv. Up XII
+name,819,16625,anchored,VIP LV 달성 ⅩⅢ,VIP Lv. Up XIII
+name,820,16626,anchored,VIP LV 달성 ⅩⅣ,VIP Lv. Up XIV
+name,821,16627,anchored,무장전 도전자 Ⅰ,Officer Battle Challenger I
+name,822,16628,anchored,무장전 도전자 Ⅱ,Officer Battle Challenger II
+name,823,16629,anchored,무장전 도전자 Ⅲ,Officer Battle Challenger III
+name,824,16630,anchored,무장전 도전자 Ⅳ,Officer Battle Challenger IV
+name,825,16631,anchored,무장전 도전자 Ⅴ,Officer Battle Challenger V
+name,826,16632,anchored,무장전 도전자 Ⅵ,Officer Battle Challenger VI
+name,827,16633,anchored,무장전 도전자 Ⅶ,Officer Battle Challenger VII
+name,828,16634,anchored,무장전 도전자 Ⅷ,Officer Battle Challenger VIII
+name,829,16635,anchored,무장전 도전자 Ⅸ,Officer Battle Challenger IX
+name,830,16636,anchored,무장전의 달인 Ⅰ,Officer Battle Master I
+name,831,16637,anchored,무장전의 달인 Ⅱ,Officer Battle Master II
+name,832,16638,anchored,무장전의 달인 Ⅲ,Officer Battle Master III
+name,833,16639,anchored,무장전의 달인 Ⅳ,Officer Battle Master IV
+name,834,16640,anchored,무장전의 달인 Ⅴ,Officer Battle Master V
+name,835,16641,anchored,무장전의 달인 Ⅵ,Officer Battle Master VI
+name,836,16642,anchored,무장전의 달인 Ⅶ,Officer Battle Master VII
+name,837,16643,anchored,무장전의 달인 Ⅷ,Officer Battle Master VIII
+name,838,16644,anchored,무장전의 달인 Ⅸ,Officer Battle Master IX
+name,839,16645,anchored,무장전 영웅의 탄생 Ⅰ,Officer Battle Hero I
+name,840,16646,anchored,무장전 영웅의 탄생 Ⅱ,Officer Battle Hero II
+name,841,16647,anchored,무장전 영웅의 탄생 Ⅲ,Officer Battle Hero III
+name,842,16648,anchored,무장전 영웅의 탄생 Ⅳ,Officer Battle Hero IV
+name,843,16649,anchored,무장전 영웅의 탄생 Ⅴ,Officer Battle Hero V
+name,844,16650,anchored,무장전 영웅의 탄생 Ⅵ,Officer Battle Hero VI
+name,845,16651,anchored,보물만능주의 Ⅰ,"It's the Truth, It's Artifactual! I"
+name,846,16652,anchored,보물만능주의 Ⅱ,"It's the Truth, It's Artifactual! II"
+name,847,16653,anchored,보물만능주의 Ⅲ,"It's the Truth, It's Artifactual! III"
+name,848,16654,anchored,보물만능주의 Ⅳ,"It's the Truth, It's Artifactual! IV"
+name,849,16655,anchored,보물만능주의 Ⅴ,"It's the Truth, It's Artifactual! V"
+name,850,16656,anchored,보물만능주의 Ⅵ,"It's the Truth, It's Artifactual! VI"
+name,851,16657,anchored,보물만능주의 Ⅶ,"It's the Truth, It's Artifactual! VII"
+name,852,16658,anchored,보물만능주의 Ⅷ,"It's the Truth, It's Artifactual! VIII"
+name,853,16659,anchored,보물만능주의 Ⅸ,"It's the Truth, It's Artifactual! IX"
+name,854,16660,anchored,"제발, 선제 무반격! Ⅰ",Cross-Counter I
+name,855,16661,anchored,"제발, 선제 무반격! Ⅱ",Cross-Counter II
+name,856,16662,anchored,"제발, 선제 무반격! Ⅲ",Cross-Counter III
+name,857,16663,anchored,"제발, 선제 무반격! Ⅳ",Cross-Counter IV
+name,858,16664,anchored,"제발, 선제 무반격! Ⅴ",Cross-Counter V
+name,859,16665,anchored,"제발, 선제 무반격! Ⅵ",Cross-Counter VI
+name,860,16666,anchored,"제발, 선제 무반격! Ⅶ",Cross-Counter VII
+name,861,16667,anchored,"제발, 선제 무반격! Ⅷ",Cross-Counter VIII
+name,862,16668,anchored,"제발, 선제 무반격! Ⅸ",Cross-Counter IX
+name,863,16669,anchored,정말로?,Truly?
+name,864,16670,anchored,그토록 원하던,A Strong Yearning
+name,865,16671,anchored,사서 고생,Just Asking for Trouble
+name,866,16672,anchored,강림,Descent
+name,867,16673,anchored,"접전, 여포!","Stay Strong, Lu Bu!"
+name,868,16674,anchored,"접전, 조운!","Stay Strong, Zhao Yun!"
+name,869,16675,anchored,청룡과의 조우,Azure Dragon Encounter
+name,870,16676,anchored,주작과의 조우,Vermilion Bird Encounter
+name,871,16677,anchored,난세간웅,Cao Cao the Cunning Hero
+name,872,16678,anchored,황숙현덕,The Emperor's Uncle
+name,873,16679,anchored,벽안자염,Blue Eyes and Crimson Beards
+name,874,16680,anchored,태조고제,Ancient Emperor
+name,875,16681,anchored,패왕항우,Xiang Yu the Overlord
+name,876,16682,anchored,영원한 동료애,Eternal Brotherhood
+name,877,16683,anchored,젊었던 그 시절,When We Were Young
+name,878,16684,anchored,뚫을 수 없는 방패는 없다,Every Shield Has a Weakness
+name,879,16685,anchored,복숭아 나무 아래에서,Under the Peach Tree
+name,880,16686,anchored,피식자에서 포식자로,From Prey to Predator
+name,881,16687,anchored,결투장의 황금 두건,Gold Turban at the Arena
+name,882,16688,anchored,넘치는 힘,Power Runneth Over
+name,883,16689,anchored,우리의 소원은,What We Want
+name,884,16690,anchored,병종에 귀천은 없다,All Soldiers are Created Equal
+name,885,16691,anchored,사마의전(중) 정복  I,Legend of Sima Yi (Ch.2) I
+name,886,16692,anchored,사마의전(중) 정복  II,Legend of Sima Yi (Ch.2) II
+name,887,16693,anchored,사마의전(중) 정복(극한)  I,Legend of Sima Yi (Ch.2) (Extreme) I
+name,888,16694,anchored,사마의전(중) 정복(극한)  II,Legend of Sima Yi (Ch.2) (Extreme) II
+name,889,16695,anchored,조온별전 정복  I,Kuai Yue Side Story Conquest I
+name,890,16696,anchored,조온별전 정복  II,Kuai Yue Side Story Conquest II
+name,891,16697,anchored,조온별전 정복(극한)  I,Kuai Yue Side Story Conquest (Extreme) I
+name,892,16698,anchored,조온별전 정복(극한)  II,Kuai Yue Side Story Conquest (Extreme) II
+name,893,16699,anchored,백호 수호 Ⅰ,White Tiger Protector I
+name,894,16700,anchored,백호 수호 Ⅱ,White Tiger Protector II
+name,895,16701,anchored,백호 수호 Ⅲ,White Tiger Protector III
+name,896,16702,anchored,백호 수호 Ⅳ,White Tiger Protector IV
+name,897,16703,anchored,하급 백호 수호자 Ⅰ,Minor White Tiger Protector I
+name,898,16704,anchored,하급 백호 수호자 Ⅱ,Minor White Tiger Protector II
+name,899,16705,anchored,하급 백호 수호자 Ⅲ,Minor White Tiger Protector III
+name,900,16706,anchored,하급 백호 수호자 Ⅳ,Minor White Tiger Protector IV
+name,901,16707,anchored,하급 백호 수호자 Ⅴ,Minor White Tiger Protector V
+name,902,16708,anchored,하급 백호 수호자 Ⅵ,Minor White Tiger Protector VI
+name,903,16709,anchored,하급 백호 수호자 Ⅶ,Minor White Tiger Protector VII
+name,904,16710,anchored,하급 백호 수호자 Ⅷ,Minor White Tiger Protector VIII
+name,905,16711,anchored,하급 백호 수호자 Ⅸ,Minor White Tiger Protector IX
+name,906,16712,anchored,하급 백호 수호자 Ⅹ,Minor White Tiger Protector X
+name,907,16713,anchored,중급 백호 수호자 Ⅰ,Intermediate White Tiger Protector I
+name,908,16714,anchored,중급 백호 수호자 Ⅱ,Intermediate White Tiger Protector II
+name,909,16715,anchored,중급 백호 수호자 Ⅲ,Intermediate White Tiger Protector III
+name,910,16716,anchored,중급 백호 수호자 Ⅳ,Intermediate White Tiger Protector IV
+name,911,16717,anchored,중급 백호 수호자 Ⅴ,Intermediate White Tiger Protector V
+name,912,16718,anchored,중급 백호 수호자 Ⅵ,Intermediate White Tiger Protector VI
+name,913,16719,anchored,중급 백호 수호자 Ⅶ,Intermediate White Tiger Protector VII
+name,914,16720,anchored,중급 백호 수호자 Ⅷ,Intermediate White Tiger Protector VIII
+name,915,16721,anchored,중급 백호 수호자 Ⅸ,Intermediate White Tiger Protector IX
+name,916,16722,anchored,중급 백호 수호자 Ⅹ,Intermediate White Tiger Protector X
+name,917,16723,anchored,상급 백호 수호자 Ⅰ,Advanced White Tiger Protector I
+name,918,16724,anchored,상급 백호 수호자 Ⅱ,Advanced White Tiger Protector II
+name,919,16725,anchored,상급 백호 수호자 Ⅲ,Advanced White Tiger Protector III
+name,920,16726,anchored,상급 백호 수호자 Ⅳ,Advanced White Tiger Protector IV
+name,921,16727,anchored,상급 백호 수호자 Ⅴ,Advanced White Tiger Protector V
+name,922,16728,anchored,상급 백호 수호자 Ⅵ,Advanced White Tiger Protector VI
+name,923,16729,anchored,상급 백호 수호자 Ⅶ,Advanced White Tiger Protector VII
+name,924,16730,anchored,상급 백호 수호자 Ⅷ,Advanced White Tiger Protector VIII
+name,925,16731,anchored,상급 백호 수호자 Ⅸ,Advanced White Tiger Protector IX
+name,926,16732,anchored,상급 백호 수호자 Ⅹ,Advanced White Tiger Protector X
+name,927,16733,anchored,최상급 백호 수호자 Ⅰ,Master White Tiger Protector I
+name,928,16734,anchored,최상급 백호 수호자 Ⅱ,Master White Tiger Protector II
+name,929,16735,anchored,최상급 백호 수호자 Ⅲ,Master White Tiger Protector III
+name,930,16736,anchored,최상급 백호 수호자 Ⅳ,Master White Tiger Protector IV
+name,931,16737,anchored,최상급 백호 수호자 Ⅴ,Master White Tiger Protector V
+name,932,16738,anchored,최상급 백호 수호자 Ⅵ,Master White Tiger Protector VI
+name,933,16739,anchored,최상급 백호 수호자 Ⅶ,Master White Tiger Protector VII
+name,934,16740,anchored,최상급 백호 수호자 Ⅷ,Master White Tiger Protector VIII
+name,935,16741,anchored,최상급 백호 수호자 Ⅸ,Master White Tiger Protector IX
+name,936,16742,anchored,최상급 백호 수호자 Ⅹ,Master White Tiger Protector X
+name,937,16743,anchored,마차를 쫓아라! Ⅰ,After the Wagon! I
+name,938,16744,anchored,마차를 쫓아라! Ⅱ,After the Wagon! II
+name,939,16745,anchored,마차를 쫓아라! Ⅲ,After the Wagon! III
+name,940,16746,anchored,마차를 쫓아라! Ⅳ,After the Wagon! IV
+name,941,16747,anchored,마차를 쫓아라! Ⅴ,After the Wagon! V
+name,942,16748,anchored,마차를 쫓아라! Ⅵ,After the Wagon! VI
+name,943,16749,anchored,마차를 쫓아라! Ⅶ,After the Wagon! VII
+name,944,16750,anchored,마차를 쫓아라! Ⅷ,After the Wagon! VIII
+name,945,16751,anchored,마차를 쫓아라! Ⅸ,After the Wagon! IX
+name,946,16752,anchored,마차를 쫓아라! Ⅹ,After the Wagon! X
+name,947,16753,anchored,강해져서 돌아왔다 Ⅰ,Came Back Stronger I
+name,948,16754,anchored,강해져서 돌아왔다 Ⅱ,Came Back Stronger II
+name,949,16755,anchored,강해져서 돌아왔다 Ⅲ,Came Back Stronger III
+name,950,16756,anchored,강해져서 돌아왔다 Ⅳ,Came Back Stronger IV
+name,951,16757,anchored,강해져서 돌아왔다 Ⅴ,Came Back Stronger V
+name,952,16758,anchored,강해져서 돌아왔다 Ⅵ,Came Back Stronger VI
+name,953,16759,anchored,강해져서 돌아왔다 Ⅶ,Came Back Stronger VII
+name,954,16760,anchored,강해져서 돌아왔다 Ⅷ,Came Back Stronger VIII
+name,955,16761,anchored,강해져서 돌아왔다 Ⅸ,Came Back Stronger IX
+name,956,16762,anchored,강해져서 돌아왔다 Ⅹ,Came Back Stronger X
+name,957,16763,anchored,무장전 완료: [난세간웅] 편,Officer Battle Complete: [Cao Cao the Cunning Hero] Story
+name,958,16764,anchored,무장전 완료: [최후의 승자] 편,Officer Battle Complete: [The Final Victor] Story
+name,959,16765,anchored,무장전 완료: [도원의 꿈] 편,Officer Battle Complete: [Dreams of the Peach Garden] Story
+name,960,16766,anchored,무장전 완료: [군신운장] 편,Officer Battle Complete: [Guan Yu] Story
+name,961,16767,anchored,무장전 완료: [촉한의 불꽃] 편,Officer Battle Complete: [Flame of Shu Han] Story
+name,962,16768,anchored,무장전 완료: [강동의 기틀] 편,Officer Battle Complete: [Jiangdong Infrastructure] Story
+name,963,16769,anchored,무장전 완료: [손오] 편,Officer Battle Complete: [Sun Wu] Story
+name,964,16770,anchored,무장전 완료: [동오의 영웅] 편,Officer Battle Complete: [Hero of Eastern Wu] Story
+name,965,16771,anchored,무장전 완료: [무신의 천하] 편,Officer Battle Complete: [The God of War's World] Story
+name,966,16772,anchored,무장전 완료: [황건당립] 편,Officer Battle Complete: [Yellow Sky] Story
+name,967,16773,anchored,무장전 완료: [남만의 기세] 편,Officer Battle Complete: [Nanman's Spirit] Story
+name,968,16774,anchored,무장전 완료: [난세여걸 Ⅰ] 편,Officer Battle Complete: [Women of War I] Story
+name,969,16775,anchored,무장전 완료: [난세여걸 Ⅱ] 편,Officer Battle Complete: [Women of War II] Story
+name,970,16776,anchored,무장전 완료: [봉인된 마왕] 편,Officer Battle Complete: [Sealed Demon] Story
+name,971,16777,anchored,사마의전(하) 정복  I,Legend of Sima Yi (Ch.3) I
+name,972,16778,anchored,사마의전(하) 정복  II,Legend of Sima Yi (Ch.3) II
+name,973,16779,inferred,사마의전(하) 정복(극한)  I,Legend of Sima Yi (Ch.3) (Extreme) I
+name,974,16780,inferred,사마의전(하) 정복(극한)  II,Legend of Sima Yi (Ch.3) (Extreme) II
+name,975,16781,inferred,방통전 정복  I,Legend of Pang Tong I
+name,976,16782,inferred,방통전 정복  II,Legend of Pang Tong II
+name,977,16783,inferred,방통전 정복(극한)  I,Legend of Pang Tong (Extreme) I
+name,978,16784,inferred,방통전 정복(극한)  II,Legend of Pang Tong (Extreme) II
+name,979,16785,inferred,관직: 출사의 길 Ⅰ,
+name,980,16786,inferred,관직: 출사의 길 Ⅱ,
+name,981,16787,inferred,관직: 출사의 길 Ⅲ,
+name,982,16788,inferred,관직: 출사의 길 Ⅳ,
+name,983,16789,inferred,관직: 출사의 길 Ⅴ,
+name,984,16790,inferred,관직: 출사의 길 Ⅵ,
+name,985,16791,inferred,관직: 출사의 길 Ⅶ,
+name,986,16792,inferred,관직: 출사의 길 Ⅷ,
+name,987,16793,inferred,관직: 출사의 길 Ⅸ,
+name,988,16794,inferred,관직: 출사의 길 Ⅹ,
+name,989,16795,inferred,새로운 힘 Ⅰ,
+name,990,16796,inferred,새로운 힘 Ⅱ,
+name,991,16797,inferred,새로운 힘 Ⅲ,
+name,992,16798,inferred,새로운 힘 Ⅳ,
+name,993,16799,inferred,새로운 힘 Ⅴ,
+name,994,16800,inferred,새로운 힘 Ⅵ,
+name,995,16801,inferred,새로운 힘 Ⅶ,
+name,996,16802,inferred,새로운 힘 Ⅷ,
+name,997,16803,inferred,새로운 힘 Ⅸ,
+name,998,16804,inferred,새로운 힘 Ⅹ,
+desc,1,16805,inferred,연의 전투에서 인장 임무를 달성해 인장을 습득하세요.,Complete Seal Missions in Story Battles to earn Seals.
+desc,2,16806,inferred,연의 극한 전투에서 인장 임무를 달성해 인장을 습득하세요.,Complete Seal Missions in Extreme Story Battles to earn Seals.
+desc,3,16807,inferred,연의 극한 전투를 완료하세요.,Complete Extreme Story Battles.
+desc,4,16808,inferred,모든 전투에서 승리하세요.,Win every battle.
+desc,5,16809,inferred,조홍을 25회 퇴각시키세요.,Defeat Cao Hong 25 times.
+desc,6,16810,inferred,적의 거점을 공격해 승리하세요.,Invade and conquer enemy domains.
+desc,7,16811,inferred,모의전에서 승리하세요.,Win in Practice battles.
+desc,8,16812,inferred,사건 임무에서 승리하세요.,Complete Quests.
+desc,9,16813,inferred,적군 장수와 병사들을 퇴각시키세요.,Defeat enemy commanders and soldiers.
+desc,10,16814,anchored,1000명의 장수를 벤 장수를 천하무쌍이라 합니다.,"The Undisputed is a title given to those who slay 1,000 commanders."
+desc,11,16815,anchored,원술을 퇴각시키세요.,Defeat Yuan Shu.
+desc,12,16816,anchored,여성 장수를 출진시켜 승리하세요.,Win a battle with a female commander.
+desc,13,16817,anchored,전장에서 적군을 공격하세요.,Attack enemy units on a battlefield.
+desc,14,16818,anchored,전장에서 연속 공격을 100회 사용하세요.,Perform Double Attack 100 times.
+desc,15,16819,anchored,전장에서 회심 공격을 100회 사용하세요.,Perform Critical Attack 100 times.
+desc,16,16820,anchored,"모두 힘을 합칠 때, 협공을 100회 사용하세요.",Combine your strength! Perform Joint Attack 100 times.
+desc,17,16821,anchored,전장에서 공격 책략을 사용하세요.,Use Assault Tactics.
+desc,18,16822,anchored,전장에서 회복 책략을 사용하세요.,Use Restorative Tactics.
+desc,19,16823,anchored,전장에서 연속 책략을 100회 사용하세요.,Perform Double Tactics 100 times.
+desc,20,16824,anchored,전장에서 회심 책략을 100회 사용하세요.,Perform Critical Tactics 100 times.
+desc,21,16825,anchored,최선의 방어! 전투에서 100번 회피하세요.,Evade attacks 100 times.
+desc,22,16826,anchored,행군! 행군! 전투에서 500칸 이동하세요.,March! March! Move 500 tiles in battle.
+desc,23,16827,anchored,보유한 장수의 LV을 성장시키세요.,Increase the level of your commander.
+desc,24,16828,anchored,계보에서 새로운 장수를 등용하세요.,Recruit a new commander from Banner.
+desc,25,16829,anchored,계보에서 장수를 강화하세요.,Upgrade your commander from Banner.
+desc,26,16830,anchored,장수의 기력을 회복하세요.,Restore your commander's energy.
+desc,27,16831,anchored,은전을 사용하세요.,Use Silver Coins.
+desc,28,16832,anchored,군량을 사용하세요.,Use Rations.
+desc,29,16833,anchored,공적을 사용하세요.,Use Jade Seals.
+desc,30,16834,anchored,은전을 획득하세요.,Earn Silver Coins.
+desc,31,16835,anchored,군량을 획득하세요.,Earn Rations.
+desc,32,16836,anchored,공적을 획득하세요.,Earn Jade Seals.
+desc,33,16837,anchored,보물 합성을 시도하세요.,Fuse an artifact.
+desc,34,16838,anchored,다른 거점을 점령하세요.,Capture other domains.
+desc,35,16839,anchored,거점 내 시설을 강화하세요.,Upgrade domain facilities.
+desc,36,16840,anchored,군주 Rank를 성장시키세요.,Raise your Warlord Rank.
+desc,37,16841,anchored,6명 이상의 장수가 존재하는 계보의 한 패에서 모든 장수를 등용하세요.,Recruit all commanders from a Banner that has six or more commanders.
+desc,38,16842,anchored,6명 이상의 장수가 존재하는 계보의 한 패에서 모든 장수의 최종 승급과 최고 LV을 달성하세요.,Promote and level up all commanders from a Banner with 6 or more commanders to Max Lv.
+desc,39,16843,anchored,6명 이상의 장수가 존재하는 계보의 한 패에서 모든 장수의 최종 강화를 달성하세요.,Upgrade all commanders from a Banner with 6 or more commanders to max.
+desc,40,16844,anchored,6명 이상의 장수가 존재하는 계보의 한 패에서 모든 장수의 교본 훈련을 최대로 하세요.,Train all commanders from a Banner with 6 or more commanders to max.
+desc,41,16845,anchored,6명 이상의 장수가 존재하는 계보의 한 패에서 모든 장수의 효과를 1개 이상 활성화 하세요.,Unlock passives for all commanders from a Banner with 6 or more commanders.
+desc,42,16846,anchored,계보에서 장수를 공적과 은전으로 등용하세요.,Recruit a new commander from Banner using Jade Seals or Silver Coins.
+desc,43,16847,anchored,계보에서 장수를 금전으로 등용하세요.,Recruit a new commander from Banner using Gold Coins.
+desc,44,16848,anchored,장수를 승급시키세요.,Promote a commander.
+desc,45,16849,anchored,명예를 사용하세요.,Use Fame.
+desc,46,16850,anchored,명예를 획득하세요.,Earn Fame.
+desc,47,16851,anchored,조조전 [같은 하늘 아래] 전투를 완료하세요.,Complete [Under the Same Sky] in Cao Cao Story.
+desc,48,16852,anchored,조조전 [통일! 여정의 끝] 전투를 완료하세요.,Complete [Unification! The Journey's End] in Cao Cao Story.
+desc,49,16853,anchored,조조전 [같은 하늘 아래(극한)] 전투를 완료하세요.,Complete [Under the Same Sky (Extreme)] in Cao Cao Story.
+desc,50,16854,anchored,조조전 [통일! 여정의 끝(극한)] 전투를 완료하세요.,Complete [Unification! The Journey's End (Extreme)] in Cao Cao Story.
+desc,51,16855,anchored,조조전 [사조성의 빛] 전투를 완료하세요.,Complete [Omen of Death] in Cao Cao Story.
+desc,52,16856,anchored,조조전 [마지막 결전] 전투를 완료하세요.,Complete [The Final Battle] in Cao Cao Story.
+desc,53,16857,anchored,조조전 [사조성의 빛(극한)] 전투를 완료하세요.,Complete [Omen of Death (Extreme)] in Cao Cao Story.
+desc,54,16858,anchored,조조전 [마지막 결전(극한)] 전투를 완료하세요.,Complete [The Final Battle (Extreme)] in Cao Cao Story.
+desc,55,16859,anchored,북부위전 [신임 북부위] 전투를 완료하세요.,Complete [The New Captain] in N. District Captain Story.
+desc,56,16860,anchored,북부위전 [십상시의 숙부] 전투를 완료하세요.,Complete [The Eunuch's Uncle] in N. District Captain Story.
+desc,57,16861,anchored,북부위전 [신임 북부위(극한)] 전투를 완료하세요.,Complete [The New Captain (Extreme)] in N. District Captain Story.
+desc,58,16862,anchored,북부위전 [십상시의 숙부(극한)] 전투를 완료하세요.,Complete [The Eunuch's Uncle (Extreme)] in N. District Captain Story.
+desc,59,16863,anchored,장각전 [만남] 전투를 완료하세요.,Complete [Encounter] in Zhang Jue Story.
+desc,60,16864,anchored,장각전 [거병] 전투를 완료하세요.,Complete [Proclamation] in Zhang Jue Story.
+desc,61,16865,anchored,장각전 [만남(극한)] 전투를 완료하세요.,Complete [Encounter (Extreme)] in Zhang Jue Story.
+desc,62,16866,anchored,장각전 [거병(극한)] 전투를 완료하세요.,Complete [Proclamation (Extreme)] in Zhang Jue Story.
+desc,63,16867,anchored,사마의전 [사마가 수비전] 전투를 완료하세요.,Complete [Shamoke's Defense] in Sima Yi Story.
+desc,64,16868,anchored,사마의전 [동오 설득전] 전투를 완료하세요.,Complete [Persuasion in Eastern Wu] in Sima Yi Story.
+desc,65,16869,anchored,사마의전 [사마가 수비전(극한)] 전투를 완료하세요.,Complete [Shamoke's Defense (Extreme)] in Sima Yi Story.
+desc,66,16870,anchored,사마의전 [동오 설득전(극한)] 전투를 완료하세요.,Complete [Persuasion in Eastern Wu (Extreme)] in Sima Yi Story.
+desc,67,16871,anchored,장료전 [조조의 밑에서] 전투를 완료하세요.,Complete [Serving Cao Cao] in Zhang Liao Story.
+desc,68,16872,anchored,장료전 [죽음의 땅. 유수구] 전투를 완료하세요.,"Complete [Ruxukou, a Land of Death] in Zhang Liao Story."
+desc,69,16873,anchored,장료전 [조조의 밑에서(극한)] 전투를 완료하세요.,Complete [Serving Cao Cao (Extreme)] in Zhang Liao Story.
+desc,70,16874,anchored,장료전 [죽음의 땅. 유수구(극한)] 전투를 완료하세요.,"Complete [Ruxukou, a Land of Death (Extreme)] in Zhang Liao Story."
+desc,71,16875,anchored,관우전(상) [의협의 사나이] 전투를 완료하세요.,Complete [A Righteous Man] in Guan Yu Story (Ch.1).
+desc,72,16876,anchored,관우전(상) [패주하는 조조] 전투를 완료하세요.,Complete [Cao Cao on the Run] in Guan Yu Story (Ch.1).
+desc,73,16877,anchored,관우전(상) [의협의 사나이(극한)] 전투를 완료하세요.,Complete [A Righteous Man (Extreme)] in Guan Yu Story (Ch.1).
+desc,74,16878,anchored,관우전(상) [패주하는 조조(극한)] 전투를 완료하세요.,Complete [Cao Cao on the Run (Extreme)] in Guan Yu Story (Ch.1).
+desc,75,16879,anchored,서서전 [와우산의 산적들] 전투를 완료하세요.,Complete [Bandits at Wuniushan] in Xu Shu Story.
+desc,76,16880,anchored,서서전 [공명의 행방] 전투를 완료하세요.,Complete [Kongming's Whereabouts] in Xu Shu Story.
+desc,77,16881,anchored,서서전 [와우산의 산적들(극한)] 전투를 완료하세요.,Complete [Bandits at Wuniushan (Extreme)] in Xu Shu Story.
+desc,78,16882,anchored,서서전 [공명의 행방(극한)] 전투를 완료하세요.,Complete [Kongming's Whereabouts (Extreme)] in Xu Shu Story.
+desc,79,16883,anchored,원소전 [기주 공격] 전투를 완료하세요.,Complete [Jizhou Campaign] in Yuan Shao Story.
+desc,80,16884,anchored,원소전 [재건] 전투를 완료하세요.,Complete [Rebuilding] in Yuan Shao Story.
+desc,81,16885,anchored,원소전 [기주 공격(극한)] 전투를 완료하세요.,Complete [Jizhou Campaign (Extreme)] in Yuan Shao Story.
+desc,82,16886,anchored,원소전 [재건(극한)] 전투를 완료하세요.,Complete [Rebuilding (Extreme)] in Yuan Shao Story.
+desc,83,16887,anchored,등애전 [서촉으로 가다] 전투를 완료하세요.,Complete [To Western Shu] in Deng Ai Story.
+desc,84,16888,anchored,등애전 [촉을 정벌하다] 전투를 완료하세요.,Complete [Shu Shall Fall] in Deng Ai Story.
+desc,85,16889,anchored,등애전 [서촉으로 가다(극한)] 전투를 완료하세요.,Complete [To Western Shu (Extreme)] in Deng Ai Story.
+desc,86,16890,anchored,등애전 [촉을 정벌하다(극한)] 전투를 완료하세요.,Complete [Shu Shall Fall (Extreme)] in Deng Ai Story.
+desc,87,16891,anchored,조운전 [공손찬을 구하라] 전투를 완료하세요.,Complete [Save Gongsun Zan] in Zhao Yun Story.
+desc,88,16892,anchored,조운전 [후방에 남다] 전투를 완료하세요.,Complete [I'll Stay Here] in Zhao Yun Story.
+desc,89,16893,anchored,조운전 [공손찬을 구하라(극한)] 전투를 완료하세요.,Complete [Save Gongsun Zan (Extreme)] in Zhao Yun Story.
+desc,90,16894,anchored,조운전 [후방에 남다(극한)] 전투를 완료하세요.,Complete [I'll Stay Here (Extreme)] in Zhao Yun Story.
+desc,91,16895,anchored,공손찬전 [노식의 두 제자] 전투를 완료하세요.,Complete [Two Pupils of Lu Zhi] in Gongsun Zan Story.
+desc,92,16896,anchored,공손찬전 [백마장사 공손찬] 전투를 완료하세요.,"Complete [Gongsun Zan, the White Horse General] in Gongsun Zan Story."
+desc,93,16897,anchored,공손찬전 [노식의 두 제자(극한)] 전투를 완료하세요.,Complete [Two Pupils of Lu Zhi (Extreme)] in Gongsun Zan Story.
+desc,94,16898,anchored,공손찬전 [백마장사 공손찬(극한)] 전투를 완료하세요.,"Complete [Gongsun Zan, the White Horse General (Extreme)] in Gongsun Zan Story."
+desc,95,16899,anchored,육손전 [하급 관리 육손] 전투를 완료하세요.,"Complete [Lu Xun, a Low-Rank Officer] in Lu Xun Story."
+desc,96,16900,anchored,육손전 [젊은 기재] 전투를 완료하세요.,Complete [Young Talent] in Lu Xun Story.
+desc,97,16901,anchored,육손전 [하급 관리 육손(극한)] 전투를 완료하세요.,"Complete [Lu Xun, a Low-Rank Officer (Extreme)] in Lu Xun Story."
+desc,98,16902,anchored,육손전 [젊은 기재(극한)] 전투를 완료하세요.,Complete [Young Talent (Extreme)] in Lu Xun Story.
+desc,99,16903,anchored,손견전 [수적 퇴치] 전투를 완료하세요.,Complete [Pirate Expedition] in Sun Jian Story.
+desc,100,16904,anchored,손견전 [형주 공격] 전투를 완료하세요.,Complete [Jingzhou Campaign] in Sun Jian Story.
+desc,101,16905,anchored,손견전 [수적 퇴치(극한)] 전투를 완료하세요.,Complete [Pirate Expedition (Extreme)] in Sun Jian Story.
+desc,102,16906,anchored,손견전 [형주 공격(극한)] 전투를 완료하세요.,Complete [Jingzhou Campaign (Extreme)] in Sun Jian Story.
+desc,103,16907,anchored,손책전 [아버지를 기다리며] 전투를 완료하세요.,Complete [Waiting for Father] in Sun Ce Story.
+desc,104,16908,anchored,손책전 [위제를 토벌하라] 전투를 완료하세요.,Complete [Punish Emperor Wei] in Sun Ce Story.
+desc,105,16909,anchored,손책전 [아버지를 기다리며(극한)] 전투를 완료하세요.,Complete [Waiting for Father (Extreme)] in Sun Ce Story.
+desc,106,16910,anchored,손책전 [위제를 토벌하라(극한)] 전투를 완료하세요.,Complete [Punish Emperor Wei (Extreme)] in Sun Ce Story.
+desc,107,16911,anchored,황충전 [무릉만의 반란] 전투를 완료하세요.,Complete [Wuling Rebellion] in Huang Zhong Story.
+desc,108,16912,anchored,황충전 [대전의 종지부] 전투를 완료하세요.,Complete [The Conclusion] in Huang Zhong Story.
+desc,109,16913,anchored,황충전 [무릉만의 반란(극한)] 전투를 완료하세요.,Complete [Wuling Rebellion (Extreme)] in Huang Zhong Story.
+desc,110,16914,anchored,황충전 [대전의 종지부(극한)] 전투를 완료하세요.,Complete [The Conclusion (Extreme)] in Huang Zhong Story.
+desc,111,16915,anchored,마왕 제갈량전 [기묘한 서적] 전투를 완료하세요.,Complete [A Strange Book] in Demon Zhuge Liang Story.
+desc,112,16916,anchored,마왕 제갈량전 [틈을 노려라] 전투를 완료하세요.,Complete [Window of Opportunity] in Demon Zhuge Liang Story.
+desc,113,16917,anchored,마왕 제갈량전 [기묘한 서적(극한)] 전투를 완료하세요.,Complete [A Strange Book (Extreme)] in Demon Zhuge Liang Story.
+desc,114,16918,anchored,마왕 제갈량전 [틈을 노려라(극한)] 전투를 완료하세요.,Complete [Window of Opportunity (Extreme)] in Demon Zhuge Liang Story.
+desc,115,16919,anchored,장비전 [구출] 전투를 완료하세요.,Complete [The Rescue] in Zhang Fei Story.
+desc,116,16920,anchored,장비전 [대전의 마무리] 전투를 완료하세요.,Complete [The Final Moment] in Zhang Fei Story.
+desc,117,16921,anchored,장비전 [구출(극한)] 전투를 완료하세요.,Complete [The Rescue (Extreme)] in Zhang Fei Story.
+desc,118,16922,anchored,장비전 [대전의 마무리(극한)] 전투를 완료하세요.,Complete [The Final Moment (Extreme)] in Zhang Fei Story.
+desc,119,16923,anchored,마초전 [복수의 시작] 전투를 완료하세요.,Complete [Budding Vengeance] in Ma Chao Story.
+desc,120,16924,anchored,마초전 [힘을 얻기 위해] 전투를 완료하세요.,Complete [Pursuit of Power] in Ma Chao Story.
+desc,121,16925,anchored,마초전 [복수의 시작(극한)] 전투를 완료하세요.,Complete [Budding Vengeance (Extreme)] in Ma Chao Story.
+desc,122,16926,anchored,마초전 [힘을 얻기 위해(극한)] 전투를 완료하세요.,Complete [Pursuit of Power (Extreme)] in Ma Chao Story.
+desc,123,16927,anchored,유비전 [장세평의 부탁] 전투를 완료하세요.,Complete [Zhang Shiping's Request] in Liu Bei Story.
+desc,124,16928,anchored,유비전 [붉게 타버린 꿈] 전투를 완료하세요.,Complete [A Dream Gone to Flame] in Liu Bei Story.
+desc,125,16929,anchored,유비전 [장세평의 부탁(극한)] 전투를 완료하세요.,Complete [Zhang Shiping's Request (Extreme)] in Liu Bei Story.
+desc,126,16930,anchored,유비전 [붉게 타버린 꿈(극한)] 전투를 완료하세요.,Complete [A Dream Gone to Flame (Extreme)] in Liu Bei Story.
+desc,127,16931,anchored,제갈량전(상) [서주 탈출전] 전투를 완료하세요.,Complete [Escape from Xuzhou] in Zhuge Liang Story (Ch.1).
+desc,128,16932,anchored,제갈량전(상) [악몽] 전투를 완료하세요.,Complete [Nightmare] in Zhuge Liang Story (Ch.1).
+desc,129,16933,anchored,제갈량전(상) [서주 탈출전(극한)] 전투를 완료하세요.,Complete [Escape from Xuzhou (Extreme)] in Zhuge Liang Story (Ch.1).
+desc,130,16934,anchored,제갈량전(상) [악몽(극한)] 전투를 완료하세요.,Complete [Nightmare (Extreme)] in Zhuge Liang Story (Ch.1).
+desc,131,16935,anchored,강유전 [제갈량의 후계자] 전투를 완료하세요.,Complete [Zhuge Liang's Successor] in Jiang Wei Story.
+desc,132,16936,anchored,강유전 [마지막 불꽃] 전투를 완료하세요.,Complete [The Final Flame] in Jiang Wei Story.
+desc,133,16937,anchored,강유전 [제갈량의 후계자(극한)] 전투를 완료하세요.,Complete [Zhuge Liang's Successor (Extreme)] in Jiang Wei Story.
+desc,134,16938,anchored,강유전 [마지막 불꽃(극한)] 전투를 완료하세요.,Complete [The Final Flame (Extreme)] in Jiang Wei Story.
+desc,135,16939,anchored,여포전 [무신의 출현] 전투를 완료하세요.,Complete [Enter the God of War] in Lu Bu Story.
+desc,136,16940,anchored,여포전 [결전의 날] 전투를 완료하세요.,Complete [The Final Battle] in Lu Bu Story.
+desc,137,16941,anchored,여포전 [무신의 출현(극한)] 전투를 완료하세요.,Complete [Enter the God of War (Extreme)] in Lu Bu Story.
+desc,138,16942,anchored,여포전 [결전의 날(극한)] 전투를 완료하세요.,Complete [The Final Battle (Extreme)] in Lu Bu Story.
+desc,139,16943,anchored,동탁전 [서량의 군벌] 전투를 완료하세요.,Complete [The Warlord of Xiliang] in Dong Zhuo Story.
+desc,140,16944,anchored,동탁전 [연환지계] 전투를 완료하세요.,Complete [Falling Like Dominoes] in Dong Zhuo Story.
+desc,141,16945,anchored,동탁전 [서량의 군벌(극한)] 전투를 완료하세요.,Complete [The Warlord of Xiliang (Extreme)] in Dong Zhuo Story.
+desc,142,16946,anchored,동탁전 [연환지계(극한)] 전투를 완료하세요.,Complete [Falling Like Dominoes (Extreme)] in Dong Zhuo Story.
+desc,143,16947,anchored,하후연전 [후방 지원] 전투를 완료하세요.,Complete [Support the Rear Lines] in Xiahou Yuan Story.
+desc,144,16948,anchored,하후연전 [장로의 결단] 전투를 완료하세요.,Complete [Zhang Lu's Decision] in Xiahou Yuan Story.
+desc,145,16949,anchored,하후연전 [후방 지원(극한)] 전투를 완료하세요.,Complete [Support the Rear Lines (Extreme)] in Xiahou Yuan Story.
+desc,146,16950,anchored,하후연전 [장로의 결단(극한)] 전투를 완료하세요.,Complete [Zhang Lu's Decision (Extreme)] in Xiahou Yuan Story.
+desc,147,16951,anchored,태사자전 [어머니의 편지] 전투를 완료하세요.,Complete [A Mother's Letter] in Taishi Ci Story.
+desc,148,16952,anchored,태사자전 [손책을 따르다] 전투를 완료하세요.,Complete [To Serve Sun Ce] in Taishi Ci Story.
+desc,149,16953,anchored,태사자전 [어머니의 편지(극한)] 전투를 완료하세요.,Complete [A Mother's Letter (Extreme)] in Taishi Ci Story.
+desc,150,16954,anchored,태사자전 [손책을 따르다(극한)] 전투를 완료하세요.,Complete [To Serve Sun Ce (Extreme)] in Taishi Ci Story.
+desc,151,16955,anchored,여몽전 [남군 점령 계획] 전투를 완료하세요.,Complete [Occupy Nanjun] in Lu Meng Story.
+desc,152,16956,anchored,여몽전 [호랑이를 잡아라] 전투를 완료하세요.,Complete [Catch the Tiger] in Lu Meng Story.
+desc,153,16957,anchored,여몽전 [남군 점령 계획(극한)] 전투를 완료하세요.,Complete [Occupy Nanjun (Extreme)] in Lu Meng Story.
+desc,154,16958,anchored,여몽전 [호랑이를 잡아라(극한)] 전투를 완료하세요.,Complete [Catch the Tiger (Extreme)] in Lu Meng Story.
+desc,155,16959,anchored,엄백호전 [농민들의 근심] 전투를 완료하세요.,Complete [The Suffering of the People] in Yan Baihu Story.
+desc,156,16960,anchored,엄백호전 [동오의 덕왕] 전투를 완료하세요.,Complete [Virtuous King of Eastern Wu] in Yan Baihu Story.
+desc,157,16961,anchored,엄백호전 [농민들의 근심(극한)] 전투를 완료하세요.,Complete [The Suffering of the People (Extreme)] in Yan Baihu Story.
+desc,158,16962,anchored,엄백호전 [동오의 덕왕(극한)] 전투를 완료하세요.,Complete [Virtuous King of Eastern Wu (Extreme)] in Yan Baihu Story.
+desc,159,16963,anchored,맹획전 [무술 대회] 전투를 완료하세요.,Complete [The Tournament] in Meng Huo Story.
+desc,160,16964,anchored,맹획전 [유장군 침공] 전투를 완료하세요.,Complete [Liu Zhang Attacks] in Meng Huo Story.
+desc,161,16965,anchored,맹획전 [무술 대회(극한)] 전투를 완료하세요.,Complete [The Tournament (Extreme)] in Meng Huo Story.
+desc,162,16966,anchored,맹획전 [유장군 침공(극한)] 전투를 완료하세요.,Complete [Liu Zhang Attacks (Extreme)] in Meng Huo Story.
+desc,163,16967,anchored,도겸전 [황건병 토벌] 전투를 완료하세요.,Complete [Yellow Turban Expedition] in Tao Qian Story.
+desc,164,16968,anchored,도겸전 [인과응보] 전투를 완료하세요.,Complete [What Goes Around Comes Around] in Tao Qian Story.
+desc,165,16969,anchored,도겸전 [황건병 토벌(극한)] 전투를 완료하세요.,Complete [Yellow Turban Expedition (Extreme)] in Tao Qian Story.
+desc,166,16970,anchored,도겸전 [인과응보(극한)] 전투를 완료하세요.,Complete [What Goes Around Comes Around (Extreme)] in Tao Qian Story.
+desc,167,16971,anchored,주유전 [먼저 떠난 벗] 전투를 완료하세요.,Complete [A Departed Friend] in Zhou Yu Story.
+desc,168,16972,anchored,주유전 [조조 추격] 전투를 완료하세요.,Complete [Pursue Cao Cao] in Zhou Yu Story.
+desc,169,16973,anchored,주유전 [먼저 떠난 벗(극한)] 전투를 완료하세요.,Complete [A Departed Friend (Extreme)] in Zhou Yu Story.
+desc,170,16974,anchored,주유전 [조조 추격(극한)] 전투를 완료하세요.,Complete [Pursue Cao Cao (Extreme)] in Zhou Yu Story.
+desc,171,16975,anchored,아만전 [당고의 금] 전투를 완료하세요.,Complete [Disasters of Partisan Prohibitions] in Aman Story.
+desc,172,16976,anchored,아만전 [결단] 전투를 완료하세요.,Complete [Determination] in Aman Story.
+desc,173,16977,anchored,아만전 [당고의 금(극한)] 전투를 완료하세요.,Complete [Disasters of Partisan Prohibitions (Extreme)] in Aman Story.
+desc,174,16978,anchored,아만전 [결단(극한)] 전투를 완료하세요.,Complete [Determination (Extreme)] in Aman Story.
+desc,175,16979,anchored,문앙전 [풍전등화] 전투를 완료하세요.,Complete [Hanging by a Thread] in Wen Yang Story.
+desc,176,16980,anchored,문앙전 [북쪽의 지배자] 전투를 완료하세요.,Complete [Ruler of the North] in Wen Yang Story.
+desc,177,16981,anchored,문앙전 [풍전등화(극한)] 전투를 완료하세요.,Complete [Hanging by a Thread (Extreme)] in Wen Yang Story.
+desc,178,16982,anchored,문앙전 [북쪽의 지배자(극한)] 전투를 완료하세요.,Complete [Ruler of the North (Extreme)] in Wen Yang Story.
+desc,179,16983,anchored,관우전(하) [형주 쟁탈] 전투를 완료하세요.,Complete [Strife over Jingzhou] in Guan Yu Story (Ch.2).
+desc,180,16984,anchored,관우전(하) [마지막 희망] 전투를 완료하세요.,Complete [The Last Hope] in Guan Yu Story (Ch.2).
+desc,181,16985,anchored,관우전(하) [형주 쟁탈(극한)] 전투를 완료하세요.,Complete [Strife over Jingzhou (Extreme)] in Guan Yu Story (Ch.2).
+desc,182,16986,anchored,관우전(하) [마지막 희망(극한)] 전투를 완료하세요.,Complete [The Last Hope (Extreme)] in Guan Yu Story (Ch.2).
+desc,183,16987,anchored,서서전(외전) [와우산의 산적들] 전투를 완료하세요.,Complete [Bandits at Wuniushan] in Xu Shu Story (Prequel).
+desc,184,16988,anchored,서서전(외전) [재앙] 전투를 완료하세요.,Complete [Calamity] in Xu Shu Story (Prequel).
+desc,185,16989,anchored,서서전(외전) [와우산의 산적들(극한)] 전투를 완료하세요.,Complete [Bandits at Wuniushan (Extreme)] in Xu Shu Story (Prequel).
+desc,186,16990,anchored,서서전(외전) [재앙(극한)] 전투를 완료하세요.,Complete [Calamity (Extreme)] in Xu Shu Story (Prequel).
+desc,187,16991,anchored,유방전(상) [패현의 건달] 전투를 완료하세요.,Complete [Thug of Peixian] in Liu Bang Story (1).
+desc,188,16992,anchored,유방전(상) [홍문연의 음모] 전투를 완료하세요.,Complete [Hong Gate Conspiracy] in Liu Bang Story (1).
+desc,189,16993,anchored,유방전(상) [패현의 건달(극한)] 전투를 완료하세요.,Complete [Thug of Peixian (Extreme)] in Liu Bang Story (1).
+desc,190,16994,anchored,유방전(상) [홍문연의 음모(극한)] 전투를 완료하세요.,Complete [Hong Gate Conspiracy (Extreme)] in Liu Bang Story (1).
+desc,191,16995,anchored,유방전(하) [대원수 한신] 전투를 완료하세요.,Complete [Commandant Han Xin] in Liu Bang Story (Ch.2).
+desc,192,16996,anchored,유방전(하) [패왕별희] 전투를 완료하세요.,"Complete [Farewell, My Concubine] in Liu Bang Story (Ch.2)."
+desc,193,16997,anchored,유방전(하) [대원수 한신(극한)] 전투를 완료하세요.,Complete [Commandant Han Xin (Extreme)] in Liu Bang Story (Ch.2).
+desc,194,16998,anchored,유방전(하) [패왕별희(극한)] 전투를 완료하세요.,"Complete [Farewell, My Concubine (Extreme)] in Liu Bang Story (Ch.2)."
+desc,195,16999,anchored,손상향전 [전투 훈련] 전투를 완료하세요.,Complete [Battle Training] in Sun Shangxiang Story.
+desc,196,17000,anchored,손상향전 [촉한 복귀전] 전투를 완료하세요.,Complete [Return to Shu] in Sun Shangxiang Story.
+desc,197,17001,anchored,손상향전 [전투 훈련(극한)] 전투를 완료하세요.,Complete [Battle Training (Extreme)] in Sun Shangxiang Story.
+desc,198,17002,anchored,손상향전 [촉한 복귀전(극한)] 전투를 완료하세요.,Complete [Return to Shu (Extreme)] in Sun Shangxiang Story.
+desc,199,17003,anchored,교본 또는 금전을 사용해 장수를 훈련하세요.,Train your commander with Training Scrolls or Gold Coins.
+desc,200,17004,anchored,보물을 획득하세요.,Obtain artifacts.
+desc,201,17005,anchored,보물 상자를 교환 또는 구매하세요.,Purchase a Treasure Chest or get it with Vouchers.
+desc,202,17006,anchored,왕의 보물 상자를 교환 또는 구매하세요.,Purchase a King's Chest or get it with Vouchers.
+desc,203,17007,anchored,황제의 보물 상자를 교환 또는 구매하세요.,Purchase an Emperor's Chest or get it with Vouchers.
+desc,204,17008,anchored,상점에서 물품을 구입하세요.,Purchase items from the Shop.
+desc,205,17009,anchored,명품 상점에서 금전으로 물품을 구입하세요.,Use Gold Coins to purchase items from the Premium Shop.
+desc,206,17010,anchored,무역 또는 명품 상점에서 갱신을 사용하세요.,Refresh the Commerce or Premium Shop menu.
+desc,207,17011,anchored,공의 보물 상자를 교환 또는 구매하세요.,Purchase a Prefect's Treasure Chest or get it with Vouchers.
+desc,208,17012,anchored,군주 Rank을 달성하세요.,Reach a Warlord Rank.
+desc,209,17013,anchored,VIP LV을 달성하세요.,Reach a VIP Lv.
+desc,210,17014,anchored,섬멸전에서 승리하세요.,Win an Annihilation battle.
+desc,211,17015,anchored,무료 상자를 수령하세요.,Claim Free Treasure Chests.
+desc,212,17016,anchored,낡은 상자를 수령하세요.,Claim Old Chests.
+desc,213,17017,anchored,철제 상자를 수령하세요.,Claim Iron Chests.
+desc,214,17018,anchored,섬멸전 {0}회 참여,Join {0} Annihilations
+desc,215,17019,anchored,사건 임무 {0}회 승리,Complete {0} Quest(s).
+desc,216,17020,anchored,연의 {0}회 승리,Win {0} Story battle(s).
+desc,217,17021,anchored,보물 상자 {0}회 수령,Get {0} Treasure Chest(s).
+desc,218,17022,anchored,모든 임무 달성,Complete all Missions.
+desc,219,17023,anchored,6등급 이상의 보물을 강화하세요.,Upgrade an artifact of 6★ or above.
+desc,220,17024,anchored,6등급 이상의 보물에 강화 효과를 부여하세요.,Add a passive to an artifact of 6★ or above.
+desc,221,17025,anchored,6등급 이상의 보물을 12단계까지 강화하세요.,Upgrade an artifact of 6★ or above to Lv. 12.
+desc,222,17026,anchored,중립 거점 동광을 공격해 점령하세요.,Attack the neutral Eastern Mine domain and occupy it.
+desc,223,17027,anchored,중립 거점 서광을 공격해 점령하세요.,Attack the neutral Western Mine domain and occupy it.
+desc,224,17028,anchored,중립 거점 남광을 공격해 점령하세요.,Attack the neutral Southern Mine domain and occupy it.
+desc,225,17029,anchored,중립 거점 북광을 공격해 점령하세요.,Attack the neutral Northern Mine domain and occupy it.
+desc,226,17030,anchored,중립 거점 중광을 공격해 점령하세요.,Attack the neutral Central Mine domain and occupy it.
+desc,227,17031,anchored,중립 거점을 점령해 모든 공격을 방어하세요.,Occupy a neutral domain and defend against all attacks.
+desc,228,17032,anchored,중립 거점 서광을 점령해 모든 공격을 방어하세요.,Occupy the neutral Western Mine domain and defend against all attacks.
+desc,229,17033,anchored,중립 거점 남광을 점령해 모든 공격을 방어하세요.,Occupy the neutral Southern Mine domain and defend against all attacks.
+desc,230,17034,anchored,중립 거점 북광을 점령해 모든 공격을 방어하세요.,Occupy the neutral Northern Mine domain and defend against all attacks.
+desc,231,17035,anchored,중립 거점 중광을 점령해 모든 공격을 방어하세요.,Occupy the neutral Central Mine domain and defend against all attacks.
+desc,232,17036,anchored,연합에 가입하세요.,Join an Alliance.
+desc,233,17037,anchored,하급 청룡을 토벌하세요.,Defeat the Minor Azure Dragon.
+desc,234,17038,anchored,중급 청룡을 토벌하세요.,Defeat the Intermediate Azure Dragon.
+desc,235,17039,anchored,상급 청룡을 토벌하세요.,Defeat the Advanced Azure Dragon.
+desc,236,17040,anchored,최상급 청룡을 토벌하세요.,Defeat the Master Azure Dragon.
+desc,237,17041,anchored,청룡환수를 {0}회 토벌하세요.,Defeat {0} Azure Dragon Beasts.
+desc,238,17042,anchored,하급 청룡을 {0}회 토벌하세요.,Defeat the Minor Azure Dragon {0} times.
+desc,239,17043,anchored,중급 청룡을 {0}회 토벌하세요.,Defeat the Intermediate Azure Dragon {0} times.
+desc,240,17044,anchored,상급 청룡을 {0}회 토벌하세요.,Defeat the Advanced Azure Dragon {0} times.
+desc,241,17045,anchored,최상급 청룡을 {0}회 토벌하세요.,Defeat the Master Azure Dragon {0} times.
+desc,242,17046,anchored,계정을 연동하세요.,link your Google/Facebook/Twitter account
+desc,243,17047,anchored,하급 주작을 토벌하세요.,Defeat the Minor Vermilion Bird.
+desc,244,17048,anchored,중급 주작을 토벌하세요.,Defeat the Intermediate Vermilion Bird.
+desc,245,17049,anchored,상급 주작을 토벌하세요.,Defeat the Advanced Vermilion Bird.
+desc,246,17050,anchored,최상급 주작을 토벌하세요.,Defeat the Master Vermilion Bird.
+desc,247,17051,anchored,주작환수를 {0}회 토벌하세요.,Defeat {0} Vermilion Bird Beasts.
+desc,248,17052,anchored,하급 주작을 {0}회 토벌하세요.,Defeat the Minor Vermilion Bird {0} times.
+desc,249,17053,anchored,중급 주작을 {0}회 토벌하세요.,Defeat the Intermediate Vermilion Bird {0} times.
+desc,250,17054,anchored,상급 주작을 {0}회 토벌하세요.,Defeat the Advanced Vermilion Bird {0} times.
+desc,251,17055,anchored,최상급 주작을 {0}회 토벌하세요.,Defeat the Master Vermilion Bird {0} times.
+desc,252,17056,anchored,조조전 [같은 하늘 아래(무극)] 전투를 완료하세요.,Complete [Under the Same Sky (Eternal)] in Cao Cao Story.
+desc,253,17057,anchored,조조전 [통일! 여정의 끝(무극)] 전투를 완료하세요.,Complete [Unification! The Journey's End (Eternal)] in Cao Cao Story.
+desc,254,17058,anchored,조조전 [사조성의 빛(무극)] 전투를 완료하세요.,Complete [Omen of Death (Eternal)] in Cao Cao Story.
+desc,255,17059,anchored,조조전 [마지막 결전(무극)] 전투를 완료하세요.,Complete [The Final Battle (Eternal)] in Cao Cao Story.
+desc,256,17060,anchored,북부위전 [신임 북부위(무극)] 전투를 완료하세요.,Complete [The New Captain (Eternal)] in N. District Captain Story.
+desc,257,17061,anchored,북부위전 [십상시의 숙부(무극)] 전투를 완료하세요.,Complete [The Eunuch's Uncle (Eternal)] in N. District Captain Story.
+desc,258,17062,anchored,장각전 [만남(무극)] 전투를 완료하세요.,Complete [Encounter (Eternal)] in Zhang Jue Story.
+desc,259,17063,anchored,장각전 [거병(무극)] 전투를 완료하세요.,Complete [Proclamation (Eternal)] in Zhang Jue Story.
+desc,260,17064,anchored,사마의전 [관직을 얻다(무극)] 전투를 완료하세요.,Complete [A Position in Office (Eternal)] in Sima Yi Story.
+desc,261,17065,anchored,사마의전 [왕릉 평정(무극)] 전투를 완료하세요.,Complete [Restrain Wang Ling (Eternal)] in Sima Yi Story.
+desc,262,17066,anchored,장료전 [조조의 밑에서(무극)] 전투를 완료하세요.,Complete [Serving Cao Cao (Eternal)] in Zhang Liao Story.
+desc,263,17067,anchored,장료전 [죽음의 땅. 유수구(무극)] 전투를 완료하세요.,"Complete [Ruxukou, a Land of Death (Eternal)] in Zhang Liao Story."
+desc,264,17068,anchored,관우전(상) [의협의 사나이(무극)] 전투를 완료하세요.,Complete [A Righteous Man (Eternal)] in Guan Yu Story (Ch.1).
+desc,265,17069,anchored,관우전(상) [패주하는 조조(무극)] 전투를 완료하세요.,Complete [Cao Cao on the Run (Eternal)] in Guan Yu Story (Ch.1).
+desc,266,17070,anchored,서서전 [와우산의 산적들(무극)] 전투를 완료하세요.,Complete [Bandits at Wuniushan (Eternal)] in Xu Shu Story.
+desc,267,17071,anchored,서서전 [공명의 행방(무극)] 전투를 완료하세요.,Complete [Kongming's Whereabouts (Eternal)] in Xu Shu Story.
+desc,268,17072,anchored,원소전 [기주 공격(무극)] 전투를 완료하세요.,Complete [Jizhou Campaign (Eternal)] in Yuan Shao Story.
+desc,269,17073,anchored,원소전 [재건(무극)] 전투를 완료하세요.,Complete [Rebuilding (Eternal)] in Yuan Shao Story.
+desc,270,17074,anchored,등애전 [서촉으로 가다(무극)] 전투를 완료하세요.,Complete [To Western Shu (Eternal)] in Deng Ai Story.
+desc,271,17075,anchored,등애전 [촉을 정벌하다(무극)] 전투를 완료하세요.,Complete [Shu Shall Fall (Eternal)] in Deng Ai Story.
+desc,272,17076,anchored,조운전 [공손찬을 구하라(무극)] 전투를 완료하세요.,Complete [Save Gongsun Zan (Eternal)] in Zhao Yun Story.
+desc,273,17077,anchored,조운전 [후방에 남다(무극)] 전투를 완료하세요.,Complete [I'll Stay Here (Eternal)] in Zhao Yun Story.
+desc,274,17078,anchored,공손찬전 [노식의 두 제자(무극)] 전투를 완료하세요.,Complete [Two Pupils of Lu Zhi (Eternal)] in Gongsun Zan Story.
+desc,275,17079,anchored,공손찬전 [백마장사 공손찬(무극)] 전투를 완료하세요.,"Complete [Gongsun Zan, the White Horse General (Eternal)] in Gongsun Zan Story."
+desc,276,17080,anchored,육손전 [하급 관리 육손(무극)] 전투를 완료하세요.,"Complete [Lu Xun, a Low-Rank Officer (Eternal)] in Lu Xun Story."
+desc,277,17081,anchored,육손전 [젊은 기재(무극)] 전투를 완료하세요.,Complete [Young Talent (Eternal)] in Lu Xun Story.
+desc,278,17082,anchored,손견전 [수적 퇴치(무극)] 전투를 완료하세요.,Complete [Pirate Expedition (Eternal)] in Sun Jian Story.
+desc,279,17083,anchored,손견전 [형주 공격(무극)] 전투를 완료하세요.,Complete [Jingzhou Campaign (Eternal)] in Sun Jian Story.
+desc,280,17084,anchored,손책전 [아버지를 기다리며(무극)] 전투를 완료하세요.,Complete [Waiting for Father (Eternal)] in Sun Ce Story.
+desc,281,17085,anchored,손책전 [위제를 토벌하라(무극)] 전투를 완료하세요.,Complete [Punish Emperor Wei (Eternal)] in Sun Ce Story.
+desc,282,17086,anchored,황충전 [무릉만의 반란(무극)] 전투를 완료하세요.,Complete [Wuling Rebellion (Eternal)] in Huang Zhong Story.
+desc,283,17087,anchored,황충전 [대전의 종지부(무극)] 전투를 완료하세요.,Complete [The Conclusion (Eternal)] in Huang Zhong Story.
+desc,284,17088,anchored,마왕 제갈량전 [기묘한 서적(무극)] 전투를 완료하세요.,Complete [A Strange Book (Eternal)] in Demon Zhuge Liang Story.
+desc,285,17089,anchored,마왕 제갈량전 [틈을 노려라(무극)] 전투를 완료하세요.,Complete [Window of Opportunity (Eternal)] in Demon Zhuge Liang Story.
+desc,286,17090,anchored,장비전 [구출(무극)] 전투를 완료하세요.,Complete [The Rescue (Eternal)] in Zhang Fei Story.
+desc,287,17091,anchored,장비전 [대전의 마무리(무극)] 전투를 완료하세요.,Complete [The Final Moment (Eternal)] in Zhang Fei Story.
+desc,288,17092,anchored,마초전 [복수의 시작(무극)] 전투를 완료하세요.,Complete [Budding Vengeance (Eternal)] in Ma Chao Story.
+desc,289,17093,anchored,마초전 [힘을 얻기 위해(무극)] 전투를 완료하세요.,Complete [Pursuit of Power (Eternal)] in Ma Chao Story.
+desc,290,17094,anchored,유비전 [장세평의 부탁(무극)] 전투를 완료하세요.,Complete [Zhang Shiping's Request (Eternal)] in Liu Bei Story.
+desc,291,17095,anchored,유비전 [붉게 타버린 꿈(무극)] 전투를 완료하세요.,Complete [A Dream Gone to Flame (Eternal)] in Liu Bei Story.
+desc,292,17096,anchored,제갈량전 [삼고초려(무극)] 전투를 완료하세요.,Complete [Three Visits (Eternal)] in Zhuge Liang Story.
+desc,293,17097,anchored,제갈량전 [그는 죽어서도(무극)] 전투를 완료하세요.,Complete [Even Beyond Death (Eternal)] in Zhuge Liang Story.
+desc,294,17098,anchored,강유전 [제갈량의 후계자(무극)] 전투를 완료하세요.,Complete [Zhuge Liang's Successor (Eternal)] in Jiang Wei Story.
+desc,295,17099,anchored,강유전 [마지막 불꽃(무극)] 전투를 완료하세요.,Complete [The Final Flame (Eternal)] in Jiang Wei Story.
+desc,296,17100,anchored,여포전 [무신의 출현(무극)] 전투를 완료하세요.,Complete [Enter the God of War (Eternal)] in Lu Bu Story.
+desc,297,17101,anchored,여포전 [결전의 날(무극)] 전투를 완료하세요.,Complete [The Final Battle (Eternal)] in Lu Bu Story.
+desc,298,17102,anchored,동탁전 [서량의 군벌(무극)] 전투를 완료하세요.,Complete [The Warlord of Xiliang (Eternal)] in Dong Zhuo Story.
+desc,299,17103,anchored,동탁전 [연환지계(무극)] 전투를 완료하세요.,Complete [Falling Like Dominoes (Eternal)] in Dong Zhuo Story.
+desc,300,17104,anchored,하후연전 [후방 지원(무극)] 전투를 완료하세요.,Complete [Support the Rear Lines (Eternal)] in Xiahou Yuan Story.
+desc,301,17105,anchored,하후연전 [장로의 결단(무극)] 전투를 완료하세요.,Complete [Zhang Lu's Decision (Eternal)] in Xiahou Yuan Story.
+desc,302,17106,anchored,태사자전 [어머니의 편지(무극)] 전투를 완료하세요.,Complete [A Mother's Letter (Eternal)] in Taishi Ci Story.
+desc,303,17107,anchored,태사자전 [손책을 따르다(무극)] 전투를 완료하세요.,Complete [To Serve Sun Ce (Eternal)] in Taishi Ci Story.
+desc,304,17108,anchored,여몽전 [남군 점령 계획(무극)] 전투를 완료하세요.,Complete [Occupy Nanjun (Eternal)] in Lu Meng Story.
+desc,305,17109,anchored,여몽전 [호랑이를 잡아라(무극)] 전투를 완료하세요.,Complete [Catch the Tiger (Eternal)] in Lu Meng Story.
+desc,306,17110,anchored,엄백호전 [농민들의 근심(무극)] 전투를 완료하세요.,Complete [The Suffering of the People (Eternal)] in Yan Baihu Story.
+desc,307,17111,anchored,엄백호전 [동오의 덕왕(무극)] 전투를 완료하세요.,Complete [Virtuous King of Eastern Wu (Eternal)] in Yan Baihu Story.
+desc,308,17112,anchored,맹획전 [무술 대회(무극)] 전투를 완료하세요.,Complete [The Tournament (Eternal)] in Meng Huo Story.
+desc,309,17113,anchored,맹획전 [유장군 침공(무극)] 전투를 완료하세요.,Complete [Liu Zhang Attacks (Eternal)] in Meng Huo Story.
+desc,310,17114,anchored,도겸전 [황건병 토벌(무극)] 전투를 완료하세요.,Complete [Yellow Turban Expedition (Eternal)] in Tao Qian Story.
+desc,311,17115,anchored,도겸전 [인과응보(무극)] 전투를 완료하세요.,Complete [What Goes Around Comes Around (Eternal)] in Tao Qian Story.
+desc,312,17116,anchored,주유전 [먼저 떠난 벗(무극)] 전투를 완료하세요.,Complete [A Departed Friend (Eternal)] in Zhou Yu Story.
+desc,313,17117,anchored,주유전 [조조 추격(무극)] 전투를 완료하세요.,Complete [Pursue Cao Cao (Eternal)] in Zhou Yu Story.
+desc,314,17118,anchored,아만전 [당고의 금(무극)] 전투를 완료하세요.,Complete [Disasters of Partisan Prohibitions (Eternal)] in Aman Story.
+desc,315,17119,anchored,아만전 [결단(무극)] 전투를 완료하세요.,Complete [Determination (Eternal)] in Aman Story.
+desc,316,17120,anchored,문앙전 [풍전등화(무극)] 전투를 완료하세요.,Complete [Hanging by a Thread (Eternal)] in Wen Yang Story.
+desc,317,17121,anchored,문앙전 [북쪽의 지배자(무극)] 전투를 완료하세요.,Complete [Ruler of the North (Eternal)] in Wen Yang Story.
+desc,318,17122,anchored,관우전(하) [형주 쟁탈(무극)] 전투를 완료하세요.,Complete [Strife over Jingzhou (Eternal)] in Guan Yu Story (Ch.2).
+desc,319,17123,anchored,관우전(하) [마지막 희망(무극)] 전투를 완료하세요.,Complete [The Last Hope (Eternal)] in Guan Yu Story (Ch.2).
+desc,320,17124,anchored,서서전(외전) [와우산의 산적들(무극)] 전투를 완료하세요.,Complete [Bandits at Wuniushan (Eternal)] in Xu Shu Story (Prequel).
+desc,321,17125,anchored,서서전(외전) [재앙(무극)] 전투를 완료하세요.,Complete [Calamity (Eternal)] in Xu Shu Story (Prequel).
+desc,322,17126,anchored,유방전(상) [패현의 건달(무극)] 전투를 완료하세요.,Complete [Thug of Peixian (Eternal)] in Liu Bang Story (1).
+desc,323,17127,anchored,유방전(상) [홍문연의 음모(무극)] 전투를 완료하세요.,Complete [Hong Gate Conspiracy (Eternal)] in Liu Bang Story (1).
+desc,324,17128,anchored,손상향전 [전투 훈련(무극)] 전투를 완료하세요.,Complete [Battle Training (Eternal)] in Sun Shangxiang Story.
+desc,325,17129,anchored,손상향전 [촉한 복귀전(무극)] 전투를 완료하세요.,Complete [Return to Shu (Eternal)] in Sun Shangxiang Story.
+desc,326,17130,anchored,연의 무극 전투에서 인장 임무를 달성해 인장을 습득하세요.,Complete Seal Missions in Eternal Story Battles to earn Seals.
+desc,327,17131,anchored,경쟁전 등급전에서 승리하세요.,Win in PvP Ranked Matches.
+desc,328,17132,anchored,경쟁전 등급전에서 2연승을 달성하세요.,Win 2 consecutive PvP Ranked Matches.
+desc,329,17133,anchored,경쟁전 등급전에서 4연승을 달성하세요.,Win 4 consecutive PvP Ranked Matches.
+desc,330,17134,anchored,경쟁전 등급전에서 6연승을 달성하세요.,Win 6 consecutive PvP Ranked Matches.
+desc,331,17135,anchored,경쟁전 등급전에서 8연승을 달성하세요.,Win 8 consecutive PvP Ranked Matches.
+desc,332,17136,anchored,경쟁전 등급전에서 10연승을 달성하세요.,Win 10 consecutive PvP Ranked Matches.
+desc,333,17137,anchored,경쟁전에서 협객의 전장으로 승급하세요.,Get promoted to Fencer in PvP.
+desc,334,17138,anchored,경쟁전에서 명공의 전장으로 승급하세요.,Get promoted to Craftsman in PvP.
+desc,335,17139,anchored,경쟁전에서 성군의 전장으로 승급하세요.,Get promoted to Sage King in PvP.
+desc,336,17140,anchored,경쟁전에서 군신의 전장으로 승급하세요.,Get promoted to God of War in PvP.
+desc,337,17141,anchored,경쟁전에서 패왕의 전장으로 승급하세요.,Get promoted to Conqueror in PvP.
+desc,338,17142,anchored,경쟁전에서 다른 군주의 전투를 추천하세요.,Recommend PvP matches of other warlords.
+desc,339,17143,anchored,실시간 섬멸전에서 화살 비에 한 번도 피격당하지 않고 5턴 이후에 승리하세요.,Win after 5 turns without being struck by the Rain of Arrows in Live Annihilation.
+desc,340,17144,anchored,실시간 섬멸전에서 아군 부대가 한 명만 남은 채로 승리하세요.,Win with only one Ally Unit left in Live Annihilation.
+desc,341,17145,anchored,난투에서 한 전투에서 부대 교체를 7번 이상 실시하고 승리하세요.,Win after replacing units 7 times in a single Brawl Match.
+desc,342,17146,anchored,난투에서 최후의 전투(10턴 이후)에서 승리하세요.,Win during the Final Battle (After 10 turns) in Brawl.
+desc,343,17147,anchored,몽매의 시련 공납에 참여하세요.,Join the Tribute for Meng Mei's Trial.
+desc,344,17148,anchored,몽매의 시련 토벌에 참여하세요.,Join the Expedition for Meng Mei's Trial.
+desc,345,17149,anchored,몽매의 시련에 참여해서 피해량을 쌓으세요.,Join Meng Mei's Trial and deal damage.
+desc,346,17150,anchored,몽매의 시련 참여 후 논공행상에서 물품을 교환하세요.,Exchange an item at Just Rewards after joining Meng Mei's Trial.
+desc,347,17151,anchored,제갈량전(하) [익주 평전전] 전투를 완료하세요.,Complete [Yizhou Suppression] in Zhuge Liang Story (Ch.3).
+desc,348,17152,anchored,제갈량전(하) [5차북벌下] 전투를 완료하세요.,Complete [The Fifth Northern Expedition (Ch.3)] in Zhuge Liang Story (Ch.3).
+desc,349,17153,anchored,새로운 무장전에 입장하세요.,Participate in the all-new Officer Battle.
+desc,350,17154,anchored,무장전 경기에서 승리하고 인장을 획득하세요.,Win Officer Battles to acquire Seals.
+desc,351,17155,anchored,무장전의 모든 경기에서 승리한 후 보상을 획득하세요.,Win all Officer Battles to acquire rewards.
+desc,352,17156,anchored,"무장전의 모든 경기에서 승리하고, 모든 인장을 쟁취하여 정복자가 되세요.",Win all Officer Battle matches to claim Seals and become a true conqueror.
+desc,353,17157,anchored,무장전의 승리 지원품으로 보물을 선택하세요.,Win Officer Battles and choose an artifact reward.
+desc,354,17158,anchored,무장전의 승리 지원품으로 효과를 선택하세요.,Win Officer Battles and choose a Passive reward.
+desc,355,17159,anchored,무장전에서 특정 장수를 합류시키세요.,Summon commanders to fight in Officer Battles.
+desc,356,17160,anchored,"무장전의 [인중여포, 마중적토] 경기에서 승리하세요.",Complete [Best of the Species] in Officer Battle.
+desc,357,17161,anchored,무장전의 [상산의 조자룡] 경기에서 승리하세요.,Complete [Zhao Zilong of Mount Chang] in Officer Battle.
+desc,358,17162,anchored,무장전의 [청룡의 시험] 경기에서 승리하세요.,Complete [Trial of the Azure Dragon] in Officer Battle.
+desc,359,17163,anchored,무장전의 [주작의 시험] 경기에서 승리하세요.,Complete [Trial of the Vermilion Bird] in Officer Battle.
+desc,360,17164,anchored,무장전의 [난세간웅] 경기에서 승리하세요.,Complete [Cao Cao the Cunning Hero] in Officer Battle.
+desc,361,17165,anchored,무장전의 [황숙현덕] 경기에서 승리하세요.,Complete [The Emperor's Uncle] in Officer Battle.
+desc,362,17166,anchored,무장전의 [벽안자염] 경기에서 승리하세요.,Complete [Blue Eyes and Crimson Beards] in Officer Battle.
+desc,363,17167,anchored,무장전의 [태조고제] 경기에서 승리하세요.,Complete [Ancient Emperor] in Officer Battle.
+desc,364,17168,anchored,무장전의 [패왕항우] 경기에서 승리하세요.,Complete [Xiang Yu the Overlord] in Officer Battle.
+desc,365,17169,anchored,무장전의 [난형난제] 경기에서 승리하세요.,"Complete [No Better, No Worse] in Officer Battle."
+desc,366,17170,anchored,무장전의 [풍운아만] 경기에서 승리하세요.,Complete [Aman the Hero] in Officer Battle.
+desc,367,17171,anchored,무장전의 [수성의 달인] 경기에서 승리하세요.,Complete [Anti-Siege Master] in Officer Battle.
+desc,368,17172,anchored,무장전의 [도원재결] 경기에서 승리하세요.,Complete [Return to the Peach Garden] in Officer Battle.
+desc,369,17173,anchored,"무장전의 [야수의 발톱], [야수의 역습] 경기에서 승리하세요.",Complete [Claws of the Beast] and [The Beast Strikes Back] in Officer Battle.
+desc,370,17174,anchored,무장전의 [창천이사 황건당립] 경기에서 승리하세요.,Complete [Rise of The Yellow Sky] in Officer Battle.
+desc,371,17175,anchored,무장전의 [공격 개시!] 경기에서 승리하세요.,Complete [Commence the Attack!] in Officer Battle.
+desc,372,17176,anchored,무장전의 [한 가지 소원] 경기에서 승리하세요.,Complete [One Wish] in Officer Battle.
+desc,373,17177,anchored,무장전의 [병종 특화] 경기에서 승리하세요.,Complete [Military Specialization] in Officer Battle.
+desc,374,17178,anchored,사마의전(중) [무위 반란 진압전] 전투를 완료하세요.,Complete [Wuei Rebellion Subjugation] in Sima Yi Story (Ch. 2).
+desc,375,17179,anchored,사마의전(중) [오장원 추격전] 전투를 완료하세요.,Complete [Wuzhang Plains Pursuit] in Sima Yi Story (Ch. 2).
+desc,376,17180,anchored,사마의전(중) [무위 반란 진압전(극한)] 전투를 완료하세요.,Complete [Wuei Rebellion Subjugation (Extreme)] in Sima Yi Story (Ch. 2).
+desc,377,17181,anchored,사마의전(중) [오장원 추격전(극한)] 전투를 완료하세요.,Complete [Wuzhang Plains Pursuit (Extreme)] in Sima Yi Story (Ch. 2).
+desc,378,17182,anchored,조온별전 [패왕 증명전] 전투를 완료하세요.,Complete [Battle of the Overlords] in Kuai Yue Side Story.
+desc,379,17183,anchored,조온별전 [오장원 탈출전] 전투를 완료하세요.,Complete [Escape from Wuzhang Plains] in Kuai Yue Side Story.
+desc,380,17184,anchored,조온별전 [패왕 증명전(극한)] 전투를 완료하세요.,Complete [Battle of the Overlords (Extreme)] in Kuai Yue Side Story.
+desc,381,17185,anchored,조온별전 [오장원 탈출전(극한)] 전투를 완료하세요.,Complete [Escape from Wuzhang Plains (Extreme)] in Kuai Yue Side Story.
+desc,382,17186,anchored,하급 백호를 완료하세요.,Complete Minor White Tiger.
+desc,383,17187,anchored,중급 백호를 완료하세요.,Complete Intermediate White Tiger.
+desc,384,17188,anchored,상급 백호를 완료하세요.,Complete Advanced White Tiger.
+desc,385,17189,anchored,최상급 백호를 완료하세요.,Complete Master White Tiger.
+desc,386,17190,anchored,하급 백호를 {0}회 수호하세요.,Protect Minor White Tiger {0} time(s).
+desc,387,17191,anchored,중급 백호를 {0}회 수호하세요.,Protect Intermediate White Tiger {0} time(s).
+desc,388,17192,anchored,상급 백호를 {0}회 수호하세요.,Protect Advanced White Tiger {0} time(s).
+desc,389,17193,anchored,최상급 백호를 {0}회 수호하세요.,Protect Master White Tiger {0} time(s).
+desc,390,17194,anchored,무장전의 호송 마차에서 무장전 주화를 사용하세요,Use Officer Battle Coins at the Officer Battle Convoy Wagon.
+desc,391,17195,anchored,무장전의 호송 마차에서 장수를 승급하세요.,Promote a Commander at the Officer Battle Convoy Wagon.
+desc,392,17196,anchored,무장전을 [난세간웅]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Cao Cao the Cunning Hero] and win all matches.
+desc,393,17197,anchored,무장전을 [최후의 승자]로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [The Final Victor] and win all matches.
+desc,394,17198,anchored,무장전을 [도원의 꿈]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Dreams of the Peach Garden] and win all matches.
+desc,395,17199,anchored,무장전을 [군신운장]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Guan Yu] and win all matches.
+desc,396,17200,anchored,무장전을 [촉한의 불꽃]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Flame of Shu Han] and win all matches.
+desc,397,17201,anchored,무장전을 [강동의 기틀]로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Jiangdong Infrastructure] and win all matches.
+desc,398,17202,anchored,무장전을 [손오]로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Sun Wu] and win all matches.
+desc,399,17203,anchored,무장전을 [동오의 영웅]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Hero of Eastern Wu] and win all matches.
+desc,400,17204,anchored,무장전을 [무신의 천하]로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [The God of War's World] and win all matches.
+desc,401,17205,anchored,무장전을 [황건당립]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Yellow Sky] and win all matches.
+desc,402,17206,anchored,무장전을 [남만의 기세]로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Nanman's Spirit] and win all matches.
+desc,403,17207,anchored,무장전을 [난세여걸 Ⅰ]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Women of War I] and win all matches.
+desc,404,17208,anchored,무장전을 [난세여걸 Ⅱ]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Women of War II] and win all matches.
+desc,405,17209,anchored,무장전을 [봉인된 마왕]으로 시작하여 모든 경기에서 승리하세요.,Begin the Officer Battle [Sealed Demon] and win all matches.
+desc,406,17210,anchored,사마의전(하) [요수 전투] 전투를 완료하세요.,Complete [Battle of Liaosui] in Sima Yi Story Ch.3.
+desc,407,17211,inferred,사마의전(하) [왕릉 진압전] 전투를 완료하세요.,Complete [Wang Ling Subjugation] in Sima Yi Story Ch.3.
+desc,408,17212,inferred,사마의전(하) [요수 전투(극한)] 전투를 완료하세요.,Complete [Battle of Liaosui (Extreme)] in Sima Yi Story Ch.3.
+desc,409,17213,inferred,사마의전(하) [왕릉 진압전(극한)] 전투를 완료하세요.,Complete [Wang Ling Subjugation (Extreme)] in Sima Yi Story Ch.3.
+desc,410,17214,inferred,방통전 [수경장 입문 시험] 전투를 완료하세요.,Complete the [School of Shuijing Entry Exam] Battle in Pang Tong Story.
+desc,411,17215,inferred,방통전 [낙봉파 전투] 전투를 완료하세요.,Complete [Battle of Luo Feng Po] in Pang Tong Story.
+desc,412,17216,inferred,방통전 [수경장 입문 시험(극한)] 전투를 완료하세요.,Complete the [School of Shuijing Entry Exam (Extreme)] Battle in Pang Tong Story.
+desc,413,17217,inferred,방통전 [낙봉파 전투(극한)] 전투를 완료하세요.,Complete [Battle of Luo Feng Po (Extreme)] in Pang Tong Story.
+desc,414,17218,inferred,출사의 길에서 장수의 관직을 진급시키세요.,
+desc,415,17219,inferred,출사의 길에서 최종 단계에 오른 후 비전서를 장착하세요.,

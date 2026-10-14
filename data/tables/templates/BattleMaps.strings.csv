@@ -1,0 +1,978 @@
+column,seq,loc_row,confidence,ko,en
+name,1,13136,anchored,영천 황건병 토벌전,Yingchuan Yellow Turban Expedition
+name,2,13137,anchored,사수관 전투,Battle of Sishui Pass
+name,3,13138,anchored,호로관 전투,Battle of Hulao Pass
+name,4,13139,anchored,동탁 추격전,Dong Zhuo Pursuit
+name,5,13140,anchored,청주 황건병 토벌전,Qingzhou Yellow Turban Expedition
+name,6,13141,anchored,서주 보복전,Xuzhou Retaliation
+name,7,13142,anchored,복양 전투,Battle of Puyang
+name,8,13143,anchored,복양 전투2,Battle of Puyang 2
+name,9,13144,anchored,복양 전투3,Battle of Puyang 3
+name,10,13145,anchored,헌제 구출전,Saving Emperor Xian
+name,11,13146,anchored,장수 토벌전,Zhang Xiu Expedition
+name,12,13147,anchored,원술 정벌전,Yuan Shu Conquest
+name,13,13148,anchored,장수 토벌전 2,Zhang Xiu Expedition 2
+name,14,13149,anchored,서주 구원전,Rescue at Xuzhou
+name,15,13150,anchored,여포 포위전,Siege of Lu Bu
+name,16,13151,anchored,서주 침공전,Xuzhou Invasion
+name,17,13152,anchored,백마 전투,Battle of Baima
+name,18,13153,anchored,연진 전투,Battle of Yan Ford
+name,19,13154,anchored,관도 전투,Battle of Guandu
+name,20,13155,anchored,창정 전투,Battle of Cangting
+name,21,13156,anchored,양산 전투,Battle of Rangshan
+name,22,13157,anchored,여양 전투,Battle of Liyang
+name,23,13158,anchored,업성 전투,Battle of Ye Castle
+name,24,13159,anchored,남피 공략전,Nanpi Campaign
+name,25,13160,anchored,유성 평정전,Liu Castle Suppression
+name,26,13161,anchored,박망파 전투,Battle of Bowanpo
+name,27,13162,anchored,장판파 전투,Battle of Changban
+name,28,13163,anchored,적벽 전투,Battle of Red Cliffs
+name,29,13164,anchored,적벽 탈출,Escape from Red Cliffs
+name,30,13165,anchored,합비 전투,Battle of Hefei
+name,31,13166,anchored,마초 요격전,Intercepting Ma Chao
+name,32,13167,anchored,장노 정벌전,Zhang Lu Conquest
+name,33,13168,anchored,소요진 전투,Battle of Xiaoyao Ford
+name,34,13169,anchored,유수구 전투,Battle of Ruxukou
+name,35,13170,anchored,정군산 전투,Battle of Mount Dingjun
+name,36,13171,anchored,한수 전투,Battle of Han River
+name,37,13172,anchored,사곡 전투,Battle of Xiegu
+name,38,13173,anchored,번성 구원전,Rescue at Fan Castle
+name,39,13174,anchored,양평관 전투,Battle of Yangping Pass
+name,40,13175,anchored,검각 전투,Battle of Jiange
+name,41,13176,anchored,성도 침공전,Chengdu Invasion
+name,42,13177,anchored,백제성 전투,Battle of Baidi Castle
+name,43,13178,anchored,적벽 전투2,Battle of Red Cliffs 2
+name,44,13179,anchored,건업 침공전,Jianye Invasion
+name,45,13180,anchored,맥성 구원전,Rescue at Mai Castle
+name,46,13181,anchored,강릉 전투,Battle of Jiangling
+name,47,13182,anchored,적벽전투3,Battle of Red Cliffs 3
+name,48,13183,anchored,어복포 전투,Battle of Yufupu
+name,49,13184,anchored,오장원 전투,Battle of Wuzhang Plains
+name,50,13185,anchored,오장원 전투2,Battle of Wuzhang Plains 2
+name,51,13186,anchored,업 전투,Battle of Ye
+name,52,13187,anchored,남피 전투,Battle of Nanpi
+name,53,13188,anchored,북평 전투,Battle of Beiping
+name,54,13189,anchored,계 전투,Battle of Ji
+name,55,13190,anchored,양평 전투,Battle of Yangping
+name,56,13191,anchored,진양 전투,Battle of Jinyang
+name,57,13192,anchored,평원 전투,Battle of Pingyuan
+name,58,13193,anchored,북해 전투,Battle of Beihai
+name,59,13194,anchored,상당 전투,Battle of Shangdang
+name,60,13195,anchored,하내 전투,Battle of Henei
+name,61,13196,anchored,제남 전투,Battle of Jinan
+name,62,13197,anchored,역 전투,Battle of Yi
+name,63,13198,anchored,상산 전투,Battle of Mount Chang
+name,64,13199,anchored,하비 전투,Battle of Xiapi
+name,65,13200,anchored,팽성 전투,Battle of Pengcheng
+name,66,13201,anchored,소패 전투,Battle of Xiaopei
+name,67,13202,anchored,회음 전투,Battle of Huaiyin
+name,68,13203,anchored,광릉 전투,Battle of Guangling
+name,69,13204,anchored,수춘 전투,Battle of Shouchun
+name,70,13205,anchored,여강 전투,Battle of Lujiang
+name,71,13206,anchored,석정 전투,Battle of Shi Ting
+name,72,13207,anchored,건업 전투,Battle of Jianye
+name,73,13208,anchored,오 전투,Battle of Wu
+name,74,13209,anchored,회계 전투,Battle of Huiji
+name,75,13210,anchored,시상 전투,Battle of Chaisang
+name,76,13211,anchored,부춘 전투,Battle of Fuchun
+name,77,13212,anchored,남창 전투,Battle of Nanchang
+name,78,13213,anchored,건안 전투,Battle of Jianan
+name,79,13214,anchored,여릉 전투,Battle of Luling
+name,80,13215,anchored,임해 전투,Battle of Linhai
+name,81,13216,anchored,양양 전투,Battle of Xiangyang
+name,82,13217,anchored,완 전투,Battle of Wan
+name,83,13218,anchored,신야 전투,Battle of Xinye
+name,84,13219,anchored,강하 전투,Battle of Jiangxia
+name,85,13220,anchored,상용 전투,Battle of Shangyong
+name,86,13221,anchored,번성 전투,Battle of Fan Castle
+name,87,13222,anchored,무릉 전투,Battle of Wuling
+name,88,13223,anchored,영릉 전투,Battle of Lingling
+name,89,13224,anchored,장사 전투,Battle of Changsha
+name,90,13225,anchored,계양 전투,Battle of Guiyang
+name,91,13226,anchored,남해 전투,Battle of Nanhai
+name,92,13227,anchored,성도 전투,Battle of Chengdu
+name,93,13228,anchored,한중 전투,Battle of Hanzhong
+name,94,13229,anchored,강주 전투,Battle of Jiangzhou
+name,95,13230,anchored,자동 전투,Battle of Zitong
+name,96,13231,anchored,강양 전투,Battle of Jiangyang
+name,97,13232,anchored,영안 전투,Battle of Yong'an
+name,98,13233,anchored,운남 전투,Battle of Yunnan
+name,99,13234,anchored,건녕 전투,Battle of Qujing
+name,100,13235,anchored,교지 전투,Battle of Jiaozhi
+name,101,13236,anchored,영창 전투,Battle of Yongchang
+name,102,13237,anchored,흥고 전투,Battle of Xinggu
+name,103,13238,anchored,장안 전투,Battle of Chang'an
+name,104,13239,anchored,무위 전투,Battle of Wuei
+name,105,13240,anchored,안정 전투,Battle of Anding
+name,106,13241,anchored,천수 전투,Battle of Tianshui
+name,107,13242,anchored,서평 전투,Battle of Xiping
+name,108,13243,anchored,가정 전투,Battle of Jieting
+name,109,13244,anchored,적도 전투,Battle of Didao
+name,110,13245,anchored,남안 전투,Battle of Nanan
+name,111,13246,anchored,기성 전투,Battle of Jincheng
+name,112,13247,anchored,낙양 전투,Battle of Luoyang
+name,113,13248,anchored,허창 전투,Battle of Xuchang
+name,114,13249,anchored,진류 전투,Battle of Chenliu
+name,115,13250,anchored,여남 전투,Battle of Runan
+name,116,13251,anchored,유성 전투,Battle of Liu Castle
+name,117,13252,anchored,하동 전투,Battle of Hadong
+name,118,13253,anchored,호관 전투,Battle of Hu Pass
+name,119,13254,anchored,항산 전투,Battle of Mount Heng (Shanxi)
+name,120,13255,anchored,백랑산 전투,Battle of White Wolf Mountain
+name,121,13256,anchored,태산 전투,Battle of Taishan
+name,122,13257,anchored,안평항 전투,Battle at the Port of Anping
+name,123,13258,anchored,백마항 전투,Battle at the Port of Baima
+name,124,13259,anchored,고당항 전투,Battle at the Port of Gaotang
+name,125,13260,anchored,돈구항 전투,Battle at the Port of Dunqiu
+name,126,13261,anchored,임치항 전투,Battle at the Port of Linzi
+name,127,13262,anchored,창양항 전투,Battle at the Port of Changyang
+name,128,13263,anchored,도창 전투,Battle of Duchang
+name,129,13264,anchored,백호의 사당,White Tiger Temple
+name,130,13265,anchored,해릉항 전투,Battle at the Port of Hailing
+name,131,13266,anchored,강도항 전투,Battle at the Port of Jiangdu
+name,132,13267,anchored,서새산 전투,Battle of Mount Xisai
+name,133,13268,anchored,곡아항 전투,Battle at the Port of Qua
+name,134,13269,anchored,파양항 전투,Battle at the Port of Poyang
+name,135,13270,anchored,호림항 전투,Battle at the Port of Hulin
+name,136,13271,anchored,육구항 전투,Battle at the Port of Xikou
+name,137,13272,anchored,청룡의 사당,Azure Dragon Temple
+name,138,13273,anchored,이릉 전투,Battle of Yiling
+name,139,13274,anchored,하구항 전투,Battle at the Port of Xiakou
+name,140,13275,anchored,화용도 전투,Battle of Huarong Road
+name,141,13276,anchored,창오 전투,Battle of Cangwu
+name,142,13277,anchored,합포 전투,Battle of Hepu
+name,143,13278,anchored,맥성 전투,Battle of Mai Castle
+name,144,13279,anchored,형산 전투,Battle of Mount Heng (Hunan)
+name,145,13280,anchored,나현항 전투,Battle at the Port of Luoxian
+name,146,13281,anchored,동정항 전투,Battle at the Port of Dongting
+name,147,13282,anchored,오림항 전투,Battle at the Port of Wulin
+name,148,13283,anchored,곡강 전투,Battle of Qujiang
+name,149,13284,anchored,가맹관 전투,Battle of Jiameng Pass
+name,150,13285,anchored,면죽관 전투,Battle of Mianzhu Pass
+name,151,13286,anchored,무현항 전투,Battle at the Port of Wushan
+name,152,13287,anchored,낙봉파 전투,Battle of Luo Feng Po
+name,153,13288,anchored,사룡 전투,Battle of Xielong
+name,154,13289,anchored,노수 전투,Battle of Lushui
+name,155,13290,anchored,오계봉 전투,Battle of Wuxifeng
+name,156,13291,anchored,독룡동 전투,Battle of Tulong Cave
+name,157,13292,anchored,현무의 사당,Black Tortoise Temple
+name,158,13293,anchored,기산 전투,Battle of Qishan
+name,159,13294,anchored,주천 전투,Battle of Jiuquan
+name,160,13295,anchored,동관 전투,Battle of Tong Pass
+name,161,13296,anchored,무관 전투,Battle of Wu Pass
+name,162,13297,anchored,화산 전투,Battle of Huashan
+name,163,13298,anchored,자오곡 전투,Battle of Ziwugu
+name,164,13299,anchored,주작의 사당,Vermilion Bird Temple
+name,165,13300,anchored,함곡관 전투,Battle of Hangu Pass
+name,166,13301,anchored,숭산 전투,Battle of Songshan
+name,167,13302,anchored,관도항 전투,Battle at the Port of Guandu
+name,168,13303,anchored,울림 전투,Battle of Yulin
+name,169,13304,anchored,장액 전투,Battle of Zhangye
+name,170,13305,anchored,서성 전투,Battle of Xicheng
+name,171,13306,anchored,건평 전투,Battle of Jianping
+name,172,13307,anchored,시흥 전투,Battle of Shixing
+name,173,13308,anchored,임치항 제사 토벌전,Port of Linzi Ritual Expedition
+name,174,13309,anchored,도창 제사 토벌전,Duchang Ritual Expedition
+name,175,13310,anchored,태산 장패 토벌전,Taishan Zang Ba Expedition
+name,176,13311,anchored,돈구항 장패 격퇴전,Raiding Zang Ba at the Port of Dunqiu
+name,177,13312,anchored,창양항 수적 토벌전,Port of Changyang Pirate Expedition
+name,178,13313,anchored,북해 부패 척결전,Preserving Order at Beihai
+name,179,13314,anchored,낙양 북문 순찰전,Scouting the North Gate of Luoyang
+name,180,13315,anchored,낙양 도적 토벌전,Luoyang Bandit Crackdown
+name,181,13316,anchored,진류 연주 제패전,Chenliu Yanzhou Conquest
+name,182,13317,anchored,호로관 부패 격퇴전,Cleansing Hulao Pass's Corruption
+name,183,13318,anchored,관도항 부패 척결전,Preserving Order at the Port of Guandu
+name,184,13319,anchored,화산 늑대 사냥,Huashan Wolf Hunt
+name,185,13320,anchored,낙양 십상시 격퇴전,Eunuch Raid at Luoyang
+name,186,13321,anchored,청주 늑대 퇴치전,Qingzhou Wolf Extermination
+name,187,13322,anchored,테스트_북해2,Test_Beihai2
+name,188,13323,anchored,테스트_제남3,Test_Jinan3
+name,189,13324,anchored,테스트_도창3,Test_Duchang3
+name,190,13325,anchored,테스트_북해3,Test_Beihai3
+name,191,13326,anchored,도성 외곽 전투,Battle on the Outskirts of Luoyang
+name,192,13327,anchored,낙양 탈출전,Escape from Luoyang
+name,193,13328,anchored,제남 황충 퇴치전,Jinan Locust Extermination
+name,194,13329,anchored,도창 늑대 퇴치전,Duchang Wolf Extermination
+name,195,13330,anchored,도창 도적 토벌전,Duchang Bandit Crackdown
+name,196,13331,anchored,제남 황건 토벌전,Jinan Yellow Turban Expedition
+name,197,13332,anchored,창양항 황건군 수성전,Port of Changyang Defensive—Yellow Turbans
+name,198,13333,anchored,청주 보부상 구출전,Saving the Qingzhou Peddler
+name,199,13334,anchored,창양 군사 훈련,Changyang Military Drills
+name,200,13335,anchored,도창 관군 구출전,Saving Duchang's Royal Forces
+name,201,13336,anchored,북해 배반자 색출전,Hunting the Beihai Traitor
+name,202,13337,anchored,제남 약초 탐색전,Search for the Jinan Herb
+name,203,13338,anchored,제남 습격전,Assault on Jinan
+name,204,13339,anchored,도창 은전 수집전,Duchang Silver Coin Collecting
+name,205,13340,anchored,제남 정보 수집전,Jinan Inspection
+name,206,13341,anchored,제남 요인 습격전,Jinan Assassination
+name,207,13342,anchored,북해 도적 격퇴전,Bandit Raid at Beihai
+name,208,13343,anchored,도창 황건 토벌전,Duchang Yellow Turban Expedition
+name,209,13344,anchored,북해 황건 토벌전,Beihai Yellow Turban Expedition
+name,210,13345,anchored,복양 황충 퇴치전,Puyang Locust Extermination
+name,211,13346,anchored,진류 늑대 퇴치전,Chenliu Wolf Extermination
+name,212,13347,anchored,돈구항 도적 토벌전,Port of Dunqiu Bandit Crackdown
+name,213,13348,anchored,진류 황건 토벌전,Chenliu Yellow Turban Expedition
+name,214,13349,anchored,진류 황건군 수성전,Chenliu Defensive—Yellow Turbans
+name,215,13350,anchored,연주 보부상 구출전,Saving the Yanzhou Peddler
+name,216,13351,anchored,복양 군사 훈련,Puyang Military Drills
+name,217,13352,anchored,태산 도적 토벌전,Taishan Bandit Crackdown
+name,218,13353,anchored,팽성 배반자 색출전,Hunting the Pengcheng Traitor
+name,219,13354,anchored,복양 약초 탐색전,Search for the Puyang Herb
+name,220,13355,anchored,팽성 습격전,Assault on Pengcheng
+name,221,13356,anchored,복양 은전 수집전,Puyang Silver Coin Collecting
+name,222,13357,anchored,복양 정보 수집전,Puyang Inspection
+name,223,13358,anchored,복양 요인 습격전,Puyang Assassination
+name,224,13359,anchored,복양 도적 격퇴전,Bandit Raid at Puyang
+name,225,13360,anchored,돈구항 황건 토벌전,Port of Dunqiu Yellow Turban Expedition
+name,226,13361,anchored,복양 황건 토벌전,Puyang Yellow Turban Expedition
+name,227,13362,anchored,팽성 황충 퇴치전,Pengcheng Locust Extermination
+name,228,13363,anchored,하비 늑대 퇴치전,Xiapi Wolf Extermination
+name,229,13364,anchored,팽성 황건 토벌전,Pengcheng Yellow Turban Expedition
+name,230,13365,anchored,해릉항 황건군 수성전,Port of Hailing Defensive—Yellow Turbans
+name,231,13366,anchored,서주 보부상 구출전,Saving the Xuzhou Peddler
+name,232,13367,anchored,팽성 관군 구출전,Saving Pengcheng's Royal Forces
+name,233,13368,anchored,하비 약초 탐색전,Search for the Xiapi Herb
+name,234,13369,anchored,해릉항 습격전,Assault on the Port of Hailing
+name,235,13370,anchored,팽성 은전 수집전,Pengcheng Silver Coin Collecting
+name,236,13371,anchored,팽성 정보 수집전,Pengcheng Inspection
+name,237,13372,anchored,팽성 요인 습격전,Pengcheng Assassination
+name,238,13373,anchored,팽성 도적 격퇴전,Bandit Raid at Pengcheng
+name,239,13374,anchored,해릉항 황건 토벌전,Port of Hailing Yellow Turban Expedition
+name,240,13375,anchored,하비 황건 토벌전,Xiapi Yellow Turban Expedition
+name,241,13376,anchored,수춘 황충 퇴치전,Shouchun Locust Extermination
+name,242,13377,anchored,소패 늑대 퇴치전,Xiaopei Wolf Extermination
+name,243,13378,anchored,소패 황건 토벌전,Xiaopei Yellow Turban Expedition
+name,244,13379,anchored,여남 반란군 수성전,Runan Defensive—Rebels
+name,245,13380,anchored,예주 보부상 구출전,Saving the Yuzhou Peddler
+name,246,13381,anchored,소패 관군 지원전,Supporting Xiaopei's Royal Guard
+name,247,13382,anchored,여남 배반자 색출전,Hunting the Runan Traitor
+name,248,13383,anchored,여남 약초 탐색전,Search for the Runan Herb
+name,249,13384,anchored,석정 습격전,Assault on Shi Ting
+name,250,13385,anchored,석정 은전 수집전,Shi Ting Silver Coin Collecting
+name,251,13386,anchored,소패 정보 수집전,Xiaopei Inspection
+name,252,13387,anchored,소패 요인 습격전,Xiaopei Assassination
+name,253,13388,anchored,여남 도적 격퇴전,Bandit Raid at Runan
+name,254,13389,anchored,석정 황건 토벌전,Shi Ting Yellow Turban Expedition
+name,255,13390,anchored,여남 황건 토벌전,Runan Yellow Turban Expedition
+name,256,13391,anchored,업 황충 퇴치전,Ye Locust Extermination
+name,257,13392,anchored,평원 늑대 퇴치전,Pingyuan Wolf Extermination
+name,258,13393,anchored,평원 황건 토벌전,Pingyuan Yellow Turban Expedition
+name,259,13394,anchored,남피 황건군 수성전,Nanpi Defensive—Yellow Turbans
+name,260,13395,anchored,기주 보부상 구출전,Saving the Jizhou Peddler
+name,261,13396,anchored,평원 관군 지원전,Supporting Pingyuan's Royal Guard
+name,262,13397,anchored,고당항 배반자 색출전,Hunting the Port of Gaotang Traitor
+name,263,13398,anchored,평원 약초 탐색전,Search for the Pingyuan Herb
+name,264,13399,anchored,백마항 습격전,Assault on the Port of Baima
+name,265,13400,anchored,평원 은전 수집전,Pingyuan Silver Coin Collecting
+name,266,13401,anchored,업 정보 수집전,Ye Inspection
+name,267,13402,anchored,업 요인 습격전,Ye Assassination
+name,268,13403,anchored,평원 도적 격퇴전,Bandit Raid at Pingyuan
+name,269,13404,anchored,남피 황건 토벌전,Nanpi Yellow Turban Expedition
+name,270,13405,anchored,백마 황건 토벌전,Baima Yellow Turban Expedition
+name,271,13406,anchored,진양 황충 퇴치전,Jinyang Locust Extermination
+name,272,13407,anchored,진양 늑대 퇴치전,Jinyang Wolf Extermination
+name,273,13408,anchored,상산 황건 토벌전,Mount Chang Yellow Turban Expedition
+name,274,13409,anchored,진양 반란군 수성전,Jinyang Defensive—Rebels
+name,275,13410,anchored,항산 도적 토벌전,Mount Heng (Shanxi) Bandit Crackdown
+name,276,13411,anchored,상당 배반자 색출전,Hunting the Shangdang Traitor
+name,277,13412,anchored,상산 약초 탐색전,Search for the Mount Chang Herb
+name,278,13413,anchored,상산 습격전,Assault on Mount Chang
+name,279,13414,anchored,진양 은전 수집전,Jinyang Silver Coin Collecting
+name,280,13415,anchored,상당 정보 수집전,Shangdang Inspection
+name,281,13416,anchored,상당 요인 습격전,Shangdang Assassination
+name,282,13417,anchored,진양 도적 격퇴전,Bandit Raid at Jinyang
+name,283,13418,anchored,호관 황건 토벌전,Hu Pass Yellow Turban Expedition
+name,284,13419,anchored,진양 황건 토벌전,Jinyang Yellow Turban Expedition
+name,285,13420,anchored,북평 황충 퇴치전,Beiping Locust Extermination
+name,286,13421,anchored,북평 늑대 퇴치전,Beiping Wolf Extermination
+name,287,13422,anchored,유성 황건 토벌전,Liu Castle Yellow Turban Expedition
+name,288,13423,anchored,역 반란군 수성전,Yi Defensive—Rebels
+name,289,13424,anchored,백랑산 도적 토벌전,White Wolf Mountain Bandit Crackdown
+name,290,13425,anchored,유성 배반자 색출전,Hunting the Liu Castle Traitor
+name,291,13426,anchored,양평 약초 탐색전,Search for the Yangping Herb
+name,292,13427,anchored,역 습격전,Assault on Yi
+name,293,13428,anchored,안평항 은전 수집전,Port of Anping Silver Coin Collecting
+name,294,13429,anchored,계 정보 수집전,Ji Inspection
+name,295,13430,anchored,계 요인 습격전,Ji Assassination
+name,296,13431,anchored,양평 도적 격퇴전,Bandit Raid at Yangping
+name,297,13432,anchored,안평항 황건 토벌전,Port of Anping Yellow Turban Expedition
+name,298,13433,anchored,계 황건 토벌전,Ji Yellow Turban Expedition
+name,299,13434,anchored,여강 황충 퇴치전,Lujiang Locust Extermination
+name,300,13435,anchored,광릉 늑대 퇴치전,Guangling Wolf Extermination
+name,301,13436,anchored,유수구 황건 토벌전,Ruxukou Yellow Turban Expedition
+name,302,13437,anchored,합비 반란군 수성전,Hefei Defensive—Rebels
+name,303,13438,anchored,서새산 도적 토벌전,Mount Xisai Bandit Crackdown
+name,304,13439,anchored,시상 배반자 색출전,Hunting the Chaisang Traitor
+name,305,13440,anchored,회음 약초 탐색전,Search for the Huaiyin Herb
+name,306,13441,anchored,회음 습격전,Assault on Huaiyin
+name,307,13442,anchored,회음 은전 수집전,Huaiyin Silver Coin Collecting
+name,308,13443,anchored,시상 정보 수집전,Chaisang Inspection
+name,309,13444,anchored,시상 요인 습격전,Chaisang Assassination
+name,310,13445,anchored,회음 도적 격퇴전,Bandit Raid at Huaiyin
+name,311,13446,anchored,합비 황건 토벌전,Hefei Yellow Turban Expedition
+name,312,13447,anchored,남창 황건 토벌전,Nanchang Yellow Turban Expedition
+name,313,13448,anchored,강릉 황충 퇴치전,Jiangling Locust Extermination
+name,314,13449,anchored,신야 늑대 퇴치전,Xinye Wolf Extermination
+name,315,13450,anchored,신야 황건 토벌전,Xinye Yellow Turban Expedition
+name,316,13451,anchored,강릉 반란군 수성전,Jiangling Defensive—Rebels
+name,317,13452,anchored,신야 관군 구출전,Saving Xinye's Royal Forces
+name,318,13453,anchored,완 배반자 색출전,Hunting the Wan Traitor
+name,319,13454,anchored,신야 약초 탐색전,Search for the Xinye Herb
+name,320,13455,anchored,상용 습격전,Assault on Shangyong
+name,321,13456,anchored,서성 은전 수집전,Xicheng Silver Coin Collecting
+name,322,13457,anchored,신야 정보 수집전,Xinye Inspection
+name,323,13458,anchored,신야 요인 습격전,Xinye Assassination
+name,324,13459,anchored,강하 도적 격퇴전,Bandit Raid at Jiangxia
+name,325,13460,anchored,상용 황건 토벌전,Shangyong Yellow Turban Expedition
+name,326,13461,anchored,번성 황건 토벌전,Fan Castle Yellow Turban Expedition
+name,327,13462,anchored,계양 황충 퇴치전,Guiyang Locust Extermination
+name,328,13463,anchored,영릉 늑대 퇴치전,Lingling Wolf Extermination
+name,329,13464,anchored,무릉 황건 토벌전,Wuling Yellow Turban Expedition
+name,330,13465,anchored,장사 반란군 수성전,Changsha Defensive—Rebels
+name,331,13466,anchored,무릉 관군 지원전,Supporting Wuling's Royal Guard
+name,332,13467,anchored,무릉 배반자 색출전,Hunting the Wuling Traitor
+name,333,13468,anchored,영릉 약초 탐색전,Search for the Lingling Herb
+name,334,13469,anchored,장사 습격전,Assault on Changsha
+name,335,13470,anchored,무릉 은전 수집전,Wuling Silver Coin Collecting
+name,336,13471,anchored,영릉 정보 수집전,Lingling Inspection
+name,337,13472,anchored,영릉 요인 습격전,Lingling Assassination
+name,338,13473,anchored,무릉 도적 격퇴전,Bandit Raid at Wuling
+name,339,13474,anchored,계양 황건 토벌전,Guiyang Yellow Turban Expedition
+name,340,13475,anchored,영릉 황건 토벌전,Lingling Yellow Turban Expedition
+name,341,13476,anchored,남해 황충 퇴치전,Nanhai Locust Extermination
+name,342,13477,anchored,교지 늑대 퇴치전,Jiaozhi Wolf Extermination
+name,343,13478,anchored,교지 수성전,Jiaozhi Defensive
+name,344,13479,anchored,창오 관군 구출전,Saving Cangwu's Royal Force
+name,345,13480,anchored,울림 배반자 색출전,Hunting the Yulin Traitor
+name,346,13481,anchored,교지 약초 탐색전,Search for the Jiaozhi Herb
+name,347,13482,anchored,합포 습격전,Assault on Hepu
+name,348,13483,anchored,흥고 은전 수집전,Xinggu Silver Coin Collecting
+name,349,13484,anchored,남해 정보 수집전,Nanhai Inspection
+name,350,13485,anchored,남해 요인 습격전,Nanhai Assassination
+name,351,13486,anchored,남해 도적 격퇴전,Bandit Raid at Nanhai
+name,352,13487,anchored,울림 이민족 토벌전,Yulin Barbarian Expedition
+name,353,13488,anchored,흥고 이민족 토벌전,Xinggu Barbarian Expedition
+name,354,13489,anchored,교지 이민족 토벌전,Jiaozhi Barbarian Expedition
+name,355,13490,anchored,건안 황충 퇴치전,Jianan Locust Extermination
+name,356,13491,anchored,여릉 늑대 퇴치전,Luling Wolf Extermination
+name,357,13492,anchored,회계 황건 토벌전,Huiji Yellow Turban Expedition
+name,358,13493,anchored,건안 반란군 수성전,Jianan Defensive—Defensive—Rebels
+name,359,13494,anchored,여릉 관군 구출전,Saving Luling's Royal Forces
+name,360,13495,anchored,오 배반자 색출전,Hunting the Wu Traitor
+name,361,13496,anchored,여릉 약초 탐색전,Search for the Luling Herb
+name,362,13497,anchored,회계 습격전,Assault on Huiji
+name,363,13498,anchored,여릉 은전 수집전,Luling Silver Coin Collecting
+name,364,13499,anchored,오 정보 수집전,Wu Inspection
+name,365,13500,anchored,오 요인 습격전,Wu Assassination
+name,366,13501,anchored,회계 도적 격퇴전,Bandit Raid at Huiji
+name,367,13502,anchored,건안 황건 토벌전,Jianan Yellow Turban Expedition
+name,368,13503,anchored,임해 황건 토벌전,Linhai Yellow Turban Expedition
+name,369,13504,anchored,성도 황충 퇴치전,Chengdu Locust Extermination
+name,370,13505,anchored,강주 늑대 퇴치전,Jiangzhou Wolf Extermination
+name,371,13506,anchored,건평 남만군 수성전,Jianping Defensive—Nanman Army
+name,372,13507,anchored,강주 관군 지원전,Supporting Jiangzhou's Royal Guard
+name,373,13508,anchored,건평 배반자 색출전,Hunting the Jianping Traitor
+name,374,13509,anchored,강주 약초 탐색전,Search for the Jiangzhou Herb
+name,375,13510,anchored,영안 습격전,Assault on Yong'an
+name,376,13511,anchored,강양 은전 수집전,Jiangyang Silver Coin Collecting
+name,377,13512,anchored,강양 정보 수집전,Jiangyang Inspection
+name,378,13513,anchored,강양 요인 습격전,Jiangyang Assassination
+name,379,13514,anchored,건평 도적 격퇴전,Bandit Raid at Jianping
+name,380,13515,anchored,건평 이민족 토벌전,Jianping Barbarian Expedition
+name,381,13516,anchored,강양 이민족 토벌전,Jiangyang Barbarian Expedition
+name,382,13517,anchored,영안 이민족 토벌전,Yong'an Barbarian Expedition
+name,383,13518,anchored,운남 황충 퇴치전,Yunnan Locust Extermination
+name,384,13519,anchored,영창 늑대 퇴치전,Yongchang Wolf Extermination
+name,385,13520,anchored,영창 남만군 수성전,Yongchang Defensive—Nanman Army
+name,386,13521,anchored,독룡동 관군 지원전,Supporting Tulong Cave's Royal Guard
+name,387,13522,anchored,사룡 배반자 색출전,Hunting the Xielong Traitor
+name,388,13523,anchored,사룡 약초 탐색전,Search for the Xielong Herb
+name,389,13524,anchored,건녕 습격전,Assault on Qujing
+name,390,13525,anchored,사룡 은전 수집전,Xielong Silver Coin Collecting
+name,391,13526,anchored,건녕 정보 수집전,Qujing Inspection
+name,392,13527,anchored,건녕 요인 습격전,Qujing Assassination
+name,393,13528,anchored,영창 도적 격퇴전,Bandit Raid at Yongchang
+name,394,13529,anchored,사룡 이민족 토벌전,Xielong Barbarian Expedition
+name,395,13530,anchored,건녕 이민족 토벌전,Qujing Barbarian Expedition
+name,396,13531,anchored,영창 이민족 토벌전,Yongchang Barbarian Expedition
+name,397,13532,anchored,사곡 황충 퇴치전,Xiegu Locust Extermination
+name,398,13533,anchored,자동 늑대 퇴치전,Zitong Wolf Extermination
+name,399,13534,anchored,한중 반란군 수성전,Hanzhong Defensive—Rebels
+name,400,13535,anchored,정군산 도적 토벌전,Mount Dingjun Bandit Crackdown
+name,401,13536,anchored,양평관 배반자 색출전,Hunting the Yangping Pass Traitor
+name,402,13537,anchored,한중 약초 탐색전,Search for the Hanzhong Herb
+name,403,13538,anchored,검각 습격전,Assault on Jiange
+name,404,13539,anchored,가맹관 은전 수집전,Jiameng Pass Silver Coin Collecting
+name,405,13540,anchored,자동 정보 수집전,Zitong Inspection
+name,406,13541,anchored,자동 요인 습격전,Zitong Assassination
+name,407,13542,anchored,자동 도적 격퇴전,Bandit Raid at Zitong
+name,408,13543,anchored,사곡 이민족 토벌전,Xiegu Barbarian Expedition
+name,409,13544,anchored,자동 이민족 토벌전,Zitong Barbarian Expedition
+name,410,13545,anchored,한중 이민족 토벌전,Hanzhong Barbarian Expedition
+name,411,13546,anchored,적도 황충 퇴치전,Didao Locust Extermination
+name,412,13547,anchored,기산 늑대 퇴치전,Qishan Wolf Extermination
+name,413,13548,anchored,서평 반란군 수성전,Xiping Defensive—Rebels
+name,414,13549,anchored,남안 관군 구출전,Saving Nanan's Royal Forces
+name,415,13550,anchored,적도 배반자 색출전,Hunting the Didao Traitor
+name,416,13551,anchored,무위 약초 탐색전,Search for the Wuei Herb
+name,417,13552,anchored,무위 방어전,Defending Wuei
+name,418,13553,anchored,적도 은전 수집전,Didao Silver Coin Collecting
+name,419,13554,anchored,무위 정보 수집전,Wuei Inspection
+name,420,13555,anchored,무위 요인 습격전,Wuei Assassination
+name,421,13556,anchored,남안 도적 격퇴전,Bandit Raid at Nanan
+name,422,13557,anchored,기성 이민족 토벌전,Jincheng Barbarian Expedition
+name,423,13558,anchored,적도 이민족 토벌전,Didao Barbarian Expedition
+name,424,13559,anchored,남안 이민족 토벌전,Nanan Barbarian Expedition
+name,425,13560,anchored,동관 황충 퇴치전,Tong Pass Locust Extermination
+name,426,13561,anchored,안정 늑대 퇴치전,Anding Wolf Extermination
+name,427,13562,anchored,천수 반란군 수성전,Tianshui Defensive—Rebels
+name,428,13563,anchored,가정 관군 지원전,Supporting Jieting's Royal Guard
+name,429,13564,anchored,동관 배반자 색출전,Hunting the Tong Pass Traitor
+name,430,13565,anchored,가정 약초 탐색전,Search for the Jieting Herb
+name,431,13566,anchored,가정 민중 구출전,Saving the People of Jieting
+name,432,13567,anchored,천수 은전 수집전,Tianshui Silver Coin Collecting
+name,433,13568,anchored,천수 정보 수집전,Tianshui Inspection
+name,434,13569,anchored,천수 요인 습격전,Tianshui Assassination
+name,435,13570,anchored,안정 도적 격퇴전,Bandit Raid at Anding
+name,436,13571,anchored,동관 이민족 토벌전,Tong Pass Barbarian Expedition
+name,437,13572,anchored,천수 이민족 토벌전,Tianshui Barbarian Expedition
+name,438,13573,anchored,안정 이민족 토벌전,Anding Barbarian Expedition
+name,439,13574,anchored,하내 황충 퇴치전,Henei Locust Extermination
+name,440,13575,anchored,하동 늑대 퇴치전,Hadong Wolf Extermination
+name,441,13576,anchored,낙양 황건 토벌전,Luoyang Yellow Turban Expedition
+name,442,13577,anchored,하내 반란군 수성전,Henei Defensive—Rebels
+name,443,13578,anchored,하동 관군 구출전,Saving Hadong's Royal Forces
+name,444,13579,anchored,호로관 배반자 색출전,Hunting the Hulao Pass Traitor
+name,445,13580,anchored,함곡관 약초 탐색전,Search for the Hangu Pass Herb
+name,446,13581,anchored,허창 습격전,Assault on Xuchang
+name,447,13582,anchored,하동 은전 수집전,Hadong Silver Coin Collecting
+name,448,13583,anchored,하내 정보 수집전,Henei Inspection
+name,449,13584,anchored,하내 요인 습격전,Henei Assassination
+name,450,13585,anchored,하내 도적 격퇴전,Bandit Raid at Henei
+name,451,13586,anchored,하내 황건 토벌전,Henei Yellow Turban Expedition
+name,452,13587,anchored,함곡관 황건 토벌전,Hangu Pass Yellow Turban Expedition
+name,453,13588,anchored,하구 전격전,Xiakou Blitz
+name,454,13589,anchored,산악 방위전,Mountain Defense
+name,455,13590,anchored,해안 포위전,Coastal Siege
+name,456,13591,anchored,맹수 토벌전,Beast Extermination
+name,457,13592,anchored,산악 기습전,Mountain Raid
+name,458,13593,anchored,도하 요격전,Interception at the River
+name,459,13594,anchored,삼림 유인전,Forest Ambush
+name,460,13595,anchored,진류 군사 훈련전,Chenliu Mock Battle
+name,461,13596,anchored,완 군사 훈련전,Wan Mock Battle
+name,462,13597,anchored,계양 군사 훈련전,Guiyang Mock Battle
+name,463,13598,anchored,영안 군사 훈련전,Yong'an Mock Battle
+name,464,13599,anchored,자동 군사 훈련전,Zitong Mock Battle
+name,465,13600,anchored,천수 군사 훈련전,Tianshui Mock Battle
+name,466,13601,anchored,하내 군사 훈련전,Henei Mock Battle
+name,467,13602,anchored,사룡 군사 훈련전,Xielong Mock Battle
+name,468,13603,anchored,한중 군사 훈련전,Hanzhong Mock Battle
+name,469,13604,anchored,사마휘의 의뢰,Sima Hui's Request
+name,470,13605,anchored,몽매의 시련1,Meng Mei's Trial 1
+name,471,13606,anchored,몽매의 시련2,Meng Mei's Trial 2
+name,472,13607,anchored,몽매의 시련3,Meng Mei's Trial 3
+name,473,13608,anchored,몽매의 시련4,Meng Mei's Trial 4
+name,474,13609,anchored,몽매의 시련5,Meng Mei's Trial 5
+name,475,13610,anchored,몽매의 시련6,Meng Mei's Trial 6
+name,476,13611,anchored,몽매의 시련7,Meng Mei's Trial 7
+name,477,13612,anchored,몽매의 시련8,Meng Mei's Trial 8
+name,478,13613,anchored,몽매의 시련9,Meng Mei's Trial 9
+name,479,13614,anchored,몽매의 시련10,Meng Mei's Trial 10
+name,480,13615,anchored,장각 토벌전,Zhang Jue Expedition
+name,481,13616,anchored,금성 전투,Battle of Jincheng
+name,482,13617,anchored,황제 탐색전,Search for the Emperor
+name,483,13618,anchored,낙양 근교전,Luoyang Provincial Battle
+name,484,13619,anchored,강족 토벌전,Qiang Tribe Expedition
+name,485,13620,anchored,황궁 장악전,Capturing the Royal Palace
+name,486,13621,anchored,낙양 약탈,Looting of Luoyang
+name,487,13622,anchored,황궁 진입전,Entering the Royal Palace
+name,488,13623,anchored,적도 구원전,Rescue at Didao
+name,489,13624,anchored,후화 전투,Battle of Houhe
+name,490,13625,anchored,답중 전투,Battle of Tazhong
+name,491,13626,anchored,면죽관 돌파전,Mianzhu Pass Breakthrough
+name,492,13627,anchored,양무 전투,Battle of Yangwu
+name,493,13628,anchored,조서 전투,Battle of Taoxi
+name,494,13629,anchored,단곡 패퇴,Defeat at Duan Valley
+name,495,13630,anchored,후화 공격전,Attack on Houhe
+name,496,13631,anchored,답중 후퇴전,Retreat from Tazhong
+name,497,13632,anchored,검각 방어전,Defending Jiange
+name,498,13633,anchored,성도 수복전,Recovering Chengdu
+name,499,13634,anchored,병주 도적 토벌전,Bingzhou Bandit Crackdown
+name,500,13635,anchored,동탁 토벌전,Dong Zhuo Expedition
+name,501,13636,anchored,형양 전투,Battle of Xingyang
+name,502,13637,anchored,장안 방어전,Defending Chang'an
+name,503,13638,anchored,연주 제압전,Yanzhou Suppression
+name,504,13639,anchored,복양 전투1,Battle of Puyang 1
+name,505,13640,anchored,서주 전투,Battle of Xuzhou
+name,506,13641,anchored,소패 방어전,Defending Xiaopei
+name,507,13642,anchored,하비 혈투1,Bloody Battle of Xiapi 1
+name,508,13643,anchored,하비 혈투2,Bloody Battle of Xiapi 2
+name,509,13644,anchored,장안 침공,Chang'an Invasion
+name,510,13645,anchored,동관 공격,Tong Pass Assault
+name,511,13646,anchored,동관 격돌,Clash at Tong Pass
+name,512,13647,anchored,동관 나루 전투,Battle of Tong Pass Dock
+name,513,13648,anchored,위수 전투,Battle of Weishui
+name,514,13649,anchored,위수 패퇴,Defeat at Weishui
+name,515,13650,anchored,기성 공격,Jincheng Assault
+name,516,13651,anchored,하후연 격퇴,Defeat Xiahou Yuan
+name,517,13652,anchored,기성 탈출,Escape from Jincheng
+name,518,13653,anchored,유장 구원전,Rescue Liu Zhang
+name,519,13654,anchored,오소 기습전,Wuchao Raid
+name,520,13655,anchored,적벽 탈출전,Escape from Red Cliffs
+name,521,13656,anchored,합비 전투1,Battle of Hefei 1
+name,522,13657,anchored,합비 전투2,Battle of Hefei 2
+name,523,13658,anchored,수적 퇴치전,Pirate Extermination
+name,524,13659,anchored,완성 황건병 토벌전,Wancheng Yellow Turban Expedition
+name,525,13660,anchored,장사 반란군 토벌전,Changsha Rebellion Expedition
+name,526,13661,anchored,노양 탈출전,Escape from Luyang
+name,527,13662,anchored,조무 구출전,Saving Zu Mao
+name,528,13663,anchored,양인 전투,Battle of Yangren
+name,529,13664,anchored,낙양 수복전,Recovering Luoyang
+name,530,13665,anchored,양양 근교전,Xiangyang Provincial Battle
+name,531,13666,anchored,신선의 시험,The Hermit's Test
+name,532,13667,anchored,백성 구원,Save the People
+name,533,13668,anchored,관청 기습,Government Surprise Attack
+name,534,13669,anchored,강릉 교외전,The Outskirts of Jiangling
+name,535,13670,anchored,양양 교외전,The Outskirts of Xiangyang
+name,536,13671,anchored,청니 전투,Battle of Qingni
+name,537,13672,anchored,익양 전투,Battle of Yiyang
+name,538,13673,anchored,번성 교외전,The Outskirts of Fan Castle
+name,539,13674,anchored,번성 수몰,Flooding Fan Castle
+name,540,13675,anchored,번성 함락전,Fall of Fan Castle
+name,541,13676,anchored,남군 후퇴전,Retreat from Nanjun
+name,542,13677,anchored,맥성 탈출전,Escape from Mai Castle
+name,543,13678,anchored,하동 부패 척결전,Preserving Order at Hadong
+name,544,13679,anchored,유주 황건병 토벌전,Youzhou Yellow Turban Expedition
+name,545,13680,anchored,북해 구원전,Rescue at Beihai
+name,546,13681,anchored,여포 토벌전,Lu Bu Expedition
+name,547,13682,anchored,허도 맹수 사냥,Xudou Beast Hunt
+name,548,13683,anchored,유비 구원전,Rescue Liu Bei
+name,549,13684,anchored,오관 돌파전,Wu Pass Breakthrough
+name,550,13685,anchored,당양 구원전,Rescue at Dangyang
+name,551,13686,anchored,메뚜기 퇴치전,Locust Extermination
+name,552,13687,anchored,적벽 유람전,Red Cliffs Tour
+name,553,13688,anchored,허창 탐색전,Xuchang Reconnaissance
+name,554,13689,anchored,오장원 탐색전,Wuzhang Plains Reconnaissance
+name,555,13690,anchored,신야성 전투,Battle of Xinye Castle
+name,556,13691,anchored,장강 도피전,Escape from Yangtze
+name,557,13692,anchored,적벽 기도전,Prayers of Red Cliffs
+name,558,13693,anchored,형남 평정전,Jingnan Suppression
+name,559,13694,anchored,주유 토벌전,Zhou Yu Expedition
+name,560,13695,anchored,마왕 각성전,An Evil Awakens
+name,561,13696,anchored,익주 평정전,Yizhou Suppression
+name,562,13697,anchored,형주 암략전,Jingzhou Secret Plans
+name,563,13698,anchored,공명 장악전1,Capturing Kongming 1
+name,564,13699,anchored,마왕 도피전,The Demon Escapes
+name,565,13700,anchored,공명 장악전2,Capturing Kongming 2
+name,566,13701,anchored,탁현 도적 토벌전,Zhuoxian Bandit Crackdown
+name,567,13702,anchored,대흥산 전투,Battle of Daixingshan
+name,568,13703,anchored,청주성 전투,Battle of Qingzhou Castle
+name,569,13704,anchored,광종 전투,Battle of Guangzong
+name,570,13705,anchored,양성 전투,Battle of Xiangcheng
+name,571,13706,anchored,장거 토벌전,Zhang Ju Expedition
+name,572,13707,anchored,계교 구원전,Rescue at Jieqiao
+name,573,13708,anchored,서주 방어전,Defending Xuzhou
+name,574,13709,anchored,팽성 도적 토벌전,Pengcheng Bandit Crackdown
+name,575,13710,anchored,소패 탈출전,Escape from Xiaopei
+name,576,13711,anchored,수춘 포위전,Siege of Shouchun
+name,577,13712,anchored,소패 요격전,Interception at Xiaopei
+name,578,13713,anchored,하후돈 구원전,Rescue Xiahou Dun
+name,579,13714,anchored,팽성 근교전,Pencheng Provincial Battle
+name,580,13715,anchored,하비 포위전,Siege of Xiapi
+name,581,13716,anchored,원술 토벌전,Yuan Shu Expedition
+name,582,13717,anchored,서주 탈취전,Capturing Xuzhou
+name,583,13718,anchored,소패 근교전,Xiaopei Provincial Battle
+name,584,13719,anchored,소패 탈출전 2,Escape from Xiaopei 2
+name,585,13720,anchored,남판 근교전,Nanpan Provincial Battle
+name,586,13721,anchored,여남 탈출전,Escape from Runan
+name,587,13722,anchored,팔문금쇄진 전투,Battle of the Eight Gates Formation
+name,588,13723,anchored,당양 탈출전,Escape from Dangyang
+name,589,13724,anchored,부수관 탈출전,Escape from Fushui Pass
+name,590,13725,anchored,낙성 전투 1,Battle of Luo Castle 1
+name,591,13726,anchored,낙성 전투 2,Battle of Luo Castle 2
+name,592,13727,anchored,자귀성 전투,Battle of Ziguicheng
+name,593,13728,anchored,이도 전투,Battle of Yidu
+name,594,13729,anchored,이릉 탈출전,Escape from Yiling
+name,595,13730,anchored,관청 잠입,Government Infiltration
+name,596,13731,anchored,서주 탈출전,Escape from Xuzhou
+name,597,13732,anchored,하후홍 구출전,Saving Xiahou Shi
+name,598,13733,anchored,장판교 방어,Changban Bridge Defense
+name,599,13734,anchored,파군 전투,Battle of Bajun
+name,600,13735,anchored,탕거 전투,Battle of Dangqu
+name,601,13736,anchored,와구관 전투,Battle of Wakou Pass
+name,602,13737,anchored,하변 전투,Battle of Xiabian
+name,603,13738,anchored,양평관 기습,Ambush at Yangping Pass
+name,604,13739,anchored,자오곡 약탈,Looting of Ziwugu
+name,605,13740,anchored,한중 정벌전,Hanzhong Conquest
+name,606,13741,anchored,삼로 수송전,Three Route Transportation
+name,607,13742,anchored,형주 방어전,Defending Jingzhou
+name,608,13743,anchored,맹달 기습전,Meng Da Raid
+name,609,13744,anchored,조진 구원전,Rescue Cao Zhen
+name,610,13745,anchored,공손연 토벌전,Gongsun Yuan Expedition
+name,611,13746,anchored,왕릉 평정전,Wang Ling Suppression
+name,612,13747,anchored,와우산 전투,Battle of Wuniushan
+name,613,13748,anchored,허도 순찰,Xudou Scout
+name,614,13749,anchored,제단 설치전,Altar Installation
+name,615,13750,anchored,여강 도적 토벌전,Lujiang Bandit Crackdown
+name,616,13751,anchored,단양 거병전,Rise from Danyang
+name,617,13752,anchored,원술 설득전,Yuan Shu Persuasion
+name,618,13753,anchored,여강 공격전,Attack on Lujiang
+name,619,13754,anchored,오경 구원전,Rescue Wu Jing
+name,620,13755,anchored,단양 전투,Battle of Danyang
+name,621,13756,anchored,말릉 전투,Battle of Moling
+name,622,13757,anchored,경현 전투,Battle of Jingxian
+name,623,13758,anchored,예장 공격전,Attack on Yuzhang
+name,624,13759,anchored,사독 전투,Battle of Zhadu
+name,625,13760,anchored,오군 전투,Battle of Wujun
+name,626,13761,anchored,엄백호 토벌전,Yan Baihu Expedition
+name,627,13762,anchored,계교 전투,Battle of Jieqiao
+name,628,13763,anchored,상산 흑산적 토벌전,Mount Chang Heishan Bandit Crackdown
+name,629,13764,anchored,역경 교외전,The Outskirts of Yijing
+name,630,13765,anchored,역경 전투,Battle of Yijing
+name,631,13766,anchored,회계 도적 토벌전,Huiji Bandit Crackdown
+name,632,13767,anchored,반림 토벌전,Pan Lin Expedition
+name,633,13768,anchored,여릉 반란군 토벌전,Luling Rebellion Expedition
+name,634,13769,anchored,형주 공략전,Jingzhou Campaign
+name,635,13770,anchored,관우 생포전,Capturing Guan Yu
+name,636,13771,anchored,이릉 대전,Great Battle of Yiling
+name,637,13772,anchored,공손찬 구원전,Rescue Gongsun Zan
+name,638,13773,anchored,역경루 전투,Battle of Yijinglou
+name,639,13774,anchored,도적 잔당 토벌전,Bandit Remnant Crackdown
+name,640,13775,anchored,강하 도적 토벌전,Jiangxia Bandit Crackdown
+name,641,13776,anchored,계양 점령전,Guiyang Occupation
+name,642,13777,anchored,손상향 추격전,Sun Shangxiang Pursuit
+name,643,13778,anchored,마초 격퇴전,Ma Chao Raid
+name,644,13779,anchored,옹개 토벌전,Yong Kai Expedition
+name,645,13780,anchored,남중 평정전,Nanzhong Suppression
+name,646,13781,anchored,기곡 전투,Battle of Jigu
+name,647,13782,anchored,한중 퇴각전,Hanzhong Withdrawal
+name,648,13783,anchored,무릉만 토벌전,Wuling Expedition
+name,649,13784,anchored,장사 근교전,Changsha Provincial Battle
+name,650,13785,anchored,낙성 전투,Battle of Luo Castle
+name,651,13786,anchored,천탕산 전투,Battle of Tiandangshan
+name,652,13787,anchored,북산 전투,Battle of Beishan
+name,653,13788,anchored,미창산 전투,Battle of Micang Mountains
+name,654,13789,anchored,사냥 내기 전투,Hunting Bet Battle
+name,655,13790,anchored,한수 토벌전,Han River Expedition
+name,656,13791,anchored,마차 호위전,Escorting the Wagon
+name,657,13792,anchored,장순 토벌전,Zhang Chun Expedition
+name,658,13793,anchored,북방 이민족 토벌전,N. Barbarians Expedition
+name,659,13794,anchored,북방 이민족 토벌전2,N. Barbarians Expedition 2
+name,660,13795,anchored,반란 진압전,Rebellion Subjugation
+name,661,13796,anchored,당양 후퇴전,Retreat from Dangyang
+name,662,13797,anchored,형성 전투,Battle of Jingcheng
+name,663,13798,anchored,강주 함락전,Fall of Jiangzhou
+name,664,13799,anchored,고정 반란 토벌전,Gao Ding Rebellion Expedition
+name,665,13800,anchored,옹개 반란 토벌전,Yong Kai Rebellion Expedition
+name,666,13801,anchored,사이호 전투,Battle of West Lake
+name,667,13802,anchored,삼강성 전투,Battle of Sanjiang Castle
+name,668,13803,anchored,은갱동 전투,Battle of Yinkendong
+name,669,13804,anchored,반사곡 전투,Battle of Panshegu
+name,670,13805,anchored,기산 전투1,Battle of Qishan 1
+name,671,13806,anchored,옹주 서부 평정전,West Yongzhou Suppression
+name,672,13807,anchored,한중 후퇴전,Retreat from Hanzhong
+name,673,13808,anchored,진창 교외전,The Outskirts of Chenchang
+name,674,13809,anchored,진창 전투1,Battle of Chenchang 1
+name,675,13810,anchored,진창 전투2,Battle of Chenchang 2
+name,676,13811,anchored,서한수 진격전,West Han River Advancement
+name,677,13812,anchored,한중 대치전,Hanzhong Confrontation
+name,678,13813,anchored,강중 전투,Battle of Qiangzhong
+name,679,13814,anchored,기산 전투2,Battle of Qishan 2
+name,680,13815,anchored,상규 전투,Battle of Shanggui
+name,681,13816,anchored,노성 대치전,Lucheng Confrontation
+name,682,13817,anchored,장합 격퇴전,Zhang He Raid
+name,683,13818,anchored,목문 후퇴전,Retreat from Mumen
+name,684,13819,anchored,위수 진출전,Weishui Advance
+name,685,13820,anchored,북원 전투,Battle of Beiyuan
+name,686,13821,anchored,양수 기습전,Yang Xiu Raid
+name,687,13822,anchored,오장원 방어전,Defending Wuzhang Plains
+name,688,13823,anchored,오장원 후퇴전,Retreat from Wuzhang Plains
+name,689,13824,anchored,북해 진입전,Entering Beihai
+name,690,13825,anchored,공융 구원전,Rescue Kong Rong
+name,691,13826,anchored,유요 구원전,Rescue Liu Yao
+name,692,13827,anchored,손책 격퇴전,Sun Ce Raid
+name,693,13828,anchored,예장 평정전,Yuzhang Suppression
+name,694,13829,anchored,주유 구원전,Rescue Zhou Yu
+name,695,13830,anchored,합비 전초전,Hefei Skirmish
+name,696,13831,anchored,관우 토벌전,Guan Yu Expedition
+name,697,13832,anchored,메뚜기 퇴치,Locust Culling
+name,698,13833,anchored,산월족 토벌,Shanyue Tribe Expedition
+name,699,13834,anchored,맹수 사냥,Beast Hunt
+name,700,13835,anchored,오군 수복전,Recovering Wujun
+name,701,13836,anchored,오군 방어전,Defending Wujun
+name,702,13837,anchored,축융 쟁탈전,Contest for Zhurong
+name,703,13838,anchored,팔납동 전투,Battle of Panadong
+name,704,13839,anchored,서주 황건적 토벌전,Xuzhou Yellow Turban Expedition
+name,705,13840,anchored,발간 전투,Battle of Fagan
+name,706,13841,anchored,하비 반란군 토벌전,Xiapi Rebellion Expedition
+name,707,13842,anchored,조숭 습격,Cao Song Assassination
+name,708,13843,anchored,제남 구원전,Rescue at Jinan
+name,709,13844,anchored,여남 기습전,Runan Raid
+name,710,13845,anchored,기주 군량 수송,Jizhou Ration Transportation
+name,711,13846,anchored,남피 흑산적 토벌전,Nanpi Heishan Bandit Crackdown
+name,712,13847,anchored,동작대 무술 대회,Bronze Bird Pavilion Tournament
+name,713,13848,anchored,안정 기습전,Anding Raid
+name,714,13849,anchored,관서 평정전,Guanxi Suppression
+name,715,13850,anchored,한중 교외전,The Outskirts of Hanzhong
+name,716,13851,anchored,한중 평정전,Hanzhong Suppression
+name,717,13852,anchored,장소 탐색,Zhang Zhao Investigation
+name,718,13853,anchored,군사 훈련,Military Drills
+name,719,13854,anchored,호족 회유,Appeasing the Clans
+name,720,13855,anchored,손보 재산 몰수전,Sun Fu's Property Confiscation
+name,721,13856,anchored,황조 토벌전1,Huang Zu Expedition 1
+name,722,13857,anchored,산월 토벌전,Shanyue Expedition
+name,723,13858,anchored,황조 토벌전2,Huang Zu Expedition 2
+name,724,13859,anchored,적벽 전초전,Red Cliffs Skirmish
+name,725,13860,anchored,적벽 대전,Great Battle of Red Cliffs
+name,726,13861,anchored,조조 추격전,Cao Cao Pursuit
+name,727,13862,anchored,한중 추격전,Hanzhong Pursuit
+name,728,13863,anchored,촉군 추격전,Shu Forces Pursuit
+name,729,13864,anchored,번성 공방전,Siege of Fan Castle
+name,730,13865,anchored,여강 기습전,Lujiang Raid
+name,731,13866,anchored,낙곡 후퇴전,Retreat from Luogu
+name,732,13867,anchored,낙양 제압전,Luoyang Suppression
+name,733,13868,anchored,조상 토벌전,Cao Shuang Expedition
+name,734,13869,anchored,왕릉 진압전,Wang Ling Subjugation
+name,735,13870,anchored,동흥 전투,Battle of Dongxing
+name,736,13871,anchored,관구검 토벌전,Guanqiu Jian Expedition
+name,737,13872,anchored,제갈탄 토벌전,Zhuge Dan Expedition
+name,738,13873,anchored,조모 기습전,Cao Mao Raid
+name,739,13874,anchored,하구 전투,Battle of Xiakou
+name,740,13875,anchored,손보 토벌전,Sun Fu Expedition
+name,741,13876,anchored,여강 반란군 토벌전,Lujiang Rebellion Expedition
+name,742,13877,anchored,강하 전투1,Battle of Jiangxia 1
+name,743,13878,anchored,건안 반란군 토벌전,Jianan Rebellion Expedition
+name,744,13879,anchored,강하 전투2,Battle of Jiangxia 2
+name,745,13880,anchored,오림 전초전,Wulin Skirmish
+name,746,13881,anchored,서구 전투,Battle of Xikou
+name,747,13882,anchored,교주 구원전,Rescue at Jiaozhou
+name,748,13883,anchored,유수구 전투1,Battle of Ruxukou 1
+name,749,13884,anchored,환성 공방전,Siege of Huan Castle
+name,750,13885,anchored,유수구 전투2,Battle of Ruxukou 2
+name,751,13886,anchored,유수구 전투3,Battle of Ruxukou 3
+name,752,13887,anchored,동구 대치,Dongkou Confrontation
+name,753,13888,anchored,유수 요격전,Interception at Ruxu
+name,754,13889,anchored,남군 방어전,Defending Nanjun
+name,755,13890,anchored,광릉 전투1,Battle of Guangling 1
+name,756,13891,anchored,광릉 전투2,Battle of Guangling 2
+name,757,13892,anchored,강하 전투3,Battle of Jiangxia 3
+name,758,13893,anchored,교주 반란군 토벌전,Jiaozhou Rebellion Expedition
+name,759,13894,anchored,환성 전투,Battle of Huan Castle
+name,760,13895,anchored,뜻밖의 만남,An Unexpected Encounter
+name,761,13896,anchored,초현 도적 토벌전,Qiaoxian Bandit Crackdown
+name,762,13897,anchored,조숭 호위전,Escorting Cao Song
+name,763,13898,anchored,변월향 구출전,Saving Bian Yue Xiang
+name,764,13899,anchored,하옹 구출전,Saving He Yong
+name,765,13900,anchored,합비 구원전,Rescue Hefei
+name,766,13901,anchored,조령 구출전,Saving Cao Ying
+name,767,13902,anchored,낙가성 전투1,Battle of Lejia 1
+name,768,13903,anchored,낙가성 전투2,Battle of Lejia 2
+name,769,13904,anchored,수춘 구원전,Shouchun Rescue
+name,770,13905,anchored,조령 구출전2,Saving Cao Ying 2
+name,771,13906,anchored,금산 전투,Battle of Jinshan
+name,772,13907,anchored,허도 방어전,Defending Xudou
+name,773,13908,anchored,운명의 수레바퀴,Fortune's Wheel
+name,774,13909,anchored,망탕산 전투,Battle of Mount Mangdang
+name,775,13910,anchored,망탕산 전투2,Battle of Mount Mangdang 2
+name,776,13911,anchored,패현 전투,Battle of Peixian
+name,777,13912,anchored,풍읍 전투,Battle of Fengyi
+name,778,13913,anchored,풍읍 전투2,Battle of Fengyi 2
+name,779,13914,anchored,동아 전투,Battle of Dong'e
+name,780,13915,anchored,사마흔 추격전,Sima Xin Pursuit
+name,781,13916,anchored,강리 전투,Battle of Gang Li
+name,782,13917,anchored,환원 전투,Battle of Huanyuan
+name,783,13918,anchored,함양 전투,Battle of Xianyang
+name,784,13919,anchored,홍문연 탈출전,Escape from the Feast at Hong Gate
+name,785,13920,anchored,호치 전투,Battle of Haozhi
+name,786,13921,anchored,고노 전투,Battle of Kao-nu
+name,787,13922,anchored,역양 전투,Battle of Yueyang
+name,788,13923,anchored,패현 탈출전,Escape from Peixian
+name,789,13924,anchored,수수 대전,Great Battle of Pengcheng
+name,790,13925,anchored,형양 전투2,Battle of Xingyang 2
+name,791,13926,anchored,형양 탈출전,Escape from Xingyang
+name,792,13927,anchored,성고 전투,Battle of Chenggao
+name,793,13928,anchored,형양 전투3,Battle of Xingyang 3
+name,794,13929,anchored,광무산 전투,Battle of Mount Guangwu
+name,795,13930,anchored,고릉 전투,Battle of Guling
+name,796,13931,anchored,패현 전투2,Battle of Peixian 2
+name,797,13932,anchored,해하 전투,Battle of Gaixia
+name,798,13933,anchored,오강 전투,Battle of Wu River
+name,799,13934,anchored,정군산 전초전,Mount Dingjun Skirmish
+name,800,13935,anchored,유비 기습전,Liu Bei Raid
+name,801,13936,anchored,한중 섬멸전,Hanzhong Annihilation
+name,802,13937,anchored,전투 훈련,Battle Training
+name,803,13938,anchored,강남 전투,Battle of Huanan
+name,804,13939,anchored,자각몽,Lucid Dream
+name,805,13940,anchored,건업 탈출전,Escape from Jianye
+name,806,13941,anchored,형주 탈출전,Escape from Jingzhou
+name,807,13942,anchored,촉한 복귀전,Return to Shu
+name,808,13943,anchored,요기 이식전,Dark Energy
+name,809,13944,anchored,제단 파괴전,Altar Destruction
+name,810,13945,anchored,자아 쟁탈전,Battle of Egos
+name,811,13946,anchored,봉인 해제,Break the Seal
+name,812,13947,anchored,가제1,Title 1
+name,813,13948,anchored,가제2,Title 2
+name,814,13949,anchored,융중 이동전,Longzhong Transportation
+name,815,13950,anchored,장판파 이동전,Changban Battle
+name,816,13951,anchored,설전군유,Legends of Cao Cao Quiz
+name,817,13952,anchored,화용도 매복전,Huarong Road Ambush
+name,818,13953,anchored,형주 쟁탈전上,Strife over Jingzhou (Ch.1)
+name,819,13954,anchored,형주 쟁탈전下,Strife over Jingzhou (Ch.2)
+name,820,13955,anchored,부수관 전투,Battle of Fushui Pass
+name,821,13956,anchored,한중 공방전上,The Battle for Hanzhong (Ch.1)
+name,822,13957,anchored,한중 공방전下,The Battle for Hanzhong (Ch.2)
+name,823,13958,anchored,악몽,Nightmare
+name,824,13959,anchored,맹달 구원전,Rescue Meng Da
+name,825,13960,anchored,북벌 전초전上,Northern Expedition Skirmish (Ch.1)
+name,826,13961,anchored,북벌 전초전中,Northern Expedition Skirmish (Ch.2)
+name,827,13962,anchored,북벌 전초전下,Northern Expedition Skirmish (Ch.3)
+name,828,13963,anchored,1차 북벌上,The First Northern Expedition (Ch.1)
+name,829,13964,anchored,1차 북벌下,The First Northern Expedition (Ch.2)
+name,830,13965,anchored,2차 북벌,The Second Northern Expedition
+name,831,13966,anchored,3차 북벌,The Third Northern Expedition
+name,832,13967,anchored,4차 북벌上,The Fourth Northern Expedition (Ch.1)
+name,833,13968,anchored,4차 북벌下,The Fourth Northern Expedition (Ch.2)
+name,834,13969,anchored,5차 북벌上,The Fifth Northern Expedition (Ch.1)
+name,835,13970,anchored,5차 북벌中,The Fifth Northern Expedition (Ch.2)
+name,836,13971,anchored,5차 북벌下,The Fifth Northern Expedition (Ch.3)
+name,837,13972,anchored,사마가 수비전,Shamoke's Defense
+name,838,13973,anchored,육혼산 도주전,Escape from Luhun Mountain
+name,839,13974,anchored,흉몽,Nightmare
+name,840,13975,anchored,장강 퇴각전,Yangtze Withdrawal
+name,841,13976,anchored,한중 정벌전上,"Hanzhong Conquest, Part 1"
+name,842,13977,anchored,한중 정벌전下,"Hanzhong Conquest, Part 2"
+name,843,13978,anchored,동오 설득전,Persuasion in Eastern Wu
+name,844,13979,anchored,무위 반란 진압전,Wuei Rebellion Subjugation
+name,845,13980,anchored,동구 전투,Battle of Dongkou
+name,846,13981,anchored,맹달 처단전,Execution of Meng Da
+name,847,13982,anchored,양평관 추격전,Yangping Pass Pursuit
+name,848,13983,anchored,목둔 골짜기 전투,Battle of Mukden Valley
+name,849,13984,anchored,위수 수비전,Weishui's Defense
+name,850,13985,anchored,호로곡 탈출전,Escape from Hulugu
+name,851,13986,anchored,오장원 추격전,Wuzhang Plains Pursuit
+name,852,13987,anchored,수경장 입문 시험,School of Shuijing Entry Exam
+name,853,13988,anchored,서서 구출전,Saving Xu Shu
+name,854,13989,anchored,저잣거리 전투,Marketplace Battle
+name,855,13990,anchored,수채 잠입,Sewer Infiltration
+name,856,13991,anchored,연환 작전,Chains of Fate
+name,857,13992,anchored,화용도 유인전,Lured to Huarong Road
+name,858,13993,anchored,마차 운구전,Wagon Warfare
+name,859,13994,anchored,뇌양현 공무 처리,Leiyang Bureaucracy
+name,860,13995,anchored,만족 토벌전,Manzu Expedition
+name,861,13996,anchored,백수관 전투,Battle of Baishui Pass
+name,862,13997,anchored,부수관 근교전,Fushui Pass Provincial Battle
+name,863,13998,anchored,부현 전투,Battle of Fuxuan
+name,864,13999,anchored,부강 전투,Battle of Fu River
+name,865,14000,anchored,낙성 근교전,Luo Castle Provincial Battle
+name,866,14001,anchored,패왕 증명전,Battle of the Overlords
+name,867,14002,anchored,오장원 탈출전,Escape from Wuzhang Plains
+name,868,14003,anchored,손책 추격전,Sun Ce Pursuit
+name,869,14004,anchored,서주 공방전,Siege of Xuzhou
+name,870,14005,anchored,예주 탈출전,Escape from Yuzhou
+name,871,14006,anchored,요수 전투,Battle of Liaosui
+name,872,14007,anchored,공손연 진압전,Gongsun Yuan Subjugation
+name,873,14008,anchored,환성 점령전,Huan Castle Occupation
+name,874,14009,anchored,낙곡 대전,Great Battle of Luogu
+name,875,14010,anchored,낙양 점령전,Luoyang Occupation
+name,876,14011,anchored,"기주, 초원의 전투","Jizhou, Grassland Battle"
+name,877,14012,anchored,"양주, 유역의 전투","Liangzhou, River Valley Battle"
+name,878,14013,anchored,"익주, 2개의 진","Yizhou, 2 Formations"
+name,879,14014,anchored,"장강, 2개의 진","Yangtze, 2 Formations"
+name,880,14015,anchored,"옹주, 2개의 진","Yongzhou, 2 Formations"
+name,881,14016,anchored,"병주, 2개의 진","Bingzhou, 2 Formations"
+name,882,14017,anchored,"예주, 습지의 전투","Yuzhou, Swamp Battle"
+name,883,14018,anchored,"익주, 협곡의 전투","Yizhou, Valley Battle"
+name,884,14019,anchored,"옹주, 사막의 전투","Yongzhou, Desert Battle"
+name,885,14020,anchored,"병주, 설원의 전투","Bingzhou, Snowy Battle"
+name,886,14021,anchored,"익주, 남만의 전투","Yizhou, Battle with the Nanman"
+name,887,14022,anchored,"사주, 도성의 전투","Sizhou, Castle Battle"
+name,888,14023,anchored,"기주, 초원 전투","Jizhou, Grassland Battle"
+name,889,14024,anchored,"옹주, 사막 전투","Yongzhou, Desert Battle"
+name,890,14025,anchored,"사주, 도성 전투","Sizhou, Castle Battle"
+name,891,14026,anchored,"양주, 유역 전투","Liangzhou, River Valley Battle"
+name,892,14027,anchored,"익주, 산지 전투","Yizhou, Mountain Battle"
+name,893,14028,anchored,"병주, 설원 전투","Bingzhou, Snowy Battle"
+name,894,14029,anchored,연합전1,Alliance Battle 1
+name,895,14030,anchored,연합전2,Alliance Battle 2
+name,896,14031,anchored,연합전3,Alliance Battle 3
+name,897,14032,anchored,연합전4,Alliance Battle 4
+name,898,14033,anchored,연합전5,Alliance Battle 5
+name,899,14034,anchored,연합전6,Alliance Battle 6
+name,900,14035,anchored,연합전7,Alliance Battle 7
+name,901,14036,anchored,연합전8,Alliance Battle 8
+name,902,14037,anchored,초원의 관문,Grassland Gate
+name,903,14038,anchored,사막의 관문,Desert Gate
+name,904,14039,anchored,산지의 관문,Mountain Gate
+name,905,14040,anchored,완류의 관문,River Gate
+name,906,14041,anchored,설원의 관문,Snow Gate
+name,907,14042,anchored,가화만사성 <아들편>,Family Matters: The Son's Story
+name,908,14043,anchored,가화만사성 <딸편>,Family Matters: Daughter's Tale
+name,909,14044,anchored,가화만사성 <토벌편>,Family Matters: Battle
+name,910,14045,anchored,호랑이 장가보내기1,To Marry a Tiger 1
+name,911,14046,anchored,호랑이 장가보내기2,To Marry a Tiger 2
+name,912,14047,anchored,호랑이 장가보내기3,To Marry a Tiger 3
+name,913,14048,anchored,완류와 초원의 동광,Eastern Mine (River and Grasslands)
+name,914,14049,anchored,습지와 산지의 서광,Western Mine (Swamps and Mountains)
+name,915,14050,anchored,황무지와 사막과 독천의 남광,Southern Mine (Wastelands and Deserts)
+name,916,14051,anchored,설원과 숲의 북광,Northern Mine (Snowy Field and Forests)
+name,917,14052,anchored,빙판과 잔도와 산지의 중광,"Central Mine (Ice, Mountain Pass, and Mountains)"
+name,918,14053,anchored,하급 청룡의 사당,Minor Azure Dragon Temple
+name,919,14054,anchored,중급 청룡의 사당,Intermediate Azure Dragon Temple
+name,920,14055,anchored,상급 청룡의 사당,Advanced Azure Dragon Temple
+name,921,14056,anchored,최상급 청룡의 사당,Master Azure Dragon Temple
+name,922,14057,anchored,하급 각성 청룡의 사당,Minor Awakened Azure Dragon Temple
+name,923,14058,anchored,중급 각성 청룡의 사당,Intermediate Awakened Azure Dragon Temple
+name,924,14059,anchored,상급 각성 청룡의 사당,Advanced Awakened Azure Dragon Temple
+name,925,14060,anchored,최상급 각성 청룡의 사당,Master Awakened Azure Dragon Temple
+name,926,14061,anchored,하급 주작의 사당,Minor Vermilion Bird Temple
+name,927,14062,anchored,중급 주작의 사당,Intermediate Vermilion Bird Temple
+name,928,14063,anchored,상급 주작의 사당,Advanced Vermilion Bird Temple
+name,929,14064,anchored,최상급 주작의 사당,Master Vermilion Bird Temple
+name,930,14065,anchored,하급 각성 주작의 사당,Minor Awakened Vermilion Bird Temple
+name,931,14066,anchored,중급 각성 주작의 사당,Intermediate Awakened Vermilion Bird Temple
+name,932,14067,anchored,상급 각성 주작의 사당,Advanced Awakened Vermilion Bird Temple
+name,933,14068,anchored,최상급 각성 주작의 사당,Master Awakened Vermilion Bird Temple
+name,934,14069,anchored,주정뱅이 퇴치전,Cleaning Up the Drunks
+name,935,14070,anchored,해독제 탈취전,Finding the Antidote
+name,936,14071,anchored,투기장 개최,Open Arena
+name,937,14072,anchored,겨울 상인1,Winter Merchant 1
+name,938,14073,anchored,겨울 상인2,Winter Merchant 2
+name,939,14074,anchored,겨울 상인3,Winter Merchant 3
+name,940,14075,anchored,초원과 설원의 동광,Eastern Mine (Grasslands and Snow)
+name,941,14076,anchored,사막과 평지의 서광,Western Mine (Deserts and Plains)
+name,942,14077,anchored,완류와 황무지의 남광,Southern Mine (Rivers and Wastelands)
+name,943,14078,anchored,산지와 완류의 중광,Central Mine (Mountains and Rivers)
+name,944,14079,anchored,하급 백호의 사당,Minor White Tiger Temple
+name,945,14080,anchored,중급 백호의 사당,Intermediate White Tiger Temple
+name,946,14081,anchored,상급 백호의 사당,Advanced White Tiger Temple
+name,947,14082,anchored,최상급 백호의 사당,Master White Tiger Temple
+name,948,14083,anchored,하급 각성 백호의 사당,Minor Awakened White Tiger Temple
+name,949,14084,anchored,중급 각성 백호의 사당,Intermediate Awakened White Tiger Temple
+name,950,14085,anchored,상급 각성 백호의 사당,Advanced Awakened White Tiger Temple
+name,951,14086,anchored,최상급 각성 백호의 사당,Master Awakened White Tiger Temple
+name,952,14087,anchored,난투,Brawl
+name,953,14088,anchored,성고 탈출전,Escape from Chenggao
+name,954,14089,anchored,섬멸전,Annihilation
+name,955,14090,anchored,삼파설전,Three-Way Argument
+name,956,14091,anchored,황충 구원전,Rescue Huang Zhong
+name,957,14092,anchored,꽃 채집,Flower Collection
+name,958,14093,anchored,도적 토벌전,Bandit Crackdown
+name,959,14094,anchored,"공손찬, 유우 대전",Battle of Gongsun Zan and Liu Yu
+name,960,14095,anchored,무예 대결,Martial Arts Square-Off
+name,961,14096,anchored,인연을 찾아서,Searching for Friendship
+name,962,14097,anchored,장각 토벌전1,Zhang Jue Expedition 1
+name,963,14098,anchored,장각 토벌전2,Zhang Jue Expedition 2
+name,964,14099,anchored,낙양 구원전1,Rescue at Luoyang 1
+name,965,14100,anchored,가짜 황제 정벌전,Fake Emperor Conquest
+name,966,14101,anchored,관도 대전1,Battle of Guandu 1
+name,967,14102,anchored,관도 대전2,Battle of Guandu 2
+name,968,14103,anchored,관도 대전,Battle of Guandu
+name,969,14104,anchored,민폐 황제 토벌전,To Kill a King
+name,970,14105,anchored,최후의 질풍,The Final Storm
+name,971,14106,anchored,진창 공방전1,Siege of Chenchang 1
+name,972,14107,anchored,진창 공방전2,Siege of Chenchang 2
+name,973,14108,anchored,태양의 결투장,Yellow Sun Arena
+name,974,14109,anchored,창천의 결투장,Azure Sky Arena
+name,975,14110,anchored,신록의 결투장,Green Mountain Arena
+name,976,14111,anchored,혹한의 결투장,White Frost Arena
+name,977,14112,anchored,영웅의 결투장,Hero Arena

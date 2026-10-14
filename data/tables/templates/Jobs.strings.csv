@@ -1,0 +1,426 @@
+column,seq,loc_row,confidence,ko,en
+name,1,10496,anchored,군주계,Warlord
+name,2,10497,anchored,보병계,Footman
+name,3,10498,anchored,궁병계,Archer
+name,4,10499,anchored,노병계,Crossbowman
+name,5,10500,anchored,창병계,Spearman
+name,6,10501,anchored,경기병계,Light Cavalry
+name,7,10502,anchored,중기병계,Heavy Cavalry
+name,8,10503,anchored,산악기병계,Mountain Cavalry
+name,9,10504,anchored,궁기병계,Mounted Archer
+name,10,10505,anchored,포차계,Catapult
+name,11,10506,anchored,무인계,Soldier
+name,12,10507,anchored,적병계,Outlaw
+name,13,10508,anchored,책사계,Tactician
+name,14,10509,anchored,풍수사계,Geomancer
+name,15,10510,anchored,도사계,Taoist
+name,16,10511,anchored,무희계,Dancer
+name,17,10512,anchored,전차계,Chariot
+name,18,10513,anchored,황건병계,Yellow Turban Soldier
+name,19,10514,anchored,수군계,Navy
+name,20,10515,anchored,웅술사계,Ursari
+name,21,10516,anchored,호술사계,Pantheran
+name,22,10517,anchored,도독계,Marine
+name,23,10518,anchored,현자계,Sage
+name,24,10519,anchored,선인계,Sage
+name,25,10520,anchored,수송대계,Convoy
+name,26,10521,anchored,토우병사계,Clay Soldier
+name,27,10522,anchored,토우장군계,Clay General
+name,28,10523,anchored,황제계,Emperor
+name,29,10524,anchored,민중계,Peasant
+name,30,10525,anchored,늑대계,Wolf
+name,31,10526,anchored,황건궁병계,Yellow Turban Archer
+name,32,10527,anchored,곰계,Bear
+name,33,10528,anchored,마왕계,Demon
+name,34,10529,anchored,황건창병계,Yellow Turban Spearman
+name,35,10530,anchored,황건무인계,Yellow Turban Warrior
+name,36,10531,anchored,코끼리계,Elephant
+name,37,10532,anchored,호랑이계,Tiger
+name,38,10533,anchored,표범계,Leopard
+name,39,10534,anchored,돼지계,Boar
+name,40,10535,anchored,소계,Ox
+name,41,10536,anchored,토우수병계,Clay Water Soldier
+name,42,10537,anchored,토우수장계,Clay Water General
+name,43,10538,anchored,토우화병계,Clay Fire Soldier
+name,44,10539,anchored,토우화장계,Clay Fire General
+name,45,10540,anchored,토우풍병계,Clay Wind Soldier
+name,46,10541,anchored,토우풍장계,Clay Wind General
+name,47,10542,anchored,검사계,Swordsman
+name,48,10543,anchored,군악대계,Musician
+name,49,10544,anchored,사신청룡계,Four Gods: Azure Dragon
+name,50,10545,anchored,청룡환수계,Mystical Beast: Azure Dragon
+name,51,10546,anchored,각성사신청룡계,Four Gods
+name,52,10547,anchored,각성청룡환수계,Mystical Beast
+name,53,10548,anchored,천자계,Emperor
+name,54,10549,anchored,노전차계,Crossbow Chariot
+name,55,10550,anchored,시설물,Facility
+name,56,10551,anchored,사신주작계,Four Gods: Vermilion Bird
+name,57,10552,anchored,주작환수계,Mystical Beast: Vermilion Bird
+name,58,10553,anchored,각성사신주작계,Four Gods
+name,59,10554,anchored,각성주작환수계,Mystical Beast
+name,60,10555,anchored,적염계,Red Flame
+name,61,10556,anchored,청염계,Blue Flame
+name,62,10557,anchored,효기병계,Swift Cavalry
+name,63,10558,anchored,사신백호계,Four Gods: White Tiger
+name,64,10559,anchored,백호령계,White Tiger Soul Tactics
+name,65,10560,anchored,각성사신백호계,Four Gods
+name,66,10561,anchored,각성백호령계,Awakened White Tiger Soul Tactics
+name,67,10562,anchored,군주,Aspirant
+name,68,10563,anchored,열후,Adventurer
+name,69,10564,anchored,제후,Challenger
+name,70,10565,anchored,효웅,Conqueror
+name,71,10566,anchored,영웅,Hero
+name,72,10567,anchored,단검보병,Conscript
+name,73,10568,anchored,장검보병,Guardsman
+name,74,10569,anchored,강검보병,Defender
+name,75,10570,anchored,근위병,Guardian
+name,76,10571,anchored,어림군,Sentinel
+name,77,10572,anchored,단궁병,Bowman
+name,78,10573,anchored,장궁병,Longbowman
+name,79,10574,anchored,강궁병,Marksman
+name,80,10575,anchored,원사대,Longshot
+name,81,10576,anchored,궁장,Sharpshooter
+name,82,10577,anchored,단노병,Arbalist
+name,83,10578,anchored,장노병,Quarreller
+name,84,10579,anchored,강노병,Sniper
+name,85,10580,anchored,연노병,Repeater
+name,86,10581,anchored,원융노병,Chu-Ko-Nu
+name,87,10582,anchored,단창병,Town Guard
+name,88,10583,anchored,장창병,Pikeman
+name,89,10584,anchored,강창병,Linesman
+name,90,10585,anchored,참마대,Ji Bearer
+name,91,10586,anchored,백이병,Chargebreaker
+name,92,10587,anchored,단창기병,Skirmisher
+name,93,10588,anchored,장창기병,Lancer
+name,94,10589,anchored,강창기병,Charger
+name,95,10590,anchored,금위대,Vanguard
+name,96,10591,anchored,질풍기,Linebreaker
+name,97,10592,anchored,경갑기병,Lamellar Cavalry
+name,98,10593,anchored,중갑기병,Scale Cavalry
+name,99,10594,anchored,철갑기병,Mail Cavalry
+name,100,10595,anchored,친위대,Plate Cavalry
+name,101,10596,anchored,신위대,Divine Plate Cavalry
+name,102,10597,anchored,수렵기병,Ranger
+name,103,10598,anchored,돌기병,Cliff Bounder
+name,104,10599,anchored,표기병,Stonehoof
+name,105,10600,anchored,단궁기병,Mounted Bowman
+name,106,10601,anchored,장궁기병,Mounted Longbowman
+name,107,10602,anchored,강궁기병,Mounted Marksman
+name,108,10603,anchored,갑사,Mounted Longshot
+name,109,10604,anchored,비사대,Mounted Sharpshooter
+name,110,10605,anchored,경포차,Light Catapult
+name,111,10606,anchored,중포차,Heavy Catapult
+name,112,10607,anchored,대포차,Fire Catapult
+name,113,10608,anchored,벽력차,Thunder Catapult
+name,114,10609,anchored,신포차,Divine Catapult
+name,115,10610,anchored,역사,Warrior
+name,116,10611,anchored,투사,Slayer
+name,117,10612,anchored,권사,Dervish
+name,118,10613,anchored,권성,Swiftblade
+name,119,10614,anchored,도적,Thug
+name,120,10615,anchored,흉적,Bandit
+name,121,10616,anchored,의적,Brigand
+name,122,10617,anchored,두령,Blackguard
+name,123,10618,anchored,대도,Kingpin
+name,124,10619,anchored,참모,Minister
+name,125,10620,anchored,군사,Consul
+name,126,10621,anchored,대군사,Advisor
+name,127,10622,anchored,지낭,Vizier
+name,128,10623,anchored,방술사,Adept
+name,129,10624,anchored,선술사,Ritualist
+name,130,10625,anchored,주술사,Channeler
+name,131,10626,anchored,명의,Conduit
+name,132,10627,anchored,재사,Initiate
+name,133,10628,anchored,환술사,Monk
+name,134,10629,anchored,요술사,Enlightened
+name,135,10630,anchored,제사장,Bagua Master
+name,136,10631,anchored,무용수,Performer
+name,137,10632,anchored,무녀,Enchantress
+name,138,10633,anchored,가희,Songstress
+name,139,10634,anchored,가인,Siren
+name,140,10635,anchored,경전차,Light Chariot
+name,141,10636,anchored,중전차,Heavy Chariot
+name,142,10637,anchored,대전차,Bladed Chariot
+name,143,10638,anchored,철거병,Steel Chariot
+name,144,10639,anchored,쌍두전차,Grand Chariot
+name,145,10640,anchored,수병,Cadet
+name,146,10641,anchored,수사,Sailor
+name,147,10642,anchored,수장,Captain
+name,148,10643,anchored,수신,Admiral
+name,149,10644,anchored,곰부대,Cub
+name,150,10645,anchored,대웅대,Brown
+name,151,10646,anchored,흑웅대,Grizzly
+name,152,10647,anchored,맹웅대,Ancient
+name,153,10648,anchored,맹웅장,Titan
+name,154,10649,anchored,금수대,Clouded
+name,155,10650,anchored,맹수대,Caspian
+name,156,10651,anchored,맹호대,Javan
+name,157,10652,anchored,맹호장,Bengal
+name,158,10653,anchored,백호대,Siberian
+name,159,10654,anchored,교위,Raider
+name,160,10655,anchored,도위,Buccaneer
+name,161,10656,anchored,도독,Marauder
+name,162,10657,anchored,대도독,Corsair
+name,163,10658,anchored,대원수,Commandant
+name,164,10659,anchored,은자,Hermit
+name,165,10660,anchored,군자,Disciple
+name,166,10661,anchored,현자,Scholar
+name,167,10662,anchored,현인,Diviner
+name,168,10663,anchored,성인,Celestial
+name,169,10664,anchored,선인,Sage
+name,170,10665,anchored,황제,Emperor
+name,171,10666,anchored,야차,Imp
+name,172,10667,anchored,마군,Hellion
+name,173,10668,anchored,마신,Fiend
+name,174,10669,anchored,수라,Archfiend
+name,175,10670,anchored,검객,Squire
+name,176,10671,anchored,협객,Fencer
+name,177,10672,anchored,검술가,Duelist
+name,178,10673,anchored,검성,Champion
+name,179,10674,anchored,악사,Instrumentalist
+name,180,10675,anchored,연주가,Minstrel
+name,181,10676,anchored,응원대,Troubadour
+name,182,10677,anchored,고취대,Balladeer
+name,183,10678,anchored,군악대,War Cantor
+name,184,10679,anchored,청룡1,The Four Gods
+name,185,10680,anchored,청룡2,The Four Gods
+name,186,10681,anchored,청룡3,The Four Gods
+name,187,10682,anchored,청룡4,The Four Gods
+name,188,10683,anchored,청룡5,The Four Gods
+name,189,10684,anchored,청룡환수1,Mystical Beast
+name,190,10685,anchored,청룡환수2,Mystical Beast
+name,191,10686,anchored,청룡환수3,Mystical Beast
+name,192,10687,anchored,청룡환수4,Mystical Beast
+name,193,10688,anchored,청룡환수5,Mystical Beast
+name,194,10689,anchored,귀인,Noble
+name,195,10690,anchored,영걸,Heir
+name,196,10691,anchored,천자,Sovereign
+name,197,10692,anchored,성천자,Divine Ruler
+name,198,10693,anchored,단노전차,Short Crossbow Chariot
+name,199,10694,anchored,장노전차,Long Crossbow Chariot
+name,200,10695,anchored,강노전차,Heavy Crossbow Chariot
+name,201,10696,anchored,연노전차,Repeating Crossbow Chariot
+name,202,10697,anchored,비룡거,Flying Dragon Crossbow Chariot
+name,203,10698,anchored,각성청룡1,Awakened Four Gods
+name,204,10699,anchored,각성청룡2,Awakened Four Gods
+name,205,10700,anchored,각성청룡3,Awakened Four Gods
+name,206,10701,anchored,각성청룡4,Awakened Four Gods
+name,207,10702,anchored,각성청룡5,Awakened Four Gods
+name,208,10703,anchored,각성청룡환수1,Mystical Beast
+name,209,10704,anchored,각성청룡환수2,Mystical Beast
+name,210,10705,anchored,각성청룡환수3,Mystical Beast
+name,211,10706,anchored,각성청룡환수4,Mystical Beast
+name,212,10707,anchored,각성청룡환수5,Mystical Beast
+name,213,10708,anchored,주작1,The Four Gods
+name,214,10709,anchored,주작2,The Four Gods
+name,215,10710,anchored,주작3,The Four Gods
+name,216,10711,anchored,주작4,The Four Gods
+name,217,10712,anchored,주작5,The Four Gods
+name,218,10713,anchored,주작환수1,Mystical Beast
+name,219,10714,anchored,주작환수2,Mystical Beast
+name,220,10715,anchored,주작환수3,Mystical Beast
+name,221,10716,anchored,주작환수4,Mystical Beast
+name,222,10717,anchored,주작환수5,Mystical Beast
+name,223,10718,anchored,각성주작1,Awakened Four Gods
+name,224,10719,anchored,각성주작2,Awakened Four Gods
+name,225,10720,anchored,각성주작3,Awakened Four Gods
+name,226,10721,anchored,각성주작4,Awakened Four Gods
+name,227,10722,anchored,각성주작5,Awakened Four Gods
+name,228,10723,anchored,각성주작환수1,Mystical Beast
+name,229,10724,anchored,각성주작환수2,Mystical Beast
+name,230,10725,anchored,각성주작환수3,Mystical Beast
+name,231,10726,anchored,각성주작환수4,Mystical Beast
+name,232,10727,anchored,각성주작환수5,Mystical Beast
+name,233,10728,anchored,붉은 화염구,Fire Orb
+name,234,10729,anchored,푸른 화염구,Fire Orb
+name,235,10730,anchored,선기병,Striker
+name,236,10731,anchored,진기병,Dragoon
+name,237,10732,anchored,용기병,Wind Rider
+name,238,10733,anchored,폭기병,Stormhoof
+name,239,10734,anchored,효기병,Sky Strider
+name,240,10735,anchored,백호1,White Tiger 1
+name,241,10736,anchored,백호2,White Tiger 2
+name,242,10737,anchored,백호3,White Tiger 3
+name,243,10738,anchored,백호4,White Tiger 4
+name,244,10739,anchored,백호5,White Tiger 5
+name,245,10740,anchored,백호령1,White Tiger Soul 1
+name,246,10741,anchored,백호령2,White Tiger Soul 2
+name,247,10742,anchored,백호령3,White Tiger Soul 3
+name,248,10743,anchored,백호령4,White Tiger Soul 4
+name,249,10744,anchored,백호령5,White Tiger Soul 5
+name,250,10745,anchored,각성백호1,Awakened White Tiger 1
+name,251,10746,anchored,각성백호2,Awakened White Tiger 2
+name,252,10747,anchored,각성백호3,Awakened White Tiger 3
+name,253,10748,anchored,각성백호4,Awakened White Tiger 4
+name,254,10749,anchored,각성백호5,Awakened White Tiger 5
+name,255,10750,anchored,각성백호령1,Awakened White Tiger Soul 1
+name,256,10751,anchored,각성백호령2,Awakened White Tiger Soul 2
+name,257,10752,anchored,각성백호령3,Awakened White Tiger Soul 3
+name,258,10753,anchored,각성백호령4,Awakened White Tiger Soul 4
+name,259,10754,anchored,각성백호령5,Awakened White Tiger Soul 5
+desc,1,10755,anchored,군주계 1급. 균형 있게 성장하는 만능 부대. 공격과 책략 모두 가능하다. 험로에서는 다소 취약하다.,Warlord 1. A balanced unit that is capable of attacks and tactics. Vulnerable in rough terrain.
+desc,2,10756,anchored,군주계 2급. 균형 있게 성장하는 만능 부대. 이 전 단계보다 공격 범위가 증가해 효용성이 뛰어나다.,Warlord 2. A balanced unit that is capable of attacks and tactics. Has improved RNG.
+desc,3,10757,anchored,군주계 3급. 균형 있게 성장하는 만능 부대. 이 전 단계보다 이동력이 증가해 운용이 자유롭다.,Warlord 3. A balanced unit that is capable of attacks and tactics. Has improved SPD.
+desc,4,10758,anchored,군주계 4급. 균형 있게 성장하는 만능 부대. 이 전 단계보다 HP가 증가해 많은 공격을 견딜 수 있다.,Warlord 4. A balanced unit that is capable of attacks and tactics. Has improved HP.
+desc,5,10759,anchored,군주계 5급. 균형 있게 성장하는 만능 부대. 이 전 단계보다 전 방어율이 증가해 튼튼하다.,Warlord 5. A balanced unit that is capable of attacks and tactics. Has improved DEF.
+desc,6,10760,anchored,"보병계 1급. 방어에 특화된 보병 부대. 성 수비에 적합하다. 원거리 공격 부대에는 강하나, 기마 부대에 약하다.","Footman 1. A unit that is excellent as defending castles. Strong against ranged units, but weak against cavalry units."
+desc,7,10761,anchored,보병계 2급. 방어에 특화된 보병 부대. 이 전 단계보다 방어가 더욱 증가해 특화된 수비를 자랑한다.,Footman 2. A unit that is excellent at defending castles. Has improved DEF.
+desc,8,10762,anchored,보병계 3급. 방어에 특화된 보병 부대. 이 전 단계보다 이동력이 증가해 효율적인 운용이 가능하다.,Footman 3. A unit that is excellent at defending castles. Has improved SPD.
+desc,9,10763,anchored,보병계 4급. 방어에 특화된 보병 부대. 이 전 단계보다 공격력이 증가해 공격 활용성이 좋아졌다.,Footman 4. A unit that is excellent at defending castles. Has improved ATK.
+desc,10,10764,anchored,보병계 5급. 방어에 특화된 보병 부대. 이 전 단계보다 공격력이 더욱 증가해 공격과 방어 전방위로 활용할 수 있다.,Footman 5. A unit that is excellent at defending castles. Has improved ATK.
+desc,11,10765,anchored,"궁병계 1급. 명중이 특기인 원거리 공격 부대. 원거리 공격이 특징적이며, 기마 부대에 강하지만 보병에 약하다.","Archer 1. A long-ranged unit with high accuracy. Strong against cavalry units, but weak against footman units."
+desc,12,10766,anchored,궁병계 2급. 명중이 특기인 원거리 공격 부대. 이 전 단계보다 공격 범위가 증가해 유용한 활용이 가능하다.,Archer 2. A long-ranged unit with high accuracy. Has improved RNG.
+desc,13,10767,anchored,궁병계 3급. 명중이 특기인 원거리 공격 부대. 이 전 단계보다 공격 범위가 더욱 증가하고 이동력도 증가해 험지에서도 효과적인 운용이 가능하다.,Archer 3. A long-ranged unit with high accuracy. Has improved RNG and SPD.
+desc,14,10768,anchored,궁병계 4급. 명중이 특기인 원거리 공격 부대. 이 전 단계보다 물리 공격이 강화되어 적에게 큰 피해를 줄 수 있다.,Archer 4. A long-ranged unit with high accuracy. Has improved ATK.
+desc,15,10769,anchored,궁병계 5급. 명중이 특기인 원거리 공격 부대. 이 전 단계보다 물리 공격이 더욱 강화되어 접근하는 적을 절멸시킨다.,Archer 5. A long-ranged unit with high accuracy. Has improved ATK.
+desc,16,10770,anchored,"노병계 1급. 회심 일격이 특기인 원거리 공격 부대. 원거리 공격이 특징적이며, 궁병계와 유사하나 사정거리가 더 길다.","Crossbowman 1. A long-ranged unit with a strong critical attack. Similar to archers, but with a longer range."
+desc,17,10771,anchored,노병계 2급. 회심 일격이 특기인 원거리 공격 부대. 이 전 단계보다 공격 범위와 치명타 확률이 증가해 능력 이상의 성능을 보인다.,Crossbowman 2. A long-ranged unit with a strong critical attack. Has improved RNG and critical chance.
+desc,18,10772,anchored,노병계 3급. 회심 일격이 특기인 원거리 공격 부대. 이 전 단계보다 공격 범위가 더욱 증가하고 이동력이 증가해 효율성이 좋아졌다.,Crossbowman 3. A long-ranged unit with a strong critical attack. Has improved RNG and SPD.
+desc,19,10773,anchored,노병계 4급. 회심 일격이 특기인 원거리 공격 부대. 이 전 단계보다 공격 명중률이 증가해 먼 거리에서도 안정적인 사격이 가능하다.,Crossbowman 4. A long-ranged unit with a strong critical attack. Has improved ACC.
+desc,20,10774,anchored,노병계 5급. 회심 일격이 특기인 원거리 공격 부대. 이 전 단계보다 공격 명중률이 더욱 증가해 후방에서 적을 절멸시킨다.,Crossbowman 5. A long-ranged unit with a strong critical attack. Has improved ACC.
+desc,21,10775,anchored,창병계 1급. 공격에 특화된 보병 부대. 성내와 숲에서 유리하다. 보병계와 유사하나 기마 부대와 전투에 조금 더 효과적이다.,"Spearman 1. A unit that is more powerful in castles and forests. Similar to footmen, but more effective against cavalry units."
+desc,22,10776,anchored,창병계 2급. 공격에 특화된 보병 부대. 이 전 단계보다 공격 범위가 증가해 적의 반격을 무력화할 수 있다.,Spearman 2. A unit that is more powerful in castles and forests. Has improved RNG.
+desc,23,10777,anchored,창병계 3급. 공격에 특화된 보병 부대. 이 전 단계보다 이동력이 증가해 빠르게 적을 추격할 수 있다.,Spearman 3. A unit that is more powerful in castles and forests. Has improved SPD.
+desc,24,10778,anchored,창병계 4급. 공격에 특화된 보병 부대. 이 전 단계보다 기마 공격이 강화되어 기마 부대 상대에 효과적이다.,Spearman 4. A unit that is more powerful in castles and forests. Has improved ATK to cavalry units.
+desc,25,10779,anchored,창병계 5급. 공격에 특화된 보병 부대. 이 전 단계보다 기마 공격이 더욱 강화되어 선봉에선 기마 부대를 제압할 수 있다.,Spearman 5. A unit that is more powerful in castles and forests. Has improved ATK to cavalry units.
+desc,26,10780,anchored,"경기병계 1급. 이동력 뛰어난 기마 부대. 험로에서 다소 취약하며 보병 부대에 강하지만, 원거리 공격 부대에 약하다.","Light Cavalry 1. A very fast unit that is slightly more vulnerable in rough terrain. Strong against footman units, but weak against ranged units."
+desc,27,10781,anchored,경기병계 2급. 이동력 뛰어난 기마 부대. 이 전 단계보다 공격력이 증가해 더욱 위협적이다.,Light Cavalry 2. A very fast unit that is slightly more vulnerable in rough terrain. Has improved ATK.
+desc,28,10782,anchored,경기병계 3급. 이동력 뛰어난 기마 부대. 이 전 단계보다 공격 범위와 이동력이 증가해 활용성과 운용성이 좋아졌다.,Light Cavalry 3. A very fast unit that is slightly more vulnerable in rough terrain. Has improved RNG and SPD.
+desc,29,10783,anchored,경기병계 4급. 이동력 뛰어난 기마 부대. 이 전 단계보다 사기가 증가해 회심의 일격을 기대할 수 있다.,Light Cavalry 4. A very fast unit that is slightly more vulnerable in rough terrain. Has improved MRL.
+desc,30,10784,anchored,경기병계 5급. 이동력 뛰어난 기마 부대. 이 전 단계보다 사기가 더욱 증가하여 빠르고 무자비하게 적 부대를 공격한다.,Light Cavalry 5. A very fast unit that is slightly more vulnerable in rough terrain. Has improved MRL.
+desc,31,10785,anchored,중기병계 1급. 방어력이 뛰어난 기마 부대. 경기병계와 유사하나 방어에 조금 더 효과적이고 험로에 더 취약하다.,"Heavy Cavalry 1. A defensive mounted unit. Similar to light cavalry, but with more DEF and vulnerability in rough terrain."
+desc,32,10786,anchored,중기병계 2급. 방어력이 뛰어난 기마 부대. 이 전 단계보다 방어력이 증가해 선봉으로 적합하다.,Heavy Cavalry 2. A defensive mounted unit. Has improved DEF.
+desc,33,10787,anchored,중기병계 3급. 방어력이 뛰어난 기마 부대. 이 전 단계보다 공격 범위와 이동력이 증가해 다수의 적을 상대하기 유리하다.,Heavy Cavalry 3. A defensive mounted unit. Has improved SPD.
+desc,34,10788,anchored,중기병계 4급. 방어력이 뛰어난 기마 부대. 이 전 단계보다 간접 피해 방어가 강화되어 원거리 공격 부대를 상대하기 효과적이다.,Heavy Cavalry 4. A defensive mounted unit. Has improved DEF against ranged units.
+desc,35,10789,anchored,중기병계 5급. 방어력이 뛰어난 기마 부대. 이 전 단계보다 간접 피해 방어가 더욱 강화되어 깊숙이 적진에 침투하는 것에 특화되었다.,Heavy Cavalry 5. A defensive mounted unit. Has improved DEF against ranged units.
+desc,36,10790,anchored,"산악기병계 1급. 민첩성이 뛰어난 기병 부대. 산지에서 유리하고 험로 이동에 특화되어 있지만, 책략 공격에 약하다.","Mountain Cavalry 1. A mounted unit with high DEX. Very effective in mountains and rough terrain, but vulnerable to tactics."
+desc,37,10791,anchored,산악기병계 2급. 민첩성이 뛰어난 기병 부대. 이 전 단계보다 순발력이 증가로 연속 공격 성공률이 증가해 위협적이다.,Mountain Cavalry 2. A mounted unit with high DEX. Has improved AGI.
+desc,38,10792,anchored,산악기병계 3급. 민첩성이 뛰어난 기병 부대. 이 전 단계보다 공격 범위와 이동력이 증가해 다양한 전술에 활용할 수 있다.,Mountain Cavalry 3. A mounted unit with high DEX. Has improved RNG and SPD.
+desc,39,10793,anchored,산악기병계 4급. 민첩성이 뛰어난 기병 부대. 이 전 단계보다 전 방어율이 증가되어 근접전에 유용하다.,Mountain Cavalry 4. A mounted unit with high DEX. Has improved DEF.
+desc,40,10794,anchored,산악기병계 5급. 민첩성이 뛰어난 기병 부대. 이 전 단계보다 전 방어율이 더욱 증가되어 험로에선 당할 상대가 없다.,Mountain Cavalry 5. A mounted unit with high DEX. Has improved DEF.
+desc,41,10795,anchored,궁기병계 1급. 이동력이 뛰어난 원거리 공격 부대. 궁병계보다 공격 범위가 좁은 대신 이동력과 공격력이 높다.,"Mounted Archer 1. A very fast ranged unit. Has less RNG than archers, but higher SPD and ATK."
+desc,42,10796,anchored,궁기병계 2급. 이동력이 뛰어난 원거리 공격 부대. 이 전 단계보다 공격 범위가 증가해 유용한 활용이 가능하다.,Mounted Archer 2. A very fast ranged unit. Has improved RNG.
+desc,43,10797,anchored,궁기병계 3급. 이동력이 뛰어난 원거리 공격 부대. 이 전 단계보다 이동력과 공격 범위가 빠른 후방 지원이 가능하다.,Mounted Archer 3. A very fast ranged unit. Has improved RNG and SPD.
+desc,44,10798,anchored,궁기병계 4급. 이동력이 뛰어난 원거리 공격 부대. 이 전 단계보다 순발력이 증가해 화살의 명중률이 좋아졌다.,Mounted Archer 4. A very fast ranged unit. Has improved AGI.
+desc,45,10799,anchored,"궁기병계 5급. 이동력이 뛰어난 원거리 공격 부대. 이 전 단계보다 순발력이 더욱 증가하였으며, 치고 빠지는 전술에 특화되어 있다.",Mounted Archer 5. A very fast ranged unit. Has improved AGI.
+desc,46,10800,anchored,포차계 1급. 공격 범위가 가장 넓은 원거리 공격 부대. 이동에 제한이 많으나 공격력이 우수하다.,"Catapult 1. A unit that can attack from the largest distance. Cannot move well, but can siege structures well."
+desc,47,10801,anchored,포차계 2급. 공격 범위가 가장 넓은 원거리 공격 부대. 이 전 단계보다 공격 범위가 넓어져 더 많은 적을 공격할 수 있다.,Catapult 2. A unit that can attack from the largest distance. Has improved RNG.
+desc,48,10802,anchored,"포차계 3급. 공격 범위가 가장 넓은 원거리 공격 부대. 이 전 단계보다 이동력, 공격 범위 모두 증가해 다수의 적을 상대할 수 있다.",Catapult 3. A unit that can attack from the largest distance. Has improved RNG and SPD.
+desc,49,10803,anchored,포차계 4급. 공격 범위가 가장 넓은 원거리 공격 부대. 이 전 단계보다 물리 공격이 강화되어 먼 거리에서 적들을 제압한다.,Catapult 4. A unit that can attack from the largest distance. Has improved ATK.
+desc,50,10804,anchored,포차계 5급. 공격 범위가 가장 넓은 원거리 공격 부대. 이 전 단계보다 물리 공격이 더욱 강화되어 후방에서 적들을 절멸한다.,Catapult 5. A unit that can attack from the largest distance. Has improved ATK.
+desc,51,10805,anchored,"무인계 1급. 순발력이 특화된 특수 부대. 방해계 책략도 사용할 수 있다. 보병 부대에 비해 방어력은 약하지만, 민첩성과 공격력이 높다.","Soldier 1. A specialized attack unit with high AGI. Can utilize interrupting tactics. Has lower DEF than footman units, but higher AGI and ATK."
+desc,52,10806,anchored,"무인계 2급. 순발력에 특화된 특수 부대. 이 전 단계보다 공격 범위가 넓어져, 적진에 포위당할 때 진정한 가치가 발휘된다.",Soldier 2. A specialized attack unit with high AGI. Has improved RNG.
+desc,53,10807,anchored,무인계 3급. 순발력에 특화된 특수 부대. 이 전 단계보다 이동력이 증가해 전투의 선봉으로 적합하다.,Soldier 3. A specialized attack unit with high AGI. Has improved SPD.
+desc,54,10808,anchored,무인계 4급. 순발력에 특화된 특수 부대. 이 전 단계보다 방해계 책략이 강화되어 다양한 방식의 공격이 가능하다.,Soldier 4. A specialized attack unit with high AGI. Has improved interrupting tactics.
+desc,55,10809,anchored,무인계 5급. 순발력에 특화된 특수 부대. 이 전 단계보다 방해계 책략이 더욱 강화되어 전투의 선봉에도 후방 지원에도 전방위로 활약할 수 있다.,Soldier 5. A specialized attack unit with high AGI. Has improved interrupting tactics.
+desc,56,10810,anchored,적병계 1급. 체력에 특화된 특수 부대. 보병과 유사하나 산지나 황무지 등 험로에서 이동이 자유롭고 지계 책략도 사용할 수 있어 더욱 유용하다.,"Outlaw 1. A mobile unit with high HP. Similar to footman units, but able to move freely in Mountains and Wastelands. Can perform earth tactics."
+desc,57,10811,anchored,적병계 2급. 체력에 특화된 특수 부대. 이 전 단계보다 사기가 증가해 더욱 강력한 공격을 기대 할 수 있다.,Outlaw 2. A mobile unit with high HP. Has improved MRL.
+desc,58,10812,anchored,적병계 3급. 체력에 특화된 특수 부대. 이 전 단계보다 이동력이 증가해 험로에서 빠르게 이동할 수 있다.,Outlaw 3. A mobile unit with high HP. Has improved SPD.
+desc,59,10813,anchored,적병계 4급. 체력에 특화된 특수 부대. 이 전 단계보다 지계 책략이 강화되어 산지나 황무지에서 괴력을 발휘한다.,Outlaw 4. A mobile unit with high HP. Has improved earth tactics.
+desc,60,10814,anchored,적병계 5급. 체력에 특화된 특수 부대. 이 전 단계보다 지계 책략이 더욱 강화되어 산지나 황무지에서 다른 부대들을 압도한다.,Outlaw 5. A mobile unit with high HP. Has improved earth tactics.
+desc,61,10815,anchored,"책사계 1급. 공격 책략을 사용하는 문관 부대. 화계, 수계, 지계의 책략을 특기로 한다. ","Tactician 1. An official that performs offensive tactics. Specializes in earth, water, and fire tactics. "
+desc,62,10816,anchored,책사계 2급. 공격 책략을 사용하는 문관 부대. 이 전 단계보다 화계 책략이 강화되어 더욱 강력하다. 정신력이 낮은 적에게 공포의 대상이다.,Tactician 2. An official that performs offensive tactics. Has improved fire tactics.
+desc,63,10817,anchored,책사계 3급. 공격 책략을 사용하는 문관 부대. 이 전 단계보다 이동력이 증가해 빠른 책략 지원이 가능하다.,Tactician 3. An official that performs offensive tactics. Has improved SPD.
+desc,64,10818,anchored,책사계 4급. 공격 책략을 사용하는 문관 부대. 이 전 단계보다 정신력이 증가해 책략으로 전장을 지배한다.,Tactician 4. An official that performs offensive tactics. Has improved WIS.
+desc,65,10819,anchored,책사계 5급. 공격 책략을 사용하는 문관 부대. 이 전 단계보다 정신력이 더욱 증가해 극에 달한 책략의 파괴력은 실로 경이적! 적으로 돌리기 두려운 부대다.,Tactician 5. An official that performs offensive tactics. Has improved WIS and ultimate tactics.
+desc,66,10820,anchored,"풍수사계 1급. 회복 책략을 사용하는 문관 부대. 후방 지원 부대로, 큰 전투에서 빛을 발한다. ",Geomancer 1. An official that specializes in restorative tactics. They shine when they're able to support from the back lines. 
+desc,67,10821,anchored,풍수사계 2급. 회복 책략을 사용하는 문관 부대. 이 전 단계보다 이동력이 증가해 빠른 후방 지원이 가능하다.,Geomancer 2. An official that specializes in restorative tactics. Has improved SPD.
+desc,68,10822,anchored,풍수사계 3급. 회복 책략을 사용하는 문관 부대. 이 전 단계보다 이동력이 더욱 증가해 많은 아군을 지원할 수 있다. (이동력 수정하자),Geomancer 3. An official that specializes in restorative tactics. Has improved SPD.
+desc,69,10823,anchored,풍수사계 4급. 회복 책략을 사용하는 문관 부대. 이 전 단계보다 MP가 증가해 많은 양의 지원으로 아군을 편하게 한다.,Geomancer 4. An official that specializes in restorative tactics. Has improved MP.
+desc,70,10824,anchored,풍수사계 5급. 회복 책략을 사용하는 문관 부대. 이 전 단계보다 MP가 더욱 증가해 폭넓은 지원이 가능해져 함께 있는 아군들의 사기를 끌어올린다.,Geomancer 5. An official that specializes in restorative tactics. Has improved MP.
+desc,71,10825,anchored,도사계 1급. 방해 책략을 사용하는 문관 부대. 날씨나 지형과 관계없이 다양한 책략을 쓸 수 있다. ,Taoist 1. An official that performs interrupting tactics. Able to use tactics regardless of weather or terrain. 
+desc,72,10826,anchored,"도사계 2급. 방해 책략을 사용하는 문관 부대. 이 전 단계보다 방해계 책략이 강화되었으며, 더 많은 책략을 사용해 적을 방해한다.",Taoist 2. An official that performs interrupting tactics. Has improved interrupting tactics.
+desc,73,10827,anchored,도사계 3급. 방해 책략을 사용하는 문관 부대. 이 전 단계보다 이동력이 증가해 빠르게 적들을 저지한다.,Taoist 3. An official that performs interrupting tactics. Has improved SPD.
+desc,74,10828,anchored,도사계 4급. 방해 책략을 사용하는 문관 부대. 이 전 단계보다 사기가 증가해 높은 책략 명중률로 적들을 무력화시킨다.,Taoist 4. An official that performs interrupting tactics. Has improved MRL.
+desc,75,10829,anchored,도사계 5급. 방해 책략을 사용하는 문관 부대. 이 전 단계보다 사기가 더욱 증가해 후방에서 적들을 혼란스럽게 한다.,Taoist 5. An official that performs interrupting tactics. Has improved MRL.
+desc,76,10830,anchored,"무희계 1급. 순발력에 특화된 특수 부대. 무인계와 유사한 특성을 가지며, 턴마다 주위 아군의 상태 이상을 회복시켜준다.","Dancer 1. A specialized unit that moves around the battlefield with ease. Similar to soldiers, but able to clear status effects of nearby ally units."
+desc,77,10831,anchored,무희계 2급. 순발력에 특화된 특수 부대. 이 전 단계보다 공격 범위가 증가해 더욱 다양하게 활약할 수 있다.,Dancer 2. A specialized unit that moves around the battlefield with ease. Has improved RNG.
+desc,78,10832,anchored,무희계 3급. 순발력에 특화된 특수 부대. 이 전 단계보다 이동력이 증가해 상태 이상 회복을 위해 군진의 중심에 배치하면 효과적이다.,Dancer 3. A specialized unit that moves around the battlefield with ease. Has improved SPD and is more effective in the middle of a formation.
+desc,79,10833,anchored,무희계 4급. 순발력에 특화된 특수 부대. 이 전 단계보다 강화된 유혹 책략으로 적군의 전력을 흡수한다.,Dancer 4. A specialized unit that moves around the battlefield with ease. Has improved seduce tactics.
+desc,80,10834,anchored,"무희계 5급. 순발력에 특화된 특수 부대. 이 전 단계보다 유혹 책략이 더욱 강화되었으며, 아군 보조와 적군 전투 등 전방위로 활약한다.",Dancer 5. A specialized unit that moves around the battlefield with ease. Has improved seduce tactics.
+desc,81,10835,anchored,"전차계 1급. 전투에 특화된 기병 부대. 기병 부대 중 방어력이 가장 뛰어나지만, 험로에 취약하다.","Chariot 1. A cavalry unit that excels in combat. Has the highest DEF of all cavalry units, but is extremely vulnerable in rough terrain."
+desc,82,10836,anchored,전차계 2급. 전투에 특화된 기병 부대. 이 전 단계보다 공격력이 증가해 강력한 돌격 능력을 갖추고 있다.,Chariot 2. A cavalry unit that excels in combat. Has improved ATK.
+desc,83,10837,anchored,전차계 3급. 전투에 특화된 기병 부대. 이 전 단계보다 이동력이 증가해 선봉으로 운용하기 좋은 돌격 부대이다.,Chariot 3. A cavalry unit that excels in combat. Has improved SPD.
+desc,84,10838,anchored,전차계 4급. 전투에 특화된 기병 부대. 이 전 단계보다 물리 공격이 강화되어 지나간 길에는 쓰러진 병사들만 있을 뿐이다.,Chariot 4. A cavalry unit that excels in combat. Has improved ATK.
+desc,85,10839,anchored,전차계 5급. 전투에 특화된 기병 부대. 이 전 단계보다 물리 공격이 더욱 강화되어 평지에서는 당해낼 상대가 없다.,Chariot 5. A cavalry unit that excels in combat. Has improved ATK.
+desc,86,10840,anchored,"황건병계. 방어에 특화된 황건 부대. 성 수비에 적합하다. 원거리 공격 부대에는 강하나, 기마 부대에 약하다.","Yellow Turban Soldier. A unit that specializes in defense. Excellent at defending castles. Strong against ranged units, but weak against cavalry units."
+desc,87,10841,anchored,수군계 1급. 공격에 특화된 보병 부대. 수계 책략을 사용할 수 있다. 보병계와 유사하나 물이 있는 지형에 유리하다.,Navy 1. An offensive unit that is more efficient in water. Able to use water tactics and is similar to other footman units.
+desc,88,10842,anchored,수군계 2급. 공격에 특화된 보병 부대. 이 전 단계보다 순발력이 증가해 수중 전투에서 몸놀림이 더욱 민첩해졌다.,Navy 2. An offensive unit that is more efficient in water. Has improved AGI.
+desc,89,10843,anchored,수군계 3급. 공격에 특화된 보병 부대. 이 전 단계보다 이동력이 증가해 물 위에서는 신출귀몰한 모습을 보인다.,Navy 3. An offensive unit that is more efficient in water. Has improved SPD.
+desc,90,10844,anchored,수군계 4급. 공격에 특화된 보병 부대. 이 전 단계보다 수계 책략이 강화되어 다양한 수중 전략을 사용할 수 있다.,Navy 4. An offensive unit that is more efficient in water. Has improved water tactics.
+desc,91,10845,anchored,수군계 5급. 공격에 특화된 보병 부대. 이 전 단계보다 수계 책략이 더욱 강화되어 수중의 적들을 요리한다.,Navy 5. An offensive unit that is more efficient in water. Has improved water tactics.
+desc,92,10846,anchored,"웅술사계 1급. 곰을 조련해 전투하는 특수 부대. 공격당한 적의 움직임을 막는 효과가 있어 진로를 막을 수 있지만, 책략 공격에 취약하다.","Ursari 1. A specialized unit that fights with a trained bear. Has the ability to block paths and immobilize enemies, but is vulnerable to tactics."
+desc,93,10847,anchored,웅술사계 2급. 곰을 조련해 전투하는 특수 부대. 이 전 단계보다 부동 효과의 성공확률이 증가해 적의 움직임을 둔화시키는 데 유용하다.,Ursari 2. A specialized unit that fights with a trained bear. Has improved immobilizing effect chance.
+desc,94,10848,anchored,웅술사계 3급. 곰을 조련해 전투하는 특수 부대. 이 전 단계보다 이동력과 공격 범위가 증가해 빠르게 적군을 사냥한다.,Ursari 3. A specialized unit that fights with a trained bear. Has improved SPD.
+desc,95,10849,anchored,웅술사계 4급. 곰을 조련해 전투하는 특수 부대. 이 전 단계보다 순발력이 증가해 민첩하게 적들을 제압한다.,Ursari 4. A specialized unit that fights with a trained bear. Has improved AGI.
+desc,96,10850,anchored,웅술사계 5급. 곰을 조련해 전투하는 특수 부대. 이 전 단계보다 순발력이 더욱 증가한 곰을 본 적들은 공포감에 움직이기조차 힘들다.,Ursari 5. A specialized unit that fights with a trained bear. Has improved AGI.
+desc,97,10851,anchored,"호술사계 1급. 맹수를 조련해 전투하는 특수 부대. 동시에 두 부대를 공격할 수 있지만, 책략 공격에는 취약하다.","Pantheran 1. A specialized unit that fights with a trained big cat. Has the ability to attack two units at once, but is vulnerable to tactics."
+desc,98,10852,anchored,호술사계 2급. 맹수를 조련해 전투하는 특수 부대. 이 전 단계보다 공격 범위가 증가해 먼 거리에 적들을 효과적으로 공격할 수 있다.,Pantheran 2. A specialized unit that fights with a trained big cat. Has improved RNG.
+desc,99,10853,anchored,호술사계 3급. 맹수를 조련해 전투하는 특수 부대. 이 전 단계보다 이동력과 공격 범위가 증가해 모여 있는 적을 물리칠 때 효과적이다.,Pantheran 3. A specialized unit that fights with a trained big cat. Has improved RNG and SPD.
+desc,100,10854,anchored,호술사계 4급. 맹수를 조련해 전투하는 특수 부대. 이 전 단계보다 사기가 증가해 여러 명을 동시에 강하게 공격할 수 있다.,Pantheran 4. A specialized unit that fights with a trained big cat. Has improved MRL.
+desc,101,10855,anchored,호술사계 5급. 맹수를 조련해 전투하는 특수 부대. 이 전 단계보다 사기가 증가한 맹수는 회심의 일격으로 적들을 요리한다.,Pantheran 5. A specialized unit that fights with a trained big cat. Has improved MRL.
+desc,102,10856,anchored,"도독계 1급. 문무를 겸비한 만능 부대. 군주계와 유사하나 책략 쪽 비중이 높으며, 물이 있는 지형에 유리하다.","Marine 1. A balanced unit with both brains and brawn. Similar to Warlord units, but has more tactics and is more efficient in water."
+desc,103,10857,anchored,도독계 2급. 문무를 겸비한 만능 부대. 이 전 단계보다 공격 범위가 증가해 근접전에서도 활약할 수 있다.,Marine 2. A balanced unit with both brains and brawn. Has improved RNG.
+desc,104,10858,anchored,도독계 3급. 문무를 겸비한 만능 부대. 이 전 단계보다 이동력이 증가하고 수계 책략이 강화되어 전략적인 운용이 가능하다.,Marine 3. A balanced unit with both brains and brawn. Has improved SPD.
+desc,105,10859,anchored,"도독계 4급. 문무를 겸비한 만능 부대. 이 전 단계보다 물리 공격이 강화되었으며, 특별한 약점이 없는 만능 병종이다.",Marine 4. A balanced unit with both brains and brawn. Has improved ATK
+desc,106,10860,anchored,도독계 5급. 문무를 겸비한 만능 부대. 수전 보조 효과로 인해 이 전 단계보다 수중에서 강력한 힘을 발휘한다.,"Marine 5. A balanced unit with both brains and brawn. Has naval boost, making it more powerful on water."
+desc,107,10861,anchored,현자계 1급. 고급 책략을 사용하는 문관 부대. 책략과 간접 공격에는 강하지만 근접 공격에 약하다.,"Sage 1. An official that excels in advanced tactics. Very powerful against tactics and ranged units, but weak in close combat."
+desc,108,10862,anchored,현자계 2급. 고급 책략을 사용하는 문관 부대. 이 전 단계보다 풍계 책략이 강화되어 야전에 효과적이다.,Sage 2. An official that excels in advanced tactics. Has improved wind tactics.
+desc,109,10863,anchored,현자계 3급. 고급 책략을 사용하는 문관 부대. 이 전 단계보다 이동력이 증가해 대규모 전투에서도 유용하다.,Sage 3. An official that excels in advanced tactics. Has improved SPD.
+desc,110,10864,anchored,현자계 4급. 고급 책략을 사용하는 문관 부대. 이 전 단계보다 정신력이 증가해 강력한 책략을 사용한다.,Sage 4. An official that excels in advanced tactics. Has improved WIS.
+desc,111,10865,anchored,현자계 5급. 고급 책략을 사용하는 문관 부대. 이 전 단계보다 정신력이 더욱 증가해 강력한 책략으로 대규모의 적군을 절멸한다.,Sage 5. An official that excels in advanced tactics. Has improved WIS.
+desc,112,10866,anchored,"모든 책략을 사용하는 부대. 속세에서 떨어진 신비한 존재로, 전투에 참가하는 일은 거의 없다.",A unit that uses all tactics. It is a mystical being that has returned to Earth and has rarely seen combat.
+desc,113,10867,anchored,물자 수송을 전문으로 하는 문관 부대. 인근 부대의 HP를 매턴 회복시켜준다. 회복 책략도 잘 사용한다. ,Officials that specialize in transporting supplies and restorative tactics. Restores the HP of nearby units every turn. 
+desc,114,10868,anchored,병사 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 중독 상태이상을 건다. 지계 책략에 내성이 있다.,"Clay doll in the shape of a soldier. Summoned through tactics, these warriors can poison enemies with their attacks. Resistant to earth tactics."
+desc,115,10869,anchored,장군 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 혼란 상태이상을 건다. 지계 책략에 강한 내성이 있다.,"Clay doll in the shape of a general. Summoned through tactics, these elite warriors can confuse enemies with their attacks. Highly resistant to earth tactics."
+desc,116,10870,anchored,한의 황제. 공격 능력은 없다.,Emperor of Han. Cannot attack.
+desc,117,10871,anchored,전투를 모르는 무고한 백성. 공격 능력은 없다.,An innocent civilian that has no part in the war. Cannot attack.
+desc,118,10872,anchored,거점의 중심에 있는 중요 건물이다. 공성전 시 파괴당하면 해당 거점을 빼앗기게 되는 중요한 군사적 요충지다.,"A very important military building at the center of a domain. If destroyed during a siege, the domain will be taken over."
+desc,119,10873,anchored,지형지물. 파괴하여 제거할 수 있다.,Terrain. It can be destroyed or removed.
+desc,120,10874,anchored,마차. 말을 이용하여 사람이나 짐들을 편하게 수송할 수 있다.,A wagon that horses can pull to transport people or supplies.
+desc,121,10875,anchored,궁노대. 높게 쌓아 올린 궁노 위에 궁수들을 두어 주변의 적들에게 화살 세례를 퍼붙는 방어 건물이다.,Bow Tower. A defensive building that shoots nearby enemies using bows.
+desc,122,10876,anchored,연노대. 높게 쌓아 올린 연노 위에 노궁수들을 두어 넓은 영역의 적들에게 노 세례를 퍼붙는 방어 건물이다.,Crossbow Tower. A defensive building that shoots nearby enemies using crossbows.
+desc,123,10877,anchored,투석대. 투석기를 크고 둥근 판 위에 두어 사방으로 투석을 쏘아 매우 넓은 영역의 다수의 적들에게 공격을 가하는 방어 건물이다.,Catapult Tower. A defensive building flings boulders at enemies in every direction.
+desc,124,10878,anchored,용두대. 사방으로 불을 뿜어내는 강력한 방어 건물이다.,Dragon Tower. A powerful defensive building that spits fire. It deals a large amount of damage to approaching enemies and has a chance of setting the terrain on fire.
+desc,125,10879,anchored,"황건궁병계. 명중이 특기인 원거리 황건 부대. 원거리 공격이 특징적이며, 기마 부대에 강하지만 보병에 약하다.","Yellow Turban Archer. A long-ranged unit with very high accuracy. Strong against cavalry units, but weak against footman units."
+desc,126,10880,anchored,마왕계 1급. 마왕의 힘을 사용하는 문관 부대. 현자계 보다 방어와 근접 공격에 특화되어 있다.,Demon 1. An official that uses demonic powers. Has higher DEF and is better at close combat than sage units.
+desc,127,10881,anchored,마왕계 2급. 마왕의 힘을 사용하는 문관 부대. 이 전 단계보다 정신력이 강화되어 강력한 책략을 사용한다.,Demon 2. An official that uses demonic powers. Has improved WIS.
+desc,128,10882,anchored,마왕계 3급. 마왕의 힘을 사용하는 문관 부대. 이 전 단계보다 이동력이 증가해 민첩하게 움직일 수 있다.,Demon 3. An official that uses demonic powers. Has improved SPD.
+desc,129,10883,anchored,마왕계 4급. 마왕의 힘을 사용하는 문관 부대. 상태이상 공격을 사용하여 적군을 저지한다.,Demon 4. An official that uses demonic powers. Causes status effects on enemies when attacking.
+desc,130,10884,anchored,마왕계 5급. 마왕의 힘을 사용하는 문관 부대. 이 전 단계보다 상태이상 공격 확률이 증가하여 적군을 공포에 빠뜨린다.,Demon 5. An official that uses demonic powers. Has improved status effects on enemies.
+desc,131,10885,anchored,황건병계. 공격에 특화된 황건 부대. 성내와 숲에서 유리하다. 보병계와 유사하나 기마 부대와 전투에 조금 더 효과적이다.,Yellow Turban Spearman. A unit that specializes in attack. Very strong in castles and forests. More effective against cavalry units than footman units.
+desc,132,10886,anchored,"황건병계. 순발력이 특화된 황건 부대. 방해계 책략도 사용할 수 있다. 보병 부대에 비해 방어력은 약하지만, 민첩성과 공격력이 높다.","Yellow Turban Warrior. A unit with high AGI that can use interrupting tactics. Has lower DEF than other footman units, but has higher AGI and ATK."
+desc,133,10887,anchored,"돼지. 중국 전역의 숲에 서식하는 동물로 방어적인 성향을 띄며, 잡식성 식성으로 민가에 큰 피해를 주는 동물이다.",Pig. A generally defensive beast that lives in forests all over China. Its insatiable appetite for a wide variety of food is the bane of farmers.
+desc,134,10888,anchored,"소. 중국 전역의 농가에서 사육하는 동물로 방어적인 성향을 띄며, 간혹 농가를 탈출하여 야생에 살아가는 동물이다.",Ox. A mild and defensive animal raised in farms all over China. Some escape their enclosures to live out in the wild.
+desc,135,10889,anchored,성곽을 통과하는 문. 공성전 시 적군의 출입을 막아내는 용도로 쓰이며 성문 상단에 설치된 연노로 적군을 공격하는 방어 건물이다.,Main entry point of a castle. A defensive structure that keeps enemies out during a siege. Has repeating crossbows that can attack enemies.
+desc,136,10890,anchored,병사 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 중독 상태이상을 건다. 수계 책략에 내성이 있다.,"Clay doll in the shape of a soldier. Summoned through tactics, these warriors can poison enemies with their attacks. Resistant to water tactics."
+desc,137,10891,anchored,장군 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 혼란 상태이상을 건다. 수계 책략에 강한 내성이 있다.,"Clay doll in the shape of a general. Summoned through tactics, these elite warriors can confuse enemies with their attacks. Highly resistant to water tactics."
+desc,138,10892,anchored,병사 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 중독 상태이상을 건다. 화계 책략에 내성이 있다.,"Clay doll in the shape of a soldier. Summoned through tactics, these warriors can poison enemies with their attacks. Resistant to fire tactics."
+desc,139,10893,anchored,장군 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 혼란 상태이상을 건다. 화계 책략에 강한 내성이 있다.,"Clay doll in the shape of a general. Summoned through tactics, these elite warriors can confuse enemies with their attacks. Highly resistant to fire tactics."
+desc,140,10894,anchored,병사 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 중독 상태이상을 건다. 풍계 책략에 내성이 있다.,"Clay doll in the shape of a soldier. Summoned through tactics, these warriors can poison enemies with their attacks. Resistant to wind tactics."
+desc,141,10895,anchored,장군 모양의 흙 인형. 책략으로 소환된 존재로 공격 시 혼란 상태이상을 건다. 풍계 책략에 강한 내성이 있다.,"Clay doll in the shape of a general. Summoned through tactics, these elite warriors can confuse enemies with their attacks. Highly resistant to wind tactics."
+desc,142,10896,anchored,검사계 1급. 검술에 능한 특수 부대. 검술 책략을 통해 공격 능력으로 상대에게 책략 피해를 줄 수 있다.,Swordsman 1. A specialized unit that fights with a sword. Deals damage to enemies with its impressive display of swordsmanship.
+desc,143,10897,anchored,검사계 2급. 검술에 능한 특수 부대. 이 전 단계보다 공격 범위가 증가하여 효용성이 높아졌다.,Swordsman 2. A specialized unit that fights with a sword. Has improved RNG.
+desc,144,10898,anchored,검사계 3급. 검술에 능한 특수 부대. 이 전 단계보다 공격력이 증가하여 상대에게 큰 피해를 줄 수 있다.,Swordsman 3. A specialized unit that fights with a sword. Has improved ATK.
+desc,145,10899,anchored,검사계 4급. 검술에 능한 특수 부대. 이 전 단계보다 이동력이 증가하여 빠르게 접근할 수 있다.,Swordsman 4. A specialized unit that fights with a sword. Has improved SPD.
+desc,146,10900,anchored,"검사계 5급. 검술에 능한 특수 부대. 이 전 단계보다 HP가 증가하여, 적의 공격을 더 받아낼 수 있다.",Swordsman 5. A specialized unit that fights with a sword. Has improved HP.
+desc,147,10901,anchored,군악대계 1급. 노래를 통해 아군 부대를 응원하는 특수 부대. 다양한 보조 책략으로 아군 부대를 지원할 수 있다.,Musician 1. A specialized unit that supports allies with songs. Uses a variety of abilities to support allies.
+desc,148,10902,anchored,군악대계 2급. 노래를 통해 아군 부대를 응원하는 특수 부대. 이 전 단계보다 더 다양해진 보조 책략으로 아군 부대에게 힘을 보태줄 수 있다.,Musician 2. A specialized unit that supports allies with songs. Has improved abilities.
+desc,149,10903,anchored,군악대계 3급. 노래를 통해 아군 부대를 응원하는 특수 부대. 노래 책략을 통해 주위 아군에게 힘을 불어넣어 줄 수 있다.,Musician 3. A specialized unit that supports allies with songs. Sings a song to strengthen nearby allies.
+desc,150,10904,anchored,"군악대계 4급. 노래를 통해 아군 부대를 응원하는 특수 부대. 이 전 단계보다 이동력이 증가하여, 빠르게 원호해 줄 수 있다.",Musician 4. A specialized unit that supports allies with songs. Has improved SPD.
+desc,151,10905,anchored,"군악대계 5급. 노래를 통해 아군 부대를 응원하는 특수 부대. 포용 효과를 통해, 아군 부대에게 지속적인 회복을 지원해 줄 수 있다.",Musician 5. A specialized unit that supports allies with songs. Uses an ability to restore allies' health.
+desc,152,10906,anchored,천자계 1급. 중원의 패자를 상징하는 만능 부대. 전투적인 능력은 부족하지만 높은 사기가 특징이다.,"Emperor 1. A balanced unit, ruler of the Middle Kingdom. Although it lacks combat capabilities, it has high MRL."
+desc,153,10907,anchored,천자계 2급. 중원의 패자를 상징하는 만능 부대. 이 전 단계보다 공격 범위가 증가해 효용성이 뛰어나다.,"Emperor 2. A balanced unit, ruler of the Middle Kingdom. Has improved attack RNG."
+desc,154,10908,anchored,천자계 3급. 중원의 패자를 상징하는 만능 부대. 이 전 단계보다 이동력이 증가해 운용이 자유롭다.,"Emperor 3. A balanced unit, ruler of the Middle Kingdom. Has improved SPD."
+desc,155,10909,anchored,천자계 4급. 중원의 패자를 상징하는 만능 부대. 높은 사기를 이용하여 상대에게 위압감을 줄 수 있다.,"Emperor 4. A balanced unit, ruler of the Middle Kingdom. Can overpower enemies with its high MRL."
+desc,156,10910,anchored,천자계 5급. 중원의 패자를 상징하는 만능 부대. 천자의 권위 앞에 상대는 무릎 꿇을 것이다.,"Emperor 5. A balanced unit, ruler of the Middle Kingdom. All shall bow down before the authority of the Emperor."
+desc,157,10911,anchored,노전차계 1급. 전차 위에서 노를 활용하는 기병 부대. 적진을 돌파하여 상대에게 위력적인 공격을 할 수 있다.,Crossbow Chariot 1. A cavalry unit with crossbows mounted on its chariot. It can break through enemy lines to perform devastating attacks.
+desc,158,10912,anchored,노전차계 2급. 전차 위에서 노를 활용하는 기병 부대. 이 전 단계보다 공격 범위가 증가하여 상황 대처 능력이 좋아졌다.,Crossbow Chariot 2. A cavalry unit with crossbows mounted on its chariot. Has improved attack RNG.
+desc,159,10913,anchored,노전차계 3급. 전차 위에서 노를 활용하는 기병 부대. 신속한 움직임을 통해 적의 빈틈을 기습하면 효과적인 공격을 할 수 있다.,Crossbow Chariot 3. A cavalry unit with crossbows mounted on its chariot. Its agility enables it to attack enemy flanks.
+desc,160,10914,anchored,노전차계 4급. 전차 위에서 노를 활용하는 기병 부대. 이 전 단계보다 피해 범위가 증가하여 몰려 있는 다수의 적을 섬멸할 수 있다.,Crossbow Chariot 4. A cavalry unit with crossbows mounted on its chariot. Has increased AoE.
+desc,161,10915,anchored,노전차계 5급. 전차 위에서 노를 활용하는 기병 부대. 멀리서 맹렬히 다가오는 모습이 마치 용과 같아 상대를 공포에 떨게한다.,Crossbow Chariot 5. A cavalry unit with crossbows mounted on its chariot. Charges from the distance like a raging dragon.
+desc,162,10916,anchored,효기병계 1급. 공격력이 뛰어난 돌격형 기마 부대. 주변에 적이 많을 수록 더욱 위력적인 공격을 할 수 있다.,Swift Cavalry 1. A charging cavalry unit with incredible attack power. It performs even more powerful attacks when surrounded by enemies.
+desc,163,10917,anchored,효기병계 2급. 공격력이 뛰어난 돌격형 기마 부대. 공격 범위가 증가해 활용성이 증가했다.,Swift Cavalry 2. A charging cavalry unit with incredible attack power. Has improved RNG.
+desc,164,10918,anchored,효기병계 3급. 공격력이 뛰어난 돌격형 기마 부대. 이동력이 증가해 운용이 자유롭다.,Swift Cavalry 3. A charging cavalry unit with incredible attack power. Has improved SPD.
+desc,165,10919,anchored,효기병계 4급. 공격력이 뛰어난 돌격형 기마 부대. 홀로 적진에 난입해 적들을 섬멸한다.,Swift Cavalry 4. A charging cavalry unit with incredible attack power. Can charge in alone to decimate the enemy.
+desc,166,10920,anchored,효기병계 5급. 공격력이 뛰어난 돌격형 기마 부대. 일당백의 활약으로 적들을 학살한다.,Swift Cavalry 5. A charging cavalry unit with incredible attack power. Uses fierce abilities to lay waste to its foes.

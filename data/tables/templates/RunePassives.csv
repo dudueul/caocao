@@ -1,0 +1,67 @@
+name,id,passive,val,rate,prefix,typeCode,country,minTier,#name_en,#loc_row,#confidence
+근접 공격 강화,,,,,,,,,Melee Attack +,19759,inferred
+간접 공격 강화,,,,,,,,,Ranged Attack +,19760,inferred
+공격 책략 증폭,,,,,,,,,Amplify Offensive Tactics,19761,inferred
+보급계 책략 강화,,,,,,,,,Supply Tactics +,19762,inferred
+근접 피해 감소,,,,,,,,,Melee Damage -,19763,inferred
+간접 피해 감소,,,,,,,,,Ranged Damage -,19764,inferred
+근접 공격 방어율 관통,,,,,,,,,Melee Attack DEF Rate Pierce,19765,inferred
+간접 공격 방어율 관통,,,,,,,,,Ranged Attack DEF Rate Pierce,19766,inferred
+근접 공격 방어율 증가,,,,,,,,,Melee Attack DEF Rate Increase,19767,inferred
+간접 공격 방어율 증가,,,,,,,,,Ranged Attack DEF Rate Increase,19768,inferred
+상태 이상 공격%,,,,,,,,,Status Effect ATK %,19769,inferred
+근접 공격 피해 반사%,,,,,,,,,Melee Attack Damage Reflection %,19770,inferred
+간접 공격 피해 반사%,,,,,,,,,Ranged Attack Damage Reflection %,19771,inferred
+맹렬한,,,,,,,,,Fierce,19772,inferred
+찬란한,,,,,,,,,Radiant,19773,inferred
+숭고한,,,,,,,,,Noble,19774,inferred
+단단한,,,,,,,,,Solid,19775,inferred
+유연한,,,,,,,,,Flexible,19776,inferred
+교묘한,,,,,,,,,Clever,19777,inferred
+강인한,,,,,,,,,Tough,19778,inferred
+수려한,,,,,,,,,Fine,19779,inferred
+교활한,,,,,,,,,Cunning,19780,inferred
+정밀한,,,,,,,,,Precise,19781,inferred
+차분한,,,,,,,,,Calm,19782,inferred
+날렵한,,,,,,,,,Svelte,19783,inferred
+민첩한,,,,,,,,,Agile,19784,inferred
+섬세한,,,,,,,,,Delicate,19785,inferred
+신비한,,,,,,,,,Mystical,19786,inferred
+미묘한,,,,,,,,,Subtle,19787,inferred
+날카로운,,,,,,,,,Sharp,19788,inferred
+매끄러운,,,,,,,,,Smooth,19789,inferred
+빛나는,,,,,,,,,Shining,19790,inferred
+활기찬,,,,,,,,,Vigorous,19791,inferred
+투박한,,,,,,,,,Crude,19792,inferred
+탐욕스런,,,,,,,,,Covetous,19793,inferred
+황홀한,,,,,,,,,Elated,19794,inferred
+물리 피해 감소(◆3),,,,,,,,,Decrease Physical Damage (3◆),19795,inferred
+물리 피해 감소(◆4),,,,,,,,,Decrease Physical Damage (4◆),19796,inferred
+재충전(◆3),,,,,,,,,Recharge (3◆),19797,inferred
+재충전(◆4),,,,,,,,,Recharge (4◆),19798,inferred
+감전 공격,,,,,,,,,Electrocution Attack,19799,inferred
+감전 책략,,,,,,,,,Electrocution Tactics,19800,inferred
+용조의 무구,,,,,,,,,Dragon Claw Weapons,19801,inferred
+역린의 무구,,,,,,,,,Outrage Weapons,19802,inferred
+책략 피해 감소(◆3),,,,,,,,,Decrease Tactics Damage (3◆),19803,inferred
+책략 피해 감소(◆4),,,,,,,,,Decrease Tactics Damage (4◆),19804,inferred
+재빠른 대처(◆3),,,,,,,,,Quick Reflexes (3◆),19805,inferred
+재빠른 대처(◆4),,,,,,,,,Quick Reflexes (4◆),19806,inferred
+화염 공격,,,,,,,,,Fire Attack,19807,inferred
+확산 계책,,,,,,,,,Spread Plan,19808,inferred
+갈퀴 계책,,,,,,,,,Claw Plan,19809,inferred
+화염 계책,,,,,,,,,Fire Plan,19810,inferred
+화염뢰 계책,,,,,,,,,Scorching Lightning Plan,19811,inferred
+화폭 계책,,,,,,,,,Eruption Plan,19812,inferred
+화검 계책,,,,,,,,,Flame Sword Plan,19813,inferred
+호령,,,,,,,,,Command,19814,inferred
+재생의 바람%,,,,,,,,,Refreshing Wind %,19815,inferred
+최후의 항전,,,,,,,,,Final Resistance,19816,inferred
+최후의 계책,,,,,,,,,Final Plan,19817,inferred
+최후의 각성,,,,,,,,,Final Awakening,19818,inferred
+회심 피해 감소%(◆3),,,,,,,,,Decrease Critical Hit Damage % (3◆),19819,inferred
+회심 피해 감소%(◆4),,,,,,,,,Decrease Critical Hit Damage % (4◆),19820,inferred
+청룡의 상자,,,,,,,,,Azure Dragon Chest,19821,inferred
+주작의 상자,,,,,,,,,Vermilion Bird Chest,19822,inferred
+백호의 상자,,,,,,,,,White Tiger Chest,19823,inferred
+현무의 상자,,,,,,,,,Black Tortoise Chest,19824,inferred

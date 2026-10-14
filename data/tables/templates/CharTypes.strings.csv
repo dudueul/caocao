@@ -1,0 +1,70 @@
+column,seq,loc_row,confidence,ko,en
+name,1,10427,anchored,보통,Normal
+name,2,10428,anchored,만용,Reckless
+name,3,10429,anchored,용맹,Brave
+name,4,10430,anchored,경솔,Rash
+name,5,10431,anchored,과묵,Reserved
+name,6,10432,anchored,위엄,Dignified
+name,7,10433,anchored,여성,Female
+name,8,10434,anchored,요설,Loquacious
+name,9,10435,anchored,양기,Energetic
+name,10,10436,anchored,인형,Figure
+name,11,10437,anchored,지형지물,Terrain
+name,12,10438,anchored,곰,Bear
+name,13,10439,anchored,돼지,Boar
+name,14,10440,anchored,요염,Sensuous
+name,15,10441,anchored,정숙,Virtuous
+name,16,10442,anchored,활발,Vigorous
+criticalMsg,1,10443,anchored,이랴아앗!,Uraaah!
+criticalMsg,2,10444,anchored,으랴아~!,Gyaaaaaa!
+criticalMsg,3,10445,anchored,이랴아아~!,Attack!
+criticalMsg,4,10446,anchored,키에에에~!,Arrrrrg!
+criticalMsg,5,10447,anchored,이야아앗!,Hyaaaah!
+criticalMsg,6,10448,anchored,얍!,Hyah!
+criticalMsg,7,10449,anchored,이 일격에 모든 것을 걸겠다!,You will die by my blade!
+criticalMsg,8,10450,anchored,받아라~!,Take this!
+criticalMsg,9,10451,anchored,캬르릉!,Grrraaah!
+criticalMsg,10,10452,anchored,위-잉-,Bzzz...
+criticalMsg,11,10453,anchored,크와앙!,Rrroooaaarrr!
+criticalMsg,12,10454,anchored,뿌우우웅!,Brrroa!
+criticalMsg,13,10455,anchored,어흥!,Grrr...
+criticalMsg,14,10456,anchored,캬아아앙!,Grrrooowrrr!
+criticalMsg,15,10457,anchored,꾸우울꿀!,"Gruntz, gruntz!"
+criticalMsg,16,10458,anchored,꺄악~!,Haaa!
+criticalMsg,17,10459,anchored,이얏!,Hayap!
+criticalMsg,18,10460,anchored,핫~!,Huraaah!
+criticalMsg,19,10461,anchored,하아아앗!,Hyaaaah!
+criticalMsg,20,10462,anchored,이야아~!,Aaaaaa!
+criticalMsg,21,10463,anchored,받아라앗~!,Attack!
+criticalMsg,22,10464,anchored,으럇! 으랴랴럇!,Hyaaah!
+criticalMsg,23,10465,anchored,므으으음!,Hmmph!
+criticalMsg,24,10466,anchored,얏!,Hmph!
+criticalMsg,25,10467,anchored,카아아아!,Huraaah!
+criticalMsg,26,10468,anchored,이것이 승부다! 질 수 없다!,I'll finish you with one strike!
+criticalMsg,27,10469,anchored,간다!,Take this!
+criticalMsg,28,10470,anchored,카오!,Grrrr!
+criticalMsg,29,10471,anchored,윙윙윙-,Bzzzzzz!
+criticalMsg,30,10472,anchored,쿠아앙!,Grrr!
+criticalMsg,31,10473,anchored,뿌우우!,Boom!
+criticalMsg,32,10474,anchored,캬아앙!,Rrroarrr!
+criticalMsg,33,10475,anchored,꾸울꿀!,Squeeeal!
+criticalMsg,34,10476,anchored,꺄아악~!,No...!
+criticalMsg,35,10477,anchored,이야얏!,Hayap!
+criticalMsg,36,10478,anchored,하아앗~!,Huraaah!
+criticalMsg,37,10479,anchored,으랴아앗!,Hyaaaah!
+criticalMsg,38,10480,anchored,이가아앗!,Waaaaa!
+criticalMsg,39,10481,anchored,으랴아아~!,Attack!
+criticalMsg,40,10482,anchored,으럇~~!,Arrrrrgh!
+criticalMsg,41,10483,anchored,흐으으음!,Hmmmmmph!
+criticalMsg,42,10484,anchored,받아랏!,Take that!
+criticalMsg,43,10485,anchored,내 회심의 일격을 받아라!,Die upon my weapon!
+criticalMsg,44,10486,anchored,드디어 왔군!,Take this!
+criticalMsg,45,10487,anchored,캬아악!,Grrr...
+criticalMsg,46,10488,anchored,위위위이잉-,Bzzzzzzzzz!
+criticalMsg,47,10489,anchored,쿠앙!,Grrraaa!
+criticalMsg,48,10490,anchored,뿌웅!,Boom!
+criticalMsg,49,10491,anchored,캬앙!,Roar!
+criticalMsg,50,10492,anchored,꿀꿀!,"Oink, oink!"
+criticalMsg,51,10493,anchored,꺄아악~힝~!,No...!
+criticalMsg,52,10494,anchored,이야얏~얍~!,Hayap!
+criticalMsg,53,10495,anchored,하아앗~핫~!,Huyaaah!

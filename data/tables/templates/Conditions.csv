@@ -1,0 +1,166 @@
+name,id,conditionType,buffType,isStack,showIconInGame,minEffect,cancelType,cancelCondition,prevCondition,auraPassive,icon,color,prefab,triggerMarker,marker,viewType,markerName,viewLoc,castSE,clearSE,desc,stackVal,#name_en,#loc_row,#confidence
+형주(남),,,,,,,,,,,,,,,,,,,,,,,Jingzhou (S),17823,inferred
+교주,,,,,,,,,,,,,,,,,,,,,,,Jiaozhou,17824,inferred
+익주(북),,,,,,,,,,,,,,,,,,,,,,,Yizhou (N),17825,inferred
+익주(중),,,,,,,,,,,,,,,,,,,,,,,Yizhou (C),17826,inferred
+익주(남),,,,,,,,,,,,,,,,,,,,,,,Yizhou (S),17827,inferred
+옹주(서),,,,,,,,,,,,,,,,,,,,,,,Yongzhou (W),17828,inferred
+사주s,,,,,,,,,,,,,,,,,,,,,,,Sizhou,17829,inferred
+예주s,,,,,,,,,,,,,,,,,,,,,,,Yuzhou,17830,inferred
+옹주(동),,,,,,,,,,,,,,,,,,,,,,,Yongzhou (E),17831,inferred
+이주,,,,,,,,,,,,,,,,,,,,,,,Yizhou,17832,inferred
+흑멧돼지,,,,,,,,,,,,,,,,,,,,,,,Black Wild Boar,17833,inferred
+새로운 용병을 모병 가능,,,,,,,,,,,,,,,,,,,,,,,New mercenaries can be recruited,17834,inferred
+거점 시설의 강화 비용을 {0}% 할인,,,,,,,,,,,,,,,,,,,,,,,{0}% Discount on domain facility upgrades,17835,inferred
+공격 가능 최적 유닛 안내,,,,,,,,,,,,,,,,,,,,,,,Optimal assault unit guide,17836,inferred
+접속 시 전역 징세 수행,,,,,,,,,,,,,,,,,,,,,,,Collect all taxes upon log in,17837,inferred
+접속 중 {0}분 마다 전역 징세 수행,,,,,,,,,,,,,,,,,,,,,,,Collect all taxes every {0}m online,17838,inferred
+명품상 물품 개수 {0}개 증가,,,,,,,,,,,,,,,,,,,,,,,Increases Premium Shop items by {0},17839,inferred
+{0}단계 무료 상자 제공,,,,,,,,,,,,,,,,,,,,,,,Free Stage {0} Treasure Chest,17840,inferred
+장수 등용 시 초기 LV +{0},,,,,,,,,,,,,,,,,,,,,,,Initial Commander Lv. +{0},17841,inferred
+무료 한 수 무르기 {0} 제공 (다음 날로 이월되지 않음),,,,,,,,,,,,,,,,,,,,,,,Free Undo Move x{0} (Does not carry over to next day),17842,inferred
+전투 당 한 수 무르기 한도 {0} 증가,,,,,,,,,,,,,,,,,,,,,,,Increases Undo Move count by {0} per battle,17843,inferred
+보부상 물품 개수 {0}개 증가,,,,,,,,,,,,,,,,,,,,,,,Increases Peddler items by {0},17844,inferred
+상점의 물품 갱신 한도 {0} 증가,,,,,,,,,,,,,,,,,,,,,,,Increases Shop refresh limit by {0},17845,inferred
+장수의 기력 충전 비용 {0}% 할인,,,,,,,,,,,,,,,,,,,,,,,{0}% Discount on Commander Energy recovery,17846,inferred
+모의전 재입장 대기 시간 {0}% 감소,,,,,,,,,,,,,,,,,,,,,,,Decreases practice wait time by {0}%,17847,inferred
+무료 쾌속 진행 {0} 제공 (다음 날로 이월되지 않음),,,,,,,,,,,,,,,,,,,,,,,Free Fast Battle x{0} (Does not carry over to next day),17848,inferred
+무료 토벌 {0}회 제공 (다음 날로 이월되지 않음),,,,,,,,,,,,,,,,,,,,,,,Free Expedition x{0} (Does not carry over to next day),17849,inferred
+보물 합성에 드는 비용 {0}% 할인,,,,,,,,,,,,,,,,,,,,,,,{0}% Discount on Artifact composition,17850,inferred
+무료 보물 강화 {0}회 제공 (다음 날로 이월되지 않음),,,,,,,,,,,,,,,,,,,,,,,Free Artifact Enhancement x{0} (Does not carry over to the next month),17851,inferred
+무료 강화 효과 부여 {0}회 제공 (다음 날로 이월되지 않음),,,,,,,,,,,,,,,,,,,,,,,Free added Passives x{0} (Does not carry over to the next month),17852,inferred
+중독,,,,,,,,,,,,,,,,,,,,,,,Poison,17853,inferred
+혼란,,,,,,,,,,,,,,,,,,,,,,,Confuse,17854,inferred
+부동,,,,,,,,,,,,,,,,,,,,,,,Immobilize,17855,inferred
+금책,,,,,,,,,,,,,,,,,,,,,,,Silence,17856,inferred
+공격력 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease ATK,17857,inferred
+방어력 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease DEF,17858,anchored
+정신력 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease WIS,17859,anchored
+순발력 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease AGI,17860,anchored
+사기 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease MRL,17861,anchored
+이동력 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease SPD,17862,anchored
+공격력 증가,,,,,,,,,,,,,,,,,,,,,,,Increase ATK,17863,anchored
+방어력 증가,,,,,,,,,,,,,,,,,,,,,,,Increase DEF,17864,anchored
+정신력 증가,,,,,,,,,,,,,,,,,,,,,,,Increase WIS,17865,anchored
+순발력 증가,,,,,,,,,,,,,,,,,,,,,,,Increase AGI,17866,anchored
+사기 증가,,,,,,,,,,,,,,,,,,,,,,,Increase MRL,17867,anchored
+이동력 증가,,,,,,,,,,,,,,,,,,,,,,,Increase SPD,17868,anchored
+공격 금지,,,,,,,,,,,,,,,,,,,,,,,Blind,17869,anchored
+도구 금지,,,,,,,,,,,,,,,,,,,,,,,Daze,17870,anchored
+흡혈 공격,,,,,,,,,,,,,,,,,,,,,,,Lifesteal,17871,anchored
+회복 불가,,,,,,,,,,,,,,,,,,,,,,,Unrecoverable,17872,anchored
+공격력 감소2,,,,,,,,,,,,,,,,,,,,,,,Decrease ATK 2,17873,anchored
+방어력 감소2,,,,,,,,,,,,,,,,,,,,,,,Decrease DEF 2,17874,anchored
+정신력 감소2,,,,,,,,,,,,,,,,,,,,,,,Decrease WIS 2,17875,anchored
+순발력 감소2,,,,,,,,,,,,,,,,,,,,,,,Decrease AGI 2,17876,anchored
+사기 감소2,,,,,,,,,,,,,,,,,,,,,,,Decrease MRL 2,17877,anchored
+이동력 증가2,,,,,,,,,,,,,,,,,,,,,,,Increase SPD 2,17878,anchored
+공격력 증가2,,,,,,,,,,,,,,,,,,,,,,,Increase ATK 2,17879,anchored
+방어력 증가2,,,,,,,,,,,,,,,,,,,,,,,Increase DEF 2,17880,anchored
+정신력 증가2,,,,,,,,,,,,,,,,,,,,,,,Increase WIS 2,17881,anchored
+순발력 증가2,,,,,,,,,,,,,,,,,,,,,,,Increase AGI 2,17882,anchored
+사기 증가2,,,,,,,,,,,,,,,,,,,,,,,Increase MRL 2,17883,anchored
+화상,,,,,,,,,,,,,,,,,,,,,,,Burn,17884,anchored
+맹독,,,,,,,,,,,,,,,,,,,,,,,Deadly Poison,17885,anchored
+실명,,,,,,,,,,,,,,,,,,,,,,,Blind,17886,anchored
+전능력 증가,,,,,,,,,,,,,,,,,,,,,,,Increase All Stats,17887,anchored
+전능력 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease All Stats,17888,anchored
+출혈,,,,,,,,,,,,,,,,,,,,,,,Bleed,17889,anchored
+주위 물리 피해 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease Reach physical damage,17890,anchored
+주위 책략 피해 감소,,,,,,,,,,,,,,,,,,,,,,,Decrease Reach tactics damage,17891,anchored
+재생,,,,,,,,,,,,,,,,,,,,,,,Regenerate,17892,anchored
+주위 물리 공격 강화,,,,,,,,,,,,,,,,,,,,,,,Reach Enhance physical attack,17893,anchored
+주위 공격 방어율 관통,,,,,,,,,,,,,,,,,,,,,,,Attack DEF Rate in Reach Pierce,17894,anchored
+간접 공격 면역 무효화,,,,,,,,,,,,,,,,,,,,,,,Ignore Ranged Attack Immunity,17895,anchored
+연속 책략 면역 무효화,,,,,,,,,,,,,,,,,,,,,,,Ignore Double Tactics Immunity,17896,anchored
+회심 공격 면역 무효화,,,,,,,,,,,,,,,,,,,,,,,Ignore Critical Attack Immunity,17897,anchored
+연속 공격 면역 무효화,,,,,,,,,,,,,,,,,,,,,,,Ignore Double Attack Immunity,17898,anchored
+감전,,,,,,,,,,,,,,,,,,,,,,,Electrocute,17899,anchored
+보물금지,,,,,,,,,,,,,,,,,,,,,,,Artifact Seal,17900,anchored
+빙결,,,,,,,,,,,,,,,,,,,,,,,Freeze,17901,anchored
+화염의 표식,,,,,,,,,,,,,,,,,,,,,,,Mark of Flame,17902,anchored
+주작: 각성,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird: Awaken,17903,anchored
+파부침주 : 전투력 감소,,,,,,,,,,,,,,,,,,,,,,,Give and Take: Decrease Combat Power,17904,anchored
+불의 새,,,,,,,,,,,,,,,,,,,,,,,Bird of Fire,17905,anchored
+투쟁심,,,,,,,,,,,,,,,,,,,,,,,Warrior's Spirit,17906,anchored
+치명상,,,,,,,,,,,,,,,,,,,,,,,Critical Wound,17907,anchored
+방어 특화: 경화,,,,,,,,,,,,,,,,,,,,,,,Defense Specialization: Hardened,17908,anchored
+방어 특화: 연화,,,,,,,,,,,,,,,,,,,,,,,Defense Specialization: Softened,17909,anchored
+격앙,,,,,,,,,,,,,,,,,,,,,,,Agitation,17910,anchored
+교란,,,,,,,,,,,,,,,,,,,,,,,Distraction,17911,anchored
+인연,,,,,,,,,,,,,,,,,,,,,,,Friendship,17912,anchored
+방어 능력 특화: 경화,,,,,,,,,,,,,,,,,,,,,,,Defense Specialization: Hardened,17913,anchored
+방어 능력 특화: 연화,,,,,,,,,,,,,,,,,,,,,,,Defense Specialization: Softened,17914,anchored
+과포화,,,,,,,,,,,,,,,,,,,,,,,Overgrowth,17915,anchored
+중재,,,,,,,,,,,,,,,,,,,,,,,Yin to Yang,17916,anchored
+바람의 인도: 준비,,,,,,,,,,,,,,,,,,,,,,,Air Burst: Preparing,17917,anchored
+주작의 호령: 준비,,,,,,,,,,,,,,,,,,,,,,,Vermilion Bird's Command: Preparing,17918,anchored
+현무의 호령: 준비,,,,,,,,,,,,,,,,,,,,,,,Black Tortoise's Command: Preparing,17919,anchored
+청룡의 호령: 준비,,,,,,,,,,,,,,,,,,,,,,,Azure Dragon's Command: Preparing,17920,anchored
+백호의 호령: 준비,,,,,,,,,,,,,,,,,,,,,,,White Tiger's Command: Preparing,17921,anchored
+마왕의 힘,,,,,,,,,,,,,,,,,,,,,,,Demon Might,17922,anchored
+힘의 폭주,,,,,,,,,,,,,,,,,,,,,,,Reckless Power,17923,anchored
+난폭한 백호의 힘,,,,,,,,,,,,,,,,,,,,,,,Savage White Tiger Power,17924,anchored
+각성: 상태이상 면역,,,,,,,,,,,,,,,,,,,,,,,Awaken: Status Effect Immunity,17925,anchored
+공격 대상,,,,,,,,,,,,,,,,,,,,,,,Focused Target,17926,anchored
+주위 물리 명중률 증가,,,,,,,,,,,,,,,,,,,,,,,Reach Physical Hit Accuracy +,17927,anchored
+매 턴 HP 감소 10%,,,,,,,,,,,,,,,,,,,,,,,10% HP reduction per turn,17928,anchored
+조작 불가,,,,,,,,,,,,,,,,,,,,,,,Cannot be controlled,17929,anchored
+이동 불가,,,,,,,,,,,,,,,,,,,,,,,Cannot move,17930,anchored
+책략 사용 불가,,,,,,,,,,,,,,,,,,,,,,,Cannot use Tactics,17931,inferred
+공격력 감소 30%,,,,,,,,,,,,,,,,,,,,,,,Decrease ATK by 30%,17932,inferred
+방어력 감소 30%,,,,,,,,,,,,,,,,,,,,,,,Decrease DEF by 30%,17933,inferred
+정신력 감소 30%,,,,,,,,,,,,,,,,,,,,,,,Decrease WIS by 30%,17934,inferred
+순발력 감소 30%,,,,,,,,,,,,,,,,,,,,,,,Decrease AGI by 30%,17935,inferred
+사기 감소 30%,,,,,,,,,,,,,,,,,,,,,,,Decrease MRL by 30%,17936,inferred
+이동력 감소 1,,,,,,,,,,,,,,,,,,,,,,,Decrease SPD 1,17937,inferred
+공격력 증가 20%,,,,,,,,,,,,,,,,,,,,,,,Increase ATK by 20%,17938,inferred
+방어력 증가 20%,,,,,,,,,,,,,,,,,,,,,,,Increase DEF by 20%,17939,inferred
+정신력 증가 20%,,,,,,,,,,,,,,,,,,,,,,,Increase WIS by 20%,17940,inferred
+순발력 증가 20%,,,,,,,,,,,,,,,,,,,,,,,Increase AGI by 20%,17941,inferred
+사기 증가 20%,,,,,,,,,,,,,,,,,,,,,,,Increase MRL by 20%,17942,inferred
+이동력 증가 2,,,,,,,,,,,,,,,,,,,,,,,Increase Speed 2,17943,inferred
+공격 불가,,,,,,,,,,,,,,,,,,,,,,,Cannot attack,17944,inferred
+도구 사용 불가,,,,,,,,,,,,,,,,,,,,,,,Cannot use items,17945,inferred
+방어 지원,,,,,,,,,,,,,,,,,,,,,,,Reinforces DEF,17946,inferred
+공격력 감소 40%,,,,,,,,,,,,,,,,,,,,,,,Decrease ATK by 40%,17947,inferred
+방어력 감소 40%,,,,,,,,,,,,,,,,,,,,,,,Decrease DEF by 40%,17948,inferred
+정신력 감소 40%,,,,,,,,,,,,,,,,,,,,,,,Decrease WIS by 40%,17949,inferred
+순발력 감소 40%,,,,,,,,,,,,,,,,,,,,,,,Decrease AGI by 40%,17950,inferred
+사기 감소 40%,,,,,,,,,,,,,,,,,,,,,,,Decrease MRL by 40%,17951,inferred
+이동력 증가 3,,,,,,,,,,,,,,,,,,,,,,,Increase Speed 3,17952,inferred
+공격력 증가 30%,,,,,,,,,,,,,,,,,,,,,,,Increase ATK by 30%,17953,inferred
+방어력 증가 30%,,,,,,,,,,,,,,,,,,,,,,,Increase DEF by 30%,17954,inferred
+정신력 증가 30%,,,,,,,,,,,,,,,,,,,,,,,Increase WIS by 30%,17955,inferred
+순발력 증가 30%,,,,,,,,,,,,,,,,,,,,,,,Increase AGI by 30%,17956,inferred
+사기 증가 30%,,,,,,,,,,,,,,,,,,,,,,,Increase MRL by 30%,17957,inferred
+"매 턴 HP 감소 10%, 방어력 감소 30%, 이동력 감소 1",,,,,,,,,,,,,,,,,,,,,,,"10% HP reduction per turn, Decrease DEF by 30%, Decrease Speed 1",17958,inferred
+"매 턴 HP 감소 10%, 순발력 감소 30%, 이동력 감소 1",,,,,,,,,,,,,,,,,,,,,,,"10% HP reduction per turn, Decrease AGI by 30%, Decrease Speed 1",17959,inferred
+"모든 능력치 감소 10%, 이동력 감소 1",,,,,,,,,,,,,,,,,,,,,,,"Decrease all stats by 10%, Decrease Speed 1",17960,inferred
+"모든 능력치 증가 20%, 이동력 증가 2",,,,,,,,,,,,,,,,,,,,,,,"Increase all stats by 20%, Increase Speed 2",17961,inferred
+"모든 능력치 감소 30%, 이동력 감소 1",,,,,,,,,,,,,,,,,,,,,,,"Decrease all stats by 30%, Decrease Speed 1",17962,inferred
+"매 턴 HP 감소 10%, 공격력 감소 30%, 이동력 감소 1",,,,,,,,,,,,,,,,,,,,,,,"10% HP reduction per turn, Decrease ATK by 30%, Decrease Speed 1",17963,inferred
+주위 아군이 받는 물리 피해 감소 25%,,,,,,,,,,,,,,,,,,,,,,,Decrease physical damage taken by allies within Reach by 25%,17964,inferred
+주위 아군이 받는 책략 피해 감소 25%,,,,,,,,,,,,,,,,,,,,,,,Decrease tactics damage taken by allies within Reach by 25%,17965,inferred
+매 턴 HP 회복 10%,,,,,,,,,,,,,,,,,,,,,,,10% HP recovery per turn,17966,inferred
+물리 피해 감소 20%,,,,,,,,,,,,,,,,,,,,,,,Decrease physical damage by 20%,17967,inferred
+책략 피해 감소 20%,,,,,,,,,,,,,,,,,,,,,,,Decrease Tactics Damage by 20%,17968,inferred
+전 방어율 증가 50%,,,,,,,,,,,,,,,,,,,,,,,Increase All DEF Rate by 50%,17969,inferred
+주위 아군이 주는 물리 피해 증가 15%,,,,,,,,,,,,,,,,,,,,,,,Increase physical damage of allies within Reach by 15%,17970,inferred
+"주위 아군이 공격 시 7% 만큼 피격자의 공격 방어 확률을 감소시킨 후, 공격",,,,,,,,,,,,,,,,,,,,,,,"When allies within Reach attack, the target's Attack DEF Rate is reduced by 7% before the attack lands.",17971,inferred
+"방어력, 정신력 감소 20%, 이동력 2감소, 용조, 용아, 역린 피해량 50% 증가",,,,,,,,,,,,,,,,,,,,,,,"Decreases DEF and WIS by 20%, SPD by 2, and increases the damage of Dragon Claw, Dragon Fang, and Outrage by 50%.",17972,inferred
+보물 효과 금지,,,,,,,,,,,,,,,,,,,,,,,Artifact Effect Seal,17973,inferred
+"행동 불가능, 전 책략 피해 감소 70%",,,,,,,,,,,,,,,,,,,,,,,Incapacitates the target and decreases all tactics damage by 70%.,17974,inferred
+용조 충전 중,,,,,,,,,,,,,,,,,,,,,,,Charging Dragon Claw,17975,inferred
+용아 충전 중,,,,,,,,,,,,,,,,,,,,,,,Charging Dragon Fang,17976,inferred
+파동 충전 중,,,,,,,,,,,,,,,,,,,,,,,Charging Energy Wave,17977,inferred
+역린 충전 중,,,,,,,,,,,,,,,,,,,,,,,Charging Outrage,17978,inferred
+"{0}회 방어 가능. 피격 시 피해량을 1로 변경. 단, 추가 피해는 방어 불가능하며 적의 공격을 회피할 수 없음",,,,,,,,,,,,,,,,,,,,,,,Defend {0} times. Reduce received damage to 1 each time. Any additional damage cannot be defended and enemy attacks cannot be evaded.,17979,inferred
+"매 턴 HP 감소 {0}%, 받는 피해 {0}% 증폭. 화염 지형에서 벗어나면 1 감소. 한 턴에 감소되는 HP는 최대 1000을 초과할 수 없음.",,,,,,,,,,,,,,,,,,,,,,,"Lose {0}% HP per turn and take {0}% more damage. Decreases by 1 when leaving fire terrain. Maximum HP loss per turn cannot exceed 1,000.",17980,inferred
+화염 확산 준비 중. 피격 시 혼란에 걸리며 화염 확산은 취소됨,,,,,,,,,,,,,,,,,,,,,,,"Preparing Spread Fire. Becomes confused when hit, and Fire Spread is canceled.",17981,inferred
+화염 갈퀴 준비 중. 피격 시 혼란에 걸리며 화염 갈퀴는 취소됨,,,,,,,,,,,,,,,,,,,,,,,"Preparing Fire Claw. Becomes confused when hit, and Fire Claw is canceled.",17982,inferred
+비상 준비 중,,,,,,,,,,,,,,,,,,,,,,,Preparing Ascend.,17983,inferred
+화염뢰2 준비 중. 피격 시 최대 HP 10%의 피해와 혼란에 걸림,,,,,,,,,,,,,,,,,,,,,,,Preparing Scorching Lightning 2. Loses 10% of Max HP and becomes confused when hit.,17984,inferred
+"물리 피해 감소 20%, 전 책략 피해 증가 20%",,,,,,,,,,,,,,,,,,,,,,,"Decreases physical damage by 20%, and increases tactics damage by 20%.",17985,inferred
+"전 책략 피해 감소 20%, 물리 피해 증가 20%",,,,,,,,,,,,,,,,,,,,,,,"Decreases tactics damage by 20%, and increases physical damage by 20%.",17986,inferred
+전투력 증가 효과가 사라지고 2턴간 전투력 감소 15%,,,,,,,,,,,,,,,,,,,,,,,"Cancels bonus to Combat Power, which then decreases by 15% for 2 turns.",17987,inferred
