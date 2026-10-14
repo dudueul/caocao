@@ -35,3 +35,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0020](0020-five-stats-with-distinct-roles.md) | Officers have five stats, each with one distinct role | Accepted | 2026-10-14 |
 | [0021](0021-class-families-and-tiers.md) | Twelve class families with three tiers each, plus unique lines | Accepted | 2026-10-14 |
 | [0022](0022-medium-number-scale.md) | Medium number scale: HP 100–600, hits of about 20–120 | Accepted | 2026-10-14 |
+| [0023](0023-terrain-family-affinity-and-cover.md) | Terrain: per-family movement and affinity, plus cover for everyone | Accepted | 2026-10-14 |

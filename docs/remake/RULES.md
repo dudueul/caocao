@@ -110,11 +110,56 @@ An attacker strong against the defender's group deals +200‰ damage; against th
 group that beats it, −200‰. Promotion: tier 2 at Lv 20, tier 3 at Lv 40
 (*tunable*). Higher tiers reuse the tier-1 animation with new details.
 
-## 4. Still to decide
+## 4. Terrain
+
+Each tile has one terrain type. A unit's family decides how much it costs to
+enter and how well it fights there; cover helps anyone standing on it
+([ADR 0023](../adr/0023-terrain-family-affinity-and-cover.md)).
+
+```mermaid
+flowchart LR
+  T["tile terrain"] --> MC["movement cost<br/>per family<br/>(or impassable)"]
+  T --> EF["effect‰ per family<br/>× ATK and DEF"]
+  T --> CV["cover evasion‰<br/>(any unit)"]
+  T --> HL["healing at turn start<br/>(village, fort, camp)"]
+  MC --> PATH["reachable tiles"]
+  EF --> DMG["base damage (§2)"]
+  CV --> HIT["hit‰ (§2)"]
+```
+
+| Terrain | Cover evasion‰ | Heal (‰ of max HP) | Notes |
+|---|---|---|---|
+| Plain | 0 | — | |
+| Grassland | 0 | — | |
+| Forest | 150 | — | slows mounted units |
+| Hills | 100 | — | |
+| Mountain | 100 | — | impassable to mounted units |
+| Ford | 0 | — | slow for everyone |
+| River / lake | — | — | impassable except for special classes |
+| Bridge | 0 | — | |
+| Village | 100 | 100 | |
+| Fort / castle | 200 | 100 | |
+| Wall | — | — | impassable |
+| Camp | 50 | 50 | |
+
+Per family × terrain, `packages/content` holds a movement cost and an
+effect‰. Example rows (starting tuning):
+
+| Family | | Plain | Forest | Mountain | Village | Fort |
+|---|---|---|---|---|---|---|
+| 기병 Cavalry | move | 1 | 2 | — | 1 | 1 |
+| | effect‰ | 1100 | 900 | — | 1000 | 1000 |
+| 적병 Bandits | move | 1 | 1 | 2 | 1 | 1 |
+| | effect‰ | 1000 | 1100 | 1200 | 1000 | 1000 |
+
+On its tile, a unit's ATK and DEF are multiplied by its effect‰ (floored) before
+the base damage formula. The defender's cover evasion‰ is the
+`terrainEvasion‰` in the hit formula.
+
+## 5. Still to decide
 
 | Topic | Depends on |
 |---|---|
-| Terrain: movement costs, evasion and defense bonuses | classes (done) |
 | Stratagems, MP and status effects | stats and classes (done) |
 | Equipment types per family | classes (done), progression ([ADR 0014](../adr/0014-scoped-progression-fair-arena.md)) |
 | Arena normalization | [ADR 0014](../adr/0014-scoped-progression-fair-arena.md) |
