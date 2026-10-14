@@ -18,6 +18,9 @@ analysis/        evidence log, protocol docs, event catalog, recovered .fbs
 data/tables/     239 data-table schemas + templates pre-filled from localization
 data/reference/  ekd5/: 1998 PC 조조전 reference values + class → sprite map
 docs/
+  remake/        NEW GAME design (from scratch, TypeScript + PixiJS + Durable
+                 Objects): README, ARCHITECTURE.md, WORLD_ENGINE.md
+  adr/           architecture decision records for the remake (one per decision)
   re/            reconstruction blueprints (REBUILD_PLAN.md, CDN_ASSET_BUNDLES.md,
                  EKD5_FORMATS.md, CLASSIC_ART.md: 1998 art as Unity placeholders)
   server/        online architecture review + game-server practices

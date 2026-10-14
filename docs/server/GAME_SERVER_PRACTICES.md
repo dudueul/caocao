@@ -282,6 +282,11 @@ every command in a total order, with no locks, that sleeps when nobody moves.
 | **A — Server-authoritative referee** | `MatchDO` runs the rules (TypeScript port) and broadcasts outcomes; clients animate | cheat-proof outcomes; desync impossible | second implementation + parity tests; more server code |
 | **H — Dedicated C# battle host** | a container runs the same C# rules | one implementation *and* authority | servers to run and pay for |
 
+> **Remake note (2026-10-14):** for the from-scratch remake this is superseded by
+> [ADR 0004](../adr/0004-server-authoritative-referee.md): model **A** (a
+> Durable Object referee running the shared TypeScript rules). The text below
+> still applies to the recovered client.
+
 **Recommendation:** ship **L** for friends. It matches the recovered client and
 protocol, and you write the rules once. Move to **A** (or **H**) only when
 strangers play ranked matches; see

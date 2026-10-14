@@ -35,6 +35,12 @@ Workers/D1/DO), and a lab textbook generated from the actual work.
 4. **Deploy**: `cd server && wrangler deploy` (owner runs `wrangler login`
    first); local dev already green via `wrangler dev`.
 
+## Remake (new game) — start here
+
+The project now designs a **new game from scratch**; this repository is its
+reference archive. Current design: `docs/remake/README.md`; every decision has
+an ADR in `docs/adr/` (record new decisions there, same commit as the doc update).
+
 ## Key facts cheat-sheet
 
 - Server hosts (dead, reference): this APK is the **KOR Live build** (revision
