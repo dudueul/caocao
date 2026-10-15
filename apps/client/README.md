@@ -63,7 +63,7 @@ exporter smooths the sprites to twice their size; `--raw` keeps the 1998 pixels.
 
 ## Look and feel
 
-[ADR 0044](../../docs/adr/0044-modern-battlefield-presentation.md) (proposed):
+[ADR 0044](../../docs/adr/0044-modern-battlefield-presentation.md):
 
 - **Terrain:** soft terrain edges and shimmering water.
 - **Weather:** the colour grade and ambience follow it: sun shafts, cloud

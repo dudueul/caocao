@@ -1,9 +1,8 @@
 # 0044. Give the battlefield a modern presentation: lighting, effects and cinematics
 
-- **Status:** Proposed (the owner asked for a more natural, modern look; this
-  direction was chosen while building and needs the owner's confirmation)
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-15)
 - **Date:** 2026-10-15
-- **Deciders:** Claude (proposal); project owner (to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0007](0007-top-down-2d-pixijs.md), [0031](0031-svelte-dom-overlay.md),
   [0042](0042-local-classic-skin.md), [0043](0043-floating-command-menu.md)
 
