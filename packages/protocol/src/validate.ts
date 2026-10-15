@@ -56,12 +56,13 @@ export function parseClientMessage(raw: string): ClientMessage | null {
   if (!isObj(v)) return null;
   switch (v.t) {
     case "hello": {
-      const { v: version, room, key, name, lastSeq } = v;
+      const { v: version, room, key, name, lastSeq, create } = v;
       if (!isInt(version) || typeof room !== "string" || !ROOM_CODE.test(room)) return null;
       if (typeof key !== "string" || !DEVICE_KEY.test(key)) return null;
       if (typeof name !== "string" || name.length > 64) return null;
       if (lastSeq !== null && (!isInt(lastSeq) || lastSeq < 0)) return null;
-      return { t: "hello", v: version, room, key, name, lastSeq };
+      if (typeof create !== "boolean") return null;
+      return { t: "hello", v: version, room, key, name, lastSeq, create };
     }
     case "pick":
       return isId(v.entry) ? { t: "pick", entry: v.entry } : null;

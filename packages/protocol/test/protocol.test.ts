@@ -18,6 +18,7 @@ const hello = (o: Record<string, unknown> = {}) =>
     key: KEY,
     name: "조조팬",
     lastSeq: null,
+    create: false,
     ...o,
   });
 
@@ -30,6 +31,7 @@ describe("client message validation (ADR 0037)", () => {
       key: KEY,
       name: "조조팬",
       lastSeq: null,
+      create: false,
     });
     const cmd = {
       t: "command",
@@ -65,6 +67,7 @@ describe("client message validation (ADR 0037)", () => {
       hello({ room: "ILO012" }),
       hello({ lastSeq: -1 }),
       hello({ lastSeq: 1.5 }),
+      hello({ create: "yes" }),
       '{"t":"command","command":{"kind":"act","unit":"a","to":{"x":1.5,"y":0},"action":{"kind":"wait"}}}',
       '{"t":"command","command":{"kind":"act","unit":"a","to":{"x":1,"y":0},"action":{"kind":"teleport"}}}',
       '{"t":"command","command":{"kind":"act","unit":"__proto__ x","to":{"x":1,"y":0},"action":{"kind":"wait"}}}',

@@ -66,8 +66,20 @@ export interface RoomView {
 // ---------------------------------------------------------------- client → server
 
 export type ClientMessage =
-  /** Join or rejoin a room; `lastSeq` is the last batch this client applied. */
-  | { t: "hello"; v: number; room: string; key: string; name: string; lastSeq: number | null }
+  /**
+   * Join or rejoin a room; `lastSeq` is the last batch this client applied.
+   * `create` is true only from the "new room" button, so a mistyped code can't
+   * open an empty room.
+   */
+  | {
+      t: "hello";
+      v: number;
+      room: string;
+      key: string;
+      name: string;
+      lastSeq: number | null;
+      create: boolean;
+    }
   | { t: "pick"; entry: string }
   /** The seat's six entries in deploy-slot order. */
   | { t: "arrange"; order: string[] }

@@ -1,0 +1,22 @@
+{
+  "name": "@tk/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker + Durable Objects: the live battle referee (ADR 0004)",
+  "dependencies": {
+    "@tk/content": "workspace:*",
+    "@tk/protocol": "workspace:*",
+    "@tk/rules": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261001.1",
+    "wrangler": "4.148.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc -p tsconfig.json",
+    "smoke": "bun scripts/smoke.ts"
+  }
+}

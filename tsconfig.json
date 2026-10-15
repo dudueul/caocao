@@ -16,5 +16,5 @@
     "allowImportingTsExtensions": true
   },
   "include": ["packages/*/src/**/*.ts", "packages/*/test/**/*.ts", "apps/*/src/**/*.ts"],
-  "exclude": ["apps/client"]
+  "exclude": ["apps/client", "apps/server/src/match.ts", "apps/server/src/worker.ts"]
 }
