@@ -312,6 +312,13 @@ Each battle has a mode (sandbox, story, arena, world, raid). A mode may override
 any tuning value: for example a lower `twist‰` in Arena, or a damage multiplier
 in Raids ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)).
 
+| Mode | P1 setup |
+|---|---|
+| Sandbox | 오소 습격 scenario, side phases (or alternating), the AI with scenario orders ([ADR 0034](../adr/0034-scenario-ai-orders.md)) |
+| Arena | snake draft of 6 officers each from a 16-officer pool, all Lv 20 with fixed tier-1 classes; mirrored 14 × 12 field; alternating activations; 45 s per activation + 3 min reserve, then the AI plays it; round limit 20, then a draw ([ADR 0039](../adr/0039-arena-draft.md)–[ADR 0041](../adr/0041-p1-arena-defaults.md)) |
+
+No mode overrides tuning yet.
+
 ## 9. Gambits (AI rules for absent seats and auto-battle)
 
 A unit may carry ordered gambits `{ when, behavior }`; the AI uses the first one

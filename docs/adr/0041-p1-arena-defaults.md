@@ -22,6 +22,8 @@ get friends playing soon; all can change.
 | 5 | **Arena map:** one mirrored 14 × 12 field, six deploy tiles per side; players arrange their six by swapping before "ready". Round limit 20, then a draw. | One fair map before a map pool; arranging is quick on a phone. |
 | 6 | **Battle seed:** drawn from `crypto.getRandomValues` in the `MatchDO`, never sent; states to clients carry no `Prng` ([0037](0037-websocket-json-protocol.md)). | Stops clients predicting rolls. |
 | 7 | **Leaving:** a disconnected player keeps the seat; the clock and the AI play on ([0040](0040-arena-turn-clock.md)). Either player may concede. | Matches always finish. |
+| 8 | **Hidden deployment:** each seat sees only its own arrangement until the battle starts. | The second player to ready can't counter-arrange. |
+| 9 | **Test clock:** a `CLOCK_SCALE` variable speeds every clock up for local tests only; production leaves it unset. | Lets the smoke test prove the alarms without waiting minutes. |
 
 ## Consequences
 

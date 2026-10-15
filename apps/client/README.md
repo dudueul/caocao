@@ -2,14 +2,30 @@
 
 Vite + PixiJS battlefield ([ADR 0007](../../docs/adr/0007-top-down-2d-pixijs.md)) with a
 Svelte 5 DOM overlay ([ADR 0031](../../docs/adr/0031-svelte-dom-overlay.md)). In **P0**
-it is a local battle sandbox: you play 조조군 in the 오소 습격 scenario against the
-AI ([ADR 0033](../../docs/adr/0033-p0-sandbox-client-defaults.md)). PWA packaging
-comes in P1 ([ADR 0005](../../docs/adr/0005-web-first-distribution.md)).
+it was a local battle sandbox (you play 조조군 in 오소 습격 against the AI,
+[ADR 0033](../../docs/adr/0033-p0-sandbox-client-defaults.md)); **P1** adds the Arena,
+live PvP with friends through the `MatchDO` referee
+([ADR 0037](../../docs/adr/0037-websocket-json-protocol.md)–[ADR 0041](../../docs/adr/0041-p1-arena-defaults.md)),
+and installs as a PWA ([ADR 0005](../../docs/adr/0005-web-first-distribution.md)).
 
 ```bash
-bun run dev        # from the repo root: http://localhost:5173
+bun run server     # from the repo root: the Worker + rooms on http://127.0.0.1:8787
+bun run dev        # http://localhost:5173 (proxies /api to the server)
 bun run build      # dist/ (relative asset paths, so it can be served from any folder)
 ```
+
+## Routes
+
+| Route | Screen |
+|---|---|
+| `#/` | Home: your name, create an Arena room, join by code, sandbox |
+| `#/r/CODE` | An Arena room: invite link → draft → deploy → battle |
+| `#/sandbox`, `#/demo` | The 오소 sandbox, and the AI-vs-AI demo |
+
+**Arena:** create a room and send the link. Picks alternate 1 · 2 2 · 1 1 · …
+(30 s each); then swap your six on the mini-map and press *준비 완료*. In battle
+the top bar shows your activation clock (45 s, then the 3-minute reserve) and a
+two-tap *기권*. Closing the tab keeps your seat: the same browser rejoins it.
 
 ## Playing
 
@@ -36,7 +52,10 @@ the damage pipeline step by step.
 | `src/lib/session.svelte.ts` | The battle store (Svelte 5 runes): state, command log, choices, AI turns |
 | `src/lib/field.ts` | Pixi renderer and event animations (placeholder shapes) |
 | `src/lib/text.ts` | Korean UI strings, event-log lines |
-| `src/components/` | Top bar, unit card, action menu, forecast, tile info, log |
+| `src/components/` | Top bar (with the Arena clock), unit card, action menu, forecast, tile info, log |
+| `src/lib/online.svelte.ts`, `src/lib/identity.ts` | The Arena room connection; guest key and name |
+| `src/screens/` | Home, sandbox, room (lobby, draft, deploy) and the battle screen |
+| `public/` | PWA manifest, service worker, icons |
 
 `?debug` puts the store on `window.tk`; the canvas carries `data-geometry`
 (tile size and offset), so headless browser scripts can play through the UI.

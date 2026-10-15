@@ -106,10 +106,11 @@ flowchart LR
 ```
 
 Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then-arena.md).
-**P0 today:** the rules engine with conditions, the P0 content (6 classes, 12
-terrains, 13 skills, 8 conditions) and a playable battle sandbox (`bun run dev`)
-on desktop and phone. That covers P0's exit list; CI can't run yet (the jobs
-never start on GitHub).
+**Today:** P0 is done (rules engine with conditions; 6 classes, 12 terrains, 13
+skills, 8 conditions; a playable sandbox). P1 runs locally end to end: rooms by
+invite link, the six-officer draft, deployment, live alternating battles refereed
+by a `MatchDO` with a 45-second clock, reconnects, and a PWA. Next for P1: deploy
+to Cloudflare so friends can play, then their feedback.
 
 ## Open questions (next design sessions)
 

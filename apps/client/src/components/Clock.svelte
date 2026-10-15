@@ -21,7 +21,7 @@ function fmt(ms: number): string {
 </script>
 
 {#if c}
-  <span class="chip clock" class:mine class:low={free === 0}>
+  <span class="chip clock" class:mine={mine} class:low={free === 0}>
     ⏱ {fmt(free)} · {T.reserve} {fmt(free > 0 ? c.reserveMs[c.active] : reserve)}
   </span>
 {/if}
