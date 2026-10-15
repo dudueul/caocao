@@ -57,4 +57,5 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0042](0042-local-classic-skin.md) | A local-only classic skin from the owner's own copy of the 1998 game | Accepted | 2026-10-15 |
 | [0043](0043-floating-command-menu.md) | Float the command menu and the forecast beside the unit | Accepted | 2026-10-15 |
 | [0044](0044-modern-battlefield-presentation.md) | Give the battlefield a modern presentation: lighting, effects and cinematics | Proposed | 2026-10-15 |
-| [0045](0045-rigged-chibi-characters.md) | Draw our characters as rigged 2D chibi figures at tile scale | Accepted | 2026-10-15 |
+| [0045](0045-rigged-chibi-characters.md) | Draw our characters as rigged 2D chibi figures at tile scale | Accepted (class looks superseded by 0046) | 2026-10-15 |
+| [0046](0046-period-accurate-dress.md) | Dress our characters as late Eastern Han soldiers and officials | Accepted | 2026-10-15 |

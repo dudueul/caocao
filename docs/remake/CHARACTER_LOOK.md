@@ -1,0 +1,59 @@
+# Character look: the late Eastern Han, around 200 AD
+
+How our figures dress and what they carry ([ADR 0046](../adr/0046-period-accurate-dress.md)).
+The rig and its scale are in [ADR 0045](../adr/0045-rigged-chibi-characters.md). The
+parts are painted in code today (`apps/client/src/lib/fx/chibi.ts`); an artist's
+drawings follow this guide later.
+
+The basis is the period itself: the histories, Han texts on dress, and
+archaeology (figurines, tomb murals and reliefs, excavated arms). It is never
+another game's art; the 1998 game and its successors are off limits
+([ADR 0002](../adr/0002-remake-from-scratch.md)). Where the record is thin we
+choose the plainest reading and say so.
+
+```mermaid
+flowchart LR
+  H["head<br/>topknot under a cap or helmet"] --> B["body<br/>cross-collared robe, belt hook,<br/>lamellar cuirass for soldiers"]
+  B --> L["legs<br/>trousers, leg wraps,<br/>cloth shoes"]
+  B --> A["arms<br/>sleeves; wide for officials"]
+  A --> W["hands<br/>sabre and shield, ji halberd,<br/>recurve bow, feather fan"]
+```
+
+## Everyone
+
+| Element | What we draw | Basis | Avoid |
+|---|---|---|---|
+| Hair | Hair combed up into a topknot (髻), always under a cloth cap or a helmet, except for martial artists, whose bare knot is tied with cloth. Most grown men are bearded. | Han men did not cut their hair; figurines and murals show topknots under caps | Ponytails, loose or spiky hair |
+| Robe | A cross-collared robe, right side over left (交領右衽), belted. Knee-length for soldiers, ankle-length with wide sleeves for officials. The collar and hem have a contrasting edge. | Standard Han dress in figurines and murals | Capes and cloaks as everyday wear |
+| Legs | Trousers (袴), cloth leg wraps below the knee, black cloth shoes | Han soldier figurines | |
+| Belt | A leather belt with a bronze belt hook (帶鉤) | Belt hooks are among the commonest Han finds | |
+| Colour | Han dyes: indigo, madder red, green, ochre. The side colour dyes the robe, the armour lacing, the helmet tassel, the saddle flaps and banners. | Dyes of the period. Telling sides apart by robe colour is a game convention; Han units were told apart by their banners | Bright modern colours |
+
+## Soldiers
+
+| Element | What we draw | Basis | Avoid |
+|---|---|---|---|
+| Armour | Iron lamellar armour: small plates in staggered rows, laced with cord, as a cuirass with shoulder flaps | Han lamellar armour finds and figurines; Han writers called iron armour "black armour" (玄甲) | Round chest discs (a style known from much later art), plate armour, European shapes |
+| Helmet | A lamellar helmet (兜鍪) with cheek and neck flaps, a bronze finial and a tassel (纓) | Han helmet finds and figurines | Crested or plumed European helmets |
+| Officers' plumes | Two pheasant tail feathers, upright left and right (cavalry officers) | The Han martial cap with two pheasant tails (鶡冠), described in the dress treatise of the *Book of the Later Han* | |
+| Infantry weapon | A ring-pommel sabre (環首刀): straight, single-edged, with a ring for a pommel | By the Eastern Han it had largely replaced the double-edged sword as the soldier's sidearm | Curved sabres, Western swords |
+| Infantry shield | A tall lacquered wooden shield with rounded corners, painted with a cloud scroll, rimmed in the side colour | Han figurines and reliefs show tall shields; lacquer painting is typical of Han work. The small hook-shield (鉤鑲) is a possible variant. | Round shields with a central boss |
+
+## By class
+
+| Class | Headwear and dress | In hand | Notes |
+|---|---|---|---|
+| 보병 infantry | Lamellar helmet, lamellar cuirass over the robe | Ring-pommel sabre, tall lacquered shield | |
+| 궁병 archer | A soft cloth cap with a raised back (幘), robe, no armour | A composite recurve bow; a quiver at the hip | Han armies relied heavily on the crossbow (弩): a candidate for a later class |
+| 기병 cavalry | Lamellar helmet with two pheasant plumes, lamellar cuirass | The ji halberd (戟): a spike with a side blade | The horse: no stirrups (paired stirrups appear only in the 4th century); a low saddle with saddle flaps; a bronze face ornament (當盧); a trimmed upright mane, a tied forelock and a knotted tail, as on Qin and Han horse figures |
+| 책사 strategist | A silk headcloth (綸巾) with ribbons, an ankle-length robe with wide sleeves and a long sash | A white feather fan (羽扇) | "Feather fan and silk headcloth" is the image later literature fixed for the Three Kingdoms' strategists (Su Shi on Zhou Yu; Zhuge Liang in popular tradition). Han officials at court wore the 進賢冠 cap, which we may use for scenes at court |
+| 무도가 martial artist | Hemp work clothes (褐) with the sleeves pushed up, a bare topknot tied with cloth, a sash in the side colour | Wrapped hands | |
+| 포차 stone-thrower | A traction trebuchet on a wheeled frame, flying a banner | | At Guandu in 200, Cao Cao built stone-throwing carts (發石車) that broke Yuan Shao's towers; Yuan's men called them "thunderbolt carts" (霹靂車) (*Records of the Three Kingdoms*). A crew hauls ropes on the short arm; counterweight trebuchets came much later |
+
+## For the artist later
+
+- Keep these parts and the skeleton's pivots (neck, shoulders, hands, hips,
+  axle). The rig, poses and battle code then take drawn parts without change.
+- Draw three facings (front, back, side facing right). Left is the mirror.
+- Officers can carry personal touches (a famous beard, a weapon of their own)
+  within the same dress rules.

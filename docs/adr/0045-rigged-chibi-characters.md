@@ -1,6 +1,6 @@
 # 0045. Draw our characters as rigged 2D chibi figures at tile scale
 
-- **Status:** Accepted
+- **Status:** Accepted; the class looks are superseded by [0046](0046-period-accurate-dress.md)
 - **Date:** 2026-10-15
 - **Deciders:** project owner (chose the direction and the scale), Claude (rig and interim art)
 - **Related:** [0007](0007-top-down-2d-pixijs.md), [0042](0042-local-classic-skin.md),

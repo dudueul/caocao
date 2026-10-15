@@ -74,7 +74,10 @@ exporter smooths the sprites to twice their size; `--raw` keeps the 1998 pixels.
   (or a crest).
 - **Our own art:** without the skin, the terrain is our procedural painting and
   units are rigged chibi figures at tile scale
-  ([ADR 0045](../../docs/adr/0045-rigged-chibi-characters.md)). They breathe,
+  ([ADR 0045](../../docs/adr/0045-rigged-chibi-characters.md)), dressed as late
+  Eastern Han soldiers and officials
+  ([ADR 0046](../../docs/adr/0046-period-accurate-dress.md),
+  [CHARACTER_LOOK.md](../../docs/remake/CHARACTER_LOOK.md)). They breathe,
   walk, swing, shoot, guard, flinch and cheer, facing front, back or sideways.
   `/dev/rig-gallery.html` on the dev server shows every class, side, facing
   and pose.
