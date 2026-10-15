@@ -73,12 +73,17 @@ exporter smooths the sprites to twice their size; `--raw` keeps the 1998 pixels.
 - **Cut-ins:** a stratagem opens with a cut-in showing the caster's portrait
   (or a crest).
 - **Our own art:** without the skin, the terrain is our procedural painting and
-  units are glossy medallion tokens.
+  units are rigged chibi figures at tile scale
+  ([ADR 0045](../../docs/adr/0045-rigged-chibi-characters.md)). They breathe,
+  walk, swing, shoot, guard, flinch and cheer, facing front, back or sideways.
+  `/dev/rig-gallery.html` on the dev server shows every class, side, facing
+  and pose.
 
 | Flag | Effect |
 |---|---|
 | `?lowfx` | No bloom or water shimmer, lighter ambience (slow devices) |
 | `?noskin` | Our own art even when the classic skin is exported |
+| `?tokens` | Medallion tokens instead of our rigged figures |
 | `?debug` | `window.tk` (the store) and `window.tkField` (`manualClock(true)`, `step(ms)` for frame-by-frame captures) |
 
 The system's *reduce motion* setting also turns off camera moves, shake and flashes.

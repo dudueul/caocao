@@ -95,6 +95,7 @@ flowchart TB
 | P1 defaults | One `MatchDO` per room, room codes, first pick vs first move, 16-officer pool at Lv 20, one mirrored map | [0041](../adr/0041-p1-arena-defaults.md) |
 | Classic skin | The owner's own 1998 game exported into a git-ignored folder; dev server only; animated sprites, portraits, terrain and 1998 maps; never built, deployed or published | [0042](../adr/0042-local-classic-skin.md) |
 | Command menu | Command menu, skill list and forecast float beside the unit; keyboard and touch | [0043](../adr/0043-floating-command-menu.md) |
+| Characters | Rigged 2D chibi figures at tile scale in the map's bird's-eye view; three facings; class looks and side colours; parts painted in code until an artist draws them | [0045](../adr/0045-rigged-chibi-characters.md) |
 | Presentation (proposed) | Soft terrain edges, water shimmer, weather and colour grade, cinematic camera, particles per skill school, skill cut-ins, glass-and-gold UI, smoothed classic sprites; our own procedural terrain and tokens without the skin | [0044](../adr/0044-modern-battlefield-presentation.md) |
 
 ## Roadmap
@@ -124,7 +125,7 @@ to Cloudflare so friends can play, then their feedback.
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
 | 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)); the P1 Arena uses no equipment, officers at Lv 20 ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)) |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
-| 9 | Art pipeline | 96 px tiles (2×), palette and atlas tooling |
+| 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |
 | 10 | Languages | Korean first; English next |
 | 11 | Monetization (if public) | Out of scope until a public launch |
 

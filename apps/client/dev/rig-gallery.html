@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rig gallery</title>
+    <style>
+    html,
+    body {
+      margin: 0;
+      background: #1b1a17;
+      color: #efe7d6;
+      font:
+        13px system-ui,
+        sans-serif;
+    }
+    #app {
+      width: 100vw;
+      height: 100vh;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Dev only (`bun run dev`, then /dev/rig-gallery.html): every class, side, facing and pose of our rigged figures (ADR 0045). -->
+    <div id="app"></div>
+    <script type="module">
+    import { Application, Container, Graphics, Text } from "pixi.js";
+    import { ChibiRig, lookFor } from "../src/lib/fx/chibi.ts";
+
+    const KINDS = ["infantry", "archer", "cavalry", "strategist", "martialArtist", "catapult"];
+    const COLS = [
+      ["down", false, "ready"],
+      ["up", false, "ready"],
+      ["side", false, "ready"],
+      ["side", true, "walk"],
+      ["side", false, "attack"],
+      ["down", false, "attack"],
+      ["side", false, "guard"],
+      ["side", false, "hurt"],
+      ["down", false, "weak"],
+      ["down", false, "cheer"],
+    ];
+    const params = new URLSearchParams(location.search);
+    const tile = Number(params.get("tile")) || 72;
+    const app = new Application();
+    await app.init({
+      resizeTo: window,
+      background: 0x1b1a17,
+      antialias: true,
+      resolution: Math.min(2, devicePixelRatio || 1),
+      autoDensity: true,
+    });
+    document.getElementById("app").appendChild(app.canvas);
+    const rigs = [];
+    const cell = tile * 1.35;
+    COLS.forEach(([f, m, p], c) => {
+      const label = new Text({
+        text: `${f}${m ? "←" : ""} ${p}`,
+        style: { fill: 0xa99f8c, fontSize: 12 },
+      });
+      label.position.set(120 + c * cell, 8);
+      app.stage.addChild(label);
+    });
+    KINDS.forEach((kind, r) => {
+      const side = r % 2;
+      const label = new Text({
+        text: `${kind} (${side ? "red" : "blue"})`,
+        style: { fill: 0xe2b65c, fontSize: 12 },
+      });
+      label.position.set(8, 40 + r * cell + cell / 2);
+      app.stage.addChild(label);
+      COLS.forEach(([f, m, p], c) => {
+        const g = new Graphics().roundRect(0, 0, cell - 6, cell - 6, 8).fill({ color: 0x6f9a4a });
+        g.position.set(118 + c * cell, 30 + r * cell);
+        app.stage.addChild(g);
+        const rig = new ChibiRig(lookFor(kind, `${kind}-${c}`, side));
+        rig.setSize(tile);
+        rig.setFacing(f, m);
+        rig.setPose(p);
+        rig.root.position.set(118 + c * cell + (cell - 6) / 2, 30 + r * cell + (cell - 6) / 2);
+        app.stage.addChild(rig.root);
+        rigs.push({ rig, p, age: 0 });
+      });
+    });
+    app.ticker.add(() => {
+      const ms = app.ticker.deltaMS;
+      for (const r of rigs) {
+        r.age += ms;
+        if (["attack", "hurt", "guard"].includes(r.p) && r.age > 1400) {
+          r.age = 0;
+          r.rig.setPose(r.p);
+        }
+        r.rig.update(ms, ms);
+      }
+    });
+    window.__rigs = rigs;
+    window.__app = app;
+    </script>
+  </body>
+</html>

@@ -322,7 +322,8 @@ flowchart LR
 | `screens/*.svelte` | Home, sandbox, room (lobby, draft, deploy) and the shared battle screen |
 | `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units with ▲/▼ condition marks, effects; animates each command's events, then shows the new state. Placeholder shapes, or the local classic skin's tiles, 1998 map pictures and animated sprites ([0042](../adr/0042-local-classic-skin.md)) |
 | `lib/skin.svelte.ts`, `lib/path.ts`, `lib/classic-battle.ts` | The classic skin loader (dev server only), the walking route for move animations, and sandbox battles on a 1998 map |
-| `lib/fx/*.ts` | Presentation ([0044](../adr/0044-modern-battlefield-presentation.md)): effect textures, a particle system, effect recipes (strikes, defeats, auras, one look per skill school), weather and ambience, terrain painting with soft edges (our procedural art or the skin's tiles), our medallion tokens |
+| `lib/fx/*.ts` | Presentation ([0044](../adr/0044-modern-battlefield-presentation.md)): effect textures, a particle system, effect recipes (strikes, shots, defeats, auras, one look per skill school), weather and ambience, terrain painting with soft edges (our procedural art or the skin's tiles), our medallion tokens |
+| `lib/fx/chibi.ts` | Our characters ([0045](../adr/0045-rigged-chibi-characters.md)): painted parts per class, side and facing on a small skeleton, posed procedurally (ready, walk, attack, guard, hurt, slumped, cheer); `dev/rig-gallery.html` shows them all |
 | `lib/text.ts` | Korean UI strings and event-log lines |
 | `components/*.svelte` | Top bar, unit card (condition stacks with turns left), command menu with the skill list and forecast floating beside the unit ([0043](../adr/0043-floating-command-menu.md)), skill cut-in, portraits, tile info, battle log |
 
@@ -341,7 +342,7 @@ flowchart TB
       LB["damage numbers, selection chevron"]
       AM["weather: light shafts, cloud shadows, leaves (clipped to the map)"]
       PT["particles, with bloom"]
-      UN["units by row: shadow, team ring, sprite or token, HP bar"]
+      UN["units by row: shadow, team ring, rigged figure (or classic sprite, or token), HP bar"]
       OV["overlays: reach, targets, danger, pulsing choice"]
       FG["fire glow, grid"]
       ED["soft terrain edges and structures (cached)"]

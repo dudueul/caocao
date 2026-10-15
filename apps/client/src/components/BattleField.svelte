@@ -38,7 +38,11 @@ const view = $derived.by<OverlayView>(() => {
 onMount(() => {
   const params = new URLSearchParams(location.search);
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const f = new Field(session, { lite: params.has("lowfx") || calm, calm });
+  const f = new Field(session, {
+    lite: params.has("lowfx") || calm,
+    calm,
+    tokens: params.has("tokens"),
+  });
   if (params.has("debug")) (window as unknown as { tkField: Field }).tkField = f;
   field = f;
   void f.mount(host).then(() => (ready = true));

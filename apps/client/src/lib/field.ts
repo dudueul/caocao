@@ -28,6 +28,7 @@ import {
 } from "pixi.js";
 import { AdjustmentFilter, AdvancedBloomFilter } from "pixi-filters";
 import { Ambient } from "./fx/ambient.ts";
+import { ChibiRig, lookFor } from "./fx/chibi.ts";
 import * as fx from "./fx/effects.ts";
 import { Particles } from "./fx/particles.ts";
 import { ourTerrain, paintTerrain, skinTerrain, type TerrainSet } from "./fx/terrain.ts";
@@ -88,8 +89,10 @@ interface UnitSprite {
   shadow: Sprite;
   /** Team ring at the feet of a skinned figure. */
   ring: Graphics;
-  /** Our medallion token (hidden when skinned). */
+  /** Our medallion token (with `?tokens`). */
   token: Sprite;
+  /** Our rigged chibi figure (ADR 0045; hidden with the classic skin or `?tokens`). */
+  rig: ChibiRig | null;
   /** The animated classic sprite (hidden without a skin). */
   figure: Sprite;
   hp: Graphics;
@@ -132,6 +135,8 @@ const POSE_TIMING: Record<Pose, { fps: number; loop: boolean }> = {
 };
 
 export interface FieldOptions {
+  /** Medallion tokens instead of our rigged figures. */
+  tokens?: boolean;
   /** Fewer effects and no full-screen filters (slow devices, `?lowfx`). */
   lite: boolean;
   /** No camera moves or screen shake (prefers-reduced-motion). */
@@ -534,8 +539,8 @@ export class Field {
     fill(v.area, v.aimColor, 0.3);
     for (const c of v.ready) {
       const p = this.center(c);
-      // Skinned figures get a ring at their feet instead of around them.
-      if (this.skin)
+      // Figures get a ring at their feet; tokens get one around them.
+      if (this.skin || !this.opts.tokens)
         g.ellipse(p.x, p.y + t * 0.3, t * 0.42, t * 0.17).stroke({
           width: 2,
           color: 0xfff3b0,
@@ -597,6 +602,7 @@ export class Field {
       shadow,
       ring,
       token,
+      rig: null,
       figure,
       hp,
       mark,
@@ -636,12 +642,34 @@ export class Field {
     const cls = this.session.rules.classes[u.classId];
     const color = SIDE_COLOR[u.side] ?? 0x888888;
     const skinned = this.skinned(s);
+    const rigged = !skinned && !this.opts.tokens;
     const resting = u.acted && state.winner === null;
-    s.shadow.width = t * (skinned ? 0.86 : 0.9);
+    if (rigged) {
+      const look = lookFor(u.classId, u.id, u.side);
+      if (!s.rig || s.rig.look.kind !== look.kind || s.rig.look.side !== look.side) {
+        s.rig?.root.destroy({ children: true });
+        s.rig = new ChibiRig(look);
+        s.root.addChildAt(s.rig.root, s.root.getChildIndex(s.figure));
+      }
+      s.rig.setSize(t);
+    } else if (s.rig) {
+      s.rig.root.destroy({ children: true });
+      s.rig = null;
+    }
+    const figure = skinned || rigged;
+    s.shadow.width = t * (figure ? 0.86 : 0.9);
     s.shadow.height = t * 0.34;
-    s.shadow.position.set(skinned ? 0 : t * 0.04, t * (skinned ? 0.3 : 0.28));
+    s.shadow.position.set(figure ? 0 : t * 0.04, t * (figure ? 0.3 : 0.28));
     s.ring.clear();
-    if (skinned) {
+    if (rigged && s.rig) {
+      s.ring
+        .ellipse(0, t * 0.3, t * 0.34, t * 0.13)
+        .fill({ color, alpha: 0.22 })
+        .stroke({ width: 2, color, alpha: 0.95 });
+      this.setPose(s, idlePose(u, state, this.session), dir);
+      s.rig.setTint(resting ? 0x8c8c8c : 0xffffff);
+      s.pose = null;
+    } else if (skinned) {
       s.ring
         .ellipse(0, t * 0.3, t * 0.34, t * 0.13)
         .fill({ color, alpha: 0.22 })
@@ -659,8 +687,8 @@ export class Field {
       s.pose = null;
     }
     s.figure.visible = skinned;
-    s.token.visible = !skinned;
-    s.glyph.visible = !skinned;
+    s.token.visible = !figure;
+    s.glyph.visible = !figure;
     if (s.hpNow !== u.hp || s.maxHp !== u.maxHp) {
       s.hpNow = u.hp;
       s.hpGhost = u.hp;
@@ -729,6 +757,12 @@ export class Field {
 
   /** Shows a pose; an unchanged looping pose keeps its rhythm. */
   private setPose(s: UnitSprite, pose: Pose, dir: Dir, fps?: number): void {
+    if (s.rig) {
+      // Our figures are painted facing right: mirror them to face left.
+      s.rig.setFacing(dir.facing, dir.facing === "side" && !dir.flip);
+      s.rig.setPose(pose === "walk" ? (fps === undefined ? "ready" : "walk") : pose);
+      return;
+    }
     const skin = this.skin;
     const sheets = skin?.sheets(s.set);
     if (!skin || !sheets) return;
@@ -750,6 +784,7 @@ export class Field {
     this.clock += real;
     const t = this.tile;
     for (const s of this.sprites.values()) {
+      s.rig?.update(real, fast);
       const p = s.pose;
       if (p && p.frames.length > 1) {
         p.elapsed += p.loop ? real : fast;
@@ -914,9 +949,14 @@ export class Field {
       s.hpNow = value;
       this.drawHp(s);
     };
+    /** The unit's sprite if it is an animated figure (classic sprite or our rig). */
     const skinned = (id: string): UnitSprite | null => {
       const s = this.sprites.get(id);
-      return s && this.skinned(s) ? s : null;
+      return s && (s.rig || this.skinned(s)) ? s : null;
+    };
+    const tint = (s: UnitSprite, c: number) => {
+      if (s.rig) s.rig.setTint(c);
+      else s.figure.tint = c;
     };
     /** Moves a sprite between two tiles, keeping the draw order by row. */
     const slide = (s: UnitSprite, from: Cell, to: Cell, ms: number, hop = 0) => {
@@ -947,7 +987,7 @@ export class Field {
             const path = u
               ? walkPath(before, this.session.rules, { ...u, x: e.from.x, y: e.from.y }, e.to)
               : [e.from, e.to];
-            const walking = s && this.skinned(s);
+            const walking = s && skinned(e.unit);
             let dir = DOWN;
             for (let i = 1; i < path.length && s; i++) {
               const a = path[i - 1] ?? e.from;
@@ -968,7 +1008,7 @@ export class Field {
           }
           case "pushed": {
             const s = this.sprites.get(e.unit);
-            if (s && this.skinned(s)) this.setPose(s, "hurt", DOWN);
+            if (s && skinned(e.unit)) this.setPose(s, "hurt", DOWN);
             if (s) await slide(s, e.from, e.to, 200);
             pos.set(e.unit, e.to);
             if (!quiet())
@@ -1008,13 +1048,26 @@ export class Field {
               } else if (!quiet()) fx.strikeMiss(this.fxc(), dp, angle);
               this.hitText(e, at);
             };
+            const cls =
+              this.session.rules.classes[
+                before.units.find((u) => u.id === e.attacker)?.classId ?? ""
+              ];
+            const ranged = Math.abs(a0.x - d0.x) + Math.abs(a0.y - d0.y) > 1;
+            const shot = ranged && cls ? (cls.family === "catapult" ? "stone" : "arrow") : null;
+            /** Ranged attacks: the arrow or stone leaves partway through and lands on the impact. */
+            const fly = async (lead: number) => {
+              if (!shot) return this.wait(lead);
+              await this.wait(lead - 130);
+              if (!quiet()) fx.projectile(this.fxc(), ap, dp, shot === "stone" ? 260 : 130, shot);
+              await this.wait(shot === "stone" ? 260 : 130);
+            };
             if (fig && att) {
-              // Classic sprites: the swing, then the defender recoils or parries.
+              // Figures: the swing, then the defender recoils or parries.
               const toward = dirTo(a0, d0, this.skin);
               const back = dirTo(d0, a0, this.skin);
               att.root.zIndex = 1e6;
               this.setPose(fig, "attack", toward);
-              await this.wait(240);
+              await fly(shot === "stone" ? 360 : 240);
               const dfig = skinned(e.defender);
               if (dfig) this.setPose(dfig, e.hit ? "hurt" : "guard", back);
               await impact();
@@ -1026,8 +1079,9 @@ export class Field {
               await this.wait(100);
               break;
             }
-            // Tokens: a quick lunge and back.
-            if (att) {
+            // Tokens: a quick lunge and back (or a shot from where they stand).
+            if (shot) await fly(240);
+            else if (att) {
               att.root.zIndex = 1e6;
               await this.tween(this.ms(130), (k) =>
                 att.root.position.set(
@@ -1054,11 +1108,11 @@ export class Field {
             const p = px(e.unit);
             this.float(at(e.unit), FATE[e.fate], 0xffb3a7, true);
             if (!quiet()) fx.defeat(this.fxc(), p);
-            if (s && this.skinned(s)) {
+            if (s && skinned(e.unit)) {
               this.setPose(s, "hurt", DOWN);
               await this.tween(this.ms(480), (k) => {
                 s.root.alpha = Math.floor(k * 8) % 2 ? 0.3 : 1;
-                s.figure.tint = Math.floor(k * 8) % 2 ? 0xffffff : 0xffb0a0;
+                tint(s, Math.floor(k * 8) % 2 ? 0xffffff : 0xffb0a0);
               });
               await this.tween(this.ms(300), (k) => (s.root.alpha = 1 - k));
             } else if (s)

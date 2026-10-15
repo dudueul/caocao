@@ -93,6 +93,52 @@ export function strikeMiss(c: FxContext, at: Point, angle: number): void {
   });
 }
 
+/** An arrow or a thrown stone flying from `from` to `to` in `ms` (battle time). */
+export function projectile(
+  c: FxContext,
+  from: Point,
+  to: Point,
+  ms: number,
+  kind: "arrow" | "stone",
+): void {
+  const t = c.tile;
+  const T = ms / 1000;
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  if (kind === "arrow") {
+    c.p.emit({
+      texture: c.tex.streak,
+      x: from.x,
+      y: from.y - t * 0.2,
+      count: 1,
+      angle: Math.atan2(dy, dx),
+      speed: Math.hypot(dx, dy) / T,
+      life: ms,
+      scale: [0.9, 0.9],
+      tint: 0xfff6dc,
+      align: true,
+    });
+    return;
+  }
+  // A stone on a ballistic arc that lands on the target when the time runs out.
+  const g = t * 14;
+  const vx = dx / T;
+  const vy = (dy - 0.5 * g * T * T) / T;
+  c.p.emit({
+    texture: c.tex.rock,
+    x: from.x,
+    y: from.y - t * 0.3,
+    count: 1,
+    angle: Math.atan2(vy, vx),
+    speed: Math.hypot(vx, vy),
+    gravity: g,
+    life: ms,
+    scale: (t / 16) * 0.45,
+    spin: [-8, 8],
+    tint: 0x9a958a,
+  });
+}
+
 /** Footstep dust. */
 export function dust(c: FxContext, at: Point, n = 2): void {
   const t = c.tile;
