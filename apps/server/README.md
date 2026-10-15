@@ -23,5 +23,16 @@ cd apps/server && bunx wrangler dev --var CLOCK_SCALE:0.01
 bun apps/server/scripts/smoke.ts http://127.0.0.1:8787 --idle
 ```
 
-Deploying needs a Cloudflare account: `bun run --cwd apps/server deploy` after
-`wrangler login` (or with `CLOUDFLARE_API_TOKEN` set).
+Deploying needs a Cloudflare account (the free plan is enough: `MatchDO` is a
+SQLite-backed Durable Object). From the repository root, after `wrangler login`
+(or with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set):
+
+```bash
+bun run deploy   # builds apps/client into dist/, then `wrangler deploy` uploads the Worker and the page
+```
+
+One Worker serves both the game page and the Arena rooms at
+`https://tk.<your-subdomain>.workers.dev`: the sandbox against the AI, and
+Arena rooms whose invite link (`#/r/CODE`) anyone can open. Use this rather than
+Cloudflare Pages: Pages hosts only the static page, and the Arena's Durable
+Object needs a Worker.
