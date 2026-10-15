@@ -322,8 +322,48 @@ flowchart LR
 | `screens/*.svelte` | Home, sandbox, room (lobby, draft, deploy) and the shared battle screen |
 | `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units with ▲/▼ condition marks, effects; animates each command's events, then shows the new state. Placeholder shapes, or the local classic skin's tiles, 1998 map pictures and animated sprites ([0042](../adr/0042-local-classic-skin.md)) |
 | `lib/skin.svelte.ts`, `lib/path.ts`, `lib/classic-battle.ts` | The classic skin loader (dev server only), the walking route for move animations, and sandbox battles on a 1998 map |
+| `lib/fx/*.ts` | Presentation ([0044](../adr/0044-modern-battlefield-presentation.md)): effect textures, a particle system, effect recipes (strikes, defeats, auras, one look per skill school), weather and ambience, terrain painting with soft edges (our procedural art or the skin's tiles), our medallion tokens |
 | `lib/text.ts` | Korean UI strings and event-log lines |
-| `components/*.svelte` | Top bar, unit card (condition stacks with turns left), command menu with the skill list and forecast floating beside the unit ([0043](../adr/0043-floating-command-menu.md)), portraits, tile info, battle log |
+| `components/*.svelte` | Top bar, unit card (condition stacks with turns left), command menu with the skill list and forecast floating beside the unit ([0043](../adr/0043-floating-command-menu.md)), skill cut-in, portraits, tile info, battle log |
+
+The battle view draws in layers ([0044](../adr/0044-modern-battlefield-presentation.md));
+the top of the diagram is drawn last:
+
+```mermaid
+flowchart TB
+  subgraph stage["Pixi stage, screen space"]
+    direction TB
+    FL["flash: critical hits, lightning"]
+    VG["vignette"]
+    RS["rain streaks"]
+    subgraph world["world: camera zoom, pan and shake, colour grade by weather"]
+      direction TB
+      LB["damage numbers, selection chevron"]
+      AM["weather: light shafts, cloud shadows, leaves (clipped to the map)"]
+      PT["particles, with bloom"]
+      UN["units by row: shadow, team ring, sprite or token, HP bar"]
+      OV["overlays: reach, targets, danger, pulsing choice"]
+      FG["fire glow, grid"]
+      ED["soft terrain edges and structures (cached)"]
+      WT["water, with shimmer"]
+      GR["ground tiles or a 1998 map picture (cached)"]
+    end
+  end
+```
+
+Each command's events play as a short scene, then the field shows the new state:
+
+```mermaid
+flowchart LR
+  E["events of one command"] --> MV["moved: walk the route,<br/>dust at each step"]
+  E --> ST["strike: camera in, swing,<br/>impact (slash, sparks, shake,<br/>drain bar, number)"]
+  E --> SK["stratagem: cut-in, sigil,<br/>the school's particles"]
+  E --> DF["defeated: flicker,<br/>smoke and embers"]
+  MV --> OUT["camera out,<br/>show the new state"]
+  ST --> OUT
+  SK --> OUT
+  DF --> OUT
+```
 
 ```mermaid
 stateDiagram-v2

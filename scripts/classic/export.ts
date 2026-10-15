@@ -18,6 +18,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { join, resolve } from "node:path";
 import { OFFICERS } from "../../packages/content/src/index.ts";
 import type { TerrainId } from "../../packages/rules/src/index.ts";
+import { smoothStrip } from "./hd.ts";
 import { decompress } from "./ls12.ts";
 import { indexedPng, rgbaPng } from "./png.ts";
 
@@ -331,7 +332,7 @@ function main(argv: string[]): void {
   );
   const game = args[0];
   if (!game) {
-    console.error('usage: bun run classic:export "<game folder>" [--out DIR] [--contact]');
+    console.error('usage: bun run classic:export "<game folder>" [--out DIR] [--contact] [--raw]');
     process.exit(1);
   }
   const outFlag = argv.indexOf("--out");
@@ -347,6 +348,8 @@ function main(argv: string[]): void {
     return d;
   };
   const t0 = performance.now();
+  // Sprites are smoothed to twice their size unless --raw keeps the 1998 pixels.
+  const scale = argv.includes("--raw") ? 1 : 2;
 
   // Units
   const mov = g.ls12("UNIT_MOV.E5");
@@ -363,10 +366,12 @@ function main(argv: string[]): void {
       [spc[i], SPC, "spc"],
     ] as const) {
       const s = strip(blob as Uint8Array, spec.size, spec.count);
-      writeFileSync(
-        join(units, `unit_${String(i).padStart(3, "0")}_${tag}.png`),
-        indexedPng(s.w, s.h, s.px, unitPal, true),
-      );
+      const file = join(units, `unit_${String(i).padStart(3, "0")}_${tag}.png`);
+      if (scale === 1) writeFileSync(file, indexedPng(s.w, s.h, s.px, unitPal, true));
+      else {
+        const hd = smoothStrip(spec.size, spec.count, s.px, unitPal, true);
+        writeFileSync(file, rgbaPng(hd.w, hd.h, hd.rgba));
+      }
     }
   console.log(`units: ${sets} sprite sets`);
 
@@ -457,6 +462,8 @@ function main(argv: string[]): void {
     about:
       "1998 PC 삼국지 조조전 art (Koei Tecmo), exported locally by scripts/classic/export.ts. Never commit or ship (ADR 0042).",
     tile: TILE,
+    /** Sprite sheet pixels per 1998 pixel (2 = smoothed, ADR 0044). */
+    scale,
     sheets: {
       mov: { size: MOV.size, count: MOV.count },
       atk: { size: ATK.size, count: ATK.count },

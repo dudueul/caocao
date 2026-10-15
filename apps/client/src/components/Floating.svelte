@@ -82,9 +82,21 @@ const place = $derived.by(() => {
   z-index: 3;
   max-width: min(340px, calc(100% - 12px));
   padding: 8px;
-  background: rgba(20, 19, 16, 0.94);
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  background: linear-gradient(180deg, rgba(30, 27, 21, 0.9), rgba(14, 12, 9, 0.9));
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(232, 194, 106, 0.55);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 18px rgba(232, 194, 106, 0.15),
+    0 10px 28px rgba(0, 0, 0, 0.6);
+  animation: float-in 0.16s ease-out;
+}
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
 }
 </style>

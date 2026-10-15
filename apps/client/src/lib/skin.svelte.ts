@@ -13,6 +13,8 @@ export type Filter = "nearest" | "linear";
 
 export interface SkinManifest {
   tile: number;
+  /** Sheet pixels per 1998 pixel: 2 when the exporter smoothed the sprites (ADR 0044). */
+  scale?: number;
   /** Side-view frames face left; mirror them to face right. */
   sideFacesLeft: boolean;
   sheets: Record<"mov" | "atk" | "spc", { size: number; count: number }>;
@@ -101,6 +103,11 @@ export class ClassicSkin {
     return t;
   }
 
+  /** Sheet pixels per 1998 pixel. */
+  get scale(): number {
+    return this.manifest.scale ?? 1;
+  }
+
   /** The sprite set for a unit: the officer's own, else the class set in side colour (blue = side 0). */
   setFor(classId: string, officerId: string, side: number): number {
     const own = this.manifest.officerSets[officerId];
@@ -124,11 +131,15 @@ export class ClassicSkin {
         pixelTexture(`${BASE}/units/unit_${tag}_atk.png`),
         pixelTexture(`${BASE}/units/unit_${tag}_spc.png`),
       ]).then(([mov, atk, spc]) => {
-        for (const t of [mov, atk, spc]) this.track(t);
+        // Smoothed sheets are already anti-aliased: always filter them smoothly.
+        for (const t of [mov, atk, spc])
+          if (this.scale > 1) applyFilter(t.source, "linear");
+          else this.track(t);
+        const k = this.scale;
         const s = {
-          mov: slice(mov, m.mov.size, m.mov.count),
-          atk: slice(atk, m.atk.size, m.atk.count),
-          spc: slice(spc, m.spc.size, m.spc.count),
+          mov: slice(mov, m.mov.size * k, m.mov.count),
+          atk: slice(atk, m.atk.size * k, m.atk.count),
+          spc: slice(spc, m.spc.size * k, m.spc.count),
         };
         this.loadedSheets.set(set, s);
         return s;
@@ -198,7 +209,8 @@ let loading: Promise<ClassicSkin | null> | null = null;
 
 export function loadClassicSkin(): Promise<ClassicSkin | null> {
   loading ??= (async () => {
-    if (!import.meta.env.DEV) return null;
+    // `?noskin` shows our own art even when the folder exists.
+    if (!import.meta.env.DEV || new URLSearchParams(location.search).has("noskin")) return null;
     try {
       const r = await fetch(`${BASE}/manifest.json`);
       if (!r.ok) return null;

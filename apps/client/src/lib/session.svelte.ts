@@ -66,6 +66,16 @@ export type Player = (
   after: BattleState,
 ) => Promise<void>;
 
+/** A skill cut-in: the caster's banner across the screen while a stratagem goes off. */
+export interface CutIn {
+  unit: string;
+  name: string;
+  skill: string;
+  color: number;
+  side: number;
+  mine: boolean;
+}
+
 /** Where the field draws the map, in CSS pixels of the battle screen. */
 export interface Geometry {
   tile: number;
@@ -132,6 +142,9 @@ export class Session {
   banner = $state<{ text: string; tone: "turn" | "twist" | "end" } | null>(null);
   insets = $state<Insets>({ top: 0, right: 0, bottom: 0, left: 0 });
   geometry = $state<Geometry>({ tile: 48, ox: 0, oy: 0 });
+  cutin = $state<CutIn | null>(null);
+  /** The cut-in's progress, 0 to 1, driven by the field's clock. */
+  cutinAt = $state(0);
   /** Side names for the log and the top bar (scenario sides, or player names online). */
   sideNames = $state<string[]>(SCENARIOS["wuchao-raid"]?.sides.slice() ?? []);
 

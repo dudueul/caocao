@@ -48,7 +48,7 @@ const groups = $derived.by(() => {
 
 <section class="card" class:enemy={unit.side !== session.humanSide}>
   <header>
-    <Portrait id={unit.id} size={36} />
+    <Portrait id={unit.id} size={52} />
     <strong>{unit.name}</strong>
     <span class="chip">{cls?.name}</span>
     <span class="chip">Lv {unit.level}</span>
@@ -99,11 +99,19 @@ const groups = $derived.by(() => {
 
 <style>
 .card {
-  border-left: 3px solid var(--ally);
-  padding-left: 10px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(79, 142, 240, 0.45);
+  background: linear-gradient(135deg, rgba(79, 142, 240, 0.16), rgba(255, 255, 255, 0.02) 55%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 .card.enemy {
-  border-left-color: var(--enemy);
+  border-color: rgba(224, 100, 90, 0.5);
+  background: linear-gradient(135deg, rgba(224, 100, 90, 0.16), rgba(255, 255, 255, 0.02) 55%);
+}
+header :global(.face) {
+  border-color: rgba(232, 194, 106, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 header {
   display: flex;
@@ -112,7 +120,9 @@ header {
   flex-wrap: wrap;
 }
 header strong {
-  font-size: 16px;
+  font-family: var(--display);
+  font-size: 18px;
+  letter-spacing: 0.04em;
 }
 .side {
   margin-left: auto;
@@ -139,11 +149,15 @@ header strong {
 .fill {
   height: 100%;
 }
+.fill {
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
 .fill.hp {
-  background: var(--good);
+  background: linear-gradient(90deg, #3fae55, #8ee87a);
 }
 .fill.mp {
-  background: #6fa8ff;
+  background: linear-gradient(90deg, #3d78e0, #8cc0ff);
 }
 .num {
   text-align: right;

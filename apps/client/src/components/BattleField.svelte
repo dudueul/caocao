@@ -31,11 +31,15 @@ const view = $derived.by<OverlayView>(() => {
     hover: s.hover,
     ready,
     ghost: s.selected && s.to ? { id: s.selected, to: s.to } : null,
+    selected: s.to ?? (s.unit && s.unit.hp > 0 ? { x: s.unit.x, y: s.unit.y } : null),
   };
 });
 
 onMount(() => {
-  const f = new Field(session);
+  const params = new URLSearchParams(location.search);
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const f = new Field(session, { lite: params.has("lowfx") || calm, calm });
+  if (params.has("debug")) (window as unknown as { tkField: Field }).tkField = f;
   field = f;
   void f.mount(host).then(() => (ready = true));
   return () => f.destroy();

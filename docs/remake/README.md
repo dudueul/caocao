@@ -95,6 +95,7 @@ flowchart TB
 | P1 defaults | One `MatchDO` per room, room codes, first pick vs first move, 16-officer pool at Lv 20, one mirrored map | [0041](../adr/0041-p1-arena-defaults.md) |
 | Classic skin | The owner's own 1998 game exported into a git-ignored folder; dev server only; animated sprites, portraits, terrain and 1998 maps; never built, deployed or published | [0042](../adr/0042-local-classic-skin.md) |
 | Command menu | Command menu, skill list and forecast float beside the unit; keyboard and touch | [0043](../adr/0043-floating-command-menu.md) |
+| Presentation (proposed) | Soft terrain edges, water shimmer, weather and colour grade, cinematic camera, particles per skill school, skill cut-ins, glass-and-gold UI, smoothed classic sprites; our own procedural terrain and tokens without the skin | [0044](../adr/0044-modern-battlefield-presentation.md) |
 
 ## Roadmap
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 import BattleField from "../components/BattleField.svelte";
 import CommandMenu from "../components/CommandMenu.svelte";
+import CutIn from "../components/CutIn.svelte";
 import EventLog from "../components/EventLog.svelte";
 import Floating from "../components/Floating.svelte";
 import Forecast from "../components/Forecast.svelte";
@@ -111,6 +112,9 @@ function onKey(e: KeyboardEvent) {
       </Floating>
     {/if}
   {/if}
+  {#if session.cutin}
+    <CutIn cut={session.cutin} at={session.cutinAt} />
+  {/if}
   {#if session.banner && session.banner.tone !== "end"}
     <div class="banner {session.banner.tone}">{session.banner.text}</div>
   {/if}
@@ -161,7 +165,10 @@ main {
   gap: 10px;
   padding: 10px 12px;
   background: var(--panel);
-  border-top: 1px solid var(--line);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--gold-line);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
   overflow-y: auto;
   z-index: 2;
 }
@@ -169,7 +176,8 @@ main {
   left: auto;
   width: 340px;
   border-top: none;
-  border-left: 1px solid var(--line);
+  border-left: 1px solid var(--gold-line);
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.35);
 }
 .hint {
   margin: 0;
@@ -184,10 +192,12 @@ main {
 .pill {
   position: absolute;
   left: 12px;
-  padding: 3px 10px;
+  padding: 3px 12px;
   font-size: 12px;
-  background: rgba(0, 0, 0, 0.65);
-  border: 1px solid var(--line);
+  background: rgba(10, 9, 7, 0.7);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--gold-line);
   border-radius: 999px;
   pointer-events: none;
   z-index: 3;
@@ -195,20 +205,43 @@ main {
 .banner {
   position: absolute;
   top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 26px;
-  font-size: 22px;
-  font-weight: 700;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid var(--accent);
-  border-radius: 8px;
+  left: 0;
+  right: 0;
+  padding: 14px 20px;
+  text-align: center;
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #fff6dc;
+  text-shadow:
+    0 0 16px rgba(232, 194, 106, 0.6),
+    0 2px 0 #000;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(12, 10, 7, 0.85) 25%,
+    rgba(12, 10, 7, 0.85) 75%,
+    transparent
+  );
+  border-top: 1px solid rgba(232, 194, 106, 0.55);
+  border-bottom: 1px solid rgba(232, 194, 106, 0.55);
   pointer-events: none;
   z-index: 4;
+  animation: banner-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .banner.twist {
   color: var(--twist);
-  border-color: var(--twist);
+  text-shadow:
+    0 0 18px rgba(255, 210, 63, 0.8),
+    0 2px 0 #000;
+}
+@keyframes banner-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0.6);
+    letter-spacing: 0.4em;
+  }
 }
 .result {
   position: absolute;
@@ -218,15 +251,37 @@ main {
   display: grid;
   gap: 10px;
   justify-items: center;
-  padding: 20px 36px;
-  background: rgba(0, 0, 0, 0.82);
-  border: 1px solid var(--accent);
-  border-radius: 10px;
+  padding: 24px 44px;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(232, 194, 106, 0.22),
+    rgba(10, 9, 7, 0.9) 70%
+  );
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(232, 194, 106, 0.6);
+  border-radius: 16px;
+  box-shadow:
+    0 0 40px rgba(232, 194, 106, 0.25),
+    0 20px 50px rgba(0, 0, 0, 0.6);
   z-index: 4;
+  animation: result-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .result .title {
-  font-size: 30px;
-  font-weight: 800;
-  color: var(--accent);
+  font-family: var(--display);
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  background: linear-gradient(180deg, #fff3c4, #e8c26a 60%, #a8792a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+@keyframes result-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
 }
 </style>

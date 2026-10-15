@@ -143,8 +143,11 @@ async function start() {
   justify-content: space-between;
   gap: 6px;
   padding: 8px 10px;
-  background: var(--panel);
-  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(14, 12, 9, 0.9), rgba(14, 12, 9, 0.62));
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--gold-line);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 .info,
 .actions {
