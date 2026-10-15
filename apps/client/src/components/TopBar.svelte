@@ -1,9 +1,12 @@
 <script lang="ts">
 import type { TurnPolicyId, WeatherKind } from "@tk/rules";
+import type { OnlineRoom } from "../lib/online.svelte.ts";
 import type { Session, Speed } from "../lib/session.svelte.ts";
 import { POLICY, T, WEATHER } from "../lib/text.ts";
+import Clock from "./Clock.svelte";
 
-let { session }: { session: Session } = $props();
+let { session, online = null }: { session: Session; online?: OnlineRoom | null } = $props();
+let confirmConcede = $state(false);
 let setupOpen = $state(false);
 let policy = $state<TurnPolicyId>("sidePhases");
 let weather = $state<WeatherKind>("sunny");
@@ -32,12 +35,18 @@ function start() {
 
 <header class="top">
   <div class="info">
-    <strong>{session.scenario.name}</strong>
+    <strong>{online ? `${T.arena} ${online.code}` : session.scenario.name}</strong>
     <span class="chip">{T.round} {s.round}/{s.roundLimit}</span>
     <span class="chip side" class:enemy={s.active !== session.humanSide}>
-      {session.scenario.sides[s.active]}
+      {session.sideNames[s.active]}
     </span>
     <span class="chip muted">{WEATHER[s.weather]} · {POLICY[s.policy]}</span>
+    {#if online?.clock && s.winner === null}
+      <Clock {online} />
+    {/if}
+    {#if online && online.link !== "open"}
+      <span class="chip warn">{T.reconnecting}</span>
+    {/if}
   </div>
   <div class="actions">
     <button
@@ -51,19 +60,36 @@ function start() {
     <button type="button" class:on={session.speed !== 1} onclick={cycleSpeed} title={T.speed}>
       {SPEED_LABEL[session.speed]}
     </button>
-    <button type="button" class:on={session.auto} onclick={() => session.setAuto(!session.auto)}>
-      {T.auto}
-    </button>
-    <button
-      type="button"
-      class="primary"
-      disabled={!canEnd}
-      onclick={() => session.endPhase()}
-      title="E"
-    >
-      {T.endPhase}
-    </button>
-    <button type="button" onclick={openSetup}>{T.newBattle}</button>
+    {#if online}
+      {#if online.room?.phase === "battle"}
+        <button
+          type="button"
+          class:danger={confirmConcede}
+          onclick={() => {
+            if (confirmConcede) online.concede();
+            confirmConcede = !confirmConcede;
+          }}
+        >
+          {confirmConcede ? T.concedeConfirm : T.concede}
+        </button>
+      {/if}
+      <a class="button" href="#/">{T.home}</a>
+    {:else}
+      <button type="button" class:on={session.auto} onclick={() => session.setAuto(!session.auto)}>
+        {T.auto}
+      </button>
+      <button
+        type="button"
+        class="primary"
+        disabled={!canEnd}
+        onclick={() => session.endPhase()}
+        title="E"
+      >
+        {T.endPhase}
+      </button>
+      <button type="button" onclick={openSetup}>{T.newBattle}</button>
+      <a class="button" href="#/">{T.home}</a>
+    {/if}
   </div>
   {#if setupOpen}
     <div class="setup">
@@ -112,6 +138,14 @@ function start() {
 }
 .side {
   border-color: var(--ally);
+}
+.warn {
+  border-color: #c58cff;
+  color: #e2c8ff;
+}
+.danger {
+  border-color: var(--bad);
+  color: var(--bad);
 }
 .side.enemy {
   border-color: var(--enemy);

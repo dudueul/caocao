@@ -77,9 +77,17 @@ function randomSeed(): string {
   return Math.floor(Math.random() * 0xffffffff).toString(36);
 }
 
+/** Where commands go in online play: the referee decides, the session only shows. */
+export interface Remote {
+  send(command: Command): void;
+}
+
 export class Session {
   readonly rules: Ruleset = P0_RULES;
-  readonly humanSide = 0;
+  /** The side this player commands (the seat, online). */
+  humanSide = $state(0);
+  /** Online: commands go to the MatchDO instead of the local rules (ADR 0004). */
+  remote: Remote | null = null;
 
   options = $state<BattleOptions>({
     scenario: "wuchao-raid",
@@ -107,6 +115,8 @@ export class Session {
   log = $state<LogLine[]>([]);
   banner = $state<{ text: string; tone: "turn" | "twist" | "end" } | null>(null);
   insets = $state<Insets>({ top: 0, right: 0, bottom: 0, left: 0 });
+  /** Side names for the log and the top bar (scenario sides, or player names online). */
+  sideNames = $state<string[]>(SCENARIOS["wuchao-raid"]?.sides.slice() ?? []);
 
   player: Player | null = null;
   private logId = 0;
@@ -355,7 +365,7 @@ export class Session {
     this.log = [];
     this.clearChoice();
     this.selected = null;
-    this.flash(`${this.scenario.name} · ${this.scenario.sides[this.humanSide]}`, "turn");
+    this.flash(`${this.scenario.name} · ${this.sideNames[this.humanSide]}`, "turn");
     void this.pump();
   }
 
@@ -369,29 +379,75 @@ export class Session {
 
   private async commit(cmd: Command): Promise<void> {
     if (this.busy) return;
+    if (this.remote) {
+      // Online: wait for the referee's batch (or rejection) before taking input again.
+      this.busy = true;
+      this.clearChoice();
+      this.remote.send(cmd);
+      return;
+    }
     await this.step(cmd);
     await this.pump();
+  }
+
+  // ------------------------------------------------------------ online (ADR 0037)
+
+  private shown: Promise<void> = Promise.resolve();
+
+  /** A batch from the referee: animate its events, then show its state. Batches play in order. */
+  receive(events: BattleEvent[], after: BattleState): void {
+    this.shown = this.shown.then(() => this.show(events, after));
+  }
+
+  /** A full state from the referee (battle start, or a reconnect gap). */
+  loadSnapshot(state: BattleState): void {
+    this.shown = this.shown.then(() => {
+      this.state = state;
+      this.start = state;
+      this.commands = [];
+      this.clearChoice();
+      this.busy = false;
+    });
+  }
+
+  /** The referee refused our command. */
+  rejected(reason: string): void {
+    this.addLog({ text: `거부됨: ${reason}`, tone: "bad" });
+    this.busy = false;
   }
 
   /** Applies one command, animates it, then shows the new state. */
   private async step(cmd: Command): Promise<boolean> {
     this.busy = true;
     this.clearChoice();
-    const before = this.state;
-    const r = apply(before, this.rules, cmd);
+    const r = apply(this.state, this.rules, cmd);
     if (!r.ok) {
       this.addLog({ text: `거부됨: ${r.reason}`, tone: "bad" });
       this.busy = false;
       return false;
     }
     this.commands.push(cmd);
+    await this.show(r.events, r.state);
+    return true;
+  }
+
+  /** Animates events from the current state, then shows `after`, logs and flashes. */
+  private async show(events: BattleEvent[], after: BattleState): Promise<void> {
+    this.busy = true;
+    const before = this.state;
+    const r = { events, state: after };
     if (this.player) await this.player(r.events, before, r.state);
     this.state = r.state;
     for (const e of r.events) {
-      const line = describe(e, r.state, this.rules, this.scenario.sides, this.humanSide);
+      // Alternating activations hand the turn over every command: mark only new rounds.
+      const quietTurn =
+        e.kind === "turn" && after.policy === "alternating" && e.round === before.round;
+      const line = quietTurn
+        ? null
+        : describe(e, r.state, this.rules, this.sideNames, this.humanSide);
       if (line) this.addLog(line);
       if (e.kind === "twist") this.flash(e.outcome === "windfall" ? "천운!" : "불운!", "twist");
-      if (e.kind === "turn" && e.side === this.humanSide && !this.auto)
+      if (e.kind === "turn" && !quietTurn && e.side === this.humanSide && !this.auto)
         this.flash(`라운드 ${e.round} · 아군 차례`, "turn");
       if (e.kind === "battleEnd") {
         this.flash(e.winner < 0 ? "무승부" : e.winner === this.humanSide ? "승리" : "패배", "end");
@@ -407,12 +463,11 @@ export class Session {
     if (this.selected && !this.state.units.some((u) => u.id === this.selected && u.hp > 0))
       this.selected = null;
     this.busy = false;
-    return true;
   }
 
   /** Lets the AI play every activation that isn't the human's. */
   private async pump(): Promise<void> {
-    if (this.pumping) return;
+    if (this.pumping || this.remote) return;
     this.pumping = true;
     try {
       while (this.state.winner === null && (this.auto || this.state.active !== this.humanSide)) {

@@ -242,3 +242,16 @@ describe("reconnect (ADR 0037)", () => {
     expect(ARENA_POOL.length).toBe(16);
   });
 });
+
+describe("hidden deployment", () => {
+  it("each seat sees only its own arrangement until the battle starts", () => {
+    const { room } = setup();
+    draftAll(room);
+    expect(room.view(0).deploy?.arrangement[0]).toHaveLength(6);
+    expect(room.view(0).deploy?.arrangement[1]).toEqual([]);
+    expect(room.view(1).deploy?.arrangement[0]).toEqual([]);
+    const out = room.message(0, { t: "arrange", order: [...room.data.picks[0]].reverse() });
+    const toB = out.find((o) => o.to === 1)?.msg;
+    expect(toB && toB.t === "room" && toB.room.deploy?.arrangement[0]).toEqual([]);
+  });
+});

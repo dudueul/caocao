@@ -13,7 +13,8 @@
   "dependencies": {
     "@tk/content": "workspace:*",
     "@tk/rules": "workspace:*",
-    "pixi.js": "8.22.0"
+    "pixi.js": "8.22.0",
+    "@tk/protocol": "workspace:*"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "7.3.1",

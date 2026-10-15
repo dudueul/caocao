@@ -9,7 +9,7 @@ import { Application, Container, Graphics, Text, type TextStyleOptions } from "p
 import type { Session } from "./session.svelte.ts";
 import { FATE, SCHOOL_COLOR } from "./text.ts";
 
-const TERRAIN_COLOR: Record<TerrainId, number> = {
+export const TERRAIN_COLOR: Record<TerrainId, number> = {
   plain: 0x9aa565,
   grass: 0x7fae4e,
   forest: 0x3f6b35,

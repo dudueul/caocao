@@ -5,7 +5,7 @@ import { STATS, T } from "../lib/text.ts";
 
 let { session, unit }: { session: Session; unit: Unit } = $props();
 const cls = $derived(session.rules.classes[unit.classId]);
-const side = $derived(session.scenario.sides[unit.side] ?? `${unit.side}`);
+const side = $derived(session.sideNames[unit.side] ?? `${unit.side}`);
 const atk = $derived(attackPower(session.rules, session.state, unit));
 const def = $derived(defensePower(session.rules, session.state, unit));
 const move = $derived(

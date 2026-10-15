@@ -135,7 +135,8 @@ export class Room {
 
   // ------------------------------------------------------------ views
 
-  view(): RoomView {
+  /** The room as `seat` may see it: the other seat's deploy arrangement stays hidden. */
+  view(seat: Seat | null = null): RoomView {
     const d = this.data;
     const players = d.seats.map((s, i) =>
       s ? { name: s.name, connected: this.env.isConnected(i as Seat) } : null,
@@ -161,7 +162,10 @@ export class Room {
                 DEPLOY_SLOTS[0].map((c) => ({ ...c })),
                 DEPLOY_SLOTS[1].map((c) => ({ ...c })),
               ],
-              arrangement: [[...d.arrangement[0]], [...d.arrangement[1]]],
+              arrangement: [
+                seat === 1 ? [] : [...d.arrangement[0]],
+                seat === 0 ? [] : [...d.arrangement[1]],
+              ],
               ready: [d.ready[0], d.ready[1]],
               deadline: d.deadline ?? 0,
             }
@@ -192,6 +196,14 @@ export class Room {
 
   expired(): boolean {
     return this.env.now() >= this.data.updatedAt + ROOM_TTL_MS;
+  }
+
+  /** The room update, as each seat may see it. */
+  private roomOuts(): Out[] {
+    return [
+      { to: 0, msg: { t: "room", room: this.view(0) } },
+      { to: 1, msg: { t: "room", room: this.view(1) } },
+    ];
   }
 
   // ------------------------------------------------------------ joining
@@ -225,7 +237,7 @@ export class Room {
     if (d.phase === "waiting" && d.seats[0] && d.seats[1]) this.startDraft();
 
     const self: ServerMessage[] = [
-      { t: "welcome", seat: me, room: this.view(), serverTime: this.env.now() },
+      { t: "welcome", seat: me, room: this.view(me), serverTime: this.env.now() },
     ];
     const b = d.battle;
     if (b && (d.phase === "battle" || d.phase === "over")) {
@@ -238,12 +250,12 @@ export class Room {
         self.push({ t: "snapshot", seq: b.seq, state: redact(b.state), clock: this.clock() });
       }
     }
-    return { seat: me, self, out: [{ to: "all", msg: { t: "room", room: this.view() } }] };
+    return { seat: me, self, out: this.roomOuts() };
   }
 
   /** Someone's socket closed; tells everyone who is still connected. */
   presence(): Out[] {
-    return [{ to: "all", msg: { t: "room", room: this.view() } }];
+    return this.roomOuts();
   }
 
   // ------------------------------------------------------------ messages
@@ -326,7 +338,7 @@ export class Room {
       d.ready = [false, false];
       d.deadline = this.env.now() + this.ms.deploy;
     } else d.deadline = this.env.now() + this.ms.pick;
-    return [{ to: "all", msg: { t: "room", room: this.view() } }];
+    return this.roomOuts();
   }
 
   private arrange(seat: Seat, order: string[]): Out[] {
@@ -339,7 +351,7 @@ export class Room {
       return this.reject(seat, "배치가 올바르지 않습니다.");
     d.arrangement[seat] = [...order];
     this.touch();
-    return [{ to: "all", msg: { t: "room", room: this.view() } }];
+    return this.roomOuts();
   }
 
   private readyUp(seat: Seat): Out[] {
@@ -348,7 +360,7 @@ export class Room {
     d.ready[seat] = true;
     this.touch();
     if (d.ready[0] && d.ready[1]) return this.startBattle();
-    return [{ to: "all", msg: { t: "room", room: this.view() } }];
+    return this.roomOuts();
   }
 
   private startBattle(): Out[] {
@@ -372,7 +384,7 @@ export class Room {
     this.recent = [];
     this.touch();
     return [
-      { to: "all", msg: { t: "room", room: this.view() } },
+      ...this.roomOuts(),
       { to: "all", msg: { t: "snapshot", seq: 0, state: redact(start), clock: this.clock() } },
     ];
   }
@@ -419,7 +431,7 @@ export class Room {
     this.recent.push(batch);
     if (this.recent.length > RECENT_BATCHES) this.recent.shift();
     out.push({ to: "all", msg: { t: "batch", ...batch, clock: this.clock() } });
-    if (d.phase === "over") out.push({ to: "all", msg: { t: "room", room: this.view() } });
+    if (d.phase === "over") out.push(...this.roomOuts());
     return out;
   }
 
@@ -431,7 +443,7 @@ export class Room {
     d.deadline = null;
     d.result = { winner: seat === 0 ? 1 : 0, reason: "concede" };
     this.touch();
-    return [{ to: "all", msg: { t: "room", room: this.view() } }];
+    return this.roomOuts();
   }
 
   private reject(seat: Seat, reason: string): Out[] {
