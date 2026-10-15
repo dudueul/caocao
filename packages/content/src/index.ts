@@ -1,3 +1,16 @@
+export {
+  ARENA_FIELD,
+  ARENA_LEVEL,
+  ARENA_POOL,
+  ARENA_ROUND_LIMIT,
+  ARMY_SIZE,
+  type ArenaSetupOptions,
+  arenaSetup,
+  DEPLOY_SLOTS,
+  DRAFT_ORDER,
+  type PoolEntry,
+  poolEntry,
+} from "./arena.ts";
 export { CLASSES } from "./classes.ts";
 export { CONDITIONS } from "./conditions.ts";
 export { type MapDef, parseMap, WUCHAO } from "./maps.ts";

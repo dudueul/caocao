@@ -37,6 +37,20 @@ const LIST: readonly OfficerDef[] = [
   officer("qu-yi",        "국의",   "麴義",   [75, 75, 45, 60, 40]),
   officer("ju-shou",      "저수",   "沮授",   [20, 70, 90, 45, 35]),
   officer("wen-chou",     "문추",   "文醜",   [90, 65, 25, 70, 45]),
+  // Arena pool (ADR 0041)
+  officer("lu-bu",        "여포",   "呂布",   [100, 75, 25, 90, 30]),
+  officer("guan-yu",      "관우",   "關羽",   [95, 90, 65, 75, 55]),
+  officer("zhao-yun",     "조운",   "趙雲",   [90, 80, 65, 85, 90]),
+  officer("zhang-fei",    "장비",   "張飛",   [95, 75, 35, 70, 50]),
+  officer("xiahou-dun",   "하후돈", "夏侯惇", [85, 85, 55, 65, 60]),
+  officer("gan-ning",     "감녕",   "甘寧",   [90, 75, 50, 85, 55]),
+  officer("huang-zhong",  "황충",   "黃忠",   [90, 80, 50, 70, 60]),
+  officer("taishi-ci",    "태사자", "太史慈", [90, 75, 55, 80, 45]),
+  officer("zhuge-liang",  "제갈량", "諸葛亮", [35, 90, 100, 60, 75]),
+  officer("zhou-yu",      "주유",   "周瑜",   [70, 90, 95, 70, 40]),
+  officer("guo-jia",      "곽가",   "郭嘉",   [20, 50, 95, 55, 30]),
+  officer("dian-wei",     "전위",   "典韋",   [95, 65, 30, 65, 35]),
+  officer("ma-jun",       "마균",   "馬鈞",   [20, 40, 85, 40, 55]),
 ];
 
 export const OFFICERS: Readonly<Record<string, OfficerDef>> = Object.fromEntries(

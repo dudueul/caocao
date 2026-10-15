@@ -1,0 +1,13 @@
+{
+  "name": "@tk/protocol",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Typed client-server messages for live battles (ADR 0037)",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@tk/rules": "workspace:*"
+  }
+}
