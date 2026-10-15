@@ -1,8 +1,8 @@
 # 0041. P1 Arena defaults chosen while building
 
-- **Status:** Proposed (defaults chosen while building P1; the owner is asked to confirm)
+- **Status:** Accepted (proposed while building P1, confirmed by the owner 2026-10-15)
 - **Date:** 2026-10-15
-- **Deciders:** Claude (proposal)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0004](0004-server-authoritative-referee.md), [0012](0012-household-corps-seats.md),
   [0014](0014-scoped-progression-fair-arena.md), [0037](0037-websocket-json-protocol.md)–[0040](0040-arena-turn-clock.md)
 
