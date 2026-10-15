@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-15
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0036](../adr/0036-p0-skills-and-conditions.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0041](../adr/0041-p1-arena-defaults.md)).
 
 ## Vision
 
@@ -88,6 +88,11 @@ flowchart TB
 | Enemy behaviour | Scenario units carry standing AI orders written as gambits (hold, heal then hold) | [0034](../adr/0034-scenario-ai-orders.md) |
 | Conditions | Buffs and debuffs stack, each further stack worth half; every stack's duration is rolled on landing and shown | [0035](../adr/0035-stacking-conditions-rolled-durations.md) |
 | P0 skills | 13 skills (10 for 책사, one class skill each for 보병, 기병, 무도가), 8 conditions; poison never below 1 HP | [0036](../adr/0036-p0-skills-and-conditions.md) |
+| Protocol | Plain WebSocket + typed JSON; numbered batches; reconnect by `hello` with the last batch seen; no `Prng` sent to clients | [0037](../adr/0037-websocket-json-protocol.md) |
+| P1 identity | Guests: display name + secret device key; invite links; accounts in P2 | [0038](../adr/0038-guest-identity-device-key.md) |
+| Arena armies | Snake draft of six officers each from a shared pool, normalized level | [0039](../adr/0039-arena-draft.md) |
+| Arena clock | 45 s per activation + 3 min reserve; then the AI plays that activation | [0040](../adr/0040-arena-turn-clock.md) |
+| P1 defaults | One `MatchDO` per room, room codes, first pick vs first move, 16-officer pool at Lv 20, one mirrored map *(proposed)* | [0041](../adr/0041-p1-arena-defaults.md) |
 
 ## Roadmap
 
@@ -110,11 +115,10 @@ never start on GitHub).
 
 | # | Question | Current leaning |
 |---|---|---|
-| 2 | Name of the game; fresh repository from the snapshot | Working name `tk`; the owner restarts from a snapshot ([0017](../adr/0017-clear-this-repository.md)) |
-| 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
-| 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
+| 2 | Name of the game | Working name `tk`; the remake is built in this repository ([0017](../adr/0017-clear-this-repository.md)) |
+| 5 | Accounts and sign-in | P1 uses guest device keys ([0038](../adr/0038-guest-identity-device-key.md)); passkeys with `PlayerDO` in P2 |
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
-| 7 | Equipment, Arena normalization ([RULES.md §11](RULES.md#11-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
+| 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)); the P1 Arena uses no equipment, officers at Lv 20 ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)) |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | 96 px tiles (2×), palette and atlas tooling |
 | 10 | Languages | Korean first; English next |

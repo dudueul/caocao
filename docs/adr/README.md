@@ -49,3 +49,8 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0034](0034-scenario-ai-orders.md) | Scenario units carry standing AI orders, written as gambits | Accepted | 2026-10-14 |
 | [0035](0035-stacking-conditions-rolled-durations.md) | Conditions stack with diminishing weight; each stack's duration is rolled when it lands | Accepted | 2026-10-15 |
 | [0036](0036-p0-skills-and-conditions.md) | P0 skills and conditions: thirteen skills, eight conditions | Accepted | 2026-10-15 |
+| [0037](0037-websocket-json-protocol.md) | Clients talk to the referee over plain WebSocket with typed JSON messages | Accepted | 2026-10-15 |
+| [0038](0038-guest-identity-device-key.md) | P1 players are guests: a display name and a secret device key | Accepted | 2026-10-15 |
+| [0039](0039-arena-draft.md) | Arena armies are drafted: six officers each from a shared pool | Accepted | 2026-10-15 |
+| [0040](0040-arena-turn-clock.md) | Live Arena clock: 45 seconds per activation plus a 3-minute reserve | Accepted | 2026-10-15 |
+| [0041](0041-p1-arena-defaults.md) | P1 Arena defaults chosen while building | Proposed | 2026-10-15 |
