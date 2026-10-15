@@ -87,7 +87,7 @@ flowchart TB
 | Sandbox client | Fixed layout, tap-to-move with pending undo, forecast then confirm, placeholder shapes, Korean UI text, speed and auto-battle; svelte-check (TS 6) + Biome for `.svelte` | [0033](../adr/0033-p0-sandbox-client-defaults.md) |
 | Enemy behaviour | Scenario units carry standing AI orders written as gambits (hold, heal then hold) | [0034](../adr/0034-scenario-ai-orders.md) |
 | Conditions | Buffs and debuffs stack, each further stack worth half; every stack's duration is rolled on landing and shown | [0035](../adr/0035-stacking-conditions-rolled-durations.md) |
-| P0 skills | 13 skills (10 for 책사, one class skill each for 보병, 기병, 무도가), 8 conditions; poison never below 1 HP *(proposed)* | [0036](../adr/0036-p0-skills-and-conditions.md) |
+| P0 skills | 13 skills (10 for 책사, one class skill each for 보병, 기병, 무도가), 8 conditions; poison never below 1 HP | [0036](../adr/0036-p0-skills-and-conditions.md) |
 
 ## Roadmap
 

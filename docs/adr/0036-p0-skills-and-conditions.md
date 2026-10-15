@@ -1,8 +1,8 @@
 # 0036. P0 skills and conditions: thirteen skills, eight conditions
 
-- **Status:** Proposed (defaults chosen while building P0; the owner is asked to confirm)
+- **Status:** Accepted (proposed while building P0, confirmed by the owner 2026-10-15)
 - **Date:** 2026-10-15
-- **Deciders:** Claude (proposal)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0015](0015-delivery-order-engine-then-arena.md), [0021](0021-class-families-and-tiers.md),
   [0024](0024-stratagems-elements-and-fortune-twists.md), [0027](0027-p0-engine-defaults.md),
   [0034](0034-scenario-ai-orders.md), [0035](0035-stacking-conditions-rolled-durations.md),

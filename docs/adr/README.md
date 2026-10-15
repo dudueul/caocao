@@ -48,4 +48,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0033](0033-p0-sandbox-client-defaults.md) | Battle sandbox client defaults chosen while building P0 | Accepted | 2026-10-14 |
 | [0034](0034-scenario-ai-orders.md) | Scenario units carry standing AI orders, written as gambits | Accepted | 2026-10-14 |
 | [0035](0035-stacking-conditions-rolled-durations.md) | Conditions stack with diminishing weight; each stack's duration is rolled when it lands | Accepted | 2026-10-15 |
-| [0036](0036-p0-skills-and-conditions.md) | P0 skills and conditions: thirteen skills, eight conditions | Proposed | 2026-10-15 |
+| [0036](0036-p0-skills-and-conditions.md) | P0 skills and conditions: thirteen skills, eight conditions | Accepted | 2026-10-15 |
