@@ -1,6 +1,7 @@
 /** The P0 ruleset: everything `@tk/rules` needs to run a battle. */
 import { DEFAULT_TUNING, hashState, type Ruleset, triangleRelations } from "@tk/rules";
 import { CLASSES } from "./classes.ts";
+import { CONDITIONS } from "./conditions.ts";
 import { STRATAGEMS } from "./stratagems.ts";
 import { AFFINITY, TERRAINS } from "./terrain.ts";
 
@@ -9,6 +10,7 @@ export const P0_RULES: Ruleset = {
   terrains: TERRAINS,
   affinity: AFFINITY,
   stratagems: STRATAGEMS,
+  conditions: CONDITIONS,
   // Counter triangle (ADR 0021) as the default relation matrix (ADR 0029):
   // catapults fight as the archer group; martial artists and strategists sit outside.
   relations: triangleRelations(

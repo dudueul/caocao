@@ -1,4 +1,5 @@
 export { CLASSES } from "./classes.ts";
+export { CONDITIONS } from "./conditions.ts";
 export { type MapDef, parseMap, WUCHAO } from "./maps.ts";
 export { OFFICERS, type OfficerDef } from "./officers.ts";
 export { P0_RULES, P0_RULES_HASH } from "./ruleset.ts";

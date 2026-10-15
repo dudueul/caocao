@@ -33,6 +33,15 @@ export {
   relationFactor,
   strikeDamage,
 } from "./combat.ts";
+export {
+  addCondition,
+  conditionDef,
+  conditionModifier,
+  conditionMultiplier,
+  hasBlock,
+  stacksOf,
+  stackWeight,
+} from "./conditions.ts";
 export { canonical, hashState } from "./hash.ts";
 export { canReach, type Reach, reachable } from "./move.ts";
 export { Prng, type PrngState, seedFromString } from "./prng.ts";

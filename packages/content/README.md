@@ -8,7 +8,8 @@ Our own data only: nothing copied from Koei or Nexon sources ([ADR 0002](../../d
 |---|---|
 | `classes.ts` | The six P0 tier-1 classes ([ADR 0021](../../docs/adr/0021-class-families-and-tiers.md)) |
 | `terrain.ts` | Twelve terrains, map codes, and the family × terrain affinity table ([ADR 0023](../../docs/adr/0023-terrain-family-affinity-and-cover.md)) |
-| `stratagems.ts` | 화계, 풍계, 혼란, 치료 ([ADR 0024](../../docs/adr/0024-stratagems-elements-and-fortune-twists.md), [ADR 0030](../../docs/adr/0030-modern-techniques-adopted.md)) |
+| `stratagems.ts` | 13 skills: ten for 책사 and one class skill each for 보병, 기병, 무도가 ([ADR 0024](../../docs/adr/0024-stratagems-elements-and-fortune-twists.md), [ADR 0036](../../docs/adr/0036-p0-skills-and-conditions.md)) |
+| `conditions.ts` | Eight buffs and debuffs ([ADR 0035](../../docs/adr/0035-stacking-conditions-rolled-durations.md)) |
 | `ruleset.ts` | `P0_RULES` (with the counter-triangle relation matrix) and its content hash `P0_RULES_HASH` |
 | `officers.ts` | Officers: historical names, our own ratings |
 | `maps.ts`, `scenarios.ts` | Maps as text rows; scenarios and `scenarioSetup()` → `BattleSetup` |

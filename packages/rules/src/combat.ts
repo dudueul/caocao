@@ -3,28 +3,34 @@
  * rolling hit then critical from the battle Prng (ADR 0022, ADR 0025).
  */
 import { affinityAt, classOf, inRange, isAlive, terrainAt } from "./board.ts";
+import { conditionModifier, conditionMultiplier, hasBlock } from "./conditions.ts";
 import { clamp, half, permille } from "./math.ts";
 import type { Prng } from "./prng.ts";
 import { forMode } from "./tuning.ts";
 import type { BattleEvent, BattleState, ClassDef, Ruleset, StrikeRole, Unit } from "./types.ts";
 
-/** ATK on the unit's current tile: (class + 무력 + weapon) × terrain effect‰. */
+/** ATK on the unit's current tile: (class + 무력 + weapon) × terrain effect‰ × conditions‰. */
 export function attackPower(rules: Ruleset, state: BattleState, u: Unit): number {
   const raw = classOf(rules, u).atk + u.stats.martial + u.atkBonus;
-  return permille(raw, affinityAt(rules, state, u, u.x, u.y).effect);
+  const onTile = permille(raw, affinityAt(rules, state, u, u.x, u.y).effect);
+  return permille(onTile, conditionMultiplier(rules, u, "atk"));
 }
 
-/** DEF on the unit's current tile: (class + 통솔 + armour) × terrain effect‰. */
+/** DEF on the unit's current tile: (class + 통솔 + armour) × terrain effect‰ × conditions‰. */
 export function defensePower(rules: Ruleset, state: BattleState, u: Unit): number {
   const raw = classOf(rules, u).def + u.stats.command + u.defBonus;
-  return permille(raw, affinityAt(rules, state, u, u.x, u.y).effect);
+  const onTile = permille(raw, affinityAt(rules, state, u, u.x, u.y).effect);
+  return permille(onTile, conditionMultiplier(rules, u, "def"));
 }
 
 export function hitChance(rules: Ruleset, state: BattleState, a: Unit, d: Unit): number {
   const t = rules.tuning;
   const cover = rules.terrains[terrainAt(state, d.x, d.y)].cover;
   return clamp(
-    t.hitBase + t.hitPerAgility * (a.stats.agility - d.stats.agility) - cover,
+    t.hitBase +
+      t.hitPerAgility * (a.stats.agility - d.stats.agility) -
+      cover +
+      conditionModifier(rules, a, "hit"),
     t.hitMin,
     t.hitMax,
   );
@@ -109,7 +115,7 @@ export function strikeDamage(
 export function canCounter(rules: Ruleset, a: Unit, d: Unit): boolean {
   return (
     isAlive(d) &&
-    d.status === null &&
+    !hasBlock(rules, d, "act") &&
     !d.broken &&
     classOf(rules, a).provokesCounter &&
     inRange(classOf(rules, d).range, d, a)
@@ -203,7 +209,7 @@ export function defeat(rules: Ruleset, prng: Prng, u: Unit, events: BattleEvent[
     : prng.chance(t.killedShare)
       ? "killed"
       : "captured";
-  u.status = null;
+  u.conditions = [];
   u.broken = false;
   events.push({ kind: "defeated", unit: u.id, fate: u.fate });
 }

@@ -67,7 +67,7 @@ Each strike is: **hit?** (`hit‰` vs `Prng`), then **critical?** (`crit‰` vs
 | Critical | `crit‰ = clamp(40 + 4·(운a − 운d), 10, 350)`, damage ×1.5 |
 | Officer fate on defeat | `escape‰ = clamp(600 + 4·운, 0, 950)`; otherwise captured or killed |
 | HP | class base + 통솔 bonus + level growth; range about 100–600 ([ADR 0022](../adr/0022-medium-number-scale.md)) |
-| Attack / defense | `ATK = class + 무력 + weapon`, `DEF = class + 통솔 + armour` |
+| Attack / defense | `ATK = class + 무력 + weapon`, `DEF = class + 통솔 + armour`, each × terrain effect‰ × conditions‰ (§10) |
 | Base damage | named pipeline ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)): **base** `max(floor, ATK − ⌊DEF/2⌋)` with `floor = max(10, ⌊1.5 × level⌋)` → **relation** × family relation‰ → **role** × 800‰ for counters → **critical** × 1500‰ → **mode** × mode damage‰; each step floored |
 | Double attack | `민첩a − 민첩d ≥ 20` (무도가 `≥ 10`); each strike rolls separately ([ADR 0025](../adr/0025-deterministic-double-attacks-and-counters.md)) |
 | Counter | once per enemy action, 800‰ damage, only if the attacker is in the defender's range; never against catapults or stratagems; never by a broken unit |
@@ -234,17 +234,28 @@ flowchart TB
 
 Draw order from the battle `Prng`: success or status, then twist, then direction.
 
-**P0 stratagems** (starting tuning; every one targets a single tile):
+**P0 skills** (starting tuning, [ADR 0036](../adr/0036-p0-skills-and-conditions.md)).
+책사 casts the first ten; the last three are class skills:
 
-| Stratagem | School | MP | Range | Power | Terrain‰ | Weather‰ | Extra | Twist |
-|---|---|---|---|---|---|---|---|---|
-| 화계 fire | fire | 8 | 1–3 | 20 | grass, forest 1200; camp 1100; bridge 800; ford 600 | sunny 1100, wind 1300, rain 500 | ignites | power / backfire |
-| 풍계 gale | wind | 6 | 1–2 | 5 | plain, grass 1100; forest 800 | wind 1300, rain 900 | push 2 | power / fizzle |
-| 혼란 confuse | disruption | 8 | 1–3 | — | — | — | confusion, 1 round | refund / fizzle |
-| 치료 heal | support | 6 | 0–2 (self too) | 30 | — | — | heals allies | power / fizzle |
+| Skill | Who | School | MP | Range | Power | Terrain‰ | Weather‰ | Extra (condition, turns) | Twist |
+|---|---|---|---|---|---|---|---|---|---|
+| 화계 fire | 책사 | fire | 8 | 1–3 | 20 | grass, forest 1200; camp 1100; bridge 800; ford 600 | sunny 1100, wind 1300, rain 500 | ignites | power / backfire |
+| 낙석 rockfall | 책사 | earth | 8 | 1–3 | 25 | hills, mountain 1300; forest 1100; ford, bridge 800 | rain 900 | | power / fizzle |
+| 수계 flood | 책사 | water | 8 | 1–2 | 15 | ford 1400; bridge 1300; plain 900; hills 700; mountain 600 | rain 1300, sunny 900 | push 1; 약화 1–2 | power / fizzle |
+| 풍계 gale | 책사 | wind | 6 | 1–2 | 5 | plain, grass 1100; forest 800 | wind 1300, rain 900 | push 2 | power / fizzle |
+| 독연 poison smoke | 책사 | disruption | 8 | 1–3 | 5 | | wind 1200, rain 700 | 독 2–4 | power / backfire |
+| 혼란 confuse | 책사 | disruption | 8 | 1–3 | — | | | 혼란 1–2 | refund / fizzle |
+| 속박 bind | 책사 | disruption | 6 | 1–2 | — | | | 마비 1–2 | refund / fizzle |
+| 봉책 seal | 책사 | disruption | 6 | 1–3 | — | | | 금책 2–3 | refund / fizzle |
+| 치료 heal | 책사 | support | 6 | 0–2 | 30 | | | heals an ally | power / fizzle |
+| 정화 cleanse | 책사 | support | 5 | 0–2 | 10 | | | heals; removes debuffs | power / fizzle |
+| 철벽 iron wall | 보병 | support | 5 | self | — | | | 견고 2–3 on itself and the 4 tiles around | power / fizzle |
+| 질풍 gallop | 기병 | support | 5 | self | — | | | 신속 2–3 | power / fizzle |
+| 기합 battle cry | 무도가 | support | 4 | self | — | | | 고무 2–3 | power / fizzle |
 
-`previewStratagem()` forecasts each target's damage, heal or landing chance,
-plus the twist and windfall odds, without drawing from the `Prng`.
+`previewStratagem()` forecasts each target's damage, heal and the condition's
+landing chance, the condition's turn range, and the twist and windfall odds,
+without drawing from the `Prng`.
 
 **Forced movement and hazards** ([ADR 0030](../adr/0030-modern-techniques-adopted.md)):
 
@@ -291,7 +302,7 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 | Side phases | the side to act moves any of its ready units; `endPhase` passes; the lowest side starts each round |
 | Alternating | one unit per activation; sides alternate; the starting side switches every round |
 | Round start | units on village, fort or camp tiles heal (‰ of max HP, at least 1) |
-| Confusion | the unit can only wait in place, which uses up one round of the status; it can't counter |
+| Conditions | stacks count down at the end of the bearer's turn (§10); 혼란 lets the unit only wait in place and stops its counters |
 | HP / MP | max HP = class HP + 통솔 + 4 × level; max MP = class MP + ⌊지력/2⌋ |
 | Victory | the last side with living units wins; passing the round limit is a draw (story maps add objectives) |
 
@@ -330,7 +341,41 @@ flowchart LR
   S --> C
 ```
 
-## 10. Still to decide
+## 10. Conditions
+
+Buffs and debuffs stack, each further stack counting less, and every stack lasts
+its own rolled number of turns ([ADR 0035](../adr/0035-stacking-conditions-rolled-durations.md)).
+
+```mermaid
+flowchart TB
+  L["skill lands on a unit<br/>(debuff on an enemy: status chance‰)"] --> R["roll this stack's turns<br/>from the skill's range"]
+  R --> M{"stacks of this<br/>condition < 3?"}
+  M -->|yes| A["add the stack"]
+  M -->|no| X["replace the shortest stack<br/>if the new one lasts longer"]
+  A --> E["effect = Σ value × weight‰<br/>weights 1000, 500, 250"]
+  X --> E
+  E --> T["end of each bearer turn:<br/>damage over time, then every stack −1<br/>(a stack it cast on itself this turn waits)"]
+  T --> Z{"turns left = 0?"}
+  Z -->|yes| O["that stack ends"]
+  Z -->|no| E
+```
+
+| Condition | Kind | Per stack | Notes |
+|---|---|---|---|
+| 혼란 | debuff | can only wait in place | no counters |
+| 마비 | debuff | can't move | may still strike or cast from its tile |
+| 금책 | debuff | can't cast stratagems or class skills | |
+| 독 | debuff | loses 6% of max HP at the end of each turn | never below 1 HP |
+| 약화 | debuff | ATK and DEF −12% | |
+| 고무 | buff | ATK +15% | |
+| 견고 | buff | DEF +15% | |
+| 신속 | buff | move +1, hit +8% | the second stack adds no move (½ tile rounds down) |
+
+Example: three stacks of 고무 give ATK × (1000 + 150 + 75 + 37)‰ = +26%. Stats on
+the unit card already include conditions. 정화 removes every debuff stack;
+defeat clears all.
+
+## 11. Still to decide
 
 | Topic | Depends on |
 |---|---|

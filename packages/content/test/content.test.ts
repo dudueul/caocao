@@ -45,6 +45,22 @@ describe("P0 ruleset", () => {
     expect(c?.mountain.move).toBeNull();
   });
 
+  it("meets the P0 bar of 10+ skills and has conditions (ADR 0015, ADR 0036)", () => {
+    expect(Object.keys(P0_RULES.stratagems).length).toBeGreaterThanOrEqual(10);
+    expect(Object.keys(P0_RULES.conditions).sort()).toEqual([
+      "bind",
+      "confusion",
+      "guard",
+      "haste",
+      "poison",
+      "rally",
+      "seal",
+      "weaken",
+    ]);
+    const used = new Set(Object.values(P0_RULES.stratagems).flatMap((s) => s.condition ?? []));
+    expect([...used].sort()).toEqual(Object.keys(P0_RULES.conditions).sort());
+  });
+
   it("has a stable content hash", () => {
     expect(P0_RULES_HASH).toMatch(/^[0-9a-f]{16}$/);
   });

@@ -48,6 +48,8 @@ interface UnitSprite {
   body: Graphics;
   hp: Graphics;
   mark: Text;
+  /** ▲ buffs / ▼ debuffs at the top-left. */
+  cond: Text;
   glyph: Text;
 }
 
@@ -257,9 +259,12 @@ export class Field {
     const mark = new Text({ text: "", style: textStyle(Math.round(t * 0.26), 0xffe066, true) });
     mark.anchor.set(0.5);
     mark.position.set(t * 0.3, -t * 0.3);
-    root.addChild(body, glyph, hp, mark);
+    const cond = new Text({ text: "", style: textStyle(Math.round(t * 0.24), 0xffffff, true) });
+    cond.anchor.set(0.5);
+    cond.position.set(-t * 0.3, -t * 0.3);
+    root.addChild(body, glyph, hp, mark, cond);
     this.units.addChild(root);
-    s = { root, body, hp, mark, glyph };
+    s = { root, body, hp, mark, cond, glyph };
     this.sprites.set(u.id, s);
     return s;
   }
@@ -275,7 +280,16 @@ export class Field {
       s.body.circle(0, 0, r * 0.78).stroke({ width: 1.5, color: 0xffffff, alpha: 0.5 });
     s.glyph.text = cls?.name.slice(0, 1) ?? "?";
     this.drawHp(s, u.hp, u.maxHp);
-    s.mark.text = u.status ? "?" : u.broken ? "!" : "";
+    const kinds = new Set(
+      u.conditions.map((c) => this.session.rules.conditions[c.id]?.kind ?? "debuff"),
+    );
+    const confused = u.conditions.some(
+      (c) => this.session.rules.conditions[c.id]?.blocks === "act",
+    );
+    s.mark.text = confused ? "?" : u.broken ? "!" : "";
+    s.cond.text = `${kinds.has("buff") ? "▲" : ""}${kinds.has("debuff") ? "▼" : ""}`;
+    s.cond.style.fill =
+      kinds.has("buff") && kinds.has("debuff") ? 0xffe066 : kinds.has("buff") ? 0x7ee07a : 0xc58cff;
     s.root.alpha = u.acted ? 0.6 : 1;
   }
 
@@ -442,12 +456,26 @@ export class Field {
             await this.burst(e.at, def ? SCHOOL_COLOR[def.school] : 0xffffff);
             break;
           }
-          case "stratagemEffect":
-            if (e.heal > 0) this.float(at(e.unit), `+${e.heal}`, 0x7ee07a);
-            else if (e.status) this.float(at(e.unit), "혼란", 0xc58cff);
-            else if (e.resisted) this.float(at(e.unit), "저항", 0xb8c4d6);
-            else if (e.damage > 0) this.float(at(e.unit), `${e.damage}`, 0xff7a2f);
+          case "stratagemEffect": {
+            const c = at(e.unit);
+            const above = { x: c.x, y: c.y - 0.4 };
+            if (e.heal > 0) this.float(c, `+${e.heal}`, 0x7ee07a);
+            if (e.damage > 0) this.float(c, `${e.damage}`, 0xff7a2f);
+            if (e.condition) {
+              const def = this.session.rules.conditions[e.condition];
+              const label = `${def?.name ?? e.condition} ${e.turns}`;
+              this.float(above, label, def?.kind === "buff" ? 0x7ee07a : 0xc58cff);
+            } else if (e.resisted) this.float(above, "저항", 0xb8c4d6);
             setHp(e.unit, e.hpAfter);
+            await this.tween(this.ms(160), () => {});
+            break;
+          }
+          case "cleansed":
+            this.float(at(e.unit), "정화", 0x9be7ff);
+            break;
+          case "conditionDamage":
+            setHp(e.unit, e.hpAfter);
+            this.float(at(e.unit), `${e.damage}`, 0xb57cff);
             await this.tween(this.ms(160), () => {});
             break;
           case "twist":

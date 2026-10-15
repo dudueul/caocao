@@ -102,7 +102,30 @@ export interface Affinity {
 }
 
 export type StratagemSchool = "fire" | "water" | "earth" | "wind" | "support" | "disruption";
-export type StatusKind = "confusion";
+
+/** What a condition forbids while any of its stacks remains. */
+export type ConditionBlock = "act" | "move" | "stratagem";
+
+/**
+ * A buff or debuff (ADR 0035). Its modifiers are per stack; each further stack of
+ * the same condition counts `stackDiscount`‰ of the one before. Every stack has
+ * its own duration, rolled when it lands.
+ */
+export interface ConditionDef {
+  readonly id: string;
+  readonly name: string;
+  readonly kind: "buff" | "debuff";
+  /** ‰ added to the ATK and DEF multipliers (signed). */
+  readonly atk?: number;
+  readonly def?: number;
+  /** ‰ added to the bearer's hit chance when it strikes (signed). */
+  readonly hit?: number;
+  /** Tiles added to the bearer's move (signed). */
+  readonly move?: number;
+  /** ‰ of max HP lost at the end of each of the bearer's turns; never below 1 HP. */
+  readonly dot?: number;
+  readonly blocks?: ConditionBlock;
+}
 
 export interface StratagemDef {
   readonly id: string;
@@ -113,11 +136,16 @@ export interface StratagemDef {
   readonly range: readonly Offset[];
   /** Cells affected, relative to the chosen target cell. */
   readonly area: readonly Offset[];
-  readonly effect: "damage" | "heal" | "status";
+  /** Main effect; "condition" casts only apply `condition`. */
+  readonly effect: "damage" | "heal" | "condition";
   readonly targets: "enemies" | "allies";
   readonly power: number;
-  readonly status?: StatusKind;
-  readonly statusRounds?: number;
+  /** Condition applied to each target (a rider on damage or heal casts). Debuffs on enemies roll to land. */
+  readonly condition?: string;
+  /** Duration range in the bearer's turns, rolled per stack when it lands (ADR 0035). */
+  readonly turns?: readonly [number, number];
+  /** Removes every debuff stack from each target. */
+  readonly cleanse?: boolean;
   /** ‰ multipliers by the target tile's terrain and by weather (default 1000). */
   readonly terrain?: Partial<Record<TerrainId, number>>;
   readonly weather?: Partial<Record<WeatherKind, number>>;
@@ -174,6 +202,12 @@ export interface Tuning {
   readonly burnRounds: number;
   /** Max MP = class MP + 지력 × mpPerIntellect‰ (ADR 0020). */
   readonly mpPerIntellect: number;
+  /** Each further stack of one condition counts this ‰ of the one before (ADR 0035). */
+  readonly stackDiscount: number;
+  /** Most stacks of one condition a unit can carry; a new one replaces the shortest. */
+  readonly maxStacks: number;
+  /** Lowest ATK/DEF multiplier‰ that conditions can bring a unit to. */
+  readonly modifierFloor: number;
 }
 
 export interface Ruleset {
@@ -181,6 +215,7 @@ export interface Ruleset {
   readonly terrains: Readonly<Record<TerrainId, TerrainDef>>;
   readonly affinity: Readonly<Record<string, Readonly<Record<TerrainId, Affinity>>>>;
   readonly stratagems: Readonly<Record<string, StratagemDef>>;
+  readonly conditions: Readonly<Record<string, ConditionDef>>;
   /** Attacker family → defender family → damage‰; missing pairs are 1000 (ADR 0029). */
   readonly relations: Readonly<Record<string, Readonly<Record<string, number>>>>;
   readonly tuning: Tuning;
@@ -192,9 +227,13 @@ export interface Ruleset {
 
 export type Fate = "escaped" | "captured" | "killed";
 
-export interface Status {
-  kind: StatusKind;
-  rounds: number;
+/** One stack of a condition on a unit. */
+export interface ConditionStack {
+  id: string;
+  /** Turns left; the stack ends when this reaches 0. */
+  turns: number;
+  /** Landed during the bearer's own turn: it starts counting from the next one. */
+  fresh: boolean;
 }
 
 export interface Unit {
@@ -214,7 +253,8 @@ export interface Unit {
   x: number;
   y: number;
   acted: boolean;
-  status: Status | null;
+  /** Condition stacks in the order they landed (ADR 0035). */
+  conditions: ConditionStack[];
   /** Broken units can't counter until they act again (ADR 0030). */
   broken: boolean;
   fate: Fate | null;
@@ -236,7 +276,8 @@ export interface BattleMap {
 }
 
 export interface BattleState {
-  version: 1;
+  /** State format; 2 since conditions replaced the single status (ADR 0035). */
+  version: 2;
   mode: ModeId;
   map: BattleMap;
   weather: WeatherKind;
@@ -290,10 +331,14 @@ export type BattleEvent =
       unit: string;
       damage: number;
       heal: number;
-      status: StatusKind | null;
+      /** Condition that landed, and its rolled duration. */
+      condition: string | null;
+      turns: number;
       resisted: boolean;
       hpAfter: number;
     }
+  | { kind: "cleansed"; unit: string; removed: string[] }
+  | { kind: "conditionDamage"; unit: string; damage: number; hpAfter: number }
   | { kind: "twist"; caster: string; outcome: "windfall" | "mishap"; effect: string }
   | {
       kind: "pushed";
@@ -308,7 +353,7 @@ export type BattleEvent =
   | { kind: "burned"; unit: string; damage: number; hpAfter: number }
   | { kind: "waited"; unit: string }
   | { kind: "terrainHeal"; unit: string; amount: number; hpAfter: number }
-  | { kind: "statusEnded"; unit: string; status: StatusKind }
+  | { kind: "conditionEnded"; unit: string; condition: string }
   | { kind: "turn"; side: number; round: number }
   | { kind: "battleEnd"; winner: number };
 

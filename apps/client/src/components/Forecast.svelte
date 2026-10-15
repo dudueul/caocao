@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { Forecast, Session } from "../lib/session.svelte.ts";
-import { pct, STAGE, T } from "../lib/text.ts";
+import { conditionName, pct, STAGE, T } from "../lib/text.ts";
 
 let { session, forecast }: { session: Session; forecast: Forecast } = $props();
 const name = (id: string) => session.state.units.find((u) => u.id === id)?.name ?? id;
@@ -64,12 +64,21 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
         {#if t.heal > 0}
           <span class="good">{T.heal} +{t.heal}</span>
         {/if}
-        {#if def?.effect === "status"}
+        {#if p.condition && t.chance < 1000}
           <span>{T.chance} {pct(t.chance)}</span>
         {/if}
       </div>
     {/each}
     <div class="tags">
+      {#if p.condition && p.turns}
+        <span class="chip" class:buff={session.rules.conditions[p.condition]?.kind === "buff"}>
+          {conditionName(session.rules, p.condition)}
+          {p.turns[0] === p.turns[1] ? p.turns[0] : `${p.turns[0]}–${p.turns[1]}`}{T.turns}
+        </span>
+      {/if}
+      {#if p.cleanse}
+        <span class="chip">{T.cleansed}</span>
+      {/if}
       {#if p.ignites}
         <span class="chip">{T.ignites}</span>
       {/if}
@@ -138,6 +147,10 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
   font-variant-numeric: tabular-nums;
 }
 .good {
+  color: var(--good);
+}
+.buff {
+  border-color: var(--good);
   color: var(--good);
 }
 </style>

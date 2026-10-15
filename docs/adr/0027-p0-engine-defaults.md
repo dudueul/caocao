@@ -1,6 +1,6 @@
 # 0027. Rules-engine defaults chosen while building P0
 
-- **Status:** Accepted (confirmed by the owner, all eight defaults)
+- **Status:** Accepted (confirmed by the owner, all eight defaults); row 5 (confusion) replaced by [0035](0035-stacking-conditions-rolled-durations.md)
 - **Date:** 2026-10-14
 - **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0003](0003-turn-structure.md), [0004](0004-server-authoritative-referee.md),

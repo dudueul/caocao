@@ -49,6 +49,7 @@ export const CLASSES: Readonly<Record<string, ClassDef>> = {
     atk: 45,
     def: 55,
     range: MELEE,
+    stratagems: ["ironWall"],
   }),
   archer: cls("archer", {
     name: "궁병",
@@ -68,8 +69,9 @@ export const CLASSES: Readonly<Record<string, ClassDef>> = {
     def: 45,
     range: MELEE,
     skirmisher: true,
+    stratagems: ["gallop"],
   }),
-  // 책사 carries 치료 in P0, until 도사 (healers) arrive.
+  // 책사 carries 치료 and 정화 in P0, until 도사 (healers) arrive (ADR 0036).
   strategist: cls("strategist", {
     name: "책사",
     family: "strategist",
@@ -79,7 +81,18 @@ export const CLASSES: Readonly<Record<string, ClassDef>> = {
     atk: 25,
     def: 30,
     range: MELEE,
-    stratagems: ["fire", "gale", "confuse", "heal"],
+    stratagems: [
+      "fire",
+      "rockfall",
+      "flood",
+      "gale",
+      "poisonSmoke",
+      "confuse",
+      "bind",
+      "seal",
+      "heal",
+      "cleanse",
+    ],
   }),
   martialArtist: cls("martialArtist", {
     name: "무도가",
@@ -90,6 +103,7 @@ export const CLASSES: Readonly<Record<string, ClassDef>> = {
     def: 40,
     range: MELEE,
     doubleAttackGap: 10,
+    stratagems: ["battleCry"],
   }),
   catapult: cls("catapult", {
     name: "포차",

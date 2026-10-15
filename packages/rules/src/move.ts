@@ -5,6 +5,7 @@
  * Enemies block their tile; allies can be passed through but not stopped on.
  */
 import { affinityAt, classOf, inBounds, isZoc, NEIGHBOURS, unitAt } from "./board.ts";
+import { conditionModifier, hasBlock } from "./conditions.ts";
 import type { BattleState, Cell, Ruleset, Unit } from "./types.ts";
 
 export interface Reach {
@@ -24,6 +25,10 @@ interface Node {
 /** Tiles the unit can end its move on (including its own tile), sorted by y, then x. */
 export function reachable(state: BattleState, rules: Ruleset, unit: Unit): Reach[] {
   const cls = classOf(rules, unit);
+  // Conditions change the move budget; a binding condition (마비) pins the unit.
+  const budget = hasBlock(rules, unit, "move")
+    ? 0
+    : Math.max(0, cls.move + conditionModifier(rules, unit, "move"));
   const width = state.map.width;
   const best = new Map<number, number>();
   const frontier: Node[] = [{ x: unit.x, y: unit.y, cost: 0, skipUsed: 0, stopped: false }];
@@ -62,7 +67,7 @@ export function reachable(state: BattleState, rules: Ruleset, unit: Unit): Reach
       const step = affinityAt(rules, state, unit, x, y).move;
       if (step === null) continue;
       const cost = node.cost + step;
-      if (cost > cls.move) continue;
+      if (cost > budget) continue;
       let skipUsed = node.skipUsed;
       let stopped = false;
       if (isZoc(state, unit.side, x, y)) {

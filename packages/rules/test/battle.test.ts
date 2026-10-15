@@ -129,10 +129,10 @@ describe("round effects and battle end", () => {
     );
     s.units[0] = {
       ...(s.units[0] as BattleState["units"][number]),
-      status: { kind: "confusion", rounds: 1 },
+      conditions: [{ id: "confusion", turns: 1, fresh: false }],
     };
     expect(legalCommands(s, RULES)).toEqual([wait("a", 0, 0)]);
     s = ok(s, wait("a", 0, 0));
-    expect(unitById(s, "a").status).toBeNull();
+    expect(unitById(s, "a").conditions).toEqual([]);
   });
 });

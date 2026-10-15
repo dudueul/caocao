@@ -10,8 +10,9 @@
  */
 import { legalCommands } from "./battle.ts";
 import { classOf, isAlive, NEIGHBOURS, terrainAt, unitById } from "./board.ts";
-import { hitChance, previewAttack, strikeDamage } from "./combat.ts";
-import { permille } from "./math.ts";
+import { attackPower, defensePower, hitChance, previewAttack, strikeDamage } from "./combat.ts";
+import { conditionDef, hasBlock, stacksOf, stackWeight } from "./conditions.ts";
+import { half, permille } from "./math.ts";
 import { reachable } from "./move.ts";
 import {
   statusChance,
@@ -29,6 +30,7 @@ import type {
   GambitBehavior,
   GambitCondition,
   Ruleset,
+  StratagemDef,
   Unit,
 } from "./types.ts";
 
@@ -37,7 +39,6 @@ const W = {
   counterTaken: 8,
   killBase: 300,
   heal: 8,
-  status: 3,
   approach: 40,
   cover: 1,
   lowHpHealTile: 200,
@@ -49,6 +50,10 @@ const W = {
   boldnessPerRound: 8,
   /** Cost per MP spent, so small effects don't drain a strategist. */
   mp: 15,
+  /** Weight per HP-like point of a condition's expected effect. */
+  condition: 8,
+  /** Worth of removing one debuff stack. */
+  cleansePerStack: 400,
   /** Score of a command that achieves nothing; below any wait. */
   useless: -900_000,
 };
@@ -130,6 +135,49 @@ function nearestEnemyDistance(state: BattleState, unit: Unit): number {
     if (d < best) best = d;
   }
   return best === Number.MAX_SAFE_INTEGER ? 0 : best;
+}
+
+/** value × weight‰, rounded toward zero. */
+function scaled(value: number, weight: number): number {
+  return value < 0 ? -permille(-value, weight) : permille(value, weight);
+}
+
+/**
+ * Worth of one more stack of `def.condition` on `t`, for the caster's side, in
+ * HP-like points over its expected duration (ADR 0035). Further stacks count
+ * less, a block that already holds adds nothing, and buffs on units far from
+ * any enemy are worthless.
+ */
+function conditionValue(
+  rules: Ruleset,
+  s: BattleState,
+  caster: Unit,
+  t: Unit,
+  def: StratagemDef,
+): number {
+  if (def.condition === undefined || !isAlive(t)) return 0;
+  const c = conditionDef(rules, def.condition);
+  const [min, max] = def.turns ?? [1, 1];
+  const turns = Math.max(1, Math.floor((min + max) / 2));
+  const n = stacksOf(t, c.id);
+  const w = n >= rules.tuning.maxStacks ? 0 : stackWeight(rules, n);
+  const atk = attackPower(rules, s, t);
+  let impact = 0; // signed: positive means the condition helps `t`
+  impact += scaled(half(atk), scaled(c.atk ?? 0, w));
+  impact += scaled(half(defensePower(rules, s, t)), scaled(c.def ?? 0, w));
+  impact += scaled(half(atk), scaled(c.hit ?? 0, w));
+  impact += 15 * scaled(c.move ?? 0, w);
+  impact -= permille(t.maxHp, scaled(c.dot ?? 0, w));
+  if (c.blocks && !hasBlock(rules, t, c.blocks)) {
+    const cls = classOf(rules, t);
+    if (c.blocks === "act") impact -= half(atk) + 20;
+    else if (c.blocks === "move") impact -= cls.move * 8;
+    else if (cls.stratagems.length > 0 && t.mp > 0) impact -= t.stats.intellect;
+  }
+  impact *= turns;
+  const ally = t.side === caster.side;
+  if (ally && nearestEnemyDistance(s, t) > W.threatRange) return 0;
+  return Math.max(0, ally ? impact : -impact);
 }
 
 /** Ideal distance to the nearest enemy: just outside melee for ranged units. */
@@ -254,13 +302,30 @@ export function scoreCommand(
         if (dmg >= t.hp) value += W.killBase + t.maxHp;
       } else if (def.effect === "heal") {
         value += Math.min(t.maxHp - t.hp, stratagemHeal(def, me)) * W.heal;
-      } else if (t.status === null) {
-        value += permille(t.maxHp, statusChance(rules, me, t)) * W.status;
+      }
+      if (def.cleanse) {
+        const debuffs = t.conditions.filter((c) => conditionDef(rules, c.id).kind === "debuff");
+        value += debuffs.length * W.cleansePerStack;
+      }
+      if (def.condition !== undefined) {
+        const chance =
+          t.side !== me.side && conditionDef(rules, def.condition).kind === "debuff"
+            ? statusChance(rules, me, t)
+            : 1000;
+        value += permille(conditionValue(rules, s, me, t, def), chance) * W.condition;
       }
     }
-    // A cast that achieves nothing (healing full HP, confusing the confused) is never worth MP.
+    // A cast that achieves nothing (healing full HP, binding the bound) is never worth MP.
     if (value <= 0) return W.useless;
-    return score + value - def.mp * W.mp - danger(rules, s, me, threats, "") * W.danger;
+    // Support casts move like a wait does, so they pay the same approach pull.
+    const pull = def.targets === "allies" ? approachGap(state, rules, unit, command.to) : 0;
+    return (
+      score +
+      value -
+      def.mp * W.mp -
+      pull * (W.approach + W.boldnessPerRound * state.round) -
+      danger(rules, s, me, threats, "") * W.danger
+    );
   }
   // Wait: approach an attack position, weighed against exposure.
   const gap = approachGap(state, rules, unit, command.to);
@@ -361,7 +426,7 @@ function gambitCommands(
   cmds: readonly Act[],
   gambits: readonly Gambit[] | undefined,
 ): readonly Act[] {
-  if (!gambits || unit.status !== null) return cmds;
+  if (!gambits || hasBlock(rules, unit, "act")) return cmds;
   for (const g of gambits) {
     if (!conditionHolds(rules, state, unit, cmds, g.when)) continue;
     const picked = behaviorCandidates(rules, state, unit, cmds, g.behavior);

@@ -37,6 +37,9 @@ export const DEFAULT_TUNING: Tuning = {
   burnDamage: 20,
   burnRounds: 1,
   mpPerIntellect: 500,
+  stackDiscount: 500,
+  maxStacks: 3,
+  modifierFloor: 300,
 };
 
 const BEATS: Readonly<Record<CounterGroup, CounterGroup>> = {

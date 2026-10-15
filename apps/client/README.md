@@ -18,6 +18,7 @@ bun run build      # dist/ (relative asset paths, so it can be served from any f
 | Move | tap one of your units (ringed in gold when ready), then a blue tile; tap another tile to change your mind, or *이동 취소* |
 | Act | *공격*, a stratagem (화계, 풍계, 혼란, 치료), or *대기*; tap a target to see the forecast, then tap it again or *확인* |
 | Read threats | tap an enemy to see where it can move and strike; *위험 범위* (D) shows every tile the enemy can hit next turn |
+| Read conditions | ▲ (buff) and ▼ (debuff) on a unit; its card lists each condition with every stack's turns left, and hovering a chip shows what it does |
 | Step back | Esc, or *뒤로* |
 | Turn | *턴 종료* (E) ends your phase; the AI then plays its side |
 | Pace | the speed button cycles 1×, 2×, 4× and 생략 (no animation); *자동 전투* lets the AI play your side too |

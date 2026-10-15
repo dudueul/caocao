@@ -1,5 +1,5 @@
 <script lang="ts">
-import { attackPower, defensePower, type Unit } from "@tk/rules";
+import { attackPower, conditionModifier, defensePower, hasBlock, type Unit } from "@tk/rules";
 import type { Session } from "../lib/session.svelte.ts";
 import { STATS, T } from "../lib/text.ts";
 
@@ -8,6 +8,41 @@ const cls = $derived(session.rules.classes[unit.classId]);
 const side = $derived(session.scenario.sides[unit.side] ?? `${unit.side}`);
 const atk = $derived(attackPower(session.rules, session.state, unit));
 const def = $derived(defensePower(session.rules, session.state, unit));
+const move = $derived(
+  hasBlock(session.rules, unit, "move")
+    ? 0
+    : Math.max(0, (cls?.move ?? 0) + conditionModifier(session.rules, unit, "move")),
+);
+
+/** One chip per condition: its stacks' turns left, and what it does. */
+const groups = $derived.by(() => {
+  const out: { id: string; name: string; kind: string; turns: number[]; summary: string }[] = [];
+  for (const c of unit.conditions) {
+    let g = out.find((x) => x.id === c.id);
+    if (!g) {
+      const d = session.rules.conditions[c.id];
+      const parts: string[] = [];
+      if (d?.atk) parts.push(`공격 ${d.atk > 0 ? "+" : ""}${d.atk / 10}%`);
+      if (d?.def) parts.push(`방어 ${d.def > 0 ? "+" : ""}${d.def / 10}%`);
+      if (d?.hit) parts.push(`명중 ${d.hit > 0 ? "+" : ""}${d.hit / 10}%`);
+      if (d?.move) parts.push(`이동 ${d.move > 0 ? "+" : ""}${d.move}`);
+      if (d?.dot) parts.push(`매 턴 HP −${d.dot / 10}%`);
+      if (d?.blocks === "act") parts.push("행동 불가");
+      if (d?.blocks === "move") parts.push("이동 불가");
+      if (d?.blocks === "stratagem") parts.push("책략 불가");
+      g = {
+        id: c.id,
+        name: d?.name ?? c.id,
+        kind: d?.kind ?? "debuff",
+        turns: [],
+        summary: `${parts.join(", ")} (겹칠수록 효과 감소)`,
+      };
+      out.push(g);
+    }
+    g.turns.push(c.turns);
+  }
+  return out;
+});
 </script>
 
 <section class="card" class:enemy={unit.side !== session.humanSide}>
@@ -41,12 +76,16 @@ const def = $derived(defensePower(session.rules, session.state, unit));
     {/each}
     <div><span class="muted">공격</span> {atk}</div>
     <div><span class="muted">방어</span> {def}</div>
-    <div><span class="muted">{T.move}</span> {cls?.move}</div>
+    <div><span class="muted">{T.move}</span> {move}</div>
   </div>
   <div class="tags">
-    {#if unit.status}
-      <span class="chip warn">{T.confused} {unit.status.rounds}</span>
-    {/if}
+    {#each groups as g (g.id)}
+      <span class="chip {g.kind}" title={g.summary}>
+        {g.name}
+        {g.kind === "buff" ? "▲" : "▼"}
+        {g.turns.join("·")}{T.turns}
+      </span>
+    {/each}
     {#if unit.broken}
       <span class="chip warn">{T.broken}</span>
     {/if}
@@ -120,6 +159,11 @@ header strong {
   display: flex;
   gap: 4px;
 }
+.buff {
+  border-color: var(--good);
+  color: var(--good);
+}
+.debuff,
 .warn {
   border-color: #c58cff;
   color: #e2c8ff;

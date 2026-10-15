@@ -1,8 +1,8 @@
 # Remake: a Three Kingdoms grid-tactics game, built from scratch
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
-> this folder describes the **current** design. Last updated 2026-10-14
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0034](../adr/0034-scenario-ai-orders.md)).
+> this folder describes the **current** design. Last updated 2026-10-15
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0036](../adr/0036-p0-skills-and-conditions.md)).
 
 ## Vision
 
@@ -86,6 +86,8 @@ flowchart TB
 | Content format | Typed TS modules + validators; our own officer ratings in steps of 5; ruleset content hash | [0032](../adr/0032-content-as-typed-modules.md) |
 | Sandbox client | Fixed layout, tap-to-move with pending undo, forecast then confirm, placeholder shapes, Korean UI text, speed and auto-battle; svelte-check (TS 6) + Biome for `.svelte` | [0033](../adr/0033-p0-sandbox-client-defaults.md) |
 | Enemy behaviour | Scenario units carry standing AI orders written as gambits (hold, heal then hold) | [0034](../adr/0034-scenario-ai-orders.md) |
+| Conditions | Buffs and debuffs stack, each further stack worth half; every stack's duration is rolled on landing and shown | [0035](../adr/0035-stacking-conditions-rolled-durations.md) |
+| P0 skills | 13 skills (10 for 책사, one class skill each for 보병, 기병, 무도가), 8 conditions; poison never below 1 HP *(proposed)* | [0036](../adr/0036-p0-skills-and-conditions.md) |
 
 ## Roadmap
 
@@ -99,8 +101,10 @@ flowchart LR
 ```
 
 Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then-arena.md).
-**P0 today:** the rules engine, the P0 content and a playable battle sandbox
-(`bun run dev`) on desktop and phone.
+**P0 today:** the rules engine with conditions, the P0 content (6 classes, 12
+terrains, 13 skills, 8 conditions) and a playable battle sandbox (`bun run dev`)
+on desktop and phone. That covers P0's exit list; CI can't run yet (the jobs
+never start on GitHub).
 
 ## Open questions (next design sessions)
 
@@ -110,7 +114,7 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 | 4 | Network protocol | Plain WebSocket + typed JSON (no Socket.IO) with DO WebSocket hibernation |
 | 5 | Accounts and sign-in | Friends: magic link or passkeys; stores later |
 | 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
-| 7 | Equipment, Arena normalization ([RULES.md §10](RULES.md#10-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
+| 7 | Equipment, Arena normalization ([RULES.md §11](RULES.md#11-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)) |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | 96 px tiles (2×), palette and atlas tooling |
 | 10 | Languages | Korean first; English next |

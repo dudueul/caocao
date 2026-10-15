@@ -1,6 +1,6 @@
 # Remake architecture
 
-> Living document; reflects ADRs [0003](../adr/0003-turn-structure.md)–[0034](../adr/0034-scenario-ai-orders.md).
+> Living document; reflects ADRs [0003](../adr/0003-turn-structure.md)–[0036](../adr/0036-p0-skills-and-conditions.md).
 > Items marked **(proposed)** are leanings, not decisions yet.
 
 ## 1. System context
@@ -130,16 +130,18 @@ no wall-clock time. Golden-replay tests run in CI.
 | `board.ts` | Tile, unit and range queries; zones of control |
 | `move.ts` | `reachable()`: Dijkstra over family terrain costs with soft ZOC ([0026](../adr/0026-soft-zone-of-control.md)) |
 | `combat.ts` | Hit, critical, relation matrix, named damage pipeline, strike → counter → second strike, officer fate; `previewAttack()` with breakdown |
-| `stratagem.ts` | MP, element × terrain × weather, status rolls, fortune twists, push collisions, ignition; `previewStratagem()` |
+| `stratagem.ts` | MP, element × terrain × weather, condition riders and cleansing, fortune twists, push collisions, ignition; `previewStratagem()` |
+| `conditions.ts` | Condition stacks ([0035](../adr/0035-stacking-conditions-rolled-durations.md)): discounted stacking, rolled durations, blocks, ATK/DEF/hit/move modifiers, damage over time, end-of-turn countdown |
 | `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects (healing, burning), victory |
 | `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); the approach pull follows a movement-cost field to the nearest attack position, so units route around rivers and walls; casts that achieve nothing are never chosen, and MP has a cost; `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)) |
 | `sim.ts` | `runBattle()` (AI vs AI), `replay()` (command-log verification) |
 | `prng.ts`, `hash.ts`, `math.ts`, `tuning.ts` | Seeded sfc32, canonical hash, integer helpers, default tuning, `forMode()`, `triangleRelations()` |
 
-Tests (`packages/rules/test/`, 61 cases) cover the RULES.md worked
+Tests (`packages/rules/test/`, 77 cases) cover the RULES.md worked
 examples, movement and ZOC, turn policies and validation, stratagem
-formulas, previews and twist rates, golden replays, and an AI-vs-AI soak that checks
-every invariant after every step.
+formulas, previews and twist rates, conditions (stacking, rolled durations, blocks,
+poison, cleansing), golden replays, and an AI-vs-AI soak that checks every
+invariant after every step.
 
 **Content (P0)** in `packages/content/src/` ([0032](../adr/0032-content-as-typed-modules.md)):
 
@@ -147,7 +149,8 @@ every invariant after every step.
 flowchart LR
   CL["classes.ts<br/>6 tier-1 classes"] --> RS["ruleset.ts<br/>P0_RULES + P0_RULES_HASH"]
   TE["terrain.ts<br/>12 terrains, 6 × 12 affinity"] --> RS
-  SG["stratagems.ts<br/>화계 풍계 혼란 치료"] --> RS
+  SG["stratagems.ts<br/>13 skills"] --> RS
+  CO["conditions.ts<br/>8 buffs and debuffs"] --> RS
   OF["officers.ts<br/>our own ratings"] --> SC["scenarios.ts<br/>scenarioSetup()"]
   MP["maps.ts<br/>text rows"] --> SC
   RS --> VA["validate.ts<br/>validateRuleset / validateScenario"]
@@ -156,12 +159,12 @@ flowchart LR
   RS --> CB
 ```
 
-Its tests (16 cases) validate the ruleset and every scenario, show that broken
-content is reported, check the medium number scale on the sandbox, check the
-defenders' hold orders, and run an AI-vs-AI soak of the 오소 sandbox under both
-turn policies. In 40 seeded AI-vs-AI runs per policy, battles end in about 15
-rounds; the raiders win 24–16 under side phases and 18–22 alternating
-([0034](../adr/0034-scenario-ai-orders.md)).
+Its tests (17 cases) validate the ruleset and every scenario, show that broken
+content is reported, check the P0 skill and condition sets, the medium number
+scale and the defenders' hold orders, and run an AI-vs-AI soak of the 오소 sandbox
+under both turn policies. In 40 seeded AI-vs-AI runs per policy, battles end in
+15–16 rounds; the raiders win 14–26 under side phases and 27–13 alternating
+([0034](../adr/0034-scenario-ai-orders.md), [0036](../adr/0036-p0-skills-and-conditions.md)).
 
 **Content-driven parts**, each benchmarked on the recovered game ([0002](../adr/0002-remake-from-scratch.md)):
 
@@ -268,9 +271,9 @@ flowchart LR
 | Module | Responsibility |
 |---|---|
 | `lib/session.svelte.ts` | The battle store: rules state, command log, selection, pending move, aim and target, settings; every option derived from `legalCommands()`; runs AI activations with the scenario's orders |
-| `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units, effects; animates each command's events, then shows the new state |
+| `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units with ▲/▼ condition marks, effects; animates each command's events, then shows the new state |
 | `lib/text.ts` | Korean UI strings and event-log lines |
-| `components/*.svelte` | Top bar, unit card, action menu, forecast (with the damage breakdown), tile info, battle log |
+| `components/*.svelte` | Top bar, unit card (condition stacks with turns left), action menu, forecast (damage breakdown; condition, turn range and landing chance), tile info, battle log |
 
 ```mermaid
 stateDiagram-v2

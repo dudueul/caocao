@@ -43,7 +43,9 @@ export function validateRuleset(rules: Ruleset): string[] {
     if (!rules.affinity[c.family]) say(`class ${key}: no affinity row for family ${c.family}`);
     for (const s of c.stratagems)
       if (!rules.stratagems[s]) say(`class ${key}: unknown stratagem ${s}`);
-    if (c.stratagems.length > 0 && c.mp === 0) say(`class ${key}: casts stratagems but has 0 MP`);
+    // Max MP = class MP + 지력 × mpPerIntellect‰, so 0 class MP is fine while 지력 gives MP.
+    if (c.stratagems.length > 0 && c.mp === 0 && rules.tuning.mpPerIntellect === 0)
+      say(`class ${key}: casts stratagems but can never have MP`);
   }
 
   for (const [family, row] of Object.entries(rules.affinity))
@@ -62,13 +64,27 @@ export function validateRuleset(rules: Ruleset): string[] {
     if (!isPositive(s.mp)) say(`stratagem ${key}: mp ${s.mp} must be > 0`);
     if (s.range.length === 0) say(`stratagem ${key}: empty range`);
     if (s.area.length === 0) say(`stratagem ${key}: empty area`);
-    if (s.effect === "status" && (s.status === undefined || !isPositive(s.statusRounds ?? 0)))
-      say(`stratagem ${key}: status stratagems need a status and statusRounds`);
+    if (s.effect === "condition" && s.condition === undefined)
+      say(`stratagem ${key}: condition stratagems need a condition`);
+    if (s.condition !== undefined) {
+      if (!rules.conditions[s.condition]) say(`stratagem ${key}: unknown condition ${s.condition}`);
+      const [min, max] = s.turns ?? [0, 0];
+      if (!isPositive(min) || !Number.isSafeInteger(max) || max < min)
+        say(`stratagem ${key}: turns must be a range [min, max] with 1 ≤ min ≤ max`);
+    }
     if (s.effect === "heal" && s.targets !== "allies") say(`stratagem ${key}: heals target allies`);
     for (const [t, m] of Object.entries(s.terrain ?? {}))
       if (!isPositive(m)) say(`stratagem ${key}: terrain ${t} multiplier ${m} must be > 0`);
     for (const [w, m] of Object.entries(s.weather ?? {}))
       if (!isPositive(m)) say(`stratagem ${key}: weather ${w} multiplier ${m} must be > 0`);
+  }
+
+  for (const [key, c] of Object.entries(rules.conditions)) {
+    if (c.id !== key) say(`condition ${key} has id ${c.id}`);
+    if (c.dot !== undefined && !isPermille(c.dot))
+      say(`condition ${key}: dot ${c.dot} is not 0–1000`);
+    const effects = [c.atk, c.def, c.hit, c.move, c.dot, c.blocks].filter((v) => v !== undefined);
+    if (effects.length === 0) say(`condition ${key} does nothing`);
   }
 
   for (const [a, row] of Object.entries(rules.relations)) {

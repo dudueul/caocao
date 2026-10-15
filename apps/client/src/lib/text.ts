@@ -61,7 +61,16 @@ export const T = {
   ignites: "점화",
   push: "밀어내기",
   chance: "성공",
+  turns: "턴",
+  resisted: "저항",
+  cleansed: "정화",
+  conditions: "상태",
 } as const;
+
+/** Display name of a condition. */
+export function conditionName(rules: Ruleset, id: string): string {
+  return rules.conditions[id]?.name ?? id;
+}
 
 export const STATS = [
   ["martial", "무력"],
@@ -151,12 +160,26 @@ export function describe(
     case "stratagemEffect": {
       if (e.heal > 0)
         return { text: `${name(e.unit)} ${T.heal} +${e.heal}`, tone: tone(e.unit, true) };
-      if (e.status) return { text: `${name(e.unit)} ${T.confused}`, tone: tone(e.unit, false) };
-      if (e.resisted) return { text: `${name(e.unit)} 저항`, tone: "info" };
-      if (e.damage > 0)
-        return { text: `${name(e.unit)} ${T.damage} ${e.damage}`, tone: tone(e.unit, false) };
-      return null;
+      const parts: string[] = [];
+      if (e.damage > 0) parts.push(`${T.damage} ${e.damage}`);
+      if (e.condition) parts.push(`${conditionName(rules, e.condition)} ${e.turns}${T.turns}`);
+      if (e.resisted) parts.push(T.resisted);
+      if (parts.length === 0) return null;
+      const buff = e.condition !== null && rules.conditions[e.condition]?.kind === "buff";
+      return {
+        text: `${name(e.unit)} ${parts.join(" · ")}`,
+        tone: e.resisted && e.damage === 0 ? "info" : tone(e.unit, buff),
+      };
     }
+    case "cleansed":
+      return {
+        text: `${name(e.unit)} ${T.cleansed}: ${e.removed.map((id) => conditionName(rules, id)).join(", ")}`,
+        tone: tone(e.unit, true),
+      };
+    case "conditionDamage":
+      return { text: `${name(e.unit)} 독 ${e.damage}`, tone: tone(e.unit, false) };
+    case "conditionEnded":
+      return { text: `${name(e.unit)} ${conditionName(rules, e.condition)} 해제`, tone: "info" };
     case "twist":
       return {
         text: `${e.outcome === "windfall" ? T.windfall : T.mishap}! ${name(e.caster)} (${e.effect})`,

@@ -1,8 +1,9 @@
 /**
  * Stratagems (RULES.md §5, ADR 0024): MP cost, elements scaled by terrain and
- * weather, status rolls against 지력 and 운, and the rare fortune twist.
- * Prng draw order: status rolls (per target, by unit id), twist, direction,
- * then fate rolls for anyone defeated.
+ * weather, conditions (ADR 0035), and the rare fortune twist.
+ * Prng draw order: per target, by unit id: the landing roll (debuffs on enemies
+ * only), then the duration roll if it landed; then twist, direction; then fate
+ * rolls for anyone defeated.
  */
 import {
   affinityAt,
@@ -15,6 +16,7 @@ import {
   unitAt,
 } from "./board.ts";
 import { defeat } from "./combat.ts";
+import { addCondition, conditionDef, hasBlock, removeDebuffs, rollTurns } from "./conditions.ts";
 import { clamp, half, permille } from "./math.ts";
 import type { Prng } from "./prng.ts";
 import { forMode } from "./tuning.ts";
@@ -58,7 +60,8 @@ export function canCast(
   at: Cell,
 ): boolean {
   if (!classOf(rules, caster).stratagems.includes(def.id)) return false;
-  if (caster.mp < def.mp || caster.status !== null) return false;
+  if (caster.mp < def.mp) return false;
+  if (hasBlock(rules, caster, "act") || hasBlock(rules, caster, "stratagem")) return false;
   if (!inBounds(state, at.x, at.y) || !inRange(def.range, from, at)) return false;
   // Evaluate targets as if the caster already stood on `from`.
   const moved = { ...caster, x: from.x, y: from.y };
@@ -77,6 +80,12 @@ export function stratagemDamage(
   return permille(byTerrain, def.weather?.[state.weather] ?? 1000);
 }
 
+/** Must a condition from this cast roll to land on `target`? (debuffs on enemies only) */
+function resistible(rules: Ruleset, def: StratagemDef, caster: Unit, target: Unit): boolean {
+  if (def.condition === undefined) return false;
+  return conditionDef(rules, def.condition).kind === "debuff" && target.side !== caster.side;
+}
+
 export function stratagemHeal(def: StratagemDef, caster: Unit): number {
   return def.power + half(caster.stats.intellect);
 }
@@ -93,8 +102,12 @@ export function statusChance(rules: Ruleset, caster: Unit, target: Unit): number
 }
 
 export interface StratagemPreview {
-  /** Each affected unit: damage or heal before a twist, and the ‰ that it lands. */
+  /** Each affected unit: damage or heal before a twist, and the ‰ that the condition lands. */
   targets: { unit: string; damage: number; heal: number; chance: number }[];
+  /** Condition applied, and its duration range in the bearer's turns. */
+  condition: string | null;
+  turns: readonly [number, number] | null;
+  cleanse: boolean;
   /** ‰ that a fortune twist happens, and ‰ that a twist is a windfall (ADR 0024). */
   twist: number;
   windfall: number;
@@ -119,8 +132,11 @@ export function previewStratagem(
       unit: u.id,
       damage: def.effect === "damage" ? stratagemDamage(state, def, caster, u) : 0,
       heal: def.effect === "heal" ? heal(u) : 0,
-      chance: def.effect === "status" ? statusChance(rules, caster, u) : 1000,
+      chance: resistible(rules, def, caster, u) ? statusChance(rules, caster, u) : 1000,
     })),
+    condition: def.condition ?? null,
+    turns: def.condition === undefined ? null : (def.turns ?? [1, 1]),
+    cleanse: def.cleanse === true,
     twist: t.twist,
     windfall: clamp(
       t.windfallBase +
@@ -138,6 +154,7 @@ interface Pending {
   damage: number;
   heal: number;
   landed: boolean;
+  turns: number;
 }
 
 export function castStratagem(
@@ -153,12 +170,18 @@ export function castStratagem(
   caster.mp -= def.mp;
   events.push({ kind: "stratagem", caster: caster.id, id: def.id, at });
 
-  const pending: Pending[] = stratagemTargets(state, caster, def, at).map((unit) => ({
-    unit,
-    damage: def.effect === "damage" ? stratagemDamage(state, def, caster, unit) : 0,
-    heal: def.effect === "heal" ? stratagemHeal(def, caster) : 0,
-    landed: def.effect === "status" ? prng.chance(statusChance(rules, caster, unit)) : true,
-  }));
+  const pending: Pending[] = stratagemTargets(state, caster, def, at).map((unit) => {
+    const landed =
+      def.condition !== undefined &&
+      (!resistible(rules, def, caster, unit) || prng.chance(statusChance(rules, caster, unit)));
+    return {
+      unit,
+      damage: def.effect === "damage" ? stratagemDamage(state, def, caster, unit) : 0,
+      heal: def.effect === "heal" ? stratagemHeal(def, caster) : 0,
+      landed,
+      turns: landed ? rollTurns(prng, def.turns ?? [1, 1]) : 0,
+    };
+  });
 
   // Fortune twist (ADR 0024): rare, tilted by the caster's and main target's 운.
   let fizzle = false;
@@ -211,15 +234,22 @@ export function castStratagem(
         heal = Math.min(p.heal, u.maxHp - u.hp);
         u.hp += heal;
       }
-      const status = def.effect === "status" && p.landed && def.status ? def.status : null;
-      if (status) u.status = { kind: status, rounds: (def.statusRounds ?? 1) + extraRounds };
+      if (def.cleanse && u.hp > 0) {
+        const removed = removeDebuffs(rules, u);
+        if (removed.length > 0) events.push({ kind: "cleansed", unit: u.id, removed });
+      }
+      const condition = p.landed && u.hp > 0 && def.condition !== undefined ? def.condition : null;
+      const turns = condition ? p.turns + extraRounds : 0;
+      // A stack landing on the caster during its own turn starts counting next turn.
+      if (condition) addCondition(rules, u, condition, turns, u.id === caster.id);
       events.push({
         kind: "stratagemEffect",
         unit: u.id,
         damage: p.damage,
         heal,
-        status,
-        resisted: def.effect === "status" && !p.landed,
+        condition,
+        turns,
+        resisted: def.condition !== undefined && !p.landed,
         hpAfter: u.hp,
       });
       if (u.hp === 0) defeat(rules, prng, u, events);
@@ -239,7 +269,8 @@ export function castStratagem(
       unit: caster.id,
       damage: backfire,
       heal: 0,
-      status: null,
+      condition: null,
+      turns: 0,
       resisted: false,
       hpAfter: caster.hp,
     });

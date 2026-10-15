@@ -16,6 +16,7 @@ import {
   unitById,
 } from "./board.ts";
 import { defeat, resolveAttack } from "./combat.ts";
+import { endTurn, hasBlock } from "./conditions.ts";
 import { permille } from "./math.ts";
 import { canReach, reachable } from "./move.ts";
 import { Prng, seedFromString } from "./prng.ts";
@@ -91,7 +92,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
         x: s.x,
         y: s.y,
         acted: false,
-        status: null,
+        conditions: [],
         broken: false,
         fate: null,
       };
@@ -109,7 +110,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
   }
   const sides = Math.max(...units.map((u) => u.side)) + 1;
   const state: BattleState = {
-    version: 1,
+    version: 2,
     mode,
     map: { width: setup.map.width, height: setup.map.height, tiles: [...setup.map.tiles] },
     weather: setup.weather,
@@ -145,7 +146,7 @@ export function legalCommands(state: BattleState, baseRules: Ruleset): Command[]
   const rules = forMode(baseRules, state.mode);
   const out: Command[] = [];
   for (const u of readyUnits(state, state.active)) {
-    if (u.status !== null) {
+    if (hasBlock(rules, u, "act")) {
       out.push({ kind: "act", unit: u.id, to: { x: u.x, y: u.y }, action: { kind: "wait" } });
       continue;
     }
@@ -184,7 +185,11 @@ export function apply(state: BattleState, baseRules: Ruleset, command: Command):
   if (command.kind === "endPhase") {
     if (next.policy !== "sidePhases")
       return { ok: false, reason: "endPhase is only for side phases" };
-    for (const u of readyUnits(next, next.active)) u.acted = true;
+    // Passed-over units still use up a turn of their conditions.
+    for (const u of readyUnits(next, next.active)) {
+      u.acted = true;
+      endTurn(rules, u, events);
+    }
   } else {
     const error = validateAct(next, rules, command);
     if (error) return { ok: false, reason: error };
@@ -207,15 +212,9 @@ export function apply(state: BattleState, baseRules: Ruleset, command: Command):
       castStratagem(rules, next, prng, unit, stratagemDef(rules, action.id), action.at, events);
     } else {
       events.push({ kind: "waited", unit: unit.id });
-      if (unit.status !== null) {
-        unit.status.rounds -= 1;
-        if (unit.status.rounds <= 0) {
-          events.push({ kind: "statusEnded", unit: unit.id, status: unit.status.kind });
-          unit.status = null;
-        }
-      }
     }
     unit.acted = true;
+    endTurn(rules, unit, events);
   }
 
   advance(next, rules, prng, events);
@@ -234,9 +233,9 @@ function validateAct(
   if (unit.side !== state.active) return "not this side's turn";
   if (unit.acted) return "unit has already acted";
   if (!inBounds(state, c.to.x, c.to.y)) return "destination off the map";
-  if (unit.status !== null) {
+  if (hasBlock(rules, unit, "act")) {
     if (c.to.x !== unit.x || c.to.y !== unit.y || c.action.kind !== "wait") {
-      return "a confused unit can only wait";
+      return "a unit that can't act can only wait";
     }
     return null;
   }
