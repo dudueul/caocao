@@ -1,7 +1,8 @@
 <script lang="ts">
-import ActionMenu from "../components/ActionMenu.svelte";
 import BattleField from "../components/BattleField.svelte";
+import CommandMenu from "../components/CommandMenu.svelte";
 import EventLog from "../components/EventLog.svelte";
+import Floating from "../components/Floating.svelte";
 import Forecast from "../components/Forecast.svelte";
 import TileInfo from "../components/TileInfo.svelte";
 import TopBar from "../components/TopBar.svelte";
@@ -39,9 +40,20 @@ const result = $derived(
         : T.defeat,
 );
 const waitingText = $derived(online ? T.opponentTurn : T.thinking);
+/** The forecast floats beside its target (the chosen one, or the one under the pointer). */
+const forecastCell = $derived.by(() => {
+  const f = session.forecast;
+  if (!f) return null;
+  return f.kind === "attack" ? { x: f.defender.x, y: f.defender.y } : f.at;
+});
 
 function onKey(e: KeyboardEvent) {
-  if (e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement) return;
+  if (
+    e.target instanceof HTMLInputElement ||
+    e.target instanceof HTMLSelectElement ||
+    e.target instanceof HTMLButtonElement
+  )
+    return;
   if (e.key === "Escape") session.back();
   else if (e.key === "Enter") void session.confirm();
   else if (e.key === "d" || e.key === "D") session.showDanger = !session.showDanger;
@@ -69,10 +81,10 @@ function onKey(e: KeyboardEvent) {
     {:else}
       <p class="muted hint">{session.myTurn ? `${T.yourTurn} · 장수를 선택하세요` : waitingText}</p>
     {/if}
-    {#if session.forecast}
-      <Forecast {session} forecast={session.forecast} />
+    {#if session.aim}
+      <p class="muted hint">{T.pickTarget}</p>
     {:else if session.to}
-      <ActionMenu {session} />
+      <p class="muted hint">{T.pickAction}</p>
     {:else if session.unitCommands.length > 0}
       <p class="muted hint">{T.pickTile}</p>
     {/if}
@@ -81,6 +93,24 @@ function onKey(e: KeyboardEvent) {
     {/if}
     <EventLog lines={session.log} />
   </aside>
+  {#if session.myTurn && session.to}
+    {#if session.forecast && forecastCell}
+      <Floating {session} cell={forecastCell} avoid={[session.to]} {width} {height}>
+        <Forecast {session} forecast={session.forecast} />
+      </Floating>
+    {:else if session.aim}
+      <Floating {session} cell={session.to} {width} {height}>
+        <div class="aiming">
+          <span>{T.pickTarget}</span>
+          <button type="button" onclick={() => session.back()}>{T.cancel}</button>
+        </div>
+      </Floating>
+    {:else}
+      <Floating {session} cell={session.to} {width} {height}>
+        <CommandMenu {session} />
+      </Floating>
+    {/if}
+  {/if}
   {#if session.banner && session.banner.tone !== "end"}
     <div class="banner {session.banner.tone}">{session.banner.text}</div>
   {/if}
@@ -143,6 +173,12 @@ main {
 }
 .hint {
   margin: 0;
+  font-size: 13px;
+}
+.aiming {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 13px;
 }
 .pill {

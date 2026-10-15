@@ -2,6 +2,7 @@
 import { attackPower, conditionModifier, defensePower, hasBlock, type Unit } from "@tk/rules";
 import type { Session } from "../lib/session.svelte.ts";
 import { STATS, T } from "../lib/text.ts";
+import Portrait from "./Portrait.svelte";
 
 let { session, unit }: { session: Session; unit: Unit } = $props();
 const cls = $derived(session.rules.classes[unit.classId]);
@@ -47,6 +48,7 @@ const groups = $derived.by(() => {
 
 <section class="card" class:enemy={unit.side !== session.humanSide}>
   <header>
+    <Portrait id={unit.id} size={36} />
     <strong>{unit.name}</strong>
     <span class="chip">{cls?.name}</span>
     <span class="chip">Lv {unit.level}</span>

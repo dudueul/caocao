@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { Forecast, Session } from "../lib/session.svelte.ts";
 import { conditionName, pct, STAGE, T } from "../lib/text.ts";
+import Portrait from "./Portrait.svelte";
 
 let { session, forecast }: { session: Session; forecast: Forecast } = $props();
 const name = (id: string) => session.state.units.find((u) => u.id === id)?.name ?? id;
@@ -13,7 +14,10 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
     {@const left = Math.max(0, forecast.defender.hp - p.damage * strikes)}
     <div class="vs">
       <div>
-        <strong>{forecast.attacker.name}</strong>
+        <div class="who">
+          <Portrait id={forecast.attacker.id} size={40} />
+          <strong>{forecast.attacker.name}</strong>
+        </div>
         <div class="big">
           {p.damage}
           {#if p.double}
@@ -24,7 +28,10 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
       </div>
       <div class="arrow">▶</div>
       <div>
-        <strong>{forecast.defender.name}</strong>
+        <div class="who">
+          <Portrait id={forecast.defender.id} size={40} />
+          <strong>{forecast.defender.name}</strong>
+        </div>
         <div class="big">{forecast.defender.hp} → {left}</div>
         {#if p.counter && !(p.damage >= forecast.defender.hp)}
           <div class="muted">{T.counter} {p.counter.damage} · {T.hit} {pct(p.counter.hit)}</div>
@@ -54,7 +61,10 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
   {:else}
     {@const p = forecast.preview}
     {@const def = session.rules.stratagems[forecast.id]}
-    <div><strong>{def?.name}</strong> <span class="muted">MP {def?.mp}</span></div>
+    <div class="who">
+      <Portrait id={forecast.caster.id} size={40} />
+      <div><strong>{def?.name}</strong> <span class="muted">MP {def?.mp}</span></div>
+    </div>
     {#each p.targets as t (t.unit)}
       <div class="target">
         <span>{name(t.unit)}</span>
@@ -102,6 +112,11 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
 </section>
 
 <style>
+.who {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .vs {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

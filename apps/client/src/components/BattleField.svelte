@@ -2,6 +2,7 @@
 import { onMount } from "svelte";
 import { Field, type OverlayView } from "../lib/field.ts";
 import type { Session } from "../lib/session.svelte.ts";
+import { classic } from "../lib/skin.svelte.ts";
 import { SCHOOL_COLOR } from "../lib/text.ts";
 
 let { session }: { session: Session } = $props();
@@ -41,9 +42,15 @@ onMount(() => {
 });
 
 $effect(() => {
+  const skin = classic.skin;
+  if (ready && field) field.setSkin(skin);
+});
+
+$effect(() => {
   const v = view;
   const state = session.state;
   void session.insets;
+  void session.backdrop;
   if (ready && field) field.render(state, v);
 });
 </script>

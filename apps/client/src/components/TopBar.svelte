@@ -1,7 +1,9 @@
 <script lang="ts">
 import type { TurnPolicyId, WeatherKind } from "@tk/rules";
+import { CLASSIC_BATTLES, prepareClassicMap } from "../lib/classic-battle.ts";
 import type { OnlineRoom } from "../lib/online.svelte.ts";
 import type { Session, Speed } from "../lib/session.svelte.ts";
+import { classic } from "../lib/skin.svelte.ts";
 import { POLICY, T, WEATHER } from "../lib/text.ts";
 import Clock from "./Clock.svelte";
 
@@ -11,6 +13,7 @@ let setupOpen = $state(false);
 let policy = $state<TurnPolicyId>("sidePhases");
 let weather = $state<WeatherKind>("sunny");
 let seed = $state("");
+let classicMap = $state<number | null>(null);
 
 const SPEEDS: Speed[] = [1, 2, 4, 0];
 const SPEED_LABEL: Record<Speed, string> = { 1: "1×", 2: "2×", 4: "4×", 0: T.skip };
@@ -24,12 +27,15 @@ const canEnd = $derived(session.legal.some((c) => c.kind === "endPhase"));
 function openSetup() {
   policy = session.options.policy;
   weather = session.options.weather;
+  classicMap = session.options.classicMap;
   seed = "";
   setupOpen = !setupOpen;
 }
-function start() {
+async function start() {
   setupOpen = false;
-  session.newBattle(seed.trim() ? { policy, weather, seed: seed.trim() } : { policy, weather });
+  const map = await prepareClassicMap(session, classicMap);
+  const o = { policy, weather, classicMap: map };
+  session.newBattle(seed.trim() ? { ...o, seed: seed.trim() } : o);
 }
 </script>
 
@@ -109,6 +115,17 @@ function start() {
           {/each}
         </select>
       </label>
+      {#if classic.skin}
+        <label>
+          <span>{T.map}</span>
+          <select bind:value={classicMap}>
+            <option value={null}>{T.defaultMap}</option>
+            {#each CLASSIC_BATTLES as b (b.map)}
+              <option value={b.map}>{b.name}</option>
+            {/each}
+          </select>
+        </label>
+      {/if}
       <label>시드 <input bind:value={seed} placeholder={session.options.seed} size="10"></label>
       <button type="button" class="primary" onclick={start}>{T.newBattle}</button>
     </div>

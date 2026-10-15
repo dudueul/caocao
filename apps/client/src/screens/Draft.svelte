@@ -1,6 +1,7 @@
 <script lang="ts">
 import { ARENA_POOL, OFFICERS, P0_RULES } from "@tk/content";
 import { onDestroy } from "svelte";
+import Portrait from "../components/Portrait.svelte";
 import type { OnlineRoom } from "../lib/online.svelte.ts";
 import { STATS, T } from "../lib/text.ts";
 
@@ -67,12 +68,15 @@ function confirm() {
           disabled={!mine}
           onclick={() => (chosen = chosen === id ? null : id)}
         >
-          <span class="name">{o.name}</span>
-          <span class="muted">{o.hanja} · {o.cls}</span>
-          <span class="stats">
-            {#each STATS as [k, label] (k)}
-              <span><span class="muted">{label}</span> {o.stats?.[k]}</span>
-            {/each}
+          <Portrait {id} size={44} />
+          <span class="text">
+            <span class="name">{o.name}</span>
+            <span class="muted">{o.hanja} · {o.cls}</span>
+            <span class="stats">
+              {#each STATS as [k, label] (k)}
+                <span><span class="muted">{label}</span> {o.stats?.[k]}</span>
+              {/each}
+            </span>
           </span>
         </button>
       {/each}
@@ -136,10 +140,15 @@ header.mine {
   gap: 8px;
 }
 .officer {
-  display: grid;
-  gap: 2px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
   text-align: left;
   padding: 8px 10px;
+}
+.text {
+  display: grid;
+  gap: 2px;
 }
 .officer.chosen {
   border-color: var(--accent);

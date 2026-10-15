@@ -53,4 +53,6 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0038](0038-guest-identity-device-key.md) | P1 players are guests: a display name and a secret device key | Accepted | 2026-10-15 |
 | [0039](0039-arena-draft.md) | Arena armies are drafted: six officers each from a shared pool | Accepted | 2026-10-15 |
 | [0040](0040-arena-turn-clock.md) | Live Arena clock: 45 seconds per activation plus a 3-minute reserve | Accepted | 2026-10-15 |
-| [0041](0041-p1-arena-defaults.md) | P1 Arena defaults chosen while building | Proposed | 2026-10-15 |
+| [0041](0041-p1-arena-defaults.md) | P1 Arena defaults chosen while building | Accepted | 2026-10-15 |
+| [0042](0042-local-classic-skin.md) | A local-only classic skin from the owner's own copy of the 1998 game | Accepted | 2026-10-15 |
+| [0043](0043-floating-command-menu.md) | Float the command menu and the forecast beside the unit | Accepted | 2026-10-15 |

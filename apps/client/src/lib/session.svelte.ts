@@ -31,6 +31,8 @@ import {
   type Unit,
   type WeatherKind,
 } from "@tk/rules";
+import { CLASSIC_BATTLES, onClassicMap } from "./classic-battle.ts";
+import type { ClassicMapGrid } from "./skin.svelte.ts";
 import { describe, type LogLine } from "./text.ts";
 
 type Act = Extract<Command, { kind: "act" }>;
@@ -42,6 +44,8 @@ export interface BattleOptions {
   seed: string;
   policy: TurnPolicyId;
   weather: WeatherKind;
+  /** A 1998 battle map to fight on (local classic skin only, ADR 0042). */
+  classicMap: number | null;
 }
 
 export type Forecast =
@@ -61,6 +65,13 @@ export type Player = (
   before: BattleState,
   after: BattleState,
 ) => Promise<void>;
+
+/** Where the field draws the map, in CSS pixels of the battle screen. */
+export interface Geometry {
+  tile: number;
+  ox: number;
+  oy: number;
+}
 
 export interface Insets {
   top: number;
@@ -88,12 +99,17 @@ export class Session {
   humanSide = $state(0);
   /** Online: commands go to the MatchDO instead of the local rules (ADR 0004). */
   remote: Remote | null = null;
+  /** Loaded 1998 map grids, by map id; `create` reads them synchronously. */
+  readonly classicGrids = new Map<number, ClassicMapGrid>();
+  /** The 1998 map picture under this battle, if it is fought on one. */
+  backdrop = $state<number | null>(null);
 
   options = $state<BattleOptions>({
     scenario: "wuchao-raid",
     seed: randomSeed(),
     policy: "sidePhases",
     weather: "sunny",
+    classicMap: null,
   });
   state = $state.raw<BattleState>(this.create());
   /** Start state and command log of this battle: a replay (ADR 0004). */
@@ -115,6 +131,7 @@ export class Session {
   log = $state<LogLine[]>([]);
   banner = $state<{ text: string; tone: "turn" | "twist" | "end" } | null>(null);
   insets = $state<Insets>({ top: 0, right: 0, bottom: 0, left: 0 });
+  geometry = $state<Geometry>({ tile: 48, ox: 0, oy: 0 });
   /** Side names for the log and the top bar (scenario sides, or player names online). */
   sideNames = $state<string[]>(SCENARIOS["wuchao-raid"]?.sides.slice() ?? []);
 
@@ -133,9 +150,13 @@ export class Session {
     const o = this.options;
     const s = SCENARIOS[o.scenario];
     if (!s) throw new Error(`unknown scenario ${o.scenario}`);
+    const setup = scenarioSetup(s, { seed: o.seed, policy: o.policy, weather: o.weather });
+    const battle = CLASSIC_BATTLES.find((b) => b.map === o.classicMap);
+    const grid = battle && this.classicGrids.get(battle.map);
+    this.backdrop = battle && grid ? battle.map : null;
     return createBattle(
       this.rules,
-      scenarioSetup(s, { seed: o.seed, policy: o.policy, weather: o.weather }),
+      battle && grid ? onClassicMap(setup, grid, battle, this.rules) : setup,
     );
   }
 

@@ -32,7 +32,7 @@ two-tap *기권*. Closing the tab keeps your seat: the same browser rejoins it.
 | Do | How |
 |---|---|
 | Move | tap one of your units (ringed in gold when ready), then a blue tile; tap another tile to change your mind, or *이동 취소* |
-| Act | *공격*, a stratagem (화계, 풍계, 혼란, 치료), or *대기*; tap a target to see the forecast, then tap it again or *확인* |
+| Act | the command menu floats beside the unit: *공격*, *책략 ▸* (the unit's skills with MP and what each does), *대기* or *이동 취소*; tap a target to see the forecast beside it, then tap it again or *확인*. Keys: ↑/↓, Enter, →/← for the skills |
 | Read threats | tap an enemy to see where it can move and strike; *위험 범위* (D) shows every tile the enemy can hit next turn |
 | Read conditions | ▲ (buff) and ▼ (debuff) on a unit; its card lists each condition with every stack's turns left, and hovering a chip shows what it does |
 | Step back | Esc, or *뒤로* |
@@ -45,14 +45,30 @@ The forecast shows hit and critical chances, damage (×2 for a double attack),
 the counter, *와해* (the strike breaks the target, cancelling its counter), and
 the damage pipeline step by step.
 
+## Classic skin (local only)
+
+With your own copy of the 1998 PC 조조전 you can see the demo with its sprites,
+portraits and terrain ([ADR 0042](../../docs/adr/0042-local-classic-skin.md)):
+
+```bash
+bun run classic:export "/path/to/your/game"   # from the repo root; writes apps/client/classic/ (git-ignored)
+bun run dev                                   # the dev server picks it up
+```
+
+Units then walk, strike, guard, recoil and cheer with the 1998 animations, the
+cards and forecasts show portraits, and `/?map=16#/sandbox` (or *새 전투 → 지도*)
+fights the 오소 roster on the 1998 백마 map. Builds, deploys and published pages
+never contain the skin; without the folder the client draws its placeholders.
+
 ## Code
 
 | Path | Holds |
 |---|---|
 | `src/lib/session.svelte.ts` | The battle store (Svelte 5 runes): state, command log, choices, AI turns |
-| `src/lib/field.ts` | Pixi renderer and event animations (placeholder shapes) |
+| `src/lib/field.ts` | Pixi renderer and event animations (placeholder shapes, or the classic skin) |
+| `src/lib/skin.svelte.ts`, `src/lib/classic-battle.ts` | The local classic skin (dev only) and 1998-map sandbox battles |
 | `src/lib/text.ts` | Korean UI strings, event-log lines |
-| `src/components/` | Top bar (with the Arena clock), unit card, action menu, forecast, tile info, log |
+| `src/components/` | Top bar (with the Arena clock), unit card, floating command menu and forecast, portraits, tile info, log |
 | `src/lib/online.svelte.ts`, `src/lib/identity.ts` | The Arena room connection; guest key and name |
 | `src/screens/` | Home, sandbox, room (lobby, draft, deploy) and the battle screen |
 | `public/` | PWA manifest, service worker, icons |

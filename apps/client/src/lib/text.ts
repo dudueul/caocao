@@ -8,6 +8,7 @@ import type {
   BattleState,
   Fate,
   Ruleset,
+  StratagemDef,
   StratagemSchool,
   TurnPolicyId,
   WeatherKind,
@@ -93,6 +94,11 @@ export const T = {
   waitingReady: "상대를 기다리는 중…",
   you: "나",
   roomMissing: "방에 들어갈 수 없습니다",
+  cancel: "취소",
+  noMp: "MP 부족",
+  sealed: "책략 불가",
+  map: "지도",
+  defaultMap: "기본 지도",
 } as const;
 
 /** Display name of a condition. */
@@ -142,6 +148,26 @@ export const SCHOOL_COLOR: Record<StratagemSchool, number> = {
   support: 0x7ee07a,
   disruption: 0xc58cff,
 };
+
+/** One line on what a stratagem does, for the skill menu. */
+export function stratagemSummary(rules: Ruleset, def: StratagemDef): string {
+  const parts: string[] = [];
+  if (def.effect === "damage") parts.push(T.damage);
+  if (def.effect === "heal") parts.push(T.heal);
+  if (def.condition) {
+    const [lo, hi] = def.turns ?? [1, 1];
+    parts.push(
+      `${conditionName(rules, def.condition)} ${lo === hi ? lo : `${lo}–${hi}`}${T.turns}`,
+    );
+  }
+  if (def.cleanse) parts.push(T.cleansed);
+  if (def.push) parts.push(`${T.push} ${def.push}`);
+  if (def.ignites) parts.push(T.ignites);
+  const reach = Math.max(0, ...def.range.map((o) => Math.abs(o.dx) + Math.abs(o.dy)));
+  parts.push(reach === 0 ? "자신" : `사거리 ${reach}`);
+  if (def.area.length > 1) parts.push(`범위 ${def.area.length}칸`);
+  return parts.join(" · ");
+}
 
 /** ‰ as a whole percent, for display. */
 export function pct(permille: number): string {

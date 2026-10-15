@@ -4,3 +4,7 @@ coverage/
 .wrangler/
 .DS_Store
 *.log
+
+# 1998 PC 조조전 art exported locally from the owner's own copy (ADR 0042).
+# Koei Tecmo's copyright: never commit it, never ship it in a build.
+apps/client/classic/

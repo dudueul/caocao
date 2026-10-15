@@ -320,9 +320,10 @@ flowchart LR
 | `lib/online.svelte.ts` | `OnlineRoom`: the room socket, `hello` with the last batch seen, reconnect with backoff, room view, clock and server-time offset |
 | `lib/identity.ts` | Guest device key and display name in `localStorage` ([0038](../adr/0038-guest-identity-device-key.md)) |
 | `screens/*.svelte` | Home, sandbox, room (lobby, draft, deploy) and the shared battle screen |
-| `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units with ▲/▼ condition marks, effects; animates each command's events, then shows the new state |
+| `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units with ▲/▼ condition marks, effects; animates each command's events, then shows the new state. Placeholder shapes, or the local classic skin's tiles, 1998 map pictures and animated sprites ([0042](../adr/0042-local-classic-skin.md)) |
+| `lib/skin.svelte.ts`, `lib/path.ts`, `lib/classic-battle.ts` | The classic skin loader (dev server only), the walking route for move animations, and sandbox battles on a 1998 map |
 | `lib/text.ts` | Korean UI strings and event-log lines |
-| `components/*.svelte` | Top bar, unit card (condition stacks with turns left), action menu, forecast (damage breakdown; condition, turn range and landing chance), tile info, battle log |
+| `components/*.svelte` | Top bar, unit card (condition stacks with turns left), command menu with the skill list and forecast floating beside the unit ([0043](../adr/0043-floating-command-menu.md)), portraits, tile info, battle log |
 
 ```mermaid
 stateDiagram-v2
@@ -332,7 +333,10 @@ stateDiagram-v2
   Selected --> Pending: tap a reachable tile
   Pending --> Pending: tap another reachable tile
   Pending --> Selected: undo move / Esc
-  Pending --> Aiming: attack or stratagem
+  Pending --> Skills: 책략 ▸
+  Skills --> Pending: ◂ / Esc
+  Skills --> Aiming: pick a skill
+  Pending --> Aiming: attack
   Pending --> Applying: wait
   Aiming --> Pending: back / Esc
   Aiming --> Forecast: tap a target

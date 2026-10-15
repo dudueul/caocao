@@ -92,7 +92,9 @@ flowchart TB
 | P1 identity | Guests: display name + secret device key; invite links; accounts in P2 | [0038](../adr/0038-guest-identity-device-key.md) |
 | Arena armies | Snake draft of six officers each from a shared pool, normalized level | [0039](../adr/0039-arena-draft.md) |
 | Arena clock | 45 s per activation + 3 min reserve; then the AI plays that activation | [0040](../adr/0040-arena-turn-clock.md) |
-| P1 defaults | One `MatchDO` per room, room codes, first pick vs first move, 16-officer pool at Lv 20, one mirrored map *(proposed)* | [0041](../adr/0041-p1-arena-defaults.md) |
+| P1 defaults | One `MatchDO` per room, room codes, first pick vs first move, 16-officer pool at Lv 20, one mirrored map | [0041](../adr/0041-p1-arena-defaults.md) |
+| Classic skin | The owner's own 1998 game exported into a git-ignored folder; dev server only; animated sprites, portraits, terrain and 1998 maps; never built, deployed or published | [0042](../adr/0042-local-classic-skin.md) |
+| Command menu | Command menu, skill list and forecast float beside the unit; keyboard and touch | [0043](../adr/0043-floating-command-menu.md) |
 
 ## Roadmap
 

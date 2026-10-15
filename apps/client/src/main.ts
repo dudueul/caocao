@@ -1,6 +1,10 @@
 import { mount } from "svelte";
 import App from "./App.svelte";
 import "./app.css";
+import { loadClassicSkin } from "./lib/skin.svelte.ts";
+
+// The owner's local classic skin, if exported (dev server only, ADR 0042).
+void loadClassicSkin();
 
 const target = document.getElementById("app");
 if (!target) throw new Error("#app is missing");
