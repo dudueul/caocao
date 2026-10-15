@@ -1,8 +1,8 @@
 # 0034. Scenario units carry standing AI orders, written as gambits
 
-- **Status:** Proposed (default chosen while building P0; the owner is asked to confirm)
+- **Status:** Accepted (proposed while building P0, confirmed by the owner 2026-10-15)
 - **Date:** 2026-10-14
-- **Deciders:** Claude (proposal)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0027](0027-p0-engine-defaults.md), [0030](0030-modern-techniques-adopted.md),
   [0032](0032-content-as-typed-modules.md), [`docs/remake/RULES.md` §9](../remake/RULES.md#9-gambits-ai-rules-for-absent-seats-and-auto-battle)
 

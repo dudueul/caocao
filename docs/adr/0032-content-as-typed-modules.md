@@ -1,8 +1,8 @@
 # 0032. Content starts as typed TypeScript modules with our own officer ratings
 
-- **Status:** Proposed (default chosen while building P0; the owner is asked to confirm)
+- **Status:** Accepted (proposed while building P0, confirmed by the owner 2026-10-15)
 - **Date:** 2026-10-14
-- **Deciders:** Claude (proposal)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0002](0002-remake-from-scratch.md), [0004](0004-server-authoritative-referee.md),
   [0006](0006-typescript-everywhere.md), [0015](0015-delivery-order-engine-then-arena.md),
   [0020](0020-five-stats-with-distinct-roles.md), [0023](0023-terrain-family-affinity-and-cover.md),

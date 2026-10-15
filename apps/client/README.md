@@ -8,7 +8,7 @@ comes in P1 ([ADR 0005](../../docs/adr/0005-web-first-distribution.md)).
 
 ```bash
 bun run dev        # from the repo root: http://localhost:5173
-bun run build      # dist/
+bun run build      # dist/ (relative asset paths, so it can be served from any folder)
 ```
 
 ## Playing
@@ -22,6 +22,7 @@ bun run build      # dist/
 | Turn | *턴 종료* (E) ends your phase; the AI then plays its side |
 | Pace | the speed button cycles 1×, 2×, 4× and 생략 (no animation); *자동 전투* lets the AI play your side too |
 | New battle | *새 전투*: turn policy (진영 턴 or 교대 행동), weather, and seed |
+| Watch | open with `?demo` or `#demo`: the AI plays both sides at 2×, and a new battle starts after each one |
 
 The forecast shows hit and critical chances, damage (×2 for a double attack),
 the counter, *와해* (the strike breaks the target, cancelling its counter), and

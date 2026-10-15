@@ -50,6 +50,9 @@ onMount(() => {
   if (new URLSearchParams(location.search).has("debug"))
     (window as unknown as { tk: Session }).tk = session;
   session.newBattle();
+  // `?demo` or `#demo` lets the AI play both sides, battle after battle.
+  if (new URLSearchParams(location.search).has("demo") || location.hash === "#demo")
+    session.startDemo();
 });
 </script>
 
@@ -102,7 +105,9 @@ onMount(() => {
 <style>
 main {
   position: fixed;
-  inset: 0;
+  /* Stay clear of phone notches and system bars (viewport-fit=cover). */
+  inset: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
 }
 .topwrap {
   position: absolute;

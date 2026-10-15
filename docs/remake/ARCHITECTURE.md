@@ -292,7 +292,8 @@ stateDiagram-v2
 ```
 
 Until confirmation nothing leaves the store, so moves undo freely
-([0028](../adr/0028-undo-moves-until-action.md)). Headless Chromium tests drive the
+([0028](../adr/0028-undo-moves-until-action.md)). `?demo` (or `#demo`) has the AI play both
+sides, battle after battle. Headless Chromium tests drive the
 real UI through `?debug` (store on `window.tk`) and the canvas's `data-geometry`.
 
 - The battle view only consumes events, so solo and online play share the same renderer path.

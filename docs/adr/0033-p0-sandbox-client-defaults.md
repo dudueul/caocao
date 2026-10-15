@@ -1,8 +1,8 @@
 # 0033. Battle sandbox client defaults chosen while building P0
 
-- **Status:** Proposed (defaults chosen while building P0; the owner is asked to confirm)
+- **Status:** Accepted (proposed while building P0, confirmed by the owner 2026-10-15)
 - **Date:** 2026-10-14
-- **Deciders:** Claude (proposal)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0005](0005-web-first-distribution.md), [0007](0007-top-down-2d-pixijs.md),
   [0019](0019-bun-toolchain.md), [0028](0028-undo-moves-until-action.md),
   [0030](0030-modern-techniques-adopted.md), [0031](0031-svelte-dom-overlay.md),

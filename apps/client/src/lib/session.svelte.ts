@@ -101,6 +101,8 @@ export class Session {
   showDanger = $state(false);
   speed = $state<Speed>(1);
   auto = $state(false);
+  /** Demo: the AI plays both sides, and a new battle starts after each one. */
+  demo = $state(false);
   busy = $state(false);
   log = $state<LogLine[]>([]);
   banner = $state<{ text: string; tone: "turn" | "twist" | "end" } | null>(null);
@@ -329,8 +331,15 @@ export class Session {
     if (this.legal.some((c) => c.kind === "endPhase")) await this.commit({ kind: "endPhase" });
   }
 
+  startDemo(): void {
+    this.demo = true;
+    this.speed = 2;
+    this.setAuto(true);
+  }
+
   setAuto(on: boolean): void {
     this.auto = on;
+    if (!on) this.demo = false;
     if (on) {
       this.clearChoice();
       void this.pump();
@@ -384,8 +393,16 @@ export class Session {
       if (e.kind === "twist") this.flash(e.outcome === "windfall" ? "천운!" : "불운!", "twist");
       if (e.kind === "turn" && e.side === this.humanSide && !this.auto)
         this.flash(`라운드 ${e.round} · 아군 차례`, "turn");
-      if (e.kind === "battleEnd")
+      if (e.kind === "battleEnd") {
         this.flash(e.winner < 0 ? "무승부" : e.winner === this.humanSide ? "승리" : "패배", "end");
+        if (this.demo)
+          setTimeout(() => {
+            if (this.demo) {
+              this.newBattle();
+              this.setAuto(true);
+            }
+          }, 4000);
+      }
     }
     if (this.selected && !this.state.units.some((u) => u.id === this.selected && u.hp > 0))
       this.selected = null;
