@@ -61,7 +61,7 @@
   </head>
   <body>
     <!-- Dev only (`bun run dev`, then /dev/portrait-gallery.html): every named officer in every mood at 200 px and 44 px, then generic soldiers per side and class.
-         Query: ?ids=cao-cao,guan-yu  ?moods=calm,angry  ?only=officers|generic|classes  ?big=200 -->
+         Query: ?ids=cao-cao,guan-yu  ?moods=calm,angry  ?only=officers|generic|classes|armies|grid  ?big=200 -->
     <main id="app"></main>
     <script type="module">
     import { FAMILIES, MOODS, PORTRAIT_OFFICERS, portraitUrl } from "../src/lib/fx/portrait.ts";
@@ -198,6 +198,44 @@
           "yuan-strategist-3",
           "yuan-archer-2",
           "cao-catapult-4",
+        ],
+      );
+    }
+    if (!only || only === "armies") {
+      heading("Story troops by army, on their own side");
+      const armies = [
+        ["ward", "night watch"],
+        ["jianjia", "Jian household"],
+        ["huangjin", "Yellow Turbans"],
+        ["qingzhou", "Qingzhou"],
+        ["dong", "Dong Zhuo"],
+        ["heishan", "Black Mountain"],
+      ];
+      for (const [army, sub] of armies)
+        row(
+          army,
+          sub,
+          FAMILIES.map((classId, i) => ({ id: `${army}-${classId}-${i + 1}`, classId })),
+          FAMILIES,
+        );
+      row(
+        "by id",
+        "no class given",
+        [
+          "huangjin-infantry-2",
+          "qingzhou-archer-1",
+          "dong-cavalry-3",
+          "heishan-infantry-4",
+          "jianjia-1",
+          "ward-2",
+        ].map((id) => ({ id })),
+        [
+          "huangjin-infantry-2",
+          "qingzhou-archer-1",
+          "dong-cavalry-3",
+          "heishan-infantry-4",
+          "jianjia-1",
+          "ward-2",
         ],
       );
     }

@@ -21,13 +21,25 @@
     </style>
   </head>
   <body>
-    <!-- Dev only (`bun run dev`, then /dev/rig-gallery.html): every class, side, facing and pose of our rigged figures (ADR 0045). -->
+    <!-- Dev only (`bun run dev`, then /dev/rig-gallery.html): every class, side, facing and pose of our rigged figures (ADR 0045), then the head-cloths (Yellow Turbans, Black Mountain, Sun Jian). Query: ?tile=72 -->
     <div id="app"></div>
     <script type="module">
     import { Application, Container, Graphics, Text } from "pixi.js";
     import { ChibiRig, lookFor } from "../src/lib/fx/chibi.ts";
 
     const KINDS = ["infantry", "archer", "cavalry", "strategist", "martialArtist", "catapult"];
+    // Rows: class, unit id (a prefix gets the column number appended), side, label.
+    const ROWS = [
+      ...KINDS.map((kind, r) => [kind, `${kind}-`, r % 2, `${kind} (${r % 2 ? "blue" : "red"})`]),
+      ["infantry", "huangjin-infantry-", 1, "Yellow Turban infantry"],
+      ["archer", "qingzhou-archer-", 1, "Qingzhou archer"],
+      ["cavalry", "huangjin-cavalry-", 1, "Yellow Turban cavalry"],
+      ["martialArtist", "huangjin-martialArtist-", 1, "Yellow Turban brawler"],
+      ["strategist", "zhang-jiao", 1, "zhang-jiao"],
+      ["infantry", "bo-cai", 1, "bo-cai"],
+      ["infantry", "heishan-infantry-", 1, "Black Mountain"],
+      ["infantry", "sun-jian", 0, "sun-jian"],
+    ];
     const COLS = [
       ["down", false, "ready"],
       ["up", false, "ready"],
@@ -61,11 +73,10 @@
       label.position.set(120 + c * cell, 8);
       app.stage.addChild(label);
     });
-    KINDS.forEach((kind, r) => {
-      const side = r % 2;
+    ROWS.forEach(([kind, id, side, text], r) => {
       const label = new Text({
-        text: `${kind} (${side ? "red" : "blue"})`,
-        style: { fill: 0xe2b65c, fontSize: 12 },
+        text,
+        style: { fill: 0xe2b65c, fontSize: 12, wordWrap: true, wordWrapWidth: 104 },
       });
       label.position.set(8, 40 + r * cell + cell / 2);
       app.stage.addChild(label);
@@ -73,7 +84,7 @@
         const g = new Graphics().roundRect(0, 0, cell - 6, cell - 6, 8).fill({ color: 0x6f9a4a });
         g.position.set(118 + c * cell, 30 + r * cell);
         app.stage.addChild(g);
-        const rig = new ChibiRig(lookFor(kind, `${kind}-${c}`, side));
+        const rig = new ChibiRig(lookFor(kind, id.endsWith("-") ? `${id}${c}` : id, side));
         rig.setSize(tile);
         rig.setFacing(f, m);
         rig.setPose(p);

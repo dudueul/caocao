@@ -44,6 +44,12 @@ const LACQUER = "#2b2421";
 const LACQUER_RED = "#a33328";
 const SILK_CAP = "#26304a";
 const FEATHER = "#8a6a44";
+/** Head-cloths: fill, shadow, fold or highlight. */
+const CLOTHS: Record<HeadCloth, readonly [string, string, string]> = {
+  yellow: ["#d8b23a", "#a07c22", "#7a5a14"],
+  brown: ["#5c4431", "#3b2a1d", "#86684c"],
+  red: ["#b5382b", "#74201a", "#de6c5c"],
+};
 const COAT = "#8a5a34";
 const COAT_DARK = "#64401f";
 const MANE = "#2a1d14";
@@ -75,6 +81,13 @@ const SKIN = [
 ] as const;
 const HAIR = "#1e1816";
 
+/**
+ * A cloth worn on the head in place of the class's helmet or cap: the Yellow
+ * Turbans' yellow head-cloth (黃巾), a Black Mountain bandit's brown rag, Sun
+ * Jian's red cap (赤幘).
+ */
+export type HeadCloth = "yellow" | "brown" | "red";
+
 /** What a unit looks like: its class, side colour and a few traits from its id. */
 export interface Look {
   kind: Kind;
@@ -84,6 +97,8 @@ export interface Look {
   skin: number;
   /** Tier-2 classes (ADR 0048): gilded edges and lacing. */
   elite: boolean;
+  /** Headwear from the unit's army or person, or null for the class's own. */
+  cloth: HeadCloth | null;
 }
 
 /** Promoted classes draw as their family's figure, with gilded trim. */
@@ -105,6 +120,19 @@ const KINDS: readonly Kind[] = [
   "catapult",
 ];
 
+/**
+ * Who wears a head-cloth: story troops are named after their army
+ * (`huangjin-infantry-2`, ADR 0049), officers' units after the officer.
+ */
+function clothFor(unitId: string): HeadCloth | null {
+  const army = unitId.split("-")[0];
+  if (army === "huangjin" || army === "qingzhou" || unitId === "zhang-jiao" || unitId === "bo-cai")
+    return "yellow";
+  if (army === "heishan" || unitId === "bai-rao") return "brown";
+  if (unitId === "sun-jian") return "red";
+  return null;
+}
+
 export function lookFor(classId: string, unitId: string, side: number): Look {
   let h = 7;
   for (const ch of unitId) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
@@ -118,6 +146,7 @@ export function lookFor(classId: string, unitId: string, side: number): Look {
     beard: [1, 2, 1, 0, 2][h % 5] ?? 1,
     skin: (h >>> 5) % 2,
     elite: promoted !== undefined,
+    cloth: clothFor(unitId),
   };
 }
 
@@ -355,8 +384,10 @@ function head(P: Pal, look: Look, facing: Facing): Part {
     const back = facing === "up";
     const cy = -0.19;
     const top = cy - 0.19;
-    // Behind the head: the scholar's cap ribbons.
-    if (kind === "strategist")
+    // Behind the head: a head-cloth's tails, peeking out; the scholar's cap ribbons.
+    if (look.cloth && look.cloth !== "red" && facing === "down")
+      clothTails(g, look.cloth, -0.12, cy - 0.05, -1);
+    else if (kind === "strategist")
       for (const k of [0, 1]) {
         const tx = side ? -0.14 : back ? -0.03 + k * 0.06 : -0.12 + k * 0.24;
         cel(
@@ -476,8 +507,17 @@ function head(P: Pal, look: Look, facing: Facing): Part {
           HAIR,
         );
     }
-    // Headwear by class.
+    // Headwear: a head-cloth if the unit wears one, else by class.
     const knotX = side ? -0.04 : 0;
+    if (look.cloth === "red") {
+      const [fill, dark] = CLOTHS.red;
+      zeCap(g, fill, dark, P.edge, side, knotX, cy, top);
+      return;
+    }
+    if (look.cloth) {
+      headCloth(g, look.cloth, facing, knotX, cy, top);
+      return;
+    }
     switch (kind) {
       case "infantry":
       case "cavalry": {
@@ -559,23 +599,7 @@ function head(P: Pal, look: Look, facing: Facing): Part {
         break;
       }
       case "archer": {
-        // A soft cloth cap over the topknot (幘), with a raised back.
-        cel(
-          g,
-          (c) => {
-            c.beginPath();
-            c.moveTo(-0.195, cy - 0.04);
-            c.quadraticCurveTo(-0.19, top - 0.02, side ? -0.04 : 0, top - 0.03);
-            c.quadraticCurveTo(side ? 0.12 : 0.19, top - 0.02, side ? 0.16 : 0.195, cy - 0.06);
-            c.quadraticCurveTo(0, cy - 0.11, -0.195, cy - 0.04);
-            c.closePath();
-          },
-          P.robeDark,
-          "#141a26",
-          -0.1,
-        );
-        cel(g, ell(knotX, top - 0.05, 0.065, 0.055), P.robeDark, "#141a26", knotX - 0.02);
-        cel(g, rr(-0.196, cy - 0.075, 0.392, 0.03, 0.012), P.edge, undefined);
+        zeCap(g, P.robeDark, "#141a26", P.edge, side, knotX, cy, top);
         break;
       }
       case "strategist": {
@@ -623,6 +647,156 @@ function head(P: Pal, look: Look, facing: Facing): Part {
         break;
     }
   });
+}
+
+/** A soft cloth cap over the topknot (幘), with a raised back. */
+function zeCap(
+  g: CanvasRenderingContext2D,
+  fill: string,
+  dark: string,
+  band: string,
+  side: boolean,
+  knotX: number,
+  cy: number,
+  top: number,
+) {
+  cel(
+    g,
+    (c) => {
+      c.beginPath();
+      c.moveTo(-0.195, cy - 0.04);
+      c.quadraticCurveTo(-0.19, top - 0.02, side ? -0.04 : 0, top - 0.03);
+      c.quadraticCurveTo(side ? 0.12 : 0.19, top - 0.02, side ? 0.16 : 0.195, cy - 0.06);
+      c.quadraticCurveTo(0, cy - 0.11, -0.195, cy - 0.04);
+      c.closePath();
+    },
+    fill,
+    dark,
+    -0.1,
+  );
+  cel(g, ell(knotX, top - 0.05, 0.065, 0.055), fill, dark, knotX - 0.02);
+  cel(g, rr(-0.196, cy - 0.075, 0.392, 0.03, 0.012), band, undefined);
+}
+
+/** Two short tails of a head-cloth's knot, hanging from (x, y); `dir` -1 swings them left. */
+function clothTails(
+  g: CanvasRenderingContext2D,
+  cloth: HeadCloth,
+  x: number,
+  y: number,
+  dir: number,
+) {
+  const [fill, dark, fold] = CLOTHS[cloth];
+  for (const k of [0, 1]) {
+    const tail: Path = (c) => {
+      c.beginPath();
+      c.moveTo(x - 0.016, y);
+      c.quadraticCurveTo(
+        x + dir * (0.06 + k * 0.02),
+        y + 0.06,
+        x + dir * (0.07 + k * 0.035) - 0.018,
+        y + 0.15 - k * 0.02,
+      );
+      c.lineTo(x + dir * (0.07 + k * 0.035) + 0.018, y + 0.15 - k * 0.02);
+      c.quadraticCurveTo(x + dir * (0.03 + k * 0.02), y + 0.06, x + 0.016, y);
+      c.closePath();
+    };
+    cel(g, tail, k ? dark : fill, undefined);
+    if (cloth === "brown")
+      // Frayed ends.
+      for (const dx of [-0.012, 0, 0.012]) {
+        const ex = x + dir * (0.07 + k * 0.035) + dx;
+        const ey = y + 0.15 - k * 0.02;
+        line(g, fold, 0.008, ex, ey, ex + dx * 0.5, ey + 0.025);
+      }
+  }
+}
+
+/**
+ * A head-cloth in each facing. The yellow one is wrapped over the crown and
+ * the topknot, a twisted band round the brow, knotted at the back; the brown
+ * rag is only a broad band, the topknot bare above it.
+ */
+function headCloth(
+  g: CanvasRenderingContext2D,
+  cloth: HeadCloth,
+  facing: Facing,
+  knotX: number,
+  cy: number,
+  top: number,
+) {
+  const [fill, dark, fold] = CLOTHS[cloth];
+  const side = facing === "side";
+  const back = facing === "up";
+  const covered = cloth === "yellow";
+  // The topknot: under the cloth, or bare and tied with a scrap of it.
+  if (covered) cel(g, ell(knotX, top - 0.045, 0.07, 0.06), fill, dark, knotX - 0.025);
+  else {
+    cel(g, ell(knotX, top - 0.035, 0.06, 0.052), HAIR);
+    cel(g, rr(knotX - 0.062, top - 0.03, 0.124, 0.024, 0.01), fill, dark, knotX - 0.02);
+  }
+  if (covered) {
+    // The cloth over the crown, down to the band.
+    const crown: Path = (c) => {
+      c.beginPath();
+      if (side) {
+        c.moveTo(0.172, cy - 0.06);
+        c.quadraticCurveTo(0.17, top - 0.035, -0.02, top - 0.04);
+        c.quadraticCurveTo(-0.205, top - 0.02, -0.2, cy);
+        c.quadraticCurveTo(0, cy - 0.06, 0.172, cy - 0.06);
+      } else {
+        const low = back ? 0.02 : -0.03;
+        c.moveTo(-0.202, cy + low);
+        c.quadraticCurveTo(-0.205, top - 0.035, 0, top - 0.04);
+        c.quadraticCurveTo(0.205, top - 0.035, 0.202, cy + low);
+        c.quadraticCurveTo(0, back ? cy + 0.02 : cy - 0.09, -0.202, cy + low);
+      }
+      c.closePath();
+    };
+    cel(g, crown, fill, dark, side ? -0.09 : -0.1);
+    // Folds drawn up toward the knot.
+    inside(g, crown, () => {
+      const ends = side ? [-0.12, -0.02, 0.09] : [-0.13, -0.04, 0.05, 0.14];
+      for (const ex of ends)
+        line(g, fold, 0.01, knotX + ex * 0.25, top - 0.02, knotX + ex * 1.1, cy - 0.04);
+    });
+  }
+  // The band round the head: across the brow in front, round the nape behind.
+  const band: Path = (c) => {
+    c.beginPath();
+    if (side) {
+      c.moveTo(0.18, cy - 0.04);
+      c.quadraticCurveTo(0, cy - 0.045, -0.205, cy + 0.02);
+      c.lineTo(-0.2, cy - 0.035);
+      c.quadraticCurveTo(0, cy - 0.1, 0.175, cy - 0.095);
+    } else if (back) {
+      c.moveTo(-0.205, cy + 0.0);
+      c.quadraticCurveTo(0, cy + 0.07, 0.205, cy + 0.0);
+      c.lineTo(0.203, cy - 0.05);
+      c.quadraticCurveTo(0, cy + 0.015, -0.203, cy - 0.05);
+    } else {
+      c.moveTo(-0.207, cy - 0.025);
+      c.quadraticCurveTo(0, cy - 0.09, 0.207, cy - 0.025);
+      c.lineTo(0.205, cy - 0.08);
+      c.quadraticCurveTo(0, cy - 0.145, -0.205, cy - 0.08);
+    }
+    c.closePath();
+  };
+  cel(g, band, fill, dark, side ? -0.1 : -0.12);
+  // Twists along the band.
+  inside(g, band, () => {
+    for (let x = -0.24; x <= 0.26; x += 0.04)
+      line(g, fold, 0.009, x + 0.05, cy - 0.15, x - 0.05, cy + 0.08);
+  });
+  // The knot at the back, with its tails.
+  if (back) {
+    clothTails(g, cloth, -0.01, cy + 0.02, -1);
+    clothTails(g, cloth, 0.01, cy + 0.02, 0.5);
+    cel(g, ell(0, cy + 0.02, 0.04, 0.032), fill, dark, -0.01);
+  } else if (side) {
+    clothTails(g, cloth, -0.2, cy - 0.005, -1);
+    cel(g, ell(-0.2, cy - 0.005, 0.034, 0.03), fill, dark, -0.21);
+  }
 }
 
 function arm(P: Pal, kind: Kind, near: boolean): Part {
@@ -1046,7 +1220,7 @@ interface Art {
 const artCache = new Map<string, Art>();
 
 function artFor(look: Look, facing: Facing): Art {
-  const key = `${look.kind}|${look.side}|${look.beard}|${look.skin}|${look.elite}|${facing}`;
+  const key = `${look.kind}|${look.side}|${look.beard}|${look.skin}|${look.elite}|${look.cloth}|${facing}`;
   const hit = artCache.get(key);
   if (hit) return hit;
   const base = SIDES[look.side % SIDES.length] ?? (SIDES[0] as Pal);
