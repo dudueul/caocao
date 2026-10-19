@@ -1,5 +1,7 @@
 <script lang="ts">
+import type { Snippet } from "svelte";
 import BattleField from "../components/BattleField.svelte";
+import Coach from "../components/Coach.svelte";
 import CommandMenu from "../components/CommandMenu.svelte";
 import CutIn from "../components/CutIn.svelte";
 import EventLog from "../components/EventLog.svelte";
@@ -12,7 +14,20 @@ import type { OnlineRoom } from "../lib/online.svelte.ts";
 import type { Session } from "../lib/session.svelte.ts";
 import { T } from "../lib/text.ts";
 
-let { session, online = null }: { session: Session; online?: OnlineRoom | null } = $props();
+let {
+  session,
+  online = null,
+  outro,
+  tips = false,
+}: {
+  session: Session;
+  online?: OnlineRoom | null;
+  /** Replaces the result card's buttons (Story battles). */
+  outro?: Snippet<[number]>;
+  /** First-battle tips (ADR 0054). */
+  tips?: boolean;
+} = $props();
+let goalsOpen = $state(true);
 let width = $state(window.innerWidth);
 let height = $state(window.innerHeight);
 let topH = $state(52);
@@ -31,8 +46,9 @@ const shownUnit = $derived(
 );
 /** Online results can come from a concession, which the battle state doesn't show. */
 const winner = $derived(online?.room?.result?.winner ?? session.state.winner);
+// Story talk plays before the result card (the session is busy until it is read).
 const result = $derived(
-  winner === null
+  winner === null || (session.busy && !online)
     ? null
     : winner < 0
       ? T.draw
@@ -67,9 +83,26 @@ function onKey(e: KeyboardEvent) {
 <main>
   <BattleField {session} />
   <div class="topwrap" bind:clientHeight={topH}><TopBar {session} {online} /></div>
+  {#if session.story && session.state.winner === null}
+    <button
+      type="button"
+      class="goals"
+      class:closed={!goalsOpen}
+      style:top="{topH + 8}px"
+      onclick={() => (goalsOpen = !goalsOpen)}
+    >
+      {#if goalsOpen}
+        <span class="win">승리 · {session.story.goalText.win}</span>
+        <span class="lose">패배 · {session.story.goalText.lose}</span>
+      {:else}
+        <span class="win">목표</span>
+      {/if}
+    </button>
+  {/if}
   {#if session.state.winner === null &&
+    !session.talking &&
     (session.busy || session.state.active !== session.humanSide)}
-    <div class="pill" style:top="{topH + 8}px">{waitingText}</div>
+    <div class="pill" style:top="{topH + (session.story ? 66 : 8)}px">{waitingText}</div>
   {/if}
   <aside
     class="panel"
@@ -112,6 +145,9 @@ function onKey(e: KeyboardEvent) {
       </Floating>
     {/if}
   {/if}
+  {#if tips && session.state.winner === null}
+    <Coach {session} top={topH} />
+  {/if}
   {#if session.cutin}
     <CutIn cut={session.cutin} at={session.cutinAt} />
   {/if}
@@ -121,7 +157,10 @@ function onKey(e: KeyboardEvent) {
   {#if result}
     <div class="result">
       <div class="title">{result}</div>
-      {#if online}
+      {#if outro && winner !== null}
+        <div class="muted">{T.round} {session.state.round}</div>
+        {@render outro(winner)}
+      {:else if online}
         <div class="muted">
           {T.round} {session.state.round}{online.room?.result?.reason === "concede"
             ? ` · ${T.conceded}`
@@ -188,6 +227,27 @@ main {
   align-items: center;
   gap: 10px;
   font-size: 13px;
+}
+.goals {
+  position: absolute;
+  left: 12px;
+  display: grid;
+  gap: 2px;
+  max-width: min(60vw, 320px);
+  padding: 6px 12px;
+  text-align: left;
+  font-size: 12px;
+  background: rgba(10, 9, 7, 0.72);
+  border: 1px solid var(--gold-line);
+  border-radius: 10px;
+  z-index: 3;
+}
+.goals .win {
+  color: var(--accent);
+  font-weight: 700;
+}
+.goals .lose {
+  color: var(--bad);
 }
 .pill {
   position: absolute;

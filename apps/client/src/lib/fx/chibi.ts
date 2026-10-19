@@ -81,7 +81,19 @@ export interface Look {
   /** 0 clean-shaven, 1 moustache and goatee, 2 full beard. */
   beard: number;
   skin: number;
+  /** Tier-2 classes (ADR 0048): gilded edges and lacing. */
+  elite: boolean;
 }
+
+/** Promoted classes draw as their family's figure, with gilded trim. */
+const PROMOTED: Readonly<Record<string, Kind>> = {
+  heavyInfantry: "infantry",
+  longbow: "archer",
+  shockCavalry: "cavalry",
+  tactician: "strategist",
+  guardian: "martialArtist",
+  thunderCart: "catapult",
+};
 
 const KINDS: readonly Kind[] = [
   "infantry",
@@ -95,9 +107,17 @@ const KINDS: readonly Kind[] = [
 export function lookFor(classId: string, unitId: string, side: number): Look {
   let h = 7;
   for (const ch of unitId) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  const kind = (KINDS as readonly string[]).includes(classId) ? (classId as Kind) : "infantry";
+  const promoted = PROMOTED[classId];
+  const kind =
+    promoted ?? ((KINDS as readonly string[]).includes(classId) ? (classId as Kind) : "infantry");
   // Grown men of the period mostly wore beards; a few are shown clean-shaven.
-  return { kind, side, beard: [1, 2, 1, 0, 2][h % 5] ?? 1, skin: (h >>> 5) % 2 };
+  return {
+    kind,
+    side,
+    beard: [1, 2, 1, 0, 2][h % 5] ?? 1,
+    skin: (h >>> 5) % 2,
+    elite: promoted !== undefined,
+  };
 }
 
 // ---------------------------------------------------------------- painting
@@ -1025,10 +1045,11 @@ interface Art {
 const artCache = new Map<string, Art>();
 
 function artFor(look: Look, facing: Facing): Art {
-  const key = `${look.kind}|${look.side}|${look.beard}|${look.skin}|${facing}`;
+  const key = `${look.kind}|${look.side}|${look.beard}|${look.skin}|${look.elite}|${facing}`;
   const hit = artCache.get(key);
   if (hit) return hit;
-  const P = SIDES[look.side % SIDES.length] ?? (SIDES[0] as Pal);
+  const base = SIDES[look.side % SIDES.length] ?? (SIDES[0] as Pal);
+  const P: Pal = look.elite ? { ...base, edge: "#f2d27e", lace: "#e3b24a" } : base;
   const k = look.kind;
   const art: Art =
     k === "catapult"

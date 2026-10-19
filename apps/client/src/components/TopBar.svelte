@@ -5,6 +5,7 @@ import type { OnlineRoom } from "../lib/online.svelte.ts";
 import type { Session, Speed } from "../lib/session.svelte.ts";
 import { classic } from "../lib/skin.svelte.ts";
 import { POLICY, T, WEATHER } from "../lib/text.ts";
+import { ui } from "../lib/ui.svelte.ts";
 import Clock from "./Clock.svelte";
 
 let { session, online = null }: { session: Session; online?: OnlineRoom | null } = $props();
@@ -41,7 +42,7 @@ async function start() {
 
 <header class="top">
   <div class="info">
-    <strong>{online ? `${T.arena} ${online.code}` : session.scenario.name}</strong>
+    <strong>{online ? `${T.arena} ${online.code}` : session.title}</strong>
     <span class="chip">{T.round} {s.round}/{s.roundLimit}</span>
     <span class="chip side" class:enemy={s.active !== session.humanSide}>
       {session.sideNames[s.active]}
@@ -93,7 +94,11 @@ async function start() {
       >
         {T.endPhase}
       </button>
-      <button type="button" onclick={openSetup}>{T.newBattle}</button>
+      {#if !session.story}
+        <button type="button" onclick={openSetup}>{T.newBattle}</button>
+      {/if}
+      <button type="button" onclick={() => (ui.help = true)} aria-label="도움말">?</button>
+      <button type="button" onclick={() => (ui.settings = true)} aria-label="설정">⚙</button>
       <a class="button" href="#/">{T.home}</a>
     {/if}
   </div>

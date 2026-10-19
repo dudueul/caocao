@@ -2,6 +2,7 @@
 import { onMount } from "svelte";
 import { Field, type OverlayView } from "../lib/field.ts";
 import type { Session } from "../lib/session.svelte.ts";
+import { settings } from "../lib/settings.svelte.ts";
 import { classic } from "../lib/skin.svelte.ts";
 import { SCHOOL_COLOR } from "../lib/text.ts";
 
@@ -32,6 +33,9 @@ const view = $derived.by<OverlayView>(() => {
     ready,
     ghost: s.selected && s.to ? { id: s.selected, to: s.to } : null,
     selected: s.to ?? (s.unit && s.unit.hp > 0 ? { x: s.unit.x, y: s.unit.y } : null),
+    goals: s.state.goals.flatMap((g) =>
+      g.side === s.humanSide && g.when.kind === "reach" ? g.when.cells : [],
+    ),
   };
 });
 
@@ -39,7 +43,7 @@ onMount(() => {
   const params = new URLSearchParams(location.search);
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const f = new Field(session, {
-    lite: params.has("lowfx") || calm,
+    lite: params.has("lowfx") || calm || settings.lite,
     calm,
     tokens: params.has("tokens"),
   });

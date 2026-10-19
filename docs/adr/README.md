@@ -64,3 +64,6 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0049](0049-story-chapter-guandu.md) | Story chapter 1 is Cao Cao's Guandu campaign, run by a pure campaign package | Proposed | 2026-10-19 |
 | [0050](0050-equipment-and-shop.md) | Officers carry a weapon, an armour and an accessory, bought in camp | Proposed | 2026-10-19 |
 | [0051](0051-browser-saves.md) | Save the Story in the browser: three slots and an autosave | Proposed | 2026-10-19 |
+| [0052](0052-synthesized-sound.md) | Synthesize the music and sound effects in code | Proposed | 2026-10-19 |
+| [0053](0053-painted-portraits.md) | Paint every officer's portrait in code | Proposed | 2026-10-19 |
+| [0054](0054-main-menu-settings-tips.md) | Open on a title menu, with settings and first-battle tips | Proposed | 2026-10-19 |

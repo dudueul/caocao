@@ -251,6 +251,8 @@ export function describe(
       return { text: `${name(e.unit)} 지형 ${T.heal} +${e.amount}`, tone: tone(e.unit, true) };
     case "turn":
       return { text: `${T.round} ${e.round} · ${sideNames[e.side] ?? e.side}`, tone: "turn" };
+    case "arrived":
+      return { text: `${name(e.unit)} 도착`, tone: tone(e.unit, true) };
     case "battleEnd":
       return {
         text: e.winner < 0 ? T.draw : `${sideNames[e.winner] ?? e.winner} ${T.victory}`,

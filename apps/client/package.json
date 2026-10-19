@@ -11,6 +11,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json --fail-on-warnings"
   },
   "dependencies": {
+    "@tk/campaign": "workspace:*",
     "@tk/content": "workspace:*",
     "@tk/protocol": "workspace:*",
     "@tk/rules": "workspace:*",

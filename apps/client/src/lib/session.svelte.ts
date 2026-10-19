@@ -13,6 +13,7 @@ import {
   type AttackPreview,
   apply,
   type BattleEvent,
+  type BattleSetup,
   type BattleState,
   type Cell,
   type Command,
@@ -20,6 +21,7 @@ import {
   classOf,
   createBattle,
   dangerTiles,
+  type Gambit,
   legalCommands,
   previewAttack,
   previewStratagem,
@@ -31,6 +33,7 @@ import {
   type Unit,
   type WeatherKind,
 } from "@tk/rules";
+import { audio } from "./audio/index.ts";
 import { CLASSIC_BATTLES, onClassicMap } from "./classic-battle.ts";
 import type { ClassicMapGrid } from "./skin.svelte.ts";
 import { describe, type LogLine } from "./text.ts";
@@ -103,6 +106,22 @@ export interface Remote {
   send(command: Command): void;
 }
 
+/** A story battle (ADR 0049): its own setup and AI orders instead of a sandbox scenario. */
+export interface StoryBattle {
+  setup: BattleSetup;
+  orders: Record<string, readonly Gambit[]>;
+  title: string;
+  sides: string[];
+  goalText: { win: string; lose: string };
+}
+
+/** Runs after each command is shown, before input resumes (story talk, experience). */
+export type Director = (
+  events: BattleEvent[],
+  before: BattleState,
+  after: BattleState,
+) => Promise<void>;
+
 export class Session {
   readonly rules: Ruleset = P0_RULES;
   /** The side this player commands (the seat, online). */
@@ -113,6 +132,11 @@ export class Session {
   readonly classicGrids = new Map<number, ClassicMapGrid>();
   /** The 1998 map picture under this battle, if it is fought on one. */
   backdrop = $state<number | null>(null);
+  /** Set for Story battles; the sandbox scenario is ignored then. */
+  story: StoryBattle | null = null;
+  director: Director | null = null;
+  /** Story lines are being read over the field (the battle waits). */
+  talking = $state(false);
 
   options = $state<BattleOptions>({
     scenario: "wuchao-raid",
@@ -159,7 +183,16 @@ export class Session {
     return s;
   }
 
+  /** The battle's name for the top bar. */
+  get title(): string {
+    return this.story?.title ?? this.scenario.name;
+  }
+
   private create(): BattleState {
+    if (this.story) {
+      this.backdrop = null;
+      return createBattle(this.rules, { ...this.story.setup, seed: this.options.seed });
+    }
     const o = this.options;
     const s = SCENARIOS[o.scenario];
     if (!s) throw new Error(`unknown scenario ${o.scenario}`);
@@ -399,8 +432,15 @@ export class Session {
     this.log = [];
     this.clearChoice();
     this.selected = null;
-    this.flash(`${this.scenario.name} · ${this.sideNames[this.humanSide]}`, "turn");
+    this.flash(`${this.title} · ${this.sideNames[this.humanSide]}`, "turn");
     void this.pump();
+  }
+
+  /** Starts a Story battle; `newBattle()` afterwards retries it with a new seed. */
+  startStory(b: StoryBattle): void {
+    this.story = b;
+    this.sideNames = [...b.sides];
+    this.newBattle({ seed: b.setup.seed });
   }
 
   // ------------------------------------------------------------ applying commands
@@ -481,9 +521,12 @@ export class Session {
         : describe(e, r.state, this.rules, this.sideNames, this.humanSide);
       if (line) this.addLog(line);
       if (e.kind === "twist") this.flash(e.outcome === "windfall" ? "천운!" : "불운!", "twist");
-      if (e.kind === "turn" && !quietTurn && e.side === this.humanSide && !this.auto)
+      if (e.kind === "turn" && !quietTurn && e.side === this.humanSide && !this.auto) {
         this.flash(`라운드 ${e.round} · 아군 차례`, "turn");
+        audio.play("turn");
+      }
       if (e.kind === "battleEnd") {
+        audio.play(e.winner === this.humanSide ? "victory" : "loss");
         this.flash(e.winner < 0 ? "무승부" : e.winner === this.humanSide ? "승리" : "패배", "end");
         if (this.demo)
           setTimeout(() => {
@@ -496,6 +539,7 @@ export class Session {
     }
     if (this.selected && !this.state.units.some((u) => u.id === this.selected && u.hp > 0))
       this.selected = null;
+    if (this.director) await this.director(r.events, before, r.state);
     this.busy = false;
   }
 
@@ -506,7 +550,8 @@ export class Session {
     try {
       while (this.state.winner === null && (this.auto || this.state.active !== this.humanSide)) {
         await nextFrame();
-        const cmd = chooseCommand(this.state, this.rules, scenarioOrders(this.scenario));
+        const orders = this.story ? this.story.orders : scenarioOrders(this.scenario);
+        const cmd = chooseCommand(this.state, this.rules, orders);
         if (!cmd || !(await this.step(cmd))) break;
       }
     } finally {

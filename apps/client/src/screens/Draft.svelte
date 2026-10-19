@@ -68,7 +68,7 @@ function confirm() {
           disabled={!mine}
           onclick={() => (chosen = chosen === id ? null : id)}
         >
-          <Portrait {id} size={44} />
+          <Portrait {id} classId={ARENA_POOL.find((e) => e.id === id)?.classId} size={44} />
           <span class="text">
             <span class="name">{o.name}</span>
             <span class="muted">{o.hanja} · {o.cls}</span>

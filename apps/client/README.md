@@ -1,4 +1,4 @@
-# @tk/client: battle sandbox
+# @tk/client: the game client
 
 Vite + PixiJS battlefield ([ADR 0007](../../docs/adr/0007-top-down-2d-pixijs.md)) with a
 Svelte 5 DOM overlay ([ADR 0031](../../docs/adr/0031-svelte-dom-overlay.md)). In **P0**
@@ -7,6 +7,9 @@ it was a local battle sandbox (you play 조조군 in 오소 습격 against the A
 live PvP with friends through the `MatchDO` referee
 ([ADR 0037](../../docs/adr/0037-websocket-json-protocol.md)–[ADR 0041](../../docs/adr/0041-p1-arena-defaults.md)),
 and installs as a PWA ([ADR 0005](../../docs/adr/0005-web-first-distribution.md)).
+**P2** adds the title menu and the Story's first chapter, with painted portraits,
+synthesized sound, saves and settings
+([ADR 0047](../../docs/adr/0047-battle-goals-and-arrivals.md)–[ADR 0054](../../docs/adr/0054-main-menu-settings-tips.md)).
 
 ```bash
 bun run server     # from the repo root: the Worker + rooms on http://127.0.0.1:8787
@@ -18,7 +21,9 @@ bun run build      # dist/ (relative asset paths, so it can be served from any f
 
 | Route | Screen |
 |---|---|
-| `#/` | Home: your name, create an Arena room, join by code, sandbox |
+| `#/` | Title menu: continue, new game, load, Arena, practice battle, watch, help, settings, credits |
+| `#/story` | The Story (chapter 1, 관도): scenes, sortie, battles with talk, results, camp, ending ([STORY.md](../../docs/remake/STORY.md)) |
+| `#/arena` | Arena lobby: your name, create a room, join by code |
 | `#/r/CODE` | An Arena room: invite link → draft → deploy → battle |
 | `#/sandbox`, `#/demo` | The 오소 sandbox, and the AI-vs-AI demo |
 
@@ -40,6 +45,8 @@ two-tap *기권*. Closing the tab keeps your seat: the same browser rejoins it.
 | Pace | the speed button cycles 1×, 2×, 4× and 생략 (no animation); *자동 전투* lets the AI play your side too |
 | New battle | *새 전투*: turn policy (진영 턴 or 교대 행동), weather, and seed |
 | Watch | open with `?demo` or `#demo`: the AI plays both sides at 2×, and a new battle starts after each one |
+| Story | read scenes with a tap (or Enter/Space); *자동* and *건너뛰기*. Before a battle pick officers and swap slots on the mini map; in battle the goals card shows how to win and lose (★ defeat, ◆ protect, a gold star to reach). After a win: experience and level-ups, then the camp — gear, promotion from Lv 20, the shop, saving |
+| Settings | ⚙ in the battle bar or on the title: volumes, speed, danger zones at start, lighter effects, text speed, tips. ? opens the help |
 
 The forecast shows hit and critical chances, damage (×2 for a double attack),
 the counter, *와해* (the strike breaks the target, cancelling its counter), and
@@ -87,7 +94,11 @@ exporter smooths the sprites to twice their size; `--raw` keeps the 1998 pixels.
 | `?lowfx` | No bloom or water shimmer, lighter ambience (slow devices) |
 | `?noskin` | Our own art even when the classic skin is exported |
 | `?tokens` | Medallion tokens instead of our rigged figures |
-| `?debug` | `window.tk` (the store) and `window.tkField` (`manualClock(true)`, `step(ms)` for frame-by-frame captures) |
+| `?debug` | `window.tk` (the sandbox store), `window.story` (the Story store) and `window.tkField` (`manualClock(true)`, `step(ms)` for frame-by-frame captures) |
+
+Dev pages (served by `bun run dev`): `/dev/rig-gallery.html` (every figure and pose),
+`/dev/portrait-gallery.html` (every portrait and mood), `/dev/audio-test.html`
+(every sound and track, with levels).
 
 The system's *reduce motion* setting also turns off camera moves, shake and flashes.
 
@@ -102,7 +113,10 @@ The system's *reduce motion* setting also turns off camera moves, shake and flas
 | `src/lib/text.ts` | Korean UI strings, event-log lines |
 | `src/components/` | Top bar (with the Arena clock), unit card, floating command menu and forecast, skill cut-in, portraits, tile info, log |
 | `src/lib/online.svelte.ts`, `src/lib/identity.ts` | The Arena room connection; guest key and name |
-| `src/screens/` | Home, sandbox, room (lobby, draft, deploy) and the battle screen |
+| `src/screens/` | Title, Story (`story/`: scene, sortie, results, camp, ending), Arena home, sandbox, room (lobby, draft, deploy) and the battle screen |
+| `src/lib/story.svelte.ts`, `src/lib/saves.ts`, `src/lib/settings.svelte.ts` | The Story store over `@tk/campaign`; save slots; settings |
+| `src/lib/audio/` | Synthesized music and sound effects (Web Audio, no files) |
+| `src/lib/fx/portrait.ts`, `src/lib/speakers.ts` | Painted bust portraits with moods; who speaks a line |
 | `public/` | PWA manifest, service worker, icons |
 
 `?debug` puts the store on `window.tk`; the canvas carries `data-geometry`

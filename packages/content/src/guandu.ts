@@ -629,7 +629,6 @@ export const GUANDU: ChapterDef = {
           "iron-ji",
           "horn-bow",
           "feather-fan",
-          "stone-shot",
           "lamellar",
           "leather",
           "robe",

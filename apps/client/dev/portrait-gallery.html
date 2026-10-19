@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portrait gallery</title>
+    <style>
+    html,
+    body {
+      margin: 0;
+      background: #1b1a17;
+      color: #efe7d6;
+      font:
+        13px system-ui,
+        sans-serif;
+    }
+    main {
+      padding: 12px;
+      display: grid;
+      gap: 14px;
+    }
+    h2 {
+      margin: 8px 0 0;
+      font-size: 15px;
+      color: #e2b65c;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .label {
+      width: 110px;
+      color: #e2b65c;
+    }
+    .label small {
+      display: block;
+      color: #a99f8c;
+    }
+    figure {
+      margin: 0;
+      display: grid;
+      gap: 2px;
+      justify-items: center;
+      color: #a99f8c;
+      font-size: 11px;
+    }
+    img {
+      border: 1px solid #5a5040;
+      border-radius: 4px;
+      background: #000;
+    }
+    .small {
+      display: flex;
+      gap: 4px;
+      align-items: flex-end;
+      margin-left: 8px;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Dev only (`bun run dev`, then /dev/portrait-gallery.html): every named officer in every mood at 200 px and 44 px, then generic soldiers per side and class.
+         Query: ?ids=cao-cao,guan-yu  ?moods=calm,angry  ?only=officers|generic|classes  ?big=200 -->
+    <main id="app"></main>
+    <script type="module">
+    import { FAMILIES, MOODS, PORTRAIT_OFFICERS, portraitUrl } from "../src/lib/fx/portrait.ts";
+
+    const q = new URLSearchParams(location.search);
+    const ids = q.get("ids")?.split(",") ?? PORTRAIT_OFFICERS;
+    const moods = q.get("moods")?.split(",") ?? MOODS;
+    const only = q.get("only");
+    const big = Number(q.get("big")) || 200;
+    const app = document.getElementById("app");
+    const t0 = performance.now();
+    let count = 0;
+
+    function img(spec, size) {
+      const el = document.createElement("img");
+      el.src = portraitUrl(spec);
+      el.width = size;
+      el.height = Math.round(size * 1.25);
+      el.alt = spec.id;
+      count++;
+      return el;
+    }
+    function fig(spec, size, caption) {
+      const f = document.createElement("figure");
+      f.append(img(spec, size));
+      if (caption) {
+        const c = document.createElement("figcaption");
+        c.textContent = caption;
+        f.append(c);
+      }
+      return f;
+    }
+    function row(label, sub, specs, captions) {
+      const r = document.createElement("div");
+      r.className = "row";
+      const l = document.createElement("div");
+      l.className = "label";
+      l.innerHTML = `${label}<small>${sub ?? ""}</small>`;
+      r.append(l);
+      for (const [i, s] of specs.entries()) r.append(fig(s, big, captions?.[i]));
+      const small = document.createElement("div");
+      small.className = "small";
+      for (const s of specs) small.append(img(s, 44));
+      r.append(small);
+      app.append(r);
+    }
+    function heading(text) {
+      const h = document.createElement("h2");
+      h.textContent = text;
+      app.append(h);
+    }
+
+    if (only === "grid") {
+      // Everyone at a glance, one mood: big, then small.
+      const mood = moods[0];
+      heading(`All named officers (${mood})`);
+      const grid = document.createElement("div");
+      grid.className = "row";
+      for (const id of ids) grid.append(fig({ id, mood }, big, id));
+      app.append(grid);
+      const small = document.createElement("div");
+      small.className = "row";
+      for (const id of ids) small.append(fig({ id, mood }, 44));
+      app.append(small);
+    }
+    if (!only || only === "officers") {
+      heading("Named officers");
+      for (const id of ids)
+        row(
+          id,
+          "",
+          moods.map((mood) => ({ id, mood })),
+          moods,
+        );
+    }
+    if (!only || only === "classes") {
+      heading("One officer in every class (side 0) and tier 2");
+      const id = q.get("classOf") ?? "zhang-liao";
+      row(
+        id,
+        "base classes",
+        FAMILIES.map((classId) => ({ id, classId, side: 0 })),
+        FAMILIES,
+      );
+      const tier2 = [
+        "heavyInfantry",
+        "longbow",
+        "shockCavalry",
+        "tactician",
+        "guardian",
+        "thunderCart",
+      ];
+      row(
+        id,
+        "tier 2",
+        tier2.map((classId) => ({ id, classId, side: 1 })),
+        tier2,
+      );
+    }
+    if (!only || only === "generic") {
+      heading("Generic soldiers by side and class");
+      for (const side of [0, 1, 2, 3])
+        row(
+          `side ${side}`,
+          side === 0 ? "cao-…" : side === 1 ? "yuan-…" : "",
+          FAMILIES.map((classId, i) => ({
+            id: `${side === 1 ? "yuan" : "cao"}-${classId}-${side * 7 + i}`,
+            classId,
+            side,
+          })),
+          FAMILIES,
+        );
+      row(
+        "variety",
+        "same class",
+        [1, 2, 3, 4, 5, 6].map((n) => ({ id: `yuan-infantry-${n}`, classId: "infantry", side: 1 })),
+        [1, 2, 3, 4, 5, 6].map((n) => `yuan-infantry-${n}`),
+      );
+      row(
+        "by id",
+        "no class given",
+        [
+          "cao-archer-2",
+          "yuan-cavalry-1",
+          "cao-infantry-1",
+          "yuan-strategist-3",
+          "yuan-archer-2",
+          "cao-catapult-4",
+        ].map((id) => ({ id })),
+        [
+          "cao-archer-2",
+          "yuan-cavalry-1",
+          "cao-infantry-1",
+          "yuan-strategist-3",
+          "yuan-archer-2",
+          "cao-catapult-4",
+        ],
+      );
+    }
+    const ms = performance.now() - t0;
+    document.title = `Portrait gallery (${count} in ${Math.round(ms)} ms)`;
+    window.__stats = { count, ms };
+    </script>
+  </body>
+</html>

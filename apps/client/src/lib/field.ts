@@ -27,6 +27,7 @@ import {
   type Texture,
 } from "pixi.js";
 import { AdjustmentFilter, AdvancedBloomFilter } from "pixi-filters";
+import { audio, type Sfx } from "./audio/index.ts";
 import { Ambient } from "./fx/ambient.ts";
 import { ChibiRig, lookFor } from "./fx/chibi.ts";
 import * as fx from "./fx/effects.ts";
@@ -82,6 +83,8 @@ export interface OverlayView {
   ghost: { id: string; to: Cell } | null;
   /** Where the selected unit stands (its pending tile, if any). */
   selected: Cell | null;
+  /** Tiles a goal asks our side to reach (ADR 0047). */
+  goals: Cell[];
 }
 
 interface UnitSprite {
@@ -97,6 +100,8 @@ interface UnitSprite {
   figure: Sprite;
   hp: Graphics;
   mark: Text;
+  /** ★ over a commander we must defeat, ◆ over one we must protect (ADR 0047). */
+  badge: Text;
   /** ▲ buffs / ▼ debuffs at the top-left. */
   cond: Text;
   glyph: Text;
@@ -529,6 +534,20 @@ export class Field {
       for (const c of cells)
         g.roundRect(c.x * t + 2, c.y * t + 2, t - 4, t - 4, r).stroke({ width, color, alpha });
     };
+    for (const c of v.goals) {
+      // A gold star on the tile to reach.
+      const p = this.center(c);
+      const pts: number[] = [];
+      for (let i = 0; i < 10; i++) {
+        const a = -Math.PI / 2 + (i * Math.PI) / 5;
+        const rad = i % 2 === 0 ? t * 0.36 : t * 0.15;
+        pts.push(p.x + Math.cos(a) * rad, p.y + Math.sin(a) * rad);
+      }
+      g.roundRect(c.x * t + 2, c.y * t + 2, t - 4, t - 4, r).fill({ color: 0xffd23f, alpha: 0.18 });
+      g.poly(pts)
+        .fill({ color: 0xffd23f, alpha: 0.55 })
+        .stroke({ width: 1.5, color: 0xfff3b0, alpha: 0.9 });
+    }
     fill(v.danger, 0xff3b30, 0.26);
     fill(v.reach, 0x4d9bff, v.pending ? 0.2 : 0.36);
     outline(v.reach, 0xbfe0ff, 1.5, v.pending ? 0.3 : 0.7);
@@ -594,7 +613,10 @@ export class Field {
     const cond = new Text({ text: "", style: textStyle(Math.round(t * 0.24), 0xffffff, true) });
     cond.anchor.set(0.5);
     cond.position.set(-t * 0.3, -t * 0.32);
-    root.addChild(shadow, ring, token, figure, glyph, hp, mark, cond);
+    const badge = new Text({ text: "", style: textStyle(Math.round(t * 0.3), 0xffd23f, true) });
+    badge.anchor.set(0.5);
+    badge.position.set(0, -t * 0.62);
+    root.addChild(shadow, ring, token, figure, glyph, hp, mark, cond, badge);
     this.units.addChild(root);
     const set = this.skin ? this.skin.setFor(u.classId, u.id, u.side) : -1;
     s = {
@@ -607,6 +629,7 @@ export class Field {
       hp,
       mark,
       cond,
+      badge,
       glyph,
       set,
       pose: null,
@@ -646,7 +669,12 @@ export class Field {
     const resting = u.acted && state.winner === null;
     if (rigged) {
       const look = lookFor(u.classId, u.id, u.side);
-      if (!s.rig || s.rig.look.kind !== look.kind || s.rig.look.side !== look.side) {
+      if (
+        !s.rig ||
+        s.rig.look.kind !== look.kind ||
+        s.rig.look.side !== look.side ||
+        s.rig.look.elite !== look.elite
+      ) {
         s.rig?.root.destroy({ children: true });
         s.rig = new ChibiRig(look);
         s.root.addChildAt(s.rig.root, s.root.getChildIndex(s.figure));
@@ -702,6 +730,14 @@ export class Field {
       (c) => this.session.rules.conditions[c.id]?.blocks === "act",
     );
     s.mark.text = confused ? "?" : u.broken ? "!" : "";
+    const me = this.session.humanSide;
+    const named = (side: (g: number) => boolean) =>
+      state.goals.some(
+        (g) => side(g.side) && g.when.kind === "defeat" && g.when.units.includes(u.id),
+      );
+    const target = named((g) => g === me);
+    s.badge.text = target ? "★" : named((g) => g !== me) ? "◆" : "";
+    s.badge.style.fill = target ? 0xffd23f : 0x9fd0ff;
     s.cond.text = `${kinds.has("buff") ? "▲" : ""}${kinds.has("debuff") ? "▼" : ""}`;
     s.cond.style.fill =
       kinds.has("buff") && kinds.has("debuff") ? 0xffe066 : kinds.has("buff") ? 0x7ee07a : 0xc58cff;
@@ -743,6 +779,7 @@ export class Field {
       const p = this.center(at);
       s.root.position.set(p.x, p.y);
       s.root.scale.set(1);
+      s.root.alpha = 1;
       s.root.zIndex = p.y;
       s.root.visible = true;
     }
@@ -939,6 +976,15 @@ export class Field {
     const at = (id: string): Cell => pos.get(id) ?? { x: 0, y: 0 };
     const px = (id: string) => this.center(at(id));
     const quiet = () => this.session.speed === 0;
+    /** A sound panned to where it happens; silent when animations are skipped. */
+    const sound = (name: Sfx, where?: Cell) => {
+      if (quiet()) return;
+      const w = before.map.width;
+      audio.play(
+        name,
+        where ? { pan: Math.max(-1, Math.min(1, ((where.x + 0.5) / w) * 2 - 1)) * 0.6 } : {},
+      );
+    };
     const setHp = (id: string, value: number) => {
       const s = this.sprites.get(id);
       if (!s) return;
@@ -988,6 +1034,8 @@ export class Field {
               ? walkPath(before, this.session.rules, { ...u, x: e.from.x, y: e.from.y }, e.to)
               : [e.from, e.to];
             const walking = s && skinned(e.unit);
+            const mounted = u && this.session.rules.classes[u.classId]?.family === "cavalry";
+            sound(mounted ? "hoof" : "move", e.from);
             let dir = DOWN;
             for (let i = 1; i < path.length && s; i++) {
               const a = path[i - 1] ?? e.from;
@@ -1038,6 +1086,7 @@ export class Field {
             const att = this.sprites.get(e.attacker);
             const def = this.sprites.get(e.defender);
             const impact = async () => {
+              sound(e.hit ? (e.crit ? "crit" : "hit") : "miss", d0);
               if (e.hit) {
                 if (!quiet()) fx.strikeHit(this.fxc(), dp, angle, e.crit);
                 setHp(e.defender, e.hpAfter);
@@ -1058,6 +1107,7 @@ export class Field {
             const fly = async (lead: number) => {
               if (!shot) return this.wait(lead);
               await this.wait(lead - 130);
+              sound(shot, a0);
               if (!quiet()) fx.projectile(this.fxc(), ap, dp, shot === "stone" ? 260 : 130, shot);
               await this.wait(shot === "stone" ? 260 : 130);
             };
@@ -1107,6 +1157,7 @@ export class Field {
             const s = this.sprites.get(e.unit);
             const p = px(e.unit);
             this.float(at(e.unit), FATE[e.fate], 0xffb3a7, true);
+            sound("defeat", at(e.unit));
             if (!quiet()) fx.defeat(this.fxc(), p);
             if (s && skinned(e.unit)) {
               this.setPose(s, "hurt", DOWN);
@@ -1127,6 +1178,7 @@ export class Field {
             const color = def ? SCHOOL_COLOR[def.school] : 0xffffff;
             const caster = before.units.find((u) => u.id === e.caster);
             if (def && caster && this.cinematic()) {
+              sound("cutin");
               this.session.cutin = {
                 unit: caster.id,
                 name: caster.name,
@@ -1142,6 +1194,17 @@ export class Field {
             }
             const s = skinned(e.caster);
             if (s) this.setPose(s, "cheer", DOWN);
+            if (def)
+              sound(
+                def.effect === "heal"
+                  ? "heal"
+                  : def.school === "support"
+                    ? "buff"
+                    : def.school === "disruption"
+                      ? "debuff"
+                      : def.school,
+                e.at,
+              );
             if (!quiet()) fx.castSigil(this.fxc(), px(e.caster), color);
             this.float(at(e.caster), def?.name ?? e.id, 0xffffff);
             await this.wait(260);
@@ -1226,6 +1289,26 @@ export class Field {
             setHp(e.unit, e.hpAfter);
             this.float(at(e.unit), `+${e.amount}`, 0x7ee07a);
             break;
+          case "arrived": {
+            // Reinforcements ride in: a horn, dust, and the figure fading in on its tile.
+            const u = after.units.find((v) => v.id === e.unit);
+            if (!u) break;
+            pos.set(u.id, e.at);
+            const s = this.sprite(u);
+            this.drawUnit(u, s, DOWN, after);
+            const p = this.center(e.at);
+            s.root.position.set(p.x, p.y);
+            s.root.zIndex = p.y;
+            s.root.visible = true;
+            s.root.alpha = 0;
+            sound("arrive", e.at);
+            if (!quiet()) fx.dust(this.fxc(), { x: p.x, y: p.y + this.tile * 0.3 }, 3);
+            await this.tween(this.ms(420), (k) => {
+              if (!s.root.destroyed) s.root.alpha = k;
+            });
+            s.root.alpha = 1;
+            break;
+          }
           case "battleEnd":
             if (!quiet())
               for (const u of after.units)

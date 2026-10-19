@@ -29,13 +29,14 @@ function join() {
 
 <main class="home">
   <header>
-    <h1>tk</h1>
-    <p class="muted">삼국지 전술 시뮬레이션 · 개발 중 (P1)</p>
+    <a class="back" href="#/">← 타이틀</a>
+    <h1>{T.arena}</h1>
+    <p class="muted">친구와 겨루는 실시간 대전</p>
   </header>
 
   {#if hasServer}
     <section class="card">
-      <h2>{T.arena}</h2>
+      <h2>대전 방</h2>
       <label for="name">{T.yourName}</label>
       <input id="name" bind:value={name} maxlength="12" placeholder="조조팬" onchange={remember}>
       <button type="button" class="primary" disabled={!validName} onclick={create}>
@@ -83,7 +84,17 @@ function join() {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 header {
+  position: relative;
+  width: min(420px, 100%);
   text-align: center;
+}
+.back {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
 }
 h1 {
   margin: 0;

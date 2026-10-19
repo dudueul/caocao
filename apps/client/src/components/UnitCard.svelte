@@ -48,7 +48,7 @@ const groups = $derived.by(() => {
 
 <section class="card" class:enemy={unit.side !== session.humanSide}>
   <header>
-    <Portrait id={unit.id} size={52} />
+    <Portrait id={unit.id} classId={unit.classId} side={unit.side} size={52} />
     <strong>{unit.name}</strong>
     <span class="chip">{cls?.name}</span>
     <span class="chip">Lv {unit.level}</span>

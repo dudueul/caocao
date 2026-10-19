@@ -15,7 +15,12 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
     <div class="vs">
       <div>
         <div class="who">
-          <Portrait id={forecast.attacker.id} size={40} />
+          <Portrait
+            id={forecast.attacker.id}
+            classId={forecast.attacker.classId}
+            side={forecast.attacker.side}
+            size={40}
+          />
           <strong>{forecast.attacker.name}</strong>
         </div>
         <div class="big">
@@ -29,7 +34,12 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
       <div class="arrow">▶</div>
       <div>
         <div class="who">
-          <Portrait id={forecast.defender.id} size={40} />
+          <Portrait
+            id={forecast.defender.id}
+            classId={forecast.defender.classId}
+            side={forecast.defender.side}
+            size={40}
+          />
           <strong>{forecast.defender.name}</strong>
         </div>
         <div class="big">{forecast.defender.hp} → {left}</div>
@@ -62,7 +72,12 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
     {@const p = forecast.preview}
     {@const def = session.rules.stratagems[forecast.id]}
     <div class="who">
-      <Portrait id={forecast.caster.id} size={40} />
+      <Portrait
+        id={forecast.caster.id}
+        classId={forecast.caster.classId}
+        side={forecast.caster.side}
+        size={40}
+      />
       <div><strong>{def?.name}</strong> <span class="muted">MP {def?.mp}</span></div>
     </div>
     {#each p.targets as t (t.unit)}

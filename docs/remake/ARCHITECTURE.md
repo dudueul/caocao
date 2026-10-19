@@ -52,20 +52,25 @@ flowchart LR
 A TypeScript monorepo in this repository ([0017](../adr/0017-clear-this-repository.md)),
 with the toolchain of [0019](../adr/0019-bun-toolchain.md) (Bun for install, tests and
 scripts; TypeScript 7; Biome). **Today `packages/rules`** (seeded PRNG, canonical
-state hash, and the P0 battle engine below), **`packages/content`** (the P0
-ruleset, sandbox scenario and Arena pool), **`packages/protocol`**,
-**`apps/server`** (the Arena referee, §4) and **`apps/client`** (sandbox and
-Arena, §7) have code; `apps/tools` holds a README describing its phase.
+state hash, and the battle engine below), **`packages/content`** (the ruleset,
+sandbox scenario, Arena pool, Story chapter and items), **`packages/campaign`**
+(Story progression, [STORY.md](STORY.md)), **`packages/protocol`**,
+**`apps/server`** (the Arena referee, §4) and **`apps/client`** (title, Story,
+sandbox and Arena, §7) have code; `apps/tools` holds a README describing its phase.
 
 ```mermaid
 flowchart BT
   rules["packages/rules<br/>pure, deterministic:<br/>state, commands, events,<br/>formulas, AI, event VM"]
   content["packages/content<br/>officers, classes, items, maps,<br/>scenarios, anchors (typed TS + validators)"]
   protocol["packages/protocol<br/>client-server messages"]
+  campaign["packages/campaign<br/>pure: roster, experience,<br/>gear, saves, chapter flow"]
   client["apps/client<br/>PixiJS battle view + UI"]
   server["apps/server<br/>Worker + Durable Objects"]
   tools["apps/tools<br/>map / event / anchor editors"]
   content --> rules
+  campaign --> content
+  campaign --> rules
+  campaign --> client
   rules --> client
   rules --> server
   protocol --> client
@@ -80,6 +85,7 @@ flowchart BT
 | `content` | `rules` types and helpers; typed data and validators ([0032](../adr/0032-content-as-typed-modules.md)) | the same bans as `rules`: clock, I/O, `Math.random`, floats |
 | `client` | `rules`, `content`, `protocol`, PixiJS, Svelte 5 | deciding outcomes of online battles; building commands that `legalCommands()` didn't list |
 | `protocol` | `rules` types | anything but message shapes, validators and redaction |
+| `campaign` | `rules`, `content` ([0049](../adr/0049-story-chapter-guandu.md)) | the same bans as `rules`; storage (the client keeps saves) |
 | `server` | `rules`, `protocol`, Workers/DO APIs, D1, R2 | rendering |
 
 ## 3. Rules engine
@@ -135,6 +141,7 @@ no wall-clock time. Golden-replay tests run in CI.
 | `stratagem.ts` | MP, element × terrain × weather, condition riders and cleansing, fortune twists, push collisions, ignition; `previewStratagem()` |
 | `conditions.ts` | Condition stacks ([0035](../adr/0035-stacking-conditions-rolled-durations.md)): discounted stacking, rolled durations, blocks, ATK/DEF/hit/move modifiers, damage over time, end-of-turn countdown |
 | `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects (healing, burning), victory |
+| `goals.ts` | Goals (defeat, hold, reach) checked in order, reserve units arriving on a round at the nearest free tile ([0047](../adr/0047-battle-goals-and-arrivals.md)) |
 | `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); the approach pull follows a movement-cost field to the nearest attack position, so units route around rivers and walls; casts that achieve nothing are never chosen, and MP has a cost; `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)) |
 | `sim.ts` | `runBattle()` (AI vs AI), `replay()` (command-log verification) |
 | `prng.ts`, `hash.ts`, `math.ts`, `tuning.ts` | Seeded sfc32, canonical hash, integer helpers, default tuning, `forMode()`, `triangleRelations()` |
@@ -282,6 +289,7 @@ routes `/api/rooms/CODE/ws` to the room's `MatchDO` and serves the client build
 |---|---|---|
 | Game content (officers, classes, items, maps, scenarios, anchors) | `packages/content`, typed modules bundled into the client and the Worker; `P0_RULES_HASH` versions it | same data in the client and the DOs |
 | Account, Story roster, unlocks, legacy ([0014](../adr/0014-scoped-progression-fair-arena.md)) | `PlayerDO` storage (SQLite-backed DO) | single writer per account |
+| Story saves until accounts exist ([0051](../adr/0051-browser-saves.md)) | browser storage: three slots and an autosave, checked on load | offline, no server needed |
 | World state (households, armies, cities, clock) | `WorldDO` storage | single writer per world |
 | Ladders, season archives, hall of fame | D1 | queries across many entities |
 | Replays, user uploads | R2 | large blobs |
@@ -305,13 +313,17 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  H["#/ home<br/>name, create, join"] -->|create / join| R["#/r/CODE<br/>OnlineRoom"]
-  H --> S["#/sandbox · #/demo<br/>local Session"]
+  T["#/ title<br/>continue, new, load,<br/>settings, credits"] --> Y["#/story<br/>Story"]
+  T --> H["#/arena<br/>name, create, join"]
+  T --> S["#/sandbox · #/demo<br/>local Session"]
+  H -->|create / join| R["#/r/CODE<br/>OnlineRoom"]
   R --> L["lobby<br/>invite link"]
   L --> D["draft<br/>snake picks"]
   D --> P["deploy<br/>swap on mini-map"]
   P --> B["battle<br/>BattleScreen"]
   S --> B
+  Y --> SC["scene"] --> SO["sortie"] --> B
+  B --> RS["results"] --> CA["camp"] --> SC
 ```
 
 | Module | Responsibility |
@@ -325,7 +337,13 @@ flowchart LR
 | `lib/fx/*.ts` | Presentation ([0044](../adr/0044-modern-battlefield-presentation.md)): effect textures, a particle system, effect recipes (strikes, shots, defeats, auras, one look per skill school), weather and ambience, terrain painting with soft edges (our procedural art or the skin's tiles), our medallion tokens |
 | `lib/fx/chibi.ts` | Our characters ([0045](../adr/0045-rigged-chibi-characters.md)): painted parts per class, side and facing on a small skeleton, posed procedurally (ready, walk, attack, guard, hurt, slumped, cheer), dressed as late Eastern Han soldiers and officials ([0046](../adr/0046-period-accurate-dress.md), [CHARACTER_LOOK.md](CHARACTER_LOOK.md)); `dev/rig-gallery.html` shows them all |
 | `lib/text.ts` | Korean UI strings and event-log lines |
-| `components/*.svelte` | Top bar, unit card (condition stacks with turns left), command menu with the skill list and forecast floating beside the unit ([0043](../adr/0043-floating-command-menu.md)), skill cut-in, portraits, tile info, battle log |
+| `lib/story.svelte.ts` | The Story store ([0049](../adr/0049-story-chapter-guandu.md)): the campaign state, the phase (scene, sortie, battle, result, camp, end), the sortie, in-battle talk, experience ledger; drives a `Session` with a `StoryBattle` and a director hook |
+| `lib/saves.ts`, `lib/settings.svelte.ts`, `lib/ui.svelte.ts` | Save slots and the autosave in browser storage ([0051](../adr/0051-browser-saves.md)); player settings ([0054](../adr/0054-main-menu-settings-tips.md)); app-wide overlays |
+| `lib/audio/*.ts` | Synthesized music and sound effects with Web Audio ([0052](../adr/0052-synthesized-sound.md)); `dev/audio-test.html` auditions them |
+| `lib/fx/portrait.ts` | Bust portraits with moods painted in code ([0053](../adr/0053-painted-portraits.md)); `dev/portrait-gallery.html` shows them |
+| `lib/speakers.ts` | A dialogue line's speaker: name, army colour and class for the portrait |
+| `screens/Title.svelte`, `screens/StoryScreen.svelte`, `screens/story/*.svelte` | The title menu; the Story's scene, sortie, results, camp and ending views |
+| `components/*.svelte` | Top bar, unit card (condition stacks with turns left), command menu with the skill list and forecast floating beside the unit ([0043](../adr/0043-floating-command-menu.md)), skill cut-in, portraits, tile info, battle log; painted backdrops, the dialogue box and talk overlay, first-battle coach, settings, credits, save slots |
 
 The battle view draws in layers ([0044](../adr/0044-modern-battlefield-presentation.md));
 the top of the diagram is drawn last:
@@ -412,6 +430,7 @@ real UI through `?debug` (store on `window.tk`) and the canvas's `data-geometry`
 | Determinism | Golden replays (seed + commands → expected hash) run in CI on Node and in a Workers runtime |
 | Rules correctness | Unit tests per formula; property tests (no unit on an illegal cell, HP never negative …) |
 | Balance and AI | Headless AI-vs-AI soak runs of thousands of battles in CI; win-rate reports per class |
+| Story | `packages/campaign/test`: the AI plays the whole chapter with progression (every battle winnable, replays exact, promotion reached); save files round-trip and damaged ones are refused. A headless-Chromium script plays the chapter through the UI, title to the last result, before releases |
 | Server CPU | Target under 10 ms per command and under 200 ms per AI activation in a DO ([0004](../adr/0004-server-authoritative-referee.md)) |
 | Client load | First load ≤ 10 MB, interactive under 3 s on a mid-range phone ([0005](../adr/0005-web-first-distribution.md)); the P0 sandbox build is about 200 KB of JavaScript gzipped (rules, content, Svelte and Pixi) |
 | Client UI | `svelte-check` (types in markup) and Biome in `bun run check`; headless-Chromium scripts play a sandbox battle and a two-browser Arena match (create, join, draft, deploy, moves, reload, concede) through the UI before releases |

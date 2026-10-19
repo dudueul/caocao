@@ -1,8 +1,8 @@
 # Remake: a Three Kingdoms grid-tactics game, built from scratch
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
-> this folder describes the **current** design. Last updated 2026-10-15
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0041](../adr/0041-p1-arena-defaults.md)).
+> this folder describes the **current** design. Last updated 2026-10-19
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0054](../adr/0054-main-menu-settings-tips.md)).
 
 ## Vision
 
@@ -20,6 +20,8 @@ and the mobile stores.
 | [BENCHMARK.md](BENCHMARK.md) | How the 2018 mobile game resolved battles (decompiled, in our words) and the lessons for ours |
 | [MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md) | Techniques from recent tactics games, rated for fit (danger zones, gambits, break, hazards, AI) |
 | [WORLD_ENGINE.md](WORLD_ENGINE.md) | Living History and Warlord Campaign: calendar, clock, anchor events, households, pacing, seasons |
+| [STORY.md](STORY.md) | Story mode: chapter flow, the five Guandu battles, progression, equipment, saves |
+| [CHARACTER_LOOK.md](CHARACTER_LOOK.md) | How our characters dress: late Eastern Han sources per class |
 | [../adr/](../adr/README.md) | Every decision with its context, alternatives and revisit triggers |
 
 ## Main menu
@@ -98,6 +100,14 @@ flowchart TB
 | Characters | Rigged 2D chibi figures at tile scale in the map's bird's-eye view; three facings; parts painted in code until an artist draws them | [0045](../adr/0045-rigged-chibi-characters.md) |
 | Character dress | Late Eastern Han, around 200 AD: topknots, cross-collared robes, iron lamellar armour, ring-pommel sabres and lacquered shields, the ji halberd, no stirrups, Cao Cao's traction stone-thrower; [CHARACTER_LOOK.md](CHARACTER_LOOK.md) | [0046](../adr/0046-period-accurate-dress.md) |
 | Presentation | Soft terrain edges, water shimmer, weather and colour grade, cinematic camera, particles per skill school, skill cut-ins, glass-and-gold UI, smoothed classic sprites; our own procedural terrain and tokens without the skin | [0044](../adr/0044-modern-battlefield-presentation.md) |
+| Goals and arrivals *(proposed)* | Battles may have goals (defeat named units, hold until a round, reach a tile) and reserve units that arrive on a round; a guard order for commanders; state format 3 | [0047](../adr/0047-battle-goals-and-arrivals.md) |
+| Story progression *(proposed)* | Experience from battle events; 100 a level; steady class growth in ‰; tier 2 from Lv 20 (six new classes) | [0048](../adr/0048-story-progression.md) |
+| Story chapter 1 *(proposed)* | Cao Cao's Guandu campaign: five battles with scenes, camps and an epilogue; a pure `@tk/campaign` package; [STORY.md](STORY.md) | [0049](../adr/0049-story-chapter-guandu.md) |
+| Equipment *(proposed)* | Weapon, armour, accessory; kinds per family; 25 period items; a shop per camp | [0050](../adr/0050-equipment-and-shop.md) |
+| Saves *(proposed)* | Browser storage: three slots and an autosave; every field checked on load | [0051](../adr/0051-browser-saves.md) |
+| Sound *(proposed)* | Music and effects synthesized in code with Web Audio; no audio files | [0052](../adr/0052-synthesized-sound.md) |
+| Portraits *(proposed)* | Bust portraits with moods painted in code for every officer | [0053](../adr/0053-painted-portraits.md) |
+| Main menu *(proposed)* | Title menu, settings everywhere, first-battle tips, goals card and markers in Story battles | [0054](../adr/0054-main-menu-settings-tips.md) |
 
 ## Roadmap
 
@@ -111,11 +121,15 @@ flowchart LR
 ```
 
 Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then-arena.md).
-**Today:** P0 is done (rules engine with conditions; 6 classes, 12 terrains, 13
-skills, 8 conditions; a playable sandbox). P1 runs locally end to end: rooms by
-invite link, the six-officer draft, deployment, live alternating battles refereed
-by a `MatchDO` with a 45-second clock, reconnects, and a PWA. Next for P1: deploy
-to Cloudflare so friends can play, then their feedback.
+**Today:** P0 is done (rules engine with conditions; 12 terrains, 13 skills, 8
+conditions; a playable sandbox). P1 runs end to end: rooms by invite link, the
+six-officer draft, deployment, live alternating battles refereed by a `MatchDO`
+with a 45-second clock, reconnects, and a PWA; the owner deploys it with
+`bun run deploy`. P2 has its first chapter playable from the title screen to
+the ending: five Guandu battles with goals and reinforcements, scenes with
+painted portraits, experience, levels and tier-2 promotions, equipment and a
+shop, saves, synthesized music and sound, settings and first-battle tips. Still
+to come for P2: the server copy of progress (`PlayerDO`) and re-simulation.
 
 ## Open questions (next design sessions)
 
@@ -123,8 +137,8 @@ to Cloudflare so friends can play, then their feedback.
 |---|---|---|
 | 2 | Name of the game | Working name `tk`; the remake is built in this repository ([0017](../adr/0017-clear-this-repository.md)) |
 | 5 | Accounts and sign-in | P1 uses guest device keys ([0038](../adr/0038-guest-identity-device-key.md)); passkeys with `PlayerDO` in P2 |
-| 6 | Story scope | Whose story (조조 only, several lords' routes, or the player's officer) |
-| 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Stats and classes are decided ([0020](../adr/0020-five-stats-with-distinct-roles.md), [0021](../adr/0021-class-families-and-tiers.md)); the P1 Arena uses no equipment, officers at Lv 20 ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)) |
+| 6 | Story scope | Chapter 1 is Cao Cao's Guandu campaign ([0049](../adr/0049-story-chapter-guandu.md), proposed); later chapters: 조조 only, or other lords' routes |
+| 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear proposed ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |
 | 10 | Languages | Korean first; English next |
