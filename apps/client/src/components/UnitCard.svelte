@@ -101,13 +101,13 @@ const groups = $derived.by(() => {
 .card {
   padding: 8px 10px;
   border-radius: 12px;
-  border: 1px solid rgba(79, 142, 240, 0.45);
-  background: linear-gradient(135deg, rgba(79, 142, 240, 0.16), rgba(255, 255, 255, 0.02) 55%);
+  border: 1px solid rgba(224, 100, 90, 0.45);
+  background: linear-gradient(135deg, rgba(224, 100, 90, 0.16), rgba(255, 255, 255, 0.02) 55%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 .card.enemy {
-  border-color: rgba(224, 100, 90, 0.5);
-  background: linear-gradient(135deg, rgba(224, 100, 90, 0.16), rgba(255, 255, 255, 0.02) 55%);
+  border-color: rgba(79, 142, 240, 0.5);
+  background: linear-gradient(135deg, rgba(79, 142, 240, 0.16), rgba(255, 255, 255, 0.02) 55%);
 }
 header :global(.face) {
   border-color: rgba(232, 194, 106, 0.7);

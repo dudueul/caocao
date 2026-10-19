@@ -533,7 +533,7 @@ h1 {
   box-shadow: 0 0 0 1px #fff8;
 }
 .lg.guest {
-  background: #8fc4ff;
+  background: #ffa898;
 }
 .lg.foe {
   background: var(--enemy);
@@ -597,7 +597,7 @@ button.cell {
   font-size: clamp(9px, 1.9vw, 14px);
   font-weight: 800;
   color: #fff;
-  background: radial-gradient(circle at 35% 30%, #8cb8ff, var(--ally) 55%, #23498f);
+  background: radial-gradient(circle at 35% 30%, #ffa59c, var(--ally) 55%, #8c2a22);
   box-shadow:
     0 0 0 1.5px rgba(255, 255, 255, 0.85),
     0 2px 4px rgba(0, 0, 0, 0.6);
@@ -617,7 +617,7 @@ button.cell {
     0 1px 3px rgba(0, 0, 0, 0.6);
 }
 .pin.foe {
-  background: radial-gradient(circle at 35% 30%, #ffa59c, var(--enemy) 55%, #8c2a22);
+  background: radial-gradient(circle at 35% 30%, #8cb8ff, var(--enemy) 55%, #23498f);
 }
 .pin.foe.boss {
   width: 74%;
@@ -626,7 +626,7 @@ button.cell {
     0 0 8px rgba(232, 194, 106, 0.9);
 }
 .pin.guest {
-  background: radial-gradient(circle at 35% 30%, #d6ebff, #8fc4ff 55%, #3f74b8);
+  background: radial-gradient(circle at 35% 30%, #ffe0d8, #ffa898 55%, #b8584a);
 }
 .hint {
   margin: 0;
@@ -688,7 +688,7 @@ h2 {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s;
-  background: linear-gradient(135deg, rgba(79, 142, 240, 0.3), transparent 60%);
+  background: linear-gradient(135deg, rgba(224, 100, 90, 0.3), transparent 60%);
 }
 .card.on {
   border-color: rgba(232, 194, 106, 0.85);

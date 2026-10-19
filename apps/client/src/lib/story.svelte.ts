@@ -8,6 +8,7 @@ import {
   buy,
   type CampaignState,
   checkSortie,
+  continueTo,
   currentBattle,
   currentStep,
   defaultSortie,
@@ -15,9 +16,11 @@ import {
   equip,
   finishScene,
   type Gear,
+  isFinished,
   type Ledger,
   leaveCamp,
   newCampaign,
+  nextChapter,
   type Placement,
   promote,
   type Result,
@@ -28,13 +31,15 @@ import {
   storySetup,
   unequip,
 } from "@tk/campaign";
-import type {
-  CampDef,
-  ChapterStep,
-  Line,
-  SceneDef,
-  StoryBattleDef,
-  TalkTrigger,
+import {
+  type CampDef,
+  type ChapterDef,
+  type ChapterStep,
+  FIRST_CHAPTER,
+  type Line,
+  type SceneDef,
+  type StoryBattleDef,
+  type TalkTrigger,
 } from "@tk/content";
 import type { BattleEvent, BattleState } from "@tk/rules";
 import { type SlotId, writeSlot } from "./saves.ts";
@@ -58,7 +63,7 @@ const phaseOf = (step: ChapterStep | null): Phase =>
   step === null ? "end" : step.kind === "battle" ? "sortie" : step.kind;
 
 export class Story {
-  campaign = $state.raw<CampaignState>(newCampaign("guandu"));
+  campaign = $state.raw<CampaignState>(newCampaign(FIRST_CHAPTER));
   phase = $state<Phase>("scene");
   /** The line of the current scene being read. */
   line = $state(0);
@@ -90,8 +95,22 @@ export class Story {
   }
 
   /** A new campaign from the first scene. */
-  start(): void {
-    this.load(newCampaign("guandu"), null);
+  start(chapterId: string = FIRST_CHAPTER): void {
+    this.load(newCampaign(chapterId), null);
+  }
+
+  /** The chapter that follows the finished one, if any (ADR 0056). */
+  get upcoming(): ChapterDef | null {
+    return isFinished(this.campaign) ? nextChapter(this.campaign) : null;
+  }
+
+  /** Carries the finished campaign into the next chapter and saves it. */
+  continueNext(): void {
+    const next = this.upcoming;
+    if (next && this.apply(continueTo(this.campaign, next.id))) {
+      this.autosave();
+      this.enterStep();
+    }
   }
 
   /** Picks up a campaign (from a save) at its current step. */

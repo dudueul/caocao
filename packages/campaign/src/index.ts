@@ -12,11 +12,13 @@ export {
 } from "./battle.ts";
 export {
   chapterOf,
+  continueTo,
   currentStep,
   finishScene,
   isFinished,
   leaveCamp,
   newCampaign,
+  nextChapter,
   promote,
   recruit,
 } from "./flow.ts";
@@ -37,6 +39,7 @@ export {
   type Ledger,
   type LevelUp,
   promotionFor,
+  raiseTo,
   recordEvents,
   STAT_KEYS,
   type StatGains,

@@ -136,7 +136,7 @@ const TENTS: [number, number][] = [
         />
         <path
           d="M{x} {332 - 165 * k} L{x + 46 * k} {332 - 152 * k} L{x} {332 - 138 * k} Z"
-          fill={kind === "fire" ? "#a83a1a" : "#2e4a78"}
+          fill={kind === "fire" ? "#2e4a78" : "#9b2f28"}
         />
       {/each}
       {#each Array.from({ length: 40 }, (_, i) => i) as i (i)}

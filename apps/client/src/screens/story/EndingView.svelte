@@ -1,21 +1,24 @@
 <script lang="ts">
+import { chapterOf } from "@tk/campaign";
 import { CLASSES, OFFICERS } from "@tk/content";
 import Backdrop from "../../components/Backdrop.svelte";
 import Portrait from "../../components/Portrait.svelte";
 import { story } from "../../lib/story.svelte.ts";
 
-/** The end of the chapter: who fought, how far they grew, and what comes next. */
+/** The end of a chapter: who fought, how far they grew, and the chapter that follows (ADR 0056). */
+const chapter = $derived(chapterOf(story.campaign));
 const roster = $derived(story.campaign.roster);
+const next = $derived(story.upcoming);
+/** Chapters between this one and the next that are not written yet. */
+const skipped = $derived(next ? next.number - chapter.number - 1 : 0);
 </script>
 
 <main class="ending">
   <Backdrop kind="dawn" />
   <div class="roll">
-    <p class="kicker">제1장</p>
-    <h1>관도 · 완</h1>
-    <p class="lead">
-      다섯 번의 싸움 끝에 하북의 대군이 무너졌다. 조조는 이 싸움으로 북방의 패권을 손에 넣는다.
-    </p>
+    <p class="kicker">{chapter.name}</p>
+    <h1>{chapter.ending.title}</h1>
+    <p class="lead">{chapter.ending.lead}</p>
     <ul class="roster">
       {#each roster as o (o.id)}
         <li>
@@ -26,8 +29,24 @@ const roster = $derived(story.campaign.roster);
         </li>
       {/each}
     </ul>
-    <p class="muted">제2장은 준비 중입니다. 전과는 자동 저장에 남아 있습니다.</p>
-    <a class="button primary" href="#/">타이틀로</a>
+    {#if next}
+      {#if skipped > 0}
+        <p class="muted">
+          {chapter.number + 1}장은 준비 중입니다. 지금의 장수들을 이끌고 {next.name}
+          {next.title}로 이어 갈 수 있습니다.
+        </p>
+      {:else}
+        <p class="muted">장수와 장비, 군자금을 그대로 이끌고 다음 장으로 갑니다.</p>
+      {/if}
+      <button type="button" class="primary next" onclick={() => story.continueNext()}>
+        {next.name} {next.title}로
+        <small>{next.years} · Lv {next.floor} 미만인 장수는 Lv {next.floor}로 오릅니다</small>
+      </button>
+      <a class="button" href="#/">타이틀로</a>
+    {:else}
+      <p class="muted">다음 장은 준비 중입니다. 전과는 자동 저장에 남아 있습니다.</p>
+      <a class="button primary" href="#/">타이틀로</a>
+    {/if}
   </div>
 </main>
 
@@ -91,6 +110,19 @@ h1 {
 }
 .name {
   font-weight: 800;
+}
+.next {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-height: 56px;
+  padding: 8px 24px;
+  font-size: 17px;
+}
+.next small {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
 }
 .small {
   font-size: 11px;

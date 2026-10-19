@@ -211,6 +211,10 @@ export function validateChapter(rules: Ruleset, ch: ChapterDef): string[] {
     }
   };
   for (const j of ch.roster) checkJoin(j, `chapter ${ch.id} roster`);
+  if (!isPositive(ch.number)) problems.push(`chapter ${ch.id}: number must be > 0`);
+  if (!isPositive(ch.floor)) problems.push(`chapter ${ch.id}: floor must be > 0`);
+  for (const j of ch.roster)
+    if (j.level < ch.floor) problems.push(`chapter ${ch.id}: ${j.officer} starts below the floor`);
   const ids = new Set<string>();
   for (const step of ch.steps) {
     if (step.kind === "scene") {

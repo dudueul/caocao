@@ -1,8 +1,39 @@
 # Story mode
 
-> Living document for the Story ([ADR 0049](../adr/0049-story-chapter-guandu.md)):
-> the chapter flow, the five Guandu battles, progression, equipment and saves.
-> Every number is starting tuning. Last updated 2026-10-19.
+> Living document for the Story of **난세의 간웅** ([ADR 0049](../adr/0049-story-chapter-guandu.md),
+> [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)–[0058](../adr/0058-game-name.md)):
+> the chapters in order, the flow of a chapter, carry-over between chapters,
+> each chapter's battles, progression, equipment and saves. Every number is
+> starting tuning. Last updated 2026-10-19.
+
+## Chapters
+
+The Story follows Cao Cao from his first post in 174. A new game starts at
+chapter 1. Finishing a chapter carries the campaign into the next one, and the
+title's chapter select can start any chapter fresh with its own roster.
+
+| # | Chapter | Years | Battles | Level floor | State |
+|---|---|---|---|---|---|
+| 1 | 황건의 난 | 174–192 | 6 | — (starts at Lv 3) | playable |
+| 2 | 여포 | 193–198 | about 5 (복양, 정도, 완성, 하비 …) | about 9 | to write |
+| 3 | 관도 | 199–200 | 5 | 14 | playable |
+
+Until chapter 2 exists, chapter 1 hands on straight to 관도.
+
+```mermaid
+flowchart LR
+  T["Title<br/>new game · continue · chapter select"] --> C1["1장 황건의 난<br/>174–192"]
+  C1 -->|"carry-over<br/>floor 14"| C3["3장 관도<br/>199–200"]
+  C1 -.->|"once written"| C2["2장 여포<br/>193–198"]
+  C2 -.-> C3
+  T -->|"chapter select<br/>(fresh roster)"| C3
+```
+
+**Carry-over** (`continueTo`, [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)):
+- Officers, levels, classes, gear, gold, items and the battle record go along.
+- Guests leave, and their gear returns.
+- Officers below the next chapter's floor are raised to it, with the growth of every level.
+- Officers the chapter starts with join if they are missing.
 
 ## Flow of a chapter
 
@@ -81,7 +112,31 @@ flowchart LR
 `Math.random`, integers only, so a future `PlayerDO` can re-run a player's
 battles and settle them the same way.
 
-## Chapter 1: 관도 (199–200)
+## Chapter 1: 황건의 난 (174–192)
+
+| # | Battle | Map | Win | Lose | Arrivals | Rewards |
+|---|---|---|---|---|---|---|
+| 1 | 북문의 오색봉 | Luoyang north ward, 12 × 10, night streets | arrest 건도 | 조조 falls | — | 200, 옥패 |
+| 2 | 장사의 불길 | Changshe, 18 × 12, walled town in grass, wind | defeat 파재 | 조조 or 황보숭 falls | 2 Yellow Turbans, round 4 | 400, 마삭 |
+| 3 | 사수관의 술 | Sishui Pass, 18 × 12, road to a gated fort | defeat 화웅 | 조조 falls | 여포, round 6 (holds the fort) | 600, 백련도 |
+| 4 | 변수의 추격 | Bian River, 18 × 12, open country | round 8 begins | 조조 falls | Dong cavalry, rounds 3 and 5 | 600, 칠피갑 |
+| 5 | 흑산의 무리 | Puyang, 18 × 12, bandits' hill village | defeat 백요 | 조조 falls | 2 bandits, round 4 | 800, 강궁 |
+| 6 | 수장의 겨울 | Shouzhang, 20 × 13, a camp on the plain | round 10 begins | 조조 falls | Qingzhou waves, rounds 3, 5 and 7 | 1000, 인수 |
+
+- **The roster:**
+  - The chapter opens with 조조 alone, at Lv 3, with two night-watch guards as guests.
+  - 하후돈, 하후연, 조인 and 조홍 join in 184.
+  - 순욱, 악진 and 이전 join in 191, and 진궁 in 192.
+  - 우금 joins in the epilogue.
+- **Guests:** 황보숭 and 주준 at 장사; 관우, 장비, 유비 and 손견 at 사수관; 위자 and 포신 at 변수; 포신 again at 수장.
+- **Scenes** cover:
+  - 허소's verdict, and the five-coloured rods;
+  - 장각's slogan, and 동탁 in Luoyang;
+  - 조조's flight east, the coalition at 산조, and his rebuke of the feasting lords;
+  - 순욱 joining ("나의 자방"), and 포신's death with the wooden statue;
+  - the Qingzhou army.
+
+## Chapter 3: 관도 (199–200)
 
 | # | Battle | Map | Win | Lose | Arrivals | Rewards |
 |---|---|---|---|---|---|---|
@@ -101,15 +156,24 @@ Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순
 Commanders in forts use the **guard** order ([ADR 0047](../adr/0047-battle-goals-and-arrivals.md)):
 they strike from their tile and never ride out.
 
-**Balance check** (AI on both sides, 12 seeds each, `packages/campaign/test`):
+**Balance check** (AI on both sides, 12 seeds per battle, the whole story in order with
+carry-over; `packages/campaign/test` plays it once per run):
 
-| Battle | AI wins | Typical end |
-|---|---|---|
-| 백마 구원 | 12 / 12 | round 5 |
-| 연진의 미끼 | 9 / 12 | round 7 |
-| 관도 사수 | 10 / 12 | round 9 |
-| 오소 야습 | 12 / 12 | round 5 |
-| 관도 결전 | 12 / 12 | round 7 |
+| Chapter | Battle | AI wins | Typical end |
+|---|---|---|---|
+| 1 | 북문의 오색봉 | 12 / 12 | round 8 |
+| 1 | 장사의 불길 | 12 / 12 | round 5 |
+| 1 | 사수관의 술 | 12 / 12 | round 10 (after 여포 arrives) |
+| 1 | 변수의 추격 | 11 / 12 | round 8 (the hold) |
+| 1 | 흑산의 무리 | 12 / 12 | round 6 |
+| 1 | 수장의 겨울 | 12 / 12 | round 10 (the hold) |
+| 3 | 백마 구원 | 11 / 12 | round 5 |
+| 3 | 연진의 미끼 | 11 / 12 | round 6 |
+| 3 | 관도 사수 | 11 / 12 | round 9 |
+| 3 | 오소 야습 | 12 / 12 | round 5 |
+| 3 | 관도 결전 | 12 / 12 | round 8 |
+
+The roster leaves chapter 1 around Lv 10–15 and enters 관도 at its floor of 14.
 
 ## Progression
 
@@ -163,7 +227,7 @@ From [ADR 0050](../adr/0050-equipment-and-shop.md). Each officer has three slots
 
 | Topic | Leaning |
 |---|---|
-| Chapter 2 | 하북 평정 (202–207) or 적벽 (208) |
+| Chapter 2 | 여포 (193–198): 서주 원정, 복양의 불길, 완성 (전위), 하비 |
 | Consumable items in battle | A new rules action; healing beans and wine |
 | Branching scenes | Choices that change a later battle or a recruit |
 | Server saves | `PlayerDO` with accounts (open question 5) |

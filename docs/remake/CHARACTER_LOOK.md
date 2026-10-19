@@ -27,7 +27,7 @@ flowchart LR
 | Robe | A cross-collared robe, right side over left (交領右衽), belted. Knee-length for soldiers, ankle-length with wide sleeves for officials. The collar and hem have a contrasting edge. | Standard Han dress in figurines and murals | Capes and cloaks as everyday wear |
 | Legs | Trousers (袴), cloth leg wraps below the knee, black cloth shoes | Han soldier figurines | |
 | Belt | A leather belt with a bronze belt hook (帶鉤) | Belt hooks are among the commonest Han finds | |
-| Colour | Han dyes: indigo, madder red, green, ochre. The side colour dyes the robe, the armour lacing, the helmet tassel, the saddle flaps and banners. | Dyes of the period. Telling sides apart by robe colour is a game convention; Han units were told apart by their banners | Bright modern colours |
+| Colour | Han dyes: madder red for our side, indigo for the enemy, then green and ochre ([0055](../adr/0055-our-side-red.md)). The side colour dyes the robe, the armour lacing, the helmet tassel, the saddle flaps and banners. | Dyes of the period. Telling sides apart by robe colour is a game convention; Han units were told apart by their banners | Bright modern colours |
 
 ## Soldiers
 

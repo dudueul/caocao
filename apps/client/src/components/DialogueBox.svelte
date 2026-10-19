@@ -154,13 +154,13 @@ function onKey(e: KeyboardEvent) {
   font-size: 16px;
   letter-spacing: 0.08em;
   color: #fff3d0;
-  background: linear-gradient(180deg, #2f4a7c, #1c2c4e);
+  background: linear-gradient(180deg, #8a2a22, #561812);
   border: 1px solid rgba(232, 194, 106, 0.7);
   border-radius: 999px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 .plate.enemy {
-  background: linear-gradient(180deg, #8a2a22, #561812);
+  background: linear-gradient(180deg, #2f4a7c, #1c2c4e);
 }
 .right .plate {
   left: auto;

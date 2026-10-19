@@ -49,7 +49,8 @@ const COAT_DARK = "#64401f";
 const MANE = "#2a1d14";
 
 /**
- * Side colours, as Han dyes: indigo, madder red, green, ochre. They dye the
+ * Side colours, as Han dyes: madder red for our side, indigo for the enemy,
+ * then green and ochre (ADR 0055). They dye the
  * robe, the armour lacing, the helmet tassel and the saddle flaps, so the
  * sides read apart on the map (a game convention; Han armies told units apart
  * by their banners).
@@ -63,8 +64,8 @@ interface Pal {
 }
 
 const SIDES: Pal[] = [
-  { robe: "#2e4a78", robeDark: "#1f3354", edge: "#dccaa0", lace: "#7096d4", tassel: "#3f74d6" },
   { robe: "#9b2f28", robeDark: "#6b1d18", edge: "#dccaa0", lace: "#d65a4c", tassel: "#d8392c" },
+  { robe: "#2e4a78", robeDark: "#1f3354", edge: "#dccaa0", lace: "#7096d4", tassel: "#3f74d6" },
   { robe: "#3f6b46", robeDark: "#2a4a30", edge: "#dccaa0", lace: "#72b07b", tassel: "#43a85a" },
   { robe: "#a2772c", robeDark: "#6e501b", edge: "#efe3c0", lace: "#d8aa4c", tassel: "#e2b23c" },
 ];

@@ -1,6 +1,6 @@
 # 0046. Dress our characters as late Eastern Han soldiers and officials
 
-- **Status:** Accepted
+- **Status:** Accepted; side colours swapped by [0055](0055-our-side-red.md) (ours red, the enemy blue)
 - **Date:** 2026-10-15
 - **Deciders:** project owner (asked for historical accuracy), Claude (details from period sources)
 - **Related:** supersedes the class looks in [0045](0045-rigged-chibi-characters.md);

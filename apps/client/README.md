@@ -21,8 +21,8 @@ bun run build      # dist/ (relative asset paths, so it can be served from any f
 
 | Route | Screen |
 |---|---|
-| `#/` | Title menu: continue, new game, load, Arena, practice battle, watch, help, settings, credits |
-| `#/story` | The Story (chapter 1, 관도): scenes, sortie, battles with talk, results, camp, ending ([STORY.md](../../docs/remake/STORY.md)) |
+| `#/` | Title menu (난세의 간웅): continue, new game (chapter 1), load, chapter select, Arena, practice battle, watch, help, settings, credits |
+| `#/story` | The Story (chapter 1 황건의 난, chapter 3 관도): scenes, sortie, battles with talk, results, camp, ending and on to the next chapter ([STORY.md](../../docs/remake/STORY.md)) |
 | `#/arena` | Arena lobby: your name, create a room, join by code |
 | `#/r/CODE` | An Arena room: invite link → draft → deploy → battle |
 | `#/sandbox`, `#/demo` | The 오소 sandbox, and the AI-vs-AI demo |

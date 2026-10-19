@@ -11,9 +11,10 @@ export {
   type PoolEntry,
   poolEntry,
 } from "./arena.ts";
+export { CHAPTER_LIST, CHAPTERS, FIRST_CHAPTER } from "./chapters.ts";
 export { CLASSES, GROWTH, PROMOTIONS } from "./classes.ts";
 export { CONDITIONS } from "./conditions.ts";
-export { CHAPTERS, GUANDU } from "./guandu.ts";
+export { GUANDU } from "./guandu.ts";
 export {
   type ArmourKind,
   GEAR,
@@ -24,6 +25,7 @@ export {
 } from "./items.ts";
 export { type MapDef, parseMap, WUCHAO } from "./maps.ts";
 export { OFFICERS, type OfficerDef } from "./officers.ts";
+export { RISE } from "./rise.ts";
 export { P0_RULES, P0_RULES_HASH } from "./ruleset.ts";
 export {
   ORDERS,

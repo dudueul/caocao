@@ -150,6 +150,16 @@ export function gainExp(o: Officer, amount: number): LevelUp[] {
   return ups;
 }
 
+/** Raises an officer (in place) to `level`, with the growth of every level gained (ADR 0056). */
+export function raiseTo(o: Officer, level: number): LevelUp[] {
+  const target = Math.min(level, P.levelCap);
+  if (o.level >= target) return [];
+  const exp = o.exp;
+  const ups = gainExp(o, (target - o.level) * P.expPerLevel - exp);
+  o.exp = 0;
+  return ups;
+}
+
 /** The class this officer could promote to now, if any (ADR 0048). */
 export function promotionFor(o: Officer): string | null {
   const to = PROMOTIONS[o.classId];

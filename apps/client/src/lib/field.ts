@@ -56,7 +56,8 @@ export const TERRAIN_COLOR: Record<TerrainId, number> = {
   camp: 0xb9a46c,
 };
 
-const SIDE_COLOR = [0x3b7be8, 0xd64a3c, 0x3ca05a, 0xb08a2e];
+// Our side (0) in red, the enemy (1) in blue, as in the classic games (ADR 0055).
+const SIDE_COLOR = [0xd64a3c, 0x3b7be8, 0x3ca05a, 0xb08a2e];
 const BG = 0x14130f;
 const FONT = "'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif";
 

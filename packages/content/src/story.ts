@@ -102,12 +102,24 @@ export type ChapterStep =
 
 export interface ChapterDef {
   readonly id: string;
+  /** Place in the story: 1, 2, 3 … (ADR 0056). */
+  readonly number: number;
   readonly name: string;
   readonly title: string;
   readonly years: string;
   readonly summary: string;
-  /** The roster at the start of the chapter. */
+  /**
+   * The roster when the chapter is started fresh. A campaign that carries on
+   * from the chapter before keeps its own roster; these officers join it if
+   * they are missing (ADR 0056).
+   */
   readonly roster: readonly JoinDef[];
   readonly gold: number;
+  /** Officers carried in below this level are raised to it, with growth. */
+  readonly floor: number;
+  /** The chapter that comes next, if it exists yet. */
+  readonly next?: string;
   readonly steps: readonly ChapterStep[];
+  /** The closing screen. */
+  readonly ending: { readonly title: string; readonly lead: string };
 }

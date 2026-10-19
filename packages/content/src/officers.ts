@@ -75,10 +75,33 @@ const LIST: readonly OfficerDef[] = [
   officer("han-meng",     "한맹",   "韓猛",   [75, 60, 35, 60, 45]),
   officer("jiang-qi",     "장기",   "蔣奇",   [70, 60, 35, 55, 40]),
   officer("liu-bei",      "유비",   "劉備",   [75, 80, 75, 65, 90]),
+  // Story chapter 1, the Yellow Turbans to Yanzhou (ADR 0057)
+  officer("cao-ren",      "조인",   "曹仁",   [80, 85, 55, 60, 65]),
+  officer("cao-hong",     "조홍",   "曹洪",   [75, 70, 40, 65, 75]),
+  officer("chen-gong",    "진궁",   "陳宮",   [40, 70, 85, 50, 40]),
+  officer("bao-xin",      "포신",   "鮑信",   [70, 75, 65, 55, 30]),
+  officer("wei-zi",       "위자",   "衛茲",   [40, 55, 60, 45, 30]),
+  officer("huangfu-song", "황보숭", "皇甫嵩", [75, 90, 75, 60, 65]),
+  officer("zhu-jun",      "주준",   "朱儁",   [75, 80, 60, 60, 55]),
+  officer("sun-jian",     "손견",   "孫堅",   [90, 85, 65, 75, 40]),
+  officer("xu-shao",      "허소",   "許劭",   [15, 30, 85, 40, 60]),
+  officer("jian-tu",      "건도",   "蹇圖",   [40, 35, 35, 40, 25]),
+  officer("zhang-jiao",   "장각",   "張角",   [30, 85, 90, 45, 60]),
+  officer("bo-cai",       "파재",   "波才",   [70, 70, 55, 60, 45]),
+  officer("dong-zhuo",    "동탁",   "董卓",   [80, 85, 70, 55, 70]),
+  officer("hua-xiong",    "화웅",   "華雄",   [90, 70, 30, 70, 40]),
+  officer("xu-rong",      "서영",   "徐榮",   [80, 85, 65, 65, 55]),
+  officer("bai-rao",      "백요",   "白繞",   [70, 60, 35, 60, 40]),
   // Troop templates: each unit is named after its army and class.
   troop("yuan",           "원소군", "袁軍",   [60, 55, 45, 50, 40]),
   troop("yuan-elite",     "원소군 정예", "袁軍", [70, 65, 50, 60, 45]),
   troop("cao",            "조조군", "曹軍",   [60, 60, 45, 55, 45]),
+  troop("ward",           "북부위", "北部尉", [55, 50, 35, 50, 45]),
+  troop("jianjia",        "건가 가노", "蹇家", [50, 40, 25, 50, 30]),
+  troop("huangjin",       "황건적", "黃巾",   [55, 45, 40, 50, 40]),
+  troop("qingzhou",       "청주 황건", "青州", [60, 50, 40, 55, 45]),
+  troop("dong",           "동탁군", "董軍",   [65, 60, 40, 55, 40]),
+  troop("heishan",        "흑산적", "黑山",   [60, 50, 35, 60, 40]),
 ];
 
 export const OFFICERS: Readonly<Record<string, OfficerDef>> = Object.fromEntries(

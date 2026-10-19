@@ -1,10 +1,20 @@
 import { describe, expect, it } from "bun:test";
-import { GUANDU, ITEMS, P0_RULES, validateChapter, validateProgression } from "@tk/content";
+import {
+  CHAPTER_LIST,
+  CHAPTERS,
+  FIRST_CHAPTER,
+  GUANDU,
+  ITEMS,
+  P0_RULES,
+  validateChapter,
+  validateProgression,
+} from "@tk/content";
 import { apply, chooseCommand, createBattle, hashState, replay } from "@tk/rules";
 import {
   buy,
   type CampaignState,
   checkSortie,
+  continueTo,
   currentBattle,
   currentStep,
   defaultSortie,
@@ -16,6 +26,7 @@ import {
   isFinished,
   leaveCamp,
   newCampaign,
+  nextChapter,
   type Officer,
   PROGRESSION,
   promote,
@@ -36,9 +47,21 @@ const must = <T>(r: { ok: true; state: T } | { ok: false; reason: string }): T =
 };
 
 describe("content for the Story (ADR 0048–0050)", () => {
-  it("the Guandu chapter and the progression tables are valid", () => {
+  it("every chapter and the progression tables are valid", () => {
     expect(validateProgression(P0_RULES)).toEqual([]);
-    expect(validateChapter(P0_RULES, GUANDU)).toEqual([]);
+    for (const ch of CHAPTER_LIST) expect(validateChapter(P0_RULES, ch)).toEqual([]);
+  });
+
+  it("chapters are numbered in order and point at chapters that exist (ADR 0056)", () => {
+    expect(CHAPTER_LIST.map((c) => c.number)).toEqual(
+      [...CHAPTER_LIST.map((c) => c.number)].sort((a, b) => a - b),
+    );
+    expect(FIRST_CHAPTER).toBe(CHAPTER_LIST[0]?.id ?? "");
+    for (const c of CHAPTER_LIST) if (c.next) expect(CHAPTERS[c.next]).toBeDefined();
+    const battles = CHAPTER_LIST.flatMap((c) =>
+      c.steps.flatMap((s) => (s.kind === "battle" ? [s.battle.id] : [])),
+    );
+    expect(new Set(battles).size).toBe(battles.length);
   });
 
   it("validation catches a broken chapter", () => {
@@ -176,8 +199,8 @@ describe("saves (ADR 0051)", () => {
 });
 
 /** Plays the whole chapter with the AI on both sides; promotes and equips like a player would. */
-function playChapter(seedBase: string) {
-  let s = newCampaign("guandu");
+function playChapter(seedBase: string, from: CampaignState = newCampaign("guandu")) {
+  let s = from;
   const log: string[] = [];
   let attempts = 0;
   while (!isFinished(s)) {
@@ -235,6 +258,51 @@ function playChapter(seedBase: string) {
   }
   return { s, log };
 }
+
+describe("carrying a campaign into the next chapter (ADR 0056)", () => {
+  it("keeps the roster and gear, raises levels to the floor and adds the chapter's officers", () => {
+    const done: CampaignState = {
+      ...newCampaign(FIRST_CHAPTER),
+      step: CHAPTERS[FIRST_CHAPTER]?.steps.length ?? 0,
+      gold: 1234,
+      inventory: { jade: 1 },
+      cleared: ["luoyang"],
+    };
+    const cao = done.roster[0] as Officer;
+    expect(continueTo(newCampaign(FIRST_CHAPTER), "guandu").ok).toBe(false); // not finished
+    const next = nextChapter(done);
+    expect(next?.id).toBe("guandu");
+    const r = continueTo(done, "guandu");
+    if (!r.ok) throw new Error(r.reason);
+    const s = r.state;
+    expect([s.chapter, s.step, s.gold, s.inventory.jade, s.cleared]).toEqual([
+      "guandu",
+      0,
+      1234,
+      1,
+      ["luoyang"],
+    ]);
+    const c = s.roster.find((o) => o.id === "cao-cao") as Officer;
+    expect(c.level).toBe(GUANDU.floor);
+    expect(c.stats.command).toBeGreaterThanOrEqual(cao.stats.command);
+    expect(c.gear).toEqual(cao.gear);
+    expect(s.roster.map((o) => o.id)).toContain("xu-chu");
+    expect(s.roster.every((o) => o.level >= GUANDU.floor)).toBe(true);
+  });
+});
+
+describe("the whole story from chapter 1, AI on both sides", () => {
+  it("plays chapter 1, carries over, and plays Guandu", () => {
+    const first = playChapter("chain", newCampaign(FIRST_CHAPTER));
+    expect(isFinished(first.s)).toBe(true);
+    const r = continueTo(first.s, nextChapter(first.s)?.id ?? "");
+    if (!r.ok) throw new Error(r.reason);
+    const second = playChapter("chain2", r.state);
+    expect(isFinished(second.s)).toBe(true);
+    expect(second.s.cleared).toContain("shouzhang");
+    expect(second.s.cleared).toContain("guandu-final");
+  }, 120_000);
+});
 
 describe("the whole Guandu chapter, AI on both sides", () => {
   it("is winnable end to end and levels the roster toward promotion", () => {

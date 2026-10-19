@@ -58,7 +58,7 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0043](0043-floating-command-menu.md) | Float the command menu and the forecast beside the unit | Accepted | 2026-10-15 |
 | [0044](0044-modern-battlefield-presentation.md) | Give the battlefield a modern presentation: lighting, effects and cinematics | Accepted | 2026-10-15 |
 | [0045](0045-rigged-chibi-characters.md) | Draw our characters as rigged 2D chibi figures at tile scale | Accepted (class looks superseded by 0046) | 2026-10-15 |
-| [0046](0046-period-accurate-dress.md) | Dress our characters as late Eastern Han soldiers and officials | Accepted | 2026-10-15 |
+| [0046](0046-period-accurate-dress.md) | Dress our characters as late Eastern Han soldiers and officials | Accepted (side colours swapped by 0055) | 2026-10-15 |
 | [0047](0047-battle-goals-and-arrivals.md) | Let battles have goals, timed arrivals and a guard order | Accepted | 2026-10-19 |
 | [0048](0048-story-progression.md) | Story officers grow by experience, steady stat growth and promotion | Accepted | 2026-10-19 |
 | [0049](0049-story-chapter-guandu.md) | Story chapter 1 is Cao Cao's Guandu campaign, run by a pure campaign package | Accepted | 2026-10-19 |
@@ -67,3 +67,7 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0052](0052-synthesized-sound.md) | Synthesize the music and sound effects in code | Accepted | 2026-10-19 |
 | [0053](0053-painted-portraits.md) | Paint every officer's portrait in code | Accepted | 2026-10-19 |
 | [0054](0054-main-menu-settings-tips.md) | Open on a title menu, with settings and first-battle tips | Accepted | 2026-10-19 |
+| [0055](0055-our-side-red.md) | Our side wears red, the enemy blue | Accepted | 2026-10-19 |
+| [0056](0056-chapter-order-and-carry-over.md) | Tell Cao Cao's story in order, carrying the roster from chapter to chapter | Accepted | 2026-10-19 |
+| [0057](0057-chapter-one-yellow-turbans.md) | Chapter 1, 황건의 난: six battles from Luoyang to Yanzhou | Accepted | 2026-10-19 |
+| [0058](0058-game-name.md) | Call the game 난세의 간웅 | Accepted | 2026-10-19 |

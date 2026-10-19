@@ -1,8 +1,8 @@
-# Remake: a Three Kingdoms grid-tactics game, built from scratch
+# Remake: 난세의 간웅, a Three Kingdoms grid-tactics game built from scratch
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-19
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0054](../adr/0054-main-menu-settings-tips.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0058](../adr/0058-game-name.md)).
 
 ## Vision
 
@@ -108,6 +108,10 @@ flowchart TB
 | Sound | Music and effects synthesized in code with Web Audio; no audio files | [0052](../adr/0052-synthesized-sound.md) |
 | Portraits | Bust portraits with moods painted in code for every officer | [0053](../adr/0053-painted-portraits.md) |
 | Main menu | Title menu, settings everywhere, first-battle tips, goals card and markers in Story battles | [0054](../adr/0054-main-menu-settings-tips.md) |
+| Side colours | Our side red, the enemy blue | [0055](../adr/0055-our-side-red.md) |
+| Chapter order | Cao Cao's story in order from 174: 1 황건의 난, 2 여포 (to write), 3 관도; the roster carries over with a level floor; chapter select on the title | [0056](../adr/0056-chapter-order-and-carry-over.md) |
+| Chapter 1 | 황건의 난 (174–192): 낙양 북문, 장사, 사수관, 형양, 복양, 수장 | [0057](../adr/0057-chapter-one-yellow-turbans.md) |
+| Name | The game is called **난세의 간웅** (亂世奸雄); `tk` stays the code name | [0058](../adr/0058-game-name.md) |
 
 ## Roadmap
 
@@ -125,19 +129,20 @@ Exit criteria per phase are in [ADR 0015](../adr/0015-delivery-order-engine-then
 conditions; a playable sandbox). P1 runs end to end: rooms by invite link, the
 six-officer draft, deployment, live alternating battles refereed by a `MatchDO`
 with a 45-second clock, reconnects, and a PWA; the owner deploys it with
-`bun run deploy`. P2 has its first chapter playable from the title screen to
-the ending: five Guandu battles with goals and reinforcements, scenes with
+`bun run deploy`. P2, the Story of **난세의 간웅**, is playable from the title screen to
+the ending in story order: chapter 1 (황건의 난, six battles) carries its
+roster into chapter 3 (관도, five battles), with goals and reinforcements, scenes with
 painted portraits, experience, levels and tier-2 promotions, equipment and a
 shop, saves, synthesized music and sound, settings and first-battle tips. Still
-to come for P2: the server copy of progress (`PlayerDO`) and re-simulation.
+to come for P2: chapter 2 (여포), the server copy of progress (`PlayerDO`) and
+re-simulation.
 
 ## Open questions (next design sessions)
 
 | # | Question | Current leaning |
 |---|---|---|
-| 2 | Name of the game | Working name `tk`; the remake is built in this repository ([0017](../adr/0017-clear-this-repository.md)) |
 | 5 | Accounts and sign-in | P1 uses guest device keys ([0038](../adr/0038-guest-identity-device-key.md)); passkeys with `PlayerDO` in P2 |
-| 6 | Story scope | Chapter 1 is Cao Cao's Guandu campaign ([0049](../adr/0049-story-chapter-guandu.md)); later chapters: 조조 only, or other lords' routes |
+| 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapter 1 황건의 난 and chapter 3 관도 are playable, chapter 2 여포 is next; other lords' routes later, if ever |
 | 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear decided ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |

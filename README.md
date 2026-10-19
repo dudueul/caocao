@@ -1,25 +1,30 @@
-# tk: a Three Kingdoms grid-tactics game (working name)
+# 난세의 간웅: a Three Kingdoms grid-tactics game (code name `tk`)
 
 A from-scratch successor to 조조전 and its 2018 mobile remake. Grid-tactics
 battles drive every mode: Story chapters, Arena PvP, co-op Raids, and **Living
 History**, where friends found households in a 120-year history that plays out
 in 120 days. Web-first (PWA), with the same build wrapped for PC and mobile later.
 
-**Status:** 41 ADRs. **P0** is done: the rules engine in `packages/rules`
+**Status:** 58 ADRs. **P0** is done: the rules engine in `packages/rules`
 (movement with zones of control, combat, stratagems with fortune twists,
 stacking conditions, both turn policies, a baseline AI with danger zones and
 gambits, break and push/fire hazards), the P0 content in `packages/content`, and a
 playable battle sandbox. **P1** (Arena) works locally: friends create a room, share
 the link, draft six officers each, deploy and fight live through a `MatchDO`
 referee on Cloudflare Workers (`apps/server`), with a 45-second clock, reconnects
-and an installable PWA. It needs a Cloudflare deploy to play over the internet.
-118 tests, plus live smoke and two-browser checks.
+and an installable PWA (`bun run deploy` puts it on Cloudflare). **P2** (Story) is
+playable from the title menu: Cao Cao's story in order, chapter 1 황건의 난 (174–192)
+and chapter 3 관도 (199–200), with scenes, painted portraits, synthesized sound,
+experience and promotions, equipment, saves and a roster that carries from chapter
+to chapter. Over 140 tests, including AI play-throughs of the whole story, plus live
+smoke, two-browser and full-story browser checks.
 
 | Start here | |
 |---|---|
 | [`docs/remake/README.md`](docs/remake/README.md) | Vision, modes, decision map, roadmap, open questions |
 | [`docs/remake/ARCHITECTURE.md`](docs/remake/ARCHITECTURE.md) | Stack, code layout, rules engine, online battles, servers, data |
 | [`docs/remake/RULES.md`](docs/remake/RULES.md) | Battle and character rules (stats, attack resolution, classes, terrain, stratagems) |
+| [`docs/remake/STORY.md`](docs/remake/STORY.md) | The Story: chapters, carry-over, battles, progression, equipment, saves |
 | [`docs/remake/BENCHMARK.md`](docs/remake/BENCHMARK.md) | The 2018 game's battle formulas (decompiled, in our words) and lessons |
 | [`docs/remake/WORLD_ENGINE.md`](docs/remake/WORLD_ENGINE.md) | Living History / Warlord Campaign design |
 | [`docs/adr/`](docs/adr/README.md) | One record per decision |

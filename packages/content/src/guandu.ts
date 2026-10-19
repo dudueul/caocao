@@ -494,11 +494,17 @@ const B5: StoryBattleDef = {
 
 export const GUANDU: ChapterDef = {
   id: "guandu",
-  name: "1장",
+  number: 3,
+  name: "3장",
   title: "관도",
   years: "199–200",
   summary: "하북의 원소가 십만 대군을 일으켰다. 조조는 관도에서 운명을 건 싸움에 나선다.",
   gold: 500,
+  floor: 14,
+  ending: {
+    title: "관도 · 완",
+    lead: "다섯 번의 싸움 끝에 하북의 대군이 무너졌다. 조조는 이 싸움으로 북방의 패권을 손에 넣는다.",
+  },
   roster: [
     { officer: "cao-cao", classId: "cavalry", level: 16, gear: ["refined-dao", "lamellar"] },
     { officer: "xu-chu", classId: "martialArtist", level: 15, gear: ["ring-dao", "leather"] },
@@ -914,7 +920,7 @@ export const GUANDU: ChapterDef = {
             text: "원소는 아직 살아 있다. 하지만 오늘로 천하의 저울은 기울었다.",
           },
           { text: "2년 뒤 원소는 병으로 세상을 떠났고, 조조는 마침내 북방을 하나로 묶었다." },
-          { text: "1장 관도 · 끝" },
+          { text: "3장 관도 · 끝" },
         ],
         joins: [
           { officer: "zhang-he", classId: "cavalry", level: 19, gear: ["horse-lance", "lamellar"] },
@@ -924,5 +930,3 @@ export const GUANDU: ChapterDef = {
     },
   ],
 };
-
-export const CHAPTERS: Readonly<Record<string, ChapterDef>> = { [GUANDU.id]: GUANDU };

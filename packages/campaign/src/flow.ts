@@ -14,7 +14,7 @@ import {
 } from "@tk/content";
 import type { Ruleset } from "@tk/rules";
 import { dropMisfits, type Result } from "./gear.ts";
-import { promotionFor } from "./progression.ts";
+import { promotionFor, raiseTo } from "./progression.ts";
 import type { CampaignState, Officer } from "./types.ts";
 
 export function chapterOf(state: CampaignState): ChapterDef {
@@ -66,6 +66,39 @@ export function newCampaign(chapterId: string): CampaignState {
     roster: ch.roster.map(recruit),
     cleared: [],
   };
+}
+
+/** The chapter after this campaign's, once it exists (ADR 0056). */
+export function nextChapter(state: CampaignState): ChapterDef | null {
+  const next = chapterOf(state).next;
+  return next ? (CHAPTERS[next] ?? null) : null;
+}
+
+/**
+ * Carries a finished campaign into another chapter (ADR 0056): the roster,
+ * gold, items and record go along; guests leave with their gear returned;
+ * officers below the chapter's floor are raised to it with growth; officers
+ * the chapter starts with join if they are missing.
+ */
+export function continueTo(state: CampaignState, chapterId: string): Result {
+  const ch = CHAPTERS[chapterId];
+  if (!ch) return { ok: false, reason: "unknown chapter" };
+  if (!isFinished(state)) return { ok: false, reason: "this chapter is not finished" };
+  const next = structuredClone(state);
+  for (const o of next.roster.filter((r) => r.guest))
+    for (const item of [o.gear.weapon, o.gear.armour, o.gear.accessory])
+      if (item) next.inventory[item] = (next.inventory[item] ?? 0) + 1;
+  next.roster = next.roster.filter((r) => !r.guest);
+  for (const o of next.roster) raiseTo(o, ch.floor);
+  for (const j of ch.roster) {
+    if (next.roster.some((r) => r.id === j.officer)) continue;
+    const o = recruit(j);
+    raiseTo(o, ch.floor);
+    next.roster.push(o);
+  }
+  next.chapter = ch.id;
+  next.step = 0;
+  return { ok: true, state: next };
 }
 
 /** Ends the current scene: officers leave (their gear returns to the inventory), others join. */
