@@ -1,8 +1,8 @@
 # 0048. Story officers grow by experience, steady stat growth and promotion
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
 - **Date:** 2026-10-19
-- **Deciders:** Claude (default chosen while building; the owner to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0014](0014-scoped-progression-fair-arena.md), [0020](0020-five-stats-with-distinct-roles.md),
   [0021](0021-class-families-and-tiers.md), [0022](0022-medium-number-scale.md),
   [0049](0049-story-chapter-guandu.md)

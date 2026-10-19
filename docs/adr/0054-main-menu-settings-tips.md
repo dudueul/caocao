@@ -1,8 +1,8 @@
 # 0054. Open on a title menu, with settings and first-battle tips
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
 - **Date:** 2026-10-19
-- **Deciders:** Claude (default chosen while building; the owner to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0008](0008-modes-as-main-menu-entries.md), [0031](0031-svelte-dom-overlay.md),
   [0033](0033-p0-sandbox-client-defaults.md), [0044](0044-modern-battlefield-presentation.md),
   [0049](0049-story-chapter-guandu.md), [0052](0052-synthesized-sound.md)

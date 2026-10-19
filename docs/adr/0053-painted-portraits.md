@@ -1,8 +1,8 @@
 # 0053. Paint every officer's portrait in code
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
 - **Date:** 2026-10-19
-- **Deciders:** Claude (default chosen while building; the owner to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0002](0002-remake-from-scratch.md), [0042](0042-local-classic-skin.md),
   [0045](0045-rigged-chibi-characters.md), [0046](0046-period-accurate-dress.md),
   [0049](0049-story-chapter-guandu.md), [CHARACTER_LOOK.md](../remake/CHARACTER_LOOK.md)

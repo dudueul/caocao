@@ -1,8 +1,8 @@
 # 0049. Story chapter 1 is Cao Cao's Guandu campaign, run by a pure campaign package
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
 - **Date:** 2026-10-19
-- **Deciders:** Claude (default chosen while building; the owner to confirm); the owner asked for "a complete game"
+- **Deciders:** Claude (proposal), project owner (accepted); the owner asked for "a complete game"
 - **Related:** [0008](0008-modes-as-main-menu-entries.md), [0014](0014-scoped-progression-fair-arena.md),
   [0015](0015-delivery-order-engine-then-arena.md), [0047](0047-battle-goals-and-arrivals.md),
   [0048](0048-story-progression.md), open question 6 in [docs/remake/README.md](../remake/README.md)

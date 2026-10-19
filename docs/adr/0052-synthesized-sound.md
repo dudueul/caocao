@@ -1,8 +1,8 @@
 # 0052. Synthesize the music and sound effects in code
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
 - **Date:** 2026-10-19
-- **Deciders:** Claude (default chosen while building; the owner to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0002](0002-remake-from-scratch.md), [0005](0005-web-first-distribution.md),
   [0044](0044-modern-battlefield-presentation.md), [0054](0054-main-menu-settings-tips.md)
 

@@ -1,8 +1,8 @@
 # 0047. Let battles have goals, timed arrivals and a guard order
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
 - **Date:** 2026-10-19
-- **Deciders:** Claude (default chosen while building; the owner to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0004](0004-server-authoritative-referee.md), [0006](0006-typescript-everywhere.md),
   [0030](0030-modern-techniques-adopted.md), [0034](0034-scenario-ai-orders.md),
   [0049](0049-story-chapter-guandu.md), [RULES.md §7](../remake/RULES.md#7-turns-rounds-and-victory)

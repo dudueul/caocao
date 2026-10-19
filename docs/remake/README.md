@@ -100,14 +100,14 @@ flowchart TB
 | Characters | Rigged 2D chibi figures at tile scale in the map's bird's-eye view; three facings; parts painted in code until an artist draws them | [0045](../adr/0045-rigged-chibi-characters.md) |
 | Character dress | Late Eastern Han, around 200 AD: topknots, cross-collared robes, iron lamellar armour, ring-pommel sabres and lacquered shields, the ji halberd, no stirrups, Cao Cao's traction stone-thrower; [CHARACTER_LOOK.md](CHARACTER_LOOK.md) | [0046](../adr/0046-period-accurate-dress.md) |
 | Presentation | Soft terrain edges, water shimmer, weather and colour grade, cinematic camera, particles per skill school, skill cut-ins, glass-and-gold UI, smoothed classic sprites; our own procedural terrain and tokens without the skin | [0044](../adr/0044-modern-battlefield-presentation.md) |
-| Goals and arrivals *(proposed)* | Battles may have goals (defeat named units, hold until a round, reach a tile) and reserve units that arrive on a round; a guard order for commanders; state format 3 | [0047](../adr/0047-battle-goals-and-arrivals.md) |
-| Story progression *(proposed)* | Experience from battle events; 100 a level; steady class growth in ‰; tier 2 from Lv 20 (six new classes) | [0048](../adr/0048-story-progression.md) |
-| Story chapter 1 *(proposed)* | Cao Cao's Guandu campaign: five battles with scenes, camps and an epilogue; a pure `@tk/campaign` package; [STORY.md](STORY.md) | [0049](../adr/0049-story-chapter-guandu.md) |
-| Equipment *(proposed)* | Weapon, armour, accessory; kinds per family; 25 period items; a shop per camp | [0050](../adr/0050-equipment-and-shop.md) |
-| Saves *(proposed)* | Browser storage: three slots and an autosave; every field checked on load | [0051](../adr/0051-browser-saves.md) |
-| Sound *(proposed)* | Music and effects synthesized in code with Web Audio; no audio files | [0052](../adr/0052-synthesized-sound.md) |
-| Portraits *(proposed)* | Bust portraits with moods painted in code for every officer | [0053](../adr/0053-painted-portraits.md) |
-| Main menu *(proposed)* | Title menu, settings everywhere, first-battle tips, goals card and markers in Story battles | [0054](../adr/0054-main-menu-settings-tips.md) |
+| Goals and arrivals | Battles may have goals (defeat named units, hold until a round, reach a tile) and reserve units that arrive on a round; a guard order for commanders; state format 3 | [0047](../adr/0047-battle-goals-and-arrivals.md) |
+| Story progression | Experience from battle events; 100 a level; steady class growth in ‰; tier 2 from Lv 20 (six new classes) | [0048](../adr/0048-story-progression.md) |
+| Story chapter 1 | Cao Cao's Guandu campaign: five battles with scenes, camps and an epilogue; a pure `@tk/campaign` package; [STORY.md](STORY.md) | [0049](../adr/0049-story-chapter-guandu.md) |
+| Equipment | Weapon, armour, accessory; kinds per family; 25 period items; a shop per camp | [0050](../adr/0050-equipment-and-shop.md) |
+| Saves | Browser storage: three slots and an autosave; every field checked on load | [0051](../adr/0051-browser-saves.md) |
+| Sound | Music and effects synthesized in code with Web Audio; no audio files | [0052](../adr/0052-synthesized-sound.md) |
+| Portraits | Bust portraits with moods painted in code for every officer | [0053](../adr/0053-painted-portraits.md) |
+| Main menu | Title menu, settings everywhere, first-battle tips, goals card and markers in Story battles | [0054](../adr/0054-main-menu-settings-tips.md) |
 
 ## Roadmap
 
@@ -137,8 +137,8 @@ to come for P2: the server copy of progress (`PlayerDO`) and re-simulation.
 |---|---|---|
 | 2 | Name of the game | Working name `tk`; the remake is built in this repository ([0017](../adr/0017-clear-this-repository.md)) |
 | 5 | Accounts and sign-in | P1 uses guest device keys ([0038](../adr/0038-guest-identity-device-key.md)); passkeys with `PlayerDO` in P2 |
-| 6 | Story scope | Chapter 1 is Cao Cao's Guandu campaign ([0049](../adr/0049-story-chapter-guandu.md), proposed); later chapters: 조조 only, or other lords' routes |
-| 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear proposed ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
+| 6 | Story scope | Chapter 1 is Cao Cao's Guandu campaign ([0049](../adr/0049-story-chapter-guandu.md)); later chapters: 조조 only, or other lords' routes |
+| 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear decided ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |
 | 10 | Languages | Korean first; English next |

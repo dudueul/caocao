@@ -1,8 +1,8 @@
 # 0051. Save the Story in the browser: three slots and an autosave
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
 - **Date:** 2026-10-19
-- **Deciders:** Claude (default chosen while building; the owner to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0038](0038-guest-identity-device-key.md), [0049](0049-story-chapter-guandu.md),
   open question 5 in [docs/remake/README.md](../remake/README.md)
 
