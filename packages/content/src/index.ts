@@ -11,8 +11,17 @@ export {
   type PoolEntry,
   poolEntry,
 } from "./arena.ts";
-export { CLASSES } from "./classes.ts";
+export { CLASSES, GROWTH, PROMOTIONS } from "./classes.ts";
 export { CONDITIONS } from "./conditions.ts";
+export { CHAPTERS, GUANDU } from "./guandu.ts";
+export {
+  type ArmourKind,
+  GEAR,
+  ITEMS,
+  type ItemDef,
+  type Slot,
+  type WeaponKind,
+} from "./items.ts";
 export { type MapDef, parseMap, WUCHAO } from "./maps.ts";
 export { OFFICERS, type OfficerDef } from "./officers.ts";
 export { P0_RULES, P0_RULES_HASH } from "./ruleset.ts";
@@ -24,9 +33,29 @@ export {
   type SetupOptions,
   scenarioOrders,
   scenarioSetup,
+  unitSetup,
   WUCHAO_RAID,
 } from "./scenarios.ts";
 export { BOW, MELEE, ring, SIEGE, SINGLE } from "./shapes.ts";
+export type {
+  Backdrop,
+  BattleTalk,
+  CampDef,
+  ChapterDef,
+  ChapterStep,
+  JoinDef,
+  Line,
+  Mood,
+  SceneDef,
+  StoryBattleDef,
+  TalkTrigger,
+} from "./story.ts";
 export { STRATAGEMS } from "./stratagems.ts";
 export { AFFINITY, TERRAIN_CODES, TERRAIN_IDS, TERRAINS } from "./terrain.ts";
-export { validateRuleset, validateScenario } from "./validate.ts";
+export {
+  fits,
+  validateChapter,
+  validateProgression,
+  validateRuleset,
+  validateScenario,
+} from "./validate.ts";

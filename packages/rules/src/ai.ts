@@ -56,7 +56,27 @@ const W = {
   cleansePerStack: 400,
   /** Score of a command that achieves nothing; below any wait. */
   useless: -900_000,
+  /** Damage and kills on a unit our goals name count this many times over (ADR 0047). */
+  goalTarget: 2,
+  /** A unit the enemy's goals name weighs its exposure this many times over. */
+  goalGuard: 2,
 };
+
+/** Is `target` named in a "defeat" goal of `side`? */
+function isGoalTarget(state: BattleState, side: number, target: string): boolean {
+  return state.goals.some(
+    (g) => g.side === side && g.when.kind === "defeat" && g.when.units.includes(target),
+  );
+}
+
+/** How much more `me` should fear exposure: more if losing it loses the battle. */
+function guardWeight(state: BattleState, me: Unit): number {
+  return state.goals.some(
+    (g) => g.side !== me.side && g.when.kind === "defeat" && g.when.units.includes(me.id),
+  )
+    ? W.danger * W.goalGuard
+    : W.danger;
+}
 
 /** For each enemy of `side`: the tiles it could attack next turn. */
 export type ThreatMap = ReadonlyArray<{ enemy: Unit; tiles: ReadonlySet<number> }>;
@@ -279,8 +299,10 @@ export function scoreCommand(
     );
     const strikes = p.double ? 2 : 1;
     const dealt = Math.min(target.hp, perStrike * strikes);
-    score += dealt * W.damage;
-    if (p.damage * strikes >= target.hp) score += permille(W.killBase + target.maxHp, p.hit);
+    const focus = isGoalTarget(s, me.side, target.id) ? W.goalTarget : 1;
+    score += dealt * W.damage * focus;
+    if (p.damage * strikes >= target.hp)
+      score += permille(W.killBase + target.maxHp, p.hit) * focus;
     const killsFirst = p.damage >= target.hp;
     if (p.counter && !killsFirst) {
       // A landed breaking strike cancels the counter (ADR 0030).
@@ -289,7 +311,7 @@ export function scoreCommand(
       score -= expected * W.counterTaken;
     }
     // Exposure after the exchange; a likely kill removes that enemy's threat.
-    return score - danger(rules, s, me, threats, killsFirst ? target.id : "") * W.danger;
+    return score - danger(rules, s, me, threats, killsFirst ? target.id : "") * guardWeight(s, me);
   }
   if (action.kind === "stratagem") {
     const def = stratagemDef(rules, action.id);
@@ -298,8 +320,9 @@ export function scoreCommand(
     for (const t of targets) {
       if (def.effect === "damage") {
         const dmg = Math.min(t.hp, stratagemDamage(s, def, me, t));
-        value += dmg * W.damage;
-        if (dmg >= t.hp) value += W.killBase + t.maxHp;
+        const focus = isGoalTarget(s, me.side, t.id) ? W.goalTarget : 1;
+        value += dmg * W.damage * focus;
+        if (dmg >= t.hp) value += (W.killBase + t.maxHp) * focus;
       } else if (def.effect === "heal") {
         value += Math.min(t.maxHp - t.hp, stratagemHeal(def, me)) * W.heal;
       }
@@ -324,13 +347,13 @@ export function scoreCommand(
       value -
       def.mp * W.mp -
       pull * (W.approach + W.boldnessPerRound * state.round) -
-      danger(rules, s, me, threats, "") * W.danger
+      danger(rules, s, me, threats, "") * guardWeight(s, me)
     );
   }
   // Wait: approach an attack position, weighed against exposure.
   const gap = approachGap(state, rules, unit, command.to);
   const approach = W.approach + W.boldnessPerRound * state.round;
-  return score - gap * approach - danger(rules, s, me, threats, "") * W.danger;
+  return score - gap * approach - danger(rules, s, me, threats, "") * guardWeight(s, me);
 }
 
 // ---------------------------------------------------------------- gambits (ADR 0030)
@@ -415,6 +438,12 @@ function behaviorCandidates(
     }
     case "hold":
       return waits.filter((c) => c.to.x === unit.x && c.to.y === unit.y);
+    case "guard": {
+      // Never leaves its tile: strikes or casts from where it stands, else waits (ADR 0047).
+      const inPlace = cmds.filter((c) => c.to.x === unit.x && c.to.y === unit.y);
+      const acts = inPlace.filter((c) => c.action.kind !== "wait");
+      return acts.length > 0 ? acts : inPlace;
+    }
   }
 }
 

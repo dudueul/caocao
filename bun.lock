@@ -41,6 +41,14 @@
         "wrangler": "4.148.0",
       },
     },
+    "packages/campaign": {
+      "name": "@tk/campaign",
+      "version": "0.0.0",
+      "dependencies": {
+        "@tk/content": "workspace:*",
+        "@tk/rules": "workspace:*",
+      },
+    },
     "packages/content": {
       "name": "@tk/content",
       "version": "0.0.0",
@@ -266,6 +274,8 @@
     "@sveltejs/load-config": ["@sveltejs/load-config@0.2.3", "", {}, "sha512-VT3qmUb8pRV2QrZjd8iAmtg8lf4W0TIjZbvXtz5MKei/q96teWZgGJyyidJzOjzZzvdq616eSRVeMYIQChUTAQ=="],
 
     "@sveltejs/vite-plugin-svelte": ["@sveltejs/vite-plugin-svelte@7.3.1", "", { "dependencies": { "deepmerge": "^4.3.1", "magic-string": "^1.0.0", "obug": "^2.1.0", "vitefu": "^1.1.2" }, "peerDependencies": { "svelte": "^5.46.4", "vite": "^8.0.0-beta.7 || ^8.0.0" } }, "sha512-ZPsLN8B1e/En+Ak5s4V7srFDT532oS0qieLsQwu63NGKsS+iAjoO2Js1BochlHlglcU+Pt7WAO3C5Ee+4f6gVA=="],
+
+    "@tk/campaign": ["@tk/campaign@workspace:packages/campaign"],
 
     "@tk/client": ["@tk/client@workspace:apps/client"],
 

@@ -42,6 +42,7 @@ export {
   stacksOf,
   stackWeight,
 } from "./conditions.ts";
+export { bringArrivals, decidingGoal, goalMet, landingCell } from "./goals.ts";
 export { canonical, hashState } from "./hash.ts";
 export { canReach, type Reach, reachable } from "./move.ts";
 export { Prng, type PrngState, seedFromString } from "./prng.ts";

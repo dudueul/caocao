@@ -2,12 +2,25 @@
  * Scenarios: a map, two or more sides and their officers, ready to become a
  * `BattleSetup` for `createBattle`. P0 has one sandbox scenario.
  */
-import type { BattleSetup, Gambit, ModeId, TurnPolicyId, WeatherKind } from "@tk/rules";
+import type {
+  BattleSetup,
+  Gambit,
+  Goal,
+  ModeId,
+  TurnPolicyId,
+  UnitSetup,
+  WeatherKind,
+} from "@tk/rules";
+import { CLASSES } from "./classes.ts";
 import { type MapDef, parseMap, WUCHAO } from "./maps.ts";
 import { OFFICERS } from "./officers.ts";
 
 export interface ScenarioUnit {
   readonly officer: string;
+  /** Unit id; required for troop templates (several units share one), else the officer id. */
+  readonly id?: string;
+  /** Joins at the start of this round instead of starting on the field (ADR 0047). */
+  readonly arrives?: number;
   readonly classId: string;
   readonly level: number;
   readonly side: number;
@@ -24,6 +37,8 @@ export const ORDERS = {
     { when: { kind: "enemyInReach" }, behavior: { kind: "attackBest" } },
     { when: { kind: "always" }, behavior: { kind: "hold" } },
   ],
+  /** Never leave this tile; strike whatever comes into range of it (ADR 0047). */
+  guard: [{ when: { kind: "always" }, behavior: { kind: "guard" } }],
   /** Heal an ally below 60% HP; otherwise hold. */
   healThenHold: [
     { when: { kind: "allyHpBelow", permille: 600 }, behavior: { kind: "healAlly" } },
@@ -44,6 +59,8 @@ export interface ScenarioDef {
   readonly policy: TurnPolicyId;
   readonly roundLimit: number;
   readonly units: readonly ScenarioUnit[];
+  /** Ways to win besides routing every enemy (ADR 0047). */
+  readonly goals?: readonly Goal[];
 }
 
 export const WUCHAO_RAID: ScenarioDef = {
@@ -134,26 +151,35 @@ export function scenarioSetup(s: ScenarioDef, o: SetupOptions): BattleSetup {
     policy: o.policy ?? s.policy,
     roundLimit: s.roundLimit,
     seed: o.seed,
-    units: s.units.map((u) => {
-      const officer = OFFICERS[u.officer];
-      if (!officer) throw new Error(`scenario ${s.id}: unknown officer ${u.officer}`);
-      return {
-        id: officer.id,
-        side: u.side,
-        name: officer.name,
-        classId: u.classId,
-        level: u.level,
-        stats: officer.stats,
-        x: u.x,
-        y: u.y,
-      };
-    }),
+    units: s.units.map((u) => unitSetup(u, `scenario ${s.id}`)),
+    ...(s.goals ? { goals: structuredClone(s.goals) as Goal[] } : {}),
+  };
+}
+
+/** One scenario unit as a `UnitSetup`; troop templates are named after their army and class. */
+export function unitSetup(u: ScenarioUnit, where: string): UnitSetup {
+  const officer = OFFICERS[u.officer];
+  if (!officer) throw new Error(`${where}: unknown officer ${u.officer}`);
+  const cls = CLASSES[u.classId];
+  if (officer.generic && !u.id) throw new Error(`${where}: troop ${u.officer} needs an id`);
+  return {
+    id: u.id ?? officer.id,
+    side: u.side,
+    name: officer.generic ? `${officer.name} ${cls?.name ?? u.classId}` : officer.name,
+    classId: u.classId,
+    level: u.level,
+    stats: officer.stats,
+    x: u.x,
+    y: u.y,
+    ...(u.arrives ? { arrives: u.arrives } : {}),
   };
 }
 
 /** AI orders by unit id, for `chooseCommand(state, rules, orders)`. */
-export function scenarioOrders(s: ScenarioDef): Record<string, readonly Gambit[]> {
+export function scenarioOrders(s: {
+  readonly units: readonly ScenarioUnit[];
+}): Record<string, readonly Gambit[]> {
   const out: Record<string, readonly Gambit[]> = {};
-  for (const u of s.units) if (u.orders) out[u.officer] = u.orders;
+  for (const u of s.units) if (u.orders) out[u.id ?? u.officer] = u.orders;
   return out;
 }

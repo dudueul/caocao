@@ -275,9 +275,33 @@ export interface BattleMap {
   tiles: TerrainId[];
 }
 
+/**
+ * A way to win before the other sides are routed (ADR 0047). Story battles use
+ * them for "defeat the commander", "hold out" and "reach the depot".
+ */
+export type GoalCondition =
+  /** Every listed unit has been defeated. */
+  | { kind: "defeat"; units: string[] }
+  /** Round `round` begins: the side held out until then. */
+  | { kind: "hold"; round: number }
+  /** A living unit of `side` stands on one of `cells`. */
+  | { kind: "reach"; side: number; cells: Cell[] };
+
+/** `side` wins as soon as `when` holds. Goals are checked in list order. */
+export interface Goal {
+  side: number;
+  when: GoalCondition;
+}
+
+/** A unit that joins the battle at the start of a round (ADR 0047). */
+export interface Arrival {
+  round: number;
+  unit: Unit;
+}
+
 export interface BattleState {
-  /** State format; 2 since conditions replaced the single status (ADR 0035). */
-  version: 2;
+  /** State format; 3 since goals and arrivals (ADR 0047), 2 since conditions (ADR 0035). */
+  version: 3;
   mode: ModeId;
   map: BattleMap;
   weather: WeatherKind;
@@ -291,6 +315,10 @@ export interface BattleState {
   units: Unit[];
   /** Tiles on fire, sorted by y then x. */
   burning: BurningTile[];
+  /** Ways to win besides routing every enemy, checked in order (ADR 0047). */
+  goals: Goal[];
+  /** Units still to arrive, by round then id. */
+  reserve: Arrival[];
   prng: PrngState;
   /** Set when the battle is over: the winning side, or -1 for a draw. */
   winner: number | null;
@@ -355,7 +383,10 @@ export type BattleEvent =
   | { kind: "terrainHeal"; unit: string; amount: number; hpAfter: number }
   | { kind: "conditionEnded"; unit: string; condition: string }
   | { kind: "turn"; side: number; round: number }
-  | { kind: "battleEnd"; winner: number };
+  /** A reserve unit joined the battle at the start of a round. */
+  | { kind: "arrived"; unit: string; at: Cell }
+  /** `goal` is the index of the goal that decided the battle, if one did. */
+  | { kind: "battleEnd"; winner: number; goal?: number };
 
 // ---------------------------------------------------------------- gambits (ADR 0030)
 
@@ -375,7 +406,9 @@ export type GambitBehavior =
   | { kind: "healAlly" }
   | { kind: "retreatToHeal" }
   | { kind: "advance" }
-  | { kind: "hold" };
+  | { kind: "hold" }
+  /** Stay on this tile; strike or cast only from it (a commander in his fort, ADR 0047). */
+  | { kind: "guard" };
 
 /** One "condition → behaviour" rule; a unit's gambits are tried in order. */
 export interface Gambit {

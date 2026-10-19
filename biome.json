@@ -22,7 +22,7 @@
   },
   "overrides": [
     {
-      "includes": ["packages/rules/src/**", "packages/content/src/**"],
+      "includes": ["packages/rules/src/**", "packages/content/src/**", "packages/campaign/src/**"],
       "linter": {
         "rules": {
           "style": {

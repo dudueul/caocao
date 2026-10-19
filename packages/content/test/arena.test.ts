@@ -88,5 +88,5 @@ describe("Arena content (ADR 0039, ADR 0041)", () => {
     // [draws, seat A, seat B]: each seat should win at least a quarter of the battles.
     expect(wins[1]).toBeGreaterThanOrEqual(N / 4);
     expect(wins[2]).toBeGreaterThanOrEqual(N / 4);
-  });
+  }, 30_000); // 24 whole AI battles: more than the 5 s default on a busy machine
 });

@@ -19,9 +19,17 @@ describe("P0 ruleset", () => {
     expect(validateRuleset(P0_RULES)).toEqual([]);
   });
 
-  it("has the six P0 tier-1 classes (ADR 0021) and all twelve terrains (ADR 0023)", () => {
-    expect(Object.keys(P0_RULES.classes).sort()).toEqual(
+  it("has six tier-1 classes, their tier-2 promotions and all twelve terrains", () => {
+    const tier = (n: number) =>
+      Object.values(P0_RULES.classes)
+        .filter((c) => c.tier === n)
+        .map((c) => c.id)
+        .sort();
+    expect(tier(1)).toEqual(
       ["archer", "catapult", "cavalry", "infantry", "martialArtist", "strategist"].sort(),
+    );
+    expect(tier(2)).toEqual(
+      ["guardian", "heavyInfantry", "longbow", "shockCavalry", "tactician", "thunderCart"].sort(),
     );
     expect(Object.keys(P0_RULES.terrains).sort()).toEqual([...TERRAIN_IDS].sort());
     for (const row of Object.values(P0_RULES.affinity))

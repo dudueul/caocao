@@ -129,6 +129,18 @@ flowchart LR
 At level 10 with 통솔 70, an infantry officer has 170 + 70 + 40 = 280 HP and
 takes about 4–5 ordinary hits from a peer.
 
+**Tier-2 classes** (Story promotions from Lv 20, [ADR 0048](../adr/0048-story-progression.md);
+same family, range and terrain row):
+
+| Class | Family | HP | MP | Move | ATK | DEF | Skills |
+|---|---|---|---|---|---|---|---|
+| 중보병 | infantry | 200 | 0 | 4 | 55 | 70 | 철벽, 기합 |
+| 강궁병 | archer | 150 | 0 | 4 | 58 | 42 | 질풍 |
+| 돌기병 | cavalry | 190 | 0 | 6 | 68 | 55 | 질풍, 기합 |
+| 군사 | strategist | 140 | 30 | 4 | 32 | 38 | the ten 책사 stratagems |
+| 호위무사 | martial artist | 180 | 0 | 5 | 62 | 50 | 기합, 철벽 |
+| 벽력거 | catapult | 165 | 0 | 3 | 70 | 42 | — |
+
 An attacker strong against the defender's group deals +200‰ damage; against the
 group that beats it, −200‰. Since [ADR 0029](../adr/0029-benchmark-lessons-adopted.md)
 this is stored as a family × family **relation matrix** in the ruleset (the
@@ -304,7 +316,9 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 | Round start | units on village, fort or camp tiles heal (‰ of max HP, at least 1) |
 | Conditions | stacks count down at the end of the bearer's turn (§10); 혼란 lets the unit only wait in place and stops its counters |
 | HP / MP | max HP = class HP + 통솔 + 4 × level; max MP = class MP + ⌊지력/2⌋ |
-| Victory | the last side with living units wins; passing the round limit is a draw (story maps add objectives) |
+| Victory | the last side with living units wins; passing the round limit is a draw |
+| Goals | a battle may list goals `{ side, when }` checked in order after every action and at each round start: **defeat** named units, **hold** until a round begins, **reach** a tile; the first one met decides the battle ([ADR 0047](../adr/0047-battle-goals-and-arrivals.md)) |
+| Arrivals | reserve units join at the start of their round, on their tile or the nearest free one they can stand on; a routed side is not saved by its reserve |
 
 ## 8. Modes
 
@@ -312,10 +326,11 @@ Each battle has a mode (sandbox, story, arena, world, raid). A mode may override
 any tuning value: for example a lower `twist‰` in Arena, or a damage multiplier
 in Raids ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)).
 
-| Mode | P1 setup |
+| Mode | Setup |
 |---|---|
 | Sandbox | 오소 습격 scenario, side phases (or alternating), the AI with scenario orders ([ADR 0034](../adr/0034-scenario-ai-orders.md)) |
 | Arena | snake draft of 6 officers each from a 16-officer pool, all Lv 20 with fixed tier-1 classes; mirrored 14 × 12 field; alternating activations; 45 s per activation + 3 min reserve, then the AI plays it; round limit 20, then a draw ([ADR 0039](../adr/0039-arena-draft.md)–[ADR 0041](../adr/0041-p1-arena-defaults.md)) |
+| Story | chapter battles with goals and arrivals, side phases, the roster's levels and gear, tier-2 classes from Lv 20 ([STORY.md](STORY.md), [ADR 0047](../adr/0047-battle-goals-and-arrivals.md)–[ADR 0050](../adr/0050-equipment-and-shop.md)) |
 
 No mode overrides tuning yet.
 
@@ -327,7 +342,7 @@ normal scoring ([ADR 0030](../adr/0030-modern-techniques-adopted.md)).
 
 | Conditions | Behaviours |
 |---|---|
-| always · own HP below ‰ · an ally's HP below ‰ · enemy (of a family) in reach · can kill | attack best · attack lowest-HP enemy · attack a family · heal an ally · retreat to a healing tile · advance · hold |
+| always · own HP below ‰ · an ally's HP below ‰ · enemy (of a family) in reach · can kill | attack best · attack lowest-HP enemy · attack a family · heal an ally · retreat to a healing tile · advance · hold · **guard** (strike only from its own tile, [ADR 0047](../adr/0047-battle-goals-and-arrivals.md)) |
 
 Gambits are free for every player; they drive absent World seats and Story
 auto-battle, never live play.
@@ -386,5 +401,6 @@ defeat clears all.
 
 | Topic | Depends on |
 |---|---|
-| Equipment types per family | classes (done), progression ([ADR 0014](../adr/0014-scoped-progression-fair-arena.md)) |
+| Equipment types per family | decided for the Story: weapon, armour, accessory; kinds per family ([ADR 0050](../adr/0050-equipment-and-shop.md), [STORY.md](STORY.md#equipment)) |
+| Consumable items in battle | a new rules action and AI support |
 | Arena normalization | [ADR 0014](../adr/0014-scoped-progression-fair-arena.md) |

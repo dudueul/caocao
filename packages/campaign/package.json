@@ -1,0 +1,14 @@
+{
+  "name": "@tk/campaign",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure Story campaign logic: roster, experience and levels, equipment, saves, chapter flow",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@tk/content": "workspace:*",
+    "@tk/rules": "workspace:*"
+  }
+}

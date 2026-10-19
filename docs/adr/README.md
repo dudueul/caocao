@@ -59,3 +59,8 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0044](0044-modern-battlefield-presentation.md) | Give the battlefield a modern presentation: lighting, effects and cinematics | Accepted | 2026-10-15 |
 | [0045](0045-rigged-chibi-characters.md) | Draw our characters as rigged 2D chibi figures at tile scale | Accepted (class looks superseded by 0046) | 2026-10-15 |
 | [0046](0046-period-accurate-dress.md) | Dress our characters as late Eastern Han soldiers and officials | Accepted | 2026-10-15 |
+| [0047](0047-battle-goals-and-arrivals.md) | Let battles have goals, timed arrivals and a guard order | Proposed | 2026-10-19 |
+| [0048](0048-story-progression.md) | Story officers grow by experience, steady stat growth and promotion | Proposed | 2026-10-19 |
+| [0049](0049-story-chapter-guandu.md) | Story chapter 1 is Cao Cao's Guandu campaign, run by a pure campaign package | Proposed | 2026-10-19 |
+| [0050](0050-equipment-and-shop.md) | Officers carry a weapon, an armour and an accessory, bought in camp | Proposed | 2026-10-19 |
+| [0051](0051-browser-saves.md) | Save the Story in the browser: three slots and an autosave | Proposed | 2026-10-19 |

@@ -17,6 +17,7 @@ import {
 } from "./board.ts";
 import { defeat, resolveAttack } from "./combat.ts";
 import { endTurn, hasBlock } from "./conditions.ts";
+import { bringArrivals, endByGoal } from "./goals.ts";
 import { permille } from "./math.ts";
 import { canReach, reachable } from "./move.ts";
 import { Prng, seedFromString } from "./prng.ts";
@@ -27,6 +28,7 @@ import type {
   BattleMap,
   BattleState,
   Command,
+  Goal,
   ModeId,
   Ruleset,
   Stats,
@@ -46,6 +48,8 @@ export interface UnitSetup {
   defBonus?: number;
   x: number;
   y: number;
+  /** Joins at the start of this round (2 or later) instead of starting on the field (ADR 0047). */
+  arrives?: number;
 }
 
 export interface BattleSetup {
@@ -57,6 +61,8 @@ export interface BattleSetup {
   roundLimit: number;
   seed: string;
   units: UnitSetup[];
+  /** Ways to win besides routing every enemy (ADR 0047). */
+  goals?: Goal[];
 }
 
 export type ApplyResult =
@@ -70,7 +76,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
   if (setup.map.tiles.length !== setup.map.width * setup.map.height) {
     throw new Error("map tiles do not match width × height");
   }
-  const units: Unit[] = setup.units
+  const all = setup.units
     .map((s) => {
       const cls = rules.classes[s.classId];
       if (!cls) throw new Error(`unknown class ${s.classId}`);
@@ -98,6 +104,23 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
       };
     })
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  const arrivesOf = new Map(setup.units.map((s) => [s.id, s.arrives ?? 1]));
+  const ids = new Set(all.map((u) => u.id));
+  if (ids.size !== all.length) throw new Error("two units share an id");
+  const units = all.filter((u) => (arrivesOf.get(u.id) ?? 1) <= 1);
+  const reserve = all
+    .filter((u) => (arrivesOf.get(u.id) ?? 1) > 1)
+    .map((unit) => ({ round: arrivesOf.get(unit.id) ?? 2, unit }))
+    .sort((a, b) => a.round - b.round || (a.unit.id < b.unit.id ? -1 : 1));
+  for (const a of reserve) {
+    if (a.unit.x < 0 || a.unit.y < 0 || a.unit.x >= setup.map.width || a.unit.y >= setup.map.height)
+      throw new Error(`unit ${a.unit.id} arrives off the map`);
+  }
+  const goals = (setup.goals ?? []).map((g) => structuredClone(g));
+  for (const g of goals) {
+    if (g.when.kind === "defeat" && g.when.units.some((id) => !ids.has(id)))
+      throw new Error("a goal names an unknown unit");
+  }
 
   const seen = new Set<string>();
   for (const u of units) {
@@ -108,9 +131,9 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
     }
     seen.add(key);
   }
-  const sides = Math.max(...units.map((u) => u.side)) + 1;
+  const sides = Math.max(...all.map((u) => u.side)) + 1;
   const state: BattleState = {
-    version: 2,
+    version: 3,
     mode,
     map: { width: setup.map.width, height: setup.map.height, tiles: [...setup.map.tiles] },
     weather: setup.weather,
@@ -121,6 +144,8 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
     active: 0,
     units,
     burning: [],
+    goals,
+    reserve,
     prng: seedFromString(setup.seed),
     winner: null,
   };
@@ -256,6 +281,7 @@ function validateAct(
 
 /** After an action: end the battle, or pass the turn per the turn policy. */
 function advance(state: BattleState, rules: Ruleset, prng: Prng, events: BattleEvent[]): void {
+  if (endByGoal(state, events)) return;
   const living = livingSides(state);
   if (living.length <= 1) {
     state.winner = living[0] ?? -1;
@@ -286,6 +312,7 @@ function advance(state: BattleState, rules: Ruleset, prng: Prng, events: BattleE
 
 function newRound(state: BattleState, rules: Ruleset, prng: Prng, events: BattleEvent[]): void {
   state.round += 1;
+  if (endByGoal(state, events)) return;
   if (state.round > state.roundLimit) {
     state.winner = -1;
     events.push({ kind: "battleEnd", winner: -1 });
@@ -302,6 +329,8 @@ function newRound(state: BattleState, rules: Ruleset, prng: Prng, events: Battle
   }
   for (const b of state.burning) b.rounds -= 1;
   state.burning = state.burning.filter((b) => b.rounds > 0);
+  if (endByGoal(state, events)) return;
+  bringArrivals(state, rules, events);
   const living = livingSides(state);
   if (living.length <= 1) {
     state.winner = living[0] ?? -1;

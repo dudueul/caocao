@@ -12,6 +12,8 @@ export interface OfficerDef {
   readonly name: string;
   readonly hanja: string;
   readonly stats: Stats;
+  /** A troop template, not a person: scenarios give each unit its own id (ADR 0049). */
+  readonly generic?: boolean;
 }
 
 /** 무력, 통솔, 지력, 민첩, 운. */
@@ -20,6 +22,10 @@ type Ratings = readonly [number, number, number, number, number];
 function officer(id: string, name: string, hanja: string, ratings: Ratings): OfficerDef {
   const [martial, command, intellect, agility, fortune] = ratings;
   return { id, name, hanja, stats: { martial, command, intellect, agility, fortune } };
+}
+
+function troop(id: string, name: string, hanja: string, ratings: Ratings): OfficerDef {
+  return { ...officer(id, name, hanja, ratings), generic: true };
 }
 
 // biome-ignore format: one officer per line reads as a table
@@ -51,6 +57,28 @@ const LIST: readonly OfficerDef[] = [
   officer("guo-jia",      "곽가",   "郭嘉",   [20, 50, 95, 55, 30]),
   officer("dian-wei",     "전위",   "典韋",   [95, 65, 30, 65, 35]),
   officer("ma-jun",       "마균",   "馬鈞",   [20, 40, 85, 40, 55]),
+  // Story chapter 1, Guandu (ADR 0049)
+  officer("zhang-liao",   "장료",   "張遼",   [90, 90, 75, 80, 65]),
+  officer("xu-huang",     "서황",   "徐晃",   [85, 80, 60, 65, 60]),
+  officer("li-dian",      "이전",   "李典",   [70, 75, 70, 60, 60]),
+  officer("yu-jin",       "우금",   "于禁",   [75, 85, 55, 55, 40]),
+  officer("xun-yu",       "순욱",   "荀彧",   [15, 60, 95, 45, 60]),
+  officer("xu-you",       "허유",   "許攸",   [20, 40, 80, 45, 35]),
+  officer("liu-yan",      "유연",   "劉延",   [50, 65, 55, 45, 50]),
+  officer("yuan-shao",    "원소",   "袁紹",   [65, 80, 70, 55, 60]),
+  officer("yan-liang",    "안량",   "顏良",   [90, 70, 30, 70, 40]),
+  officer("tian-feng",    "전풍",   "田豐",   [15, 60, 95, 40, 25]),
+  officer("shen-pei",     "심배",   "審配",   [45, 75, 75, 45, 40]),
+  officer("guo-tu",       "곽도",   "郭圖",   [30, 50, 75, 50, 45]),
+  officer("feng-ji",      "봉기",   "逢紀",   [25, 50, 75, 45, 40]),
+  officer("yuan-tan",     "원담",   "袁譚",   [65, 65, 55, 60, 55]),
+  officer("han-meng",     "한맹",   "韓猛",   [75, 60, 35, 60, 45]),
+  officer("jiang-qi",     "장기",   "蔣奇",   [70, 60, 35, 55, 40]),
+  officer("liu-bei",      "유비",   "劉備",   [75, 80, 75, 65, 90]),
+  // Troop templates: each unit is named after its army and class.
+  troop("yuan",           "원소군", "袁軍",   [60, 55, 45, 50, 40]),
+  troop("yuan-elite",     "원소군 정예", "袁軍", [70, 65, 50, 60, 45]),
+  troop("cao",            "조조군", "曹軍",   [60, 60, 45, 55, 45]),
 ];
 
 export const OFFICERS: Readonly<Record<string, OfficerDef>> = Object.fromEntries(
