@@ -165,8 +165,8 @@ const camp: Song = {
         "6 - 5 3 2 - 3 5 | 3 - 2 1 2 - - - | 1 - 2 3 2 1 6, 5, | 2 - - - - - . .",
       ].join(" "),
     },
-    { inst: "perc", div: 2, vel: 1, notes: "t . . . . . . . | t . . . . . t ." },
-    { inst: "perc", div: 2, vel: 1, pan: 0.3, notes: "k . . k . . k ." },
+    { inst: "perc", div: 2, vel: 1.3, notes: "t . . . . . . . | t . . . . . t ." },
+    { inst: "perc", div: 2, vel: 1.4, pan: 0.3, notes: "k . . k . . k ." },
   ],
 };
 

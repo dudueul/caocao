@@ -64,8 +64,8 @@ const RECIPES: Record<Sfx, Recipe> = {
     wet: 0.06,
     jitter: 0,
     run(v, o, t, k) {
-      pluck(v, o, t, 587 * k, 0.75, { decay: 0.4 });
-      pluck(v, o, t + 0.075, 784 * k, 0.9, { decay: 0.5 });
+      pluck(v, o, t, 587 * k, 0.75, { decay: 0.4, bright: 0.6 });
+      pluck(v, o, t + 0.075, 784 * k, 0.9, { decay: 0.5, bright: 0.6 });
     },
   },
   cancel: {
@@ -73,8 +73,14 @@ const RECIPES: Record<Sfx, Recipe> = {
     wet: 0.06,
     jitter: 0,
     run(v, o, t, k) {
-      pluck(v, o, t, 659 * k, 0.8, { decay: 0.32, bend: 0.89, bendAt: 0.03, bendTime: 0.12 });
-      pluck(v, o, t + 0.09, 494 * k, 0.6, { decay: 0.35 });
+      pluck(v, o, t, 659 * k, 0.8, {
+        decay: 0.32,
+        bright: 0.6,
+        bend: 0.89,
+        bendAt: 0.03,
+        bendTime: 0.12,
+      });
+      pluck(v, o, t + 0.09, 494 * k, 0.6, { decay: 0.35, bright: 0.6 });
     },
   },
   select: {
@@ -471,7 +477,7 @@ const RECIPES: Record<Sfx, Recipe> = {
     jitter: 0,
     run(v, o, t, k) {
       jps(72, "1 2 3 5 6 1' 2' 3'").forEach((m, i) => {
-        pluck(v, o, t + i * 0.055, midiHz(m) * k, 0.5 + i * 0.05, { decay: 0.42 });
+        pluck(v, o, t + i * 0.055, midiHz(m) * k, 0.5 + i * 0.05, { decay: 0.42, bright: 0.6 });
       });
       bell(v, o, t + 0.385, hz(72, "1'") * k, 0.45, 0.45);
     },
@@ -483,7 +489,7 @@ const RECIPES: Record<Sfx, Recipe> = {
     run(v, o, t, k) {
       drum(v, o, t, 0.7, { f0: 130, f1: 50, decay: 0.5, slap: 0.4 });
       jps(72, "5, 1 2 3 5").forEach((m, i) => {
-        pluck(v, o, t + i * 0.07, midiHz(m) * k, 0.55 + i * 0.05, { decay: 0.4 });
+        pluck(v, o, t + i * 0.07, midiHz(m) * k, 0.55 + i * 0.05, { decay: 0.4, bright: 0.6 });
       });
       const hit = t + 0.38;
       jps(72, "1 3 5 1'").forEach((m, i) => {

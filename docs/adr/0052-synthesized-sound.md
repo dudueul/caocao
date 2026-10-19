@@ -37,7 +37,7 @@ records yet.
   - Battle moments: defeat, a war-drum turn signal, the cut-in swoosh, a horn for reinforcements.
   - Rewards and endings: level up, promotion, coins, equip, and victory and defeat stingers.
   - Effects are panned to where they happen on the map, capped in number and throttled when repeated. They are silent when animations are skipped.
-- **Mixing and safety:** master, music and effects volumes (defaults 70 / 45 / 70) go through a compressor.
+- **Mixing and safety:** master, music and effects volumes (defaults 85 / 70 / 80) go through a compressor and a soft ceiling, so five effects at once stay below clipping.
   - The context starts only on the first tap or key, as browsers require.
   - Without Web Audio every call does nothing.
 - `dev/audio-test.html` plays each sound and track and measures their levels offline.

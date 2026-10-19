@@ -23,10 +23,12 @@ export interface Settings {
 }
 
 const KEY = "tk.settings";
+// The synthesized mix is quiet by design (headroom for many effects at once),
+// so the sliders start fairly high.
 const DEFAULTS: Settings = {
-  master: 70,
-  music: 45,
-  sfx: 70,
+  master: 85,
+  music: 70,
+  sfx: 80,
   speed: 1,
   lite: false,
   hints: true,

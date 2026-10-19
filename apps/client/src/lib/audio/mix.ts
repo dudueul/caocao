@@ -19,7 +19,7 @@ export interface Mix {
   readonly sfxWet: GainNode;
 }
 
-export const DEFAULT_VOLUMES: Volumes = { master: 70, music: 45, sfx: 70 };
+export const DEFAULT_VOLUMES: Volumes = { master: 85, music: 70, sfx: 80 };
 
 /** How much of the music bus goes to the reverb. */
 const MUSIC_SEND = 0.3;
