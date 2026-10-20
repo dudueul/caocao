@@ -8,6 +8,7 @@
 import type { Cell, Goal } from "@tk/rules";
 import { type MapDef, WUCHAO } from "./maps.ts";
 import { ORDERS, type ScenarioUnit } from "./scenarios.ts";
+import { CAMP_GROUND, staged } from "./stage.ts";
 import type { ChapterDef, StoryBattleDef } from "./story.ts";
 
 const cells = (...xy: [number, number][]): Cell[] => xy.map(([x, y]) => ({ x, y }));
@@ -501,6 +502,8 @@ export const GUANDU: ChapterDef = {
   summary: "하북의 원소가 십만 대군을 일으켰다. 조조는 관도에서 운명을 건 싸움에 나선다.",
   gold: 500,
   floor: 14,
+  // What history did in chapter 2, for a fresh start here (ADR 0060).
+  assumes: { xuzhou: "revenge", dianwei: "fell", lubu: "executed" },
   ending: {
     title: "관도 · 완",
     lead: "다섯 번의 싸움 끝에 하북의 대군이 무너졌다. 조조는 이 싸움으로 북방의 패권을 손에 넣는다.",
@@ -522,7 +525,7 @@ export const GUANDU: ChapterDef = {
         place: "허도",
         when: "건안 4년(199) 겨울",
         backdrop: "court",
-        lines: [
+        ...staged("court", [
           { text: "건안 4년, 하북의 원소가 공손찬을 무너뜨리고 네 주를 손에 넣었다." },
           {
             text: "그는 십만의 보병과 만 필의 기병을 모아, 황하 남쪽에서 천자를 모신 조조를 노렸다.",
@@ -542,7 +545,7 @@ export const GUANDU: ChapterDef = {
             text: "관도에 진을 친다. 황하를 건너오는 자는 한 놈도 돌려보내지 않겠다.",
           },
           { text: "이듬해 봄, 원소의 선봉 안량이 황하를 건너 백마성을 에워쌌다." },
-        ],
+        ]),
       },
     },
     {
@@ -553,7 +556,7 @@ export const GUANDU: ChapterDef = {
         place: "백마 서쪽",
         when: "건안 5년(200) 4월",
         backdrop: "field",
-        lines: [
+        ...staged("field", [
           {
             who: "xun-you",
             text: "적이 많으니 정면으로 부딪쳐서는 안 됩니다. 연진으로 가 황하를 건너려는 듯 보이십시오.",
@@ -580,7 +583,7 @@ export const GUANDU: ChapterDef = {
             mood: "grim",
             text: "구원군은 아직인가… 성문이 오래 버티지 못한다!",
           },
-        ],
+        ]),
         joins: [
           {
             officer: "guan-yu",
@@ -601,7 +604,7 @@ export const GUANDU: ChapterDef = {
         place: "백마",
         when: "건안 5년 4월",
         backdrop: "field",
-        lines: [
+        ...staged("field", [
           { who: "cao-cao", mood: "smile", text: "운장, 그대의 무용은 천하에 짝이 없구려." },
           {
             who: "guan-yu",
@@ -618,7 +621,7 @@ export const GUANDU: ChapterDef = {
             text: "조조는 백마의 백성을 거두어 황하를 따라 서쪽으로 물러났다. 크게 노한 원소는 문추와 유비에게 그 뒤를 쫓게 했다.",
           },
           { who: "yu-jin", text: "연진 쪽 적진을 흔들고 돌아왔습니다. 악진 장군도 함께입니다." },
-        ],
+        ]),
         leaves: ["guan-yu"],
         joins: [
           { officer: "yu-jin", classId: "infantry", level: 15, gear: ["iron-ji", "lamellar"] },
@@ -630,6 +633,7 @@ export const GUANDU: ChapterDef = {
       kind: "camp",
       camp: {
         id: "camp-1",
+        ground: CAMP_GROUND,
         shop: [
           "ring-dao",
           "iron-ji",
@@ -650,7 +654,7 @@ export const GUANDU: ChapterDef = {
         place: "연진 남쪽 언덕",
         when: "건안 5년 4월",
         backdrop: "river",
-        lines: [
+        ...staged("river", [
           {
             text: "조조는 남쪽 언덕 아래에 군을 멈추고 말안장을 풀게 했다. 군량과 수레는 길 위에 그대로 늘어놓았다.",
           },
@@ -664,7 +668,7 @@ export const GUANDU: ChapterDef = {
             who: "cao-cao",
             text: "적이 수레에 달려들어 대오가 흩어질 때까지 기다려라. 그때 단숨에 내려간다.",
           },
-        ],
+        ]),
       },
     },
     { kind: "battle", battle: B2 },
@@ -676,7 +680,7 @@ export const GUANDU: ChapterDef = {
         place: "관도",
         when: "건안 5년 8월",
         backdrop: "camp",
-        lines: [
+        ...staged("camp", [
           {
             who: "cao-cao",
             mood: "smile",
@@ -698,7 +702,7 @@ export const GUANDU: ChapterDef = {
             text: "제가 돌을 던지는 수레를 만들어 두었습니다. 쓸 날이 곧 오겠지요.",
           },
           { who: "li-dian", text: "군량 수레와 함께 왔습니다. 많지는 않습니다만." },
-        ],
+        ]),
         joins: [
           {
             officer: "xiahou-dun",
@@ -716,6 +720,7 @@ export const GUANDU: ChapterDef = {
       kind: "camp",
       camp: {
         id: "camp-2",
+        ground: CAMP_GROUND,
         shop: [
           "ring-dao",
           "refined-dao",
@@ -744,7 +749,7 @@ export const GUANDU: ChapterDef = {
         place: "관도 진채",
         when: "건안 5년 9월",
         backdrop: "camp",
-        lines: [
+        ...staged("camp", [
           {
             text: "원소군은 흙을 쌓아 산을 만들고 그 위에 망루를 세웠다. 화살이 비처럼 진채 안으로 쏟아졌다.",
           },
@@ -759,7 +764,7 @@ export const GUANDU: ChapterDef = {
             text: "벽력처럼 돌을 던지는 수레입니다. 저 망루쯤은 부술 수 있습니다.",
           },
           { who: "cao-cao", text: "좋다. 진채를 지킨다. 원소가 지칠 때까지." },
-        ],
+        ]),
       },
     },
     { kind: "battle", battle: B3 },
@@ -771,7 +776,7 @@ export const GUANDU: ChapterDef = {
         place: "관도 진채",
         when: "건안 5년 10월",
         backdrop: "night",
-        lines: [
+        ...staged("night", [
           {
             who: "cao-cao",
             mood: "grim",
@@ -797,7 +802,7 @@ export const GUANDU: ChapterDef = {
             mood: "angry",
             text: "내가 직접 간다. 원소군의 깃발을 들고, 말에는 재갈을 물려라!",
           },
-        ],
+        ]),
         joins: [
           { officer: "xu-you", classId: "strategist", level: 15, gear: ["feather-fan", "robe"] },
         ],
@@ -807,6 +812,7 @@ export const GUANDU: ChapterDef = {
       kind: "camp",
       camp: {
         id: "camp-3",
+        ground: CAMP_GROUND,
         shop: [
           "refined-dao",
           "horse-lance",
@@ -830,7 +836,7 @@ export const GUANDU: ChapterDef = {
         place: "오소로 가는 길",
         when: "건안 5년 10월",
         backdrop: "night",
-        lines: [
+        ...staged("night", [
           {
             text: "조조는 보병과 기병 오천을 이끌고 밤길을 달렸다. 병사들은 원소군의 깃발을 들고 나뭇가지를 한 다발씩 짊어졌다.",
           },
@@ -842,7 +848,7 @@ export const GUANDU: ChapterDef = {
             mood: "smile",
             text: "주공 곁은 이 허저가 지킵니다. 마음 놓고 불을 지르십시오.",
           },
-        ],
+        ]),
       },
     },
     { kind: "battle", battle: B4 },
@@ -854,7 +860,7 @@ export const GUANDU: ChapterDef = {
         place: "원소 본진",
         when: "건안 5년 10월",
         backdrop: "fire",
-        lines: [
+        ...staged("fire", [
           { text: "오소가 불탔다는 소식에 원소군은 크게 흔들렸다." },
           { text: "곽도는 자기 계책이 틀린 것을 감추려 장합이 기뻐한다고 원소에게 거짓을 고했다." },
           {
@@ -870,13 +876,14 @@ export const GUANDU: ChapterDef = {
             text: "돌아가면 죽을 뿐이오. 공성 무기를 불사르고 조조에게 갑시다.",
           },
           { text: "결전의 아침이 밝았다." },
-        ],
+        ]),
       },
     },
     {
       kind: "camp",
       camp: {
         id: "camp-4",
+        ground: CAMP_GROUND,
         shop: [
           "refined-dao",
           "horse-lance",
@@ -902,7 +909,7 @@ export const GUANDU: ChapterDef = {
         place: "관도",
         when: "건안 5년 10월",
         backdrop: "dawn",
-        lines: [
+        ...staged("dawn", [
           { text: "관도의 싸움에서 원소군은 칠만이 넘게 죽거나 항복했다." },
           {
             text: "조조는 원소의 진채에서 편지 한 묶음을 찾아냈다. 허도와 군중의 많은 이가 몰래 원소에게 보낸 편지였다.",
@@ -921,7 +928,7 @@ export const GUANDU: ChapterDef = {
           },
           { text: "2년 뒤 원소는 병으로 세상을 떠났고, 조조는 마침내 북방을 하나로 묶었다." },
           { text: "3장 관도 · 끝" },
-        ],
+        ]),
         joins: [
           { officer: "zhang-he", classId: "cavalry", level: 19, gear: ["horse-lance", "lamellar"] },
           { officer: "gao-lan", classId: "infantry", level: 18, gear: ["ring-dao", "lamellar"] },

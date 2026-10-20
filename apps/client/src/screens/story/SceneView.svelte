@@ -2,11 +2,11 @@
 import Backdrop from "../../components/Backdrop.svelte";
 import DialogueBox from "../../components/DialogueBox.svelte";
 import { speakerOf } from "../../lib/speakers.ts";
-import { story } from "../../lib/story.svelte.ts";
+import { sceneLines, story } from "../../lib/story.svelte.ts";
 
 /** A story scene: a title card, then the lines over the painted backdrop (ADR 0049). */
 const scene = $derived(story.scene);
-const line = $derived(scene?.lines[story.line] ?? null);
+const line = $derived(scene ? (sceneLines(scene, story.campaign.flags)[story.line] ?? null) : null);
 const speaker = $derived(line ? speakerOf(line, story.campaign) : null);
 let auto = $state(false);
 let card = $state(true);

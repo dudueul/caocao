@@ -284,8 +284,8 @@ export type GoalCondition =
   | { kind: "defeat"; units: string[] }
   /** Round `round` begins: the side held out until then. */
   | { kind: "hold"; round: number }
-  /** A living unit of `side` stands on one of `cells`. */
-  | { kind: "reach"; side: number; cells: Cell[] };
+  /** A living unit of `side` (one of `units`, if listed) stands on one of `cells`. */
+  | { kind: "reach"; side: number; cells: Cell[]; units?: string[] };
 
 /** `side` wins as soon as `when` holds. Goals are checked in list order. */
 export interface Goal {
@@ -299,9 +299,38 @@ export interface Arrival {
   unit: Unit;
 }
 
+/** One tile turned into another terrain by a shift (ADR 0062). */
+export interface TileChange {
+  x: number;
+  y: number;
+  terrain: TerrainId;
+}
+
+/** What sets a shift off. */
+export type ShiftTrigger =
+  /** Round `round` begins. */
+  | { kind: "round"; round: number }
+  /** A living unit of `side` (one of `units`, if listed) stands on one of `cells` (the sluice at Xiapi). */
+  | { kind: "reach"; side: number; cells: Cell[]; units?: string[] };
+
+/**
+ * A change to the map during a battle (ADR 0062): a flood, an opened gate.
+ * Units left on ground they can no longer stand on are swept to the nearest
+ * tile they can, losing `damage`‰ of their max HP (never the last point).
+ */
+export interface Shift {
+  id: string;
+  when: ShiftTrigger;
+  tiles: TileChange[];
+  damage: number;
+}
+
 export interface BattleState {
-  /** State format; 3 since goals and arrivals (ADR 0047), 2 since conditions (ADR 0035). */
-  version: 3;
+  /**
+   * State format; 4 since map shifts (ADR 0062), 3 since goals and arrivals
+   * (ADR 0047), 2 since conditions (ADR 0035).
+   */
+  version: 4;
   mode: ModeId;
   map: BattleMap;
   weather: WeatherKind;
@@ -319,6 +348,8 @@ export interface BattleState {
   goals: Goal[];
   /** Units still to arrive, by round then id. */
   reserve: Arrival[];
+  /** Map changes still to happen, in setup order; a shift leaves the list once it fires. */
+  shifts: Shift[];
   prng: PrngState;
   /** Set when the battle is over: the winning side, or -1 for a draw. */
   winner: number | null;
@@ -385,6 +416,10 @@ export type BattleEvent =
   | { kind: "turn"; side: number; round: number }
   /** A reserve unit joined the battle at the start of a round. */
   | { kind: "arrived"; unit: string; at: Cell }
+  /** A shift changed the map (ADR 0062); `by` is the unit that set it off, if one did. */
+  | { kind: "shifted"; shift: string; tiles: TileChange[]; by: string | null }
+  /** A shift left a unit on ground it can't stand on and carried it to `to`. */
+  | { kind: "swept"; unit: string; from: Cell; to: Cell; damage: number; hpAfter: number }
   /** `goal` is the index of the goal that decided the battle, if one did. */
   | { kind: "battleEnd"; winner: number; goal?: number };
 

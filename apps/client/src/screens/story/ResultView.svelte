@@ -39,10 +39,16 @@ const report = story.report;
 const won = report?.won ?? false;
 /** The battle just fought: after a win the campaign has already moved past it. */
 const fought = (() => {
-  if (!won) return story.battle;
-  const step = chapterOf(story.campaign).steps[story.campaign.step - 1];
-  return step?.kind === "battle" ? step.battle : null;
+  for (const step of chapterOf(story.campaign).steps)
+    if (step.kind === "battle" && step.battle.id === report?.battle) return step.battle;
+  return story.battle;
 })();
+/** What the battle decided (ADR 0061), as the result screen says it. */
+const fateNotes = (fought?.fates ?? []).flatMap((f) => {
+  const v = report?.fates[f.flag];
+  if (!v || !f.notes) return [];
+  return [{ text: v === f.standing ? f.notes.standing : f.notes.fallen, good: v === f.standing }];
+});
 
 interface Segment {
   from: number;
@@ -277,6 +283,10 @@ function gainText(g: StatGains): string {
               {/each}
             </div>
           </section>
+
+          {#each fateNotes as note, i (i)}
+            <p class="fate" class:good={note.good}>{note.text}</p>
+          {/each}
 
           <section class="officers">
             <h2>{L.officers}</h2>
@@ -776,6 +786,32 @@ footer button {
   .promo,
   .lostcard,
   .face.small {
+    animation: none;
+  }
+}
+.fate {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-left: 3px solid #b0453a;
+  background: rgba(30, 14, 12, 0.6);
+  font-family: var(--display);
+  letter-spacing: 0.04em;
+  color: #f0d8c8;
+  animation: fate-in 0.9s ease-out both;
+  animation-delay: 1.4s;
+}
+.fate.good {
+  border-left-color: #d8b25a;
+  color: #fff0c8;
+}
+@keyframes fate-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fate {
     animation: none;
   }
 }

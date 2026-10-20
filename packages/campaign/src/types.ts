@@ -28,8 +28,8 @@ export interface Officer {
 }
 
 export interface CampaignState {
-  /** Save format. */
-  version: 1;
+  /** Save format; 2 since story flags (ADR 0060, 0065). */
+  version: 2;
   chapter: string;
   /** Index of the chapter step being played. */
   step: number;
@@ -40,4 +40,8 @@ export interface CampaignState {
   roster: Officer[];
   /** Ids of the battles won. */
   cleared: string[];
+  /** Story flags: choices made and fates decided, flag → value (ADR 0060, 0061). */
+  flags: Record<string, string>;
+  /** Officers who left the story for good; a later chapter does not bring them back. */
+  gone: string[];
 }

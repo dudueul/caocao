@@ -253,6 +253,13 @@ export function describe(
       return { text: `${T.round} ${e.round} · ${sideNames[e.side] ?? e.side}`, tone: "turn" };
     case "arrived":
       return { text: `${name(e.unit)} 도착`, tone: tone(e.unit, true) };
+    case "shifted":
+      return {
+        text: e.tiles.some((t) => t.terrain === "water") ? "물길이 터졌다!" : "지형이 바뀌었다!",
+        tone: "twist",
+      };
+    case "swept":
+      return { text: `${name(e.unit)} 물에 휩쓸림 ${e.damage}`, tone: tone(e.unit, false) };
     case "battleEnd":
       return {
         text: e.winner < 0 ? T.draw : `${sideNames[e.winner] ?? e.winner} ${T.victory}`,

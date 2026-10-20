@@ -61,9 +61,9 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0046](0046-period-accurate-dress.md) | Dress our characters as late Eastern Han soldiers and officials | Accepted (side colours swapped by 0055) | 2026-10-15 |
 | [0047](0047-battle-goals-and-arrivals.md) | Let battles have goals, timed arrivals and a guard order | Accepted | 2026-10-19 |
 | [0048](0048-story-progression.md) | Story officers grow by experience, steady stat growth and promotion | Accepted | 2026-10-19 |
-| [0049](0049-story-chapter-guandu.md) | Story chapter 1 is Cao Cao's Guandu campaign, run by a pure campaign package | Accepted | 2026-10-19 |
+| [0049](0049-story-chapter-guandu.md) | Story chapter 1 is Cao Cao's Guandu campaign, run by a pure campaign package | Accepted (관도 is chapter 3; scenes staged by 0063, camp by 0064) | 2026-10-19 |
 | [0050](0050-equipment-and-shop.md) | Officers carry a weapon, an armour and an accessory, bought in camp | Accepted | 2026-10-19 |
-| [0051](0051-browser-saves.md) | Save the Story in the browser: three slots and an autosave | Accepted | 2026-10-19 |
+| [0051](0051-browser-saves.md) | Save the Story in the browser: three slots and an autosave | Accepted (format 2 by 0065) | 2026-10-19 |
 | [0052](0052-synthesized-sound.md) | Synthesize the music and sound effects in code | Accepted | 2026-10-19 |
 | [0053](0053-painted-portraits.md) | Paint every officer's portrait in code | Accepted | 2026-10-19 |
 | [0054](0054-main-menu-settings-tips.md) | Open on a title menu, with settings and first-battle tips | Accepted | 2026-10-19 |
@@ -71,3 +71,10 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0056](0056-chapter-order-and-carry-over.md) | Tell Cao Cao's story in order, carrying the roster from chapter to chapter | Accepted | 2026-10-19 |
 | [0057](0057-chapter-one-yellow-turbans.md) | Chapter 1, 황건의 난: six battles from Luoyang to Yanzhou | Accepted | 2026-10-19 |
 | [0058](0058-game-name.md) | Call the game 난세의 간웅 | Accepted | 2026-10-19 |
+| [0059](0059-chapter-two-lu-bu.md) | Chapter 2, 여포: seven battles from Xuzhou to Xiapi | Accepted | 2026-10-20 |
+| [0060](0060-story-choices-and-flags.md) | Let the player choose at 서주 and 백문루, and remember it in story flags | Accepted | 2026-10-20 |
+| [0061](0061-fates-decided-in-battle.md) | Let a battle decide a fate: 전위 lives if he is standing when 조조 escapes 완성 | Accepted | 2026-10-20 |
+| [0062](0062-map-shifts.md) | Let the map change during a battle: shifts set off by a round or a reached tile | Accepted | 2026-10-20 |
+| [0063](0063-staged-scenes.md) | Act story scenes out on small tile maps, from a script | Accepted | 2026-10-20 |
+| [0064](0064-walkable-camp.md) | Make the camp a place to walk: 조조 visits the shop, the armoury and his officers | Accepted | 2026-10-20 |
+| [0065](0065-save-format-two.md) | Save format 2: story flags and officers gone for good, reading format 1 | Proposed | 2026-10-20 |

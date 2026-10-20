@@ -69,6 +69,12 @@ const GRADE = {
   wind: { saturation: 1.04, contrast: 1.05, brightness: 1.0, red: 1.01, green: 1.02, blue: 0.98 },
 } as const;
 
+/** Light over the weather grade: dusk warms and dims, night turns blue and dark. */
+const LIGHT_GRADE = {
+  dusk: { brightness: 0.86, red: 1.08, green: 0.95, blue: 0.84 },
+  night: { saturation: 0.7, contrast: 1.1, brightness: 0.62, red: 0.82, green: 0.9, blue: 1.2 },
+} as const;
+
 /** What the overlay layer shows; computed by the session. */
 export interface OverlayView {
   reach: Cell[];
@@ -301,11 +307,9 @@ export class Field {
   render(state: BattleState, view: OverlayView): void {
     this.view = view;
     if (!this.mounted) return;
-    const i = this.session.insets;
     const wanted = this.skin ? this.session.backdrop : null;
     if (wanted !== null && this.backdrop?.id !== wanted) this.loadBackdrop(wanted);
-    const back = wanted !== null && this.backdrop?.id === wanted ? wanted : "-";
-    const mk = `${state.map.width}x${state.map.height}:${state.map.tiles.join("")}|${i.top},${i.right},${i.bottom},${i.left}|${this.skin ? 1 : 0}${back}`;
+    const mk = this.mapKeyFor(state.map);
     if (mk !== this.mapKey) {
       this.mapKey = mk;
       this.shown = state;
@@ -324,6 +328,17 @@ export class Field {
   private setWeather(kind: BattleState["weather"]): void {
     this.ambient.setWeather(kind);
     Object.assign(this.grade, GRADE[kind]);
+    const light = this.session.light;
+    if (light !== "day") Object.assign(this.grade, LIGHT_GRADE[light]);
+    this.vignette.alpha = light === "night" ? 0.85 : light === "dusk" ? 0.65 : 0.55;
+  }
+
+  /** What the terrain layers were drawn from; a change means painting them again. */
+  private mapKeyFor(map: BattleState["map"]): string {
+    const i = this.session.insets;
+    const wanted = this.skin ? this.session.backdrop : null;
+    const back = wanted !== null && this.backdrop?.id === wanted ? wanted : "-";
+    return `${map.width}x${map.height}:${map.tiles.join("")}|${i.top},${i.right},${i.bottom},${i.left}|${this.skin ? 1 : 0}${back}`;
   }
 
   private loadBackdrop(id: number): void {
@@ -975,6 +990,8 @@ export class Field {
     this.syncUnits(before, null);
     const pos = new Map(before.units.map((u) => [u.id, { x: u.x, y: u.y } as Cell]));
     const at = (id: string): Cell => pos.get(id) ?? { x: 0, y: 0 };
+    /** The map as shown so far in this batch (shifts change it). */
+    const mapNow = { ...before.map, tiles: [...before.map.tiles] };
     const px = (id: string) => this.center(at(id));
     const quiet = () => this.session.speed === 0;
     /** A sound panned to where it happens; silent when animations are skipped. */
@@ -1290,6 +1307,37 @@ export class Field {
             setHp(e.unit, e.hpAfter);
             this.float(at(e.unit), `+${e.amount}`, 0x7ee07a);
             break;
+          case "shifted": {
+            // The map changes under the units (ADR 0062): water spreads over the low ground,
+            // a gate is thrown open. Repaint the terrain in place, with splashes and a rumble.
+            const w = mapNow.width;
+            for (const t of e.tiles) mapNow.tiles[t.y * w + t.x] = t.terrain;
+            const wet = e.tiles.some((t) => t.terrain === "water" || t.terrain === "ford");
+            sound(wet ? "water" : "earth", e.tiles[0]);
+            if (!quiet()) {
+              this.shake(wet ? 7 : 4);
+              const burst = e.tiles.filter((_, k) => k % 3 === 0).map((t) => this.center(t));
+              fx.schoolBurst(this.fxc(), wet ? "water" : "earth", burst);
+            }
+            const shown = { ...before, map: { ...mapNow, tiles: [...mapNow.tiles] } };
+            this.drawTerrain(shown);
+            this.mapKey = this.mapKeyFor(shown.map);
+            await this.wait(520);
+            break;
+          }
+          case "swept": {
+            // Caught by the water: carried to dry ground, soaked and hurt.
+            const s = this.sprites.get(e.unit);
+            if (s && skinned(e.unit)) this.setPose(s, "hurt", DOWN);
+            if (!quiet()) fx.schoolBurst(this.fxc(), "water", [this.center(e.from)]);
+            if (s) await slide(s, e.from, e.to, 320);
+            pos.set(e.unit, e.to);
+            if (e.damage > 0) {
+              setHp(e.unit, e.hpAfter);
+              this.float(e.to, `-${e.damage}`, 0x8fc8ff);
+            }
+            break;
+          }
           case "arrived": {
             // Reinforcements ride in: a horn, dust, and the figure fading in on its tile.
             const u = after.units.find((v) => v.id === e.unit);

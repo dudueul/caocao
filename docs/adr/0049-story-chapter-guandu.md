@@ -1,6 +1,6 @@
 # 0049. Story chapter 1 is Cao Cao's Guandu campaign, run by a pure campaign package
 
-- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19); 관도 is chapter 3 since [0056](0056-chapter-order-and-carry-over.md)
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19); 관도 is chapter 3 since [0056](0056-chapter-order-and-carry-over.md); scenes are staged since [0063](0063-staged-scenes.md) and the camp is walkable since [0064](0064-walkable-camp.md)
 - **Date:** 2026-10-19
 - **Deciders:** Claude (proposal), project owner (accepted); the owner asked for "a complete game"
 - **Related:** [0008](0008-modes-as-main-menu-entries.md), [0014](0014-scoped-progression-fair-arena.md),

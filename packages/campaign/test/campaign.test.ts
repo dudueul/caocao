@@ -3,8 +3,10 @@ import {
   CHAPTER_LIST,
   CHAPTERS,
   FIRST_CHAPTER,
+  flagDomains,
   GUANDU,
   ITEMS,
+  LUBU,
   P0_RULES,
   validateChapter,
   validateProgression,
@@ -28,6 +30,7 @@ import {
   newCampaign,
   nextChapter,
   type Officer,
+  type Picks,
   PROGRESSION,
   promote,
   promotionFor,
@@ -49,7 +52,8 @@ const must = <T>(r: { ok: true; state: T } | { ok: false; reason: string }): T =
 describe("content for the Story (ADR 0048–0050)", () => {
   it("every chapter and the progression tables are valid", () => {
     expect(validateProgression(P0_RULES)).toEqual([]);
-    for (const ch of CHAPTER_LIST) expect(validateChapter(P0_RULES, ch)).toEqual([]);
+    const domains = flagDomains(CHAPTER_LIST);
+    for (const ch of CHAPTER_LIST) expect(validateChapter(P0_RULES, ch, domains)).toEqual([]);
   });
 
   it("chapters are numbered in order and point at chapters that exist (ADR 0056)", () => {
@@ -199,7 +203,11 @@ describe("saves (ADR 0051)", () => {
 });
 
 /** Plays the whole chapter with the AI on both sides; promotes and equips like a player would. */
-function playChapter(seedBase: string, from: CampaignState = newCampaign("guandu")) {
+function playChapter(
+  seedBase: string,
+  from: CampaignState = newCampaign("guandu"),
+  picks: Picks = {},
+) {
   let s = from;
   const log: string[] = [];
   let attempts = 0;
@@ -207,7 +215,7 @@ function playChapter(seedBase: string, from: CampaignState = newCampaign("guandu
     const step = currentStep(s);
     if (!step) break;
     if (step.kind === "scene") {
-      s = must(finishScene(s));
+      s = must(finishScene(s, picks));
       continue;
     }
     if (step.kind === "camp") {
@@ -233,7 +241,7 @@ function playChapter(seedBase: string, from: CampaignState = newCampaign("guandu
       P0_RULES,
       storySetup(s, b, sortie, `${seedBase}-${b.id}-${attempts}`),
     );
-    const orders = storyOrders(b);
+    const orders = storyOrders(b, s.flags);
     let state = start;
     const ledger = emptyLedger();
     const commands = [];
@@ -269,39 +277,189 @@ describe("carrying a campaign into the next chapter (ADR 0056)", () => {
       cleared: ["luoyang"],
     };
     const cao = done.roster[0] as Officer;
-    expect(continueTo(newCampaign(FIRST_CHAPTER), "guandu").ok).toBe(false); // not finished
+    expect(continueTo(newCampaign(FIRST_CHAPTER), "lubu").ok).toBe(false); // not finished
     const next = nextChapter(done);
-    expect(next?.id).toBe("guandu");
-    const r = continueTo(done, "guandu");
+    expect(next?.id).toBe("lubu");
+    const r = continueTo(done, "lubu");
     if (!r.ok) throw new Error(r.reason);
     const s = r.state;
     expect([s.chapter, s.step, s.gold, s.inventory.jade, s.cleared]).toEqual([
-      "guandu",
+      "lubu",
       0,
       1234,
       1,
       ["luoyang"],
     ]);
     const c = s.roster.find((o) => o.id === "cao-cao") as Officer;
-    expect(c.level).toBe(GUANDU.floor);
+    expect(c.level).toBe(LUBU.floor);
     expect(c.stats.command).toBeGreaterThanOrEqual(cao.stats.command);
     expect(c.gear).toEqual(cao.gear);
+    expect(s.roster.map((o) => o.id)).toContain("chen-gong");
+    expect(s.roster.every((o) => o.level >= LUBU.floor)).toBe(true);
+  });
+
+  it("does not bring back officers gone for good", () => {
+    const done: CampaignState = {
+      ...newCampaign("lubu"),
+      step: LUBU.steps.length,
+      gone: ["zhang-liao"],
+      flags: { lubu: "spared" },
+    };
+    const s = must(continueTo(done, "guandu"));
+    expect(s.roster.map((o) => o.id)).not.toContain("zhang-liao");
     expect(s.roster.map((o) => o.id)).toContain("xu-chu");
-    expect(s.roster.every((o) => o.level >= GUANDU.floor)).toBe(true);
+    expect(s.flags).toEqual({ lubu: "spared" });
+  });
+});
+
+/** Plays a campaign scene by scene up to (not into) the battle or camp with this id. */
+function playTo(s: CampaignState, id: string, picks: Picks): CampaignState {
+  let out = s;
+  for (let guard = 0; guard < 100; guard++) {
+    const step = currentStep(out);
+    if (!step) throw new Error(`never reached ${id}`);
+    const sid =
+      step.kind === "scene" ? step.scene.id : step.kind === "camp" ? step.camp.id : step.battle.id;
+    if (sid === id) return out;
+    if (step.kind === "scene") out = must(finishScene(out, picks));
+    else if (step.kind === "camp") out = must(leaveCamp(out));
+    else out = { ...out, step: out.step + 1 }; // skip the battle
+  }
+  throw new Error("too many steps");
+}
+
+describe("story flags (ADR 0060, 0061)", () => {
+  it("a scene with a choice needs the pick, and the pick sets the flag and pays its spoils", () => {
+    const at = playTo(newCampaign("lubu"), "lubu-xuzhou", {});
+    expect(finishScene(at).ok).toBe(false);
+    const r = must(finishScene(at, { xuzhou: "revenge" }));
+    expect(r.flags.xuzhou).toBe("revenge");
+    expect(r.gold).toBeGreaterThan(at.gold);
+    expect(r.inventory["fine-horse"]).toBe(1);
+    const m = must(finishScene(at, { xuzhou: "mercy" }));
+    expect([m.flags.xuzhou, m.gold]).toEqual(["mercy", at.gold]);
+    expect(finishScene(at, { xuzhou: "nonsense" }).ok).toBe(false);
+  });
+
+  it("revenge costs 진궁 for good; mercy keeps him", () => {
+    const pick = (xuzhou: string) => playTo(newCampaign("lubu"), "lubu-dian-wei", { xuzhou });
+    const r = pick("revenge");
+    expect(r.roster.map((o) => o.id)).not.toContain("chen-gong");
+    expect(r.gone).toContain("chen-gong");
+    expect(r.inventory["feather-fan"]).toBe(1); // his gear came back
+    const m = pick("mercy");
+    expect(m.roster.map((o) => o.id)).toContain("chen-gong");
+    expect(m.gone).toEqual([]);
+  });
+
+  it("a won battle decides the fates it names; 전위 leaves only if he fell", () => {
+    const at = playTo(newCampaign("lubu"), "wancheng", { xuzhou: "revenge" });
+    const b = currentBattle(at);
+    if (!b) throw new Error("fixture");
+    const sortie = defaultSortie(at, b);
+    const start = createBattle(P0_RULES, storySetup(at, b, sortie, "fate"));
+    const fallen = structuredClone(start);
+    const dw = fallen.units.find((u) => u.id === "dian-wei");
+    if (!dw) throw new Error("전위 is not in the battle");
+    dw.hp = 0;
+    fallen.winner = 0;
+    const lost = settle(at, b, sortie, fallen, emptyLedger());
+    expect(lost.state.flags.dianwei).toBe("fell");
+    expect(lost.report.fates).toEqual({ dianwei: "fell" });
+    const after = must(finishScene(lost.state));
+    expect(after.roster.map((o) => o.id)).not.toContain("dian-wei");
+    expect(after.roster.map((o) => o.id)).toContain("xu-chu");
+    const standing = { ...structuredClone(start), winner: 0 };
+    const won = settle(at, b, sortie, standing, emptyLedger());
+    expect(won.state.flags.dianwei).toBe("lived");
+    expect(must(finishScene(won.state)).roster.map((o) => o.id)).toContain("dian-wei");
+  });
+
+  it("units, goals and shifts follow the flags", () => {
+    const at = playTo(newCampaign("lubu"), "puyang-fire", { xuzhou: "revenge" });
+    const b = currentBattle(at);
+    if (!b) throw new Error("fixture");
+    const ids = (s: CampaignState) =>
+      storySetup(s, b, defaultSortie(s, b), "x").units.map((u) => u.id);
+    expect(ids(at)).toContain("chen-gong");
+    const mercy = playTo(newCampaign("lubu"), "puyang-fire", { xuzhou: "mercy" });
+    const enemy = storySetup(mercy, b, defaultSortie(mercy, b), "x").units.filter(
+      (u) => u.side === 1,
+    );
+    expect(enemy.map((u) => u.id)).not.toContain("chen-gong");
+  });
+
+  it("at 백문루, executing 여포 brings 장료; sparing him brings 여포 and loses 장료 for good", () => {
+    const at = playTo(newCampaign("lubu"), "lubu-white-gate", { xuzhou: "revenge" });
+    const ex = must(finishScene(at, { lubu: "executed" }));
+    expect(ex.roster.map((o) => o.id)).toContain("zhang-liao");
+    expect(ex.roster.map((o) => o.id)).not.toContain("lu-bu");
+    const sp = must(finishScene(at, { lubu: "spared" }));
+    expect(sp.roster.map((o) => o.id)).toContain("lu-bu");
+    expect(sp.roster.map((o) => o.id)).not.toContain("zhang-liao");
+    expect(sp.gone).toContain("zhang-liao");
+  });
+
+  it("a fresh start of 관도 assumes what history did", () => {
+    expect(newCampaign("guandu").flags).toEqual({
+      xuzhou: "revenge",
+      dianwei: "fell",
+      lubu: "executed",
+    });
+    expect(newCampaign("lubu").flags).toEqual({});
+  });
+});
+
+describe("saves, version 2 (ADR 0065)", () => {
+  it("keeps flags and the gone list, and reads a version-1 save with the chapter's assumptions", () => {
+    const s: CampaignState = {
+      ...newCampaign("lubu"),
+      flags: { xuzhou: "mercy" },
+      gone: ["dian-wei"],
+    };
+    const back = readSave(writeSave(s));
+    expect(back.ok && back.state).toEqual(s);
+    const v1 = JSON.parse(writeSave(newCampaign("guandu")));
+    v1.version = 1;
+    delete v1.flags;
+    delete v1.gone;
+    const old = readSave(JSON.stringify(v1));
+    expect(old.ok && old.state.flags).toEqual(GUANDU.assumes ?? {});
+    expect(old.ok && old.state.version).toBe(2);
+    const bad = JSON.parse(writeSave(s));
+    bad.flags = { "Bad Flag": "x" };
+    expect(readSave(JSON.stringify(bad)).ok).toBe(false);
+    const twice = JSON.parse(writeSave(s));
+    twice.gone = ["cao-cao"];
+    expect(readSave(JSON.stringify(twice)).ok).toBe(false);
   });
 });
 
 describe("the whole story from chapter 1, AI on both sides", () => {
-  it("plays chapter 1, carries over, and plays Guandu", () => {
-    const first = playChapter("chain", newCampaign(FIRST_CHAPTER));
-    expect(isFinished(first.s)).toBe(true);
-    const r = continueTo(first.s, nextChapter(first.s)?.id ?? "");
-    if (!r.ok) throw new Error(r.reason);
-    const second = playChapter("chain2", r.state);
-    expect(isFinished(second.s)).toBe(true);
-    expect(second.s.cleared).toContain("shouzhang");
-    expect(second.s.cleared).toContain("guandu-final");
-  }, 120_000);
+  for (const [name, picks] of [
+    ["as history went", { xuzhou: "revenge", lubu: "executed" }],
+    ["the other way", { xuzhou: "mercy", lubu: "spared" }],
+  ] as const) {
+    it(`plays chapters 1, 2 and 3 with carry-over, ${name}`, () => {
+      let s = newCampaign(FIRST_CHAPTER);
+      for (const [i, id] of ["rise", "lubu", "guandu"].entries()) {
+        if (i > 0) s = must(continueTo(s, id));
+        s = playChapter(`chain-${name}-${id}`, s, picks).s;
+        expect(isFinished(s)).toBe(true);
+      }
+      expect(s.cleared).toContain("shouzhang");
+      expect(s.cleared).toContain("xiapi");
+      expect(s.cleared).toContain("guandu-final");
+      expect(s.flags.xuzhou).toBe(picks.xuzhou);
+      expect(s.flags.lubu).toBe(picks.lubu);
+      expect(["lived", "fell"]).toContain(s.flags.dianwei ?? "");
+      const ids = s.roster.map((o) => o.id);
+      if (picks.lubu === "spared") expect(ids).toContain("lu-bu");
+      else expect(ids).toContain("zhang-liao");
+      if (picks.xuzhou === "mercy") expect(ids).toContain("chen-gong");
+      else expect(ids).not.toContain("chen-gong");
+    }, 240_000);
+  }
 });
 
 describe("the whole Guandu chapter, AI on both sides", () => {

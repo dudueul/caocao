@@ -113,6 +113,17 @@ const LIST: readonly ItemDef[] = [
     text: "명장의 손에 맞춘 무거운 극.",
   }),
   item({
+    id: "sky-ji",
+    name: "방천화극",
+    hanja: "方天畫戟",
+    slot: "weapon",
+    kind: "polearm",
+    atk: 32,
+    stats: { martial: 4 },
+    price: 3200,
+    text: "초승달 날을 양쪽에 단 화극. 여포의 손에서 천하를 떨게 했다.",
+  }),
+  item({
     id: "horn-bow",
     name: "각궁",
     hanja: "角弓",
@@ -287,6 +298,15 @@ const LIST: readonly ItemDef[] = [
     stats: { agility: 8 },
     price: 1200,
     text: "하루에 천 리를 달리는 말.",
+  }),
+  item({
+    id: "red-hare",
+    name: "적토마",
+    hanja: "赤兎馬",
+    slot: "accessory",
+    stats: { agility: 12, martial: 4 },
+    price: 3200,
+    text: "온몸이 숯불처럼 붉은 명마. 사람 가운데 여포, 말 가운데 적토.",
   }),
   item({
     id: "jade",

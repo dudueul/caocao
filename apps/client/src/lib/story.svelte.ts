@@ -35,7 +35,9 @@ import {
   type CampDef,
   type ChapterDef,
   type ChapterStep,
+  type Cmd,
   FIRST_CHAPTER,
+  holds,
   type Line,
   type SceneDef,
   type StoryBattleDef,
@@ -57,6 +59,20 @@ export interface Talk {
 
 function randomSeed(): string {
   return Math.floor(Math.random() * 0xffffffff).toString(36);
+}
+
+/** The lines a scene says with these flags, in order (the staged player shows the rest). */
+export function sceneLines(scene: SceneDef, flags: Readonly<Record<string, string>>): Line[] {
+  const out: Line[] = [];
+  const visit = (cmds: readonly Cmd[]) => {
+    for (const c of cmds) {
+      if (!holds(c.if, flags)) continue;
+      if (c.do === "all") visit(c.cmds);
+      else if (c.do === "say" && holds(c.line.if, flags)) out.push(c.line);
+    }
+  };
+  visit(scene.script);
+  return out;
 }
 
 const phaseOf = (step: ChapterStep | null): Phase =>
@@ -142,7 +158,7 @@ export class Story {
   next(): void {
     const sc = this.scene;
     if (!sc) return;
-    if (this.line + 1 < sc.lines.length) this.line += 1;
+    if (this.line + 1 < sceneLines(sc, this.campaign.flags).length) this.line += 1;
     else this.endScene();
   }
 
@@ -197,10 +213,12 @@ export class Story {
     session.director = (events, before, after) => this.direct(b, events, before, after);
     session.startStory({
       setup: storySetup(this.campaign, b, this.sortie, randomSeed()),
-      orders: storyOrders(b),
+      orders: storyOrders(b, this.campaign.flags),
       title: b.name,
       sides: [...b.sides],
       goalText: b.goalText,
+      light: b.light ?? "day",
+      marks: (b.marks ?? []).map((c) => ({ ...c })),
     });
     this.session = session;
     this.phase = "battle";
@@ -249,6 +267,8 @@ export class Story {
         return events.some((e) => e.kind === "defeated" && e.unit === t.unit);
       case "arrived":
         return events.some((e) => e.kind === "arrived" && e.unit === t.unit);
+      case "shifted":
+        return events.some((e) => e.kind === "shifted" && e.shift === t.shift);
       case "end":
         return events.some((e) => e.kind === "battleEnd" && e.winner === t.winner);
     }
@@ -264,6 +284,7 @@ export class Story {
     const side = this.session?.humanSide ?? 0;
     for (const [i, t] of b.talk.entries()) {
       const key = `${i}`;
+      if (!holds(t.if, this.campaign.flags)) continue;
       if (this.played.has(key) || !this.matches(t.when, events, side)) continue;
       await this.playTalk(b, t.when, i);
     }
@@ -271,17 +292,20 @@ export class Story {
 
   /** Shows a talk's lines over the battle; resolves when the player has read them. */
   async playTalk(b: StoryBattleDef, when: TalkTrigger, index?: number): Promise<void> {
-    const i = index ?? b.talk.findIndex((t) => t.when.at === when.at);
+    const flags = this.campaign.flags;
+    const i = index ?? b.talk.findIndex((t) => t.when.at === when.at && holds(t.if, flags));
     const t = b.talk[i];
     if (!t || this.played.has(`${i}`)) return;
     this.played.add(`${i}`);
+    const lines = t.lines.filter((l) => holds(l.if, flags));
+    if (lines.length === 0) return;
     const session = this.session;
     if (session) {
       session.busy = true;
       session.talking = true;
     }
     await new Promise<void>((resolve) => {
-      this.talk = { lines: t.lines, index: 0, done: resolve };
+      this.talk = { lines, index: 0, done: resolve };
     });
     this.talk = null;
     if (session) session.talking = false;

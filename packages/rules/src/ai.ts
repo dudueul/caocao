@@ -60,6 +60,10 @@ const W = {
   goalTarget: 2,
   /** A unit the enemy's goals name weighs its exposure this many times over. */
   goalGuard: 2,
+  /** Pull per movement point toward a tile our side must reach (ADR 0047, 0062), for one runner. */
+  objective: 60,
+  /** Standing on such a tile. */
+  onObjective: 20_000,
 };
 
 /** Is `target` named in a "defeat" goal of `side`? */
@@ -276,6 +280,110 @@ function approachGap(state: BattleState, rules: Ruleset, unit: Unit, at: Cell): 
   return Math.abs(nearestEnemyDistance(state, moved) - preferredDistance(rules, moved));
 }
 
+/**
+ * Tiles `unit` could win or set something off by standing on: its side's
+ * "reach" goals and the trigger tiles of its side's pending "reach" shifts
+ * (the sluice at Xiapi, ADR 0062), when they don't name other units.
+ */
+function objectiveCells(state: BattleState, unit: Unit): Cell[] {
+  const mine = (w: { side: number; units?: string[] }) =>
+    w.side === unit.side && (!w.units || w.units.includes(unit.id));
+  const out: Cell[] = [];
+  for (const g of state.goals) {
+    const w = g.when;
+    if (w.kind === "reach" && g.side === unit.side && mine(w)) out.push(...w.cells);
+  }
+  for (const sh of state.shifts) {
+    const w = sh.when;
+    if (w.kind === "reach" && mine(w)) out.push(...w.cells);
+  }
+  return out;
+}
+
+const objectiveCache = new WeakMap<BattleState, Map<string, number[]>>();
+
+/** Movement cost from every tile to the nearest objective tile of `unit`'s side, for its family. */
+function objectiveField(state: BattleState, rules: Ruleset, unit: Unit): number[] | null {
+  const goals = objectiveCells(state, unit);
+  if (goals.length === 0) return null;
+  const family = classOf(rules, unit).family;
+  const key = `${family}|${goals.map((c) => `${c.x},${c.y}`).join(";")}`;
+  let byKey = objectiveCache.get(state);
+  if (!byKey) {
+    byKey = new Map();
+    objectiveCache.set(state, byKey);
+  }
+  const cached = byKey.get(key);
+  if (cached) return cached;
+  const { width: w, height: h } = state.map;
+  const row = rules.affinity[family];
+  const cost = state.map.tiles.map((t) => row?.[t].move ?? null);
+  const dist: number[] = new Array(w * h).fill(UNREACHABLE);
+  const buckets: number[][] = [[]];
+  for (const c of goals) {
+    const k = c.y * w + c.x;
+    if (cost[k] === null || dist[k] === 0) continue;
+    dist[k] = 0;
+    buckets[0]?.push(k);
+  }
+  for (let d = 0; d < buckets.length; d++) {
+    for (const k of buckets[d] ?? []) {
+      if (dist[k] !== d) continue;
+      const x = k % w;
+      const y = (k - x) / w;
+      const enter = cost[k] as number;
+      for (const n of NEIGHBOURS) {
+        const nx = x + n.dx;
+        const ny = y + n.dy;
+        if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
+        const nk = ny * w + nx;
+        if (cost[nk] === null || d + enter >= (dist[nk] as number)) continue;
+        dist[nk] = d + enter;
+        while (buckets.length <= d + enter) buckets.push([]);
+        buckets[d + enter]?.push(nk);
+      }
+    }
+  }
+  byKey.set(key, dist);
+  return dist;
+}
+
+const runnerCache = new WeakMap<BattleState, Map<number, string | null>>();
+
+/** The one unit of `side` that goes for the objective: the nearest by movement cost, then by id. */
+function runnerOf(state: BattleState, rules: Ruleset, side: number): string | null {
+  let bySide = runnerCache.get(state);
+  if (!bySide) {
+    bySide = new Map();
+    runnerCache.set(state, bySide);
+  }
+  const cached = bySide.get(side);
+  if (cached !== undefined) return cached;
+  let best: string | null = null;
+  let bestD = UNREACHABLE;
+  for (const u of state.units) {
+    if (u.side !== side || !isAlive(u)) continue;
+    const field = objectiveField(state, rules, u);
+    if (!field) continue;
+    const d = field[u.y * state.map.width + u.x] as number;
+    if (d < bestD) {
+      best = u.id;
+      bestD = d;
+    }
+  }
+  bySide.set(side, best);
+  return best;
+}
+
+/** The runner's pull toward the objective from `at` (0 for every other unit). */
+function objectiveScore(state: BattleState, rules: Ruleset, unit: Unit, at: Cell): number {
+  if (runnerOf(state, rules, unit.side) !== unit.id) return 0;
+  const field = objectiveField(state, rules, unit);
+  const d = field?.[at.y * state.map.width + at.x] ?? UNREACHABLE;
+  if (d === UNREACHABLE) return 0;
+  return d === 0 ? W.onObjective : -d * W.objective;
+}
+
 export function scoreCommand(
   state: BattleState,
   rules: Ruleset,
@@ -289,6 +397,7 @@ export function scoreCommand(
   const threatened = nearestEnemyDistance(s, me) <= W.threatRange;
   let score = threatened ? tile.cover * W.cover : 0;
   if (tile.heal > 0 && me.hp * 2 < me.maxHp) score += W.lowHpHealTile;
+  score += objectiveScore(state, rules, unit, command.to);
 
   const action = command.action;
   if (action.kind === "attack") {

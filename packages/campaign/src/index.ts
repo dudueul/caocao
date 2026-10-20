@@ -1,5 +1,7 @@
 export {
   type BattleReport,
+  battleRules,
+  battleUnits,
   checkSortie,
   currentBattle,
   defaultSortie,
@@ -19,8 +21,12 @@ export {
   leaveCamp,
   newCampaign,
   nextChapter,
+  type Picks,
   promote,
   recruit,
+  stepFrom,
+  stepOn,
+  walkChoices,
 } from "./flow.ts";
 export {
   battleProfile,

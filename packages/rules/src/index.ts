@@ -46,6 +46,7 @@ export { bringArrivals, decidingGoal, goalMet, landingCell } from "./goals.ts";
 export { canonical, hashState } from "./hash.ts";
 export { canReach, type Reach, reachable } from "./move.ts";
 export { Prng, type PrngState, seedFromString } from "./prng.ts";
+export { checkShifts, fireShifts } from "./shifts.ts";
 export { replay, runBattle, type SimResult } from "./sim.ts";
 export {
   canCast,

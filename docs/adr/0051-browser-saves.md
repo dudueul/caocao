@@ -1,6 +1,6 @@
 # 0051. Save the Story in the browser: three slots and an autosave
 
-- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19)
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-19); format 2 since [0065](0065-save-format-two.md)
 - **Date:** 2026-10-19
 - **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0038](0038-guest-identity-device-key.md), [0049](0049-story-chapter-guandu.md),

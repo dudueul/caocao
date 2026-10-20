@@ -1,6 +1,6 @@
 # 0056. Tell Cao Cao's story in order, carrying the roster from chapter to chapter
 
-- **Status:** Accepted
+- **Status:** Accepted; chapter 2 exists since [0059](0059-chapter-two-lu-bu.md), and officers gone for good stay gone ([0060](0060-story-choices-and-flags.md))
 - **Date:** 2026-10-19
 - **Deciders:** project owner (chose the order and the carry-over), Claude (details)
 - **Related:** [0048](0048-story-progression.md), [0049](0049-story-chapter-guandu.md),

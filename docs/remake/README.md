@@ -1,8 +1,8 @@
 # Remake: 난세의 간웅, a Three Kingdoms grid-tactics game built from scratch
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
-> this folder describes the **current** design. Last updated 2026-10-19
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0058](../adr/0058-game-name.md)).
+> this folder describes the **current** design. Last updated 2026-10-20
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0065](../adr/0065-save-format-two.md)).
 
 ## Vision
 
@@ -109,9 +109,16 @@ flowchart TB
 | Portraits | Bust portraits with moods painted in code for every officer | [0053](../adr/0053-painted-portraits.md) |
 | Main menu | Title menu, settings everywhere, first-battle tips, goals card and markers in Story battles | [0054](../adr/0054-main-menu-settings-tips.md) |
 | Side colours | Our side red, the enemy blue | [0055](../adr/0055-our-side-red.md) |
-| Chapter order | Cao Cao's story in order from 174: 1 황건의 난, 2 여포 (to write), 3 관도; the roster carries over with a level floor; chapter select on the title | [0056](../adr/0056-chapter-order-and-carry-over.md) |
+| Chapter order | Cao Cao's story in order from 174: 1 황건의 난, 2 여포, 3 관도; the roster carries over with a level floor; chapter select on the title | [0056](../adr/0056-chapter-order-and-carry-over.md) |
 | Chapter 1 | 황건의 난 (174–192): 낙양 북문, 장사, 사수관, 형양, 복양, 수장 | [0057](../adr/0057-chapter-one-yellow-turbans.md) |
 | Name | The game is called **난세의 간웅** (亂世奸雄); `tk` stays the code name | [0058](../adr/0058-game-name.md) |
+| Chapter 2 | 여포 (193–198), seven battles: 팽성, 복양 (escape), 정도, 완성 (escape), 기현, 안중, 하비 (flood) | [0059](../adr/0059-chapter-two-lu-bu.md) |
+| Choices | The player chooses at 서주 (revenge or mercy: 진궁's loyalty) and at 백문루 (execute or spare 여포: 장료 or 여포); story flags remember it, officers can be gone for good | [0060](../adr/0060-story-choices-and-flags.md) |
+| Fates | A won battle can decide a fate: 전위 lives if he is standing when 조조 escapes 완성 | [0061](../adr/0061-fates-decided-in-battle.md) |
+| Map shifts | The map can change in battle on a round or a reached tile (하비's sluice); escapes for named units; fire at the start; state v4 | [0062](../adr/0062-map-shifts.md) |
+| Staged scenes | Story scenes are acted out on small tile maps from a script: walking, emotes, poses, fights, camera | [0063](../adr/0063-staged-scenes.md) |
+| Walkable camp | The camp is a map: 조조 walks to the shop, the armoury, the records and the council tent, and talks to his officers | [0064](../adr/0064-walkable-camp.md) |
+| Saves, format 2 | Saves keep the story flags and who is gone; format-1 saves still load (Proposed) | [0065](../adr/0065-save-format-two.md) |
 
 ## Roadmap
 
@@ -130,19 +137,21 @@ conditions; a playable sandbox). P1 runs end to end: rooms by invite link, the
 six-officer draft, deployment, live alternating battles refereed by a `MatchDO`
 with a 45-second clock, reconnects, and a PWA; the owner deploys it with
 `bun run deploy`. P2, the Story of **난세의 간웅**, is playable from the title screen to
-the ending in story order: chapter 1 (황건의 난, six battles) carries its
-roster into chapter 3 (관도, five battles), with goals and reinforcements, scenes with
-painted portraits, experience, levels and tier-2 promotions, equipment and a
-shop, saves, synthesized music and sound, settings and first-battle tips. Still
-to come for P2: chapter 2 (여포), the server copy of progress (`PlayerDO`) and
-re-simulation.
+the ending in story order: chapter 1 (황건의 난, six battles), chapter 2 (여포,
+seven battles, with choices at 서주 and 백문루 and 전위's fate at 완성) and
+chapter 3 (관도, five battles), carrying the roster from chapter to chapter.
+Battles have goals, reinforcements and map shifts (하비's flood); scenes are
+acted out on tile maps, and the camp is a place to walk; there are painted
+portraits, experience, levels and tier-2 promotions, equipment and a shop,
+saves, synthesized music and sound, settings and first-battle tips. Still to
+come for P2: the server copy of progress (`PlayerDO`) and re-simulation.
 
 ## Open questions (next design sessions)
 
 | # | Question | Current leaning |
 |---|---|---|
 | 5 | Accounts and sign-in | P1 uses guest device keys ([0038](../adr/0038-guest-identity-device-key.md)); passkeys with `PlayerDO` in P2 |
-| 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapter 1 황건의 난 and chapter 3 관도 are playable, chapter 2 여포 is next; other lords' routes later, if ever |
+| 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapters 1–3 are playable (174–200); next, chapter 4 (적벽, 208) or 하북 (201–207); other lords' routes later, if ever |
 | 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear decided ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |

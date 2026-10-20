@@ -1,10 +1,11 @@
 # Story mode
 
 > Living document for the Story of **난세의 간웅** ([ADR 0049](../adr/0049-story-chapter-guandu.md),
-> [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)–[0058](../adr/0058-game-name.md)):
+> [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)–[0065](../adr/0065-save-format-two.md)):
 > the chapters in order, the flow of a chapter, carry-over between chapters,
-> each chapter's battles, progression, equipment and saves. Every number is
-> starting tuning. Last updated 2026-10-19.
+> choices and story flags, staged scenes and the walkable camp, each chapter's
+> battles, progression, equipment and saves. Every number is starting tuning.
+> Last updated 2026-10-20.
 
 ## Chapters
 
@@ -15,25 +16,59 @@ title's chapter select can start any chapter fresh with its own roster.
 | # | Chapter | Years | Battles | Level floor | State |
 |---|---|---|---|---|---|
 | 1 | 황건의 난 | 174–192 | 6 | — (starts at Lv 3) | playable |
-| 2 | 여포 | 193–198 | about 5 (복양, 정도, 완성, 하비 …) | about 9 | to write |
+| 2 | 여포 | 193–198 | 7 | 10 | playable |
 | 3 | 관도 | 199–200 | 5 | 14 | playable |
-
-Until chapter 2 exists, chapter 1 hands on straight to 관도.
 
 ```mermaid
 flowchart LR
   T["Title<br/>new game · continue · chapter select"] --> C1["1장 황건의 난<br/>174–192"]
-  C1 -->|"carry-over<br/>floor 14"| C3["3장 관도<br/>199–200"]
-  C1 -.->|"once written"| C2["2장 여포<br/>193–198"]
-  C2 -.-> C3
-  T -->|"chapter select<br/>(fresh roster)"| C3
+  C1 -->|"carry-over<br/>floor 10"| C2["2장 여포<br/>193–198"]
+  C2 -->|"carry-over<br/>floor 14, flags"| C3["3장 관도<br/>199–200"]
+  T -->|"chapter select<br/>(fresh roster,<br/>history's flags)"| C2
+  T -->|"chapter select"| C3
 ```
 
 **Carry-over** (`continueTo`, [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)):
-- Officers, levels, classes, gear, gold, items and the battle record go along.
+- Officers, levels, classes, gear, gold, items, the battle record and the story flags go along.
 - Guests leave, and their gear returns.
 - Officers below the next chapter's floor are raised to it, with the growth of every level.
-- Officers the chapter starts with join if they are missing.
+- Officers the chapter starts with join if they are missing, unless they are gone for good ([ADR 0060](../adr/0060-story-choices-and-flags.md)).
+
+## Choices and story flags
+
+Two choices and one fate decided by play branch the story ([ADR 0060](../adr/0060-story-choices-and-flags.md),
+[ADR 0061](../adr/0061-fates-decided-in-battle.md)). Each sets a flag in the
+campaign; any step, scene command, line, actor, join, leave, battle unit,
+goal, map shift, talk or camp line can carry `if: { flag, is | not }`. A
+chapter started fresh from the title `assumes` what history did.
+
+| Flag | Values | Set by | Changes |
+|---|---|---|---|
+| `xuzhou` | `revenge` (history) · `mercy` | the choice in 사수의 강물 (193) | Revenge: plunder (1,500 gold, 준마); 진궁 leaves in 194, fights for 여포 and dies at 백문루. Mercy: no plunder; 진궁 stays; 진등 opens 하비's east gate on round 5 |
+| `dianwei` | `lived` · `fell` (history) | whether 전위 stands when 완성 is won | Fell: his death scene, and he is gone for good. Lived: he stays, wounded, and serves at 관도 |
+| `lubu` | `executed` (history) · `spared` | the choice at 백문루 (198) | Executed: 장료 joins. Spared: 여포 joins with 방천화극 and 적토마; 장료 is gone for good |
+
+```mermaid
+flowchart TB
+  P["193 팽성 won"] --> Q{"서주:<br/>revenge or mercy?"}
+  Q -->|revenge| R1["+1,500 gold, 준마<br/>진궁 leaves (194)"]
+  Q -->|mercy| M1["진궁 stays"]
+  R1 --> W["197 완성"]
+  M1 --> W
+  W -->|"전위 standing"| DL["전위 lives"]
+  W -->|"전위 fell"| DF["전위 gone"]
+  DL --> X["198 하비"]
+  DF --> X
+  X --> B{"백문루:<br/>execute or spare?"}
+  B -->|execute| E["장료 joins"]
+  B -->|spare| S["여포 joins<br/>장료 gone"]
+  E --> G["3장 관도<br/>lines follow the flags"]
+  S --> G
+```
+
+Officers who leave through a scene are recorded as **gone**; a later chapter
+does not bring them back. Saves keep the flags and the gone list (format 2,
+[ADR 0065](../adr/0065-save-format-two.md)).
 
 ## Flow of a chapter
 
@@ -45,7 +80,7 @@ the player retries from the sortie.
 stateDiagram-v2
   [*] --> Title
   Title --> Scene: new game / continue
-  Scene --> Scene: next line
+  Scene --> Scene: next beat / choice
   Scene --> Sortie: battle step
   Scene --> Camp: camp step
   Camp --> Scene: leave camp
@@ -63,11 +98,11 @@ stateDiagram-v2
 
 | Phase | Screen | What happens |
 |---|---|---|
-| Scene | `SceneView` | Title card, then lines over a painted backdrop; portraits with moods; typing text; auto and skip. Roster joins and leaves apply at the end |
+| Scene | `SceneView` + `lib/stage/` | Title card, then the scene acted out on its stage: officers walk, turn, bow, emote and strike while they talk ([ADR 0063](../adr/0063-staged-scenes.md)); choices; auto, and skip to the next choice. Roster joins and leaves apply at the end |
 | Sortie | `SortieView` | Pick up to `max` officers (the `required` ones are fixed) and their slots on a mini map; goals and weather shown |
 | Battle | `BattleScreen` + `TalkOverlay` | Side phases; goals card; ★ commanders, ◆ units to protect, a gold star on tiles to reach; talk at start, on a round, a defeat, an arrival or the end; tips in the first battle |
 | Result | `ResultView` | Gold and items; experience bars fill; level-ups with stat gains; promotion ready |
-| Camp | `CampView` | Roster and gear, promotion, the shop, saving |
+| Camp | `CampView` | A camp to walk ([ADR 0064](../adr/0064-walkable-camp.md)): 조조 talks to his officers and opens the shop, the armoury (gear and promotion), the records tent (saving) and the council tent (march on) |
 | Ending | `EndingView` | The chapter's close and the roster as it ended |
 
 Saves happen automatically after every scene, camp and battle won ([ADR 0051](../adr/0051-browser-saves.md)).

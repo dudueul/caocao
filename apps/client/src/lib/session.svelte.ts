@@ -113,6 +113,10 @@ export interface StoryBattle {
   title: string;
   sides: string[];
   goalText: { win: string; lose: string };
+  /** How the field is lit (night battles are darker). */
+  light?: "day" | "dusk" | "night";
+  /** Tiles to mark ★ for the whole battle. */
+  marks?: Cell[];
 }
 
 /** Runs after each command is shown, before input resumes (story talk, experience). */
@@ -132,6 +136,8 @@ export class Session {
   readonly classicGrids = new Map<number, ClassicMapGrid>();
   /** The 1998 map picture under this battle, if it is fought on one. */
   backdrop = $state<number | null>(null);
+  /** How the field is lit: story night battles are darker (looks only). */
+  light = $state<"day" | "dusk" | "night">("day");
   /** Set for Story battles; the sandbox scenario is ignored then. */
   story: StoryBattle | null = null;
   director: Director | null = null;
@@ -439,6 +445,7 @@ export class Session {
   /** Starts a Story battle; `newBattle()` afterwards retries it with a new seed. */
   startStory(b: StoryBattle): void {
     this.story = b;
+    this.light = b.light ?? "day";
     this.sideNames = [...b.sides];
     this.newBattle({ seed: b.setup.seed });
   }

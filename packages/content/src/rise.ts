@@ -10,6 +10,7 @@
 import type { Cell, Goal } from "@tk/rules";
 import type { MapDef } from "./maps.ts";
 import { ORDERS, type ScenarioUnit } from "./scenarios.ts";
+import { CAMP_GROUND, staged } from "./stage.ts";
 import type { ChapterDef, StoryBattleDef } from "./story.ts";
 
 const cells = (...xy: [number, number][]): Cell[] => xy.map(([x, y]) => ({ x, y }));
@@ -564,8 +565,7 @@ export const RISE: ChapterDef = {
   summary: "낙양의 젊은 북부위 조조. 황건의 난과 동탁의 폭정 속에서 그는 자신의 군대를 일으킨다.",
   gold: 300,
   floor: 1,
-  // Chapter 2 (여포) is still being written; the story carries on at Guandu.
-  next: "guandu",
+  next: "lubu",
   ending: {
     title: "황건의 난 · 완",
     lead: "청주의 황건 삼십만이 조조의 깃발 아래 들어왔다. 연주목 조조는 이제 천하를 다투는 이들 가운데 하나가 되었다.",
@@ -580,7 +580,7 @@ export const RISE: ChapterDef = {
         place: "낙양",
         when: "희평 3년(174)",
         backdrop: "court",
-        lines: [
+        ...staged("court", [
           {
             text: "한나라는 사백 년을 이어 왔으나, 궁궐에서는 환관들이 권세를 쥐고 지방에서는 굶주린 백성이 늘어 갔다.",
           },
@@ -599,7 +599,7 @@ export const RISE: ChapterDef = {
             who: "cao-cao",
             text: "관아 문 양쪽에 오색으로 칠한 몽둥이를 걸어라. 금령을 어기는 자는 누구든 이것으로 다스린다.",
           },
-        ],
+        ]),
       },
     },
     {
@@ -610,7 +610,7 @@ export const RISE: ChapterDef = {
         place: "낙양 북문",
         when: "희평 3년(174)",
         backdrop: "night",
-        lines: [
+        ...staged("night", [
           {
             who: "ward",
             name: "북부위 위사",
@@ -623,7 +623,7 @@ export const RISE: ChapterDef = {
             text: "황제를 곁에서 모시는 환관의 숙부라서 법을 피해 간다면, 이 몽둥이는 무엇 하러 걸어 두었느냐.",
           },
           { who: "cao-cao", mood: "angry", text: "가자. 법은 지위를 묻지 않는다." },
-        ],
+        ]),
       },
     },
     { kind: "battle", battle: B1 },
@@ -635,7 +635,7 @@ export const RISE: ChapterDef = {
         place: "기주 거록",
         when: "광화 7년(184)",
         backdrop: "fire",
-        lines: [
+        ...staged("fire", [
           {
             text: "건도의 일로 조조는 낙양에서 밀려나 지방 관리가 되었다. 그러나 그 일로 조조의 이름이 널리 알려졌다.",
           },
@@ -660,7 +660,7 @@ export const RISE: ChapterDef = {
           { who: "xiahou-yuan", text: "활은 제게 맡기십시오." },
           { who: "cao-ren", text: "조인, 앞에서 방패가 되겠습니다." },
           { who: "cao-hong", mood: "smile", text: "조홍도 왔습니다! 형님 말 앞에서 달리겠습니다." },
-        ],
+        ]),
         joins: [
           { officer: "xiahou-dun", classId: "cavalry", level: 5, gear: ["iron-ji", "leather"] },
           { officer: "xiahou-yuan", classId: "archer", level: 5, gear: ["horn-bow", "leather"] },
@@ -677,7 +677,7 @@ export const RISE: ChapterDef = {
         place: "영천 장사",
         when: "광화 7년(184) 5월",
         backdrop: "field",
-        lines: [
+        ...staged("field", [
           {
             text: "황보숭은 장사성에 들어갔다가 황건적의 장수 파재에게 포위당했다. 성 안의 군사는 적고 모두 두려워했다.",
           },
@@ -691,7 +691,7 @@ export const RISE: ChapterDef = {
             text: "불을 놓으면 저들은 반드시 어지러워질 것이오. 그때 안팎에서 치면 이길 수 있소.",
           },
           { who: "cao-cao", text: "때맞춰 왔군요. 우리 군이 성 밖에서 적의 등을 치겠습니다." },
-        ],
+        ]),
       },
     },
     { kind: "battle", battle: B2 },
@@ -703,7 +703,7 @@ export const RISE: ChapterDef = {
         place: "낙양",
         when: "중평 6년(189)",
         backdrop: "court",
-        lines: [
+        ...staged("court", [
           {
             text: "황건적은 흩어졌으나 한나라의 병은 깊어만 갔다. 영제가 세상을 떠나자 대장군 하진과 환관들이 서로를 죽였다.",
           },
@@ -734,13 +734,14 @@ export const RISE: ChapterDef = {
             side: 2,
             text: "의로운 군사가 모였으니 역적 동탁의 목은 머지않았소!",
           },
-        ],
+        ]),
       },
     },
     {
       kind: "camp",
       camp: {
         id: "rise-camp-1",
+        ground: CAMP_GROUND,
         shop: [
           "ring-dao",
           "iron-ji",
@@ -761,7 +762,7 @@ export const RISE: ChapterDef = {
         place: "사수관 앞 연합군 진영",
         when: "초평 원년(190)",
         backdrop: "camp",
-        lines: [
+        ...staged("camp", [
           {
             text: "동탁의 장수 화웅이 사수관을 지키며 연합군의 장수들을 잇달아 베었다. 제후들은 얼굴빛이 변했다.",
           },
@@ -773,7 +774,7 @@ export const RISE: ChapterDef = {
           { who: "zhang-fei", mood: "angry", text: "형님이 나가신다면 이 장비도 뒤를 따르겠소!" },
           { who: "liu-bei", text: "두 아우가 무례하나 그 용맹만은 믿을 만합니다." },
           { who: "cao-cao", mood: "smile", text: "좋소. 우리 모두 함께 관문을 엽시다." },
-        ],
+        ]),
       },
     },
     { kind: "battle", battle: B3 },
@@ -785,7 +786,7 @@ export const RISE: ChapterDef = {
         place: "산조",
         when: "초평 원년(190)",
         backdrop: "fire",
-        lines: [
+        ...staged("fire", [
           {
             text: "동탁은 낙양을 불태우고 황제를 끌고 장안으로 옮겨 갔다. 그러나 연합군의 제후들은 서로 눈치만 볼 뿐 움직이지 않았다.",
           },
@@ -799,7 +800,7 @@ export const RISE: ChapterDef = {
           {
             text: "조조는 홀로 군사를 이끌고 서쪽으로 동탁을 쫓았다. 형양 변수에 이르렀을 때 동탁의 장수 서영이 기다리고 있었다.",
           },
-        ],
+        ]),
       },
     },
     { kind: "battle", battle: B4 },
@@ -811,7 +812,7 @@ export const RISE: ChapterDef = {
         place: "산조",
         when: "초평 원년(190)",
         backdrop: "camp",
-        lines: [
+        ...staged("camp", [
           {
             text: "조조는 살아 돌아왔으나 군사는 거의 잃었다. 함께 싸운 위자는 변수에서 돌아오지 못했다.",
           },
@@ -822,13 +823,14 @@ export const RISE: ChapterDef = {
             text: "천하의 기대를 저버리고 이렇게 술만 마시고 있으니, 나는 그대들이 부끄럽소!",
           },
           { text: "연합군은 얼마 지나지 않아 흩어졌다. 조조는 양주에서 다시 군사를 모았다." },
-        ],
+        ]),
       },
     },
     {
       kind: "camp",
       camp: {
         id: "rise-camp-2",
+        ground: CAMP_GROUND,
         shop: [
           "ring-dao",
           "refined-dao",
@@ -854,7 +856,7 @@ export const RISE: ChapterDef = {
         place: "동군",
         when: "초평 2년(191)",
         backdrop: "camp",
-        lines: [
+        ...staged("camp", [
           {
             text: "흑산적 백요의 무리 십여만이 동군을 휩쓸었다. 조조는 군사를 이끌고 동군으로 들어갔다.",
           },
@@ -865,7 +867,7 @@ export const RISE: ChapterDef = {
           { who: "cao-cao", mood: "smile", text: "그대야말로 나의 자방이로다!" },
           { who: "yue-jin", text: "악진, 고향에서 천 명을 모아 왔습니다. 앞장서게 해 주십시오." },
           { who: "li-dian", text: "이전이라 합니다. 숙부를 따라 군사를 이끌고 왔습니다." },
-        ],
+        ]),
         joins: [
           { officer: "xun-yu", classId: "strategist", level: 9, gear: ["feather-fan", "robe"] },
           { officer: "yue-jin", classId: "infantry", level: 9, gear: ["ring-dao", "lamellar"] },
@@ -882,19 +884,20 @@ export const RISE: ChapterDef = {
         place: "동군",
         when: "초평 2년(191)",
         backdrop: "field",
-        lines: [
+        ...staged("field", [
           { text: "백요를 무찌른 조조는 동군태수가 되어 동무양에 자리를 잡았다." },
           {
             who: "xun-yu",
             text: "땅을 얻으셨으니 이제 백성을 품으셔야 합니다. 백성이 따르면 군사도 군량도 따라옵니다.",
           },
-        ],
+        ]),
       },
     },
     {
       kind: "camp",
       camp: {
         id: "rise-camp-3",
+        ground: CAMP_GROUND,
         shop: [
           "refined-dao",
           "horse-lance",
@@ -916,7 +919,7 @@ export const RISE: ChapterDef = {
         place: "연주",
         when: "초평 3년(192)",
         backdrop: "field",
-        lines: [
+        ...staged("field", [
           {
             text: "청주의 황건 백만이 연주로 쏟아져 들어왔다. 연주자사 유대는 맞서 싸우다 목숨을 잃었다.",
           },
@@ -926,7 +929,7 @@ export const RISE: ChapterDef = {
           },
           { who: "bao-xin", text: "제북상 포신, 연주의 관리들과 함께 맹덕을 연주목으로 맞이하오." },
           { who: "cao-cao", text: "연주를 지키겠소. 황건을 막지 못하면 연주는 끝이오." },
-        ],
+        ]),
         joins: [
           { officer: "chen-gong", classId: "strategist", level: 11, gear: ["feather-fan", "robe"] },
         ],
@@ -941,7 +944,7 @@ export const RISE: ChapterDef = {
         place: "연주",
         when: "초평 3년(192) 겨울",
         backdrop: "dawn",
-        lines: [
+        ...staged("dawn", [
           {
             text: "수장의 싸움에서 포신은 조조를 구하려다 목숨을 잃었다. 그의 시신은 끝내 찾지 못했다.",
           },
@@ -967,7 +970,7 @@ export const RISE: ChapterDef = {
             text: "이듬해, 조조의 아버지 조숭이 서주 땅에서 목숨을 잃는다. 연주의 주인이 된 조조 앞에 새로운 싸움이 기다리고 있었다.",
           },
           { text: "1장 황건의 난 · 끝" },
-        ],
+        ]),
         joins: [
           { officer: "yu-jin", classId: "infantry", level: 12, gear: ["iron-ji", "lamellar"] },
         ],

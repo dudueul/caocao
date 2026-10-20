@@ -21,7 +21,7 @@ export function goalMet(state: BattleState, goal: Goal): boolean {
     case "reach":
       return w.cells.some((c) => {
         const u = unitAt(state, c.x, c.y);
-        return u !== undefined && u.side === w.side;
+        return u !== undefined && u.side === w.side && (!w.units || w.units.includes(u.id));
       });
   }
 }

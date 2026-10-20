@@ -317,8 +317,11 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 | Conditions | stacks count down at the end of the bearer's turn (§10); 혼란 lets the unit only wait in place and stops its counters |
 | HP / MP | max HP = class HP + 통솔 + 4 × level; max MP = class MP + ⌊지력/2⌋ |
 | Victory | the last side with living units wins; passing the round limit is a draw |
-| Goals | a battle may list goals `{ side, when }` checked in order after every action and at each round start: **defeat** named units, **hold** until a round begins, **reach** a tile; the first one met decides the battle ([ADR 0047](../adr/0047-battle-goals-and-arrivals.md)) |
+| Goals | a battle may list goals `{ side, when }` checked in order after every action and at each round start: **defeat** named units, **hold** until a round begins, **reach** a tile (only by the units it names, if it names any: 조조's escapes at 복양 and 완성); the first one met decides the battle ([ADR 0047](../adr/0047-battle-goals-and-arrivals.md), [ADR 0062](../adr/0062-map-shifts.md)) |
 | Arrivals | reserve units join at the start of their round, on their tile or the nearest free one they can stand on; a routed side is not saved by its reserve |
+| Map shifts | a battle may list shifts: tile changes set off when a round begins (from round 2) or when a unit of a side (one of its named units, if any) stands on a trigger tile; checked after every action and after arrivals; water puts out fire; units left on ground they can't stand on are swept to the nearest tile they can, losing the shift's `damage`‰ of max HP but never the last point; events `shifted`, then `swept` ([ADR 0062](../adr/0062-map-shifts.md)) |
+| Fire at the start | a battle may begin with tiles already burning, for a number of rounds |
+| State format | `BattleState` version 4 (shifts); 3 added goals and arrivals, 2 conditions |
 
 ## 8. Modes
 
@@ -330,7 +333,7 @@ in Raids ([ADR 0029](../adr/0029-benchmark-lessons-adopted.md)).
 |---|---|
 | Sandbox | 오소 습격 scenario, side phases (or alternating), the AI with scenario orders ([ADR 0034](../adr/0034-scenario-ai-orders.md)) |
 | Arena | snake draft of 6 officers each from a 16-officer pool, all Lv 20 with fixed tier-1 classes; mirrored 14 × 12 field; alternating activations; 45 s per activation + 3 min reserve, then the AI plays it; round limit 20, then a draw ([ADR 0039](../adr/0039-arena-draft.md)–[ADR 0041](../adr/0041-p1-arena-defaults.md)) |
-| Story | chapter battles with goals and arrivals, side phases, the roster's levels and gear, tier-2 classes from Lv 20 ([STORY.md](STORY.md), [ADR 0047](../adr/0047-battle-goals-and-arrivals.md)–[ADR 0050](../adr/0050-equipment-and-shop.md)) |
+| Story | chapter battles with goals, arrivals and map shifts, side phases, the roster's levels and gear, tier-2 classes from Lv 20; units, goals, shifts and talk can depend on story flags ([STORY.md](STORY.md), [ADR 0047](../adr/0047-battle-goals-and-arrivals.md)–[ADR 0050](../adr/0050-equipment-and-shop.md), [ADR 0060](../adr/0060-story-choices-and-flags.md)–[ADR 0062](../adr/0062-map-shifts.md)) |
 
 No mode overrides tuning yet.
 

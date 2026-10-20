@@ -5,11 +5,24 @@
  */
 import { type BattleMap, type Cell, canonical, type Ruleset, type TerrainId } from "@tk/rules";
 import { GROWTH, PROMOTIONS } from "./classes.ts";
+import { holds } from "./flags.ts";
 import { GEAR, ITEMS } from "./items.ts";
 import { parseMap } from "./maps.ts";
 import { OFFICERS } from "./officers.ts";
 import type { ScenarioDef, ScenarioUnit } from "./scenarios.ts";
-import type { ChapterDef, JoinDef, Line, StoryBattleDef } from "./story.ts";
+import { parseStage, type StageGrid, walkable } from "./stage.ts";
+import type {
+  Actor,
+  CampDef,
+  ChapterDef,
+  Cmd,
+  Cond,
+  JoinDef,
+  Line,
+  SceneDef,
+  StageDef,
+  StoryBattleDef,
+} from "./story.ts";
 import { TERRAIN_IDS } from "./terrain.ts";
 
 const isPositive = (n: number) => Number.isSafeInteger(n) && n > 0;
@@ -185,73 +198,371 @@ export function fits(rules: Ruleset, classId: string, itemId: string): boolean {
     : gear.armour.some((k) => k === item.kind);
 }
 
-/**
- * A story chapter, walked step by step with the roster it would have at each
- * point: maps, slots, units, goals, talk, rewards, shops and roster changes.
- */
-export function validateChapter(rules: Ruleset, ch: ChapterDef): string[] {
-  const problems: string[] = [];
-  const roster = new Set<string>();
-  const checkJoin = (j: JoinDef, where: string) => {
-    if (!OFFICERS[j.officer] || OFFICERS[j.officer]?.generic)
-      problems.push(`${where}: unknown officer ${j.officer}`);
-    if (!rules.classes[j.classId]) problems.push(`${where}: unknown class ${j.classId}`);
-    if (!isPositive(j.level)) problems.push(`${where}: level must be > 0`);
-    for (const g of j.gear ?? [])
-      if (!fits(rules, j.classId, g)) problems.push(`${where}: ${j.officer} can't use ${g}`);
-    if (roster.has(j.officer)) problems.push(`${where}: ${j.officer} is already in the roster`);
-    roster.add(j.officer);
+/** Flag names and values: short lowercase words, as saves require. */
+const FLAG_TEXT = /^[a-z0-9-]{1,40}$/;
+
+type Flags = Record<string, string>;
+
+/** Every value each flag can take, from the choices, fates and assumptions of these chapters. */
+export function flagDomains(chapters: readonly ChapterDef[]): Map<string, Set<string>> {
+  const out = new Map<string, Set<string>>();
+  const add = (flag: string, value: string) => {
+    const set = out.get(flag) ?? new Set<string>();
+    out.set(flag, set);
+    set.add(value);
   };
-  const checkLines = (lines: readonly Line[], where: string) => {
-    if (lines.length === 0) problems.push(`${where}: no lines`);
-    for (const l of lines) {
-      if (l.who !== undefined && !OFFICERS[l.who])
-        problems.push(`${where}: unknown speaker ${l.who}`);
-      if (l.text.trim() === "") problems.push(`${where}: empty line`);
+  const visit = (cmds: readonly Cmd[]) => {
+    for (const c of cmds) {
+      if (c.do === "all") visit(c.cmds);
+      else if (c.do === "choice") for (const o of c.options) add(c.flag, o.value);
     }
   };
-  for (const j of ch.roster) checkJoin(j, `chapter ${ch.id} roster`);
-  if (!isPositive(ch.number)) problems.push(`chapter ${ch.id}: number must be > 0`);
-  if (!isPositive(ch.floor)) problems.push(`chapter ${ch.id}: floor must be > 0`);
+  for (const ch of chapters) {
+    for (const [k, v] of Object.entries(ch.assumes ?? {})) add(k, v);
+    for (const step of ch.steps) {
+      if (step.kind === "scene") visit(step.scene.script);
+      if (step.kind === "battle")
+        for (const f of step.battle.fates ?? []) {
+          add(f.flag, f.standing);
+          add(f.flag, f.fallen);
+        }
+    }
+  }
+  return out;
+}
+
+/** Every condition anywhere in a chapter. */
+function chapterConds(ch: ChapterDef): Cond[] {
+  const out: Cond[] = [];
+  const push = (c: Cond | undefined) => {
+    if (c) out.push(c);
+  };
+  const visit = (cmds: readonly Cmd[]) => {
+    for (const c of cmds) {
+      push(c.if);
+      if (c.do === "all") visit(c.cmds);
+    }
+  };
+  for (const j of ch.roster) push(j.if);
+  for (const step of ch.steps) {
+    push(step.if);
+    if (step.kind === "scene") {
+      const sc = step.scene;
+      visit(sc.script);
+      for (const a of sc.cast) push(a.if);
+      for (const j of sc.joins ?? []) push(j.if);
+      for (const l of sc.leaves ?? []) if (typeof l !== "string") push(l.if);
+    } else if (step.kind === "battle") {
+      const b = step.battle;
+      for (const u of [...b.guests, ...b.enemies]) push(u.if);
+      for (const g of b.goals) push(g.if);
+      for (const sh of b.shifts ?? []) push(sh.if);
+      for (const t of b.talk) push(t.if);
+    } else {
+      for (const t of step.camp.talk ?? []) push(t.if);
+    }
+  }
+  return out;
+}
+
+/**
+ * The flag values a chapter can be played with: one assignment per path
+ * through its choices and fates, and through the flags it tests from the
+ * chapters before. A flag the chapter sets takes its path value when set.
+ */
+function chapterPaths(ch: ChapterDef, domains: Map<string, Set<string>>): Flags[] {
+  const own = flagDomains([{ ...ch, assumes: {} }]);
+  const tested = new Set(chapterConds(ch).map((c) => c.flag));
+  const names = [...new Set([...own.keys(), ...tested])].sort();
+  let paths: Flags[] = [{}];
+  for (const name of names) {
+    const values = [...(own.get(name) ?? domains.get(name) ?? new Set<string>())];
+    const assumed = ch.assumes?.[name];
+    if (!own.has(name) && assumed === undefined) values.push(""); // unset
+    const next: Flags[] = [];
+    for (const p of paths)
+      for (const v of values.length > 0 ? values : [""]) next.push({ ...p, [name]: v });
+    paths = next;
+  }
+  return paths;
+}
+
+const inStage = (g: StageGrid, c: Cell) => c.x >= 0 && c.y >= 0 && c.x < g.width && c.y < g.height;
+
+function checkLine(l: Line, say: (p: string) => void) {
+  if (l.who !== undefined && !OFFICERS[l.who]) say(`unknown speaker ${l.who}`);
+  if (l.text.trim() === "") say("empty line");
+}
+
+/** A stage's rows and props; returns its grid when it parses. */
+function checkStage(stage: StageDef, say: (p: string) => void): StageGrid | null {
+  let grid: StageGrid;
+  try {
+    grid = parseStage(stage);
+  } catch (e) {
+    say((e as Error).message);
+    return null;
+  }
+  for (const p of stage.props ?? [])
+    if (!inStage(grid, p.at)) say(`prop ${p.kind} is off the stage`);
+  return grid;
+}
+
+/** The stage, cast and script of a scene, whatever the flags. */
+function checkScene(rules: Ruleset, sc: SceneDef, say: (p: string) => void) {
+  const grid = checkStage(sc.stage, say);
+  if (!grid) return;
+  const cast = new Map<string, Actor>();
+  const starts = new Set<string>();
+  for (const a of sc.cast) {
+    if (cast.has(a.id)) say(`actor ${a.id} cast twice`);
+    cast.set(a.id, a);
+    if (!OFFICERS[a.officer ?? a.id]) say(`actor ${a.id}: unknown officer ${a.officer ?? a.id}`);
+    if (a.classId !== undefined && !rules.classes[a.classId]) say(`actor ${a.id}: unknown class`);
+    if (a.at) {
+      if (!walkable(sc.stage, grid, a.at)) say(`actor ${a.id} starts on a blocked tile`);
+      const key = `${a.at.x},${a.at.y}`;
+      if (!a.if && starts.has(key)) say(`two actors start on ${key}`);
+      if (!a.if) starts.add(key);
+    }
+  }
+  const who = (id: string) => {
+    if (!cast.has(id)) say(`script names ${id}, who is not in the cast`);
+  };
+  const open = (c: Cell, what: string) => {
+    if (!inStage(grid, c)) say(`${what} ${c.x},${c.y} is off the stage`);
+    else if (!walkable(sc.stage, grid, c)) say(`${what} ${c.x},${c.y} is blocked`);
+  };
+  let lines = 0;
+  const visit = (cmds: readonly Cmd[]) => {
+    for (const c of cmds) {
+      if (c.if && !FLAG_TEXT.test(c.if.flag)) say(`bad flag name ${c.if.flag}`);
+      switch (c.do) {
+        case "say":
+          lines += 1;
+          checkLine(c.line, say);
+          break;
+        case "walk":
+          who(c.who);
+          open(c.to, "walk to");
+          break;
+        case "enter":
+          who(c.who);
+          if (!inStage(grid, c.from)) say(`enter from ${c.from.x},${c.from.y} is off the stage`);
+          open(c.to, "enter to");
+          break;
+        case "leave":
+          who(c.who);
+          if (!inStage(grid, c.to)) say(`leave to ${c.to.x},${c.to.y} is off the stage`);
+          break;
+        case "place":
+          who(c.who);
+          open(c.at, "place at");
+          break;
+        case "remove":
+        case "emote":
+        case "act":
+          who(c.who);
+          break;
+        case "face":
+          who(c.who);
+          if (!["up", "down", "left", "right"].includes(c.to)) who(c.to);
+          break;
+        case "strike":
+          who(c.who);
+          who(c.target);
+          break;
+        case "camera":
+          if (typeof c.at === "string") who(c.at);
+          else if (!inStage(grid, c.at)) say("camera off the stage");
+          if (c.zoom !== undefined && !(isPositive(c.zoom) && c.zoom <= 3000))
+            say("camera zoom must be 1–3000‰");
+          break;
+        case "wait":
+          if (!Number.isSafeInteger(c.ms) || c.ms < 0 || c.ms > 10_000)
+            say("wait must be 0–10000 ms");
+          break;
+        case "sound":
+          if (c.sfx === "") say("empty sound");
+          break;
+        case "fx":
+          if (typeof c.at === "string") who(c.at);
+          else if (c.at && !inStage(grid, c.at)) say("fx off the stage");
+          break;
+        case "fire":
+          for (const f of c.cells) if (!inStage(grid, f)) say("fire off the stage");
+          break;
+        case "tiles":
+          for (const t of c.tiles) {
+            if (!inStage(grid, t)) say("tile change off the stage");
+            if (!(TERRAIN_IDS as readonly string[]).includes(t.terrain))
+              say(`unknown terrain ${t.terrain}`);
+          }
+          break;
+        case "light":
+          break;
+        case "choice": {
+          if (!FLAG_TEXT.test(c.flag)) say(`bad flag name ${c.flag}`);
+          if (c.prompt.trim() === "") say("choice without a prompt");
+          if (c.options.length < 2) say(`choice ${c.flag} needs two options`);
+          const values = new Set<string>();
+          for (const o of c.options) {
+            if (!FLAG_TEXT.test(o.value)) say(`bad choice value ${o.value}`);
+            if (values.has(o.value)) say(`choice ${c.flag}: ${o.value} twice`);
+            values.add(o.value);
+            if (o.text.trim() === "") say(`choice ${c.flag}: empty option`);
+            if (o.gold !== undefined && !isPositive(o.gold))
+              say(`choice ${c.flag}: gold must be > 0`);
+            for (const id of o.items ?? [])
+              if (!ITEMS[id]) say(`choice ${c.flag}: unknown item ${id}`);
+          }
+          break;
+        }
+        case "all":
+          visit(c.cmds);
+          break;
+      }
+    }
+  };
+  visit(sc.script);
+  if (lines === 0) say("no lines");
+}
+
+/** The camp's ground, shop and talk. */
+function checkCamp(camp: CampDef, say: (p: string) => void) {
+  for (const id of camp.shop) if (!ITEMS[id]) say(`unknown item ${id}`);
+  const g = camp.ground;
+  const grid = checkStage(g.stage, say);
+  if (grid) {
+    const open = (c: Cell, what: string) => {
+      if (!walkable(g.stage, grid, c)) say(`${what} ${c.x},${c.y} is blocked or off the ground`);
+    };
+    open(g.start, "start");
+    for (const st of g.stations) open(st.at, st.kind);
+    for (const c of g.spots) open(c, "spot");
+  }
+  const kinds = g.stations.map((st) => st.kind);
+  if (new Set(kinds).size !== kinds.length) say("a station kind is used twice");
+  if (!kinds.includes("council")) say("no council tent to leave the camp by");
+  for (const t of camp.talk ?? []) {
+    if (!OFFICERS[t.officer]) say(`talk for unknown officer ${t.officer}`);
+    if (t.lines.length === 0) say(`talk for ${t.officer} has no lines`);
+    for (const l of t.lines) checkLine(l, say);
+  }
+}
+
+/**
+ * A story chapter, walked step by step along every path its flags allow, with
+ * the roster it would have at each point: maps, stages, slots, units, goals,
+ * talk, rewards, shops and roster changes. `domains` gives the values of flags
+ * set by other chapters (see `flagDomains`).
+ */
+export function validateChapter(
+  rules: Ruleset,
+  ch: ChapterDef,
+  domains: Map<string, Set<string>> = flagDomains([ch]),
+): string[] {
+  const problems = new Set<string>();
+  const add = (p: string) => problems.add(p);
+  if (!isPositive(ch.number)) add(`chapter ${ch.id}: number must be > 0`);
+  if (!isPositive(ch.floor)) add(`chapter ${ch.id}: floor must be > 0`);
   for (const j of ch.roster)
-    if (j.level < ch.floor) problems.push(`chapter ${ch.id}: ${j.officer} starts below the floor`);
+    if (j.level < ch.floor) add(`chapter ${ch.id}: ${j.officer} starts below the floor`);
+  for (const [k, v] of Object.entries(ch.assumes ?? {}))
+    if (!FLAG_TEXT.test(k) || !FLAG_TEXT.test(v)) add(`chapter ${ch.id}: bad assumed flag ${k}`);
+  // Path-independent checks, once per step.
   const ids = new Set<string>();
   for (const step of ch.steps) {
     if (step.kind === "scene") {
-      const sc = step.scene;
-      const where = `scene ${sc.id}`;
-      if (ids.has(sc.id)) problems.push(`${where}: id used twice`);
-      ids.add(sc.id);
-      checkLines(sc.lines, where);
-      for (const id of sc.leaves ?? []) {
-        if (!roster.has(id)) problems.push(`${where}: ${id} leaves but is not in the roster`);
-        roster.delete(id);
-      }
-      for (const j of sc.joins ?? []) checkJoin(j, where);
+      const where = `scene ${step.scene.id}`;
+      if (ids.has(step.scene.id)) add(`${where}: id used twice`);
+      ids.add(step.scene.id);
+      checkScene(rules, step.scene, (p) => add(`${where}: ${p}`));
     } else if (step.kind === "camp") {
-      for (const id of step.camp.shop)
-        if (!ITEMS[id]) problems.push(`camp ${step.camp.id}: unknown item ${id}`);
+      checkCamp(step.camp, (p) => add(`camp ${step.camp.id}: ${p}`));
     } else {
-      problems.push(...validateStoryBattle(rules, step.battle, roster));
-      if (ids.has(step.battle.id)) problems.push(`battle ${step.battle.id}: id used twice`);
+      if (ids.has(step.battle.id)) add(`battle ${step.battle.id}: id used twice`);
       ids.add(step.battle.id);
     }
   }
-  return problems;
+  // Roster-dependent checks along every path.
+  for (const path of chapterPaths(ch, domains)) {
+    const flags: Flags = {};
+    for (const [k, v] of Object.entries(ch.assumes ?? {})) flags[k] = v;
+    const own = flagDomains([{ ...ch, assumes: {} }]);
+    for (const [k, v] of Object.entries(path)) if (!own.has(k) && v !== "") flags[k] = v;
+    const roster = new Set<string>();
+    const checkJoin = (j: JoinDef, where: string) => {
+      if (!holds(j.if, flags)) return;
+      if (!OFFICERS[j.officer] || OFFICERS[j.officer]?.generic)
+        add(`${where}: unknown officer ${j.officer}`);
+      if (!rules.classes[j.classId]) add(`${where}: unknown class ${j.classId}`);
+      if (!isPositive(j.level)) add(`${where}: level must be > 0`);
+      for (const g of j.gear ?? [])
+        if (!fits(rules, j.classId, g)) add(`${where}: ${j.officer} can't use ${g}`);
+      if (roster.has(j.officer)) add(`${where}: ${j.officer} is already in the roster`);
+      roster.add(j.officer);
+    };
+    for (const j of ch.roster) checkJoin(j, `chapter ${ch.id} roster`);
+    for (const step of ch.steps) {
+      if (!holds(step.if, flags)) continue;
+      if (step.kind === "scene") {
+        const sc = step.scene;
+        const where = `scene ${sc.id}`;
+        const visit = (cmds: readonly Cmd[]) => {
+          for (const c of cmds) {
+            if (!holds(c.if, flags)) continue;
+            if (c.do === "all") visit(c.cmds);
+            else if (c.do === "choice") {
+              const v = path[c.flag];
+              flags[c.flag] =
+                v && c.options.some((o) => o.value === v) ? v : (c.options[0]?.value ?? "");
+            }
+          }
+        };
+        visit(sc.script);
+        for (const l of sc.leaves ?? []) {
+          if (typeof l !== "string" && !holds(l.if, flags)) continue;
+          const id = typeof l === "string" ? l : l.officer;
+          // Leaving someone not in the roster only marks them gone (장료 at 백문루).
+          if (!OFFICERS[id] || OFFICERS[id]?.generic) add(`${where}: unknown officer ${id} leaves`);
+          roster.delete(id);
+        }
+        for (const j of sc.joins ?? []) checkJoin(j, where);
+      } else if (step.kind === "battle") {
+        const b = step.battle;
+        for (const p of validateStoryBattle(rules, b, roster, flags)) add(p);
+        for (const f of b.fates ?? []) {
+          const v = path[f.flag];
+          flags[f.flag] = v === f.standing || v === f.fallen ? v : f.standing;
+        }
+      } else {
+        for (const t of step.camp.talk ?? [])
+          if (holds(t.if, flags) && !roster.has(t.officer) && t.officer !== "cao-cao")
+            add(`camp ${step.camp.id}: talk for ${t.officer}, who is not in the roster`);
+      }
+    }
+  }
+  return [...problems];
 }
 
 function validateStoryBattle(
   rules: Ruleset,
   b: StoryBattleDef,
   roster: ReadonlySet<string>,
+  flags: Readonly<Record<string, string>> = {},
 ): string[] {
   const problems: string[] = [];
   const say = (p: string) => problems.push(`battle ${b.id}: ${p}`);
-  const units: ScenarioUnit[] = [...b.guests, ...b.enemies];
+  const units: ScenarioUnit[] = [...b.guests, ...b.enemies]
+    .filter((u) => holds(u.if, flags))
+    .map(({ if: _, ...u }) => u);
+  const guests = b.guests.filter((u) => holds(u.if, flags));
+  const goals = b.goals.filter((g) => holds(g.if, flags));
   // Roster officers fill the slots later; stand one in for side 0 if no guest does.
   const first = b.slots[0];
   const standIn: ScenarioUnit[] =
-    b.guests.length > 0 || !first
+    guests.length > 0 || !first
       ? []
       : [{ officer: "cao-cao", classId: "infantry", level: 1, side: 0, x: first.x, y: first.y }];
   problems.push(
@@ -286,19 +597,49 @@ function validateStoryBattle(
   }
   for (const id of b.required) if (!roster.has(id)) say(`required ${id} is not in the roster`);
   const known = new Set([...roster, ...units.map((u) => u.id ?? u.officer)]);
-  for (const g of b.goals) {
+  const inMap = (c: Cell) => c.x >= 0 && c.y >= 0 && c.x < map.width && c.y < map.height;
+  for (const g of goals) {
     if (g.when.kind === "defeat")
       for (const id of g.when.units) if (!known.has(id)) say(`goal names unknown unit ${id}`);
     if (g.when.kind === "hold" && g.when.round > b.roundLimit + 1)
       say("hold goal is past the round limit");
+    if (g.when.kind === "reach")
+      for (const c of g.when.cells) if (!inMap(c)) say("goal tile off the map");
   }
-  if (!b.goals.some((g) => g.side === 0)) say("needs a goal for the player");
-  for (const t of b.talk) {
+  if (!goals.some((g) => g.side === 0)) say("needs a goal for the player");
+  const shiftIds = new Set<string>();
+  for (const sh of (b.shifts ?? []).filter((x) => holds(x.if, flags))) {
+    if (shiftIds.has(sh.id)) say(`shift ${sh.id} twice`);
+    shiftIds.add(sh.id);
+    if (!isPermille(sh.damage)) say(`shift ${sh.id}: damage must be 0–1000‰`);
+    if (sh.tiles.length === 0) say(`shift ${sh.id} changes nothing`);
+    for (const t of sh.tiles) {
+      if (!inMap(t)) say(`shift ${sh.id}: tile off the map`);
+      if (!(TERRAIN_IDS as readonly string[]).includes(t.terrain))
+        say(`shift ${sh.id}: unknown terrain`);
+    }
+    const w = sh.when;
+    if (w.kind === "reach") {
+      for (const c of w.cells) if (!inMap(c)) say(`shift ${sh.id}: trigger off the map`);
+    } else if (w.round < 2 || w.round > b.roundLimit) {
+      say(`shift ${sh.id}: round out of range`);
+    }
+  }
+  for (const c of b.marks ?? []) if (!inMap(c)) say("mark off the map");
+  for (const f of b.fates ?? []) {
+    if (!known.has(f.unit)) say(`fate names unknown unit ${f.unit}`);
+    if (!FLAG_TEXT.test(f.flag) || !FLAG_TEXT.test(f.standing) || !FLAG_TEXT.test(f.fallen))
+      say(`fate ${f.flag}: bad flag text`);
+    if (f.standing === f.fallen) say(`fate ${f.flag}: both outcomes are the same`);
+  }
+  for (const t of b.talk.filter((x) => holds(x.if, flags))) {
     const w = t.when;
     if ((w.at === "defeated" || w.at === "arrived") && !known.has(w.unit))
       say(`talk names unknown unit ${w.unit}`);
     if (w.at === "arrived" && !units.some((u) => (u.id ?? u.officer) === w.unit && u.arrives))
       say(`talk waits for ${w.unit}, who never arrives`);
+    if (w.at === "shifted" && !(b.shifts ?? []).some((sh) => sh.id === w.shift))
+      say(`talk waits for shift ${w.shift}, which does not exist`);
     for (const l of t.lines)
       if (l.who !== undefined && !OFFICERS[l.who]) say(`unknown speaker ${l.who}`);
   }

@@ -21,16 +21,19 @@ import { bringArrivals, endByGoal } from "./goals.ts";
 import { permille } from "./math.ts";
 import { canReach, reachable } from "./move.ts";
 import { Prng, seedFromString } from "./prng.ts";
+import { checkShifts, fireShifts } from "./shifts.ts";
 import { canCast, castStratagem, stratagemDef } from "./stratagem.ts";
 import { forMode } from "./tuning.ts";
 import type {
   BattleEvent,
   BattleMap,
   BattleState,
+  BurningTile,
   Command,
   Goal,
   ModeId,
   Ruleset,
+  Shift,
   Stats,
   TurnPolicyId,
   Unit,
@@ -63,6 +66,10 @@ export interface BattleSetup {
   units: UnitSetup[];
   /** Ways to win besides routing every enemy (ADR 0047). */
   goals?: Goal[];
+  /** Map changes during the battle: floods, opened gates (ADR 0062). */
+  shifts?: Shift[];
+  /** Tiles already on fire when the battle begins (복양's burning streets, ADR 0062). */
+  burning?: BurningTile[];
 }
 
 export type ApplyResult =
@@ -133,7 +140,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
   }
   const sides = Math.max(...all.map((u) => u.side)) + 1;
   const state: BattleState = {
-    version: 3,
+    version: 4,
     mode,
     map: { width: setup.map.width, height: setup.map.height, tiles: [...setup.map.tiles] },
     weather: setup.weather,
@@ -146,9 +153,22 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
     burning: [],
     goals,
     reserve,
+    shifts: [],
     prng: seedFromString(setup.seed),
     winner: null,
   };
+  const shifts = (setup.shifts ?? []).map((sh) => structuredClone(sh));
+  checkShifts(state, rules, shifts);
+  state.shifts = shifts;
+  const fire = new Map<number, BurningTile>();
+  for (const b of setup.burning ?? []) {
+    if (b.x < 0 || b.y < 0 || b.x >= setup.map.width || b.y >= setup.map.height)
+      throw new Error("a burning tile is off the map");
+    if (!Number.isSafeInteger(b.rounds) || b.rounds < 1)
+      throw new Error("fire must burn ≥ 1 round");
+    fire.set(b.y * setup.map.width + b.x, { x: b.x, y: b.y, rounds: b.rounds });
+  }
+  state.burning = [...fire.entries()].sort((a, b) => a[0] - b[0]).map(([, b]) => b);
   state.active = firstSideOfRound(state);
   return state;
 }
@@ -281,6 +301,7 @@ function validateAct(
 
 /** After an action: end the battle, or pass the turn per the turn policy. */
 function advance(state: BattleState, rules: Ruleset, prng: Prng, events: BattleEvent[]): void {
+  fireShifts(state, rules, events);
   if (endByGoal(state, events)) return;
   const living = livingSides(state);
   if (living.length <= 1) {
@@ -331,6 +352,8 @@ function newRound(state: BattleState, rules: Ruleset, prng: Prng, events: Battle
   state.burning = state.burning.filter((b) => b.rounds > 0);
   if (endByGoal(state, events)) return;
   bringArrivals(state, rules, events);
+  fireShifts(state, rules, events);
+  if (endByGoal(state, events)) return;
   const living = livingSides(state);
   if (living.length <= 1) {
     state.winner = living[0] ?? -1;

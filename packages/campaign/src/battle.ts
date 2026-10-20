@@ -4,11 +4,13 @@
  * `settle` pays out experience, gold and items once the battle is won.
  */
 import {
+  holds,
   ITEMS,
   P0_RULES,
   parseMap,
   type ScenarioUnit,
   type StoryBattleDef,
+  type StoryUnit,
   scenarioOrders,
   unitSetup,
 } from "@tk/content";
@@ -19,10 +21,11 @@ import type {
   Gambit,
   Goal,
   Ruleset,
+  Shift,
   Stats,
   UnitSetup,
 } from "@tk/rules";
-import { currentStep } from "./flow.ts";
+import { currentStep, stepOn } from "./flow.ts";
 import { battleProfile } from "./gear.ts";
 import { gainExp, type Ledger, type LevelUp, promotionFor, type StatGains } from "./progression.ts";
 import { PROGRESSION } from "./tuning.ts";
@@ -70,6 +73,27 @@ export function checkSortie(
   return null;
 }
 
+type Flags = Readonly<Record<string, string>>;
+
+/** The guests and enemies this battle has with these flags, without their conditions. */
+export function battleUnits(b: StoryBattleDef, flags: Flags): ScenarioUnit[] {
+  return [...b.guests, ...b.enemies]
+    .filter((u) => holds(u.if, flags))
+    .map(({ if: _, ...u }: StoryUnit) => u);
+}
+
+/** The goals and map shifts this battle has with these flags. */
+export function battleRules(b: StoryBattleDef, flags: Flags): { goals: Goal[]; shifts: Shift[] } {
+  return {
+    goals: b.goals
+      .filter((g) => holds(g.if, flags))
+      .map(({ if: _, ...g }) => structuredClone(g) as Goal),
+    shifts: (b.shifts ?? [])
+      .filter((sh) => holds(sh.if, flags))
+      .map(({ if: _, ...sh }) => structuredClone(sh) as Shift),
+  };
+}
+
 /** The battle setup for a sortie: roster officers with their gear, the guests and the enemy. */
 export function storySetup(
   state: CampaignState,
@@ -89,9 +113,8 @@ export function storySetup(
     );
     return { ...setup, stats: prof.stats, atkBonus: prof.atkBonus, defBonus: prof.defBonus };
   });
-  const others = [...b.guests, ...b.enemies].map((u: ScenarioUnit) =>
-    unitSetup(u, `battle ${b.id}`),
-  );
+  const others = battleUnits(b, state.flags).map((u) => unitSetup(u, `battle ${b.id}`));
+  const { goals, shifts } = battleRules(b, state.flags);
   return {
     mode: "story",
     map: parseMap(b.map),
@@ -100,13 +123,18 @@ export function storySetup(
     roundLimit: b.roundLimit,
     seed,
     units: [...mine, ...others],
-    goals: structuredClone(b.goals) as Goal[],
+    goals,
+    shifts,
+    burning: (b.burning ?? []).map((t) => ({ ...t })),
   };
 }
 
 /** AI orders for the enemy and the guests. */
-export function storyOrders(b: StoryBattleDef): Record<string, readonly Gambit[]> {
-  return scenarioOrders({ units: [...b.guests, ...b.enemies] });
+export function storyOrders(
+  b: StoryBattleDef,
+  flags: Flags = {},
+): Record<string, readonly Gambit[]> {
+  return scenarioOrders({ units: battleUnits(b, flags) });
 }
 
 export interface OfficerReport {
@@ -122,10 +150,14 @@ export interface OfficerReport {
 }
 
 export interface BattleReport {
+  /** The battle's id. */
+  battle: string;
   won: boolean;
   gold: number;
   items: string[];
   officers: OfficerReport[];
+  /** Fates the battle decided (ADR 0061), flag → value. */
+  fates: Record<string, string>;
 }
 
 /**
@@ -141,7 +173,8 @@ export function settle(
   ledger: Ledger,
 ): { state: CampaignState; report: BattleReport } {
   const won = final.winner === 0;
-  if (!won) return { state, report: { won, gold: 0, items: [], officers: [] } };
+  if (!won)
+    return { state, report: { battle: b.id, won, gold: 0, items: [], officers: [], fates: {} } };
   const next = structuredClone(state);
   const officers: OfficerReport[] = [];
   for (const p of sortie) {
@@ -172,10 +205,22 @@ export function settle(
   for (const id of b.rewards.items)
     if (ITEMS[id]) next.inventory[id] = (next.inventory[id] ?? 0) + 1;
   if (!next.cleared.includes(b.id)) next.cleared.push(b.id);
-  next.step += 1;
+  const fates: Record<string, string> = {};
+  for (const f of b.fates ?? []) {
+    const u = final.units.find((v) => v.id === f.unit);
+    fates[f.flag] = u !== undefined && u.hp > 0 ? f.standing : f.fallen;
+  }
+  Object.assign(next.flags, fates);
   return {
-    state: next,
-    report: { won, gold: b.rewards.gold, items: [...b.rewards.items], officers },
+    state: stepOn(next),
+    report: {
+      battle: b.id,
+      won,
+      gold: b.rewards.gold,
+      items: [...b.rewards.items],
+      officers,
+      fates,
+    },
   };
 }
 

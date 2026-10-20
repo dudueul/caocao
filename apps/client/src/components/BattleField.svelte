@@ -33,9 +33,16 @@ const view = $derived.by<OverlayView>(() => {
     ready,
     ghost: s.selected && s.to ? { id: s.selected, to: s.to } : null,
     selected: s.to ?? (s.unit && s.unit.hp > 0 ? { x: s.unit.x, y: s.unit.y } : null),
-    goals: s.state.goals.flatMap((g) =>
-      g.side === s.humanSide && g.when.kind === "reach" ? g.when.cells : [],
-    ),
+    goals: [
+      ...s.state.goals.flatMap((g) =>
+        g.side === s.humanSide && g.when.kind === "reach" ? g.when.cells : [],
+      ),
+      // Tiles that set off a map change for us: the sluice at 하비 (ADR 0062).
+      ...s.state.shifts.flatMap((sh) =>
+        sh.when.kind === "reach" && sh.when.side === s.humanSide ? sh.when.cells : [],
+      ),
+      ...(s.story?.marks ?? []),
+    ],
   };
 });
 

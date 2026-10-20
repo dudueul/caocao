@@ -142,7 +142,8 @@ no wall-clock time. Golden-replay tests run in CI.
 | `conditions.ts` | Condition stacks ([0035](../adr/0035-stacking-conditions-rolled-durations.md)): discounted stacking, rolled durations, blocks, ATK/DEF/hit/move modifiers, damage over time, end-of-turn countdown |
 | `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects (healing, burning), victory |
 | `goals.ts` | Goals (defeat, hold, reach) checked in order, reserve units arriving on a round at the nearest free tile ([0047](../adr/0047-battle-goals-and-arrivals.md)) |
-| `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); the approach pull follows a movement-cost field to the nearest attack position, so units route around rivers and walls; casts that achieve nothing are never chosen, and MP has a cost; `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)) |
+| `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); the approach pull follows a movement-cost field to the nearest attack position, so units route around rivers and walls; casts that achieve nothing are never chosen, and MP has a cost; `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)); one runner per side heads for reach goals and shift triggers ([0062](../adr/0062-map-shifts.md)) |
+| `goals.ts`, `shifts.ts` | Battle goals and arrivals ([0047](../adr/0047-battle-goals-and-arrivals.md)); map shifts that change tiles on a round or a reached tile and sweep units to dry land ([0062](../adr/0062-map-shifts.md)) |
 | `sim.ts` | `runBattle()` (AI vs AI), `replay()` (command-log verification) |
 | `prng.ts`, `hash.ts`, `math.ts`, `tuning.ts` | Seeded sfc32, canonical hash, integer helpers, default tuning, `forMode()`, `triangleRelations()` |
 
