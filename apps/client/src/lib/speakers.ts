@@ -14,7 +14,11 @@ for (const ch of Object.values(CHAPTERS)) {
       for (const j of step.scene.joins ?? [])
         if (!HOME.has(j.officer)) HOME.set(j.officer, { side: 0, classId: j.classId });
     if (step.kind === "battle")
-      for (const u of [...step.battle.guests, ...step.battle.enemies])
+      for (const u of [
+        ...step.battle.guests,
+        ...(step.battle.allies ?? []),
+        ...step.battle.enemies,
+      ])
         if (!HOME.has(u.officer)) HOME.set(u.officer, { side: u.side, classId: u.classId });
   }
 }

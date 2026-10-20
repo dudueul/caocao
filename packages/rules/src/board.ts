@@ -66,6 +66,29 @@ export function livingSides(state: BattleState): number[] {
   return sides.sort((a, b) => a - b);
 }
 
+/** Are sides `a` and `b` on one team (ADR 0066)? A side is always its own friend. */
+export function friendly(state: BattleState, a: number, b: number): boolean {
+  return a === b || (state.teams[a] ?? a) === (state.teams[b] ?? b);
+}
+
+export function hostile(state: BattleState, a: number, b: number): boolean {
+  return !friendly(state, a, b);
+}
+
+/** The team's leader: its lowest-numbered side. */
+export function leaderOf(state: BattleState, side: number): number {
+  for (let s = 0; s < state.sides; s++) if (friendly(state, s, side)) return s;
+  return side;
+}
+
+/**
+ * Leaders whose sides still have living units: the teams still in the
+ * battle. Allies fight on, but a team whose leader is routed has lost.
+ */
+export function livingLeaders(state: BattleState): number[] {
+  return livingSides(state).filter((s) => leaderOf(state, s) === s);
+}
+
 /** Is `target` inside the range offsets measured from `from`? */
 export function inRange(range: readonly Offset[], from: Cell, target: Cell): boolean {
   const dx = target.x - from.x;
@@ -77,7 +100,7 @@ export function inRange(range: readonly Offset[], from: Cell, target: Cell): boo
 export function isZoc(state: BattleState, side: number, x: number, y: number): boolean {
   return NEIGHBOURS.some((n) => {
     const u = unitAt(state, x + n.dx, y + n.dy);
-    return u !== undefined && u.side !== side;
+    return u !== undefined && hostile(state, u.side, side);
   });
 }
 

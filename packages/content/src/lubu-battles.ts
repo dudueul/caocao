@@ -46,6 +46,18 @@ function guest(
   return { officer, classId, level, side: 0, x, y, ...extra };
 }
 
+/** Another lord's man fighting beside us: orange, moved by his own AI (ADR 0066). */
+function ally(
+  officer: string,
+  classId: string,
+  level: number,
+  x: number,
+  y: number,
+  extra: Partial<ScenarioUnit> = {},
+): StoryUnit {
+  return { officer, classId, level, side: 2, x, y, ...extra };
+}
+
 const hold = { orders: ORDERS.hold };
 const guard = { orders: ORDERS.guard };
 const heal = { orders: ORDERS.healThenHold };
@@ -772,14 +784,15 @@ export const XIAPI: StoryBattleDef = {
   map: XIAPI_MAP,
   weather: "cloudy",
   roundLimit: 22,
-  sides: ["조조군", "여포군"],
+  sides: ["조조군", "여포군", "유비군"],
   slots: cells([5, 6], [6, 7], [5, 7], [6, 8], [5, 8], [6, 9], [5, 9], [4, 7], [4, 8]),
   max: 7,
   required: ["cao-cao"],
-  guests: [
-    guest("liu-bei", "infantry", 17, 6, 12),
-    guest("guan-yu", "cavalry", 19, 7, 12),
-    guest("zhang-fei", "cavalry", 18, 5, 12),
+  guests: [],
+  allies: [
+    ally("liu-bei", "infantry", 17, 6, 12),
+    ally("guan-yu", "cavalry", 19, 7, 12),
+    ally("zhang-fei", "cavalry", 18, 5, 12),
   ],
   enemies: [
     foe("lu-bu", "shockCavalry", 20, 14, 7, hold),

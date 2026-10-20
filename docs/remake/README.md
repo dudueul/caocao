@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-20
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0065](../adr/0065-save-format-two.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0066](../adr/0066-allies.md)).
 
 ## Vision
 
@@ -119,6 +119,7 @@ flowchart TB
 | Staged scenes | Story scenes are acted out on small tile maps from a script: walking, emotes, poses, fights, camera | [0063](../adr/0063-staged-scenes.md) |
 | Walkable camp | The camp is a map: 조조 walks to the shop, the armoury, the records and the council tent, and talks to his officers | [0064](../adr/0064-walkable-camp.md) |
 | Saves, format 2 | Saves keep the story flags and who is gone; format-1 saves still load | [0065](../adr/0065-save-format-two.md) |
+| Allies | Other lords' people fight beside us in orange under their own AI, in their phase after ours; we command only our own force | [0066](../adr/0066-allies.md) |
 
 ## Roadmap
 

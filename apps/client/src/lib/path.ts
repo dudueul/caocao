@@ -3,7 +3,15 @@
  * around enemies, avoiding zones of control until the last tile. Display only;
  * the rules alone decide where a unit may go.
  */
-import { affinityAt, type BattleState, type Cell, isZoc, type Ruleset, type Unit } from "@tk/rules";
+import {
+  affinityAt,
+  type BattleState,
+  type Cell,
+  hostile,
+  isZoc,
+  type Ruleset,
+  type Unit,
+} from "@tk/rules";
 
 const STEPS = [
   [0, -1],
@@ -19,7 +27,9 @@ export function walkPath(state: BattleState, rules: Ruleset, unit: Unit, to: Cel
   const goal = to.y * w + to.x;
   if (start === goal) return [{ x: unit.x, y: unit.y }];
   const enemy = new Set(
-    state.units.filter((u) => u.hp > 0 && u.side !== unit.side).map((u) => u.y * w + u.x),
+    state.units
+      .filter((u) => u.hp > 0 && hostile(state, u.side, unit.side))
+      .map((u) => u.y * w + u.x),
   );
   const dist = new Map<number, number>([[start, 0]]);
   const prev = new Map<number, number>();

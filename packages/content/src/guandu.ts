@@ -169,11 +169,12 @@ const B1: StoryBattleDef = {
   map: BAIMA,
   weather: "sunny",
   roundLimit: 20,
-  sides: ["조조군", "원소군"],
+  sides: ["조조군", "원소군", "백마 수비군"],
   slots: cells([0, 3], [1, 3], [0, 4], [1, 4], [0, 5], [0, 6], [1, 6], [0, 7]),
   max: 7,
   required: ["cao-cao", "guan-yu"],
-  guests: [{ officer: "liu-yan", classId: "infantry", level: 16, side: 0, x: 13, y: 5 }],
+  guests: [],
+  allies: [{ officer: "liu-yan", classId: "infantry", level: 16, side: 2, x: 13, y: 5 }],
   enemies: [
     foe("yan-liang", "heavyInfantry", 16, 11, 10, hold),
     foe("yuan", "infantry", 13, 9, 5, { id: "yuan-infantry-1" }),
@@ -457,7 +458,7 @@ const B5: StoryBattleDef = {
   map: YUAN_CAMP,
   weather: "sunny",
   roundLimit: 20,
-  sides: ["조조군", "원소군"],
+  sides: ["조조군", "원소군", "귀순군"],
   slots: cells(
     [0, 4],
     [1, 4],
@@ -473,9 +474,10 @@ const B5: StoryBattleDef = {
   ),
   max: 9,
   required: ["cao-cao"],
-  guests: [
-    { officer: "zhang-he", classId: "cavalry", level: 19, side: 0, x: 13, y: 8, arrives: 3 },
-    { officer: "gao-lan", classId: "infantry", level: 18, side: 0, x: 12, y: 9, arrives: 3 },
+  guests: [],
+  allies: [
+    { officer: "zhang-he", classId: "cavalry", level: 19, side: 2, x: 13, y: 8, arrives: 3 },
+    { officer: "gao-lan", classId: "infantry", level: 18, side: 2, x: 12, y: 9, arrives: 3 },
   ],
   enemies: [
     foe("yuan-shao", "shockCavalry", 21, 16, 3, guard),

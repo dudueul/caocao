@@ -1,5 +1,12 @@
 <script lang="ts">
-import { attackPower, conditionModifier, defensePower, hasBlock, type Unit } from "@tk/rules";
+import {
+  attackPower,
+  conditionModifier,
+  defensePower,
+  friendly,
+  hasBlock,
+  type Unit,
+} from "@tk/rules";
 import type { Session } from "../lib/session.svelte.ts";
 import { STATS, T } from "../lib/text.ts";
 import Portrait from "./Portrait.svelte";
@@ -46,7 +53,12 @@ const groups = $derived.by(() => {
 });
 </script>
 
-<section class="card" class:enemy={unit.side !== session.humanSide}>
+<section
+  class="card"
+  class:enemy={!friendly(session.state, unit.side, session.humanSide)}
+  class:friend={unit.side !== session.humanSide &&
+    friendly(session.state, unit.side, session.humanSide)}
+>
   <header>
     <Portrait id={unit.id} classId={unit.classId} side={unit.side} size={52} />
     <strong>{unit.name}</strong>
@@ -108,6 +120,10 @@ const groups = $derived.by(() => {
 .card.enemy {
   border-color: rgba(79, 142, 240, 0.5);
   background: linear-gradient(135deg, rgba(79, 142, 240, 0.16), rgba(255, 255, 255, 0.02) 55%);
+}
+.card.friend {
+  border-color: rgba(240, 160, 64, 0.55);
+  background: linear-gradient(135deg, rgba(240, 160, 64, 0.16), rgba(255, 255, 255, 0.02) 55%);
 }
 header :global(.face) {
   border-color: rgba(232, 194, 106, 0.7);

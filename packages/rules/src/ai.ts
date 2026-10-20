@@ -9,7 +9,7 @@
  * its own scoring when no gambit applies.
  */
 import { legalCommands } from "./battle.ts";
-import { classOf, isAlive, NEIGHBOURS, terrainAt, unitById } from "./board.ts";
+import { classOf, friendly, hostile, isAlive, NEIGHBOURS, terrainAt, unitById } from "./board.ts";
 import { attackPower, defensePower, hitChance, previewAttack, strikeDamage } from "./combat.ts";
 import { conditionDef, hasBlock, stacksOf, stackWeight } from "./conditions.ts";
 import { half, permille } from "./math.ts";
@@ -66,17 +66,19 @@ const W = {
   onObjective: 20_000,
 };
 
-/** Is `target` named in a "defeat" goal of `side`? */
+/** Is `target` named in a "defeat" goal of `side` or its allies? */
 function isGoalTarget(state: BattleState, side: number, target: string): boolean {
   return state.goals.some(
-    (g) => g.side === side && g.when.kind === "defeat" && g.when.units.includes(target),
+    (g) =>
+      friendly(state, g.side, side) && g.when.kind === "defeat" && g.when.units.includes(target),
   );
 }
 
 /** How much more `me` should fear exposure: more if losing it loses the battle. */
 function guardWeight(state: BattleState, me: Unit): number {
   return state.goals.some(
-    (g) => g.side !== me.side && g.when.kind === "defeat" && g.when.units.includes(me.id),
+    (g) =>
+      hostile(state, g.side, me.side) && g.when.kind === "defeat" && g.when.units.includes(me.id),
   )
     ? W.danger * W.goalGuard
     : W.danger;
@@ -89,7 +91,7 @@ export function threatMap(state: BattleState, rules: Ruleset, side = state.activ
   const out: { enemy: Unit; tiles: Set<number> }[] = [];
   const w = state.map.width;
   for (const enemy of state.units) {
-    if (!isAlive(enemy) || enemy.side === side) continue;
+    if (!isAlive(enemy) || !hostile(state, enemy.side, side)) continue;
     const tiles = new Set<number>();
     const range = classOf(rules, enemy).range;
     for (const r of reachable(state, rules, enemy))
@@ -154,7 +156,7 @@ function shadow(state: BattleState, unit: Unit, to: { x: number; y: number }): [
 function nearestEnemyDistance(state: BattleState, unit: Unit): number {
   let best = Number.MAX_SAFE_INTEGER;
   for (const u of state.units) {
-    if (!isAlive(u) || u.side === unit.side) continue;
+    if (!isAlive(u) || !hostile(state, u.side, unit.side)) continue;
     const d = Math.abs(u.x - unit.x) + Math.abs(u.y - unit.y);
     if (d < best) best = d;
   }
@@ -199,7 +201,7 @@ function conditionValue(
     else if (cls.stratagems.length > 0 && t.mp > 0) impact -= t.stats.intellect;
   }
   impact *= turns;
-  const ally = t.side === caster.side;
+  const ally = friendly(s, t.side, caster.side);
   if (ally && nearestEnemyDistance(s, t) > W.threatRange) return 0;
   return Math.max(0, ally ? impact : -impact);
 }
@@ -221,7 +223,7 @@ const fieldCache = new WeakMap<BattleState, Map<string, number[]>>();
  * near bank of a river. Cached per state, side and class.
  */
 function approachField(state: BattleState, rules: Ruleset, unit: Unit): number[] {
-  const key = `${unit.side}|${unit.classId}`;
+  const key = `${state.teams[unit.side] ?? unit.side}|${unit.classId}`;
   let byKey = fieldCache.get(state);
   if (!byKey) {
     byKey = new Map();
@@ -238,7 +240,7 @@ function approachField(state: BattleState, rules: Ruleset, unit: Unit): number[]
   // Bucket queue by distance: costs are small integers, so this is exact and ordered.
   const buckets: number[][] = [[]];
   for (const e of state.units) {
-    if (!isAlive(e) || e.side === unit.side) continue;
+    if (!isAlive(e) || !hostile(state, e.side, unit.side)) continue;
     for (const o of cls.range) {
       const x = e.x - o.dx;
       const y = e.y - o.dy;
@@ -452,7 +454,7 @@ export function scoreCommand(
       }
       if (def.condition !== undefined) {
         const chance =
-          t.side !== me.side && conditionDef(rules, def.condition).kind === "debuff"
+          hostile(s, t.side, me.side) && conditionDef(rules, def.condition).kind === "debuff"
             ? statusChance(rules, me, t)
             : 1000;
         value += permille(conditionValue(rules, s, me, t, def), chance) * W.condition;
@@ -509,7 +511,11 @@ function conditionHolds(
       return hpBelow(unit, when.permille);
     case "allyHpBelow":
       return state.units.some(
-        (u) => u.side === unit.side && u.id !== unit.id && isAlive(u) && hpBelow(u, when.permille),
+        (u) =>
+          friendly(state, u.side, unit.side) &&
+          u.id !== unit.id &&
+          isAlive(u) &&
+          hpBelow(u, when.permille),
       );
     case "enemyInReach":
       return attacks(rules, state, cmds, when.family).length > 0;

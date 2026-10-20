@@ -10,9 +10,10 @@
   --text: #f1ece1;
   --muted: #a49d8f;
   --accent: #e8c26a;
-  /* Our side red, the enemy blue (ADR 0055). */
+  /* Our side red, the enemy blue (ADR 0055), allies orange (ADR 0066). */
   --ally: #e0645a;
   --enemy: #4f8ef0;
+  --friend: #f0a040;
   --good: #7ee07a;
   --bad: #ff8a7a;
   --twist: #ffd23f;

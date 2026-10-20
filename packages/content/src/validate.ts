@@ -254,7 +254,7 @@ function chapterConds(ch: ChapterDef): Cond[] {
       for (const l of sc.leaves ?? []) if (typeof l !== "string") push(l.if);
     } else if (step.kind === "battle") {
       const b = step.battle;
-      for (const u of [...b.guests, ...b.enemies]) push(u.if);
+      for (const u of [...b.guests, ...(b.allies ?? []), ...b.enemies]) push(u.if);
       for (const g of b.goals) push(g.if);
       for (const sh of b.shifts ?? []) push(sh.if);
       for (const t of b.talk) push(t.if);
@@ -553,7 +553,7 @@ function validateStoryBattle(
 ): string[] {
   const problems: string[] = [];
   const say = (p: string) => problems.push(`battle ${b.id}: ${p}`);
-  const units: ScenarioUnit[] = [...b.guests, ...b.enemies]
+  const units: ScenarioUnit[] = [...b.guests, ...(b.allies ?? []), ...b.enemies]
     .filter((u) => holds(u.if, flags))
     .map(({ if: _, ...u }) => u);
   const guests = b.guests.filter((u) => holds(u.if, flags));
@@ -585,7 +585,9 @@ function validateStoryBattle(
     return problems;
   }
   if (b.guests.some((g) => g.side !== 0)) say("guests must be on side 0");
-  if (b.enemies.some((e) => e.side === 0)) say("enemies can't be on side 0");
+  if ((b.allies ?? []).some((a) => a.side !== 2)) say("allies must be on side 2");
+  if ((b.allies ?? []).length > 0 && b.sides.length < 3) say("allies need a side name");
+  if (b.enemies.some((e) => e.side !== 1)) say("enemies must be on side 1");
   if (b.slots.length < b.max) say(`only ${b.slots.length} slots for ${b.max} officers`);
   const taken = new Set(units.filter((u) => !u.arrives).map((u) => `${u.x},${u.y}`));
   for (const c of b.slots) {

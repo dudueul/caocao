@@ -327,15 +327,24 @@ export interface Shift {
 
 export interface BattleState {
   /**
-   * State format; 4 since map shifts (ADR 0062), 3 since goals and arrivals
-   * (ADR 0047), 2 since conditions (ADR 0035).
+   * State format; 5 since allies (ADR 0066), 4 since map shifts (ADR 0062),
+   * 3 since goals and arrivals (ADR 0047), 2 since conditions (ADR 0035).
    */
-  version: 4;
+  version: 5;
   mode: ModeId;
   map: BattleMap;
   weather: WeatherKind;
   policy: TurnPolicyId;
   sides: number;
+  /**
+   * Each side's team (ADR 0066): sides on one team are allies. They never
+   * attack each other, pass through each other and help each other. A team
+   * stays in the battle while its leader, its lowest-numbered side, has
+   * living units.
+   */
+  teams: number[];
+  /** The order sides take their turns in each round (ours, then allies, then the enemy). */
+  order: number[];
   round: number;
   roundLimit: number;
   /** Side whose turn it is (phase owner, or the side to activate next). */

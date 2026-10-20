@@ -261,7 +261,7 @@ export interface StoryBattleDef {
   /** How the field is lit; night battles are darker (looks only). */
   readonly light?: StageLight;
   readonly roundLimit: number;
-  /** Side names; side 0 is the player. */
+  /** Side names: 0 is the player, 1 the enemy, 2 the allies (if any). */
   readonly sides: readonly string[];
   /** Where roster officers may be placed, in order of preference. */
   readonly slots: readonly Cell[];
@@ -269,8 +269,13 @@ export interface StoryBattleDef {
   readonly max: number;
   /** Officers who must sortie. */
   readonly required: readonly string[];
-  /** Side-0 units that come with the battle, not from the roster (they earn nothing). */
+  /** Our own units that come with the battle, not from the roster: side 0, ours to command (they earn nothing). */
   readonly guests: readonly StoryUnit[];
+  /**
+   * Other lords' people fighting on our side (ADR 0066): side 2, orange, moved
+   * by their own AI in their phase after ours.
+   */
+  readonly allies?: readonly StoryUnit[];
   readonly enemies: readonly StoryUnit[];
   readonly goals: readonly StoryGoal[];
   /** Map changes during the battle: the flood at 하비, a gate opened from inside (ADR 0062). */

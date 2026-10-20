@@ -4,7 +4,7 @@
  * skirmishers (cavalry, horse archers, bandits) may pass through one such tile.
  * Enemies block their tile; allies can be passed through but not stopped on.
  */
-import { affinityAt, classOf, inBounds, isZoc, NEIGHBOURS, unitAt } from "./board.ts";
+import { affinityAt, classOf, hostile, inBounds, isZoc, NEIGHBOURS, unitAt } from "./board.ts";
 import { conditionModifier, hasBlock } from "./conditions.ts";
 import type { BattleState, Cell, Ruleset, Unit } from "./types.ts";
 
@@ -63,7 +63,7 @@ export function reachable(state: BattleState, rules: Ruleset, unit: Unit): Reach
       const y = node.y + n.dy;
       if (!inBounds(state, x, y)) continue;
       const other = unitAt(state, x, y);
-      if (other !== undefined && other.side !== unit.side) continue;
+      if (other !== undefined && hostile(state, other.side, unit.side)) continue;
       const step = affinityAt(rules, state, unit, x, y).move;
       if (step === null) continue;
       const cost = node.cost + step;

@@ -321,7 +321,8 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 | Arrivals | reserve units join at the start of their round, on their tile or the nearest free one they can stand on; a routed side is not saved by its reserve |
 | Map shifts | a battle may list shifts: tile changes set off when a round begins (from round 2) or when a unit of a side (one of its named units, if any) stands on a trigger tile; checked after every action and after arrivals; water puts out fire; units left on ground they can't stand on are swept to the nearest tile they can, losing the shift's `damage`‰ of max HP but never the last point; events `shifted`, then `swept` ([ADR 0062](../adr/0062-map-shifts.md)) |
 | Fire at the start | a battle may begin with tiles already burning, for a number of rounds |
-| State format | `BattleState` version 4 (shifts); 3 added goals and arrivals, 2 conditions |
+| Allies | sides on one **team** never attack each other, pass through each other, exert no zone of control on each other and help each other (healing, buffs, goals); sides move in a set **phase order** (story: ours, then allies, then the enemy); a team stays in the battle while its leader, its lowest-numbered side, has living units, so routing our own units loses even while allies stand ([ADR 0066](../adr/0066-allies.md)) |
+| State format | `BattleState` version 5 (teams and phase order); 4 added shifts, 3 goals and arrivals, 2 conditions |
 
 ## 8. Modes
 

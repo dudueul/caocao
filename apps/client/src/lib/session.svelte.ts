@@ -21,6 +21,7 @@ import {
   classOf,
   createBattle,
   dangerTiles,
+  friendly,
   type Gambit,
   legalCommands,
   previewAttack,
@@ -531,6 +532,14 @@ export class Session {
       if (e.kind === "turn" && !quietTurn && e.side === this.humanSide && !this.auto) {
         this.flash(`라운드 ${e.round} · 아군 차례`, "turn");
         audio.play("turn");
+      } else if (
+        e.kind === "turn" &&
+        !quietTurn &&
+        e.side !== this.humanSide &&
+        friendly(r.state, e.side, this.humanSide)
+      ) {
+        // Allies move by their own AI in their phase after ours (ADR 0066).
+        this.flash(`우군 차례 · ${this.sideNames[e.side] ?? ""}`, "turn");
       }
       if (e.kind === "battleEnd") {
         audio.play(e.winner === this.humanSide ? "victory" : "loss");

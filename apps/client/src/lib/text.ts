@@ -51,6 +51,7 @@ export const T = {
   confused: "혼란",
   broken: "와해",
   thinking: "적군 행동 중…",
+  alliesThinking: "우군 행동 중…",
   yourTurn: "아군 차례",
   victory: "승리",
   defeat: "패배",

@@ -75,9 +75,9 @@ export function checkSortie(
 
 type Flags = Readonly<Record<string, string>>;
 
-/** The guests and enemies this battle has with these flags, without their conditions. */
+/** The guests, allies and enemies this battle has with these flags, without their conditions. */
 export function battleUnits(b: StoryBattleDef, flags: Flags): ScenarioUnit[] {
-  return [...b.guests, ...b.enemies]
+  return [...b.guests, ...(b.allies ?? []), ...b.enemies]
     .filter((u) => holds(u.if, flags))
     .map(({ if: _, ...u }: StoryUnit) => u);
 }
@@ -126,10 +126,13 @@ export function storySetup(
     goals,
     shifts,
     burning: (b.burning ?? []).map((t) => ({ ...t })),
+    // Allies (side 2) are on our team and move after us, before the enemy (ADR 0066).
+    teams: [0, 1, 0],
+    order: [0, 2, 1],
   };
 }
 
-/** AI orders for the enemy and the guests. */
+/** AI orders for the enemy, the allies and the guests. */
 export function storyOrders(
   b: StoryBattleDef,
   flags: Flags = {},

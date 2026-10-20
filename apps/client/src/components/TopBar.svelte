@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { TurnPolicyId, WeatherKind } from "@tk/rules";
+import { friendly, type TurnPolicyId, type WeatherKind } from "@tk/rules";
 import { CLASSIC_BATTLES, prepareClassicMap } from "../lib/classic-battle.ts";
 import type { OnlineRoom } from "../lib/online.svelte.ts";
 import type { Session, Speed } from "../lib/session.svelte.ts";
@@ -44,7 +44,11 @@ async function start() {
   <div class="info">
     <strong>{online ? `${T.arena} ${online.code}` : session.title}</strong>
     <span class="chip">{T.round} {s.round}/{s.roundLimit}</span>
-    <span class="chip side" class:enemy={s.active !== session.humanSide}>
+    <span
+      class="chip side"
+      class:friend={s.active !== session.humanSide && friendly(s, s.active, session.humanSide)}
+      class:enemy={!friendly(s, s.active, session.humanSide)}
+    >
       {session.sideNames[s.active]}
     </span>
     <span class="chip muted">{WEATHER[s.weather]} · {POLICY[s.policy]}</span>
@@ -174,6 +178,9 @@ async function start() {
 }
 .side.enemy {
   border-color: var(--enemy);
+}
+.side.friend {
+  border-color: var(--friend);
 }
 .setup {
   position: absolute;

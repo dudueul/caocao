@@ -8,6 +8,8 @@
 import {
   affinityAt,
   classOf,
+  friendly,
+  hostile,
   inBounds,
   inRange,
   isAlive,
@@ -44,7 +46,7 @@ export function stratagemTargets(
     if (!inBounds(state, x, y)) continue;
     const u = unitAt(state, x, y);
     if (u === undefined) continue;
-    const ally = u.side === caster.side;
+    const ally = friendly(state, u.side, caster.side);
     if ((def.targets === "allies") === ally) out.push(u);
   }
   return out.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
@@ -81,9 +83,17 @@ export function stratagemDamage(
 }
 
 /** Must a condition from this cast roll to land on `target`? (debuffs on enemies only) */
-function resistible(rules: Ruleset, def: StratagemDef, caster: Unit, target: Unit): boolean {
+function resistible(
+  rules: Ruleset,
+  state: BattleState,
+  def: StratagemDef,
+  caster: Unit,
+  target: Unit,
+): boolean {
   if (def.condition === undefined) return false;
-  return conditionDef(rules, def.condition).kind === "debuff" && target.side !== caster.side;
+  return (
+    conditionDef(rules, def.condition).kind === "debuff" && hostile(state, target.side, caster.side)
+  );
 }
 
 export function stratagemHeal(def: StratagemDef, caster: Unit): number {
@@ -132,7 +142,7 @@ export function previewStratagem(
       unit: u.id,
       damage: def.effect === "damage" ? stratagemDamage(state, def, caster, u) : 0,
       heal: def.effect === "heal" ? heal(u) : 0,
-      chance: resistible(rules, def, caster, u) ? statusChance(rules, caster, u) : 1000,
+      chance: resistible(rules, state, def, caster, u) ? statusChance(rules, caster, u) : 1000,
     })),
     condition: def.condition ?? null,
     turns: def.condition === undefined ? null : (def.turns ?? [1, 1]),
@@ -173,7 +183,8 @@ export function castStratagem(
   const pending: Pending[] = stratagemTargets(state, caster, def, at).map((unit) => {
     const landed =
       def.condition !== undefined &&
-      (!resistible(rules, def, caster, unit) || prng.chance(statusChance(rules, caster, unit)));
+      (!resistible(rules, state, def, caster, unit) ||
+        prng.chance(statusChance(rules, caster, unit)));
     return {
       unit,
       damage: def.effect === "damage" ? stratagemDamage(state, def, caster, unit) : 0,

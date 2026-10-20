@@ -7,9 +7,11 @@
  */
 import {
   classOf,
+  hostile,
   inBounds,
   inRange,
   isAlive,
+  livingLeaders,
   livingSides,
   terrainAt,
   unitAt,
@@ -70,6 +72,10 @@ export interface BattleSetup {
   shifts?: Shift[];
   /** Tiles already on fire when the battle begins (복양's burning streets, ADR 0062). */
   burning?: BurningTile[];
+  /** Each side's team; sides on one team are allies (ADR 0066). Default: every side alone. */
+  teams?: number[];
+  /** The order sides take their turns in; default: by side number. */
+  order?: number[];
 }
 
 export type ApplyResult =
@@ -139,13 +145,20 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
     seen.add(key);
   }
   const sides = Math.max(...all.map((u) => u.side)) + 1;
+  const range = Array.from({ length: sides }, (_, i) => i);
+  const teams = range.map((s) => setup.teams?.[s] ?? s);
+  const order = (setup.order ?? range).filter((s) => s < sides);
+  if (order.length !== sides || range.some((s) => !order.includes(s)))
+    throw new Error("turn order must list every side once");
   const state: BattleState = {
-    version: 4,
+    version: 5,
     mode,
     map: { width: setup.map.width, height: setup.map.height, tiles: [...setup.map.tiles] },
     weather: setup.weather,
     policy: setup.policy,
     sides,
+    teams,
+    order,
     round: 1,
     roundLimit: setup.roundLimit,
     active: 0,
@@ -178,11 +191,26 @@ export function readyUnits(state: BattleState, side: number): Unit[] {
   return state.units.filter((u) => u.side === side && isAlive(u) && !u.acted);
 }
 
+/** Sides with living units, in turn order. */
+function livingInOrder(state: BattleState): number[] {
+  const living = new Set(livingSides(state));
+  return state.order.filter((s) => living.has(s));
+}
+
 function firstSideOfRound(state: BattleState): number {
-  const living = livingSides(state);
+  const living = livingInOrder(state);
   if (living.length === 0) return 0;
   if (state.policy === "sidePhases") return living[0] as number;
   return living[(state.round - 1) % living.length] as number;
+}
+
+/** The battle is over when at most one team's leader still has living units (ADR 0066). */
+function endByRout(state: BattleState, events: BattleEvent[]): boolean {
+  const leaders = livingLeaders(state);
+  if (leaders.length > 1) return false;
+  state.winner = leaders[0] ?? -1;
+  events.push({ kind: "battleEnd", winner: state.winner });
+  return true;
 }
 
 /** Every legal command for the side to act, in a deterministic order. */
@@ -201,7 +229,7 @@ export function legalCommands(state: BattleState, baseRules: Ruleset): Command[]
       out.push({ kind: "act", unit: u.id, to, action: { kind: "wait" } });
       for (const o of cls.range) {
         const target = unitAt(state, to.x + o.dx, to.y + o.dy);
-        if (target && target.side !== u.side && target.id !== u.id) {
+        if (target && hostile(state, target.side, u.side) && target.id !== u.id) {
           out.push({ kind: "act", unit: u.id, to, action: { kind: "attack", target: target.id } });
         }
       }
@@ -289,7 +317,7 @@ function validateAct(
   if (a.kind === "attack") {
     const target = state.units.find((u) => u.id === a.target);
     if (!target || !isAlive(target)) return "no such target";
-    if (target.side === unit.side) return "cannot attack an ally";
+    if (!hostile(state, target.side, unit.side)) return "cannot attack an ally";
     if (!inRange(classOf(rules, unit).range, c.to, target)) return "target out of range";
   } else if (a.kind === "stratagem") {
     const def = rules.stratagems[a.id];
@@ -303,15 +331,11 @@ function validateAct(
 function advance(state: BattleState, rules: Ruleset, prng: Prng, events: BattleEvent[]): void {
   fireShifts(state, rules, events);
   if (endByGoal(state, events)) return;
-  const living = livingSides(state);
-  if (living.length <= 1) {
-    state.winner = living[0] ?? -1;
-    events.push({ kind: "battleEnd", winner: state.winner });
-    return;
-  }
+  if (endByRout(state, events)) return;
+  const at = state.order.indexOf(state.active);
   if (state.policy === "sidePhases") {
     if (readyUnits(state, state.active).length > 0) return;
-    const nextSide = living.find((s) => s > state.active && readyUnits(state, s).length > 0);
+    const nextSide = state.order.slice(at + 1).find((s) => readyUnits(state, s).length > 0);
     if (nextSide !== undefined) {
       state.active = nextSide;
       events.push({ kind: "turn", side: nextSide, round: state.round });
@@ -319,8 +343,9 @@ function advance(state: BattleState, rules: Ruleset, prng: Prng, events: BattleE
     }
   } else {
     const prev = state.active;
-    for (let step = 1; step <= state.sides; step++) {
-      const s = (prev + step) % state.sides;
+    const n = state.order.length;
+    for (let step = 1; step <= n; step++) {
+      const s = state.order[(at + step) % n] as number;
       if (readyUnits(state, s).length > 0) {
         state.active = s;
         if (s !== prev) events.push({ kind: "turn", side: s, round: state.round });
@@ -354,12 +379,7 @@ function newRound(state: BattleState, rules: Ruleset, prng: Prng, events: Battle
   bringArrivals(state, rules, events);
   fireShifts(state, rules, events);
   if (endByGoal(state, events)) return;
-  const living = livingSides(state);
-  if (living.length <= 1) {
-    state.winner = living[0] ?? -1;
-    events.push({ kind: "battleEnd", winner: state.winner });
-    return;
-  }
+  if (endByRout(state, events)) return;
   for (const u of state.units) {
     if (!isAlive(u)) continue;
     u.acted = false;

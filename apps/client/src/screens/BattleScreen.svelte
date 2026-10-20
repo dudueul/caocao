@@ -1,4 +1,5 @@
 <script lang="ts">
+import { friendly } from "@tk/rules";
 import type { Snippet } from "svelte";
 import BattleField from "../components/BattleField.svelte";
 import Coach from "../components/Coach.svelte";
@@ -56,7 +57,13 @@ const result = $derived(
         ? T.victory
         : T.defeat,
 );
-const waitingText = $derived(online ? T.opponentTurn : T.thinking);
+const waitingText = $derived(
+  online
+    ? T.opponentTurn
+    : friendly(session.state, session.state.active, session.humanSide)
+      ? T.alliesThinking
+      : T.thinking,
+);
 /** The forecast floats beside its target (the chosen one, or the one under the pointer). */
 const forecastCell = $derived.by(() => {
   const f = session.forecast;

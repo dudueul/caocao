@@ -76,6 +76,18 @@ function guest(
   return { officer, classId, level, side: 0, x, y, ...extra };
 }
 
+/** Another lord's man fighting beside us: orange, moved by his own AI (ADR 0066). */
+function ally(
+  officer: string,
+  classId: string,
+  level: number,
+  x: number,
+  y: number,
+  extra: Partial<ScenarioUnit> = {},
+): ScenarioUnit {
+  return { officer, classId, level, side: 2, x, y, ...extra };
+}
+
 const hold = { orders: ORDERS.hold };
 const guard = { orders: ORDERS.guard };
 const heal = { orders: ORDERS.healThenHold };
@@ -263,11 +275,12 @@ const B2: StoryBattleDef = {
   map: CHANGSHE,
   weather: "wind",
   roundLimit: 18,
-  sides: ["관군", "황건적"],
+  sides: ["조조군", "황건적", "관군"],
   slots: cells([0, 7], [1, 7], [0, 8], [1, 8], [0, 9], [1, 9], [2, 9], [3, 9]),
   max: 5,
   required: ["cao-cao"],
-  guests: [guest("huangfu-song", "strategist", 9, 3, 3), guest("zhu-jun", "infantry", 8, 3, 2)],
+  guests: [],
+  allies: [ally("huangfu-song", "strategist", 9, 3, 3), ally("zhu-jun", "infantry", 8, 3, 2)],
   enemies: [
     foe("bo-cai", "infantry", 9, 9, 5, guard),
     foe("huangjin", "infantry", 6, 6, 2, { id: "huangjin-infantry-1" }),
@@ -321,15 +334,16 @@ const B3: StoryBattleDef = {
   map: SISHUI,
   weather: "cloudy",
   roundLimit: 16,
-  sides: ["연합군", "동탁군"],
+  sides: ["조조군", "동탁군", "연합군"],
   slots: cells([1, 4], [2, 4], [0, 5], [1, 5], [2, 5], [0, 6], [1, 6], [1, 7]),
   max: 5,
   required: ["cao-cao"],
-  guests: [
-    guest("guan-yu", "cavalry", 12, 3, 5),
-    guest("zhang-fei", "cavalry", 11, 3, 6),
-    guest("liu-bei", "infantry", 10, 3, 4),
-    guest("sun-jian", "cavalry", 12, 2, 3),
+  guests: [],
+  allies: [
+    ally("guan-yu", "cavalry", 12, 3, 5),
+    ally("zhang-fei", "cavalry", 11, 3, 6),
+    ally("liu-bei", "infantry", 10, 3, 4),
+    ally("sun-jian", "cavalry", 12, 2, 3),
   ],
   enemies: [
     foe("hua-xiong", "shockCavalry", 13, 15, 5, guard),
@@ -395,11 +409,12 @@ const B4: StoryBattleDef = {
   map: XINGYANG,
   weather: "sunny",
   roundLimit: 10,
-  sides: ["조조군", "동탁군"],
+  sides: ["조조군", "동탁군", "연합군"],
   slots: cells([5, 5], [6, 5], [7, 5], [5, 6], [6, 6], [7, 6], [6, 4], [7, 4]),
   max: 5,
   required: ["cao-cao"],
-  guests: [guest("wei-zi", "infantry", 8, 4, 5), guest("bao-xin", "cavalry", 10, 8, 6)],
+  guests: [],
+  allies: [ally("wei-zi", "infantry", 8, 4, 5), ally("bao-xin", "cavalry", 10, 8, 6)],
   enemies: [
     foe("xu-rong", "cavalry", 13, 1, 2, hold),
     foe("dong", "cavalry", 10, 10, 1, { id: "dong-cavalry-1" }),
@@ -522,11 +537,12 @@ const B6: StoryBattleDef = {
   map: SHOUZHANG,
   weather: "cloudy",
   roundLimit: 12,
-  sides: ["조조군", "청주 황건"],
+  sides: ["조조군", "청주 황건", "제북군"],
   slots: cells([9, 5], [10, 5], [8, 6], [9, 6], [10, 6], [11, 6], [9, 7], [10, 7], [8, 5], [11, 5]),
   max: 8,
   required: ["cao-cao"],
-  guests: [guest("bao-xin", "cavalry", 12, 12, 6)],
+  guests: [],
+  allies: [ally("bao-xin", "cavalry", 12, 12, 6)],
   enemies: [
     foe("qingzhou", "infantry", 11, 3, 2, { id: "qingzhou-infantry-1" }),
     foe("qingzhou", "infantry", 11, 16, 2, { id: "qingzhou-infantry-2" }),

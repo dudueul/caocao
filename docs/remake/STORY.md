@@ -100,7 +100,7 @@ stateDiagram-v2
 |---|---|---|
 | Scene | `SceneView` + `lib/stage/` | Title card, then the scene acted out on its stage: officers walk, turn, bow, emote and strike while they talk ([ADR 0063](../adr/0063-staged-scenes.md)); choices; auto, and skip to the next choice. Roster joins and leaves apply at the end |
 | Sortie | `SortieView` | Pick up to `max` officers (the `required` ones are fixed) and their slots on a mini map; goals and weather shown |
-| Battle | `BattleScreen` + `TalkOverlay` | Side phases; goals card; ★ commanders, ◆ units to protect, a gold star on tiles to reach; talk at start, on a round, a defeat, an arrival or the end; tips in the first battle |
+| Battle | `BattleScreen` + `TalkOverlay` | Side phases: ours (red), then allies (orange, their own AI), then the enemy (blue) ([ADR 0066](../adr/0066-allies.md)); goals card; ★ commanders, ◆ units to protect, a gold star on tiles to reach; talk at start, on a round, a defeat, an arrival, a map shift or the end; tips in the first battle |
 | Result | `ResultView` | Gold and items; experience bars fill; level-ups with stat gains; promotion ready |
 | Camp | `CampView` | A camp to walk ([ADR 0064](../adr/0064-walkable-camp.md)): 조조 talks to his officers and opens the shop, the armoury (gear and promotion), the records tent (saving) and the council tent (march on) |
 | Ending | `EndingView` | The chapter's close and the roster as it ended |
@@ -229,6 +229,15 @@ Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순
 - 허유 defects before Wuchao.
 - 장합 and 고람 defect during the last battle and join in the epilogue.
 
+**Allies** ([ADR 0066](../adr/0066-allies.md)) are other lords' people who fight
+beside us in orange under their own AI, in their phase after ours:
+- chapter 1: 황보숭 and 주준 at 장사; 관우, 장비, 유비 and 손견 at 사수관; 위자 and 포신 at 변수; 포신 at 수장;
+- chapter 2: 유비, 관우 and 장비 at 하비;
+- chapter 3: 유연 at 백마; 장합 and 고람 when they defect at 관도 결전.
+
+Our own troops that come with a battle (the night ward at 낙양, the ambushes at
+정도 and 안중) stay red and ours to command.
+
 Commanders in forts use the **guard** order ([ADR 0047](../adr/0047-battle-goals-and-arrivals.md)):
 they strike from their tile and never ride out.
 
@@ -240,17 +249,17 @@ once per path in every run):
 |---|---|---|---|
 | 1 | 북문의 오색봉 | 12 / 12 | round 8 |
 | 1 | 장사의 불길 | 12 / 12 | round 5 |
-| 1 | 사수관의 술 | 12 / 12 | round 10 (after 여포 arrives) |
-| 1 | 변수의 추격 | 11 / 12 | round 8 (the hold) |
+| 1 | 사수관의 술 | 11 / 12 | round 9–10 (after 여포 arrives) |
+| 1 | 변수의 추격 | 10 / 12 | round 8 (the hold) |
 | 1 | 흑산의 무리 | 12 / 12 | round 6 |
 | 1 | 수장의 겨울 | 12 / 12 | round 10 (the hold) |
-| 2 | 팽성의 원한 | 12 · 12 | round 4 |
+| 2 | 팽성의 원한 | 12 · 12 | round 3–4 |
 | 2 | 복양의 불길 | 12 · 12 | round 3–4 (the escape) |
 | 2 | 정도의 둑 | 12 · 12 | round 9 (mostly the hold) |
 | 2 | 완성의 밤 | 12 · 12 | round 3 (the escape); 전위 standing 12 · 5 |
 | 2 | 기현의 싸움 | 12 · 12 | round 6–7 |
 | 2 | 안중의 땅굴 | 12 · 12 | round 5 |
-| 2 | 하비 수공 | 11 · 12 | round 8–9; the flood comes on round 2 |
+| 2 | 하비 수공 | 9 · 11 | round 7; the flood comes on round 2 |
 | 3 | 백마 구원 | 12 · 12 | round 5 |
 | 3 | 연진의 미끼 | 12 · 12 | round 4–5 |
 | 3 | 관도 사수 | 12 · 12 | round 8 |
@@ -258,7 +267,9 @@ once per path in every run):
 | 3 | 관도 결전 | 12 · 12 | round 6–7 |
 
 Chapter 2 and 3 cells read "history path · other path" (revenge and executed ·
-mercy and spared). 전위's survival at 완성 depends on which officers the AI
+mercy and spared). Since allies move by their own AI ([ADR 0066](../adr/0066-allies.md)),
+사수관, 변수 and 하비 are a little harder for the AI: the allies no longer screen
+조조 in our phase, and the losses are 조조 falling. 전위's survival at 완성 depends on which officers the AI
 sends to the gate: about half overall, from 2 to 12 in 12 by setup. A player
 who pulls him back in time can save him.
 

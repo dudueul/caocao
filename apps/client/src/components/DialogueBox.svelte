@@ -86,7 +86,9 @@ function onKey(e: KeyboardEvent) {
         mood={line.mood ?? "calm"}
       />
     </div>
-    <div class="plate" class:enemy={speaker.side !== 0}>{speaker.name}</div>
+    <div class="plate" class:enemy={speaker.side === 1} class:friend={speaker.side === 2}>
+      {speaker.name}
+    </div>
   {/if}
   <p class="text">
     {chars.slice(0, shown).join("")}<span class="rest">{chars.slice(shown).join("")}</span>
@@ -161,6 +163,9 @@ function onKey(e: KeyboardEvent) {
 }
 .plate.enemy {
   background: linear-gradient(180deg, #2f4a7c, #1c2c4e);
+}
+.plate.friend {
+  background: linear-gradient(180deg, #a85a18, #6e3a0e);
 }
 .right .plate {
   left: auto;

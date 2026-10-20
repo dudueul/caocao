@@ -27,7 +27,8 @@ const L = {
   hintMap: "지도에서 아군을 눌러 자리를 옮기거나 바꿀 수 있습니다",
   hintPick: (name: string) => `${name}: 옮길 칸을 누르세요`,
   mine: "아군",
-  ally: "원군",
+  ally: "우군",
+  guestTroops: "아군 부대",
   foe: "적군",
   boss: "적장",
   slot: "배치 칸",
@@ -143,7 +144,8 @@ function launch() {
 type Mark =
   | { kind: "slot"; index: number; officer: string | null }
   | { kind: "foe"; boss: boolean; name: string }
-  | { kind: "guest"; name: string };
+  | { kind: "guest"; name: string }
+  | { kind: "friend"; name: string };
 
 const marks = $derived.by(() => {
   const m = new Map<string, Mark>();
@@ -159,7 +161,11 @@ const marks = $derived.by(() => {
         boss: bosses.has(u.id ?? u.officer),
         name: nameOf(u.officer),
       });
-  for (const u of battle.guests) m.set(`${u.x},${u.y}`, { kind: "guest", name: nameOf(u.officer) });
+  for (const u of battle.guests)
+    if (u.arrives === undefined) m.set(`${u.x},${u.y}`, { kind: "guest", name: nameOf(u.officer) });
+  for (const u of battle.allies ?? [])
+    if (u.arrives === undefined)
+      m.set(`${u.x},${u.y}`, { kind: "friend", name: nameOf(u.officer) });
   return m;
 });
 
@@ -235,7 +241,10 @@ function numbers(o: Officer) {
               <span class="legend">
                 <span><i class="lg mine"></i>{L.mine}</span>
                 {#if battle.guests.length > 0}
-                  <span><i class="lg guest"></i>{L.ally}</span>
+                  <span><i class="lg guest"></i>{L.guestTroops}</span>
+                {/if}
+                {#if (battle.allies ?? []).length > 0}
+                  <span><i class="lg friend"></i>{L.ally}</span>
                 {/if}
                 <span><i class="lg foe"></i>{L.foe}</span>
                 <span><i class="lg boss"></i>{L.boss}</span>
@@ -273,6 +282,8 @@ function numbers(o: Officer) {
                       <span class="pin foe" class:boss={m.boss} title={m.name}></span>
                     {:else if m?.kind === "guest"}
                       <span class="pin guest" title={m.name}></span>
+                    {:else if m?.kind === "friend"}
+                      <span class="pin friend" title={m.name}></span>
                     {/if}
                   </div>
                 {/if}
@@ -535,6 +546,9 @@ h1 {
 .lg.guest {
   background: #ffa898;
 }
+.lg.friend {
+  background: var(--friend);
+}
 .lg.foe {
   background: var(--enemy);
 }
@@ -627,6 +641,9 @@ button.cell {
 }
 .pin.guest {
   background: radial-gradient(circle at 35% 30%, #ffe0d8, #ffa898 55%, #b8584a);
+}
+.pin.friend {
+  background: radial-gradient(circle at 35% 30%, #ffe2b0, var(--friend) 55%, #8a4e12);
 }
 .hint {
   margin: 0;

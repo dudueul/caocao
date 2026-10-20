@@ -12,6 +12,7 @@ import {
   type BattleState,
   type Cell,
   hasBlock,
+  hostile,
   type TerrainId,
   type Unit,
 } from "@tk/rules";
@@ -57,7 +58,8 @@ export const TERRAIN_COLOR: Record<TerrainId, number> = {
 };
 
 // Our side (0) in red, the enemy (1) in blue, as in the classic games (ADR 0055).
-const SIDE_COLOR = [0xd64a3c, 0x3b7be8, 0x3ca05a, 0xb08a2e];
+/** Ours red, the enemy blue (ADR 0055), allies orange (ADR 0066), then ochre. */
+const SIDE_COLOR = [0xd64a3c, 0x3b7be8, 0xe8892c, 0xb08a2e];
 const BG = 0x14130f;
 const FONT = "'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif";
 
@@ -1399,7 +1401,7 @@ function enemyCentres(state: BattleState): Map<number, Cell> {
   const out = new Map<number, Cell>();
   const sides = new Set(state.units.map((u) => u.side));
   for (const side of sides) {
-    const foes = state.units.filter((u) => u.hp > 0 && u.side !== side);
+    const foes = state.units.filter((u) => u.hp > 0 && hostile(state, u.side, side));
     if (foes.length === 0) continue;
     out.set(side, {
       x: foes.reduce((a, u) => a + u.x, 0) / foes.length,

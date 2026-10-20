@@ -11,9 +11,13 @@ export {
 export {
   affinityAt,
   classOf,
+  friendly,
+  hostile,
   inRange,
   isAlive,
   isZoc,
+  leaderOf,
+  livingLeaders,
   terrainAt,
   unitAt,
   unitById,
