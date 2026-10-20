@@ -341,6 +341,7 @@ function checkScene(rules: Ruleset, sc: SceneDef, say: (p: string) => void) {
         case "say":
           lines += 1;
           checkLine(c.line, say);
+          if (c.line.actor !== undefined) who(c.line.actor);
           break;
         case "walk":
           who(c.who);
@@ -536,11 +537,9 @@ export function validateChapter(
           const v = path[f.flag];
           flags[f.flag] = v === f.standing || v === f.fallen ? v : f.standing;
         }
-      } else {
-        for (const t of step.camp.talk ?? [])
-          if (holds(t.if, flags) && !roster.has(t.officer) && t.officer !== "cao-cao")
-            add(`camp ${step.camp.id}: talk for ${t.officer}, who is not in the roster`);
       }
+      // Camp talk may name anyone: a carried-over roster holds officers this
+      // chapter's own roster never had, and the camp shows only those present.
     }
   }
   return [...problems];

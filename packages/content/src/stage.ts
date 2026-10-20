@@ -146,8 +146,10 @@ export const fx = (kind: StageFx, at?: At | string): Cmd => ({
 export const fire = (...cells: At[]): Cmd => ({ do: "fire", cells: cells.map(cell) });
 /** Runs its steps together and waits for all of them. */
 export const all = (...cmds: Cmd[]): Cmd => ({ do: "all", cmds });
-/** The same steps, only when `cond` holds. */
+/** The same steps, run together, only when `cond` holds. */
 export const only = (cond: Cond, ...cmds: Cmd[]): Cmd => ({ do: "all", cmds, if: cond });
+/** The same steps, one after another, only when `cond` holds (spread it into a script). */
+export const when = (cond: Cond, ...cmds: Cmd[]): Cmd[] => cmds.map((c) => ({ ...c, if: cond }));
 export const actor = (
   id: string,
   side: number,

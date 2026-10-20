@@ -79,6 +79,7 @@ export {
   tell,
   walk,
   walkable,
+  when,
 } from "./stage.ts";
 export type {
   Actor,

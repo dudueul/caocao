@@ -297,7 +297,14 @@ export class Story {
     const t = b.talk[i];
     if (!t || this.played.has(`${i}`)) return;
     this.played.add(`${i}`);
-    const lines = t.lines.filter((l) => holds(l.if, flags));
+    // Roster officers speak only if they are in this battle (sortied, or still to arrive).
+    const fielded = new Set([
+      ...(this.session?.state.units.map((u) => u.id) ?? []),
+      ...(this.session?.state.reserve.map((a) => a.unit.id) ?? []),
+    ]);
+    const absent = (who: string | undefined) =>
+      who !== undefined && this.campaign.roster.some((o) => o.id === who) && !fielded.has(who);
+    const lines = t.lines.filter((l) => holds(l.if, flags) && !absent(l.who));
     if (lines.length === 0) return;
     const session = this.session;
     if (session) {

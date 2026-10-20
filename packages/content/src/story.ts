@@ -28,6 +28,8 @@ export interface Line {
   readonly who?: string;
   /** A name to show instead of the officer's (a messenger, a letter). */
   readonly name?: string;
+  /** In a staged scene, the cast member who says it, when that isn't `who` (an extra). */
+  readonly actor?: string;
   /** Which army the speaker belongs to, for the portrait colours (default: the officer's usual side). */
   readonly side?: number;
   readonly mood?: Mood;
