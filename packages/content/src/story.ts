@@ -101,6 +101,8 @@ export interface StageDef {
   readonly rows: readonly string[];
   readonly light?: StageLight;
   readonly weather?: WeatherKind;
+  /** What the walls are made of indoors: a tent's canvas or a hall's timber (default: from the floors). */
+  readonly walls?: "tent" | "hall";
   readonly props?: readonly PropDef[];
 }
 

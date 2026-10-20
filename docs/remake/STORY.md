@@ -112,22 +112,24 @@ Saves happen automatically after every scene, camp and battle won ([ADR 0051](..
 ```mermaid
 flowchart LR
   subgraph content["@tk/content (data)"]
-    CH["guandu.ts<br/>ChapterDef: steps"]
+    CH["rise.ts · lubu*.ts · guandu.ts<br/>ChapterDef: steps"]
+    SG["stage.ts<br/>stages, script helpers"]
     IT["items.ts<br/>ITEMS, GEAR"]
     CL["classes.ts<br/>tier 1 + 2, GROWTH, PROMOTIONS"]
   end
   subgraph campaign["@tk/campaign (pure logic)"]
-    FL["flow.ts<br/>newCampaign, finishScene,<br/>leaveCamp, promote"]
+    FL["flow.ts<br/>newCampaign, finishScene(picks),<br/>leaveCamp, continueTo, flags"]
     BA["battle.ts<br/>checkSortie, storySetup,<br/>settle"]
     PR["progression.ts<br/>recordEvents, gainExp"]
     GE["gear.ts<br/>equip, buy, sell"]
     SA["save.ts<br/>writeSave, readSave"]
   end
   subgraph rules["@tk/rules"]
-    AP["apply(): goals,<br/>arrivals, guard order"]
+    AP["apply(): goals, arrivals,<br/>map shifts, guard order"]
   end
   subgraph client["client"]
-    ST["story.svelte.ts<br/>phase, sortie, talk"]
+    ST["story.svelte.ts<br/>phase, cue, picks, sortie, talk"]
+    SP["lib/stage/<br/>scene player, walkable camp"]
     SE["session.svelte.ts<br/>StoryBattle + director"]
   end
   CH --> FL
@@ -141,6 +143,9 @@ flowchart LR
   ST --> SE
   SE --> AP
   ST --> SA
+  ST --> SP
+  SG --> SP
+  CH --> SG
 ```
 
 `@tk/campaign` follows the rules package's discipline: no clock, no

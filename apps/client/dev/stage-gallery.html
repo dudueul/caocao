@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Stage gallery</title>
+    <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: #14130f;
+      color: #f1ece1;
+      font:
+        13px system-ui,
+        sans-serif;
+    }
+    #stage {
+      position: fixed;
+      inset: 0;
+    }
+    #bar {
+      position: fixed;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      z-index: 2;
+    }
+    #bar button {
+      font: inherit;
+      color: inherit;
+      background: #2c2820;
+      border: 1px solid #5a4c30;
+      border-radius: 6px;
+      padding: 5px 9px;
+      cursor: pointer;
+    }
+    #bar span {
+      align-self: center;
+      color: #e8c26a;
+      margin-left: 6px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="stage"></div>
+    <div id="bar"></div>
+    <script type="module" src="./stage-gallery.ts"></script>
+  </body>
+</html>

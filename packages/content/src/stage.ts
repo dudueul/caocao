@@ -197,6 +197,7 @@ export const HALL: StageDef = {
 export const COMMAND_TENT: StageDef = {
   id: "command-tent",
   light: "day",
+  walls: "tent",
   rows: [
     "gggggggggggggg",
     "g####____####g",

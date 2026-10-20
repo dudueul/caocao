@@ -749,6 +749,7 @@ const GUANDU_MOUNDS: StageDef = {
 /** 관도 at night: 조조's tent (a tent stage: cloth walls), the guards at its door, the camp gate. */
 const GUANDU_NIGHT: StageDef = {
   id: "guandu-tent-night",
+  walls: "tent",
   light: "night",
   rows: [
     "cccc######cccc",
@@ -813,6 +814,7 @@ const WUCHAO_ROAD: StageDef = {
 /** 원소's great tent, and his siege engines outside facing 관도. */
 const YUAN_TENT: StageDef = {
   id: "yuan-tent",
+  walls: "tent",
   light: "night",
   rows: [
     "##########gggg",

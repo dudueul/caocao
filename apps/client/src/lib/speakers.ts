@@ -19,6 +19,11 @@ for (const ch of Object.values(CHAPTERS)) {
   }
 }
 
+/** The class an officer usually fights as in the chapters (staged scenes draw them so). */
+export function usualClass(id: string): string | undefined {
+  return HOME.get(id)?.classId;
+}
+
 export interface Speaker {
   id: string;
   name: string;

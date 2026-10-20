@@ -35,6 +35,7 @@ import {
   type CampDef,
   type ChapterDef,
   type ChapterStep,
+  type ChoiceOption,
   type Cmd,
   FIRST_CHAPTER,
   holds,
@@ -61,6 +62,43 @@ function randomSeed(): string {
   return Math.floor(Math.random() * 0xffffffff).toString(36);
 }
 
+/** What a scene asks of the player now: a line to read or a choice to make (ADR 0063). */
+export type Cue =
+  | { readonly kind: "say"; readonly line: Line; readonly n: number }
+  | {
+      readonly kind: "choice";
+      readonly flag: string;
+      readonly prompt: string;
+      readonly options: readonly ChoiceOption[];
+      readonly n: number;
+    };
+
+/**
+ * The picks a scene ends with: the ones made, and the first option of every
+ * choice the script reaches unanswered (skipping in tests, `endScene()`).
+ */
+export function fillPicks(
+  scene: SceneDef,
+  flags: Readonly<Record<string, string>>,
+  picks: Readonly<Record<string, string>>,
+): Record<string, string> {
+  const out: Record<string, string> = {};
+  const visit = (cmds: readonly Cmd[]) => {
+    for (const c of cmds) {
+      if (!holds(c.if, { ...flags, ...out })) continue;
+      if (c.do === "all") visit(c.cmds);
+      else if (c.do === "choice") {
+        const made = c.options.find((o) => o.value === picks[c.flag]);
+        const first = c.options[0];
+        if (made) out[c.flag] = made.value;
+        else if (first) out[c.flag] = first.value;
+      }
+    }
+  };
+  visit(scene.script);
+  return out;
+}
+
 /** The lines a scene says with these flags, in order (the staged player shows the rest). */
 export function sceneLines(scene: SceneDef, flags: Readonly<Record<string, string>>): Line[] {
   const out: Line[] = [];
@@ -81,7 +119,7 @@ const phaseOf = (step: ChapterStep | null): Phase =>
 export class Story {
   campaign = $state.raw<CampaignState>(newCampaign(FIRST_CHAPTER));
   phase = $state<Phase>("scene");
-  /** The line of the current scene being read. */
+  /** Lines read so far in the current scene. */
   line = $state(0);
   sortie = $state<Placement[]>([]);
   report = $state.raw<BattleReport | null>(null);
@@ -152,18 +190,78 @@ export class Story {
     return true;
   }
 
-  // ------------------------------------------------------------ scenes
+  // ------------------------------------------------------------ scenes (ADR 0063)
 
-  /** Next line, or the end of the scene. */
-  next(): void {
-    const sc = this.scene;
-    if (!sc) return;
-    if (this.line + 1 < sceneLines(sc, this.campaign.flags).length) this.line += 1;
-    else this.endScene();
+  /** The line or choice the scene player is waiting on (null while it acts). */
+  cue = $state.raw<Cue | null>(null);
+  /** Choices made in the scene being played, flag → value. */
+  picks = $state.raw<Record<string, string>>({});
+  private picksFor = "";
+  private cueCount = 0;
+  private answer: ((value: string | null) => void) | null = null;
+
+  /** Picks made in the current scene (none once another scene is up). */
+  get scenePicks(): Record<string, string> {
+    return this.picksFor === (this.scene?.id ?? "") ? this.picks : {};
   }
 
+  /**
+   * The scene player shows a line or a choice and waits: resolves with the
+   * value picked (null for a line read, or a scene ended under it).
+   */
+  ask(
+    cue: Cue extends infer C ? (C extends Cue ? Omit<C, "n"> : never) : never,
+  ): Promise<string | null> {
+    this.settle(null);
+    this.cueCount += 1;
+    this.cue = { ...cue, n: this.cueCount } as Cue;
+    return new Promise((resolve) => {
+      this.answer = resolve;
+    });
+  }
+
+  private settle(value: string | null): void {
+    const a = this.answer;
+    this.answer = null;
+    this.cue = null;
+    a?.(value);
+  }
+
+  /** A scene starts playing (again): no picks yet, nothing asked. */
+  beginScene(): void {
+    this.picks = {};
+    this.picksFor = "";
+    this.settle(null);
+  }
+
+  /** The line on screen has been read. */
+  next(): void {
+    if (this.cue?.kind !== "say") return;
+    this.line += 1;
+    this.settle(null);
+  }
+
+  /** Answers the choice on screen. */
+  choose(value: string): void {
+    const c = this.cue;
+    if (c?.kind !== "choice" || !c.options.some((o) => o.value === value)) return;
+    this.picks = { ...this.scenePicks, [c.flag]: value };
+    this.picksFor = this.scene?.id ?? "";
+    this.settle(value);
+  }
+
+  /**
+   * Ends the scene with the picks made; a choice left unanswered takes its
+   * first option (tests and tools end scenes this way).
+   */
   endScene(): void {
-    if (this.apply(finishScene(this.campaign))) {
+    const sc = this.scene;
+    if (!sc) return;
+    const picks = fillPicks(sc, this.campaign.flags, this.scenePicks);
+    if (this.apply(finishScene(this.campaign, picks))) {
+      this.picks = {};
+      this.picksFor = "";
+      this.settle(null);
       this.autosave();
       this.enterStep();
     }

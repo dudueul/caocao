@@ -3,8 +3,9 @@
  * from the battle map's bird's-eye three-quarter view. Each figure is a few
  * painted parts (legs, torso, head, arms, weapon, shield or bow, horse or
  * stone-thrower) on a small skeleton, posed procedurally: ready, walk, attack,
- * guard, hurt, slumped and cheering, in three facings (front, back, side; the
- * side is mirrored for left).
+ * guard, hurt, slumped and cheering, and for staged scenes (ADR 0063) bowing,
+ * kneeling, lying fallen, nodding, shaking the head and jumping, in three
+ * facings (front, back, side; the side is mirrored for left).
  *
  * Dress and gear follow the late Eastern Han, around 200 AD (ADR 0046,
  * docs/remake/CHARACTER_LOOK.md): topknots under cloth caps or lamellar
@@ -17,7 +18,23 @@
 import { Container, Sprite, Texture } from "pixi.js";
 
 export type Facing = "down" | "up" | "side";
-export type RigPose = "ready" | "walk" | "stand" | "weak" | "attack" | "guard" | "hurt" | "cheer";
+export type RigPose =
+  | "ready"
+  | "walk"
+  | "stand"
+  | "weak"
+  | "attack"
+  | "guard"
+  | "hurt"
+  | "cheer"
+  // Scene poses (ADR 0063): a bow with joined hands, kneeling and lying fallen
+  // (held), a nod, a shake of the head and a jump.
+  | "bow"
+  | "kneel"
+  | "down"
+  | "nod"
+  | "shake"
+  | "jump";
 export type Kind = "infantry" | "archer" | "cavalry" | "strategist" | "martialArtist" | "catapult";
 
 /** Texture pixels per tile. */
@@ -128,6 +145,7 @@ function clothFor(unitId: string): HeadCloth | null {
   const army = unitId.split("-")[0];
   if (army === "huangjin" || army === "qingzhou" || unitId === "zhang-jiao" || unitId === "bo-cai")
     return "yellow";
+  // Black Mountain bandits, and Yang Feng, a White Wave (白波) bandit turned general.
   if (army === "heishan" || unitId === "bai-rao" || unitId === "yang-feng") return "brown";
   if (unitId === "sun-jian") return "red";
   return null;
@@ -1097,6 +1115,42 @@ function horse(P: Pal, facing: Facing): Part {
   });
 }
 
+/**
+ * The back-view horse's hindquarters, drawn over the rider's lower robe so a
+ * rider seen from behind still sits a horse: haunches, the saddle flaps on
+ * either side, and the knotted tail.
+ */
+function horseRump(P: Pal): Part {
+  return paint(0.5, 0.4, 0.25, 0.34, (g) => {
+    for (const s of [-1, 1]) {
+      const f = rr(s > 0 ? 0.12 : -0.2, -0.3, 0.08, 0.13, 0.03);
+      cel(g, f, P.robe, P.robeDark, s > 0 ? 0.15 : -0.17);
+      g.save();
+      f(g);
+      g.lineWidth = 0.012;
+      g.strokeStyle = P.edge;
+      g.stroke();
+      g.restore();
+    }
+    cel(g, ell(0, -0.215, 0.16, 0.1), COAT, COAT_DARK, -0.07);
+    // The cleft between the haunches, and the tail knotted at its root.
+    line(g, COAT_DARK, 0.012, 0, -0.29, 0, -0.17);
+    cel(g, ell(0, -0.28, 0.035, 0.028), MANE);
+    cel(
+      g,
+      (c) => {
+        c.beginPath();
+        c.moveTo(-0.016, -0.26);
+        c.quadraticCurveTo(-0.032, -0.18, -0.012, -0.11);
+        c.lineTo(0.014, -0.12);
+        c.quadraticCurveTo(0.0, -0.18, 0.016, -0.26);
+        c.closePath();
+      },
+      MANE,
+    );
+  });
+}
+
 /** The front-view horse's head, drawn over the rider, with a bronze face ornament (當盧). */
 function horseHead(): Part {
   return paint(0.3, 0.42, 0.15, 0.38, (g) => {
@@ -1253,7 +1307,14 @@ function artFor(look: Look, facing: Facing): Art {
           offhand: offhand(P, k, facing),
           cape: null,
           mount: k === "cavalry" ? horse(P, facing) : null,
-          mountFront: k === "cavalry" && facing === "down" ? horseHead() : null,
+          mountFront:
+            k !== "cavalry"
+              ? null
+              : facing === "down"
+                ? horseHead()
+                : facing === "up"
+                  ? horseRump(P)
+                  : null,
           throwArm: null,
         };
   artCache.set(key, art);
@@ -1307,6 +1368,12 @@ const POSE_LENGTH: Record<RigPose, number> = {
   guard: 0.35,
   hurt: 0.45,
   cheer: 0,
+  bow: 1.3,
+  kneel: 0,
+  down: 0,
+  nod: 0.7,
+  shake: 0.9,
+  jump: 0.6,
 };
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
@@ -1444,12 +1511,75 @@ export class ChibiRig {
     let headTilt = Math.sin(t * 1.3) * 0.03;
     let legSwing = 0;
     let hop = 0;
+    // Scene poses: the hip sinks and the legs fold (kneel), the figure lies
+    // down (fall), the head dips seen from the front, or moves aside (shake).
+    let sink = 0;
+    let fold = 0;
+    let fall = 0;
+    let dip = 0;
+    let headX = 0;
     // The trebuchet's long arm rests down and back, then swings up over the top.
     let arm = side ? 2.5 : -Math.PI / 2;
     switch (this.pose) {
       case "ready":
         bob = -Math.abs(Math.sin(t * 2.6)) * 0.008;
         break;
+      case "bow": {
+        // Hands joined before the chest (揖), a deep bow, a pause, and up again.
+        const b = span(k, 0, 0.28) * (1 - span(k, 0.72, 1));
+        lean = 0.55 * b;
+        headTilt = 0.2 * b;
+        dip = b;
+        armF = lerp(armF, side ? -1.3 : -0.62, b);
+        armB = lerp(armB, side ? -1.1 : 0.62, b);
+        break;
+      }
+      case "kneel": {
+        // Down on one knee, hands joined, head a little bowed; held.
+        const e = smooth(this.time / 0.35);
+        sink = 0.13 * e;
+        fold = e;
+        lean = 0.12 * e;
+        headTilt = 0.12 * e + Math.sin(t * 1.3) * 0.015;
+        dip = 0.4 * e;
+        squash = 1 + Math.sin(t * 1.6) * 0.008;
+        armF = lerp(armF, side ? -1.2 : -0.55, e);
+        armB = lerp(armB, side ? -1.0 : 0.55, e);
+        break;
+      }
+      case "down": {
+        // Fallen: the figure topples backwards and lies still; held.
+        fall = smooth(this.time / 0.45);
+        squash = 1;
+        headTilt = -0.15 * fall;
+        armF = lerp(armF, side ? 0.9 : 0.9, fall);
+        armB = lerp(armB, side ? -0.5 : -0.7, fall);
+        break;
+      }
+      case "nod": {
+        const n = Math.abs(Math.sin(k * Math.PI * 2)) * (1 - 0.3 * k);
+        headTilt = 0.32 * n;
+        dip = 0.8 * n;
+        break;
+      }
+      case "shake": {
+        const s = Math.sin(k * Math.PI * 4) * (1 - k * 0.5);
+        headX = 0.022 * s;
+        headTilt = 0.1 * s;
+        break;
+      }
+      case "jump": {
+        // A crouch, a leap with the arms up, and a landing.
+        const air = span(k, 0.18, 0.82);
+        hop = -0.24 * Math.sin(Math.PI * air);
+        const crouch = k < 0.18 ? Math.sin((Math.PI * k) / 0.18) : 0;
+        const land = k > 0.82 ? Math.sin((Math.PI * (k - 0.82)) / 0.18) : 0;
+        squash = 1 - 0.1 * crouch - 0.08 * land;
+        const up = Math.sin(Math.PI * air);
+        armF = lerp(armF, side ? -2.4 : 2.2, up);
+        armB = lerp(armB, side ? -2.1 : -2.2, up);
+        break;
+      }
       case "walk": {
         const w = Math.sin(t * 13);
         legSwing = w * 0.55;
@@ -1528,27 +1658,37 @@ export class ChibiRig {
     this.feet.position.set(kind === "cavalry" || kind === "catapult" ? lx : 0, 0.32 + ly + hop);
     if (kind === "cavalry" || kind === "catapult") this.rider.position.x = 0;
     this.rider.position.y = (kind === "cavalry" ? -0.2 : 0) + bob;
+    // Lying fallen: the figure topples about its feet, centred on the tile and
+    // flattened a little by the bird's-eye view.
+    this.rider.rotation = -1.5 * fall;
+    this.rider.position.x += 0.3 * fall;
+    this.rider.position.y -= 0.05 * fall;
+    this.feet.scale.y = 1 - 0.22 * fall;
     this.torso.rotation = (side ? lean : 0) * flip;
-    this.torso.scale.y = squash;
-    if (!side) this.torso.position.y = -0.19 + lean * 0.06;
-    else this.torso.position.y = -0.19;
+    // Seen from the front or back, a bow or a nod foreshortens the upper body.
+    this.torso.scale.y = squash * (side ? 1 : 1 - 0.08 * dip);
+    this.torso.position.y = (side ? -0.19 : -0.19 + lean * 0.06) + sink;
     p.head.rotation = (side ? headTilt : headTilt * 0.4) * flip;
-    if (!side) p.head.position.y = -0.27 + Math.max(0, headTilt) * 0.04;
+    p.head.position.x = (side ? 0.01 : 0) + headX;
+    if (!side) p.head.position.y = -0.27 + Math.max(0, headTilt) * 0.04 + dip * 0.03;
     p.armF.rotation = armF * flip;
     p.armB.rotation = armB * flip;
     // The shield and the bow stay upright whatever the arm does.
     p.offhand.rotation = -p.armB.rotation;
     p.weapon.rotation = weaponRest(kind, this.facing) * flip;
+    // Kneeling folds the legs under the lowered hip: the near knee forward, the far shin back.
+    p.legF.scale.y = (1 - 0.55 * fold) / U;
+    p.legB.scale.y = (1 - 0.55 * fold) / U;
     if (side) {
-      p.legF.rotation = legSwing;
-      p.legB.rotation = -legSwing;
-      p.legF.position.y = LAYOUT.side.legF[1];
-      p.legB.position.y = LAYOUT.side.legB[1];
+      p.legF.rotation = legSwing - 0.9 * fold;
+      p.legB.rotation = -legSwing + 1.1 * fold;
+      p.legF.position.y = LAYOUT.side.legF[1] + sink;
+      p.legB.position.y = LAYOUT.side.legB[1] + sink;
     } else {
       p.legF.rotation = 0;
       p.legB.rotation = 0;
-      p.legF.position.y = LAYOUT[this.facing].legF[1] - Math.max(0, legSwing) * 0.05;
-      p.legB.position.y = LAYOUT[this.facing].legB[1] - Math.max(0, -legSwing) * 0.05;
+      p.legF.position.y = LAYOUT[this.facing].legF[1] - Math.max(0, legSwing) * 0.05 + sink;
+      p.legB.position.y = LAYOUT[this.facing].legB[1] - Math.max(0, -legSwing) * 0.05 + sink;
     }
     p.cape.rotation = (Math.sin(t * 2.2) * 0.05 - (side ? lean * 0.6 : 0)) * flip;
     p.throwArm.rotation = arm;
@@ -1557,10 +1697,13 @@ export class ChibiRig {
       const swing = this.pose === "attack" ? span(k, 0.38, 0.46) * (1 - span(k, 0.72, 1)) : 0;
       p.throwArm.scale.set((1 / U) * (0.45 - 1.1 * swing), (1 / U) * 0.8);
     } else p.throwArm.scale.set(1 / U);
-    if (kind === "cavalry")
+    if (kind === "cavalry") {
       p.mount.position.y =
         Math.abs(Math.sin(t * (this.pose === "walk" ? 13 : 2.6))) *
         (this.pose === "walk" ? -0.02 : -0.004);
+      // The hindquarters seen from behind move with the horse.
+      if (this.facing === "up") p.mountFront.position.y = p.mount.position.y;
+    }
   }
 }
 

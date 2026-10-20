@@ -61,7 +61,7 @@ const firstBattle = $derived(story.campaign.cleared.length === 0);
 {:else if story.phase === "end"}
   <EndingView />
 {/if}
-{#if story.phase !== "battle" && story.phase !== "scene"}
+{#if story.phase !== "battle" && story.phase !== "scene" && story.phase !== "camp"}
   <a class="button home" href="#/" aria-label="타이틀로">☰</a>
 {/if}
 
