@@ -375,13 +375,24 @@ function runnerOf(state: BattleState, rules: Ruleset, side: number): string | nu
   return best;
 }
 
-/** The runner's pull toward the objective from `at` (0 for every other unit). */
+/** Is `unit` its side's runner, with an objective it can reach? */
+function isRunner(state: BattleState, rules: Ruleset, unit: Unit): boolean {
+  if (runnerOf(state, rules, unit.side) !== unit.id) return false;
+  const d = objectiveField(state, rules, unit)?.[unit.y * state.map.width + unit.x];
+  return d !== undefined && d !== UNREACHABLE;
+}
+
+/**
+ * The runner's pull toward the objective from `at` (0 for every other unit).
+ * It grows each round like the approach pull, which the runner does without,
+ * so an escaping lord keeps running instead of turning to fight.
+ */
 function objectiveScore(state: BattleState, rules: Ruleset, unit: Unit, at: Cell): number {
-  if (runnerOf(state, rules, unit.side) !== unit.id) return 0;
+  if (!isRunner(state, rules, unit)) return 0;
   const field = objectiveField(state, rules, unit);
   const d = field?.[at.y * state.map.width + at.x] ?? UNREACHABLE;
   if (d === UNREACHABLE) return 0;
-  return d === 0 ? W.onObjective : -d * W.objective;
+  return d === 0 ? W.onObjective : -d * (W.objective + W.boldnessPerRound * state.round);
 }
 
 export function scoreCommand(
@@ -450,7 +461,10 @@ export function scoreCommand(
     // A cast that achieves nothing (healing full HP, binding the bound) is never worth MP.
     if (value <= 0) return W.useless;
     // Support casts move like a wait does, so they pay the same approach pull.
-    const pull = def.targets === "allies" ? approachGap(state, rules, unit, command.to) : 0;
+    const pull =
+      def.targets === "allies" && !isRunner(state, rules, unit)
+        ? approachGap(state, rules, unit, command.to)
+        : 0;
     return (
       score +
       value -
@@ -460,7 +474,7 @@ export function scoreCommand(
     );
   }
   // Wait: approach an attack position, weighed against exposure.
-  const gap = approachGap(state, rules, unit, command.to);
+  const gap = isRunner(state, rules, unit) ? 0 : approachGap(state, rules, unit, command.to);
   const approach = W.approach + W.boldnessPerRound * state.round;
   return score - gap * approach - danger(rules, s, me, threats, "") * guardWeight(s, me);
 }

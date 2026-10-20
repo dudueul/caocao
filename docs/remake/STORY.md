@@ -171,6 +171,42 @@ battles and settle them the same way.
   - 순욱 joining ("나의 자방"), and 포신's death with the wooden statue;
   - the Qingzhou army.
 
+## Chapter 2: 여포 (193–198)
+
+[ADR 0059](../adr/0059-chapter-two-lu-bu.md). The chapter begins from chapter
+1's roster (floor Lv 10). Its 29 steps are 18 staged scenes, 7 battles and 4 camps.
+
+| # | Battle | Map | Win | Lose | Arrivals | Rewards |
+|---|---|---|---|---|---|---|
+| 1 | 팽성의 원한 | Pengcheng, 18 × 12, the 사수 to the north, walled town to the east | defeat 조표 | 조조 falls | 2 Xuzhou troops, round 3 | 800, 어린갑 |
+| 2 | 복양의 불길 | Puyang at night, 18 × 12, streets inside the walls, 11 tiles burning | 조조 reaches the south gate ★ | 조조 falls | 여포 (round 2), 장료 and 2 troops (round 3) | 800, 칠피갑 |
+| 3 | 정도의 둑 | Dingtao, 18 × 12, our thin camp, a dike with a wood behind it | defeat 여포 or round 9 begins | 조조 falls | ours: the ambush, 4 troops (round 3); theirs: 1 (round 4) | 1000, 강궁 |
+| 4 | 완성의 밤 | Wancheng at night, 18 × 12, our palisade and its west gate, the 육수 | 조조 reaches the east edge ★ | 조조 falls | 장수's waves, rounds 2, 3 and 4 (the first hunts 전위) | 800 |
+| 5 | 기현의 싸움 | Qi in the rain, 18 × 12, a river with a bridge and two fords | defeat 교유 | 조조 falls | 1 Yuan Shu soldier, round 4 | 1200, 대극 |
+| 6 | 안중의 땅굴 | Anzhong, 18 × 12, a valley road between hills | defeat 장수 | 조조 falls | ours: 4 troops out of the tunnels, behind both enemies (round 3) | 1200, 철태궁 |
+| 7 | 하비 수공 | Xiapi, 20 × 14, the 사수 and 기수, the dike and the sluice, the walled city | defeat 여포 | 조조 falls | 장패 and a rider (round 5); mercy: 진등 opens the east gate (round 5) | 2000, 명광개 |
+
+- **Escapes** (복양, 완성): only 조조 reaching the ★ wins. 전위 must sortie.
+- **완성:** 전위 starts on the gate tile, between the enemy and 조조. Whether he is standing at the end decides `dianwei`.
+- **하비:** an officer on the sluice ★ (7,2) floods the low ground around the walls. Units caught lose 15% of their max HP and are carried to dry land. Raised roads stay dry to the west, south and east gates, and fords cross to the north and south gates.
+- **진궁** fights for 여포 at 복양, 정도 and 하비 on the revenge path only.
+- **Roster:**
+  - 정욱 and 전위 join in 194.
+  - 서황, 순유 and 곽가 join in 196, and 허저 in 197.
+  - At 백문루, 장료 joins, or 여포 joins and 장료 is gone.
+  - 진궁 leaves in 194 on the revenge path.
+  - 전위 leaves after 완성 if he fell.
+- **Scenes** cover:
+  - 조숭's death, and the march in mourning white;
+  - the choice at 서주, and the revolt of 연주;
+  - 전위 lifting the great banner;
+  - 전씨's letter;
+  - the women on the walls at 정도;
+  - the emperor brought to 허;
+  - 조앙 giving his father his horse;
+  - 가후's two pieces of advice;
+  - 백문루.
+
 ## Chapter 3: 관도 (199–200)
 
 | # | Battle | Map | Win | Lose | Arrivals | Rewards |
@@ -192,7 +228,8 @@ Commanders in forts use the **guard** order ([ADR 0047](../adr/0047-battle-goals
 they strike from their tile and never ride out.
 
 **Balance check** (AI on both sides, 12 seeds per battle, the whole story in order with
-carry-over; `packages/campaign/test` plays it once per run):
+carry-over, on both branch paths; `packages/campaign/test` plays the whole story
+once per path in every run):
 
 | Chapter | Battle | AI wins | Typical end |
 |---|---|---|---|
@@ -202,13 +239,26 @@ carry-over; `packages/campaign/test` plays it once per run):
 | 1 | 변수의 추격 | 11 / 12 | round 8 (the hold) |
 | 1 | 흑산의 무리 | 12 / 12 | round 6 |
 | 1 | 수장의 겨울 | 12 / 12 | round 10 (the hold) |
-| 3 | 백마 구원 | 11 / 12 | round 5 |
-| 3 | 연진의 미끼 | 11 / 12 | round 6 |
-| 3 | 관도 사수 | 11 / 12 | round 9 |
-| 3 | 오소 야습 | 12 / 12 | round 5 |
-| 3 | 관도 결전 | 12 / 12 | round 8 |
+| 2 | 팽성의 원한 | 12 · 12 | round 4 |
+| 2 | 복양의 불길 | 12 · 12 | round 3–4 (the escape) |
+| 2 | 정도의 둑 | 12 · 12 | round 9 (mostly the hold) |
+| 2 | 완성의 밤 | 12 · 12 | round 3 (the escape); 전위 standing 12 · 5 |
+| 2 | 기현의 싸움 | 12 · 12 | round 6–7 |
+| 2 | 안중의 땅굴 | 12 · 12 | round 5 |
+| 2 | 하비 수공 | 11 · 12 | round 8–9; the flood comes on round 2 |
+| 3 | 백마 구원 | 12 · 12 | round 5 |
+| 3 | 연진의 미끼 | 12 · 12 | round 4–5 |
+| 3 | 관도 사수 | 12 · 12 | round 8 |
+| 3 | 오소 야습 | 12 · 12 | round 4 |
+| 3 | 관도 결전 | 12 · 12 | round 6–7 |
 
-The roster leaves chapter 1 around Lv 10–15 and enters 관도 at its floor of 14.
+Chapter 2 and 3 cells read "history path · other path" (revenge and executed ·
+mercy and spared). 전위's survival at 완성 depends on which officers the AI
+sends to the gate: about half overall, from 2 to 12 in 12 by setup. A player
+who pulls him back in time can save him.
+
+The roster leaves chapter 1 around Lv 10–15. It enters chapter 2 at its floor
+of 10, leaves it around Lv 13–21, and enters 관도 at its floor of 14.
 
 ## Progression
 
@@ -262,7 +312,6 @@ From [ADR 0050](../adr/0050-equipment-and-shop.md). Each officer has three slots
 
 | Topic | Leaning |
 |---|---|
-| Chapter 2 | 여포 (193–198): 서주 원정, 복양의 불길, 완성 (전위), 하비 |
+| The next chapter | 하북 (201–207: 원소's sons, 곽가's death) or 적벽 (208) |
 | Consumable items in battle | A new rules action; healing beans and wine |
-| Branching scenes | Choices that change a later battle or a recruit |
 | Server saves | `PlayerDO` with accounts (open question 5) |
