@@ -77,4 +77,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0062](0062-map-shifts.md) | Let the map change during a battle: shifts set off by a round or a reached tile | Accepted | 2026-10-20 |
 | [0063](0063-staged-scenes.md) | Act story scenes out on small tile maps, from a script | Accepted | 2026-10-20 |
 | [0064](0064-walkable-camp.md) | Make the camp a place to walk: 조조 visits the shop, the armoury and his officers | Accepted | 2026-10-20 |
-| [0065](0065-save-format-two.md) | Save format 2: story flags and officers gone for good, reading format 1 | Proposed | 2026-10-20 |
+| [0065](0065-save-format-two.md) | Save format 2: story flags and officers gone for good, reading format 1 | Accepted | 2026-10-20 |

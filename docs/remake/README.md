@@ -118,7 +118,7 @@ flowchart TB
 | Map shifts | The map can change in battle on a round or a reached tile (하비's sluice); escapes for named units; fire at the start; state v4 | [0062](../adr/0062-map-shifts.md) |
 | Staged scenes | Story scenes are acted out on small tile maps from a script: walking, emotes, poses, fights, camera | [0063](../adr/0063-staged-scenes.md) |
 | Walkable camp | The camp is a map: 조조 walks to the shop, the armoury, the records and the council tent, and talks to his officers | [0064](../adr/0064-walkable-camp.md) |
-| Saves, format 2 | Saves keep the story flags and who is gone; format-1 saves still load (Proposed) | [0065](../adr/0065-save-format-two.md) |
+| Saves, format 2 | Saves keep the story flags and who is gone; format-1 saves still load | [0065](../adr/0065-save-format-two.md) |
 
 ## Roadmap
 

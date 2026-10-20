@@ -1,8 +1,8 @@
 # 0065. Save format 2: story flags and officers gone for good, reading format 1
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-20)
 - **Date:** 2026-10-20
-- **Deciders:** Claude (default chosen while building; the owner to confirm)
+- **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0051](0051-browser-saves.md), [0060](0060-story-choices-and-flags.md),
   [0061](0061-fates-decided-in-battle.md)
 
