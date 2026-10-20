@@ -148,8 +148,12 @@ export const fire = (...cells: At[]): Cmd => ({ do: "fire", cells: cells.map(cel
 export const all = (...cmds: Cmd[]): Cmd => ({ do: "all", cmds });
 /** The same steps, run together, only when `cond` holds. */
 export const only = (cond: Cond, ...cmds: Cmd[]): Cmd => ({ do: "all", cmds, if: cond });
-/** The same steps, one after another, only when `cond` holds (spread it into a script). */
-export const when = (cond: Cond, ...cmds: Cmd[]): Cmd[] => cmds.map((c) => ({ ...c, if: cond }));
+/**
+ * The same steps, one after another, only when `cond` holds (spread it into a
+ * script). A step with a condition of its own is wrapped, so both must hold.
+ */
+export const when = (cond: Cond, ...cmds: Cmd[]): Cmd[] =>
+  cmds.map((c) => (c.if ? { do: "all", cmds: [c], if: cond } : { ...c, if: cond }));
 export const actor = (
   id: string,
   side: number,
@@ -477,7 +481,7 @@ export const CAMP_LINES: Readonly<Record<string, readonly Line[]>> = {
     },
   ],
   "dian-wei": [
-    { who: "dian-wei", text: "주공께서 주무시는 동안은 제가 장막 앞을 지킵니다. 염려 마십시오." },
+    { who: "dian-wei", text: "주공께서 주무시는 동안은 제가 막사 앞을 지킵니다. 염려 마십시오." },
   ],
   "xu-chu": [
     {
