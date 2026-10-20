@@ -128,7 +128,7 @@ function clothFor(unitId: string): HeadCloth | null {
   const army = unitId.split("-")[0];
   if (army === "huangjin" || army === "qingzhou" || unitId === "zhang-jiao" || unitId === "bo-cai")
     return "yellow";
-  if (army === "heishan" || unitId === "bai-rao") return "brown";
+  if (army === "heishan" || unitId === "bai-rao" || unitId === "yang-feng") return "brown";
   if (unitId === "sun-jian") return "red";
   return null;
 }

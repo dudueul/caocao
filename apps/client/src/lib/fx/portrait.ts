@@ -116,6 +116,33 @@ const FLEECE_LIGHT = "#efe2c2";
 const BAMBOO = "#b9a052";
 const BAMBOO_DARK = "#7c6a2f";
 const BAMBOO_LIGHT = "#e2cf8c";
+/** Dark fur (wolf or marten) for the Bing frontier's collars, and a Hu warrior's cap brim. */
+const FUR = "#5a4636";
+const FUR_DARK = "#33271d";
+const FUR_LIGHT = "#8a7360";
+/** Felt for a Hu warrior's pointed cap. */
+const FELT = "#9c7c55";
+const FELT_DARK = "#6a5236";
+const FELT_LIGHT = "#c4a57a";
+/** Black armour (玄甲): iron left dark, for the elite. */
+const BLACK_IRON = "#50545c";
+const BLACK_IRON_DARK = "#2e3137";
+const BLACK_IRON_LIGHT = "#80868f";
+/** The emperor's robe: ochre yellow edged in the Han's red (the dynasty ruled by the virtue of Fire). */
+const IMPERIAL = "#c8952e";
+const IMPERIAL_DARK = "#8c6219";
+const IMPERIAL_LIGHT = "#ecc86e";
+const HAN_RED = "#a8382b";
+const HAN_RED_DARK = "#6c1f17";
+/** The mian crown's board: black above, madder red beneath (玄表纁裏); white jade beads. */
+const MIAN_BLACK = "#211c24";
+const MIAN_RED = "#8f2c22";
+const JADE = "#eef2ea";
+const JADE_DARK = "#a3b3a6";
+/** The imperial seal's jade. */
+const SEAL_JADE = "#cfe2cf";
+const SEAL_JADE_DARK = "#8fae96";
+const SEAL_JADE_LIGHT = "#f2faf1";
 
 /** Side colours, as Han dyes (the same as the rigged figures): ours red, the enemy blue (ADR 0055). */
 interface Pal {
@@ -188,13 +215,27 @@ const HATS = [
   "huangjin",
   "wrap",
   "redze",
+  "mian",
+  "tongtian",
+  "fur",
 ] as const;
 /**
  * The dress of an army: Han regulars, Yellow Turban rebels in hemp and patched
  * leather, bandits in drab rags, a household's servants, the Liang frontier's
- * heavy armour and fleece.
+ * heavy armour and fleece; a province's levies in leather, the Bing frontier's
+ * dark fur collars, the south's lacquered armour, and the emperor's own robe.
  */
-const DRESSES = ["han", "rebel", "bandit", "servant", "frontier"] as const;
+const DRESSES = [
+  "han",
+  "rebel",
+  "bandit",
+  "servant",
+  "frontier",
+  "levy",
+  "bing",
+  "south",
+  "imperial",
+] as const;
 const MARKS = [
   "patch",
   "ears",
@@ -219,6 +260,14 @@ const MARKS = [
   "staff",
   "club",
   "staves",
+  "heavy",
+  "twinJi",
+  "trident",
+  "axe",
+  "earring",
+  "sidelong",
+  "strand",
+  "seal",
 ] as const;
 const HAIR_TONES = ["black", "salt", "grey", "white"] as const;
 const SKIN_TONES = ["fair", "warm", "tan", "ruddy", "pale"] as const;
@@ -271,7 +320,10 @@ interface Traits {
    * when in robes, a lord's gold trim, and personal marks. `civil` wears no
    * armour whatever the class; `brocade` is a figured silk robe; `staff`,
    * `club` and `staves` are carried in front (a Taoist's bamboo staff, a
-   * cudgel, the northern district's five-coloured staves).
+   * cudgel, the northern district's five-coloured staves). `heavy` is black
+   * armour with a neck guard; `twinJi`, `trident` and `axe` are weapons carried
+   * behind; `seal` is the imperial seal held in front; `sidelong` eyes glance
+   * away; `strand` is a loose lock of hair.
    */
   marks: readonly Mark[];
 }
@@ -369,14 +421,14 @@ const OFFICERS: Record<string, Traits> = {
   "cao-cao":      o("cavalry",       0, 2, 1, [0.95, 1.02, 0.40, 0.35, 0.70], "narrow",  1.00, [ 5, 1,  5], "straight", 24, "neat",    "goatee",   "black", "warm",  ["gilt", "lines"]),
   "xiahou-dun":   o("infantry",      0, 2, 2, [1.05, 1.00, 0.75, 0.60, 0.50], "fierce",  1.00, [ 8, 2,  4], "straight", 24, "full",    "full",     "black", "tan",   ["bushy", "patch", "helm:banded"]),
   "xiahou-yuan":  o("archer",        0, 2, 1, [0.93, 1.06, 0.35, 0.30, 0.80], "narrow",  1.00, [ 5, 2,  3], "straight", 24, "droop",   "none",     "black", "tan",   []),
-  "xu-chu":       o("martialArtist", 0, 1, 3, [1.18, 0.95, 1.00, 0.85, 0.30], "small",   0.95, [ 9, 1,  0], "broad",    28, "full",    "short",    "black", "tan",   ["bushy", "thickNeck"]),
-  "zhang-liao":   o("cavalry",       0, 1, 1, [1.00, 1.05, 0.60, 0.45, 0.60], "almond",  1.00, [ 7, 0,  4], "straight", 24, "neat",    "full",     "black", "warm",  ["frown", "helm:lamellar"]),
-  "xu-huang":     o("infantry",      0, 2, 2, [1.07, 0.98, 0.95, 0.80, 0.50], "round",   0.90, [ 8, 0,  1], "broad",    24, "full",    "full",     "black", "tan",   ["helm:lacquer"]),
+  "xu-chu":       o("martialArtist", 0, 1, 3, [1.22, 0.95, 1.00, 0.95, 0.25], "small",   0.90, [ 9, 1, -1], "broad",    28, "full",    "short",    "black", "tan",   ["bushy", "thickNeck", "jowls"]),
+  "zhang-liao":   o("cavalry",       0, 1, 1, [1.00, 1.05, 0.60, 0.45, 0.60], "almond",  1.00, [ 7, 0,  4], "straight", 24, "neat",    "full",     "black", "warm",  ["frown", "helm:lamellar", "dress:bing"]),
+  "xu-huang":     o("infantry",      0, 2, 2, [1.07, 0.98, 0.95, 0.80, 0.50], "round",   0.90, [ 8, 0,  1], "broad",    24, "full",    "full",     "black", "tan",   ["axe", "helm:lacquer"]),
   "yue-jin":      o("infantry",      0, 1, 0, [0.90, 0.93, 0.35, 0.30, 0.70], "fierce",  1.08, [ 7, 2,  6], "straight", 21, "bristle", "stubble",  "black", "warm",  ["helm:lamellar"]),
   "li-dian":      o("infantry",      0, 1, 1, [1.00, 1.00, 0.40, 0.45, 0.50], "gentle",  1.00, [ 4, 3,  1], "straight", 24, "neat",    "short",    "black", "fair",  ["helm:banded"]),
   "yu-jin":       o("infantry",      0, 2, 1, [1.04, 0.98, 0.90, 0.75, 0.50], "narrow",  1.00, [ 8, 0,  0], "straight", 20, "neat",    "short",    "black", "warm",  ["frown", "lines", "helm:lacquer"]),
   "xun-you":      o("strategist",    0, 2, 1, [0.95, 1.08, 0.40, 0.30, 0.50], "heavy",   1.00, [ 4, 2, -2], "straight", 24, "thin",    "long",     "salt",  "fair",  ["lines"]),
-  "guo-jia":      o("strategist",    0, 0, 1, [0.93, 1.00, 0.30, 0.25, 0.50], "narrow",  1.00, [ 4, 3,  3], "straight", 24, "thin",    "none",     "black", "pale",  ["smirk"]),
+  "guo-jia":      o("strategist",    0, 0, 1, [0.93, 1.00, 0.30, 0.25, 0.50], "narrow",  1.00, [ 4, 3,  3], "straight", 24, "thin",    "none",     "black", "pale",  ["smirk", "strand"]),
   "liu-ye":       o("catapult",      0, 1, 1, [1.00, 1.00, 0.50, 0.50, 0.50], "round",   0.95, [ 5, 3,  1], "straight", 24, "neat",    "goatee",   "black", "warm",  []),
   "xun-yu":       o("strategist",    0, 1, 1, [0.97, 1.03, 0.45, 0.40, 0.50], "almond",  1.00, [ 5, 2,  2], "straight", 24, "thin",    "goatee",   "black", "fair",  ["court"]),
   "cao-ren":      o("infantry",      0, 1, 2, [1.08, 0.97, 0.80, 0.65, 0.50], "round",   1.00, [ 8, 1,  2], "broad",    24, "full",    "short",    "black", "warm",  ["helm:banded"]),
@@ -399,7 +451,7 @@ const OFFICERS: Record<string, Traits> = {
   "qu-yi":        o("archer",        1, 2, 1, [0.98, 1.02, 0.65, 0.55, 0.85], "narrow",  1.00, [ 7, 1,  1], "straight", 24, "full",    "short",    "salt",  "tan",   ["scar", "lines"]),
   "liu-bei":      o("infantry",      1, 2, 1, [1.00, 1.00, 0.45, 0.50, 0.50], "gentle",  1.04, [ 5, 3, -1], "straight", 24, "neat",    "short",    "black", "fair",  ["ears"]),
   "liu-yan":      o("strategist",    0, 2, 1, [1.01, 1.00, 0.55, 0.50, 0.50], "heavy",   1.00, [ 6, 2,  0], "straight", 24, "neat",    "short",    "black", "warm",  ["court", "lines"]),
-  "lu-bu":        o("cavalry",       3, 1, 2, [1.00, 1.04, 0.60, 0.45, 0.70], "fierce",  1.00, [ 8, 1,  7], "straight", 24, "none",    "none",     "black", "fair",  ["hat:crown", "feathers", "frown"]),
+  "lu-bu":        o("cavalry",       3, 1, 2, [1.02, 1.04, 0.78, 0.50, 0.85], "fierce",  1.04, [ 9, 1,  8], "straight", 24, "none",    "none",     "black", "fair",  ["hat:crown", "feathers", "frown", "gilt", "dress:bing"]),
   "zhao-yun":     o("cavalry",       2, 0, 1, [0.97, 1.00, 0.40, 0.35, 0.50], "round",   1.02, [ 6, 1,  3], "straight", 24, "none",    "none",     "black", "fair",  ["silver"]),
   "zhang-fei":    o("infantry",      2, 1, 2, [1.12, 0.95, 0.85, 0.70, 0.40], "round",   1.12, [10, 2,  6], "broad",    28, "bristle", "whiskers", "black", "tan",   ["bushy", "helm:lacquer"]),
   "gan-ning":     o("infantry",      3, 1, 1, [0.97, 1.02, 0.55, 0.40, 0.75], "narrow",  1.00, [ 5, 1,  6], "straight", 24, "thin",    "stubble",  "black", "tan",   ["hat:rake", "bells", "smirk"]),
@@ -407,7 +459,7 @@ const OFFICERS: Record<string, Traits> = {
   "taishi-ci":    o("archer",        3, 1, 1, [1.00, 1.03, 0.65, 0.50, 0.50], "almond",  1.00, [ 7, 0,  3], "straight", 24, "neat",    "short",    "black", "warm",  []),
   "zhuge-liang":  o("strategist",    2, 1, 1, [0.96, 1.05, 0.40, 0.30, 0.50], "gentle",  1.00, [ 4, 2,  2], "straight", 24, "thin",    "goatee",   "black", "fair",  ["hat:lunjin"]),
   "zhou-yu":      o("strategist",    3, 0, 1, [0.96, 1.00, 0.42, 0.38, 0.50], "almond",  1.04, [ 5, 2,  3], "straight", 24, "none",    "none",     "black", "fair",  ["hat:crown", "jade"]),
-  "dian-wei":     o("martialArtist", 0, 1, 3, [1.16, 1.02, 1.00, 0.90, 0.90], "fierce",  0.92, [10, 0,  3], "broad",    27, "bristle", "wild",     "black", "tan",   ["bushy", "thickNeck", "scar", "frown", "band"]),
+  "dian-wei":     o("martialArtist", 0, 1, 3, [1.16, 1.02, 1.00, 0.90, 0.90], "fierce",  0.92, [10, 0,  3], "broad",    27, "bristle", "wild",     "black", "tan",   ["bushy", "thickNeck", "scars", "frown", "band", "twinJi"]),
   "ma-jun":       o("catapult",      0, 1, 1, [1.06, 0.94, 0.40, 0.55, 0.30], "round",   1.00, [ 4, 3,  0], "straight", 24, "none",    "stubble",   "black", "fair",  []),
   // Story chapter 1 (174–192): Cao Cao's people and the Han generals.
   "cao-hong":     o("cavalry",       0, 1, 2, [1.06, 0.98, 0.75, 0.60, 0.45], "round",   1.00, [ 7, 1,  3], "broad",    25, "neat",    "short",    "black", "warm",  ["helm:lamellar"]),
@@ -426,6 +478,35 @@ const OFFICERS: Record<string, Traits> = {
   "hua-xiong":    o("infantry",      1, 1, 3, [1.14, 1.00, 0.95, 0.80, 0.60], "fierce",  0.96, [10, 1,  6], "broad",    27, "bristle", "full",     "black", "tan",   ["bushy", "thickNeck", "frown", "helm:crested", "dress:frontier"]),
   "xu-rong":      o("cavalry",       1, 2, 1, [0.98, 1.04, 0.55, 0.45, 0.65], "narrow",  1.00, [ 6, 0,  2], "straight", 22, "neat",    "short",    "black", "warm",  ["frown", "helm:lacquer"]),
   "bai-rao":      o("infantry",      1, 1, 2, [1.04, 1.00, 0.80, 0.60, 0.85], "fierce",  0.95, [ 8, 0,  5], "hook",     25, "droop",   "stubble",  "black", "tan",   ["bushy", "scars", "hat:wrap", "dress:bandit"]),
+  // Story chapter 2 (193–198): Cao Cao's people.
+  "cheng-yu":     o("strategist",    0, 3, 1, [0.92, 1.12, 0.60, 0.40, 0.85], "narrow",  0.96, [ 8, 0,  4], "straight", 21, "long",    "long",     "grey",  "tan",   ["frown", "lines"]),
+  "cao-ang":      o("cavalry",       0, 0, 1, [0.96, 1.00, 0.50, 0.40, 0.55], "almond",  1.07, [ 6, 3,  0], "straight", 23, "thin",    "none",     "black", "fair",  ["helm:lamellar"]),
+  "cao-song":     o("strategist",    0, 3, 2, [1.08, 0.98, 0.50, 0.60, 0.25], "gentle",  0.94, [ 5, 3, -3], "small",    22, "droop",   "long",     "white", "warm",  ["civil", "court", "brocade", "gilt", "jowls", "lines"]),
+  "man-chong":    o("strategist",    0, 1, 1, [1.02, 1.02, 0.90, 0.60, 0.55], "narrow",  0.98, [ 8, 0,  0], "straight", 19, "neat",    "short",    "black", "warm",  ["court", "frown"]),
+  // Story chapter 2: Xu province, Yan province's rebels and Lu Bu's army.
+  "tao-qian":     o("strategist",    1, 3, 1, [0.97, 1.05, 0.45, 0.40, 0.65], "heavy",   1.00, [ 6, 2, -3], "straight", 23, "thin",    "wisp",     "grey",  "fair",  ["civil", "court", "bushy", "lines"]),
+  "cao-bao":      o("cavalry",       1, 2, 2, [1.06, 0.98, 0.70, 0.60, 0.50], "round",   0.98, [ 8, 1,  3], "broad",    25, "full",    "short",    "black", "ruddy", ["bushy", "helm:banded"]),
+  "chen-deng":    o("strategist",    1, 1, 0, [0.94, 1.04, 0.35, 0.20, 0.85], "almond",  1.06, [ 5, 3,  6], "straight", 22, "thin",    "goatee",   "black", "fair",  ["court"]),
+  "zhang-miao":   o("strategist",    1, 2, 1, [1.00, 1.03, 0.55, 0.45, 0.55], "gentle",  1.00, [ 6, 2, -2], "straight", 24, "neat",    "full",     "black", "fair",  ["court", "brocade", "lines"]),
+  "tian-shi":     o("strategist",    1, 2, 1, [0.92, 1.04, 0.35, 0.30, 0.65], "small",   1.00, [ 5, 4,  3], "straight", 22, "thin",    "wisp",     "black", "fair",  ["civil", "brocade", "gilt", "sidelong", "smirk", "hat:ze"]),
+  "gao-shun":     o("infantry",      1, 2, 1, [0.98, 1.05, 0.80, 0.55, 0.75], "narrow",  0.95, [ 8, 0,  2], "straight", 20, "neat",    "short",    "black", "tan",   ["frown", "heavy", "helm:banded"]),
+  "hou-cheng":    o("cavalry",       1, 2, 2, [1.08, 0.97, 0.70, 0.65, 0.40], "round",   1.00, [ 7, 2,  3], "broad",    26, "full",    "full",     "black", "ruddy", ["helm:lamellar", "dress:bing"]),
+  "song-xian":    o("infantry",      1, 1, 1, [0.92, 1.07, 0.40, 0.30, 0.80], "narrow",  1.00, [ 5, 1,  5], "hook",     22, "droop",   "goatee",   "black", "tan",   ["helm:lacquer", "dress:bing"]),
+  "wei-xu":       o("infantry",      1, 1, 1, [1.00, 0.98, 0.50, 0.45, 0.50], "small",   1.00, [ 6, 3,  2], "straight", 23, "thin",    "stubble",  "black", "warm",  ["smirk", "helm:banded", "dress:bing"]),
+  "zang-ba":      o("infantry",      1, 1, 2, [1.08, 1.00, 0.85, 0.70, 0.75], "fierce",  1.00, [ 9, 1,  5], "broad",    26, "bristle", "wild",     "black", "tan",   ["bushy", "scar", "helm:open"]),
+  // Story chapter 2: Zhang Xiu's Liang army at Wan.
+  "zhang-xiu":    o("cavalry",       1, 1, 1, [1.02, 1.02, 0.65, 0.50, 0.75], "fierce",  1.00, [ 7, 1,  4], "straight", 24, "neat",    "short",    "black", "tan",   ["helm:lamellar", "dress:frontier"]),
+  "jia-xu":       o("strategist",    1, 2, 1, [0.95, 1.06, 0.40, 0.25, 0.75], "heavy",   0.95, [ 5, 2,  1], "straight", 22, "long",    "wisp",     "salt",  "warm",  ["smirk", "lines"]),
+  "hu-cheer":     o("martialArtist", 1, 1, 3, [1.14, 1.00, 0.90, 0.75, 0.85], "round",   0.95, [10, 2,  4], "hook",     27, "bristle", "wild",     "black", "ruddy", ["bushy", "thickNeck", "earring", "hat:fur", "dress:frontier"]),
+  // Story chapter 2: Yuan Shu's would-be empire of Zhong.
+  "yuan-shu":     o("strategist",    1, 2, 2, [1.04, 1.00, 0.45, 0.55, 0.40], "heavy",   1.02, [ 5, 3,  5], "straight", 22, "thin",    "goatee",   "black", "pale",  ["civil", "brocade", "gilt", "smirk", "seal", "hat:tongtian"]),
+  "zhang-xun":    o("cavalry",       1, 2, 1, [1.02, 1.00, 0.55, 0.50, 0.60], "round",   1.00, [ 7, 2,  2], "straight", 24, "droop",   "goatee",   "black", "warm",  ["gilt", "brocade", "helm:banded"]),
+  "qiao-rui":     o("infantry",      1, 3, 1, [0.98, 1.04, 0.70, 0.50, 0.70], "narrow",  1.00, [ 7, 1,  3], "straight", 23, "neat",    "long",     "salt",  "tan",   ["gilt", "scar", "helm:lacquer"]),
+  "ji-ling":      o("infantry",      1, 2, 3, [1.20, 0.98, 0.95, 0.85, 0.30], "small",   0.95, [ 9, 2,  3], "broad",    28, "full",    "short",    "black", "tan",   ["bushy", "thickNeck", "jowls", "gilt", "trident", "helm:crested"]),
+  // Story chapter 2: the court, its escort and Jing province.
+  "xian-di":      o("strategist",    0, 0, 0, [0.95, 0.98, 0.35, 0.35, 0.40], "gentle",  1.08, [ 4, 3, -2], "small",    21, "none",    "none",     "black", "pale",  ["civil", "brocade", "hat:mian", "dress:imperial"]),
+  "yang-feng":    o("infantry",      1, 2, 2, [1.06, 0.98, 0.80, 0.65, 0.70], "small",   1.00, [ 8, 0,  3], "broad",    25, "bristle", "full",     "black", "ruddy", ["bushy", "scar", "hat:wrap", "dress:bandit"]),
+  "liu-biao":     o("strategist",    1, 3, 1, [0.98, 1.06, 0.50, 0.42, 0.55], "gentle",  1.00, [ 5, 2, -1], "straight", 24, "long",    "long",     "salt",  "fair",  ["court", "gilt", "lines"]),
 };
 
 function has(t: Traits, m: Mark): boolean {
@@ -498,6 +579,7 @@ interface Army {
   home: number;
   dress: Dress;
   hat?: Hat;
+  helm?: HelmStyle;
   marks?: readonly Mark[];
 }
 
@@ -507,7 +589,12 @@ interface Army {
  * five-coloured staves) are ours; yuan-…, huangjin-… and qingzhou-… (Yellow
  * Turbans in their yellow head-cloths), dong-… (Dong Zhuo's Liang troops),
  * heishan-… (Black Mountain bandits) and jianjia-… (the Jian household's
- * servants, in dark caps with cudgels) are the enemy's.
+ * servants, in dark caps with cudgels) are the enemy's. Chapter 2's enemies:
+ * xu-… (Tao Qian's provincial levies, in cloth caps and leather), lu-… (Lu
+ * Bu's Bing frontiersmen, with dark fur collars), xianzhen-… (Gao Shun's
+ * 陷陣營, in black armour with neck guards), zhang-… (Zhang Xiu's Liang men),
+ * jing-… (Jing province's lacquered southern armour) and zhong-… (Yuan Shu's
+ * gaudy guards of his would-be empire, in figured silk and gilt).
  */
 const ARMIES = new Map<string, Army>([
   ["cao", { home: 0, dress: "han" }],
@@ -518,6 +605,12 @@ const ARMIES = new Map<string, Army>([
   ["dong", { home: 1, dress: "frontier" }],
   ["heishan", { home: 1, dress: "bandit", hat: "wrap" }],
   ["jianjia", { home: 1, dress: "servant", hat: "ze", marks: ["club"] }],
+  ["xu", { home: 1, dress: "levy", hat: "ze" }],
+  ["lu", { home: 1, dress: "bing", helm: "lamellar" }],
+  ["xianzhen", { home: 1, dress: "han", helm: "banded", marks: ["heavy"] }],
+  ["zhang", { home: 1, dress: "frontier" }],
+  ["jing", { home: 1, dress: "south", helm: "lacquer" }],
+  ["zhong", { home: 1, dress: "han", marks: ["gilt", "brocade"] }],
 ]);
 
 /** A soldier's face from the hash of the id: helmeted or capped by class, varied face and beard. */
@@ -574,6 +667,7 @@ function generic(id: string): Traits {
   // The army's dress, drawn after the face so the Cao and Yuan faces stay as they were.
   t.dress = army.dress;
   if (army.hat) t.hat = army.hat;
+  if (army.helm) t.helm = army.helm;
   marks.push(...(army.marks ?? []));
   if (army.dress === "rebel" || army.dress === "bandit") {
     // Peasants and outlaws: weathered, rougher beards, more scars.
@@ -581,10 +675,16 @@ function generic(id: string): Traits {
     if (age > 0) t.beard = pick(r, ["stubble", "stubble", "short", "wild", "full", "goatee"]);
     if (r() < (army.dress === "bandit" ? 0.5 : 0.25)) marks.push("scar");
   }
-  if (army.dress === "frontier") {
-    // Liang province men: hard-bitten, weathered by the north-west wind.
+  if (army.dress === "frontier" || army.dress === "bing") {
+    // Liang and Bing province men: hard-bitten, weathered by the northern wind.
     t.skin = pick(r, ["tan", "tan", "ruddy", "warm"]);
     t.build = Math.max(t.build, 1);
+  }
+  if (has(t, "heavy")) {
+    // Picked men: grown, solid, unsmiling.
+    t.age = Math.max(t.age, 1);
+    t.build = Math.max(t.build, 1);
+    if (t.beard === "none") t.beard = "short";
   }
   return t;
 }
@@ -794,6 +894,8 @@ function lamellae(
     base?: string;
     dark?: string;
     light?: string;
+    /** The line under each row; lacquered plates show a red edge. */
+    rowLine?: string | undefined;
   },
 ): void {
   const base = o.base ?? IRON;
@@ -821,7 +923,7 @@ function lamellae(
         laces.rect(x, yAt(x, y) - 1.5, o.plate * 0.5, 3);
   }
   inside(g, p, () => {
-    stroke(g, alpha("#1c1e22", 0.75), 1.6, rows);
+    stroke(g, o.rowLine ? alpha(o.rowLine, 0.9) : alpha("#1c1e22", 0.75), 1.6, rows);
     stroke(g, alpha("#1c1e22", 0.5), 1, plates);
     g.fillStyle = lace;
     g.fill(laces);
@@ -998,6 +1100,15 @@ function clothOf(L: Look): Cloth {
       edgeDark: "#6e5f41",
       coarse: true,
     };
+  if (t.dress === "imperial")
+    return {
+      robe: IMPERIAL,
+      dark: IMPERIAL_DARK,
+      light: IMPERIAL_LIGHT,
+      edge: HAN_RED,
+      edgeDark: HAN_RED_DARK,
+      coarse: false,
+    };
   if (t.dress === "servant") {
     const robe = mix(P.robe, HEMP, 0.4);
     return {
@@ -1162,7 +1273,9 @@ function chest(g: G, L: Look): void {
       if (unarmoured) waist();
       else {
         armour(g, L, bx, true);
-        if (t.dress === "frontier") fleece(g, bx);
+        if (has(t, "heavy")) gorget(g, L, bx);
+        if (t.dress === "frontier") fleece(g, bx, false);
+        if (t.dress === "bing") fleece(g, bx, true);
       }
       break;
     case "catapult":
@@ -1171,10 +1284,13 @@ function chest(g: G, L: Look): void {
       break;
     case "archer":
       vest(g, L, bx);
+      if (t.dress === "bing") fleece(g, bx, true);
       break;
     case "martialArtist":
       sash(g, L, bx);
       if (L.tier2 && !unarmoured) armour(g, L, bx, false);
+      // A sheepskin over the work clothes on the frontier.
+      if (t.dress === "frontier") fleece(g, bx, false);
       break;
     case "strategist":
       waist();
@@ -1182,8 +1298,11 @@ function chest(g: G, L: Look): void {
   }
 }
 
-/** A sheepskin collar round the cuirass's neckline, as the Liang frontier wore against the cold. */
-function fleece(g: G, bx: (x: number) => number): void {
+/**
+ * A sheepskin collar round the cuirass's neckline, as the Liang frontier wore
+ * against the cold; or (`fur`) the Bing frontier's shaggy wolf fur.
+ */
+function fleece(g: G, bx: (x: number) => number, fur: boolean): void {
   const segs: [Pt, Pt, Pt][] = [
     [
       [bx(34), 266],
@@ -1201,7 +1320,6 @@ function fleece(g: G, bx: (x: number) => number): void {
       [bx(218), 259],
     ],
   ];
-  // A roll of wool: overlapping tufts with an ink edge round the outside only.
   const pts: Pt[] = [];
   for (const [a, c, b] of segs)
     for (let i = 0; i < 8; i++) {
@@ -1209,6 +1327,11 @@ function fleece(g: G, bx: (x: number) => number): void {
       pts.push([x, y]);
     }
   pts.push([bx(218), 259]);
+  if (fur) {
+    furRoll(g, pts, 11);
+    return;
+  }
+  // A roll of wool: overlapping tufts with an ink edge round the outside only.
   const tufts = (r: number, dx: number, dy: number) =>
     path((p) => {
       for (const [i, [x, y]] of pts.entries()) {
@@ -1232,17 +1355,104 @@ function fleece(g: G, bx: (x: number) => number): void {
 }
 
 /**
+ * A roll of shaggy fur along the points: star-shaped tufts of guard hair,
+ * pointing every way, over a dark undercoat, with an ink edge round the outside.
+ */
+function furRoll(g: G, pts: readonly Pt[], r: number): void {
+  const tufts = (k: number, dx: number, dy: number) =>
+    path((p) => {
+      for (const [i, [x, y]] of pts.entries()) {
+        const n = 16;
+        for (let j = 0; j < n; j++) {
+          const a = (j / n) * Math.PI * 2 + i * 1.3;
+          const rr = r * k * (j % 2 ? 0.6 : 1.05 + ((i + j) % 3) * 0.14);
+          const px = x + dx + Math.cos(a) * rr;
+          const py = y + dy + Math.sin(a) * rr;
+          if (j === 0) p.moveTo(px, py);
+          else p.lineTo(px, py);
+        }
+        p.closePath();
+      }
+    });
+  const coat = tufts(1, 0, 0);
+  stroke(g, INK, 4, coat);
+  g.fillStyle = FUR_DARK;
+  g.fill(coat);
+  g.fillStyle = FUR;
+  g.fill(tufts(0.78, 1.5, -2));
+  // Light guard hairs combed down and out, catching the key light.
+  for (const [i, [x, y]] of pts.entries()) {
+    const a = i * 1.3;
+    const dx = Math.cos(a) * 3;
+    line(g, FUR_LIGHT, 1.6, x + 2 + dx, y - 6, x + 4 + dx * 1.6, y + 3);
+    if (i % 2 === 0) line(g, alpha(FUR_LIGHT, 0.8), 1.3, x - 4, y - 3, x - 7, y + 5);
+  }
+}
+
+/** A lamellar neck guard (頸鎧) filling the cuirass's neckline up to the chin: the elite's heavy armour. */
+function gorget(g: G, L: Look, bx: (x: number) => number): void {
+  const p = path((pp) => {
+    pp.moveTo(bx(38), 270);
+    pp.quadraticCurveTo(bx(46), 238, bx(68), 226);
+    pp.quadraticCurveTo(bx(112), 218, bx(160), 220);
+    pp.quadraticCurveTo(bx(198), 234, bx(214), 262);
+    pp.quadraticCurveTo(bx(186), 272, bx(150), 298);
+    pp.quadraticCurveTo(bx(124), 314, bx(102), 300);
+    pp.quadraticCurveTo(bx(80), 278, bx(38), 270);
+    pp.closePath();
+  });
+  lamellae(g, p, L.P.lace, {
+    x0: bx(30),
+    x1: bx(220),
+    y0: 216,
+    y1: 312,
+    row: 10,
+    plate: 7,
+    sag: 8,
+    base: BLACK_IRON,
+    dark: BLACK_IRON_DARK,
+    light: BLACK_IRON_LIGHT,
+  });
+  // A leather binding along the top edge.
+  g.save();
+  g.beginPath();
+  g.moveTo(bx(46), 240);
+  g.quadraticCurveTo(bx(56), 230, bx(68), 226);
+  g.quadraticCurveTo(bx(112), 218, bx(160), 220);
+  g.quadraticCurveTo(bx(180), 226, bx(194), 238);
+  g.strokeStyle = INK;
+  g.lineWidth = 7;
+  g.stroke();
+  g.strokeStyle = has(L.t, "gilt") ? GOLD : LEATHER;
+  g.lineWidth = 4;
+  g.stroke();
+  g.restore();
+}
+
+/**
  * Iron lamellar cuirass and shoulder flaps (披膊), laced in the side's colour.
  * Rebels and bandits wear patched leather instead; the Liang frontier wears more of it.
+ * Levies wear plain leather, the south black lacquer, the elite black iron.
  */
 function armour(g: G, L: Look, bx: (x: number) => number, cuirass: boolean): void {
   const { P } = L;
   const steel = has(L.t, "silver");
   const rough = L.t.dress === "rebel" || L.t.dress === "bandit";
-  const heavy = (L.tier2 && L.fam === "infantry") || L.t.dress === "frontier";
-  const base = rough ? LEATHER : steel ? STEEL : IRON;
-  const dark = rough ? LEATHER_DARK : steel ? STEEL_DARK : IRON_DARK;
-  const light = rough ? LEATHER_LIGHT : steel ? STEEL_LIGHT : IRON_LIGHT;
+  // Levies wear plain leather; the south lacquers its leather black, edged in red.
+  const leather = rough || L.t.dress === "levy";
+  const lacquer = L.t.dress === "south";
+  const black = has(L.t, "heavy");
+  const heavy = (L.tier2 && L.fam === "infantry") || L.t.dress === "frontier" || black;
+  const [base, dark, light] = leather
+    ? [LEATHER, LEATHER_DARK, LEATHER_LIGHT]
+    : lacquer
+      ? [LACQUER, LACQUER_DARK, LACQUER_LIGHT]
+      : black
+        ? [BLACK_IRON, BLACK_IRON_DARK, BLACK_IRON_LIGHT]
+        : steel
+          ? [STEEL, STEEL_DARK, STEEL_LIGHT]
+          : [IRON, IRON_DARK, IRON_LIGHT];
+  const rowLine = lacquer ? LACQUER_RED : undefined;
   if (cuirass) {
     const plate = path((p) => {
       p.moveTo(bx(40), 268);
@@ -1265,6 +1475,7 @@ function armour(g: G, L: Look, bx: (x: number) => number, cuirass: boolean): voi
       base,
       dark,
       light,
+      rowLine,
     });
     if (rough) patches(g, plate, L.seed, bx);
     // Leather edging along the neckline.
@@ -1277,13 +1488,13 @@ function armour(g: G, L: Look, bx: (x: number) => number, cuirass: boolean): voi
     g.strokeStyle = INK;
     g.lineWidth = 8;
     g.stroke();
-    g.strokeStyle = L.tier2 || has(L.t, "gilt") ? GOLD : LEATHER;
+    g.strokeStyle = L.tier2 || has(L.t, "gilt") ? GOLD : lacquer ? LACQUER_RED : LEATHER;
     g.lineWidth = 5;
     g.stroke();
     g.restore();
   }
-  // Shoulder flaps: three overlapping rows each side (two for rebels, four for heavy armour).
-  const rows = heavy ? 4 : rough ? 2 : 3;
+  // Shoulder flaps: three overlapping rows each side (two in leather, four for heavy armour).
+  const rows = heavy ? 4 : leather ? 2 : 3;
   for (let i = rows - 1; i >= 0; i--) {
     const near = path((p) => {
       const y = 252 + i * 15;
@@ -1304,6 +1515,7 @@ function armour(g: G, L: Look, bx: (x: number) => number, cuirass: boolean): voi
       base,
       dark,
       light,
+      rowLine,
     });
     const far = path((p) => {
       const y = 250 + i * 14;
@@ -1324,6 +1536,7 @@ function armour(g: G, L: Look, bx: (x: number) => number, cuirass: boolean): voi
       base,
       dark,
       light,
+      rowLine,
     });
   }
 }
@@ -1446,6 +1659,15 @@ function ear(g: G, L: Look, q: Geo): void {
   curve(g, alpha(skd, 1), 2.4, X(-34), -4, X(-44), 2, X(-40), Y(18), X(-36), Y(22), X(-34), Y(14));
 }
 
+/** A gold ring through the ear lobe, as the steppe peoples wore; drawn over the beard. */
+function earring(g: G, q: Geo): void {
+  const { X, Y } = q;
+  const ring = ellipse(X(-40), Y(42), 7, 9, 0.15);
+  stroke(g, INK, 6, ring);
+  stroke(g, GOLD, 3.4, ring);
+  line(g, GOLD_LIGHT, 1.6, X(-35), Y(36), X(-34), Y(42));
+}
+
 /** The hair: a clean hairline, sideburns in front of the ear, the nape and the crown. */
 function hairPath(q: Geo, top: number): Path2D {
   const { X, Y } = q;
@@ -1560,7 +1782,8 @@ function eye(g: G, L: Look, x: number, y: number, near: boolean, closed: boolean
   g.fill(shape);
   inside(g, shape, () => {
     const r = Math.min(h * 1.05 * k.iris, w * 0.32) * (near ? 1 : 0.92);
-    const ix = x + w * 0.1;
+    // A sidelong glance looks away, back over the near shoulder.
+    const ix = x + w * (has(L.t, "sidelong") ? -0.24 : 0.1);
     const iy = y - open * 0.15;
     g.fillStyle = "#4b2d1f";
     g.beginPath();
@@ -2144,26 +2367,34 @@ function headwear(g: G, L: Look, q: Geo, back: boolean): void {
     }
     case "ze":
     case "redze":
-    case "court": {
-      if (back) return;
-      const cap =
-        hat === "court"
-          ? GAUZE
-          : hat === "redze"
-            ? RED_CAP
-            : t.dress === "servant"
-              ? SERVANT_CAP
-              : L.fam === "archer"
-                ? P.robeDark
-                : "#2b2421";
-      const capDark =
-        hat === "court" ? "#0e0d10" : hat === "redze" ? RED_CAP_DARK : mix(cap, "#000000", 0.4);
-      const capLight =
-        hat === "court" ? GAUZE_LIGHT : hat === "redze" ? RED_CAP_LIGHT : mix(cap, "#ffffff", 0.25);
+    case "court":
+    case "tongtian":
+    case "mian": {
+      if (back) {
+        if (hat === "mian") mianCrown(g, q, true);
+        return;
+      }
+      // Court caps and crowns sit on a low cap of black gauze.
+      const gauze = hat === "court" || hat === "tongtian" || hat === "mian";
+      const cap = gauze
+        ? GAUZE
+        : hat === "redze"
+          ? RED_CAP
+          : t.dress === "servant"
+            ? SERVANT_CAP
+            : L.fam === "archer"
+              ? P.robeDark
+              : "#2b2421";
+      const capDark = gauze ? "#0e0d10" : hat === "redze" ? RED_CAP_DARK : mix(cap, "#000000", 0.4);
+      const capLight = gauze
+        ? GAUZE_LIGHT
+        : hat === "redze"
+          ? RED_CAP_LIGHT
+          : mix(cap, "#ffffff", 0.25);
       // 幘: a cloth cap over the topknot with a raised back; lower under the court cap.
       const ze = path((p) => {
         p.moveTo(X(54), -40);
-        if (hat === "court") {
+        if (gauze) {
           p.bezierCurveTo(X(52), -78, X(24), -92, X(-8), -92);
           p.bezierCurveTo(X(-46), -92, X(-74), -70, X(-66), -22);
         } else {
@@ -2176,7 +2407,7 @@ function headwear(g: G, L: Look, q: Geo, back: boolean): void {
         p.closePath();
       });
       cel(g, ze, cap, capDark, 7, capLight, LW);
-      if (hat !== "court")
+      if (!gauze)
         inside(g, ze, () => {
           curve(g, alpha(capDark, 0.9), 1.6, X(-36), -100, X(-48), -70, X(-60), -40);
         });
@@ -2191,12 +2422,14 @@ function headwear(g: G, L: Look, q: Geo, back: boolean): void {
       cel(
         g,
         band,
-        trim ? GOLD : hat === "court" ? "#3a3640" : P.edge,
-        trim ? GOLD_DARK : hat === "court" ? "#1c1a20" : mix(P.edge, "#5a4a30", 0.35),
+        trim ? GOLD : gauze ? "#3a3640" : P.edge,
+        trim ? GOLD_DARK : gauze ? "#1c1a20" : mix(P.edge, "#5a4a30", 0.35),
         3,
         trim ? GOLD_LIGHT : undefined,
       );
       if (hat === "court") courtCap(g, L, q);
+      if (hat === "tongtian") tongtianCrown(g, q);
+      if (hat === "mian") mianCrown(g, q, false);
       break;
     }
     case "lunjin": {
@@ -2296,6 +2529,10 @@ function headwear(g: G, L: Look, q: Geo, back: boolean): void {
     }
     case "huangjin": {
       yellowCloth(g, q, back);
+      break;
+    }
+    case "fur": {
+      furCap(g, L, q, back);
       break;
     }
     case "wrap": {
@@ -2555,6 +2792,8 @@ function helmStyle(L: Look): HelmStyle {
   if (has(t, "ears")) return "open";
   if (L.tier2 && L.fam === "infantry") return "crested";
   if (t.helm) return t.helm;
+  if (t.dress === "south") return "lacquer";
+  if (has(t, "heavy")) return "banded";
   if (has(t, "silver") || has(t, "gilt")) return "lamellar";
   return (
     (["lamellar", "banded", "lacquer", "lamellar", "banded"] as const)[L.seed % 5] ?? "lamellar"
@@ -2574,9 +2813,14 @@ function helmet(g: G, L: Look, q: Geo, back: boolean, gilt: boolean): void {
   const style = helmStyle(L);
   const steel = has(t, "silver");
   const lacquer = style === "lacquer";
-  const base = steel ? STEEL : lacquer ? LACQUER : IRON;
-  const dark = steel ? STEEL_DARK : lacquer ? LACQUER_DARK : IRON_DARK;
-  const light = steel ? STEEL_LIGHT : lacquer ? LACQUER_LIGHT : IRON_LIGHT;
+  const black = has(t, "heavy");
+  const [base, dark, light] = steel
+    ? [STEEL, STEEL_DARK, STEEL_LIGHT]
+    : lacquer
+      ? [LACQUER, LACQUER_DARK, LACQUER_LIGHT]
+      : black
+        ? [BLACK_IRON, BLACK_IRON_DARK, BLACK_IRON_LIGHT]
+        : [IRON, IRON_DARK, IRON_LIGHT];
   const metal = gilt ? GOLD : BRONZE;
   const metalDark = gilt ? GOLD_DARK : BRONZE_DARK;
   const metalLight = gilt ? GOLD_LIGHT : BRONZE_LIGHT;
@@ -2739,8 +2983,8 @@ function helmet(g: G, L: Look, q: Geo, back: boolean, gilt: boolean): void {
       const y = -31 - Math.sin(u * Math.PI) * 9 + u * 9;
       cel(g, ellipse(x, y, 2.4, 2.4), BRONZE, BRONZE_DARK, 1, undefined, 1);
     }
-  // A ridge down the front of the dome for officers.
-  if (officer && style !== "banded") {
+  // A ridge down the front of the dome for officers, and for gilded helmets.
+  if ((officer || gilt) && style !== "banded") {
     const ridge = path((p) => {
       p.moveTo(X(-10), -108);
       p.bezierCurveTo(X(14), -106, X(30), -80, X(32), -40);
@@ -2832,6 +3076,233 @@ function courtCap(g: G, L: Look, q: Geo): void {
   if (gilt) cel(g, ellipse(X(-58), -78, 5, 5), "#5aa58a", "#2e6a54", 2);
 }
 
+/** Strings of round beads hanging from the edge a–b: n strings, each drop px long. */
+function beadStrings(g: G, a: Pt, b: Pt, n: number, drop: number, bead: number): void {
+  const cords = new Path2D();
+  const rims = new Path2D();
+  const bodies = new Path2D();
+  const shines = new Path2D();
+  for (let i = 0; i < n; i++) {
+    const u = (i + 0.5) / n;
+    const x = a[0] + (b[0] - a[0]) * u;
+    const y = a[1] + (b[1] - a[1]) * u;
+    cords.moveTo(x, y);
+    cords.lineTo(x, y + drop);
+    for (let yy = y + bead * 2; yy <= y + drop; yy += bead * 3) {
+      rims.moveTo(x + bead + 0.9, yy);
+      rims.arc(x, yy, bead + 0.9, 0, Math.PI * 2);
+      bodies.moveTo(x + bead, yy);
+      bodies.arc(x, yy, bead, 0, Math.PI * 2);
+      shines.moveTo(x + 0.6 + bead * 0.45, yy - 0.8);
+      shines.arc(x + 0.6, yy - 0.8, bead * 0.45, 0, Math.PI * 2);
+    }
+  }
+  stroke(g, alpha("#2a2026", 0.85), 1.2, cords);
+  g.fillStyle = INK;
+  g.fill(rims);
+  g.fillStyle = JADE_DARK;
+  g.fill(bodies);
+  g.fillStyle = JADE;
+  g.fill(shines);
+}
+
+/**
+ * The emperor's mian crown (冕): a board black above and red beneath
+ * (玄表纁裏), longer front to back and tilted forward, set on a black gauze
+ * cap; strings of white jade beads (旒) hang before and behind, a jade pin
+ * (玉笄) runs through the cap, and yellow silk balls (黈纊) hang by the ears.
+ */
+function mianCrown(g: G, q: Geo, back: boolean): void {
+  const { X } = q;
+  // The board's corners: front near, front far, back far, back near.
+  const fn: Pt = [X(-26), -106];
+  const ff: Pt = [X(64), -114];
+  const bf: Pt = [X(-6), -133];
+  const bn: Pt = [X(-96), -125];
+  const T = 6;
+  if (back) {
+    beadStrings(g, [bn[0], bn[1] + T], [bf[0], bf[1] + T], 7, 56, 2.4);
+    return;
+  }
+  // The cap rising from the brow to the board.
+  const cap = path((p) => {
+    p.moveTo(X(42), -60);
+    p.lineTo(X(36), -118);
+    p.lineTo(X(-52), -122);
+    p.lineTo(X(-60), -56);
+    p.quadraticCurveTo(X(-10), -70, X(42), -60);
+    p.closePath();
+  });
+  cel(g, cap, GAUZE, "#0e0d10", 7, GAUZE_LIGHT, LW);
+  inside(g, cap, () => {
+    for (let x = -50; x < 40; x += 7) line(g, alpha("#8d8798", 0.18), 1, X(x), -140, X(x + 2), -50);
+  });
+  // The jade pin through the cap.
+  line(g, INK, 6, X(-76), -88, X(54), -96);
+  line(g, JADE, 3, X(-76), -88, X(54), -96);
+  // Yellow silk balls on cords from the pin's ends, by the ears.
+  for (const [x0, y0, x1, y1] of [
+    [X(-76), -88, X(-62), -2],
+    [X(54), -96, X(64), -12],
+  ] as const) {
+    line(g, INK, 3.4, x0, y0, x1, y1);
+    line(g, YELLOW_DARK, 1.6, x0, y0, x1, y1);
+    cel(g, ellipse(x1, y1 + 5, 7, 7), YELLOW, YELLOW_DARK, 3, YELLOW_LIGHT);
+  }
+  // The board: its top, then the red front and near edges.
+  const top = poly(fn[0], fn[1], ff[0], ff[1], bf[0], bf[1], bn[0], bn[1]);
+  cel(g, top, MIAN_BLACK, "#0c0a0e", 5, "#4a4250", LW);
+  const frontEdge = poly(fn[0], fn[1], ff[0], ff[1], ff[0], ff[1] + T, fn[0], fn[1] + T);
+  cel(g, frontEdge, MIAN_RED, HAN_RED_DARK, 2, undefined, LW2);
+  const nearEdge = poly(bn[0], bn[1], fn[0], fn[1], fn[0], fn[1] + T, bn[0], bn[1] + T);
+  cel(g, nearEdge, HAN_RED_DARK, "#3e110d", 2, undefined, LW2);
+  // Twelve strings of jade beads before the face.
+  beadStrings(g, [fn[0], fn[1] + T], [ff[0], ff[1] + T], 12, 80, 2.5);
+}
+
+/**
+ * The tongtian crown (通天冠) an emperor wore: a tall front of black gauze on an
+ * iron frame, upright, its top sloping a little back and then straight down,
+ * with a gold mountain plaque (博山) on the front. Yuan Shu's is over-grand:
+ * gilt ribs, a row of pearls, a great jewel, and strings of pearls with jade
+ * pendants hanging from the pins to the shoulders.
+ */
+function tongtianCrown(g: G, q: Geo): void {
+  const { X } = q;
+  const shell = (dx: number, dy: number) =>
+    path((p) => {
+      p.moveTo(X(48) + dx, -50 + dy);
+      p.lineTo(X(54) + dx, -126 + dy);
+      p.quadraticCurveTo(X(12) + dx, -130 + dy, X(-36) + dx, -116 + dy);
+      p.lineTo(X(-44) + dx, -74 + dy);
+      p.quadraticCurveTo(X(4) + dx, -88 + dy, X(48) + dx, -50 + dy);
+      p.closePath();
+    });
+  for (const [dx, dy, a] of [
+    [9, -4, 0.6],
+    [0, 0, 0.88],
+  ] as const) {
+    const s = shell(dx, dy);
+    g.fillStyle = alpha(GAUZE, a);
+    g.fill(s);
+    inside(g, s, () => {
+      for (let k = -150; k < 40; k += 6)
+        line(g, alpha("#8d8798", 0.2), 1, X(-46), k, X(58), k - 40);
+      // Gilt ribs of the frame, from the brow up over the top.
+      for (let i = 0; i < 5; i++) {
+        const x = X(44 - i * 19);
+        curve(g, INK, 4.4, x, -50 - i * 6, x - 4, -96, x - 2, -136);
+        curve(g, GOLD, 2.2, x, -50 - i * 6, x - 4, -96, x - 2, -136);
+      }
+    });
+    stroke(g, INK, LW + 2.4, s);
+    stroke(g, GOLD, 3, s);
+  }
+  // A row of pearls along the top edge.
+  for (let i = 0; i < 10; i++) {
+    const u = i / 9;
+    const [x, y] = onCurve([X(54), -126], [X(12), -130], [X(-36), -116], u);
+    cel(g, ellipse(x, y - 2, 3.2, 3.2), "#f6f1e6", "#c9bfae", 1.2, undefined, 1.2);
+  }
+  // The gold mountain plaque (博山) on the front, set with a great jewel.
+  const hill = path((p) => {
+    p.moveTo(X(4), -64);
+    p.lineTo(X(8), -88);
+    p.lineTo(X(20), -82);
+    p.lineTo(X(32), -118);
+    p.lineTo(X(44), -84);
+    p.lineTo(X(56), -96);
+    p.lineTo(X(56), -58);
+    p.quadraticCurveTo(X(30), -58, X(4), -64);
+    p.closePath();
+  });
+  cel(g, hill, GOLD, GOLD_DARK, 5, GOLD_LIGHT, LW);
+  inside(g, hill, () => {
+    // Cloud scrolls chased in the gold.
+    curve(g, alpha(GOLD_DARK, 0.9), 1.6, X(8), -72, X(30), -66, X(54), -72);
+    curve(g, alpha(GOLD_DARK, 0.9), 1.4, X(20), -78, X(32), -100, X(44), -78);
+    curve(g, alpha(GOLD_DARK, 0.8), 1.4, X(12), -84, X(14), -76, X(20), -76);
+  });
+  cel(g, ellipse(X(32), -80, 7, 8), "#b3263a", "#6a1022", 2, "#f08aa0", LW);
+  cel(g, ellipse(X(12), -70, 3.6, 3.6), "#3f8f6e", "#1f5a42", 1, "#9fe0c0", 1.4);
+  cel(g, ellipse(X(50), -68, 3.6, 3.6), "#3f8f6e", "#1f5a42", 1, "#9fe0c0", 1.4);
+  // Gold pins with jewelled ends, strings of pearls and jade pendants hanging from them.
+  line(g, INK, 7, X(-66), -84, X(66), -96);
+  line(g, GOLD_LIGHT, 3.6, X(-66), -84, X(66), -96);
+  for (const [x, y, drop] of [
+    [X(-66), -84, 96],
+    [X(66), -96, 84],
+  ] as const) {
+    const pearls = new Path2D();
+    const shine = new Path2D();
+    for (let yy = y + 10; yy < y + drop; yy += 7) {
+      pearls.moveTo(x + 3.2, yy);
+      pearls.arc(x, yy, 3.2, 0, Math.PI * 2);
+      shine.moveTo(x + 1.6, yy - 1);
+      shine.arc(x + 0.6, yy - 1, 1.2, 0, Math.PI * 2);
+    }
+    stroke(g, INK, 2.4, pearls);
+    g.fillStyle = "#efe8da";
+    g.fill(pearls);
+    g.fillStyle = "#ffffff";
+    g.fill(shine);
+    const pendant = path((p) => {
+      const py = y + drop;
+      p.moveTo(x - 9, py);
+      p.quadraticCurveTo(x, py - 7, x + 9, py);
+      p.lineTo(x + 6, py + 7);
+      p.quadraticCurveTo(x, py + 3, x - 6, py + 7);
+      p.closePath();
+    });
+    cel(g, pendant, SEAL_JADE, SEAL_JADE_DARK, 2, SEAL_JADE_LIGHT, 1.8);
+    line(g, INK, 3.4, x, y + drop + 6, x, y + drop + 18);
+    line(g, "#b3263a", 2, x, y + drop + 6, x, y + drop + 18);
+    cel(g, ellipse(x, y, 6.5, 6.5), "#3f8f6e", "#1f5a42", 2, "#9fe0c0", LW2);
+  }
+}
+
+/** A Hu warrior's tall pointed felt cap, its point bent back, over a shaggy fur brim. */
+function furCap(g: G, L: Look, q: Geo, back: boolean): void {
+  const { X } = q;
+  if (back) return;
+  const felt = path((p) => {
+    p.moveTo(X(54), -44);
+    p.quadraticCurveTo(X(46), -96, X(4), -122);
+    p.quadraticCurveTo(X(-30), -138, X(-62), -134);
+    p.quadraticCurveTo(X(-48), -126, X(-50), -112);
+    p.bezierCurveTo(X(-70), -96, X(-80), -68, X(-74), -36);
+    p.closePath();
+  });
+  cel(g, felt, FELT, FELT_DARK, 8, FELT_LIGHT, LW);
+  inside(g, felt, () => {
+    // Seams of the felt panels, drawn up to the bent point.
+    curve(g, alpha(FELT_DARK, 0.95), 2, X(20), -46, X(16), -100, X(-44), -128);
+    curve(g, alpha(FELT_DARK, 0.8), 1.6, X(-30), -40, X(-36), -92, X(-52), -118);
+    g.fillStyle = alpha(FELT_LIGHT, 0.6);
+    g.beginPath();
+    g.ellipse(X(32), -80, 7, 16, -0.5, 0, Math.PI * 2);
+    g.fill();
+  });
+  // The fur brim: a shaggy roll round the head.
+  const pts: Pt[] = [];
+  for (let i = 0; i <= 12; i++) {
+    const [x, y] = onCurve([X(60), -40], [X(-8), -58], [X(-80), -26], i / 12);
+    pts.push([x, y]);
+  }
+  furRoll(g, pts, 12);
+  // The brim's shadow on the brow.
+  inside(g, headPath(L.t, q), () => {
+    g.fillStyle = alpha(L.skin[1], 0.85);
+    g.beginPath();
+    g.moveTo(X(64), -30);
+    g.quadraticCurveTo(X(-8), -46, X(-82), -12);
+    g.lineTo(X(-82), -4);
+    g.quadraticCurveTo(X(-8), -38, X(64), -22);
+    g.closePath();
+    g.fill();
+  });
+}
+
 type Pt = readonly [number, number];
 
 /** A point on a quadratic curve and the unit normal there. */
@@ -2901,8 +3372,9 @@ function plume(g: G, x0: number, y0: number, cx: number, cy: number, x1: number,
 
 /** Lu Bu's two long pheasant feathers, arching back from his crown. */
 function pheasant(g: G, x: number, y: number): void {
-  feather(g, [x - 4, y - 8], [x - 40, y - 64], [x - 150, y - 14], 15, "#c08440", "#3a2614", 18);
-  feather(g, [x + 6, y - 8], [x + 70, y - 52], [x + 150, y + 4], 14, "#c08440", "#3a2614", 18);
+  // They sweep out over both shoulders, so they stay in the frame.
+  feather(g, [x - 4, y - 8], [x - 70, y - 42], [x - 140, y + 52], 14, "#c08440", "#3a2614", 18);
+  feather(g, [x + 6, y - 8], [x + 82, y - 46], [x + 150, y + 40], 13, "#c08440", "#3a2614", 18);
 }
 
 /** Things held or hung in front: the feather fan, an official's tablet, bells. */
@@ -2914,8 +3386,11 @@ function front(g: G, L: Look): void {
   const foot = fam === "infantry" || fam === "martialArtist";
   const capped = hat === "court" || hat === "ze" || hat === "redze";
   if (staff) taoistStaff(g);
+  else if (has(t, "seal")) jadeSeal(g);
   else if (foot && (has(t, "club") || has(t, "staves"))) cudgel(g, has(t, "staves"));
-  else if (fam === "strategist" && !capped) {
+  else if (hat === "mian") {
+    // The emperor holds nothing.
+  } else if (fam === "strategist" && !capped) {
     // A white feather fan (羽扇) held up at the shoulder.
     g.save();
     g.translate(222, 292);
@@ -3025,6 +3500,57 @@ function taoistStaff(g: G): void {
 }
 
 /**
+ * The imperial seal (傳國璽) Yuan Shu got hold of and built his claim on: a
+ * block of white jade under a knob of coiled beasts, one corner broken off and
+ * mended with gold (as the story goes), on a wrapping of yellow silk.
+ */
+function jadeSeal(g: G): void {
+  g.save();
+  g.translate(194, 282);
+  g.rotate(-0.12);
+  g.scale(1.3, 1.3);
+  // The silk wrapping, its corners falling out of the frame.
+  const silk = path((p) => {
+    p.moveTo(-50, 12);
+    p.quadraticCurveTo(-10, -2, 44, 6);
+    p.quadraticCurveTo(64, 30, 60, 60);
+    p.lineTo(-56, 60);
+    p.quadraticCurveTo(-64, 34, -50, 12);
+    p.closePath();
+  });
+  cel(g, silk, YELLOW, YELLOW_DARK, 6, YELLOW_LIGHT, LW);
+  inside(g, silk, () => {
+    curve(g, alpha(YELLOW_FOLD, 0.7), 1.8, -40, 24, -8, 40, -16, 60);
+    curve(g, alpha(YELLOW_FOLD, 0.7), 1.8, 36, 18, 28, 40, 40, 60);
+  });
+  // The block: its near face, far face and top.
+  const nearFace = poly(-30, -10, 0, 2, 0, 30, -30, 18);
+  const farFace = poly(0, 2, 28, -8, 28, 20, 0, 30);
+  const top = poly(-30, -10, -2, -22, 28, -8, 0, 2);
+  cel(g, nearFace, SEAL_JADE, SEAL_JADE_DARK, 4, undefined, LW);
+  cel(g, farFace, mix(SEAL_JADE, SEAL_JADE_DARK, 0.45), SEAL_JADE_DARK, 3, undefined, LW);
+  cel(g, top, SEAL_JADE_LIGHT, SEAL_JADE, 3, undefined, LW);
+  // The mended corner, in gold.
+  cel(g, poly(-30, 6, -30, 18, -18, 23, -20, 10), GOLD, GOLD_DARK, 2, GOLD_LIGHT, LW2);
+  // The knob: coiled beasts, and a cord of the seal's ribbon through it.
+  const knob = path((p) => {
+    p.moveTo(-14, -10);
+    p.bezierCurveTo(-18, -30, -2, -40, 6, -30);
+    p.bezierCurveTo(14, -36, 22, -24, 14, -12);
+    p.quadraticCurveTo(0, -4, -14, -10);
+    p.closePath();
+  });
+  cel(g, knob, SEAL_JADE, SEAL_JADE_DARK, 3, SEAL_JADE_LIGHT, LW);
+  inside(g, knob, () => {
+    curve(g, alpha(SEAL_JADE_DARK, 0.95), 1.6, -8, -14, -6, -28, 4, -26);
+    curve(g, alpha(SEAL_JADE_DARK, 0.95), 1.6, 2, -14, 12, -18, 10, -26);
+  });
+  line(g, INK, 4.6, -4, -18, -26, 24);
+  line(g, "#7a3fa0", 2.4, -4, -18, -26, 24);
+  g.restore();
+}
+
+/**
  * A wooden cudgel over the shoulder; or one of the five-coloured staves (五色棒)
  * Cao Cao hung at the gates of Luoyang's northern district, banded in the five colours.
  */
@@ -3066,41 +3592,126 @@ function cudgel(g: G, staves: boolean): void {
   g.restore();
 }
 
-/** Behind the body: the ji for cavalry, the bow for archers. */
-function backGear(g: G, L: Look): void {
-  const { fam, P } = L;
-  if (fam === "cavalry") {
-    // The ji (戟) held upright behind the far shoulder: a spike and a side blade.
+/** The head of a ji (戟) at the origin, pointing up: a spike and a side blade, a tassel below. */
+function jiHead(g: G, P: Pal): void {
+  const spike = path((p) => {
+    p.moveTo(-4, 2);
+    p.quadraticCurveTo(-6, -20, 0, -40);
+    p.quadraticCurveTo(6, -20, 4, 2);
+    p.closePath();
+  });
+  cel(g, spike, "#b9c2cc", BLADE_DARK, 2, BLADE);
+  const side = path((p) => {
+    p.moveTo(-3, 0);
+    p.lineTo(-30, -6);
+    p.quadraticCurveTo(-38, 0, -34, 8);
+    p.lineTo(-3, 12);
+    p.closePath();
+  });
+  cel(g, side, "#b9c2cc", BLADE_DARK, 2, BLADE);
+  cel(g, poly(-8, 14, 8, 14, 11, 30, -11, 30), P.tassel, P.robeDark, 3);
+}
+
+/**
+ * A long weapon held upright behind the far shoulder: the cavalry's ji; Ji
+ * Ling's three-pointed blade (三尖刀); Xu Huang's great axe (大斧).
+ */
+function poleArm(g: G, L: Look, kind: "ji" | "trident" | "axe"): void {
+  const { P } = L;
+  g.save();
+  g.translate(240, 330);
+  g.rotate(kind === "ji" ? -0.07 : -0.1);
+  // Heavier weapons sit lower, so their heads show in the frame.
+  const top = kind === "ji" ? -300 : -262;
+  cel(
+    g,
+    path((p) => p.roundRect(-4, top, 8, 10 - top, 3)),
+    WOOD_DARK,
+    "#3a2414",
+    2,
+    WOOD,
+    LW2,
+  );
+  g.translate(0, top);
+  if (kind === "ji") jiHead(g, P);
+  else if (kind === "trident") {
+    // A broad two-edged blade ending in three points, over a bronze collar and a tassel.
+    const blade = path((p) => {
+      p.moveTo(-10, 0);
+      p.lineTo(-14, -24);
+      p.lineTo(-17, -44);
+      p.lineTo(-6, -32);
+      p.lineTo(0, -62);
+      p.lineTo(6, -32);
+      p.lineTo(17, -44);
+      p.lineTo(14, -24);
+      p.lineTo(10, 0);
+      p.closePath();
+    });
+    cel(g, blade, "#b9c2cc", BLADE_DARK, 3, BLADE, LW);
+    line(g, alpha(BLADE_DARK, 0.9), 1.6, 0, -4, 0, -52);
+    cel(g, poly(-14, -2, 14, -2, 11, 10, -11, 10), BRONZE, BRONZE_DARK, 2, BRONZE_LIGHT);
+    cel(g, poly(-8, 10, 8, 10, 12, 30, -12, 30), P.tassel, P.robeDark, 3);
+  } else {
+    // A great axe: a broad crescent blade facing in, a short spike on top.
+    const blade = path((p) => {
+      p.moveTo(-3, -6);
+      p.lineTo(-18, -14);
+      p.quadraticCurveTo(-46, -24, -50, 16);
+      p.quadraticCurveTo(-46, 50, -18, 44);
+      p.lineTo(-3, 36);
+      p.closePath();
+    });
+    cel(g, blade, "#b9c2cc", BLADE_DARK, 4, BLADE, LW);
+    curve(g, alpha("#ffffff", 0.8), 2, -46, -6, -52, 16, -44, 40);
+    cel(g, ellipse(-16, 15, 5, 5), BRONZE, BRONZE_DARK, 2);
+    const spike = path((p) => {
+      p.moveTo(-4, -4);
+      p.quadraticCurveTo(-5, -18, 0, -30);
+      p.quadraticCurveTo(5, -18, 4, -4);
+      p.closePath();
+    });
+    cel(g, spike, "#b9c2cc", BLADE_DARK, 2, BLADE);
+    cel(g, poly(4, 4, 14, 8, 14, 22, 4, 26), BRONZE, BRONZE_DARK, 2);
+  }
+  g.restore();
+}
+
+/** Dian Wei's pair of heavy ji (雙戟), crossed behind his back. */
+function twinJi(g: G, L: Look): void {
+  // Each haft runs from the far hip up past the near shoulder, so the heads clear the head.
+  for (const [x, y, rot] of [
+    [186, 350, -0.5],
+    [70, 350, 0.5],
+  ] as const) {
     g.save();
-    g.translate(240, 330);
-    g.rotate(-0.07);
+    g.translate(x, y);
+    g.rotate(rot);
     cel(
       g,
-      path((p) => p.roundRect(-4, -300, 8, 310, 3)),
+      path((p) => p.roundRect(-5, -322, 10, 332, 3)),
       WOOD_DARK,
       "#3a2414",
       2,
       WOOD,
       LW2,
     );
-    const spike = path((p) => {
-      p.moveTo(-4, -298);
-      p.quadraticCurveTo(-6, -320, 0, -340);
-      p.quadraticCurveTo(6, -320, 4, -298);
-      p.closePath();
-    });
-    cel(g, spike, "#b9c2cc", BLADE_DARK, 2, BLADE);
-    const side = path((p) => {
-      p.moveTo(-3, -300);
-      p.lineTo(-30, -306);
-      p.quadraticCurveTo(-38, -300, -34, -292);
-      p.lineTo(-3, -288);
-      p.closePath();
-    });
-    cel(g, side, "#b9c2cc", BLADE_DARK, 2, BLADE);
-    cel(g, poly(-8, -286, 8, -286, 11, -270, -11, -270), P.tassel, P.robeDark, 3);
+    g.translate(0, -322);
+    // Side blades face outward.
+    g.scale(rot < 0 ? 1.1 : -1.1, 1.1);
+    jiHead(g, L.P);
     g.restore();
-  } else if (fam === "archer") {
+  }
+}
+
+/** Behind the body: the ji for cavalry, the bow for archers, and personal weapons. */
+function backGear(g: G, L: Look): void {
+  const { fam, t } = L;
+  if (has(t, "twinJi")) twinJi(g, L);
+  if (has(t, "trident")) poleArm(g, L, "trident");
+  else if (has(t, "axe")) poleArm(g, L, "axe");
+  else if (fam === "cavalry") poleArm(g, L, "ji");
+  else if (fam === "archer") {
     const limb = path((p) => {
       p.moveTo(30, 340);
       p.quadraticCurveTo(4, 250, 24, 170);
@@ -3147,13 +3758,23 @@ function figure(g: G, L: Look): void {
   face(g, L, q);
   ear(g, L, q);
   beard(g, L, q);
+  if (has(L.t, "earring")) earring(g, q);
   mouth(g, L, q);
   moustache(g, L, q);
   if (has(L.t, "patch")) patch(g, q);
   headwear(g, L, q, false);
+  if (has(L.t, "strand")) strand(g, L, q);
   if (L.mood === "hurt") wounds(g, q);
   g.restore();
   front(g, L);
+}
+
+/** A loose lock of hair slipped from under the headcloth onto the brow. */
+function strand(g: G, L: Look, q: Geo): void {
+  const { X } = q;
+  const [hc, hd, hl] = L.hair;
+  const lock = ribbon([X(24), -40], [X(40), -28], [X(28), -10], 8, 1.5);
+  cel(g, lock, hc, hd, 2, hl, 1.6);
 }
 
 /** Xiahou Dun's patch over his lost left eye (the far eye in this view). */

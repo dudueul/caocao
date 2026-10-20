@@ -50,6 +50,23 @@ flowchart LR
 | 무도가 martial artist | Hemp work clothes (褐) with the sleeves pushed up, a bare topknot tied with cloth, a sash in the side colour | Wrapped hands | |
 | 포차 stone-thrower | A traction trebuchet on a wheeled frame, flying a banner | | At Guandu in 200, Cao Cao built stone-throwing carts (發石車) that broke Yuan Shao's towers; Yuan's men called them "thunderbolt carts" (霹靂車) (*Records of the Three Kingdoms*). A crew hauls ropes on the short arm; counterweight trebuchets came much later |
 
+## Armies and people of chapter 2
+
+Painted in the portraits (`lib/fx/portrait.ts`, [ADR 0053](../adr/0053-painted-portraits.md)).
+Where the record is thin, these are our readings, to confirm.
+
+| Who | What we draw | Basis |
+|---|---|---|
+| 서주군 (Xuzhou levies) | Cloth caps and plain leather armour | A provincial army raised in haste; our reading |
+| 여포군 and 여포's officers | Dark fur collars over lamellar armour | 여포's men came from 병주 on the northern frontier; the fur is our reading |
+| 함진영 (고순's "breakers of formations") | Black iron armour with a neck guard and banded helmets | The histories praise their armour and discipline; "black armour" (玄甲) is the Han term for iron armour |
+| 장수군 | Sheepskin over armour, like 동탁's 량주 troops | 장수 inherited 장제's 량주 army |
+| 형주군 | Black lacquered armour, helmets edged in red | Lacquer work was a southern speciality; our reading |
+| 원술군 | Gilt helmets and trim, figured silk | 원술's extravagance is a theme of the histories |
+| 헌제 | The mian crown (冕) with bead strings and a yellow robe edged in red | Han ritual dress for the emperor |
+| 원술 | A tall gilded crown hung with pearls, the jade seal in hand | He proclaimed himself emperor and held the imperial seal; the crown's shape is our reading |
+| 호거아 | A pointed felt cap with a fur brim, an earring | A man of the 胡 (northern or western peoples) in 장수's service |
+
 ## For the artist later
 
 - Keep these parts and the skeleton's pivots (neck, shoulders, hands, hips,
