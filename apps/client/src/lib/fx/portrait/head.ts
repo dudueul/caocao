@@ -84,6 +84,8 @@ export class Head {
   readonly gaunt: number;
   readonly jowl: number;
   readonly chinOut: number;
+  /** The brow ridge's depth; a heavy ridge for a few fierce men. */
+  readonly browRidge: number;
   /** Nose: protrusion, angular half-width, tip level, hook, tip size. */
   readonly noseP: number;
   readonly noseW: number;
@@ -111,15 +113,17 @@ export class Head {
     this.Bc = 64 * W;
     this.gaunt = sh.gaunt;
     this.jowl = sh.jowl + (t.marks.includes("jowls") ? 1 : 0);
+    const big = t.marks.includes("jaw") ? 1 : 0;
+    this.browRidge = t.marks.includes("brow") ? 9 : 3;
     // Age by proportion first (ADR 0070): the jaw grows, the cheek contour sinks, the nose lengthens.
     this.Rk = (53 + sh.cheek * 7) * W;
     this.yk = 10 + age * 2;
-    this.Rj = (36 + sh.jaw * 17 + age * 1.5 + this.jowl * 7) * W;
+    this.Rj = (36 + sh.jaw * 17 + age * 1.5 + this.jowl * 7 + big * 14) * W;
     this.yj = (40 + sh.jaw * 8 + this.jowl * 6 + age * 1.5) * L;
-    this.Rch = (12 + sh.chin * 12 + this.jowl * 6) * W;
+    this.Rch = (12 + sh.chin * 12 + this.jowl * 6 + big * 12) * W;
     this.ych = (68 + this.jowl * 3) * L;
-    this.ycb = (79 + sh.chin * 2 + this.jowl * 6) * L;
-    this.chinOut = 2 + sh.chin * 3;
+    this.ycb = (79 + sh.chin * 2 + this.jowl * 6 + big * 5) * L;
+    this.chinOut = 2 + sh.chin * 3 + big * 3;
     const n = NOSES[t.nose];
     this.noseP = n.p * (1 + age * 0.03) * Math.min(W, 1.08);
     this.noseW = n.w * DEG * (0.9 + W * 0.1);
@@ -180,7 +184,7 @@ export class Head {
     let b = 0;
     if (y > -26 && y < -6) {
       const g = 1 - (th / (48 * DEG)) ** 2;
-      if (g > 0) b += 3 * this.W * g * Math.sin(((y + 26) / 20) * Math.PI);
+      if (g > 0) b += this.browRidge * this.W * g * Math.sin(((y + 26) / 20) * Math.PI);
     }
     const ny = this.ny;
     if (y > -10 && y < ny + 6) {

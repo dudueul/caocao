@@ -125,7 +125,10 @@ export type SkinTone =
  * 貂蟬冠, 法冠, the 冕. Cloth caps: 帢, 平上幘, 介幘, 赤幘, 孫堅's red wool 幘,
  * 幅巾, 綸巾, the yellow cloth, a tall Taoist cloth. Bands and wraps, bare
  * heads, hats, helmets (lamellar, banded, lacquered, fur-rimmed, gilt, open,
- * black iron, bright steel, pelt-covered, horned, yellow-tied) and crowns.
+ * black iron, bright steel, pelt-covered, horned, yellow-tied; a tall spike, a
+ * low iron cap, a lamellar hood to the shoulders, two upright 鶡 feathers, hide
+ * with iron strips, a flat low crown, a feather tube; over a headcloth, under a
+ * tall plume) and crowns.
  */
 export type Hat =
   | "jx1"
@@ -168,7 +171,17 @@ export type Hat =
   | "helmSteel"
   | "helmPelt"
   | "helmHorn"
-  | "helmYellow";
+  | "helmYellow"
+  | "helmSpike"
+  | "helmCap"
+  | "helmHood"
+  | "helmFeather"
+  | "helmStrap"
+  | "helmFlat"
+  | "helmTube"
+  | "helmCloth"
+  | "helmPlume"
+  | "helmPlain";
 
 /**
  * The dress of an army: Han regulars, Yellow Turban rebels in hemp and patched
@@ -304,6 +317,10 @@ export type Accent =
  * `sidelong` (eyes glance away), `strand` (a loose lock), `heavy` (black
  * armour with a neck guard), `clan` (a vermilion cap cord, the 劉 clan),
  * `stoop`, `roar` (mouth open even at rest), `bare` (one shoulder bare),
+ * One exaggerated feature for a helmeted general, whose helmet hides his hair:
+ * `brow` (a heavy brow ridge), `broken` (a broken nose), `deepset` (deep-set
+ * eyes), `jaw` (a big jaw), `gap` (a gap-toothed grin), `mole`. A helmet
+ * can be red-lacquered (`redlac`) or of hide (`hide`) rather than iron.
  * `civil` (no armour whatever the class), `silver` (bright armour), `fur` (a
  * dark fur collar over the robe), `dust` (a dusty, greyed robe),
  * `locks` (side locks on a shaved head), `pelt` (spotted pelt), `forelock`
@@ -339,7 +356,15 @@ export type Mark =
   | "dust"
   | "fur"
   | "civil"
-  | "silver";
+  | "silver"
+  | "brow"
+  | "broken"
+  | "deepset"
+  | "jaw"
+  | "gap"
+  | "mole"
+  | "redlac"
+  | "hide";
 
 /** Where a trait comes from (ADR 0070): the histories, the novel, later lore, or our reading. */
 export type Tag = "record" | "novel" | "later" | "ours";

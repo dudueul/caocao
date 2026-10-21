@@ -26,6 +26,7 @@ import {
   lamellae,
   line,
   mix,
+  onCurve,
   type Pt,
   path,
   polyPts,
@@ -73,6 +74,9 @@ import {
   LACQUER_DARK,
   LACQUER_LIGHT,
   LACQUER_RED,
+  LEATHER,
+  LEATHER_DARK,
+  LEATHER_LIGHT,
   MIAN_BLACK,
   MIAN_RED,
   PELT,
@@ -228,6 +232,14 @@ function chinCords(g: G, L: Look, color: string, y0: number): void {
 
 // ---------------------------------------------------------------- helmets
 
+/** Han dyes for a headcloth under a helmet, all darker than skin: purple, madder, green, indigo. */
+const DYES: readonly Tri[] = [
+  ["#5e3a6a", "#3c2446", "#82608f"],
+  ["#9a3a2a", "#62221a", "#c4614c"],
+  ["#3f6b46", "#26452c", "#649a6c"],
+  ["#2e3f66", "#1c2742", "#52668f"],
+];
+
 type HelmStyle =
   | "lam"
   | "band"
@@ -239,7 +251,17 @@ type HelmStyle =
   | "steel"
   | "pelt"
   | "horn"
-  | "yellow";
+  | "yellow"
+  | "spike"
+  | "cap"
+  | "hood"
+  | "feather"
+  | "strap"
+  | "flat"
+  | "tube"
+  | "cloth"
+  | "plume"
+  | "plain";
 
 const HELM_OF: Partial<Record<Hat, HelmStyle>> = {
   helmLam: "lam",
@@ -253,90 +275,171 @@ const HELM_OF: Partial<Record<Hat, HelmStyle>> = {
   helmPelt: "pelt",
   helmHorn: "horn",
   helmYellow: "yellow",
+  helmSpike: "spike",
+  helmCap: "cap",
+  helmHood: "hood",
+  helmFeather: "feather",
+  helmStrap: "strap",
+  helmFlat: "flat",
+  helmTube: "tube",
+  helmCloth: "cloth",
+  helmPlume: "plume",
+  helmPlain: "plain",
 };
+
+/**
+ * Each helmet's outline: dome size (k), height (kv) and shape (q < 2 pointed,
+ * > 2 boxy); cheek flaps; neck guard; finial; tassel; brow band; dome texture.
+ */
+interface HelmSpec {
+  k: number;
+  kv: number;
+  q: number;
+  mat: "iron" | "black" | "lac" | "steel" | "pelt" | "hide";
+  cheeks: "long" | "short" | "none" | "hood";
+  neck: "short" | "long" | "none";
+  finial: "knob" | "spike" | "none";
+  tassel: "short" | "long" | "none";
+  band: "metal" | "plain" | "red" | "none" | "fur" | "yellow";
+  dome: "lines" | "lamellae" | "ribs" | "plain" | "rivets" | "strips";
+}
+
+// biome-ignore format: one helmet per line reads as a table
+const HELMS: Record<HelmStyle, HelmSpec> = {
+  lam:    { k: 1.13, kv: 1.08, q: 2,    mat: "iron",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "short", band: "metal",  dome: "lines" },
+  /** Banded and tall, with a long guard over the nape. */
+  band:   { k: 1.13, kv: 1.24, q: 1.5,  mat: "iron",  cheeks: "long",  neck: "long",  finial: "knob",  tassel: "short", band: "metal",  dome: "lamellae" },
+  /** Lacquered leather, low and broad, red-ribbed. */
+  lac:    { k: 1.15, kv: 0.98, q: 2.7,  mat: "lac",   cheeks: "long",  neck: "short", finial: "knob",  tassel: "short", band: "red",    dome: "ribs" },
+  fur:    { k: 1.13, kv: 1.08, q: 2,    mat: "iron",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "short", band: "fur",    dome: "lines" },
+  gilt:   { k: 1.13, kv: 1.08, q: 2,    mat: "iron",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "short", band: "metal",  dome: "lines" },
+  /** Open-faced and a size too big, a long guard behind. */
+  open:   { k: 1.18, kv: 1.12, q: 2,    mat: "iron",  cheeks: "none",  neck: "long",  finial: "knob",  tassel: "short", band: "metal",  dome: "lines" },
+  black:  { k: 1.13, kv: 1.06, q: 2.8,  mat: "black", cheeks: "long",  neck: "long",  finial: "knob",  tassel: "none",  band: "plain",  dome: "rivets" },
+  steel:  { k: 1.13, kv: 1.17, q: 1.45, mat: "steel", cheeks: "short", neck: "short", finial: "spike", tassel: "short", band: "metal",  dome: "lines" },
+  pelt:   { k: 1.14, kv: 1.08, q: 2,    mat: "pelt",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "none",  band: "metal",  dome: "plain" },
+  horn:   { k: 1.13, kv: 1.08, q: 2,    mat: "iron",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "none",  band: "metal",  dome: "lines" },
+  yellow: { k: 1.13, kv: 1.08, q: 2,    mat: "iron",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "short", band: "yellow", dome: "lines" },
+  /** A tall pointed 兜鍪 on a spike, its long tassel streaming. */
+  spike:  { k: 1.11, kv: 1.34, q: 1.38, mat: "iron",  cheeks: "short", neck: "short", finial: "spike", tassel: "long",  band: "plain",  dome: "lamellae" },
+  /** A low round iron cap: no band, no cheek flaps, a short guard behind. */
+  cap:    { k: 1.06, kv: 0.95, q: 2.2,  mat: "iron",  cheeks: "none",  neck: "short", finial: "none",  tassel: "none",  band: "none",   dome: "rivets" },
+  /** A lamellar 兜鍪 whose lamellae fall to the shoulders like a hood. */
+  hood:   { k: 1.13, kv: 1.1,  q: 2,    mat: "iron",  cheeks: "hood",  neck: "long",  finial: "knob",  tassel: "short", band: "plain",  dome: "lamellae" },
+  /** A round helmet with two upright 鶡 tail feathers on the crown, for officers of rank. */
+  feather:{ k: 1.13, kv: 1.06, q: 2,    mat: "iron",  cheeks: "short", neck: "short", finial: "none",  tassel: "none",  band: "metal",  dome: "lines" },
+  /** A hide cap reinforced with iron strips, short flaps. */
+  strap:  { k: 1.1,  kv: 1.02, q: 2.2,  mat: "hide",  cheeks: "short", neck: "short", finial: "knob",  tassel: "short", band: "plain",  dome: "strips" },
+  /** A flat, low crown over a long neck curtain. */
+  flat:   { k: 1.15, kv: 0.9,  q: 4,    mat: "iron",  cheeks: "long",  neck: "long",  finial: "none",  tassel: "none",  band: "plain",  dome: "rivets" },
+  /** A tall rounded crown of black iron topped by a tube holding one long pheasant tail. */
+  tube:   { k: 1.12, kv: 1.26, q: 2.1,  mat: "black", cheeks: "long",  neck: "short", finial: "none",  tassel: "none",  band: "metal",  dome: "plain" },
+  /** A small open helmet over a dyed headcloth: a band below the rim, a fall behind the ears. */
+  cloth:  { k: 1.08, kv: 1.0,  q: 2.2,  mat: "iron",  cheeks: "none",  neck: "none",  finial: "knob",  tassel: "short", band: "plain",  dome: "lines" },
+  /** An open helmet under a tall horsehair plume. */
+  plume:  { k: 1.1,  kv: 1.06, q: 2,    mat: "iron",  cheeks: "none",  neck: "short", finial: "none",  tassel: "none",  band: "metal",  dome: "lines" },
+  /** A plain iron 兜鍪, an iron band, a long tassel: no gilt (夏侯惇 was frugal). */
+  plain:  { k: 1.13, kv: 1.1,  q: 2,    mat: "iron",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "long",  band: "plain",  dome: "lines" },
+};
+
+/** The colour of a helmet's tassel or plume: the man's accent, else the side's. */
+function tasselOf(L: Look, style: HelmStyle): string {
+  const a = L.t.accent;
+  if (a && a !== "brocade") return ACCENTS[a][0];
+  if (style === "steel") return "#f1efe8";
+  if (style === "gilt" || style === "open" || style === "plume") return VERMILION;
+  if (style === "black") return "#2a2626";
+  return L.P.tassel;
+}
 
 /** A helmet (兜鍪): a dome over cheek and neck flaps, a brow band, a finial and a tassel (纓). */
 function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
   const H = L.H;
   const { P } = L;
+  const S = HELMS[style];
   const gilt =
     has(L, "gilt") ||
     style === "gilt" ||
     (L.tier2 && (L.fam === "cavalry" || L.fam === "infantry"));
-  const officer = L.named || L.tier2;
-  const brim = -26;
-  const q =
-    style === "band"
-      ? 1.65
-      : style === "steel"
-        ? 1.45
-        : style === "lac"
-          ? 2.3
-          : style === "black"
-            ? 2.6
-            : 2;
-  const kv =
-    style === "band"
-      ? 1.14
-      : style === "steel"
-        ? 1.17
-        : style === "open"
-          ? 1.04
-          : style === "lac"
-            ? 1.02
-            : 1.08;
-  const k = style === "open" ? 1.1 : 1.13;
-  const prof = shell(H, k, kv, q);
-  const top = shellTop(H, kv);
-  const [base, dark, light] =
-    style === "steel"
-      ? [STEEL, STEEL_DARK, STEEL_LIGHT]
-      : style === "lac"
-        ? [LACQUER, LACQUER_DARK, LACQUER_LIGHT]
-        : style === "black" || has(L, "heavy")
-          ? [BLACK_IRON, BLACK_IRON_DARK, BLACK_IRON_LIGHT]
-          : [IRON, IRON_DARK, IRON_LIGHT];
+  const brim = style === "cloth" ? -34 : style === "cap" ? -32 : -26;
+  const prof = shell(H, S.k, S.kv, S.q);
+  const top = shellTop(H, S.kv);
+  const [base, dark, light] = has(L, "redlac")
+    ? [LACQUER_RED, "#6e2019", "#d0685a"]
+    : has(L, "hide") || S.mat === "hide"
+      ? [LEATHER, LEATHER_DARK, LEATHER_LIGHT]
+      : S.mat === "steel"
+        ? [STEEL, STEEL_DARK, STEEL_LIGHT]
+        : S.mat === "lac"
+          ? [LACQUER, LACQUER_DARK, LACQUER_LIGHT]
+          : S.mat === "black" || has(L, "heavy")
+            ? [BLACK_IRON, BLACK_IRON_DARK, BLACK_IRON_LIGHT]
+            : [IRON, IRON_DARK, IRON_LIGHT];
   const metal: Tri = gilt ? [GOLD, GOLD_DARK, GOLD_LIGHT] : [BRONZE, BRONZE_DARK, BRONZE_LIGHT];
-  const tasselCol =
-    style === "steel" ? "#f1efe8" : style === "gilt" || style === "open" ? VERMILION : P.tassel;
+  const tasselCol = tasselOf(L, style);
+  const spikeH = S.finial === "spike" ? (style === "spike" ? 30 : 22) : 10;
   const tip = H.p3(0, top - 2, -2);
-  const bx = backDir(H);
-  if (back) {
-    // The tassel streams back behind the head.
-    if (style !== "horn" && style !== "pelt") {
-      const tassel = path((p) => {
-        p.moveTo(tip.x, tip.y - 6);
-        p.quadraticCurveTo(tip.x + bx * 26, tip.y - 24, tip.x + bx * 40, tip.y - 8);
-        p.quadraticCurveTo(tip.x + bx * 26, tip.y - 2, tip.x + bx * 44, tip.y + 12);
-        p.quadraticCurveTo(tip.x + bx * 18, tip.y + 8, tip.x, tip.y + 2);
-        p.closePath();
-      });
-      cel(g, tassel, tasselCol, mix(tasselCol, "#000000", 0.4), 4, mix(tasselCol, "#ffffff", 0.35));
-    }
-    return;
-  }
-  // Flaps: cheek flaps either side, the neck guard behind; an open helmet keeps only the neck guard.
+  // From the front the tassel streams to one side, so it shows beside the head.
+  const bx = Math.abs(H.s) < 0.2 ? -0.9 : backDir(H);
+  const clothCol: Tri =
+    L.t.accent && L.t.accent !== "brocade" && L.t.accent !== "white"
+      ? ACCENTS[L.t.accent]
+      : (DYES[(L.seed >>> 3) % DYES.length] as Tri);
+  // Cheek flaps, a hood of lamellae to the shoulders, the neck guard.
+  const flare = S.cheeks === "hood" ? 0.34 : 0;
+  const low = S.cheeks === "short" ? 18 : S.cheeks === "hood" ? 94 : S.mat === "black" ? 44 : 36;
   const flapProf: Prof = (y) => {
-    const a = Math.max(H.rw(y), H.Rc * H.cran(Math.min(y, -2))) * 1.14;
-    return [a, Math.max(H.df(y), H.Fc * 0.8) * 1.08, Math.max(H.db(y), H.Bc * 0.6) * 1.14];
+    const u = Math.max(0, (y - brim) / (low - brim));
+    const a = Math.max(H.rw(y), H.Rc * H.cran(Math.min(y, -2))) * (1.14 + flare * u);
+    return [
+      a,
+      Math.max(H.df(y), H.Fc * 0.8) * (1.08 + flare * 0.3 * u),
+      Math.max(H.db(y), H.Bc * 0.6) * (1.14 + flare * u),
+    ];
   };
-  const low = style === "black" ? 44 : 36;
-  const flaps: Path2D[] = [];
-  const neckFrom = style === "open" ? 100 : 112;
-  for (const sd of [-1, 1]) {
-    if (style !== "open") {
-      const p = H.patch(sd * 58 * DEG, sd * 112 * DEG, brim - 2, low, flapProf);
-      if (p) flaps.push(p);
+  // The headcloth under a small helmet hangs straight from under the rim to the
+  // jaw, behind the ears, so it shows past the nape and beside the neck.
+  const fallLow = 54;
+  const fallProf: Prof = (y) => {
+    const u = Math.max(0, (y - brim) / (fallLow - brim));
+    const [a, f, b] = H.skullAt(Math.min(y, brim + 10), 1.12);
+    return [a * (1 + 0.08 * u), f, b * (1 + 0.18 * u)];
+  };
+  // A skirt hung round the back of the head from θ = ±from: drawn behind the head,
+  // so only what spills past the head and neck shows.
+  const curtain = (from: number, y0: number, y1: number, pr: Prof): Path2D => {
+    const top: Pt[] = [];
+    const bot: Pt[] = [];
+    for (let i = 0; i <= 24; i++) {
+      const th = (from + ((360 - 2 * from) * i) / 24) * DEG;
+      const p = H.ring1(th, y0, ...pr(y0));
+      const q = H.ring1(th, y1, ...pr(y1));
+      top.push([p.x, p.y]);
+      bot.push([q.x, q.y]);
     }
-    const n = H.patch(sd * neckFrom * DEG, sd * 179 * DEG, brim, low + 4, flapProf);
-    if (n) flaps.push(n);
-  }
-  for (const f of flaps)
-    lamellae(g, f, P.lace, {
-      x0: -120,
-      x1: 120,
+    return polyPts([...top, ...bot.reverse()]);
+  };
+  // Cloth: dyed, cel-shaded, with folds hanging from the band.
+  const clothPiece = (piece: Path2D, th0: number, th1: number) => {
+    cel(g, piece, clothCol[0], clothCol[1], 5, clothCol[2], LW);
+    inside(g, piece, () => {
+      for (let d = Math.min(th0, th1); d <= Math.max(th0, th1); d += 17) {
+        const pts: Pt[] = [];
+        for (const y of [brim + 8, (brim + fallLow) / 2, fallLow - 2]) {
+          const q = H.ring1(d * DEG, y, ...fallProf(y));
+          pts.push([q.x, q.y]);
+        }
+        const [p0, p1, p2] = pts as [Pt, Pt, Pt];
+        curve(g, alpha(clothCol[1], 0.9), 1.8, p0[0], p0[1], p1[0], p1[1], p2[0], p2[1]);
+      }
+    });
+  };
+  const lam = (piece: Path2D, y1: number) =>
+    lamellae(g, piece, P.lace, {
+      x0: -160,
+      x1: 160,
       y0: brim - 4,
-      y1: low + 8,
+      y1,
       row: 10,
       plate: 7,
       sag: 3,
@@ -344,9 +447,115 @@ function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
       dark,
       light,
     });
+  // Two upright 鶡 tails on the crown (雙鶡尾，豎左右: 輿服志): white, dark-tipped.
+  const heTail = (sd: number) => {
+    const th = sd * 64 * DEG;
+    const at = H.ring1(th, top + 34, ...prof(top + 34));
+    const out = at.x < H.proj(0, top, 1, false).x ? -1 : 1;
+    const a: Pt = [at.x, at.y];
+    const c: Pt = [a[0] + out * 4, a[1] - 34];
+    const b: Pt = [a[0] + out * 24, a[1] - 60];
+    // A vane: a bare quill at the base, broad above, rounded at the tip.
+    const n = 16;
+    const left: Pt[] = [];
+    const right: Pt[] = [];
+    for (let i = 0; i <= n; i++) {
+      const u = i / n;
+      const w =
+        u < 0.8
+          ? 2 + 7.5 * Math.sin((Math.min(1, u / 0.5) * Math.PI) / 2)
+          : 9.5 * Math.sqrt(Math.max(0, 1 - ((u - 0.8) / 0.2) ** 2));
+      const [x, y, nx, ny] = onCurve(a, c, b, u);
+      left.push([x + nx * w, y + ny * w]);
+      right.push([x - nx * w, y - ny * w]);
+    }
+    const f = polyPts([...left, ...right.reverse()]);
+    cel(g, f, "#ece5d6", "#a89e8a", 3, "#ffffff", LW2);
+    inside(g, f, () => {
+      // The dark-brown end of the tail, then the barbs and the shaft.
+      g.strokeStyle = "#3b2d24";
+      g.lineWidth = 24;
+      g.beginPath();
+      for (let i = 0; i <= 8; i++) {
+        const [x, y] = onCurve(a, c, b, 0.56 + (0.44 * i) / 8);
+        if (i === 0) g.moveTo(x, y);
+        else g.lineTo(x, y);
+      }
+      g.lineTo(b[0] + (b[0] - c[0]) * 0.3, b[1] + (b[1] - c[1]) * 0.3);
+      g.stroke();
+      for (let i = 2; i < 15; i++) {
+        const [x, y, nx, ny] = onCurve(a, c, b, i / 16);
+        const ink = i < 9 ? alpha("#8a7f6c", 0.7) : alpha("#7a6650", 0.8);
+        for (const sd2 of [-1, 1])
+          line(g, ink, 1.1, x, y, x + sd2 * nx * 10 + (c[0] - a[0]) * 0.04, y + sd2 * ny * 10 - 5);
+      }
+      curve(g, alpha("#5a4a3a", 0.9), 1.3, a[0], a[1], c[0], c[1], b[0], b[1]);
+    });
+    g.strokeStyle = INK;
+    g.lineWidth = LW2;
+    g.stroke(f);
+  };
+  if (back) {
+    if (S.tassel !== "none") {
+      const long = S.tassel === "long";
+      const ty = S.finial === "spike" ? tip.y - spikeH + 4 : tip.y;
+      const tassel = long
+        ? ribbon([tip.x, ty], [tip.x + bx * 52, ty + 4], [tip.x + bx * 70, ty + 100], 18, 7)
+        : path((p) => {
+            p.moveTo(tip.x, ty - 6);
+            p.quadraticCurveTo(tip.x + bx * 26, ty - 24, tip.x + bx * 40, ty - 8);
+            p.quadraticCurveTo(tip.x + bx * 26, ty - 2, tip.x + bx * 44, ty + 12);
+            p.quadraticCurveTo(tip.x + bx * 18, ty + 8, tip.x, ty + 2);
+            p.closePath();
+          });
+      cel(g, tassel, tasselCol, mix(tasselCol, "#000000", 0.4), 4, mix(tasselCol, "#ffffff", 0.35));
+    }
+    if (style === "cloth") clothPiece(curtain(100, brim + 2, fallLow, fallProf), 100, 260);
+    if (S.cheeks === "hood") lam(curtain(60, brim, low, flapProf), low + 8);
+    if (style === "feather") for (const sd of [-1, 1]) if (H.facing(sd * 64 * DEG) < 0) heTail(sd);
+    return;
+  }
+  // The headcloth: a dyed band showing below the helmet's rim, its falls behind the ears.
+  if (style === "cloth") {
+    const cb = bandOn(H, (y) => H.skullAt(y, 1.1), brim - 2, brim + 12);
+    cel(g, cb, clothCol[0], clothCol[1], 3, clothCol[2], LW);
+    inside(g, cb, () => {
+      for (const [x, y] of H.ring(brim + 5, ...H.skullAt(brim + 5, 1.1), 10).slice(1, -1))
+        curve(g, alpha(clothCol[1], 0.85), 1.6, x + 3, y - 5, x, y, x - 3, y + 5);
+    });
+    for (const sd of [-1, 1]) {
+      const piece = H.patch(sd * 104 * DEG, sd * 179 * DEG, brim + 2, fallLow, fallProf);
+      if (piece) clothPiece(piece, sd * 104, sd * 179);
+    }
+  }
+  const flaps: Path2D[] = [];
+  const neckLow = S.cheeks === "hood" ? low : S.neck === "long" ? 64 : low + 4;
+  for (const sd of [-1, 1]) {
+    if (S.cheeks !== "none") {
+      const p = H.patch(
+        sd * (S.cheeks === "hood" ? 60 : 58) * DEG,
+        sd * 112 * DEG,
+        brim - 2,
+        low,
+        flapProf,
+      );
+      if (p) flaps.push(p);
+    }
+    if (S.neck !== "none") {
+      const n = H.patch(
+        sd * (S.cheeks === "none" ? 100 : 112) * DEG,
+        sd * 179 * DEG,
+        brim,
+        S.neck === "short" && S.cheeks === "none" ? 18 : neckLow,
+        flapProf,
+      );
+      if (n) flaps.push(n);
+    }
+  }
+  for (const f of flaps) lam(f, neckLow + 8);
   // The dome.
   const dome = H.capBody(prof, top, brim);
-  if (style === "band") {
+  if (S.dome === "lamellae") {
     lamellae(g, dome, P.lace, {
       x0: -100,
       x1: 100,
@@ -360,7 +569,7 @@ function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
       light,
       lw: LW,
     });
-  } else if (style === "pelt") {
+  } else if (S.mat === "pelt") {
     cel(g, dome, PELT, PELT_DARK, 9, PELT_LIGHT, LW);
     const r = rng(L.seed ^ 0x9e11);
     inside(g, dome, () => {
@@ -371,23 +580,45 @@ function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
         const y = top + 10 + r() * (brim - top - 12);
         const [a, f, b] = prof(y);
         const p = H.ring1(th, y, a, f, b);
-        const s = 3 + r() * 2.5;
+        const sz = 3 + r() * 2.5;
         g.strokeStyle = "#3a2410";
         g.lineWidth = 2;
         g.beginPath();
-        g.arc(p.x, p.y, s, 0.3, Math.PI * 1.7);
+        g.arc(p.x, p.y, sz, 0.3, Math.PI * 1.7);
         g.stroke();
-        dot(g, alpha("#5a3818", 0.6), p.x, p.y, s * 0.5);
+        dot(g, alpha("#5a3818", 0.6), p.x, p.y, sz * 0.5);
       }
     });
   } else {
     cel(g, dome, base, dark, 9, light, LW);
     inside(g, dome, () => {
-      if (style === "lac") meridians(g, H, prof, top, brim, 24, alpha(LACQUER_RED, 0.95), 2.4);
-      else meridians(g, H, prof, top, brim, 14, alpha("#1c1e22", 0.5), 1.4);
+      if (S.dome === "ribs") meridians(g, H, prof, top, brim, 24, alpha(LACQUER_RED, 0.95), 2.4);
+      else if (S.dome === "lines") meridians(g, H, prof, top, brim, 14, alpha("#1c1e22", 0.5), 1.4);
+      else if (S.dome === "strips") {
+        // Iron strips riveted over the hide, crown to brim and round the middle.
+        meridians(g, H, prof, top, brim, 45, alpha("#1c1e22", 0.85), 5.5);
+        meridians(g, H, prof, top, brim, 45, alpha(IRON_LIGHT, 0.95), 3);
+        const ring = H.ring(top + (brim - top) * 0.5, ...prof(top + (brim - top) * 0.5), 14);
+        g.strokeStyle = alpha("#1c1e22", 0.85);
+        g.lineWidth = 5.5;
+        g.beginPath();
+        g.moveTo((ring[0] as Pt)[0], (ring[0] as Pt)[1]);
+        for (const q of ring) g.lineTo(q[0], q[1]);
+        g.stroke();
+        g.strokeStyle = IRON_LIGHT;
+        g.lineWidth = 3;
+        g.stroke();
+      } else if (S.dome === "rivets") {
+        // Riveted bands crossing the crown.
+        meridians(g, H, prof, top, brim, 60, alpha("#1c1e22", 0.7), 3);
+        for (const y of [brim - 6, top + (brim - top) * 0.45]) {
+          const ring = H.ring(y, ...prof(y), 12);
+          for (const [x, yy] of ring.slice(1, -1)) dot(g, alpha(light, 0.9), x, yy, 1.8);
+        }
+      }
       const [a, f, b] = prof(top + 26);
       const hl = H.ring1(40 * DEG - H.phi * 0.4, top + 26, a, f, b);
-      g.fillStyle = alpha(light, style === "steel" ? 0.85 : 0.5);
+      g.fillStyle = alpha(light, S.mat === "steel" ? 0.85 : 0.5);
       g.beginPath();
       g.ellipse(hl.x, hl.y, 12, 6, -0.6, 0, Math.PI * 2);
       g.fill();
@@ -395,18 +626,15 @@ function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
   }
   // The brow band, or a roll of fur, or a yellow cloth.
   const band = bandOn(H, prof, brim - 13, brim);
-  if (style === "fur") {
+  if (S.band === "fur") {
     const [a, f, b] = prof(brim - 4);
-    const pts = H.ring(brim - 4, a * 1.02, f * 1.02, b * 1.02, 14);
-    furRoll(g, pts, 10, FUR);
-  } else if (style === "yellow") {
+    furRoll(g, H.ring(brim - 4, a * 1.02, f * 1.02, b * 1.02, 14), 10, FUR);
+  } else if (S.band === "yellow") {
     cel(g, band, YELLOW, YELLOW_DARK, 4, YELLOW_LIGHT);
     inside(g, band, () => {
-      const pts = H.ring(brim - 6, ...prof(brim - 6), 12);
-      for (const [x, y] of pts)
+      for (const [x, y] of H.ring(brim - 6, ...prof(brim - 6), 12))
         curve(g, alpha(YELLOW_FOLD, 0.85), 1.8, x + 4, y - 7, x, y, x - 4, y + 7);
     });
-    // The knot at the side, its ends loose.
     const kn = H.proj(-100 * DEG, brim - 6, 1.16, false);
     if (kn.c > -0.4) {
       cel(
@@ -419,16 +647,27 @@ function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
       );
       cel(g, ellipse(kn.x, kn.y, 9, 8), YELLOW, YELLOW_DARK, 2, YELLOW_LIGHT);
     }
-  } else if (gilt || officer) cel(g, band, metal[0], metal[1], 4, metal[2]);
-  else if (style === "lac") cel(g, band, LACQUER_RED, "#6e2019", 4, "#c9584a");
-  else cel(g, band, dark, "#33363c", 4, base);
-  if (style === "lac" || style === "band" || style === "black") {
+  } else if (S.band === "red") cel(g, band, LACQUER_RED, "#6e2019", 4, "#c9584a");
+  else if (S.band === "metal" && gilt) cel(g, band, metal[0], metal[1], 4, metal[2]);
+  else if (S.band !== "none") cel(g, band, dark, mix(dark, "#000000", 0.35), 4, base);
+  if (S.dome === "ribs" || S.dome === "lamellae" || S.band === "plain") {
     const [a, f, b] = prof(brim - 6);
-    for (const [x, y] of H.ring(brim - 6, a, f, b, 6).slice(1, -1))
-      cel(g, ellipse(x, y, 2.4, 2.4), BRONZE, BRONZE_DARK, 1, undefined, 1);
+    if (S.band !== "none" && S.band !== "fur")
+      for (const [x, y] of H.ring(brim - 6, a, f, b, 6).slice(1, -1))
+        cel(g, ellipse(x, y, 2.4, 2.4), BRONZE, BRONZE_DARK, 1, undefined, 1);
   }
-  // A ridge down the front for officers and gilt helmets.
-  if ((officer || gilt) && style !== "band" && style !== "pelt" && style !== "fur") {
+  // A gilt ridge down the front of a gilt helmet.
+  const ridged =
+    gilt &&
+    (style === "lam" ||
+      style === "gilt" ||
+      style === "lac" ||
+      style === "open" ||
+      style === "steel" ||
+      style === "plume" ||
+      style === "horn" ||
+      style === "yellow");
+  if (ridged && H.facing(0) > 0.1) {
     const pts: Pt[] = [];
     const pts2: Pt[] = [];
     for (let i = 0; i <= 8; i++) {
@@ -439,8 +678,37 @@ function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
       pts.push([p.x, p.y]);
       pts2.push([q2.x, q2.y]);
     }
-    if (H.facing(0) > 0.1)
-      cel(g, polyPts([...pts, ...pts2.reverse()]), metal[0], metal[1], 2, metal[2], LW2);
+    cel(g, polyPts([...pts, ...pts2.reverse()]), metal[0], metal[1], 2, metal[2], LW2);
+  }
+  for (const sd of [-1, 1]) if (style === "feather" && H.facing(sd * 64 * DEG) >= 0) heTail(sd);
+  // The tube on the crown that holds the pheasant tail.
+  // The tall tube on the crown, a short spray of pheasant feathers in its mouth.
+  if (style === "tube") {
+    const m: Pt = [tip.x, tip.y - 20];
+    for (const [dx, dy] of [
+      [-26, -10],
+      [26, -12],
+      [bx * 6, -22],
+    ] as const)
+      feather(
+        g,
+        m,
+        [m[0] + dx * 0.4, m[1] + dy * 0.7],
+        [m[0] + dx, m[1] + dy],
+        8,
+        "#c99a5a",
+        FEATHER_DARK,
+        5,
+      );
+    const tube = path((p) => {
+      p.moveTo(tip.x - 7, tip.y + 2);
+      p.lineTo(tip.x - 4, m[1]);
+      p.lineTo(tip.x + 4, m[1]);
+      p.lineTo(tip.x + 7, tip.y + 2);
+      p.closePath();
+    });
+    cel(g, tube, metal[0], metal[1], 2, metal[2]);
+    cel(g, ellipse(m[0], m[1], 5.5, 2.4), metal[1], metal[1], 1, undefined, 1.4);
   }
   // A horn crest curving forward from the top (文醜: our reading of the one-horned 獬豸).
   if (style === "horn") {
@@ -467,19 +735,50 @@ function helmet(g: G, L: Look, style: HelmStyle, back: boolean): void {
       for (let i = 1; i < 6; i++) dot(g, "#3a2410", a.x + bx * (14 + i * 3), a.y + i * 10, 2.4);
     });
   }
-  // Finial; steel helmets carry a tall spike.
-  const fh = style === "steel" ? 22 : 10;
-  cel(
-    g,
-    path((p) => p.roundRect(tip.x - 5, tip.y - fh, 10, fh + 2, 3)),
-    metal[0],
-    metal[1],
-    2,
-    metal[2],
-  );
-  if (style === "steel")
-    cel(g, ellipse(tip.x, tip.y - fh - 3, 4, 4), metal[0], metal[1], 1, metal[2]);
-  brimShadow(g, L, brim + 2);
+  // The finial: a knob, or a tall spike.
+  if (S.finial !== "none") {
+    const w = S.finial === "spike" ? 6 : 10;
+    cel(
+      g,
+      path((p) => p.roundRect(tip.x - w / 2, tip.y - spikeH, w, spikeH + 2, 3)),
+      metal[0],
+      metal[1],
+      2,
+      metal[2],
+    );
+    if (S.finial === "spike")
+      cel(g, ellipse(tip.x, tip.y - spikeH - 3, 4, 4), metal[0], metal[1], 1, metal[2]);
+  } else if (style === "plume") {
+    // A tall tuft of dyed horsehair on a socket, sweeping back over the crown.
+    const pb = Math.abs(H.s) < 0.2 ? -1 : backDir(H);
+    const a: Pt = [tip.x, tip.y + 2];
+    const plumeP = ribbon(a, [a[0] - pb * 8, a[1] - 44], [a[0] + pb * 70, a[1] - 24], 32, 12);
+    cel(
+      g,
+      plumeP,
+      tasselCol,
+      mix(tasselCol, "#000000", 0.35),
+      5,
+      mix(tasselCol, "#ffffff", 0.35),
+      LW,
+    );
+    inside(g, plumeP, () => {
+      for (let i = 0; i < 6; i++)
+        curve(
+          g,
+          alpha(mix(tasselCol, "#000000", 0.45), 0.8),
+          1.4,
+          a[0] - 8 + i * 3,
+          a[1],
+          a[0] - pb * 6 + i * 2,
+          a[1] - 36,
+          a[0] + pb * (52 + i * 3),
+          a[1] - 26,
+        );
+    });
+    cel(g, ellipse(tip.x, tip.y - 2, 8, 6), metal[0], metal[1], 2, metal[2]);
+  }
+  brimShadow(g, L, style === "cloth" ? brim + 13 : brim + 2);
 }
 
 // ---------------------------------------------------------------- court caps

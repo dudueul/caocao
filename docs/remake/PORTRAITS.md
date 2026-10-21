@@ -73,7 +73,8 @@ Callers use `portraitUrl` and the other exports as before.
 | Head | Turn (front, three-quarter left or right, near profile, look-back), roll, crop (high for tall men, low for short men), head size, seven builds with the neck matching, stoop |
 | Face | Seven face shapes, nine eye kinds, seven brow kinds, six noses, mouth; age changes proportions first (jaw, cheek line, nose length), then lines and grey; skins include 관우's red-brown and 진등's flush; eye spacing varies per man |
 | Beard | 17 kinds drawn from strands. The hanging Han moustache is the default. The beard bag, tiger whiskers, slim tail and long white beard are each reserved for one man |
-| Headgear | 41 shapes on one head model, so every cap turns with the head: court caps by office, cloth caps and headcloths, bands and wraps, shaved scalps, hats and hoods, eleven helmet styles, and crowns |
+| Headgear | Shapes on one head model, so every cap turns with the head: court caps by office, cloth caps and headcloths, bands and wraps, shaved scalps, hats and hoods, and crowns. Helmets are a table of outline parameters: crown height and shape, cheek flaps, neck curtain, finial, tassel, band, plume or 鶡 tails, a headcloth under the rim, and iron, gilt, red lacquer or hide. Each helmeted general has an outline of his own; gold bands are kept for gilt helmets, and Han finds set the shapes (no later-dynasty wings or crest plates) |
+| Feature | One exaggerated feature per helmeted general, after the Dynasty Warriors principle, since the helmet hides the hair: a heavy brow ridge, a broken nose, deep-set eyes, a big jaw, a gap-toothed grin, a mole |
 | Accent and gear | One accent colour per hero on cap, collar, sash or band (the robe keeps the side's dye); about 45 front props and 19 back items, cropped by the frame. A `RESERVED` list keeps signatures off generated soldiers |
 | Backdrop | A low-contrast landscape for each of 12 factions; 17 hero motifs in place of the shared halo ring; a lighter glow behind the head so the face reads first |
 | Armies | A kit per army and class, varied by a hash of the troop's id |
@@ -83,8 +84,8 @@ Callers use `portraitUrl` and the other exports as before.
 - every officer at 48 px, in colour and in grey (`?only=small`).
 
 A scratch script compares the 48 px outlines of heroes within each faction; no
-pair overlaps past the threshold. Painting one portrait takes about 11 ms
-(15.6 ms with the PNG), much as before.
+pair overlaps past the threshold. Painting one portrait takes about 12 ms
+(15.7 ms with the PNG), much as before.
 
 ## Corrections the record made
 

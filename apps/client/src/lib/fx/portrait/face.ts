@@ -16,6 +16,7 @@ import {
   LW,
   LW2,
   line,
+  mix,
   type Pt,
   path,
   ribbon,
@@ -271,6 +272,28 @@ function eye(g: G, L: Look, side: number, closed: boolean): void {
 
 export function eyes(g: G, L: Look): void {
   const closed = L.mood === "hurt";
+  const H = L.H;
+  const skd = L.skin[1];
+  if (has(L, "deepset") || has(L, "brow")) {
+    // Deep sockets in shadow under a heavy brow.
+    for (const side of [-1, 1]) {
+      const p = H.proj(side * eyeAz(L), -2);
+      if (p.c < 0.15) continue;
+      const w = 15 * (0.55 + 0.45 * p.c);
+      g.fillStyle = has(L, "deepset") ? mix(skd, "#3a2418", 0.35) : alpha(skd, 0.85);
+      g.beginPath();
+      g.ellipse(
+        p.x,
+        p.y - 3,
+        w * (has(L, "deepset") ? 1.15 : 1),
+        has(L, "deepset") ? 13 : 9,
+        0,
+        0,
+        Math.PI * 2,
+      );
+      g.fill();
+    }
+  }
   // The far eye first; the near eye, squeezed shut when hurt.
   const order = L.H.phi >= 0 ? [1, -1] : [-1, 1];
   for (const side of order) {
@@ -299,8 +322,8 @@ function brow(g: G, L: Look, side: number): void {
   const m = MOOD_SHAPES[L.mood];
   const c = H.facing(side * 30 * DEG);
   if (c < 0.05) return;
-  const base = -16 + kind.y;
-  const T = 6.5 * kind.th * (0.75 + 0.25 * clamp(c, 0, 1));
+  const base = -16 + kind.y + (has(L, "brow") ? 3 : 0);
+  const T = 6.5 * kind.th * (has(L, "brow") ? 1.35 : 1) * (0.75 + 0.25 * clamp(c, 0, 1));
   const knit = t.brow === "knit" ? 3 : 0;
   const frown = has(L, "frown") ? 2 : 0;
   const cocked = has(L, "cocked") && side > 0 ? -5 : 0;
@@ -370,6 +393,15 @@ function brow(g: G, L: Look, side: number): void {
 
 export function brows(g: G, L: Look): void {
   for (const side of [-1, 1]) brow(g, L, side);
+  if (has(L, "brow")) {
+    // The heavy ridge catches the light above the brows.
+    const H = L.H;
+    const a = H.pt(-44 * DEG, -27);
+    const m = H.pt(0, -30);
+    const c = H.pt(44 * DEG, -27);
+    curve(g, alpha(L.skin[2], 0.95), 4.4, a[0], a[1], m[0], m[1] - 3, c[0], c[1]);
+    curve(g, INK, 1.6, a[0] - 2, a[1] - 3, m[0], m[1] - 7, c[0] + 2, c[1] - 3);
+  }
   if (L.t.brow === "knit" || has(L, "frown") || L.mood === "angry") {
     // The crease between knitted brows.
     const H = L.H;
@@ -393,6 +425,14 @@ export function nose(g: G, L: Look): void {
   const mid = H.proj(0, ny * 0.45);
   const tw = H.tip;
   const sg = Math.abs(H.s) < 0.1 ? 0 : Math.sign(H.s);
+  if (has(L, "broken")) {
+    // A bridge broken and badly set: a bump and a kink, a pale scar across it.
+    const k = H.proj(0, ny * 0.4);
+    g.lineCap = "round";
+    curve(g, INK, 2.6, k.x - 3, k.y - 9, k.x + 7, k.y - 2, k.x + 2, k.y + 8);
+    line(g, alpha("#a0523c", 0.95), 2.4, k.x - 8, k.y + 2, k.x + 9, k.y - 4);
+    line(g, alpha("#f2c6a6", 0.95), 1.2, k.x - 8, k.y, k.x + 9, k.y - 6);
+  }
   // Shadow down the shaded (left) side of the bridge, and under the nose.
   g.fillStyle = alpha(skd, 0.95);
   g.beginPath();
@@ -486,6 +526,28 @@ export function mouth(g: G, L: Look): void {
   const mood = L.mood === "calm" && has(L, "roar") ? "angry" : L.mood;
   switch (mood) {
     case "calm": {
+      if (has(L, "gap")) {
+        // A crooked grin with a tooth missing.
+        const m = path((p) => {
+          p.moveTo(xl - 3, my - 2);
+          p.quadraticCurveTo(mx, my + 2, xr + 3, my - 6);
+          p.quadraticCurveTo(mx + 2, my + 10, xl - 3, my - 2);
+          p.closePath();
+        });
+        g.fillStyle = TEETH;
+        g.fill(m);
+        inside(g, m, () => {
+          g.fillStyle = MOUTH;
+          g.fillRect(mx + 1, my - 8, 5, 16);
+          for (let x = xl + 4; x < xr; x += 5)
+            line(g, alpha("#9a8c78", 0.9), 1, x, my - 4, x, my + 6);
+        });
+        g.lineWidth = 2.2;
+        g.strokeStyle = INK;
+        g.stroke(m);
+        line(g, alpha(skd, 0.8), 2.4, mx - 4, my + 8.5, mx + 4, my + 8);
+        break;
+      }
       curve(g, INK, 2.4, xl, my, mx, my + 1.5, xr, my - (smirk ? 4 : 0.5));
       if (smirk) curve(g, INK, 1.6, xr - 1, my - 4, xr + 2, my - 4, xr + 3, my - 6);
       line(g, alpha(skd, 0.8), 2.4, mx - 4, my + 6.5, mx + 4, my + 6);
@@ -503,6 +565,10 @@ export function mouth(g: G, L: Look): void {
       inside(g, m, () => {
         g.fillStyle = TEETH;
         g.fillRect(xl - 2, my - 6, mw + 4, 7.5);
+        if (has(L, "gap")) {
+          g.fillStyle = MOUTH;
+          g.fillRect(mx + 1, my - 6, 4, 8);
+        }
       });
       g.lineWidth = 2.2;
       g.strokeStyle = INK;
@@ -710,6 +776,10 @@ export function earLobe(L: Look): Pt | null {
 
 export function marks(g: G, L: Look): void {
   const H = L.H;
+  if (has(L, "mole")) {
+    const p = H.proj(-24 * DEG, H.my - 8);
+    if (p.c > 0.2) dot(g, "#3a2418", p.x, p.y, 3.4);
+  }
   if (has(L, "scar") || has(L, "scars")) {
     const a = H.proj(40 * DEG, 30);
     if (a.c > 0.2) {
