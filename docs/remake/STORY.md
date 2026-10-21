@@ -317,9 +317,18 @@ once per path in every run):
 | 3 | 관도 사수 | 12 · 12 | round 8 |
 | 3 | 오소 야습 | 12 · 12 | round 4 |
 | 3 | 관도 결전 | 12 · 12 | round 6–7 |
+| 4 | 창정의 결전 | 12 · 12 | round 7 |
+| 4 | 여남의 유비 | 12 · 12 | round 6 |
+| 4 | 여양의 형제 | 12 · 12 | round 6–7 |
+| 4 | 업성 공략 | 12 · 9 | round 9–10; the trench floods on round 5 |
+| 4 | 남피의 얼음 | 12 · 12 | round 6–7 |
+| 4 | 호관의 고간 | 12 · 10 | round 8–10 |
+| 4 | 백랑산의 오환 | 12 · 12 | round 6 (went) · 8 (stayed) |
 
-Chapter 2 and 3 cells read "history path · other path" (revenge and executed ·
-mercy and spared). Since allies move by their own AI ([ADR 0066](../adr/0066-allies.md)),
+Chapter 2–4 cells read "history path · other path": revenge, executed and
+went · mercy, spared and stayed. A fresh start of chapter 4 wins every battle
+in 11 or 12 of 12 on both paths. There, 백랑산 without 곽가 takes about 17
+rounds against 9 with him. Since allies move by their own AI ([ADR 0066](../adr/0066-allies.md)),
 사수관, 변수 and 하비 are a little harder for the AI: the allies no longer screen
 조조 in our phase, and the losses are 조조 falling. 전위's survival at 완성 depends on which officers the AI
 sends to the gate: about half overall, from 2 to 12 in 12 by setup. A player
