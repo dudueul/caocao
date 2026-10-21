@@ -3,7 +3,12 @@
 How our figures dress and what they carry ([ADR 0046](../adr/0046-period-accurate-dress.md)).
 The rig and its scale are in [ADR 0045](../adr/0045-rigged-chibi-characters.md). The
 parts are painted in code today (`apps/client/src/lib/fx/chibi.ts`); an artist's
-drawings follow this guide later.
+drawings follow this guide later. Portraits follow the same dress. Each officer
+gets their own headgear, build, turn, beard, accent colour and prop, drawn from
+the record first ([ADR 0070](../adr/0070-portraits-from-the-record.md),
+[PORTRAITS.md](PORTRAITS.md)). The source of truth is the officer table in
+`apps/client/src/lib/fx/portrait/officers.ts`, which tags each look as record,
+novel, later lore or our reading.
 
 The basis is the period itself: the histories, Han texts on dress, and
 archaeology (figurines, tomb murals and reliefs, excavated arms). It is never
@@ -69,23 +74,23 @@ Where the record is thin, these are our readings, to confirm.
 
 ## Armies and people of chapter 4
 
-Painted the same way. A fuller pass that makes every face more distinct is in progress.
+Painted the same way, and redrawn in the pass from the record ([ADR 0070](../adr/0070-portraits-from-the-record.md)).
 
 | Who | What we draw | Basis |
 |---|---|---|
 | 원상 | Young and pale, no beard; gilt and figured silk | Record: handsome, 원소's favourite; the silk is our reading |
 | 원희 | Mild, heavy-lidded, short beard | Our reading: the less forceful brother |
 | 고간 | Long face, long moustache, a 병주 fur collar | Record: governor of 병주; the fur is our reading |
-| 답돈 | Big and ruddy, a scar and a gold earring; felt cap with a fur brim | Record: the 오환 wore felt and furs; the earring and scar are our reading |
-| 누반, 소복연 | The young heir, beardless; an old grey chief with a hooked nose; felt and fur | Our reading |
+| 답돈 | Big and ruddy, a scar and a gold earring; a shaved scalp with side locks | Record: the 오환 shaved their heads (髡頭) and wore felt and furs; the earring, scar and side locks are our reading |
+| 누반, 소복연 | The young heir, beardless and shaved, holding a gold belt plaque; an old grey chief with a hooked nose in a fur hood | Shaved heads are record; the rest is our reading |
 | 신비, 신평 | Brothers with the same square jaw and round eyes: 신비 with a frown and bushy brows, 신평 older and greying in a court cap | Record: 신비 was blunt and outspoken; the likeness is our reading |
 | 전주 | Lean, sun-tanned, long beard; a plain cloth cap and bamboo slips | Record: a recluse who farmed in the hills |
 | 조순 | 조인's round eyes in a slimmer face; black armour, pheasant plumes | Our reading of the elite 호표기 riders |
 | 조비 | Young, his father's narrow eyes, a thin moustache; a small crown on the topknot | Record: the heir, about 20 in 207 |
 | 공손강 | Heavy-set, hooded eyes; court cap and figured silk | Record: his father took a ruler's trappings in 요동 |
 | 유벽, 공도 | Yellow head-cloths and patched leather | Record: Yellow Turban remnants in 여남 |
-| 오환 기병 | Felt caps with fur brims, dark fur collars | Record: 後漢書 烏桓傳 |
-| 병주군 | Fur collars and banded helmets | Northern frontiersmen, like 여포's |
+| 오환 기병 | Shaved heads with side locks; felt coats with embroidered leather lapels and fur collars; bows | Record: 後漢書 烏桓傳 (shaved heads, felt, embroidered leather); the cut is our reading |
+| 병주군 | Banded or fur-rimmed helmets, fur collars | Northern frontiersmen, like 여포's |
 | 유비군 | Plain leather and open helmets | Our reading: a small army on the move |
 | 성문 (gate) | No portrait; the unit card shows 門 | A work, not a person ([ADR 0069](../adr/0069-breakable-gates.md)) |
 

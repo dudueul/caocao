@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-21
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0069](../adr/0069-breakable-gates.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0070](../adr/0070-portraits-from-the-record.md)).
 
 ## Vision
 
@@ -123,6 +123,7 @@ flowchart TB
 | Chapter 4 | 하북 평정 (201–207), seven battles: 창정, 여남 (유비), 여양, 업 (siege), 남피 (ice), 호관, 백랑산; 원담 an ally at 업, then the enemy | [0067](../adr/0067-chapter-four-hebei.md) |
 | 곽가's march | The player chooses whether the sick 곽가 marches to 백랑산: the 오환 are surprised but he dies, or he lives and the 오환 are ready | [0068](../adr/0068-guo-jia-choice.md) |
 | Breakable gates | Gates are works: units that hold a tile, never act and open the way when broken; stone-throwers hit them hardest; state v6 | [0069](../adr/0069-breakable-gates.md) |
+| Portraits from the record | Each officer's own headgear, build, turn, beard, accent and prop, from the histories first, after a benchmark of other Three Kingdoms games; [PORTRAITS.md](PORTRAITS.md) (Proposed) | [0070](../adr/0070-portraits-from-the-record.md) |
 
 ## Roadmap
 

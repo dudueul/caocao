@@ -57,14 +57,24 @@
       align-items: flex-end;
       margin-left: 8px;
     }
+    .grey img {
+      filter: grayscale(1);
+    }
     </style>
   </head>
   <body>
     <!-- Dev only (`bun run dev`, then /dev/portrait-gallery.html): every named officer in every mood at 200 px and 44 px, then generic soldiers per side and class.
-         Query: ?ids=cao-cao,guan-yu  ?moods=calm,angry  ?only=officers|generic|classes|armies|grid  ?big=200 -->
+         Query: ?ids=cao-cao,guan-yu  ?moods=calm,angry  ?only=officers|generic|classes|armies|grid|factions|small  ?big=200
+         `factions` groups the officers by faction at full size; `small` is the 48 px roll-call in colour and in grey (ADR 0070). -->
     <main id="app"></main>
     <script type="module">
-    import { FAMILIES, MOODS, PORTRAIT_OFFICERS, portraitUrl } from "../src/lib/fx/portrait.ts";
+    import {
+      FAMILIES,
+      MOODS,
+      PORTRAIT_OFFICERS,
+      portraitFaction,
+      portraitUrl,
+    } from "../src/lib/fx/portrait.ts";
 
     const q = new URLSearchParams(location.search);
     const ids = q.get("ids")?.split(",") ?? PORTRAIT_OFFICERS;
@@ -114,6 +124,52 @@
       app.append(h);
     }
 
+    const FACTIONS = [
+      ["cao", "曹操"],
+      ["yuan", "袁紹"],
+      ["lu", "呂布"],
+      ["liu", "劉備"],
+      ["wu", "江東"],
+      ["jing", "荊州"],
+      ["dong", "董卓"],
+      ["han", "漢"],
+      ["yt", "黃巾"],
+      ["xu", "徐州"],
+      ["zhong", "仲"],
+      ["north", "烏桓 · 遼東"],
+    ];
+    const byFaction = FACTIONS.map(([fac, name]) => [
+      name,
+      ids.filter((id) => portraitFaction(id) === fac),
+    ]);
+    if (only === "factions") {
+      // Everyone, calm, at full size, by faction.
+      for (const [name, list] of byFaction) {
+        if (!list.length) continue;
+        heading(name);
+        const grid = document.createElement("div");
+        grid.className = "row";
+        for (const id of list) grid.append(fig({ id, mood: moods[0] }, big, id));
+        app.append(grid);
+      }
+    }
+    if (only === "small") {
+      // The 48 px roll-call: silhouettes must read in colour and in grey.
+      for (const grey of [false, true]) {
+        heading(grey ? "48 px, grey" : "48 px, colour");
+        for (const [name, list] of byFaction) {
+          if (!list.length) continue;
+          const r = document.createElement("div");
+          r.className = grey ? "row grey" : "row";
+          const l = document.createElement("div");
+          l.className = "label";
+          l.textContent = name;
+          r.append(l);
+          for (const id of list) r.append(fig({ id, mood: moods[0] }, 48));
+          app.append(r);
+        }
+      }
+    }
     if (only === "grid") {
       // Everyone at a glance, one mood: big, then small.
       const mood = moods[0];
@@ -216,6 +272,11 @@
         ["zhang", "Zhang Xiu"],
         ["jing", "Jing province"],
         ["zhong", "Yuan Shu"],
+        ["cao", "Cao Cao"],
+        ["yuan", "Yuan Shao"],
+        ["wuhuan", "Wuhuan"],
+        ["bing", "Gao Gan's Bing"],
+        ["liu", "Liu Bei at Runan"],
       ];
       for (const [army, sub] of armies)
         row(
