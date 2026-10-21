@@ -507,6 +507,27 @@ const OFFICERS: Record<string, Traits> = {
   "xian-di":      o("strategist",    0, 0, 0, [0.95, 0.98, 0.35, 0.35, 0.40], "gentle",  1.08, [ 4, 3, -2], "small",    21, "none",    "none",     "black", "pale",  ["civil", "brocade", "hat:mian", "dress:imperial"]),
   "yang-feng":    o("infantry",      1, 2, 2, [1.06, 0.98, 0.80, 0.65, 0.70], "small",   1.00, [ 8, 0,  3], "broad",    25, "bristle", "full",     "black", "ruddy", ["bushy", "scar", "hat:wrap", "dress:bandit"]),
   "liu-biao":     o("strategist",    1, 3, 1, [0.98, 1.06, 0.50, 0.42, 0.55], "gentle",  1.00, [ 5, 2, -1], "straight", 24, "long",    "long",     "salt",  "fair",  ["court", "gilt", "lines"]),
+  // Story chapter 4 (201–207): Cao Cao's people.
+  "cao-chun":     o("cavalry",       0, 1, 1, [1.00, 1.02, 0.60, 0.50, 0.55], "round",   0.96, [ 7, 1,  3], "straight", 23, "thin",    "short",    "black", "warm",  ["heavy", "helm:lamellar"]),
+  "cao-pi":       o("strategist",    0, 0, 1, [0.94, 1.04, 0.38, 0.30, 0.60], "narrow",  1.02, [ 5, 2,  5], "straight", 22, "thin",    "none",     "black", "pale",  ["gilt", "brocade", "hat:crown"]),
+  "xin-pi":       o("strategist",    0, 1, 1, [1.04, 1.02, 0.85, 0.65, 0.50], "round",   1.00, [ 8, 0,  1], "straight", 25, "bristle", "short",    "black", "warm",  ["bushy", "frown"]),
+  "tian-chou":    o("strategist",    0, 2, 0, [0.92, 1.08, 0.40, 0.30, 0.85], "almond",  0.98, [ 6, 1,  3], "straight", 22, "neat",    "long",     "black", "tan",   ["lines", "hat:ze"]),
+  "cai-yang":     o("cavalry",       0, 2, 2, [1.06, 1.00, 0.80, 0.65, 0.55], "fierce",  0.95, [ 8, 1,  5], "broad",    25, "droop",   "long",     "salt",  "tan",   ["bushy", "lines", "helm:lacquer"]),
+  // Story chapter 4: Yuan Shao's sons, nephew, advisers and captains.
+  "yuan-shang":   o("cavalry",       1, 0, 1, [0.95, 1.02, 0.35, 0.30, 0.55], "phoenix", 1.00, [ 5, 3,  4], "straight", 22, "thin",    "none",     "black", "pale",  ["gilt", "brocade", "helm:lamellar"]),
+  "yuan-xi":      o("cavalry",       1, 1, 1, [1.02, 0.98, 0.50, 0.55, 0.40], "heavy",   1.00, [ 6, 2, -2], "straight", 23, "neat",    "short",    "black", "fair",  ["gilt", "helm:banded"]),
+  "gao-gan":      o("cavalry",       1, 2, 1, [1.00, 1.06, 0.60, 0.45, 0.80], "narrow",  1.00, [ 7, 1,  4], "straight", 24, "long",    "goatee",   "black", "warm",  ["gilt", "helm:banded", "dress:bing"]),
+  "xin-ping":     o("strategist",    1, 2, 1, [1.02, 1.04, 0.75, 0.55, 0.50], "round",   0.94, [ 7, 1, -1], "straight", 23, "droop",   "long",     "salt",  "warm",  ["bushy", "court", "lines"]),
+  "ma-yan":       o("cavalry",       1, 1, 2, [1.08, 0.98, 0.80, 0.65, 0.55], "round",   1.00, [ 8, 1,  3], "broad",    26, "bristle", "short",    "black", "ruddy", ["helm:lamellar"]),
+  "zhang-yi":     o("infantry",      1, 2, 1, [0.94, 1.08, 0.45, 0.30, 0.80], "narrow",  1.00, [ 6, 2,  5], "hook",     22, "droop",   "goatee",   "black", "warm",  ["sidelong", "helm:lacquer"]),
+  "yin-kai":      o("infantry",      1, 1, 1, [1.00, 1.00, 0.60, 0.50, 0.50], "small",   1.00, [ 7, 0,  1], "straight", 24, "neat",    "full",     "black", "tan",   ["scar", "helm:banded"]),
+  // Story chapter 4: Liaodong, the Wuhuan and the Runan rebels.
+  "gongsun-kang": o("strategist",    1, 2, 2, [1.06, 1.00, 0.70, 0.60, 0.65], "heavy",   1.00, [ 6, 2,  3], "straight", 23, "neat",    "full",     "black", "fair",  ["court", "gilt", "brocade", "smirk"]),
+  "ta-dun":       o("cavalry",       1, 2, 2, [1.10, 1.00, 0.85, 0.65, 0.90], "fierce",  0.98, [ 9, 1,  5], "broad",    26, "droop",   "short",    "black", "ruddy", ["bushy", "earring", "gilt", "scar", "hat:fur", "dress:bing"]),
+  "lou-ban":      o("cavalry",       1, 0, 0, [0.96, 0.98, 0.45, 0.40, 0.75], "almond",  1.04, [ 6, 2,  3], "straight", 22, "thin",    "none",     "black", "tan",   ["earring", "gilt", "hat:fur", "dress:bing"]),
+  "su-puyan":     o("cavalry",       1, 3, 1, [0.96, 1.08, 0.55, 0.35, 0.90], "small",   1.00, [ 7, 2, -2], "hook",     22, "long",    "goatee",   "grey",  "tan",   ["lines", "earring", "smirk", "hat:fur", "dress:bing"]),
+  "liu-pi":       o("infantry",      1, 2, 1, [0.96, 1.05, 0.50, 0.35, 0.80], "narrow",  1.00, [ 6, 1,  4], "hook",     23, "droop",   "goatee",   "salt",  "tan",   ["scar", "hat:huangjin", "dress:rebel"]),
+  "gong-du":      o("infantry",      1, 1, 2, [1.10, 0.97, 0.85, 0.75, 0.45], "small",   0.96, [ 9, 0,  2], "broad",    26, "bristle", "stubble",  "black", "ruddy", ["bushy", "hat:huangjin", "dress:rebel"]),
 };
 
 function has(t: Traits, m: Mark): boolean {
@@ -594,7 +615,11 @@ interface Army {
  * Bu's Bing frontiersmen, with dark fur collars), xianzhen-… (Gao Shun's
  * 陷陣營, in black armour with neck guards), zhang-… (Zhang Xiu's Liang men),
  * jing-… (Jing province's lacquered southern armour) and zhong-… (Yuan Shu's
- * gaudy guards of his would-be empire, in figured silk and gilt).
+ * gaudy guards of his would-be empire, in figured silk and gilt). Chapter 4's:
+ * wuhuan-… (the Wuhuan horse, in pointed felt caps with fur brims and dark fur
+ * collars), bing-… (Gao Gan's Bing frontiersmen, fur collars and banded
+ * helmets) and liu-… (Liu Bei's men at Runan, in plain leather and open
+ * helmets like his own). gate-… units are works (ADR 0069) and get no portrait.
  */
 const ARMIES = new Map<string, Army>([
   ["cao", { home: 0, dress: "han" }],
@@ -611,6 +636,9 @@ const ARMIES = new Map<string, Army>([
   ["zhang", { home: 1, dress: "frontier" }],
   ["jing", { home: 1, dress: "south", helm: "lacquer" }],
   ["zhong", { home: 1, dress: "han", marks: ["gilt", "brocade"] }],
+  ["wuhuan", { home: 1, dress: "bing", hat: "fur" }],
+  ["bing", { home: 1, dress: "bing", helm: "banded" }],
+  ["liu", { home: 1, dress: "levy", helm: "open" }],
 ]);
 
 /** A soldier's face from the hash of the id: helmeted or capped by class, varied face and beard. */
@@ -3880,11 +3908,18 @@ export function portraitCanvas(spec: PortraitSpec): HTMLCanvasElement | null {
 
 const cache = new Map<string, string>();
 
+/** Works (ADR 0069) have no face: the gate class, or a gate-… id given without a class. */
+function isWork(spec: PortraitSpec): boolean {
+  return spec.classId === "gate" || (spec.classId === undefined && spec.id.startsWith("gate-"));
+}
+
 /**
  * PNG data URL of the bust, painted once per (id, class family, side, mood)
- * and cached. Never throws: returns "" when no canvas is available.
+ * and cached. Never throws: returns "" when no canvas is available, and for
+ * works (a gate in the attack forecast), so no soldier's face stands in for one.
  */
 export function portraitUrl(spec: PortraitSpec): string {
+  if (isWork(spec)) return "";
   try {
     const L = resolve(spec);
     const side = SIDES.indexOf(L.P);
