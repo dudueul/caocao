@@ -83,6 +83,7 @@ export {
   when,
 } from "./stage.ts";
 export type {
+  AbsentOfficer,
   Actor,
   ActPose,
   Backdrop,

@@ -139,6 +139,7 @@ export const HUGUAN = stub("huguan", "호관의 고간", {
 
 export const BAILANG = stub("bailang", "백랑산의 오환", {
   sides: ["조조군", "오환"],
+  absent: [{ officer: "guo-jia", note: "곽가는 허에서 병을 다스리고 있습니다", if: stayed }],
   enemies: [
     foe("ta-dun", "shockCavalry", 25, 12, 4),
     foe("wuhuan", "cavalry", 22, 12, 2, { id: "wuhuan-cavalry-1" }),

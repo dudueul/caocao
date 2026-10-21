@@ -1,4 +1,5 @@
 export {
+  absentFrom,
   type BattleReport,
   battleRules,
   battleUnits,

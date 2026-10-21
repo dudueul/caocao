@@ -44,11 +44,19 @@ export function currentBattle(state: CampaignState): StoryBattleDef | null {
   return step?.kind === "battle" ? step.battle : null;
 }
 
+/** Roster officers who sit this battle out with these flags, and why. */
+export function absentFrom(b: StoryBattleDef, flags: Readonly<Record<string, string>>) {
+  return new Map(
+    (b.absent ?? []).filter((a) => holds(a.if, flags)).map((a) => [a.officer, a.note] as const),
+  );
+}
+
 /** The default sortie: required officers first, then the roster in order, one per slot. */
 export function defaultSortie(state: CampaignState, b: StoryBattleDef): Placement[] {
+  const away = absentFrom(b, state.flags);
   const ids = [
     ...b.required.filter((id) => state.roster.some((o) => o.id === id)),
-    ...state.roster.map((o) => o.id).filter((id) => !b.required.includes(id)),
+    ...state.roster.map((o) => o.id).filter((id) => !b.required.includes(id) && !away.has(id)),
   ].slice(0, Math.min(b.max, b.slots.length));
   return ids.map((officer, i) => ({ officer, at: b.slots[i] as Cell }));
 }
@@ -62,8 +70,11 @@ export function checkSortie(
   if (sortie.length === 0) return "출진할 장수를 고르세요";
   if (sortie.length > b.max) return `최대 ${b.max}명까지 출진할 수 있습니다`;
   const seen = new Set<string>();
+  const away = absentFrom(b, state.flags);
   for (const p of sortie) {
     if (!state.roster.some((o) => o.id === p.officer)) return "명단에 없는 장수입니다";
+    const note = away.get(p.officer);
+    if (note !== undefined) return note;
     if (seen.has(p.officer)) return "같은 장수를 두 번 고를 수 없습니다";
     seen.add(p.officer);
     if (!b.slots.some((c) => same(c, p.at))) return "배치할 수 없는 칸입니다";

@@ -31,6 +31,7 @@ import {
   nextChapter,
   type Officer,
   type Picks,
+  type Placement,
   PROGRESSION,
   promote,
   promotionFor,
@@ -398,6 +399,23 @@ describe("story flags (ADR 0060, 0061)", () => {
     expect(sp.roster.map((o) => o.id)).toContain("lu-bu");
     expect(sp.roster.map((o) => o.id)).not.toContain("zhang-liao");
     expect(sp.gone).toContain("zhang-liao");
+  });
+
+  it("an officer kept away by a flag cannot sortie", () => {
+    const at = playTo(newCampaign("guandu"), "baima", {});
+    const base = currentBattle(at);
+    if (!base) throw new Error("fixture");
+    const away = at.roster.find((o) => !base.required.includes(o.id));
+    if (!away) throw new Error("fixture");
+    const b = {
+      ...base,
+      absent: [{ officer: away.id, note: "쉬는 중", if: { flag: "lubu", is: "executed" } }],
+    };
+    expect(defaultSortie(at, b).map((p) => p.officer)).not.toContain(away.id);
+    const forced = [...defaultSortie(at, b).slice(0, 1), { officer: away.id, at: b.slots[1] }];
+    expect(checkSortie(at, b, forced as Placement[])).toBe("쉬는 중");
+    const other = { ...at, flags: { ...at.flags, lubu: "spared" } };
+    expect(defaultSortie(other, b).map((p) => p.officer)).toContain(away.id);
   });
 
   it("a fresh start of 관도 assumes what history did", () => {

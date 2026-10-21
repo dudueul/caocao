@@ -251,6 +251,13 @@ export interface FateDef {
   readonly notes?: { readonly standing: string; readonly fallen: string };
 }
 
+/** A roster officer kept out of one battle; the note says why on the sortie screen. */
+export interface AbsentOfficer {
+  readonly officer: string;
+  readonly note: string;
+  readonly if?: Cond;
+}
+
 export interface StoryBattleDef {
   readonly id: string;
   readonly name: string;
@@ -269,6 +276,8 @@ export interface StoryBattleDef {
   readonly max: number;
   /** Officers who must sortie. */
   readonly required: readonly string[];
+  /** Roster officers who cannot sortie in this battle, and why (곽가 resting at 허). */
+  readonly absent?: readonly AbsentOfficer[];
   /** Our own units that come with the battle, not from the roster: side 0, ours to command (they earn nothing). */
   readonly guests: readonly StoryUnit[];
   /**

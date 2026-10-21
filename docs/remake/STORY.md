@@ -107,7 +107,7 @@ stateDiagram-v2
 | Phase | Screen | What happens |
 |---|---|---|
 | Scene | `SceneView` + `lib/stage/` | Title card, then the scene acted out on its stage: officers walk, turn, bow, emote and strike while they talk ([ADR 0063](../adr/0063-staged-scenes.md)); choices; auto, and skip to the next choice. Roster joins and leaves apply at the end |
-| Sortie | `SortieView` | Pick up to `max` officers (the `required` ones are fixed) and their slots on a mini map; goals and weather shown |
+| Sortie | `SortieView` | Pick up to `max` officers (the `required` ones are fixed; `absent` ones sit the battle out, with a note why) and their slots on a mini map; goals and weather shown |
 | Battle | `BattleScreen` + `TalkOverlay` | Side phases: ours (red), then allies (orange, their own AI), then the enemy (blue) ([ADR 0066](../adr/0066-allies.md)); goals card; ★ commanders, ◆ units to protect, a gold star on tiles to reach; talk at start, on a round, a defeat, an arrival, a map shift or the end; tips in the first battle |
 | Result | `ResultView` | Gold and items; experience bars fill; level-ups with stat gains; promotion ready |
 | Camp | `CampView` | A camp to walk ([ADR 0064](../adr/0064-walkable-camp.md)): 조조 talks to his officers and opens the shop, the armoury (gear and promotion), the records tent (saving) and the council tent (march on) |

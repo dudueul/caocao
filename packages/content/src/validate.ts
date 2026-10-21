@@ -603,6 +603,11 @@ function validateStoryBattle(
     if (taken.has(`${c.x},${c.y}`)) say(`slot ${c.x},${c.y} is taken by a unit`);
   }
   for (const id of b.required) if (!roster.has(id)) say(`required ${id} is not in the roster`);
+  for (const a of (b.absent ?? []).filter((x) => holds(x.if, flags))) {
+    if (!OFFICERS[a.officer]) say(`absent officer ${a.officer} is unknown`);
+    if (b.required.includes(a.officer)) say(`absent officer ${a.officer} is required`);
+    if (a.note.length === 0) say(`absent officer ${a.officer} needs a note`);
+  }
   const known = new Set([...roster, ...units.map((u) => u.id ?? u.officer)]);
   const inMap = (c: Cell) => c.x >= 0 && c.y >= 0 && c.x < map.width && c.y < map.height;
   for (const g of goals) {

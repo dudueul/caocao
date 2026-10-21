@@ -1,5 +1,5 @@
 <script lang="ts">
-import { battleProfile, chapterOf, type Officer, type Placement } from "@tk/campaign";
+import { absentFrom, battleProfile, chapterOf, type Officer, type Placement } from "@tk/campaign";
 import { OFFICERS, P0_RULES, parseMap } from "@tk/content";
 import { type Cell, forMode, type WeatherKind } from "@tk/rules";
 import Portrait from "../../components/Portrait.svelte";
@@ -20,6 +20,7 @@ const L = {
   roster: "출진 장수",
   required: "필수",
   guest: "객장",
+  away: "불참",
   go: "출진",
   ready: (n: number) => `${n}명 출진`,
   full: (n: number) => `최대 ${n}명까지 출진할 수 있습니다`,
@@ -43,6 +44,10 @@ const battle = $derived(story.battle);
 const roster = $derived(story.campaign.roster);
 const map = $derived(battle ? parseMap(battle.map) : null);
 const cap = $derived(battle ? Math.min(battle.max, battle.slots.length) : 0);
+/** Officers who sit this battle out, and why. */
+const away = $derived(
+  battle ? absentFrom(battle, story.campaign.flags) : new Map<string, string>(),
+);
 const error = $derived(story.sortieError());
 const chapter = $derived.by(() => {
   const ch = chapterOf(story.campaign);
@@ -95,6 +100,13 @@ function toggle(o: Officer) {
     story.sortie = story.sortie.filter((p) => p.officer !== o.id);
     if (picked === o.id) picked = null;
     audio.play("cancel");
+    return;
+  }
+  const note = away.get(o.id);
+  if (note !== undefined) {
+    audio.play("cancel");
+    shake = { id: o.id, n: (shake?.n ?? 0) + 1 };
+    say(note);
     return;
   }
   const free = battle.slots.find((c) => !story.sortie.some((p) => same(p.at, c)));
@@ -314,6 +326,8 @@ function numbers(o: Officer) {
                   type="button"
                   class="card"
                   class:on={p !== undefined}
+                  class:away={away.has(o.id)}
+                  title={away.get(o.id)}
                   class:shake={shake?.id === o.id}
                   aria-pressed={p !== undefined}
                   onclick={() => toggle(o)}
@@ -329,6 +343,9 @@ function numbers(o: Officer) {
                       {/if}
                       {#if o.guest}
                         <span class="badge guest">{L.guest}</span>
+                      {/if}
+                      {#if away.has(o.id)}
+                        <span class="badge away">{L.away}</span>
                       {/if}
                     </span>
                     <span class="sub">{n.cls} · Lv {o.level}</span>
@@ -798,6 +815,15 @@ h2 {
 .badge.guest {
   color: #d6ebff;
   border: 1px solid rgba(143, 196, 255, 0.6);
+}
+.badge.away {
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.card.away {
+  cursor: not-allowed;
+  opacity: 0.55;
+  filter: grayscale(0.7);
 }
 .mark {
   position: absolute;
