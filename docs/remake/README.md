@@ -1,8 +1,8 @@
 # Remake: 난세의 간웅, a Three Kingdoms grid-tactics game built from scratch
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
-> this folder describes the **current** design. Last updated 2026-10-20
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0066](../adr/0066-allies.md)).
+> this folder describes the **current** design. Last updated 2026-10-21
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0069](../adr/0069-breakable-gates.md)).
 
 ## Vision
 
@@ -120,6 +120,9 @@ flowchart TB
 | Walkable camp | The camp is a map: 조조 walks to the shop, the armoury, the records and the council tent, and talks to his officers | [0064](../adr/0064-walkable-camp.md) |
 | Saves, format 2 | Saves keep the story flags and who is gone; format-1 saves still load | [0065](../adr/0065-save-format-two.md) |
 | Allies | Other lords' people fight beside us in orange under their own AI, in their phase after ours; we command only our own force | [0066](../adr/0066-allies.md) |
+| Chapter 4 | 하북 평정 (201–207), seven battles: 창정, 여남 (유비), 여양, 업 (siege), 남피 (ice), 호관, 백랑산; 원담 an ally at 업, then the enemy | [0067](../adr/0067-chapter-four-hebei.md) |
+| 곽가's march | The player chooses whether the sick 곽가 marches to 백랑산: the 오환 are surprised but he dies, or he lives and the 오환 are ready | [0068](../adr/0068-guo-jia-choice.md) |
+| Breakable gates | Gates are works: units that hold a tile, never act and open the way when broken; stone-throwers hit them hardest; state v6 | [0069](../adr/0069-breakable-gates.md) |
 
 ## Roadmap
 
@@ -140,7 +143,9 @@ with a 45-second clock, reconnects, and a PWA; the owner deploys it with
 `bun run deploy`. P2, the Story of **난세의 간웅**, is playable from the title screen to
 the ending in story order: chapter 1 (황건의 난, six battles), chapter 2 (여포,
 seven battles, with choices at 서주 and 백문루 and 전위's fate at 완성) and
-chapter 3 (관도, five battles), carrying the roster from chapter to chapter.
+chapter 3 (관도, five battles), carrying the roster from chapter to chapter;
+chapter 4 (하북 평정, seven battles, with breakable gates at 업 and the choice
+over 곽가's march) is being built.
 Battles have goals, reinforcements and map shifts (하비's flood); scenes are
 acted out on tile maps, and the camp is a place to walk; there are painted
 portraits, experience, levels and tier-2 promotions, equipment and a shop,
@@ -152,7 +157,7 @@ come for P2: the server copy of progress (`PlayerDO`) and re-simulation.
 | # | Question | Current leaning |
 |---|---|---|
 | 5 | Accounts and sign-in | P1 uses guest device keys ([0038](../adr/0038-guest-identity-device-key.md)); passkeys with `PlayerDO` in P2 |
-| 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapters 1–3 are playable (174–200); next, chapter 4 (적벽, 208) or 하북 (201–207); other lords' routes later, if ever |
+| 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapters 1–3 are playable (174–200) and chapter 4, 하북 평정 (201–207), is being built ([0067](../adr/0067-chapter-four-hebei.md)); next, chapter 5 (적벽, 208); other lords' routes later, if ever |
 | 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear decided ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |

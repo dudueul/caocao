@@ -145,7 +145,8 @@ type Mark =
   | { kind: "slot"; index: number; officer: string | null }
   | { kind: "foe"; boss: boolean; name: string }
   | { kind: "guest"; name: string }
-  | { kind: "friend"; name: string };
+  | { kind: "friend"; name: string }
+  | { kind: "gate"; name: string };
 
 const marks = $derived.by(() => {
   const m = new Map<string, Mark>();
@@ -156,11 +157,12 @@ const marks = $derived.by(() => {
   });
   for (const u of battle.enemies)
     if (u.arrives === undefined)
-      m.set(`${u.x},${u.y}`, {
-        kind: "foe",
-        boss: bosses.has(u.id ?? u.officer),
-        name: nameOf(u.officer),
-      });
+      m.set(
+        `${u.x},${u.y}`,
+        u.classId === "gate"
+          ? { kind: "gate", name: nameOf(u.officer) }
+          : { kind: "foe", boss: bosses.has(u.id ?? u.officer), name: nameOf(u.officer) },
+      );
   for (const u of battle.guests)
     if (u.arrives === undefined) m.set(`${u.x},${u.y}`, { kind: "guest", name: nameOf(u.officer) });
   for (const u of battle.allies ?? [])
@@ -284,6 +286,8 @@ function numbers(o: Officer) {
                       <span class="pin guest" title={m.name}></span>
                     {:else if m?.kind === "friend"}
                       <span class="pin friend" title={m.name}></span>
+                    {:else if m?.kind === "gate"}
+                      <span class="pin gate" title={m.name}></span>
                     {/if}
                   </div>
                 {/if}
@@ -641,6 +645,10 @@ button.cell {
 }
 .pin.guest {
   background: radial-gradient(circle at 35% 30%, #ffe0d8, #ffa898 55%, #b8584a);
+}
+.pin.gate {
+  border-radius: 2px;
+  background: linear-gradient(180deg, #8a857a, #4a463e);
 }
 .pin.friend {
   background: radial-gradient(circle at 35% 30%, #ffe2b0, var(--friend) 55%, #8a4e12);

@@ -51,10 +51,16 @@ export function validateRuleset(rules: Ruleset): string[] {
   for (const [key, c] of Object.entries(rules.classes)) {
     families.add(c.family);
     if (c.id !== key) say(`class ${key} has id ${c.id}`);
-    for (const f of ["hp", "move", "atk", "def", "doubleAttackGap"] as const)
-      if (!isPositive(c[f])) say(`class ${key}: ${f} ${c[f]} must be a positive integer`);
+    // Works (gates, ADR 0069) never move or strike; everyone else must.
+    const work = c.family === "structure";
+    for (const f of ["hp", "move", "atk", "def", "doubleAttackGap"] as const) {
+      if (work && (f === "move" || f === "atk")) {
+        if (c[f] !== 0) say(`class ${key}: a work's ${f} must be 0`);
+      } else if (!isPositive(c[f])) say(`class ${key}: ${f} ${c[f]} must be a positive integer`);
+    }
     if (!Number.isSafeInteger(c.mp) || c.mp < 0) say(`class ${key}: mp ${c.mp} must be ≥ 0`);
-    if (c.range.length === 0) say(`class ${key}: empty attack range`);
+    if (c.range.length === 0 && !work) say(`class ${key}: empty attack range`);
+    if (c.range.length > 0 && work) say(`class ${key}: a work can't strike`);
     if (c.range.some((o) => o.dx === 0 && o.dy === 0)) say(`class ${key}: range includes itself`);
     if (!rules.affinity[c.family]) say(`class ${key}: no affinity row for family ${c.family}`);
     for (const s of c.stratagems)

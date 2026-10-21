@@ -43,7 +43,7 @@ function fire(
   // Units on changed tiles they can't stand on, in id order (the units list is sorted).
   const changed = new Set(shift.tiles.map((t) => t.y * w + t.x));
   for (const u of state.units) {
-    if (!isAlive(u) || !changed.has(u.y * w + u.x)) continue;
+    if (!isAlive(u) || u.structure || !changed.has(u.y * w + u.x)) continue;
     if (affinityAt(rules, state, u, u.x, u.y).move !== null) continue;
     const to = landingCell(state, rules, u);
     const from = { x: u.x, y: u.y };

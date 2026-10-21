@@ -60,7 +60,11 @@ const groups = $derived.by(() => {
     friendly(session.state, unit.side, session.humanSide)}
 >
   <header>
-    <Portrait id={unit.id} classId={unit.classId} side={unit.side} size={52} />
+    {#if unit.structure}
+      <span class="work" aria-hidden="true">門</span>
+    {:else}
+      <Portrait id={unit.id} classId={unit.classId} side={unit.side} size={52} />
+    {/if}
     <strong>{unit.name}</strong>
     <span class="chip">{cls?.name}</span>
     <span class="chip">Lv {unit.level}</span>
@@ -120,6 +124,18 @@ const groups = $derived.by(() => {
 .card.enemy {
   border-color: rgba(79, 142, 240, 0.5);
   background: linear-gradient(135deg, rgba(79, 142, 240, 0.16), rgba(255, 255, 255, 0.02) 55%);
+}
+.work {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  font-family: var(--display);
+  font-size: 28px;
+  color: #e8dcc0;
+  background: linear-gradient(180deg, #6e6a62, #3e3a34);
+  border: 1px solid rgba(232, 194, 106, 0.6);
 }
 .card.friend {
   border-color: rgba(240, 160, 64, 0.55);

@@ -60,9 +60,11 @@ export function unitAt(state: BattleState, x: number, y: number): Unit | undefin
   return state.units.find((u) => isAlive(u) && u.x === x && u.y === y);
 }
 
+/** Sides with living units that fight; gates and other works don't count (ADR 0069). */
 export function livingSides(state: BattleState): number[] {
   const sides: number[] = [];
-  for (const u of state.units) if (isAlive(u) && !sides.includes(u.side)) sides.push(u.side);
+  for (const u of state.units)
+    if (isAlive(u) && !u.structure && !sides.includes(u.side)) sides.push(u.side);
   return sides.sort((a, b) => a - b);
 }
 
@@ -100,7 +102,7 @@ export function inRange(range: readonly Offset[], from: Cell, target: Cell): boo
 export function isZoc(state: BattleState, side: number, x: number, y: number): boolean {
   return NEIGHBOURS.some((n) => {
     const u = unitAt(state, x + n.dx, y + n.dy);
-    return u !== undefined && hostile(state, u.side, side);
+    return u !== undefined && !u.structure && hostile(state, u.side, side);
   });
 }
 

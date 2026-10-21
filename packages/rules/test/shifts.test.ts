@@ -47,7 +47,7 @@ describe("map shifts (ADR 0062)", () => {
         { shifts: [flood] },
       ),
     );
-    expect(s.version).toBe(5);
+    expect(s.version).toBe(6);
     expect(s.shifts.map((x) => x.id)).toEqual(["flood"]);
     const before = unitById(s, "foe").hp;
     const r = ok(s, wait("runner", 5, 0));

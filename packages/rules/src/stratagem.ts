@@ -269,7 +269,8 @@ export function castStratagem(
 
   if (!fizzle && def.push) {
     for (const p of pending)
-      if (isAlive(p.unit)) push(rules, state, prng, caster, p.unit, def.push, events);
+      if (isAlive(p.unit) && !p.unit.structure)
+        push(rules, state, prng, caster, p.unit, def.push, events);
   }
   if (!fizzle && def.ignites) ignite(rules, state, def, at, events);
 

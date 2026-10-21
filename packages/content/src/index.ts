@@ -16,6 +16,7 @@ export { CLASSES, GROWTH, PROMOTIONS } from "./classes.ts";
 export { CONDITIONS } from "./conditions.ts";
 export { holds } from "./flags.ts";
 export { GUANDU } from "./guandu.ts";
+export { HEBEI } from "./hebei.ts";
 export {
   type ArmourKind,
   GEAR,

@@ -35,7 +35,7 @@ import * as fx from "./fx/effects.ts";
 import { Particles } from "./fx/particles.ts";
 import { ourTerrain, paintTerrain, skinTerrain, type TerrainSet } from "./fx/terrain.ts";
 import { type FxTextures, makeTextures } from "./fx/textures.ts";
-import { tokenTexture } from "./fx/tokens.ts";
+import { gateTexture, tokenTexture } from "./fx/tokens.ts";
 import { walkPath } from "./path.ts";
 import type { Session } from "./session.svelte.ts";
 import type { ClassicSkin, Facing, Pose } from "./skin.svelte.ts";
@@ -636,7 +636,7 @@ export class Field {
     badge.position.set(0, -t * 0.62);
     root.addChild(shadow, ring, token, figure, glyph, hp, mark, cond, badge);
     this.units.addChild(root);
-    const set = this.skin ? this.skin.setFor(u.classId, u.id, u.side) : -1;
+    const set = this.skin && !u.structure ? this.skin.setFor(u.classId, u.id, u.side) : -1;
     s = {
       root,
       shadow,
@@ -682,6 +682,10 @@ export class Field {
     const t = this.tile;
     const cls = this.session.rules.classes[u.classId];
     const color = SIDE_COLOR[u.side] ?? 0x888888;
+    if (u.structure) {
+      this.drawWork(u, s, color, state);
+      return;
+    }
     const skinned = this.skinned(s);
     const rigged = !skinned && !this.opts.tokens;
     const resting = u.acted && state.winner === null;
@@ -759,6 +763,42 @@ export class Field {
     s.cond.text = `${kinds.has("buff") ? "▲" : ""}${kinds.has("debuff") ? "▼" : ""}`;
     s.cond.style.fill =
       kinds.has("buff") && kinds.has("debuff") ? 0xffe066 : kinds.has("buff") ? 0x7ee07a : 0xc58cff;
+    s.root.alpha = 1;
+  }
+
+  /** A gate or other work (ADR 0069): a painted gatehouse with its HP bar, no figure. */
+  private drawWork(u: Unit, s: UnitSprite, color: number, state: BattleState): void {
+    const t = this.tile;
+    s.rig?.root.destroy({ children: true });
+    s.rig = null;
+    s.figure.visible = false;
+    s.glyph.visible = false;
+    s.ring.clear();
+    s.shadow.width = t * 0.96;
+    s.shadow.height = t * 0.3;
+    s.shadow.position.set(0, t * 0.36);
+    s.token.visible = true;
+    s.token.texture = gateTexture(color);
+    s.token.anchor.set(0.5, 0.82);
+    s.token.width = t * 1.02;
+    s.token.height = t * 1.28;
+    s.token.position.set(0, t * 0.46);
+    s.token.tint = 0xffffff;
+    s.pose = null;
+    if (s.hpNow !== u.hp || s.maxHp !== u.maxHp) {
+      s.hpNow = u.hp;
+      s.hpGhost = u.hp;
+      s.maxHp = u.maxHp;
+    }
+    this.drawHp(s);
+    s.mark.text = "";
+    s.cond.text = "";
+    const me = this.session.humanSide;
+    const named = state.goals.some(
+      (g) => g.side === me && g.when.kind === "defeat" && g.when.units.includes(u.id),
+    );
+    s.badge.text = named ? "★" : "";
+    s.badge.style.fill = 0xffd23f;
     s.root.alpha = 1;
   }
 
@@ -1176,7 +1216,8 @@ export class Field {
           case "defeated": {
             const s = this.sprites.get(e.unit);
             const p = px(e.unit);
-            this.float(at(e.unit), FATE[e.fate], 0xffb3a7, true);
+            const work = before.units.find((v) => v.id === e.unit)?.structure;
+            this.float(at(e.unit), work ? "파괴" : FATE[e.fate], 0xffb3a7, true);
             sound("defeat", at(e.unit));
             if (!quiet()) fx.defeat(this.fxc(), p);
             if (s && skinned(e.unit)) {

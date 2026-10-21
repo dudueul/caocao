@@ -22,7 +22,7 @@ describe("P0 ruleset", () => {
   it("has six tier-1 classes, their tier-2 promotions and all twelve terrains", () => {
     const tier = (n: number) =>
       Object.values(P0_RULES.classes)
-        .filter((c) => c.tier === n)
+        .filter((c) => c.tier === n && c.family !== "structure")
         .map((c) => c.id)
         .sort();
     expect(tier(1)).toEqual(
@@ -43,7 +43,14 @@ describe("P0 ruleset", () => {
     expect(r.archer?.infantry).toBe(1200);
     expect(r.cavalry?.infantry).toBe(800);
     expect(r.catapult?.infantry).toBe(1200);
-    expect(r.strategist).toBeUndefined();
+    expect(r.strategist).toEqual({ structure: 600 });
+  });
+
+  it("has a gate that never acts and that stone-throwers smash (ADR 0069)", () => {
+    const g = P0_RULES.classes.gate;
+    expect([g?.family, g?.move, g?.atk, g?.range.length]).toEqual(["structure", 0, 0, 0]);
+    expect(P0_RULES.relations.catapult?.structure).toBe(2500);
+    expect(P0_RULES.relations.archer?.structure).toBe(400);
   });
 
   it("matches RULES.md §4 example rows for cavalry", () => {

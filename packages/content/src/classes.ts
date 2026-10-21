@@ -198,6 +198,17 @@ export const CLASSES: Readonly<Record<string, ClassDef>> = {
     range: SIEGE,
     provokesCounter: false,
   }),
+  // Works, not soldiers (ADR 0069): a gate holds its tile until broken and never acts.
+  gate: cls("gate", {
+    name: "성문",
+    family: "structure",
+    hp: 240,
+    move: 0,
+    atk: 0,
+    def: 110,
+    range: [],
+    provokesCounter: false,
+  }),
 };
 
 /** Tier-1 class → its tier-2 promotion (ADR 0048). */
@@ -229,4 +240,5 @@ export const GROWTH: Readonly<Record<string, readonly [number, number, number, n
   tactician:     [200, 500, 1000, 300, 500],
   guardian:      [900, 400, 200, 800, 300],
   thunderCart:   [600, 500, 700, 200, 400],
+  gate:          [0, 0, 0, 0, 0],
 };

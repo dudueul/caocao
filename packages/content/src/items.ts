@@ -42,6 +42,7 @@ export const GEAR: Readonly<
   strategist: { weapon: ["fan"], armour: ["robe"] },
   taoist: { weapon: ["fan"], armour: ["robe"] },
   dancer: { weapon: ["blade"], armour: ["robe"] },
+  structure: { weapon: [], armour: [] },
 };
 
 function item(def: ItemDef): ItemDef {

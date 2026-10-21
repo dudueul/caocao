@@ -114,6 +114,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
         conditions: [],
         broken: false,
         fate: null,
+        ...(cls.family === "structure" ? { structure: true as const } : {}),
       };
     })
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
@@ -151,7 +152,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
   if (order.length !== sides || range.some((s) => !order.includes(s)))
     throw new Error("turn order must list every side once");
   const state: BattleState = {
-    version: 5,
+    version: 6,
     mode,
     map: { width: setup.map.width, height: setup.map.height, tiles: [...setup.map.tiles] },
     weather: setup.weather,
@@ -188,7 +189,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
 
 /** Living units of `side` that have not acted this round. */
 export function readyUnits(state: BattleState, side: number): Unit[] {
-  return state.units.filter((u) => u.side === side && isAlive(u) && !u.acted);
+  return state.units.filter((u) => u.side === side && isAlive(u) && !u.acted && !u.structure);
 }
 
 /** Sides with living units, in turn order. */
@@ -381,7 +382,7 @@ function newRound(state: BattleState, rules: Ruleset, prng: Prng, events: Battle
   if (endByGoal(state, events)) return;
   if (endByRout(state, events)) return;
   for (const u of state.units) {
-    if (!isAlive(u)) continue;
+    if (!isAlive(u) || u.structure) continue;
     u.acted = false;
     const heal = rules.terrains[terrainAt(state, u.x, u.y)].heal;
     if (heal > 0 && u.hp < u.maxHp) {

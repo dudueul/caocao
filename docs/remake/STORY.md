@@ -1,11 +1,11 @@
 # Story mode
 
 > Living document for the Story of **난세의 간웅** ([ADR 0049](../adr/0049-story-chapter-guandu.md),
-> [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)–[0065](../adr/0065-save-format-two.md)):
+> [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)–[0069](../adr/0069-breakable-gates.md)):
 > the chapters in order, the flow of a chapter, carry-over between chapters,
 > choices and story flags, staged scenes and the walkable camp, each chapter's
 > battles, progression, equipment and saves. Every number is starting tuning.
-> Last updated 2026-10-20.
+> Last updated 2026-10-21.
 
 ## Chapters
 
@@ -18,14 +18,17 @@ title's chapter select can start any chapter fresh with its own roster.
 | 1 | 황건의 난 | 174–192 | 6 | — (starts at Lv 3) | playable |
 | 2 | 여포 | 193–198 | 7 | 10 | playable |
 | 3 | 관도 | 199–200 | 5 | 14 | playable |
+| 4 | 하북 평정 | 201–207 | 7 | 18 | being built ([ADR 0067](../adr/0067-chapter-four-hebei.md)) |
 
 ```mermaid
 flowchart LR
   T["Title<br/>new game · continue · chapter select"] --> C1["1장 황건의 난<br/>174–192"]
   C1 -->|"carry-over<br/>floor 10"| C2["2장 여포<br/>193–198"]
   C2 -->|"carry-over<br/>floor 14, flags"| C3["3장 관도<br/>199–200"]
+  C3 -->|"carry-over<br/>floor 18, flags"| C4["4장 하북 평정<br/>201–207"]
   T -->|"chapter select<br/>(fresh roster,<br/>history's flags)"| C2
   T -->|"chapter select"| C3
+  T -->|"chapter select"| C4
 ```
 
 **Carry-over** (`continueTo`, [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)):
@@ -36,8 +39,8 @@ flowchart LR
 
 ## Choices and story flags
 
-Two choices and one fate decided by play branch the story ([ADR 0060](../adr/0060-story-choices-and-flags.md),
-[ADR 0061](../adr/0061-fates-decided-in-battle.md)). Each sets a flag in the
+Three choices and one fate decided by play branch the story ([ADR 0060](../adr/0060-story-choices-and-flags.md),
+[ADR 0061](../adr/0061-fates-decided-in-battle.md), [ADR 0068](../adr/0068-guo-jia-choice.md)). Each sets a flag in the
 campaign; any step, scene command, line, actor, join, leave, battle unit,
 goal, map shift, talk or camp line can carry `if: { flag, is | not }`. A
 chapter started fresh from the title `assumes` what history did.
@@ -47,6 +50,7 @@ chapter started fresh from the title `assumes` what history did.
 | `xuzhou` | `revenge` (history) · `mercy` | the choice in 사수의 강물 (193) | Revenge: plunder (1,500 gold, 준마); 진궁 leaves in 194, fights for 여포 and dies at 백문루. Mercy: no plunder; 진궁 stays; 진등 opens 하비's east gate on round 5 |
 | `dianwei` | `lived` · `fell` (history) | whether 전위 stands when 완성 is won | Fell: his death scene, and he is gone for good. Lived: he stays, wounded, and serves at 관도 |
 | `lubu` | `executed` (history) · `spared` | the choice at 백문루 (198) | Executed: 장료 joins. Spared: 여포 joins with 방천화극 and 적토마; 장료 is gone for good |
+| `guojia` | `went` (history) · `stayed` | the choice in 노룡새의 옛길 (207) | Went: 곽가 may sortie at 백랑산 and the 오환 are taken by surprise; he dies at 역주 and is gone for good. Stayed: he lives, and the 오환 are ready, with more cavalry |
 
 ```mermaid
 flowchart TB
@@ -64,6 +68,10 @@ flowchart TB
   B -->|spare| S["여포 joins<br/>장료 gone"]
   E --> G["3장 관도<br/>lines follow the flags"]
   S --> G
+  G --> H["207 노룡새"]
+  H --> K{"곽가:<br/>march or rest?"}
+  K -->|march| KW["백랑산 by surprise<br/>곽가 dies at 역주"]
+  K -->|rest| KS["백랑산 against a ready enemy<br/>곽가 lives"]
 ```
 
 Officers who leave through a scene are recorded as **gone**; a later chapter
@@ -229,11 +237,32 @@ Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순
 - 허유 defects before Wuchao.
 - 장합 and 고람 defect during the last battle and join in the epilogue.
 
+## Chapter 4: 하북 평정 (201–207)
+
+Being built ([ADR 0067](../adr/0067-chapter-four-hebei.md)). The plan:
+
+| # | Year | Battle | Win | Special |
+|---|---|---|---|---|
+| 1 | 201 | 창정의 결전 | defeat 원소 | — |
+| 2 | 201 | 여남의 유비 | defeat 유비 | — |
+| 3 | 203 | 여양의 형제 | defeat 원담 and 원상 | — |
+| 4 | 204 | 업성 공략 | defeat 심배 in the keep | gates to break ([ADR 0069](../adr/0069-breakable-gates.md)); the 장하 fills the trench on round 5; 원담 an orange ally against 원상's relief |
+| 5 | 205 | 남피의 얼음 | defeat 원담 | the river ice gives way on a set round |
+| 6 | 206 | 호관의 고간 | defeat 고간 | a gate in the pass |
+| 7 | 207 | 백랑산의 오환 | defeat 답돈 | by surprise if 곽가 marched, against a ready enemy if not ([ADR 0068](../adr/0068-guo-jia-choice.md)) |
+
+Roster:
+- The chapter opens with the chapter 3 officers at Lv 18–22. 장료 is among them unless 여포 was spared.
+- 신비 joins after 여양, 조순 before 남피, and 전주 before 백랑산.
+- 허유 leaves after 업.
+- 곽가 leaves for good at 역주 if he marched.
+
 **Allies** ([ADR 0066](../adr/0066-allies.md)) are other lords' people who fight
 beside us in orange under their own AI, in their phase after ours:
 - chapter 1: 황보숭 and 주준 at 장사; 관우, 장비, 유비 and 손견 at 사수관; 위자 and 포신 at 변수; 포신 at 수장;
 - chapter 2: 유비, 관우 and 장비 at 하비;
-- chapter 3: 유연 at 백마; 장합 and 고람 when they defect at 관도 결전.
+- chapter 3: 유연 at 백마; 장합 and 고람 when they defect at 관도 결전;
+- chapter 4: 원담 at 업.
 
 Our own troops that come with a battle (the night ward at 낙양, the ambushes at
 정도 and 안중) stay red and ours to command.

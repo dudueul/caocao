@@ -79,3 +79,6 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0064](0064-walkable-camp.md) | Make the camp a place to walk: 조조 visits the shop, the armoury and his officers | Accepted | 2026-10-20 |
 | [0065](0065-save-format-two.md) | Save format 2: story flags and officers gone for good, reading format 1 | Accepted | 2026-10-20 |
 | [0066](0066-allies.md) | Allies: other lords' people fight beside us in orange, under their own AI | Accepted | 2026-10-20 |
+| [0067](0067-chapter-four-hebei.md) | Chapter 4, 하북 평정: seven battles from 창정 to 백랑산 | Accepted | 2026-10-21 |
+| [0068](0068-guo-jia-choice.md) | Let the player choose whether 곽가 marches to 백랑산 | Accepted | 2026-10-21 |
+| [0069](0069-breakable-gates.md) | Breakable gates: works that block a tile until they are broken | Accepted | 2026-10-21 |

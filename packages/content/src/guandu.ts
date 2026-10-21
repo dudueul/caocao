@@ -1620,6 +1620,7 @@ export const GUANDU: ChapterDef = {
   summary: "하북의 원소가 십만 대군을 일으켰다. 조조는 관도에서 운명을 건 싸움에 나선다.",
   gold: 500,
   floor: 14,
+  next: "hebei",
   // What history did in chapter 2, for a fresh start here (ADR 0060).
   assumes: { xuzhou: "revenge", dianwei: "fell", lubu: "executed" },
   ending: {

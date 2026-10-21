@@ -117,6 +117,25 @@ const LIST: readonly OfficerDef[] = [
   officer("man-chong",    "만총",   "滿寵",   [55, 70, 80, 50, 60]),
   officer("liu-biao",     "유표",   "劉表",   [40, 70, 75, 40, 60]),
   officer("tian-shi",     "전씨",   "田氏",   [30, 35, 50, 40, 30]),
+  // Story chapter 4, 하북 평정 (ADR 0067)
+  officer("yuan-shang",   "원상",   "袁尙",   [75, 70, 55, 65, 50]),
+  officer("yuan-xi",      "원희",   "袁熙",   [60, 60, 55, 55, 45]),
+  officer("gao-gan",      "고간",   "高幹",   [70, 70, 60, 60, 45]),
+  officer("ta-dun",       "답돈",   "蹋頓",   [90, 75, 45, 80, 45]),
+  officer("lou-ban",      "누반",   "樓班",   [70, 55, 35, 70, 40]),
+  officer("su-puyan",     "소복연", "蘇僕延", [75, 60, 35, 70, 40]),
+  officer("xin-pi",       "신비",   "辛毗",   [25, 55, 85, 50, 60]),
+  officer("xin-ping",     "신평",   "辛評",   [30, 50, 75, 45, 30]),
+  officer("cao-chun",     "조순",   "曹純",   [80, 80, 60, 70, 60]),
+  officer("cao-pi",       "조비",   "曹丕",   [70, 65, 75, 65, 70]),
+  officer("tian-chou",    "전주",   "田疇",   [40, 55, 80, 60, 60]),
+  officer("gongsun-kang", "공손강", "公孫康", [65, 70, 65, 55, 55]),
+  officer("liu-pi",       "유벽",   "劉辟",   [65, 55, 35, 60, 40]),
+  officer("gong-du",      "공도",   "共都",   [65, 55, 35, 60, 40]),
+  officer("cai-yang",     "채양",   "蔡陽",   [70, 65, 40, 55, 30]),
+  officer("ma-yan",       "마연",   "馬延",   [70, 60, 40, 55, 40]),
+  officer("zhang-yi",     "장의",   "張顗",   [70, 60, 40, 55, 40]),
+  officer("yin-kai",      "윤해",   "尹楷",   [65, 60, 40, 55, 40]),
   // Troop templates: each unit is named after its army and class.
   troop("yuan",           "원소군", "袁軍",   [60, 55, 45, 50, 40]),
   troop("yuan-elite",     "원소군 정예", "袁軍", [70, 65, 50, 60, 45]),
@@ -133,6 +152,11 @@ const LIST: readonly OfficerDef[] = [
   troop("zhang",          "장수군", "張軍",   [60, 60, 40, 55, 40]),
   troop("jing",           "형주군", "荊州",   [55, 55, 45, 50, 40]),
   troop("zhong",          "원술군", "仲軍",   [55, 55, 40, 50, 35]),
+  // Works (ADR 0069): 통솔 here is the gate's solidity.
+  troop("gate",           "성문",   "城門",   [5, 60, 5, 5, 5]),
+  troop("wuhuan",         "오환 기병", "烏桓", [70, 55, 30, 75, 40]),
+  troop("bing",           "병주군", "幷州",   [65, 60, 40, 55, 40]),
+  troop("liu",            "유비군", "劉軍",   [60, 60, 45, 55, 50]),
 ];
 
 export const OFFICERS: Readonly<Record<string, OfficerDef>> = Object.fromEntries(

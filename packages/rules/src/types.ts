@@ -20,7 +20,9 @@ export type FamilyId =
   | "bandit"
   | "strategist"
   | "taoist"
-  | "dancer";
+  | "dancer"
+  /** Gates and other works that block a tile until broken (ADR 0069). */
+  | "structure";
 
 /** Counter triangle groups: infantry ▶ cavalry ▶ archer ▶ infantry (ADR 0021). */
 export type CounterGroup = "infantry" | "cavalry" | "archer";
@@ -258,6 +260,11 @@ export interface Unit {
   /** Broken units can't counter until they act again (ADR 0030). */
   broken: boolean;
   fate: Fate | null;
+  /**
+   * A gate or other work (ADR 0069): it holds its tile until broken, never
+   * acts, takes no conditions, and does not keep its side in the battle.
+   */
+  structure?: true;
 }
 
 export interface BurningTile {
@@ -327,10 +334,11 @@ export interface Shift {
 
 export interface BattleState {
   /**
-   * State format; 5 since allies (ADR 0066), 4 since map shifts (ADR 0062),
-   * 3 since goals and arrivals (ADR 0047), 2 since conditions (ADR 0035).
+   * State format; 6 since structures (ADR 0069), 5 since allies (ADR 0066),
+   * 4 since map shifts (ADR 0062), 3 since goals and arrivals (ADR 0047),
+   * 2 since conditions (ADR 0035).
    */
-  version: 5;
+  version: 6;
   mode: ModeId;
   map: BattleMap;
   weather: WeatherKind;

@@ -78,6 +78,14 @@ export const CLASSES: Record<string, ClassDef> = {
     move: 3,
     provokesCounter: false,
   }),
+  gate: cls("gate", "structure", {
+    hp: 200,
+    move: 0,
+    atk: 0,
+    def: 100,
+    range: [],
+    provokesCounter: false,
+  }),
 };
 
 const TERRAINS: TerrainId[] = [
@@ -134,6 +142,7 @@ export const RULES: Ruleset = {
     strategist: affinityRow({}),
     martialArtist: affinityRow({}),
     catapult: affinityRow({ mountain: { move: null, effect: 1000 } }),
+    structure: affinityRow({}),
   },
   stratagems: {
     fire: {

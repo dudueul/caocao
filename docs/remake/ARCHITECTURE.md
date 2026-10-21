@@ -135,12 +135,12 @@ no wall-clock time. Golden-replay tests run in CI.
 | Module | Responsibility |
 |---|---|
 | `types.ts` | Ruleset (classes, terrains, affinity, stratagems, tuning) and battle state, commands, events |
-| `board.ts` | Tile, unit and range queries; zones of control |
+| `board.ts` | Tile, unit and range queries; zones of control; teams (`friendly`, `hostile`, `leaderOf`) |
 | `move.ts` | `reachable()`: Dijkstra over family terrain costs with soft ZOC ([0026](../adr/0026-soft-zone-of-control.md)) |
 | `combat.ts` | Hit, critical, relation matrix, named damage pipeline, strike → counter → second strike, officer fate; `previewAttack()` with breakdown |
 | `stratagem.ts` | MP, element × terrain × weather, condition riders and cleansing, fortune twists, push collisions, ignition; `previewStratagem()` |
 | `conditions.ts` | Condition stacks ([0035](../adr/0035-stacking-conditions-rolled-durations.md)): discounted stacking, rolled durations, blocks, ATK/DEF/hit/move modifiers, damage over time, end-of-turn countdown |
-| `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects (healing, burning), victory |
+| `battle.ts` | `createBattle()`, `legalCommands()`, `apply()`, both turn policies, round effects (healing, burning), victory by team; side phases in a set order ([0066](../adr/0066-allies.md)); works such as gates, which hold a tile and never act ([0069](../adr/0069-breakable-gates.md)) |
 | `goals.ts` | Goals (defeat, hold, reach) checked in order, reserve units arriving on a round at the nearest free tile ([0047](../adr/0047-battle-goals-and-arrivals.md)) |
 | `ai.ts` | Baseline utility AI with a threat map ([0027](../adr/0027-p0-engine-defaults.md)); the approach pull follows a movement-cost field to the nearest attack position, so units route around rivers and walls; casts that achieve nothing are never chosen, and MP has a cost; `dangerTiles()` and gambits ([0030](../adr/0030-modern-techniques-adopted.md)); one runner per side heads for reach goals and shift triggers ([0062](../adr/0062-map-shifts.md)) |
 | `goals.ts`, `shifts.ts` | Battle goals and arrivals ([0047](../adr/0047-battle-goals-and-arrivals.md)); map shifts that change tiles on a round or a reached tile and sweep units to dry land ([0062](../adr/0062-map-shifts.md)) |
@@ -333,7 +333,7 @@ flowchart LR
 | `lib/online.svelte.ts` | `OnlineRoom`: the room socket, `hello` with the last batch seen, reconnect with backoff, room view, clock and server-time offset |
 | `lib/identity.ts` | Guest device key and display name in `localStorage` ([0038](../adr/0038-guest-identity-device-key.md)) |
 | `screens/*.svelte` | Home, sandbox, room (lobby, draft, deploy) and the shared battle screen |
-| `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units with ▲/▼ condition marks, effects; animates each command's events, then shows the new state. Placeholder shapes, or the local classic skin's tiles, 1998 map pictures and animated sprites ([0042](../adr/0042-local-classic-skin.md)) |
+| `lib/field.ts` | Pixi renderer: terrain, overlays (reach, strike range, targets, danger), units with ▲/▼ condition marks, gates drawn as works that fall with "파괴", effects; animates each command's events, then shows the new state. Placeholder shapes, or the local classic skin's tiles, 1998 map pictures and animated sprites ([0042](../adr/0042-local-classic-skin.md)) |
 | `lib/skin.svelte.ts`, `lib/path.ts`, `lib/classic-battle.ts` | The classic skin loader (dev server only), the walking route for move animations, and sandbox battles on a 1998 map |
 | `lib/fx/*.ts` | Presentation ([0044](../adr/0044-modern-battlefield-presentation.md)): effect textures, a particle system, effect recipes (strikes, shots, defeats, auras, one look per skill school), weather and ambience, terrain painting with soft edges (our procedural art or the skin's tiles), our medallion tokens |
 | `lib/fx/chibi.ts` | Our characters ([0045](../adr/0045-rigged-chibi-characters.md)): painted parts per class, side and facing on a small skeleton, posed procedurally (ready, walk, attack, guard, hurt, slumped, cheer; for scenes also bow, kneel, lying down, nod, head shake, jump), dressed as late Eastern Han soldiers and officials ([0046](../adr/0046-period-accurate-dress.md), [CHARACTER_LOOK.md](CHARACTER_LOOK.md)); `dev/rig-gallery.html` shows them all |

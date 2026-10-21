@@ -85,6 +85,7 @@ export function addCondition(
   turns: number,
   fresh: boolean,
 ): void {
+  if (u.structure) return; // gates take no conditions (ADR 0069)
   const stack: ConditionStack = { id, turns, fresh };
   if (stacksOf(u, id) < rules.tuning.maxStacks) {
     u.conditions.push(stack);

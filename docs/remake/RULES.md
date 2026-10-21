@@ -125,6 +125,7 @@ flowchart LR
 | 책사 | strategist | 120 | 20 | 4 | 25 | 30 | adjacent | 화계, 풍계, 혼란, 치료 (치료 moves to 도사 later) |
 | 무도가 | martial artist | 150 | 0 | 5 | 50 | 40 | adjacent | double attack at a 민첩 gap ≥ 10 |
 | 포차 | catapult | 140 | 0 | 3 | 55 | 35 | distance 2–3 | never provokes counters |
+| 성문 | structure | 240 | 0 | 0 | 0 | 110 | — | a work, not a soldier: never acts ([ADR 0069](../adr/0069-breakable-gates.md)); +20% on fort and wall |
 
 At level 10 with 통솔 70, an infantry officer has 170 + 70 + 40 = 280 HP and
 takes about 4–5 ordinary hits from a peer.
@@ -145,7 +146,9 @@ An attacker strong against the defender's group deals +200‰ damage; against th
 group that beats it, −200‰. Since [ADR 0029](../adr/0029-benchmark-lessons-adopted.md)
 this is stored as a family × family **relation matrix** in the ruleset (the
 triangle is its default content), so specific pairs such as spearmen against
-cavalry can be tuned as data. Promotion: tier 2 at Lv 20, tier 3 at Lv 40
+cavalry can be tuned as data. Against works (the `structure` column):
+catapults deal 2500‰, infantry and martial artists 1000‰, cavalry and
+strategists 600‰, archers 400‰. Promotion: tier 2 at Lv 20, tier 3 at Lv 40
 (*tunable*). Higher tiers reuse the tier-1 animation with new details.
 
 ## 4. Terrain
@@ -322,7 +325,8 @@ Skirmishers are cavalry, horse archers and bandits (`ClassDef.skirmisher`).
 | Map shifts | a battle may list shifts: tile changes set off when a round begins (from round 2) or when a unit of a side (one of its named units, if any) stands on a trigger tile; checked after every action and after arrivals; water puts out fire; units left on ground they can't stand on are swept to the nearest tile they can, losing the shift's `damage`‰ of max HP but never the last point; events `shifted`, then `swept` ([ADR 0062](../adr/0062-map-shifts.md)) |
 | Fire at the start | a battle may begin with tiles already burning, for a number of rounds |
 | Allies | sides on one **team** never attack each other, pass through each other, exert no zone of control on each other and help each other (healing, buffs, goals); sides move in a set **phase order** (story: ours, then allies, then the enemy); a team stays in the battle while its leader, its lowest-numbered side, has living units, so routing our own units loses even while allies stand ([ADR 0066](../adr/0066-allies.md)) |
-| State format | `BattleState` version 5 (teams and phase order); 4 added shifts, 3 goals and arrivals, 2 conditions |
+| Works | units of the `structure` family (the 성문 gate) hold their tile and never act: no turn, no zone of control, no conditions, no counter, never pushed, swept or healed by terrain; they do not keep a side in the battle; when broken the tile opens ([ADR 0069](../adr/0069-breakable-gates.md)) |
+| State format | `BattleState` version 6 (units may be works); 5 added teams and phase order, 4 shifts, 3 goals and arrivals, 2 conditions |
 
 ## 8. Modes
 
