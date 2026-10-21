@@ -58,7 +58,7 @@ flowchart LR
 ## Armies and people of chapter 2
 
 Painted in the portraits (`lib/fx/portrait.ts`, [ADR 0053](../adr/0053-painted-portraits.md)).
-Where the record is thin, these are our readings, to confirm.
+Where the record is thin, these are our readings.
 
 | Who | What we draw | Basis |
 |---|---|---|

@@ -1,8 +1,8 @@
 # 0070. Paint each officer from the record: their own headgear, build, turn, beard and props
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed with the first pass, confirmed by the owner 2026-10-21)
 - **Date:** 2026-10-21
-- **Deciders:** project owner (said the portraits all look alike; asked to benchmark other Three Kingdoms games and mix historical facts into the looks), Claude (the method and the invented looks, to confirm)
+- **Deciders:** project owner (said the portraits all look alike; asked to benchmark other Three Kingdoms games and mix historical facts into the looks; accepted), Claude (the method and the invented looks)
 - **Related:** [0045](0045-rigged-chibi-characters.md), [0046](0046-period-accurate-dress.md),
   [0053](0053-painted-portraits.md), [0055](0055-our-side-red.md),
   [CHARACTER_LOOK.md](../remake/CHARACTER_LOOK.md), [PORTRAITS.md](../remake/PORTRAITS.md)

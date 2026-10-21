@@ -82,4 +82,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0067](0067-chapter-four-hebei.md) | Chapter 4, 하북 평정: seven battles from 창정 to 백랑산 | Accepted | 2026-10-21 |
 | [0068](0068-guo-jia-choice.md) | Let the player choose whether 곽가 marches to 백랑산 | Accepted | 2026-10-21 |
 | [0069](0069-breakable-gates.md) | Breakable gates: works that block a tile until they are broken | Accepted | 2026-10-21 |
-| [0070](0070-portraits-from-the-record.md) | Paint each officer from the record: their own headgear, build, turn, beard and props | Proposed | 2026-10-21 |
+| [0070](0070-portraits-from-the-record.md) | Paint each officer from the record: their own headgear, build, turn, beard and props | Accepted | 2026-10-21 |
