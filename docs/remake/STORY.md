@@ -239,17 +239,28 @@ Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순
 
 ## Chapter 4: 하북 평정 (201–207)
 
-Being built ([ADR 0067](../adr/0067-chapter-four-hebei.md)). The plan:
+[ADR 0067](../adr/0067-chapter-four-hebei.md), [ADR 0068](../adr/0068-guo-jia-choice.md), [ADR 0069](../adr/0069-breakable-gates.md).
 
-| # | Year | Battle | Win | Special |
-|---|---|---|---|---|
-| 1 | 201 | 창정의 결전 | defeat 원소 | — |
-| 2 | 201 | 여남의 유비 | defeat 유비 | — |
-| 3 | 203 | 여양의 형제 | defeat 원담 and 원상 | — |
-| 4 | 204 | 업성 공략 | defeat 심배 in the keep | gates to break ([ADR 0069](../adr/0069-breakable-gates.md)); the 장하 fills the trench on round 5; 원담 an orange ally against 원상's relief |
-| 5 | 205 | 남피의 얼음 | defeat 원담 | the river ice gives way on a set round |
-| 6 | 206 | 호관의 고간 | defeat 고간 | a gate in the pass |
-| 7 | 207 | 백랑산의 오환 | defeat 답돈 | by surprise if 곽가 marched, against a ready enemy if not ([ADR 0068](../adr/0068-guo-jia-choice.md)) |
+| # | Battle | Map | Win | Lose | Arrivals | Rewards |
+|---|---|---|---|---|---|---|
+| 1 | 창정의 결전 | Cangting, 18 × 12, the 황하 with a bridge and two fords, 원소's palisaded camp on the east bank | defeat 원소 | 조조 falls | 2 cavalry, round 4 | 1200, 인수 |
+| 2 | 여남의 유비 | Runan, 18 × 12, wooded hills, 유비's village and hall | defeat 유비 | 조조 falls | 조운, round 3 | 1200, 면포 |
+| 3 | 여양의 형제 | Liyang, 18 × 12, a walled town on the 황하 with two open gates | defeat 원담 and 원상 | 조조 falls | 원상 and 3 riders (round 3), 2 more (round 5) | 1500, 뇌석 |
+| 4 | 업성 공략 | Ye, 20 × 14, the walled city with its keep, two gates and a trench with causeways | defeat 심배 in the keep | 조조 falls | 원상's relief (마연, 장의, 윤해 and 3 men), rounds 3–4 | 2000, 명광개 |
+| 5 | 남피의 얼음 | Nanpi at dusk, 18 × 12, a frozen river with two bridges, the town on the far bank | defeat 원담 | 조조 falls | 2 cavalry, round 3 | 2000, 대극 |
+| 6 | 호관의 고간 | Huguan, 18 × 12, a mountain pass shut by a wall with one gate | defeat 고간 | 조조 falls | 2 병주군, round 4 | 2200, 호구 |
+| 7 | 백랑산의 오환 | Bailang, 18 × 12, our band on the hills, the steppe and 답돈's camp to the east | defeat 답돈 | 조조 falls | went: 3 오환 late (rounds 3–5); stayed: 2 early (rounds 2–3) | 2500, 준마, 호부 |
+
+- **업:**
+  - Gates are works ([ADR 0069](../adr/0069-breakable-gates.md)): `gate-west` and `gate-south`, Lv 28, about 410 HP each, on fort tiles.
+  - 심배's sortie stands outside the gates. On round 5 the 장하 fills the trench around the walls (`trench`, 120‰); causeways stay open before both gates.
+  - 원담 and three of his men fight beside us as orange allies on the north-west flank, facing 원상's relief.
+- **남피:** the river is ice (ford tiles). On round 5 it gives way to water (`thaw`, 150‰), so the crossing is early or by the bridges.
+- **호관:** the wall runs the full height of the map, and its one gate is Lv 30.
+- **백랑산** follows `guojia` ([ADR 0068](../adr/0068-guo-jia-choice.md)):
+  - **Went (surprise):** 답돈, 원상 and 원희 hold an unready camp with 5 오환, and 3 more arrive late.
+  - **Stayed (ready):** 누반, 소복연, 원상, 원희 and 8 오환 ride at us from round 1, while 답돈 holds his camp. 곽가 sits the battle out at 허.
+- **Round limits:** 20, or 25 at 업 and 백랑산.
 
 Roster:
 - The chapter opens with the chapter 3 officers at Lv 18–22. 장료 is among them unless 여포 was spared.

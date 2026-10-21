@@ -17,7 +17,7 @@ import {
   terrainAt,
   unitAt,
 } from "./board.ts";
-import { defeat } from "./combat.ts";
+import { defeat, relationFactor } from "./combat.ts";
 import { addCondition, conditionDef, hasBlock, removeDebuffs, rollTurns } from "./conditions.ts";
 import { clamp, half, permille } from "./math.ts";
 import type { Prng } from "./prng.ts";
@@ -72,6 +72,7 @@ export function canCast(
 }
 
 export function stratagemDamage(
+  rules: Ruleset,
   state: BattleState,
   def: StratagemDef,
   caster: Unit,
@@ -79,7 +80,14 @@ export function stratagemDamage(
 ): number {
   const base = Math.max(1, def.power + caster.stats.intellect - half(target.stats.intellect));
   const byTerrain = permille(base, def.terrain?.[terrainAt(state, target.x, target.y)] ?? 1000);
-  return permille(byTerrain, def.weather?.[state.weather] ?? 1000);
+  const byWeather = permille(byTerrain, def.weather?.[state.weather] ?? 1000);
+  // Works (ADR 0069) take what the caster's family does to them, stratagems included,
+  // so stone-throwers stay the best gate-breakers.
+  if (!target.structure) return byWeather;
+  return Math.max(
+    1,
+    permille(byWeather, relationFactor(rules, classOf(rules, caster), classOf(rules, target))),
+  );
 }
 
 /** Must a condition from this cast roll to land on `target`? (debuffs on enemies only) */
@@ -140,7 +148,7 @@ export function previewStratagem(
   return {
     targets: stratagemTargets(state, caster, def, at).map((u) => ({
       unit: u.id,
-      damage: def.effect === "damage" ? stratagemDamage(state, def, caster, u) : 0,
+      damage: def.effect === "damage" ? stratagemDamage(rules, state, def, caster, u) : 0,
       heal: def.effect === "heal" ? heal(u) : 0,
       chance: resistible(rules, state, def, caster, u) ? statusChance(rules, caster, u) : 1000,
     })),
@@ -187,7 +195,7 @@ export function castStratagem(
         prng.chance(statusChance(rules, caster, unit)));
     return {
       unit,
-      damage: def.effect === "damage" ? stratagemDamage(state, def, caster, unit) : 0,
+      damage: def.effect === "damage" ? stratagemDamage(rules, state, def, caster, unit) : 0,
       heal: def.effect === "heal" ? stratagemHeal(def, caster) : 0,
       landed,
       turns: landed ? rollTurns(prng, def.turns ?? [1, 1]) : 0,

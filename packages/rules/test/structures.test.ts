@@ -10,6 +10,7 @@ import {
   type Ruleset,
   replay,
   runBattle,
+  stratagemDamage,
   unitById,
 } from "../src/index.ts";
 import { RULES, setup, unit } from "./fixtures.ts";
@@ -20,6 +21,7 @@ const R: Ruleset = {
   relations: {
     ...RULES.relations,
     catapult: { ...(RULES.relations.catapult ?? {}), structure: 2500 },
+    strategist: { ...(RULES.relations.strategist ?? {}), structure: 600 },
   },
 };
 
@@ -87,6 +89,24 @@ describe("structures: breakable gates (ADR 0069)", () => {
     const cat = { ...unitById(s, "cat"), x: 0, y: 1 };
     const byStone = previewAttack(R, s, cat, gate);
     expect(byStone.damage).toBeGreaterThan(byFoot.damage);
+  });
+
+  it("stratagems hit a gate by the caster's relation too, so fire does not out-batter stone", () => {
+    const s = createBattle(
+      R,
+      setup(ROWS, [
+        unit("sage", 0, "strategist", 1, 1, { intellect: 90 }),
+        unit("gate", 1, "gate", 3, 1),
+        unit("foe", 1, "infantry", 6, 1),
+      ]),
+    );
+    const fire = R.stratagems.fire;
+    if (!fire) throw new Error("fixture");
+    const gate = unitById(s, "gate");
+    const { structure: _, ...asSoldier } = gate;
+    const onGate = stratagemDamage(R, s, fire, unitById(s, "sage"), gate);
+    const onSoldier = stratagemDamage(R, s, fire, unitById(s, "sage"), asSoldier);
+    expect(onGate).toBe(Math.floor((onSoldier * 600) / 1000));
   });
 
   it("breaking the gate opens the way", () => {

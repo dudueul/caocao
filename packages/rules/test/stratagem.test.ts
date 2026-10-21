@@ -34,13 +34,15 @@ describe("stratagem power (ADR 0024)", () => {
   it("fire: base + 지력a − ⌊지력d/2⌋, × terrain‰ × weather‰", () => {
     const base = 30 + 90 - 20;
     const plain = duel("....");
-    expect(stratagemDamage(plain, FIRE, unitById(plain, "s"), unitById(plain, "t"))).toBe(base);
+    expect(stratagemDamage(RULES, plain, FIRE, unitById(plain, "s"), unitById(plain, "t"))).toBe(
+      base,
+    );
     const forest = duel("..f.", "sunny");
-    expect(stratagemDamage(forest, FIRE, unitById(forest, "s"), unitById(forest, "t"))).toBe(
+    expect(stratagemDamage(RULES, forest, FIRE, unitById(forest, "s"), unitById(forest, "t"))).toBe(
       Math.floor((Math.floor((base * 1200) / 1000) * 1100) / 1000),
     );
     const rain = duel("..d.", "rain");
-    expect(stratagemDamage(rain, FIRE, unitById(rain, "s"), unitById(rain, "t"))).toBe(
+    expect(stratagemDamage(RULES, rain, FIRE, unitById(rain, "s"), unitById(rain, "t"))).toBe(
       Math.floor((Math.floor((base * 600) / 1000) * 500) / 1000),
     );
   });
@@ -78,7 +80,7 @@ describe("previewStratagem", () => {
     expect(p.targets).toEqual([
       {
         unit: "t",
-        damage: stratagemDamage(s, FIRE, caster, unitById(s, "t")),
+        damage: stratagemDamage(RULES, s, FIRE, caster, unitById(s, "t")),
         heal: 0,
         chance: 1000,
       },

@@ -327,6 +327,29 @@ const LIST: readonly ItemDef[] = [
     price: 1200,
     text: "관인과 끈. 직책의 무게를 느낀다.",
   }),
+  // Chapter 4 rewards (ADR 0067): a stone for breaking gates, a fur for the 태항 winter.
+  item({
+    id: "siege-stone",
+    name: "뇌석",
+    hanja: "擂石",
+    slot: "weapon",
+    kind: "shot",
+    atk: 26,
+    stats: { martial: 3 },
+    price: 2400,
+    text: "성 위에서 굴려 떨어뜨리던 큰 돌. 포차에 실으면 성문이 흔들린다.",
+  }),
+  item({
+    id: "fox-fur",
+    name: "호구",
+    hanja: "狐裘",
+    slot: "armour",
+    kind: "robe",
+    def: 15,
+    stats: { intellect: 2, fortune: 3 },
+    price: 1800,
+    text: "여우 겨드랑이의 흰 털만 모아 지은 갖옷. 태항산의 칼바람도 막아 준다.",
+  }),
 ];
 
 export const ITEMS: Readonly<Record<string, ItemDef>> = Object.fromEntries(

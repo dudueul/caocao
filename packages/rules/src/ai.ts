@@ -441,7 +441,7 @@ export function scoreCommand(
     let value = 0;
     for (const t of targets) {
       if (def.effect === "damage") {
-        const dmg = Math.min(t.hp, stratagemDamage(s, def, me, t));
+        const dmg = Math.min(t.hp, stratagemDamage(rules, s, def, me, t));
         const focus = isGoalTarget(s, me.side, t.id) ? W.goalTarget : 1;
         value += dmg * W.damage * focus;
         if (dmg >= t.hp) value += (W.killBase + t.maxHp) * focus;
