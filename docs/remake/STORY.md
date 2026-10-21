@@ -18,7 +18,7 @@ title's chapter select can start any chapter fresh with its own roster.
 | 1 | 황건의 난 | 174–192 | 6 | — (starts at Lv 3) | playable |
 | 2 | 여포 | 193–198 | 7 | 10 | playable |
 | 3 | 관도 | 199–200 | 5 | 14 | playable |
-| 4 | 하북 평정 | 201–207 | 7 | 18 | being built ([ADR 0067](../adr/0067-chapter-four-hebei.md)) |
+| 4 | 하북 평정 | 201–207 | 7 | 18 | playable |
 
 ```mermaid
 flowchart LR

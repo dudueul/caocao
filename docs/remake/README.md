@@ -143,10 +143,10 @@ with a 45-second clock, reconnects, and a PWA; the owner deploys it with
 `bun run deploy`. P2, the Story of **난세의 간웅**, is playable from the title screen to
 the ending in story order: chapter 1 (황건의 난, six battles), chapter 2 (여포,
 seven battles, with choices at 서주 and 백문루 and 전위's fate at 완성) and
-chapter 3 (관도, five battles), carrying the roster from chapter to chapter;
-chapter 4 (하북 평정, seven battles, with breakable gates at 업 and the choice
-over 곽가's march) is being built.
-Battles have goals, reinforcements and map shifts (하비's flood); scenes are
+chapter 3 (관도, five battles) and chapter 4 (하북 평정, seven battles, with
+breakable gates at 업 and the choice over 곽가's march), carrying the roster
+from chapter to chapter.
+Battles have goals, reinforcements, map shifts (하비's flood) and gates to break (업); scenes are
 acted out on tile maps, and the camp is a place to walk; there are painted
 portraits, experience, levels and tier-2 promotions, equipment and a shop,
 saves, synthesized music and sound, settings and first-battle tips. Still to
@@ -157,7 +157,7 @@ come for P2: the server copy of progress (`PlayerDO`) and re-simulation.
 | # | Question | Current leaning |
 |---|---|---|
 | 5 | Accounts and sign-in | P1 uses guest device keys ([0038](../adr/0038-guest-identity-device-key.md)); passkeys with `PlayerDO` in P2 |
-| 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapters 1–3 are playable (174–200) and chapter 4, 하북 평정 (201–207), is being built ([0067](../adr/0067-chapter-four-hebei.md)); next, chapter 5 (적벽, 208); other lords' routes later, if ever |
+| 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapters 1–4 are playable (174–207, [0067](../adr/0067-chapter-four-hebei.md)); next, chapter 5 (적벽, 208); other lords' routes later, if ever |
 | 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear decided ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
 | 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |
