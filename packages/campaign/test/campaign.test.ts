@@ -418,6 +418,37 @@ describe("story flags (ADR 0060, 0061)", () => {
     expect(defaultSortie(other, b).map((p) => p.officer)).toContain(away.id);
   });
 
+  it("곽가 marches and dies, or rests at 허, sits out 백랑산 and lives (ADR 0068)", () => {
+    const at = playTo(newCampaign("hebei"), "hebei-before-bailang", {});
+    expect(finishScene(at, {}).ok).toBe(false);
+    const went = must(finishScene(at, { guojia: "went" }));
+    const stayed = must(finishScene(at, { guojia: "stayed" }));
+    const b = currentBattle(went);
+    if (b?.id !== "bailang") throw new Error("fixture");
+    expect(went.flags.guojia).toBe("went");
+    const out = (s: CampaignState) => defaultSortie(s, b).map((p) => p.officer);
+    const roster = (s: CampaignState) => s.roster.map((o) => o.id);
+    expect(
+      checkSortie(stayed, b, [{ officer: "guo-jia", at: b.slots[0] as Placement["at"] }]),
+    ).not.toBeNull();
+    expect(out(stayed)).not.toContain("guo-jia");
+    expect(roster(stayed)).toContain("guo-jia");
+    const after = (s: CampaignState) => playTo({ ...s, step: s.step + 1 }, "hebei-epilogue", {});
+    const wentEnd = must(finishScene(after(went), {}));
+    const stayedEnd = must(finishScene(after(stayed), {}));
+    expect(roster(wentEnd)).not.toContain("guo-jia");
+    expect(wentEnd.gone).toContain("guo-jia");
+    expect(roster(stayedEnd)).toContain("guo-jia");
+  });
+
+  it("a fresh start of 하북 assumes history, 곽가's march still to choose", () => {
+    expect(newCampaign("hebei").flags).toEqual({
+      xuzhou: "revenge",
+      dianwei: "fell",
+      lubu: "executed",
+    });
+  });
+
   it("a fresh start of 관도 assumes what history did", () => {
     expect(newCampaign("guandu").flags).toEqual({
       xuzhou: "revenge",
@@ -455,12 +486,12 @@ describe("saves, version 2 (ADR 0065)", () => {
 
 describe("the whole story from chapter 1, AI on both sides", () => {
   for (const [name, picks] of [
-    ["as history went", { xuzhou: "revenge", lubu: "executed" }],
-    ["the other way", { xuzhou: "mercy", lubu: "spared" }],
+    ["as history went", { xuzhou: "revenge", lubu: "executed", guojia: "went" }],
+    ["the other way", { xuzhou: "mercy", lubu: "spared", guojia: "stayed" }],
   ] as const) {
-    it(`plays chapters 1, 2 and 3 with carry-over, ${name}`, () => {
+    it(`plays chapters 1 to 4 with carry-over, ${name}`, () => {
       let s = newCampaign(FIRST_CHAPTER);
-      for (const [i, id] of ["rise", "lubu", "guandu"].entries()) {
+      for (const [i, id] of ["rise", "lubu", "guandu", "hebei"].entries()) {
         if (i > 0) s = must(continueTo(s, id));
         s = playChapter(`chain-${name}-${id}`, s, picks).s;
         expect(isFinished(s)).toBe(true);
@@ -468,7 +499,9 @@ describe("the whole story from chapter 1, AI on both sides", () => {
       expect(s.cleared).toContain("shouzhang");
       expect(s.cleared).toContain("xiapi");
       expect(s.cleared).toContain("guandu-final");
+      expect(s.cleared).toContain("bailang");
       expect(s.flags.xuzhou).toBe(picks.xuzhou);
+      expect(s.flags.guojia).toBe(picks.guojia);
       expect(s.flags.lubu).toBe(picks.lubu);
       expect(["lived", "fell"]).toContain(s.flags.dianwei ?? "");
       const ids = s.roster.map((o) => o.id);
@@ -476,7 +509,10 @@ describe("the whole story from chapter 1, AI on both sides", () => {
       else expect(ids).toContain("zhang-liao");
       if (picks.xuzhou === "mercy") expect(ids).toContain("chen-gong");
       else expect(ids).not.toContain("chen-gong");
-    }, 240_000);
+      if (picks.guojia === "went") expect(s.gone).toContain("guo-jia");
+      else expect(ids).toContain("guo-jia");
+      expect(ids).not.toContain("xu-you");
+    }, 400_000);
   }
 });
 
