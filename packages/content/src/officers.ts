@@ -136,6 +136,8 @@ const LIST: readonly OfficerDef[] = [
   officer("ma-yan",       "마연",   "馬延",   [70, 60, 40, 55, 40]),
   officer("zhang-yi",     "장의",   "張顗",   [70, 60, 40, 55, 40]),
   officer("yin-kai",      "윤해",   "尹楷",   [65, 60, 40, 55, 40]),
+  officer("wang-xiu",     "왕수",   "王脩",   [40, 55, 70, 60, 55]),
+  officer("chen-lin",     "진림",   "陳琳",   [20, 35, 85, 45, 60]),
   // Troop templates: each unit is named after its army and class.
   troop("yuan",           "원소군", "袁軍",   [60, 55, 45, 50, 40]),
   troop("yuan-elite",     "원소군 정예", "袁軍", [70, 65, 50, 60, 45]),

@@ -583,7 +583,8 @@ export const YE: StoryBattleDef = {
     [2, 13],
   ),
   max: 8,
-  required: ["cao-cao"],
+  // The stone-thrower must come: the gates are his work (ADR 0069).
+  required: ["cao-cao", "liu-ye"],
   guests: [],
   allies: [
     ally("yuan-tan", "cavalry", 23, 4, 3, hold),

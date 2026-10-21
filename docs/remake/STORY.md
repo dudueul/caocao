@@ -246,7 +246,7 @@ Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순
 | 1 | 창정의 결전 | Cangting, 18 × 12, the 황하 with a bridge and two fords, 원소's palisaded camp on the east bank | defeat 원소 | 조조 falls | 2 cavalry, round 4 | 1200, 인수 |
 | 2 | 여남의 유비 | Runan, 18 × 12, wooded hills, 유비's village and hall | defeat 유비 | 조조 falls | 조운, round 3 | 1200, 면포 |
 | 3 | 여양의 형제 | Liyang, 18 × 12, a walled town on the 황하 with two open gates | defeat 원담 and 원상 | 조조 falls | 원상 and 3 riders (round 3), 2 more (round 5) | 1500, 뇌석 |
-| 4 | 업성 공략 | Ye, 20 × 14, the walled city with its keep, two gates and a trench with causeways | defeat 심배 in the keep | 조조 falls | 원상's relief (마연, 장의, 윤해 and 3 men), rounds 3–4 | 2000, 명광개 |
+| 4 | 업성 공략 | Ye, 20 × 14, the walled city with its keep, two gates and a trench with causeways; 유엽 (stone-thrower) must sortie | defeat 심배 in the keep | 조조 falls | 원상's relief (마연, 장의, 윤해 and 3 men), rounds 3–4 | 2000, 명광개 |
 | 5 | 남피의 얼음 | Nanpi at dusk, 18 × 12, a frozen river with two bridges, the town on the far bank | defeat 원담 | 조조 falls | 2 cavalry, round 3 | 2000, 대극 |
 | 6 | 호관의 고간 | Huguan, 18 × 12, a mountain pass shut by a wall with one gate | defeat 고간 | 조조 falls | 2 병주군, round 4 | 2200, 호구 |
 | 7 | 백랑산의 오환 | Bailang, 18 × 12, our band on the hills, the steppe and 답돈's camp to the east | defeat 답돈 | 조조 falls | went: 3 오환 late (rounds 3–5); stayed: 2 early (rounds 2–3) | 2500, 준마, 호부 |
@@ -267,6 +267,18 @@ Roster:
 - 신비 joins after 여양, 조순 before 남피, and 전주 before 백랑산.
 - 허유 leaves after 업.
 - 곽가 leaves for good at 역주 if he marched.
+- **Scenes** cover:
+  - 원소's illness and death;
+  - 채양's death and the turn south;
+  - the brothers' quarrel and 봉기 cut down;
+  - 신비 coming over;
+  - the trench and the 장하;
+  - 심배 dying facing north, 진림 pardoned and 허유's end;
+  - 왕수 weeping over 원담 on the ice;
+  - the winter road over the 태항산;
+  - 전주's forgotten road at 노룡새 and the choice over 곽가;
+  - 답돈's fall and the heads from 요동;
+  - 갈석산 above the sea.
 
 **Allies** ([ADR 0066](../adr/0066-allies.md)) are other lords' people who fight
 beside us in orange under their own AI, in their phase after ours:
