@@ -459,6 +459,73 @@ describe("story flags (ADR 0060, 0061)", () => {
   });
 });
 
+describe("story duels at 사수관 (ADR 0071)", () => {
+  const start = () => {
+    const at = playTo(newCampaign("rise"), "sishui", {});
+    const b = currentBattle(at);
+    if (b?.id !== "sishui") throw new Error("fixture");
+    return createBattle(P0_RULES, storySetup(at, b, defaultSortie(at, b), "duel"));
+  };
+  const unit = (state: ReturnType<typeof start>, id: string) => {
+    const u = state.units.find((x) => x.id === id);
+    if (!u) throw new Error(`${id} is not on the field`);
+    return u;
+  };
+  const wait = (state: ReturnType<typeof start>) => {
+    const cao = unit(state, "cao-cao");
+    const r = apply(state, P0_RULES, {
+      kind: "act",
+      unit: "cao-cao",
+      to: { x: cao.x, y: cao.y },
+      action: { kind: "wait" },
+    });
+    if (!r.ok) throw new Error(r.reason);
+    return r;
+  };
+
+  it("관우 reaching 화웅 cuts him down, which wins the battle", () => {
+    const s = start();
+    expect(s.duels.map((d) => d.id)).toEqual(["sishui-hua-xiong", "sishui-lu-bu"]);
+    const guan = unit(s, "guan-yu");
+    [guan.x, guan.y] = [14, 5]; // before 화웅 at the gate
+    const r = wait(s);
+    const challenge = r.events.find((e) => e.kind === "challenge");
+    expect(challenge?.kind === "challenge" && challenge.script).toBe("sishui-hua-xiong");
+    const end = r.events.find((e) => e.kind === "duelEnd");
+    expect(end?.kind === "duelEnd" && [end.winner, end.loser, end.fatal]).toEqual([
+      "guan-yu",
+      "hua-xiong",
+      true,
+    ]);
+    expect(unit(r.state, "hua-xiong").fate).toBe("killed");
+    expect(unit(r.state, "guan-yu").hp).toBeGreaterThan(0);
+    expect(r.state.winner).toBe(0);
+  });
+
+  it("when 여포 arrives, the three brothers ride at him in turn and he withdraws", () => {
+    const s = start();
+    const arrival = s.reserve.find((a) => a.unit.id === "lu-bu");
+    if (!arrival) throw new Error("여포 is not on his way");
+    arrival.round = 2;
+    // Everyone else has acted, so 조조's wait ends the round and 여포 comes.
+    for (const u of s.units) if (u.id !== "cao-cao") u.acted = true;
+    const r = wait(s);
+    expect(r.events.some((e) => e.kind === "arrived" && e.unit === "lu-bu")).toBe(true);
+    const bouts = r.events.flatMap((e) => (e.kind === "bout" ? [e.a] : []));
+    expect(bouts).toEqual(["zhang-fei", "zhang-fei", "guan-yu", "guan-yu", "liu-bei"]);
+    const end = r.events.find((e) => e.kind === "duelEnd");
+    expect(end?.kind === "duelEnd" && [end.script, end.winner, end.withdrew]).toEqual([
+      "sishui-lu-bu",
+      null,
+      "lu-bu",
+    ]);
+    expect(unit(r.state, "lu-bu").fate).toBe("escaped");
+    for (const id of ["zhang-fei", "guan-yu", "liu-bei"])
+      expect(unit(r.state, id).hp).toBeGreaterThan(0);
+    expect(r.state.winner).toBeNull();
+  });
+});
+
 describe("saves, version 2 (ADR 0065)", () => {
   it("keeps flags and the gone list, and reads a version-1 save with the chapter's assumptions", () => {
     const s: CampaignState = {

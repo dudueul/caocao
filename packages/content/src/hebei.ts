@@ -68,6 +68,14 @@ export const HEBEI: ChapterDef = {
       gear: ["great-ji", "scale"],
       if: { flag: "lubu", not: "spared" },
     },
+    // A campaign carried over from sparing 여포 already has him; this keeps the roster whole.
+    {
+      officer: "lu-bu",
+      classId: "shockCavalry",
+      level: 21,
+      gear: ["sky-ji", "scale", "red-hare"],
+      if: { flag: "lubu", is: "spared" },
+    },
     { officer: "xu-huang", classId: "heavyInfantry", level: 20, gear: ["refined-dao", "scale"] },
     { officer: "yu-jin", classId: "infantry", level: 19, gear: ["horse-lance", "scale"] },
     { officer: "yue-jin", classId: "infantry", level: 19, gear: ["refined-dao", "scale"] },

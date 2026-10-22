@@ -943,6 +943,29 @@ export const BAILANG: StoryBattleDef = {
   guests: [],
   enemies: [...BAILANG_UNREADY, ...BAILANG_READY],
   goals: [loseIf("cao-cao"), winBy("ta-dun")],
+  // The vanguard's man cuts 답돈 down: 장료, as the record has it, or 여포 if he was spared (ADR 0071).
+  duels: [
+    {
+      id: "bailang-zhang-liao",
+      a: ["zhang-liao"],
+      b: "ta-dun",
+      when: { kind: "adjacent" },
+      play: true,
+      outcome: "a",
+      fatal: true,
+      if: notSpared,
+    },
+    {
+      id: "bailang-lu-bu",
+      a: ["lu-bu"],
+      b: "ta-dun",
+      when: { kind: "adjacent" },
+      play: true,
+      outcome: "a",
+      fatal: true,
+      if: spared,
+    },
+  ],
   goalText: { win: "답돈 격파", lose: "조조 퇴각" },
   rewards: { gold: 2500, items: ["fine-horse", "tiger-tally"] },
   music: "danger",
@@ -1028,12 +1051,59 @@ export const BAILANG: StoryBattleDef = {
       ],
     },
     {
+      when: { at: "duel", duel: "bailang-zhang-liao" },
+      if: notSpared,
+      lines: [
+        { who: "ta-dun", mood: "angry", text: "한나라 장수 놈이 감히 선우 앞에 창을 겨누느냐!" },
+        {
+          who: "zhang-liao",
+          mood: "angry",
+          text: "주공의 깃발 아래 장문원이다. 네 목을 받으러 왔다!",
+          if: went,
+        },
+        {
+          who: "zhang-liao",
+          mood: "angry",
+          text: "장문원이다. 진이 아무리 두터워도 네 목 하나면 끝난다!",
+          if: stayed,
+        },
+      ],
+    },
+    {
+      when: { at: "duel", duel: "bailang-lu-bu" },
+      if: spared,
+      lines: [
+        { who: "ta-dun", mood: "angry", text: "붉은 말… 네가 여포냐! 오환의 선우가 상대해 주마!" },
+        { who: "lu-bu", mood: "smile", text: "선우든 무엇이든, 방천극 앞에선 다 같은 목이다." },
+      ],
+    },
+    // The fall, however it comes; the duel's end gives the victor's shout.
+    {
       when: { at: "defeated", unit: "ta-dun" },
       lines: [
-        { who: "ta-dun", mood: "hurt", text: "산에서… 귀신처럼 내려오다니…" },
+        { who: "ta-dun", mood: "hurt", text: "산에서… 귀신처럼 내려오다니…", if: went },
+        { who: "ta-dun", mood: "hurt", text: "기다리고 있었건만… 이렇게 무너지다니…", if: stayed },
         {
           text: "답돈이 쓰러지자 오환의 기병은 말머리를 돌려 흩어졌다. 항복하는 자가 들판을 메웠다.",
         },
+      ],
+    },
+    {
+      when: { at: "duelEnd", duel: "bailang-zhang-liao" },
+      if: notSpared,
+      lines: [
+        {
+          who: "zhang-liao",
+          mood: "angry",
+          text: "답돈의 목을 베었다! 오환은 들어라, 선우는 죽었다!",
+        },
+      ],
+    },
+    {
+      when: { at: "duelEnd", duel: "bailang-lu-bu" },
+      if: spared,
+      lines: [
+        { who: "lu-bu", mood: "smile", text: "오랑캐의 왕이라더니 별것 아니군. 다음은 누구냐!" },
       ],
     },
   ],

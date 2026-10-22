@@ -188,6 +188,18 @@ const B1: StoryBattleDef = {
     foe("yuan", "cavalry", 13, 17, 8, { id: "yuan-cavalry-3", arrives: 4 }),
   ],
   goals: [loseIf("cao-cao"), loseIf("liu-yan"), winBy("yan-liang")],
+  // 관우 (our guest) cuts 안량 down among his men: the 일기토 on him is history's (ADR 0071).
+  duels: [
+    {
+      id: "baima-yan-liang",
+      a: ["guan-yu"],
+      b: "yan-liang",
+      when: { kind: "adjacent" },
+      play: true,
+      outcome: "a",
+      fatal: true,
+    },
+  ],
   goalText: { win: "안량 격파", lose: "조조 또는 유연 퇴각" },
   rewards: { gold: 800, items: ["great-ji", "lamellar"] },
   talk: [
@@ -217,10 +229,26 @@ const B1: StoryBattleDef = {
       ],
     },
     {
+      when: { at: "duel", duel: "baima-yan-liang" },
+      lines: [
+        { text: "관우는 멀리 안량의 깃발과 일산을 바라보더니, 말에 채찍을 더했다." },
+        { who: "guan-yu", mood: "angry", text: "안량! 그 목을 받겠다!" },
+        { who: "yan-liang", mood: "angry", text: "누구냐! 감히 내 일산 아래로 뛰어들다니!" },
+      ],
+    },
+    // The fall, however it comes; the duel's end tells how 관우 did it.
+    {
       when: { at: "defeated", unit: "yan-liang" },
       lines: [
-        { who: "guan-yu", mood: "angry", text: "안량! 그 목을 받겠다!" },
-        { text: "관우가 만군 사이를 꿰뚫고 달려 안량을 베었다. 원소군은 그 기세에 질려 무너졌다." },
+        { who: "yan-liang", mood: "hurt", text: "하북의 안량이… 이렇게…" },
+        { text: "안량이 쓰러지자 원소군은 그 기세에 질려 무너졌다." },
+      ],
+    },
+    {
+      when: { at: "duelEnd", duel: "baima-yan-liang" },
+      lines: [
+        { text: "관우는 만군 가운데서 안량을 찔러 쓰러뜨리고, 그 목을 베어 돌아왔다." },
+        { text: "원소의 장수들 가운데 그를 막아선 자는 아무도 없었다." },
       ],
     },
   ],
@@ -237,7 +265,8 @@ const B2: StoryBattleDef = {
   sides: ["조조군", "원소군"],
   slots: cells([13, 2], [13, 3], [14, 3], [13, 4], [14, 4], [15, 4], [14, 5], [15, 5], [13, 6]),
   max: 7,
-  required: ["cao-cao"],
+  // 관우 stays one battle longer, for 문추 (ADR 0071).
+  required: ["cao-cao", "guan-yu"],
   guests: [],
   enemies: [
     foe("wen-chou", "cavalry", 18, 1, 2, hold),
@@ -254,6 +283,17 @@ const B2: StoryBattleDef = {
     foe("yuan", "infantry", 14, 7, 0, { id: "yuan-infantry-3", arrives: 3 }),
   ],
   goals: [loseIf("cao-cao"), winBy("wen-chou")],
+  duels: [
+    {
+      id: "yanjin-wen-chou",
+      a: ["guan-yu"],
+      b: "wen-chou",
+      when: { kind: "adjacent" },
+      play: true,
+      outcome: "a",
+      fatal: true,
+    },
+  ],
   goalText: { win: "문추 격파", lose: "조조 퇴각" },
   rewards: { gold: 1000, items: ["strong-bow", "jade"] },
   talk: [
@@ -289,11 +329,22 @@ const B2: StoryBattleDef = {
       ],
     },
     {
+      when: { at: "duel", duel: "yanjin-wen-chou" },
+      lines: [
+        { who: "wen-chou", mood: "angry", text: "네놈이 안량을 벤 관우냐! 그 목으로 갚아 주마!" },
+        { who: "guan-yu", mood: "angry", text: "안량이 기다리고 있다. 너도 따라가거라." },
+      ],
+    },
+    {
       when: { at: "defeated", unit: "wen-chou" },
       lines: [
         { who: "wen-chou", mood: "hurt", text: "미끼였단 말인가… 조조, 이 간사한 놈…!" },
         { text: "하북의 이름난 장수 안량과 문추가 잇달아 쓰러지자, 원소군의 기세가 크게 꺾였다." },
       ],
+    },
+    {
+      when: { at: "duelEnd", duel: "yanjin-wen-chou" },
+      lines: [{ who: "guan-yu", mood: "grim", text: "…이로써 조공께 진 빚은 다 갚았다." }],
     },
   ],
 };
@@ -682,6 +733,22 @@ const YANJIN_SLOPE: StageDef = {
   ],
 };
 
+/** The same slope at dusk after the fight: the wagons gathered, the sealed gifts by the road. */
+const YANJIN_DUSK: StageDef = {
+  ...YANJIN_SLOPE,
+  id: "yanjin-dusk",
+  light: "dusk",
+  props: [
+    prop("cart", 4, 3),
+    prop("cart", 5, 6),
+    prop("chest", 10, 2),
+    prop("chest", 11, 2),
+    prop("lantern", 9, 2),
+    prop("horse", 12, 5),
+    prop("banner", 11, 6),
+  ],
+};
+
 /** 관도 in the eighth month: our palisade, 원소's tents stretched along the north. */
 const GUANDU_PALISADE: StageDef = {
   id: "guandu-palisade",
@@ -1039,7 +1106,7 @@ const BEFORE_BAIMA: SceneDef = {
 
 const AFTER_BAIMA: SceneDef = {
   id: "after-baima",
-  title: "각자의 주인",
+  title: "한수정후",
   place: "백마",
   when: "건안 5년 4월",
   backdrop: "field",
@@ -1058,36 +1125,21 @@ const AFTER_BAIMA: SceneDef = {
     camera([6, 4], 1300),
     say("cao-cao", "운장, 그대의 무용은 천하에 짝이 없구려.", "smile"),
     act("guan-yu", "bow"),
-    say(
-      "guan-yu",
-      "이제 은혜는 갚았소. 형님 유현덕께서 하북에 계시다 하니, 나는 그분께 돌아가야 하오.",
-      undefined,
-      ours,
-    ),
-    emote("xu-chu", "anger"),
-    walk("xu-chu", [5, 5]),
-    face("cao-cao", "xu-chu"),
-    act("cao-cao", "shake"),
-    emote("xu-chu", "sweat"),
-    walk("xu-chu", [5, 6]),
-    all(face("xu-chu", "up"), face("cao-cao", "up")),
-    pause(800),
-    say("cao-cao", "…붙잡지 않겠소. 사람마다 섬기는 주인이 있는 법이니.", "grim"),
+    say("cao-cao", "조정에 아뢰어 그대를 한수정후로 삼게 하겠소.", "smile"),
+    emote("guan-yu", "..."),
+    say("guan-yu", "…받은 은혜가 또 하나 늘었구려.", "grim", ours),
     ...when(
       notSpared,
-      walk("zhang-liao", [7, 3]),
-      face("zhang-liao", "guan-yu"),
-      say("zhang-liao", "운장, 몸 성히 가시오. 다음엔 싸움터에서 보겠구려.", "grim"),
-      act("guan-yu", "nod"),
+      face("zhang-liao", "cao-cao"),
+      say("zhang-liao", "운장은 공을 세워 은혜를 갚은 뒤에 떠나겠다 했습니다.", "grim"),
     ),
-    face("guan-yu", "up"),
-    sound("hooves"),
-    all(leave("guan-yu", [6, 0]), camera([6, 1], 1300)),
-    walk("cao-cao", [10, 3]),
-    face("cao-cao", "up"),
-    camera([10, 2], 1500),
-    tell("관우는 받은 상을 모두 봉해 두고, 작별의 글을 남긴 채 떠났다."),
-    emote("cao-cao", "..."),
+    ...when(
+      spared,
+      face("xu-huang", "cao-cao"),
+      say("xu-huang", "운장은 공을 세워 은혜를 갚으면 떠날 사람입니다.", "grim"),
+    ),
+    face("cao-cao", "guan-yu"),
+    say("cao-cao", "알고 있다. 그 뜻이 의로우니 더 아깝구나.", "grim"),
     pause(600),
     camera([7, 4], 1000),
     tell(
@@ -1099,7 +1151,6 @@ const AFTER_BAIMA: SceneDef = {
     say("yu-jin", "연진 쪽 적진을 흔들고 돌아왔습니다. 악진 장군도 함께입니다."),
     act("cao-cao", "nod"),
   ],
-  leaves: ["guan-yu"],
   joins: [
     { officer: "yu-jin", classId: "infantry", level: 15, gear: ["iron-ji", "lamellar"] },
     { officer: "yue-jin", classId: "infantry", level: 15, gear: ["ring-dao", "lamellar"] },
@@ -1117,6 +1168,7 @@ const BEFORE_YANJIN: SceneDef = {
     actor("cao-cao", 0, [10, 6], "up"),
     actor("xun-you", 0, [11, 7], "up"),
     actor("xu-chu", 0, [9, 7], "up"),
+    actor("guan-yu", 0, [12, 6], "left", { classId: "cavalry" }),
     // 우금 keeps watch over the road.
     actor("yu-jin", 0, [8, 5], "up"),
     extra("rider-1", "yuan", 1, undefined, undefined, "cavalry"),
@@ -1138,6 +1190,8 @@ const BEFORE_YANJIN: SceneDef = {
     say("xun-you", "물러나다니요. 저것은 적을 낚을 미끼입니다.", "smile"),
     face("cao-cao", "up"),
     say("cao-cao", "적이 수레에 달려들어 대오가 흩어질 때까지 기다려라. 그때 단숨에 내려간다."),
+    face("guan-yu", "cao-cao"),
+    say("guan-yu", "문추는 안량과 이름을 나란히 하던 자요. 그는 내가 맡겠소.", undefined, ours),
     camera([6, 3], 1300),
     all(walk("rider-1", [4, 4]), walk("rider-2", [7, 3])),
     emote("rider-2", "heart"),
@@ -1145,6 +1199,62 @@ const BEFORE_YANJIN: SceneDef = {
     camera("cao-cao", 1300),
     emote("cao-cao", "..."),
   ],
+};
+
+/** 관우 leaves after 연진, one battle later than he did before ADR 0071, to be there for 문추. */
+const PARTING: SceneDef = {
+  id: "yanjin-parting",
+  title: "각자의 주인",
+  place: "연진",
+  when: "건안 5년 4월",
+  backdrop: "river",
+  stage: YANJIN_DUSK,
+  cast: [
+    actor("guan-yu", 0, [7, 2], "down", { classId: "cavalry" }),
+    actor("cao-cao", 0, [7, 4], "up"),
+    actor("xu-chu", 0, [6, 5], "up"),
+    actor("xu-huang", 0, [5, 3], "right"),
+    actor("zhang-liao", 0, [9, 3], "left", { if: notSpared }),
+    actor("xun-you", 0, [8, 5], "up"),
+  ],
+  script: [
+    camera([7, 3], 1300),
+    tell("싸움이 끝난 저녁, 붙잡힌 원소군이 문추의 뒤에 유비가 있었다고 털어놓았다."),
+    emote("guan-yu", "!"),
+    pause(600),
+    act("guan-yu", "bow"),
+    say(
+      "guan-yu",
+      "은혜는 갚았소. 형님께서 원소의 진중에 계시다 하니, 그리로 가야 하오.",
+      undefined,
+      ours,
+    ),
+    emote("xu-chu", "anger"),
+    walk("xu-chu", [6, 4]),
+    face("cao-cao", "xu-chu"),
+    act("cao-cao", "shake"),
+    emote("xu-chu", "sweat"),
+    walk("xu-chu", [6, 5]),
+    all(face("xu-chu", "up"), face("cao-cao", "up")),
+    pause(800),
+    say("cao-cao", "…붙잡지 않겠소. 사람마다 섬기는 주인이 있는 법이니.", "grim"),
+    ...when(
+      notSpared,
+      walk("zhang-liao", [8, 2]),
+      face("zhang-liao", "guan-yu"),
+      say("zhang-liao", "운장, 몸 성히 가시오. 다음엔 싸움터에서 보겠구려.", "grim"),
+      act("guan-yu", "nod"),
+    ),
+    face("guan-yu", "up"),
+    sound("hooves"),
+    all(leave("guan-yu", [7, 0]), camera([7, 1], 1300)),
+    walk("cao-cao", [10, 3]),
+    face("cao-cao", "up"),
+    camera([10, 2], 1500),
+    tell("관우는 받은 상을 모두 봉해 두고, 작별의 글을 남긴 채 떠났다."),
+    emote("cao-cao", "..."),
+  ],
+  leaves: ["guan-yu"],
 };
 
 const AFTER_YANJIN: SceneDef = {
@@ -1519,17 +1629,18 @@ const talk = (officer: string, text: string, mood?: Mood, cond?: Cond): CampTalk
   ...(cond ? { if: cond } : {}),
 });
 
-/** After 백마: 관우 is gone, 우금 and 악진 are back from across the river. */
+/** After 백마: 관우 (한수정후 now) stays for one more fight; 우금 and 악진 are back. */
 const TALK_1: readonly CampTalk[] = [
+  talk("guan-yu", "한수정후라… 과분한 이름이오. 받은 만큼은 갚고 떠나겠소.", "grim"),
   talk("xu-chu", "관우가 안량을 베는 걸 봤습니다. 다음 목은 이 허저 몫입니다!", "smile"),
   talk("xiahou-yuan", "백마 백성까지 거두어 가니 행렬이 깁니다. 뒤는 제가 살피지요."),
-  talk("xu-huang", "운장과는 고향이 가까워 정이 깊었지요. 다음엔 적으로 보겠군요.", "grim"),
+  talk("xu-huang", "운장과는 고향이 가까워 정이 깊었지요. 언젠가는 적으로 보겠군요.", "grim"),
   talk("xun-you", "원소는 화가 나면 서두릅니다. 서두르는 적은 미끼를 잘 뭅니다."),
   talk("yu-jin", "악진 장군과 강을 건너 원소의 진채 서른 곳을 불살랐습니다."),
   talk("yue-jin", "불 지르는 일이라면 언제든 맡겨 주십시오. 손이 빠릅니다.", "smile"),
   talk(
     "zhang-liao",
-    "운장은 끝내 떠났군요. 그런 사람이라 붙잡고 싶었던 것이지요.",
+    "운장은 떠날 날을 세고 있을 겁니다. 그런 사람이라 붙잡고 싶은 것이지요.",
     "grim",
     notSpared,
   ),
@@ -1557,6 +1668,7 @@ const TALK_2: readonly CampTalk[] = [
   talk("xun-you", "적은 많고 우리는 적습니다. 그러니 싸울 곳은 우리가 고릅니다."),
   talk("yu-jin", "목책을 두 겹으로 둘렀습니다. 쉽게는 못 넘어올 겁니다."),
   talk("zhang-liao", "적의 기병이 많습니다. 성급히 나가 싸우면 안 됩니다.", undefined, notSpared),
+  talk("xu-huang", "운장은 끝내 형님 곁으로 갔군요. 다음엔 적으로 보겠지요.", "grim"),
   talk("lu-bu", "진채에 틀어박혀 기다리기만 하라니. 몸이 근질거려 못 견디겠소.", "angry", spared),
 ];
 
@@ -1666,6 +1778,7 @@ export const GUANDU: ChapterDef = {
     },
     { kind: "scene", scene: BEFORE_YANJIN },
     { kind: "battle", battle: B2 },
+    { kind: "scene", scene: PARTING },
     { kind: "scene", scene: AFTER_YANJIN },
     {
       kind: "camp",

@@ -409,6 +409,21 @@ function checkScene(rules: Ruleset, sc: SceneDef, say: (p: string) => void) {
           break;
         case "light":
           break;
+        case "duel": {
+          // A watched 일기토 (ADR 0071): two officers of the cast, a few bouts, history's ending.
+          who(c.a);
+          who(c.b);
+          if (c.a === c.b) say(`duel: ${c.a} can't fight himself`);
+          for (const id of [c.a, c.b]) {
+            const a = cast.get(id);
+            if (a && OFFICERS[a.officer ?? a.id]?.generic)
+              say(`duel: ${id} is a troop, not an officer`);
+          }
+          if (!Number.isSafeInteger(c.bouts) || c.bouts < 1 || c.bouts > rules.tuning.duelBouts)
+            say(`duel: bouts must be 1–${rules.tuning.duelBouts}`);
+          if (!["a", "b", "draw"].includes(c.outcome)) say(`duel: unknown outcome ${c.outcome}`);
+          break;
+        }
         case "choice": {
           if (!FLAG_TEXT.test(c.flag)) say(`bad flag name ${c.flag}`);
           if (c.prompt.trim() === "") say("choice without a prompt");
@@ -517,6 +532,9 @@ export function validateChapter(
       if (step.kind === "scene") {
         const sc = step.scene;
         const where = `scene ${sc.id}`;
+        // Who stands on the stage as the script runs on this path: a duel needs both there.
+        const cast = (id: string) => sc.cast.some((a) => a.id === id && holds(a.if, flags));
+        const onStage = new Set(sc.cast.filter((a) => a.at && holds(a.if, flags)).map((a) => a.id));
         const visit = (cmds: readonly Cmd[]) => {
           for (const c of cmds) {
             if (!holds(c.if, flags)) continue;
@@ -525,7 +543,11 @@ export function validateChapter(
               const v = path[c.flag];
               flags[c.flag] =
                 v && c.options.some((o) => o.value === v) ? v : (c.options[0]?.value ?? "");
-            }
+            } else if ((c.do === "enter" || c.do === "place") && cast(c.who)) onStage.add(c.who);
+            else if (c.do === "leave" || c.do === "remove") onStage.delete(c.who);
+            else if (c.do === "duel")
+              for (const id of [c.a, c.b])
+                if (!onStage.has(id)) add(`${where}: duel ${c.a}–${c.b}: ${id} is not on stage`);
           }
         };
         visit(sc.script);
@@ -642,16 +664,29 @@ function validateStoryBattle(
   const duelIds = new Set<string>();
   const sideOf = (id: string) =>
     roster.has(id) ? 0 : units.find((u) => (u.id ?? u.officer) === id)?.side;
+  // Allies (side 2) fight on our team (ADR 0066).
+  const teamOf = (id: string) => {
+    const side = sideOf(id);
+    return side === 2 ? 0 : side;
+  };
+  const away = new Set((b.absent ?? []).filter((x) => holds(x.if, flags)).map((x) => x.officer));
   for (const d of (b.duels ?? []).filter((x) => holds(x.if, flags))) {
     if (duelIds.has(d.id)) say(`duel ${d.id} twice`);
     duelIds.add(d.id);
     if (d.a.length === 0) say(`duel ${d.id} has no challenger`);
+    if (d.a.includes(d.b) || new Set(d.a).size !== d.a.length)
+      say(`duel ${d.id} names an officer twice`);
     for (const id of [...d.a, d.b]) {
       if (!known.has(id)) say(`duel ${d.id} names unknown unit ${id}`);
       else if (OFFICERS[id]?.generic) say(`duel ${d.id}: ${id} is a troop, not an officer`);
+      if (away.has(id)) say(`duel ${d.id}: ${id} sits this battle out`);
     }
-    const sb = sideOf(d.b);
-    if (d.a.some((id) => sideOf(id) === sb)) say(`duel ${d.id}: a challenger is on the foe's side`);
+    const sb = teamOf(d.b);
+    if (d.a.some((id) => teamOf(id) === sb)) say(`duel ${d.id}: a challenger is on the foe's side`);
+    if (d.fatal && (d.outcome === "draw" || d.outcome === "bWithdraws"))
+      say(`duel ${d.id}: nobody falls in a ${d.outcome}, so it can't be fatal`);
+    if (d.when.kind === "round" && (d.when.round < 1 || d.when.round > b.roundLimit))
+      say(`duel ${d.id}: round out of range`);
     if (d.play && (d.a.length !== 1 || sideOf(d.a[0] ?? "") !== 0))
       say(`duel ${d.id}: a played duel needs one challenger of ours`);
     if (d.play && d.when.kind !== "adjacent")
@@ -678,6 +713,8 @@ function validateStoryBattle(
       say(`talk waits for shift ${w.shift}, which does not exist`);
     if ((w.at === "duel" || w.at === "duelEnd") && !(b.duels ?? []).some((d) => d.id === w.duel))
       say(`talk waits for duel ${w.duel}, which does not exist`);
+    else if ((w.at === "duel" || w.at === "duelEnd") && !duelIds.has(w.duel))
+      say(`talk waits for duel ${w.duel}, which does not happen with these flags`);
     for (const l of t.lines)
       if (l.who !== undefined && !OFFICERS[l.who]) say(`unknown speaker ${l.who}`);
   }

@@ -359,6 +359,28 @@ const B3: StoryBattleDef = {
     foe("lu-bu", "cavalry", 20, 16, 6, { arrives: 6, ...hold }),
   ],
   goals: [loseIf("cao-cao"), winBy("hua-xiong")],
+  // Two duels, watched (ADR 0071): 관우 cuts down 화웅 when he reaches him, which
+  // wins the battle; the three brothers ride at 여포 when he comes, and he withdraws.
+  duels: [
+    {
+      id: "sishui-hua-xiong",
+      a: ["guan-yu"],
+      b: "hua-xiong",
+      when: { kind: "adjacent" },
+      play: false,
+      outcome: "a",
+      fatal: true,
+    },
+    {
+      id: "sishui-lu-bu",
+      a: ["zhang-fei", "guan-yu", "liu-bei"],
+      b: "lu-bu",
+      when: { kind: "arrived", unit: "lu-bu" },
+      play: false,
+      outcome: "bWithdraws",
+      fatal: false,
+    },
+  ],
   goalText: { win: "화웅 격파", lose: "조조 퇴각" },
   rewards: { gold: 600, items: ["refined-dao"] },
   talk: [
@@ -391,12 +413,51 @@ const B3: StoryBattleDef = {
       ],
     },
     {
-      when: { at: "defeated", unit: "hua-xiong" },
+      when: { at: "duel", duel: "sishui-lu-bu" },
       lines: [
-        { who: "hua-xiong", mood: "hurt", text: "이, 이럴 수가…!" },
-        { who: "guan-yu", mood: "smile", text: "술이 아직 따뜻하군요." },
-        { text: "화웅이 쓰러지자 사수관을 지키던 동탁군은 낙양 쪽으로 물러났다." },
+        { who: "zhang-fei", mood: "angry", text: "아비를 셋이나 섬긴 종놈아! 장익덕이 여기 있다!" },
+        { who: "lu-bu", side: 1, mood: "smile", text: "고리눈 촌놈이 죽을 자리를 찾아왔구나." },
       ],
+    },
+    {
+      when: { at: "duelEnd", duel: "sishui-lu-bu" },
+      lines: [
+        { text: "장비에 이어 관우가 달려들고, 끝내 유비도 쌍검을 들고 뛰어들었다." },
+        {
+          who: "lu-bu",
+          side: 1,
+          mood: "angry",
+          text: "셋이서 하나를 치느냐! 오늘은 이만 물러가마.",
+        },
+        { text: "여포는 말머리를 돌려 관문 안으로 물러났다." },
+        { who: "zhang-fei", mood: "angry", text: "거기 서라, 여포! 아직 승부가 나지 않았다!" },
+        { who: "cao-cao", mood: "smile", text: "여포가 물러났다. 이 틈에 화웅을 쳐라!" },
+      ],
+    },
+    {
+      when: { at: "duel", duel: "sishui-hua-xiong" },
+      lines: [
+        { text: "관우가 말을 달려 나가자 연합군 진영에서 북소리가 크게 울렸다." },
+        { who: "hua-xiong", mood: "angry", text: "이름 없는 졸개가 감히 화웅 앞에 말을 세우느냐!" },
+        { who: "guan-yu", mood: "angry", text: "말이 많구나. 대답은 이 칼이 하리라." },
+      ],
+    },
+    // The fall, however it comes; the duel's end adds 관우's return with the wine still warm.
+    {
+      when: { at: "defeated", unit: "hua-xiong" },
+      lines: [{ who: "hua-xiong", mood: "hurt", text: "이, 이럴 수가…!" }],
+    },
+    {
+      when: { at: "duelEnd", duel: "sishui-hua-xiong" },
+      lines: [
+        { text: "북소리가 그치기도 전에 관우가 화웅의 목을 들고 돌아왔다." },
+        { who: "guan-yu", mood: "smile", text: "술이 아직 따뜻하군요." },
+        { who: "cao-cao", mood: "smile", text: "…천하에 이런 장수가 다 있었구나." },
+      ],
+    },
+    {
+      when: { at: "end", winner: 0 },
+      lines: [{ text: "화웅이 쓰러지자 사수관을 지키던 동탁군은 낙양 쪽으로 물러났다." }],
     },
   ],
 };

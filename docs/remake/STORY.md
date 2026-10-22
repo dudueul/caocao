@@ -1,11 +1,11 @@
 # Story mode
 
 > Living document for the Story of **난세의 간웅** ([ADR 0049](../adr/0049-story-chapter-guandu.md),
-> [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)–[0069](../adr/0069-breakable-gates.md)):
+> [ADR 0056](../adr/0056-chapter-order-and-carry-over.md)–[0071](../adr/0071-duels.md)):
 > the chapters in order, the flow of a chapter, carry-over between chapters,
 > choices and story flags, staged scenes and the walkable camp, each chapter's
-> battles, progression, equipment and saves. Every number is starting tuning.
-> Last updated 2026-10-21.
+> battles, story duels, progression, equipment and saves. Every number is starting tuning.
+> Last updated 2026-10-22.
 
 ## Chapters
 
@@ -205,7 +205,7 @@ battles and settle them the same way.
 - **진궁** fights for 여포 at 복양, 정도 and 하비 on the revenge path only.
 - **Roster:**
   - 정욱 and 전위 join in 194.
-  - 서황, 순유 and 곽가 join in 196, and 허저 in 197.
+  - 허저 joins in spring 196, after fighting 전위 to a draw at his village; 서황, 순유 and 곽가 join later in 196.
   - At 백문루, 장료 joins, or 여포 joins and 장료 is gone.
   - 진궁 leaves in 194 on the revenge path.
   - 전위 leaves after 완성 if he fell.
@@ -214,6 +214,7 @@ battles and settle them the same way.
   - the choice at 서주, and the revolt of 연주;
   - 전위 lifting the great banner;
   - 전씨's letter;
+  - 허저's village and his drawn 일기토 with 전위;
   - the women on the walls at 정도;
   - the emperor brought to 허;
   - 조앙 giving his father his horse;
@@ -231,7 +232,7 @@ battles and settle them the same way.
 | 5 | 관도 결전 | Yuan Shao's camp, 20 × 13, walls and two gates | defeat 원소 | 조조 falls | ours: 장합, 고람 (round 3); theirs: 2 elite cavalry (round 5) | 2000, 호부 |
 
 Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순유.
-- 관우 fights at Baima as a guest and then leaves.
+- 관우 fights at 백마 and 연진 as a guest, cutting down 안량 and 문추, and leaves after 연진 (scene 각자의 주인).
 - 우금 and 악진 join after Baima.
 - 하후돈, 곽가, 유엽 and 이전 join before the Guandu camp.
 - 허유 defects before Wuchao.
@@ -280,6 +281,21 @@ Roster:
   - 답돈's fall and the heads from 요동;
   - 갈석산 above the sea.
 
+**일기토** ([ADR 0071](../adr/0071-duels.md)): any named officer may challenge an
+adjacent enemy officer. The famous duels are staged and end as history did:
+
+| Chapter | Where | Duel | How |
+|---|---|---|---|
+| 1 | 사수관 | 관우 cuts down 화웅 | watched, when the ally 관우 reaches him; it wins the battle |
+| 1 | 사수관 | 장비, then 관우, then 유비 against 여포 | watched, when 여포 arrives; he withdraws |
+| 2 | scene 초국의 장사 (196) | 허저 and 전위, a draw | watched, on the duel screen |
+| 3 | 백마 | 관우 cuts down 안량 under his parasol | played: 관우 next to 안량 |
+| 3 | 연진 | 관우 cuts down 문추 | played |
+| 4 | 백랑산 | 장료 (or 여포, if spared) kills 답돈 | played |
+
+The AI never challenges on its own, so played duels happen only when the
+player chooses 일기토. Watched ones fire in AI runs too.
+
 **Allies** ([ADR 0066](../adr/0066-allies.md)) are other lords' people who fight
 beside us in orange under their own AI, in their phase after ours:
 - chapter 1: 황보숭 and 주준 at 장사; 관우, 장비, 유비 and 손견 at 사수관; 위자 and 포신 at 변수; 포신 at 수장;
@@ -301,17 +317,17 @@ once per path in every run):
 |---|---|---|---|
 | 1 | 북문의 오색봉 | 12 / 12 | round 8 |
 | 1 | 장사의 불길 | 12 / 12 | round 5 |
-| 1 | 사수관의 술 | 11 / 12 | round 9–10 (after 여포 arrives) |
-| 1 | 변수의 추격 | 10 / 12 | round 8 (the hold) |
+| 1 | 사수관의 술 | 12 / 12 | round 9–10; the brothers meet 여포 when he arrives, and he withdraws |
+| 1 | 변수의 추격 | 9 / 12 | round 8 (the hold) |
 | 1 | 흑산의 무리 | 12 / 12 | round 6 |
 | 1 | 수장의 겨울 | 12 / 12 | round 10 (the hold) |
 | 2 | 팽성의 원한 | 12 · 12 | round 3–4 |
 | 2 | 복양의 불길 | 12 · 12 | round 3–4 (the escape) |
 | 2 | 정도의 둑 | 12 · 12 | round 9 (mostly the hold) |
-| 2 | 완성의 밤 | 12 · 12 | round 3 (the escape); 전위 standing 12 · 5 |
+| 2 | 완성의 밤 | 12 · 12 | round 3 (the escape); 전위 standing 12 · 4 |
 | 2 | 기현의 싸움 | 12 · 12 | round 6–7 |
 | 2 | 안중의 땅굴 | 12 · 12 | round 5 |
-| 2 | 하비 수공 | 9 · 11 | round 7; the flood comes on round 2 |
+| 2 | 하비 수공 | 11 · 11 | round 7; the flood comes on round 2 |
 | 3 | 백마 구원 | 12 · 12 | round 5 |
 | 3 | 연진의 미끼 | 12 · 12 | round 4–5 |
 | 3 | 관도 사수 | 12 · 12 | round 8 |
@@ -320,9 +336,9 @@ once per path in every run):
 | 4 | 창정의 결전 | 12 · 12 | round 7 |
 | 4 | 여남의 유비 | 12 · 12 | round 6 |
 | 4 | 여양의 형제 | 12 · 12 | round 6–7 |
-| 4 | 업성 공략 | 12 · 9 | round 9–10; the trench floods on round 5 |
+| 4 | 업성 공략 | 11 · 11 | round 9–10; the trench floods on round 5 |
 | 4 | 남피의 얼음 | 12 · 12 | round 6–7 |
-| 4 | 호관의 고간 | 12 · 10 | round 8–10 |
+| 4 | 호관의 고간 | 12 · 11 | round 8–10 |
 | 4 | 백랑산의 오환 | 12 · 12 | round 6 (went) · 8 (stayed) |
 
 Chapter 2–4 cells read "history path · other path": revenge, executed and

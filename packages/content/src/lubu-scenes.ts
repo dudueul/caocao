@@ -308,6 +308,33 @@ const DINGTAO: StageDef = {
 };
 const DINGTAO_DAWN: StageDef = { ...DINGTAO, id: "dingtao-dike-dawn", light: "dusk" };
 
+/** 허저's walled village: houses inside a stone wall, its gate open on the fields to the east. */
+const XU_VILLAGE: StageDef = {
+  id: "xu-village",
+  light: "day",
+  rows: [
+    "##########gggg",
+    "#vvvvvvvv#ggg.",
+    "#vvvvvvvv#gg..",
+    "#vvvvvvvv=....",
+    "#vvvvvvvv=....",
+    "#vvvvvvvv#....",
+    "#vvvvvvvv#...g",
+    "##########..gg",
+    "gggg.......ggg",
+  ],
+  props: [
+    prop("gate", 9, 3, { solid: false }),
+    prop("gate", 9, 4, { solid: false }),
+    prop("well", 3, 2),
+    prop("grain", 2, 5),
+    prop("grain", 2, 6),
+    prop("cart", 5, 6),
+    prop("fence", 11, 7),
+    prop("fence", 12, 1),
+  ],
+};
+
 /**
  * Two places on one stage, a wall between: 낙양's burnt palace on the left
  * (weeds through a torn carpet, a broken throne) and the new hall at 허 on
@@ -1264,7 +1291,104 @@ export const AFTER_DINGTAO: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 10. 천자를 모시다
+// ---------------------------------------------------------------- 10. 초국의 장사
+
+const BANDITS = ["huangjin-1", "huangjin-2"];
+/** 허저 and his villagers speak in their own colours until he swears to 조조. */
+const village = { side: 2 };
+
+/**
+ * 196: 허저 joins. The record has him bring his village men to 조조 when 조조
+ * took the 회수 and 여수 country; the novel has 전위 fight him to a draw first.
+ * Staged in 196, not after 완성, so 전위 is alive for it on every path (ADR 0071).
+ */
+export const XU_CHU: SceneDef = {
+  id: "lubu-xu-chu",
+  title: "초국의 장사",
+  place: "여남",
+  when: "건안 원년(196) 봄",
+  backdrop: "field",
+  stage: XU_VILLAGE,
+  cast: [
+    actor("xu-chu", 2, [7, 4], "right", { classId: "martialArtist" }),
+    extra("xu-v1", "cao", 2, [6, 3], "right"),
+    extra("xu-v2", "cao", 2, [6, 5], "right"),
+    extra("xu-v3", "cao", 2, [4, 4], "right"),
+    extra("huangjin-1", "huangjin", 1),
+    extra("huangjin-2", "huangjin", 1),
+    actor("cao-cao", 0),
+    actor("dian-wei", 0, undefined, undefined, { classId: "martialArtist" }),
+    extra("cao-s1", "cao", 0),
+    extra("cao-s2", "cao", 0),
+  ],
+  script: [
+    tell("건안 원년 봄. 조조는 여남과 영천의 황건 잔당을 쳐서 흩었다."),
+    tell("초국의 허저는 일가와 장정 수천 호를 모아 돌담을 쌓고 도적을 막고 있었다."),
+    camera([8, 4], 1300),
+    sound("move"),
+    all(enter("huangjin-1", [13, 4], [10, 4], true), enter("huangjin-2", [13, 5], [11, 5], true)),
+    all(emote("xu-v1", "!"), emote("xu-v2", "!")),
+    say("cao", "도적이다! 화살이 다 떨어졌습니다!", "hurt", {
+      name: "장정",
+      actor: "xu-v1",
+      ...village,
+    }),
+    say("xu-chu", "그럼 돌을 주워 와라. 주먹만 한 걸로!", "angry", village),
+    walk("xu-chu", [9, 4]),
+    all(strike("xu-chu", "huangjin-1"), sound("stone")),
+    all(act("huangjin-2", "hurt"), fx("dust", "huangjin-2"), sound("hit")),
+    each(BANDITS, (id) => emote(id, "sweat")),
+    all(leave("huangjin-1", [13, 4], true), leave("huangjin-2", [13, 5], true)),
+    tell("허저는 돌팔매로 도적을 쫓고, 소꼬리를 잡아 백 걸음을 끌었다는 장사였다."),
+    all(act("xu-v1", "cheer"), act("xu-v2", "cheer"), act("xu-v3", "cheer")),
+    pause(600),
+    sound("hoof"),
+    camera([11, 4], 1300),
+    all(
+      enter("cao-cao", [13, 2], [12, 2]),
+      enter("dian-wei", [13, 3], [12, 3]),
+      enter("cao-s1", [13, 5], [12, 5]),
+      enter("cao-s2", [13, 6], [12, 6]),
+    ),
+    all(act("xu-v1", "stand"), act("xu-v2", "stand"), act("xu-v3", "stand")),
+    emote("xu-chu", "anger"),
+    say("xu-chu", "또 왔느냐! 이번엔 군사 흉내까지 내는구나!", "angry", village),
+    face("dian-wei", "cao-cao"),
+    say("dian-wei", "주공, 저자의 팔뚝 좀 보십시오. 제가 한번 겨뤄 보겠습니다.", "smile"),
+    say("cao-cao", "다치게는 하지 마라. 저런 장사는 얻기 어렵다.", "smile"),
+    walk("dian-wei", [11, 4]),
+    walk("xu-chu", [10, 4]),
+    face("dian-wei", "xu-chu"),
+    say("dian-wei", "진류의 전위다! 네 힘이 어디까지인지 보자!", "angry"),
+    say("xu-chu", "누군지 몰라도 잘 왔다. 이 마을 앞은 내가 지킨다!", "angry", village),
+    { do: "duel", a: "dian-wei", b: "xu-chu", bouts: 5, outcome: "draw" },
+    all(emote("dian-wei", "sweat"), emote("xu-chu", "sweat")),
+    tell("두 사람은 해가 기울도록 맞붙었으나 끝내 승부가 나지 않았다."),
+    walk("cao-cao", [11, 3]),
+    say("cao-cao", "그만, 둘 다 그만하라!", "smile"),
+    say("cao-cao", "하늘 아래 이런 장사가 둘이나 있었구나.", "smile"),
+    face("xu-chu", "cao-cao"),
+    emote("xu-chu", "?"),
+    say("xu-chu", "…주공이라 하셨소? 그럼 이분이 조 연주목이십니까?", "calm", village),
+    all(
+      act("xu-chu", "kneel"),
+      act("xu-v1", "kneel"),
+      act("xu-v2", "kneel"),
+      act("xu-v3", "kneel"),
+    ),
+    say("xu-chu", "초국 사람 허저, 중강입니다. 마을 장정들과 함께 따르겠습니다!", "calm"),
+    say("cao-cao", "이 사람은 나의 번쾌로다!", "smile"),
+    say("cao-cao", "그대를 도위로 삼겠다. 따라온 장정들도 모두 내 호위가 될 것이다.", "smile"),
+    face("dian-wei", "xu-chu"),
+    say("dian-wei", "승부는 다음에 내자. 주공의 막사 앞에서 기다리마.", "smile"),
+    say("xu-chu", "얼마든지요! 다음엔 배부터 든든히 채우고 오겠습니다.", "smile"),
+  ],
+  joins: [
+    { officer: "xu-chu", classId: "martialArtist", level: 13, gear: ["ring-dao", "leather"] },
+  ],
+};
+
+// ---------------------------------------------------------------- 11. 천자를 모시다
 
 export const EMPEROR: SceneDef = {
   id: "lubu-emperor",
@@ -1354,7 +1478,7 @@ export const EMPEROR: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 11. 완성의 술자리
+// ---------------------------------------------------------------- 12. 완성의 술자리
 
 export const FEAST: SceneDef = {
   id: "lubu-wancheng",
@@ -1465,7 +1589,7 @@ export const FEAST: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 12. 육수의 새벽
+// ---------------------------------------------------------------- 13. 육수의 새벽
 
 export const AFTER_WANCHENG: SceneDef = {
   id: "lubu-after-wancheng",
@@ -1536,35 +1660,31 @@ export const AFTER_WANCHENG: SceneDef = {
       act("dian-wei", "down"),
       tell("전위의 몸에는 성한 곳이 없었다. 그러나 숨은 붙어 있었다."),
     ),
+    // 허저 (with us since 196) comes looking with his village men.
     sound("move"),
     camera([10, 4], 1300),
-    enter("xu-chu", [13, 5], [11, 5]),
+    enter("xu-chu", [13, 5], [11, 5], true),
     all(enter("cao-v1", [13, 4], [12, 4]), enter("cao-v2", [13, 6], [12, 6])),
     act("cao-cao", "stand"),
     face("cao-cao", "xu-chu"),
-    say("xu-chu", "초국 사람 허저입니다! 마을 장정들을 이끌고 주공을 찾아왔습니다.", "smile"),
-    tell("허저는 도적 떼를 돌팔매로 물리치고, 소 꼬리를 잡아 백 걸음을 끌었다는 장사였다."),
-    say("cao-cao", "이 사람은 나의 번쾌로다!", "smile"),
+    say("xu-chu", "주공! 강가를 다 뒤졌습니다. 무사하셔서 다행입니다!", "hurt"),
     ...when(
       fell,
-      say("cao-cao", "오늘부터 내 곁을 지켜라. 전위가 서 있던 자리다.", "grim"),
+      say("cao-cao", "중강, 이제 내 곁은 네가 지켜라. 전위가 서 있던 자리다.", "grim"),
       act("xu-chu", "kneel"),
       say("xu-chu", "그분의 몫까지 지키겠습니다.", "calm"),
     ),
     ...when(
       lived,
-      say("cao-cao", "전위가 일어설 때까지 내 곁을 지켜라.", "calm"),
+      say("cao-cao", "중강, 전위가 일어설 때까지 내 곁을 지켜라.", "calm"),
       act("xu-chu", "kneel"),
       say("xu-chu", "전위 장군이 일어나시면, 둘이서 지키겠습니다!", "smile"),
     ),
   ],
   leaves: [{ officer: "dian-wei", if: fell }],
-  joins: [
-    { officer: "xu-chu", classId: "martialArtist", level: 14, gear: ["ring-dao", "leather"] },
-  ],
 };
 
-// ---------------------------------------------------------------- 13. 가짜 황제
+// ---------------------------------------------------------------- 14. 가짜 황제
 
 const YUAN_GENERALS = ["ji-ling", "qiao-rui", "zhang-xun"];
 
@@ -1620,7 +1740,7 @@ export const BEFORE_QI: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 14. 퇴로의 함정
+// ---------------------------------------------------------------- 15. 퇴로의 함정
 
 export const BEFORE_ANZHONG: SceneDef = {
   id: "lubu-before-anzhong",
@@ -1680,7 +1800,7 @@ export const BEFORE_ANZHONG: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 15. 서주에서 온 편지
+// ---------------------------------------------------------------- 16. 서주에서 온 편지
 
 export const AFTER_ANZHONG: SceneDef = {
   id: "lubu-after-anzhong",
@@ -1790,7 +1910,7 @@ export const AFTER_ANZHONG: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 16. 얼어붙은 성
+// ---------------------------------------------------------------- 17. 얼어붙은 성
 
 export const BEFORE_XIAPI: SceneDef = {
   id: "lubu-before-xiapi",
@@ -1889,7 +2009,7 @@ export const BEFORE_XIAPI: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 17. 백문루 (choice)
+// ---------------------------------------------------------------- 18. 백문루 (choice)
 
 export const WHITE_GATE: SceneDef = {
   id: "lubu-white-gate",
@@ -2066,7 +2186,7 @@ export const WHITE_GATE: SceneDef = {
   ],
 };
 
-// ---------------------------------------------------------------- 18. 북쪽의 구름
+// ---------------------------------------------------------------- 19. 북쪽의 구름
 
 export const EPILOGUE: SceneDef = {
   id: "lubu-epilogue",
@@ -2269,7 +2389,7 @@ export const CAMP_2: CampDef = {
   ],
 };
 
-/** 197, after 완성: grief for 조앙 (and 전위 if he fell); 허저 new. */
+/** 197, after 완성: grief for 조앙 (and 전위 if he fell); 허저 takes the guard. */
 export const CAMP_3: CampDef = {
   id: "lubu-camp-3",
   shop: [...SHOP_1, "crane-fan", "iron-shot", "seal-cord"],
@@ -2277,10 +2397,13 @@ export const CAMP_3: CampDef = {
   talk: [
     talk(
       "xu-chu",
-      [["전위 장군이 서 있던 자리라 들었습니다. 부끄럽지 않게 서겠습니다.", "grim"]],
+      [
+        ["전위 장군과 못 낸 승부는 이제 영영 낼 수 없게 되었습니다.", "grim"],
+        ["그분이 서 있던 자리에 부끄럽지 않게 서겠습니다.", "grim"],
+      ],
       fell,
     ),
-    talk("xu-chu", [["전위 장군이 일어나시면 팔씨름 한 판 해 보고 싶습니다!", "smile"]], lived),
+    talk("xu-chu", [["전위 장군이 일어나시면 그날 못 낸 승부를 마저 내야지요!", "smile"]], lived),
     talk(
       "dian-wei",
       [

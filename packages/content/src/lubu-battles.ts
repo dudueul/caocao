@@ -798,7 +798,8 @@ export const XIAPI: StoryBattleDef = {
     foe("lu-bu", "shockCavalry", 20, 14, 7, hold),
     foe("chen-gong", "tactician", 18, 15, 8, { ...heal, if: revenge }),
     foe("gao-shun", "heavyInfantry", 18, 11, 8, guard),
-    foe("xianzhen", "heavyInfantry", 16, 12, 8, { id: "xianzhen-infantry-1", ...hold }),
+    // 고순's 함진영 stand where they are put; they never ride out after 조조.
+    foe("xianzhen", "heavyInfantry", 16, 12, 8, { id: "xianzhen-infantry-1", ...guard }),
     foe("xianzhen", "heavyInfantry", 16, 14, 10, { id: "xianzhen-infantry-2", ...guard }),
     foe("zhang-liao", "cavalry", 18, 13, 9, hold),
     foe("hou-cheng", "infantry", 17, 14, 5, guard),

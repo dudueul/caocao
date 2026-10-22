@@ -32,6 +32,7 @@ import {
   PROLOGUE,
   REVOLT,
   WHITE_GATE,
+  XU_CHU,
   XUZHOU,
 } from "./lubu-scenes.ts";
 import type { ChapterDef } from "./story.ts";
@@ -78,6 +79,7 @@ export const LUBU: ChapterDef = {
     { kind: "battle", battle: DINGTAO },
     { kind: "scene", scene: AFTER_DINGTAO },
     { kind: "camp", camp: CAMP_2 },
+    { kind: "scene", scene: XU_CHU },
     { kind: "scene", scene: EMPEROR },
     { kind: "scene", scene: FEAST },
     { kind: "battle", battle: WANCHENG },
