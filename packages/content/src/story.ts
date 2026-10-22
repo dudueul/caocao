@@ -200,6 +200,18 @@ export type Cmd = (
       readonly prompt: string;
       readonly options: readonly ChoiceOption[];
     }
+  /**
+   * A 일기토 shown on the duel screen and watched (ADR 0071): `a` and `b` are
+   * actors on stage, `bouts` how many they fight, `outcome` how it ends. The
+   * blows are drawn from the scene id, so it plays the same every time.
+   */
+  | {
+      readonly do: "duel";
+      readonly a: string;
+      readonly b: string;
+      readonly bouts: number;
+      readonly outcome: "a" | "b" | "draw";
+    }
   | { readonly do: "all"; readonly cmds: readonly Cmd[] }
 ) & { readonly if?: Cond };
 
