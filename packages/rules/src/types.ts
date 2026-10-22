@@ -210,6 +210,25 @@ export interface Tuning {
   readonly maxStacks: number;
   /** Lowest ATK/DEF multiplier‰ that conditions can bring a unit to. */
   readonly modifierFloor: number;
+  /** Most bouts in a 일기토 (ADR 0071); 0 turns duels off (the Arena). */
+  readonly duelBouts: number;
+  /** A clean duel blow takes this ‰ of the loser's max HP, plus duelBlowPerMartial per 무력 point of difference, within min–max. */
+  readonly duelBlowBase: number;
+  readonly duelBlowPerMartial: number;
+  readonly duelBlowMin: number;
+  readonly duelBlowMax: number;
+  /** A 강공 that lands hits this ‰ as hard; a 방어 that turns a 강공 back hits this ‰. */
+  readonly duelPower: number;
+  readonly duelCounter: number;
+  /** ‰ an officer accepts a challenge: base, per 무력 point he has over the challenger, per point of 무력 over 지력 (boldness), within min–max. */
+  readonly duelAcceptBase: number;
+  readonly duelAcceptPerMartial: number;
+  readonly duelAcceptPerBoldness: number;
+  readonly duelAcceptMin: number;
+  readonly duelAcceptMax: number;
+  /** After a duel, units within this many tiles of the winner and of the loser gain heart or lose it, for this many turns. */
+  readonly duelMoraleRadius: number;
+  readonly duelMoraleTurns: number;
 }
 
 export interface Ruleset {
@@ -223,6 +242,8 @@ export interface Ruleset {
   readonly tuning: Tuning;
   /** Per-mode tuning overrides, merged over `tuning` by `forMode()`. */
   readonly modes?: Readonly<Partial<Record<ModeId, Partial<Tuning>>>>;
+  /** Conditions a 일기토 spreads (ADR 0071): heart for the winner's side, dismay for the loser's. */
+  readonly duelMorale?: { readonly win: string; readonly lose: string };
 }
 
 // ---------------------------------------------------------------- battle state
@@ -265,6 +286,8 @@ export interface Unit {
    * acts, takes no conditions, and does not keep its side in the battle.
    */
   structure?: true;
+  /** A named officer, who can challenge or be challenged to a 일기토 (ADR 0071); troops can't. */
+  named?: true;
 }
 
 export interface BurningTile {
@@ -332,13 +355,49 @@ export interface Shift {
   damage: number;
 }
 
+/** A 일기토 stance (ADR 0071): 강공 breaks 공격, 방어 turns 강공 back, 공격 wears 방어 down. */
+export type Stance = "attack" | "power" | "guard";
+
+/** When a story duel happens (ADR 0071). */
+export type DuelTrigger =
+  /** When the first challenger stands next to the foe: offered as the 일기토 command if `play`, else it fires at once. */
+  { kind: "adjacent" } | { kind: "round"; round: number } | { kind: "arrived"; unit: string };
+
+/** How a story duel ends, as history tells it. */
+export type DuelOutcome = "a" | "b" | "draw" | "bWithdraws";
+
+/** A duel the story stages (ADR 0071): it ends as history did, whatever the stances. */
+export interface ScriptedDuel {
+  id: string;
+  /** The challengers, in order; more than one take the bouts in turn (the three brothers against 여포). */
+  a: string[];
+  b: string;
+  when: DuelTrigger;
+  /** The player plays the bouts (side 0's officer, offered as the command); otherwise it is watched. */
+  play: boolean;
+  outcome: DuelOutcome;
+  /** The loser dies for good rather than retreating. */
+  fatal: boolean;
+}
+
+/** The 일기토 under way; the battle waits for it. */
+export interface DuelState {
+  /** The challenger, whose side picks stances, and the officer who answered. */
+  a: string;
+  b: string;
+  /** Bouts fought so far. */
+  bout: number;
+  /** The story duel this is, if it is one. */
+  script: string | null;
+}
+
 export interface BattleState {
   /**
-   * State format; 6 since structures (ADR 0069), 5 since allies (ADR 0066),
+   * State format; 7 since duels (ADR 0071), 6 since structures (ADR 0069), 5 since allies (ADR 0066),
    * 4 since map shifts (ADR 0062), 3 since goals and arrivals (ADR 0047),
    * 2 since conditions (ADR 0035).
    */
-  version: 6;
+  version: 7;
   mode: ModeId;
   map: BattleMap;
   weather: WeatherKind;
@@ -367,6 +426,10 @@ export interface BattleState {
   reserve: Arrival[];
   /** Map changes still to happen, in setup order; a shift leaves the list once it fires. */
   shifts: Shift[];
+  /** Story duels still to happen; one leaves the list once it is fought (ADR 0071). */
+  duels: ScriptedDuel[];
+  /** The 일기토 under way, if any: only bouts or withdrawing are legal until it ends. */
+  duel: DuelState | null;
   prng: PrngState;
   /** Set when the battle is over: the winning side, or -1 for a draw. */
   winner: number | null;
@@ -377,12 +440,18 @@ export interface BattleState {
 export type Action =
   | { kind: "attack"; target: string }
   | { kind: "stratagem"; id: string; at: Cell }
+  /** Challenge an adjacent enemy officer to a 일기토 (ADR 0071). */
+  | { kind: "duel"; target: string }
   | { kind: "wait" };
 
 /** One command = one unit's whole action: move to `to`, then act. */
 export type Command =
   | { kind: "act"; unit: string; to: Cell; action: Action }
-  | { kind: "endPhase" };
+  | { kind: "endPhase" }
+  /** The challenger's stance for the next bout of the 일기토 under way. */
+  | { kind: "bout"; stance: Stance }
+  /** The challenger pulls out of the 일기토; nobody loses. */
+  | { kind: "withdraw" };
 
 export type StrikeRole = "first" | "counter" | "second";
 
@@ -437,6 +506,36 @@ export type BattleEvent =
   | { kind: "shifted"; shift: string; tiles: TileChange[]; by: string | null }
   /** A shift left a unit on ground it can't stand on and carried it to `to`. */
   | { kind: "swept"; unit: string; from: Cell; to: Cell; damage: number; hpAfter: number }
+  /** A challenge to a 일기토, and whether it was taken up (ADR 0071). */
+  | { kind: "challenge"; a: string; b: string; accepted: boolean; script: string | null }
+  /** One bout: each side's stance and the damage each took. */
+  | {
+      kind: "bout";
+      a: string;
+      b: string;
+      n: number;
+      stanceA: Stance;
+      stanceB: Stance;
+      damageA: number;
+      damageB: number;
+      hpA: number;
+      hpB: number;
+    }
+  /** The duel's end: a winner and a loser, or neither (a draw, or a withdrawal). */
+  | {
+      kind: "duelEnd";
+      a: string;
+      b: string;
+      winner: string | null;
+      loser: string | null;
+      /** The loser died for good (a story duel that history ends so). */
+      fatal: boolean;
+      withdrew: string | null;
+      /** The story duel this was, if it was one. */
+      script: string | null;
+    }
+  /** A duel or a refusal lifted or shook these units' hearts. */
+  | { kind: "morale"; condition: string; turns: number; units: string[] }
   /** `goal` is the index of the goal that decided the battle, if one did. */
   | { kind: "battleEnd"; winner: number; goal?: number };
 

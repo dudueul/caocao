@@ -1,8 +1,8 @@
 # Remake: 난세의 간웅, a Three Kingdoms grid-tactics game built from scratch
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
-> this folder describes the **current** design. Last updated 2026-10-21
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0070](../adr/0070-portraits-from-the-record.md)).
+> this folder describes the **current** design. Last updated 2026-10-22
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0071](../adr/0071-duels.md)).
 
 ## Vision
 
@@ -124,6 +124,7 @@ flowchart TB
 | 곽가's march | The player chooses whether the sick 곽가 marches to 백랑산: the 오환 are surprised but he dies, or he lives and the 오환 are ready | [0068](../adr/0068-guo-jia-choice.md) |
 | Breakable gates | Gates are works: units that hold a tile, never act and open the way when broken; stone-throwers hit them hardest; state v6 | [0069](../adr/0069-breakable-gates.md) |
 | Portraits from the record | Each officer's own headgear, build, turn, beard, accent and prop, from the histories first, after a benchmark of other Three Kingdoms games; [PORTRAITS.md](PORTRAITS.md) | [0070](../adr/0070-portraits-from-the-record.md) |
+| 일기토 | A named officer can challenge an adjacent enemy officer; up to 5 bouts of secret stances (강공 > 공격 > 방어 > 강공), 무력 sets the blow; the loser retreats and hearts swing; the famous story duels are staged and end as history did; state v7 | [0071](../adr/0071-duels.md) |
 
 ## Roadmap
 
@@ -147,7 +148,7 @@ seven battles, with choices at 서주 and 백문루 and 전위's fate at 완성)
 chapter 3 (관도, five battles) and chapter 4 (하북 평정, seven battles, with
 breakable gates at 업 and the choice over 곽가's march), carrying the roster
 from chapter to chapter.
-Battles have goals, reinforcements, map shifts (하비's flood) and gates to break (업); scenes are
+Battles have goals, reinforcements, map shifts (하비's flood), gates to break (업) and 일기토; scenes are
 acted out on tile maps, and the camp is a place to walk; there are painted
 portraits, experience, levels and tier-2 promotions, equipment and a shop,
 saves, synthesized music and sound, settings and first-battle tips. Still to

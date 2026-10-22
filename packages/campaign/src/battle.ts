@@ -21,6 +21,7 @@ import type {
   Gambit,
   Goal,
   Ruleset,
+  ScriptedDuel,
   Shift,
   Stats,
   UnitSetup,
@@ -126,6 +127,11 @@ export function storySetup(
   });
   const others = battleUnits(b, state.flags).map((u) => unitSetup(u, `battle ${b.id}`));
   const { goals, shifts } = battleRules(b, state.flags);
+  // A story duel needs every officer it names on the field (장료 must have sortied).
+  const ids = new Set([...mine, ...others].map((u) => u.id));
+  const duels = (b.duels ?? [])
+    .filter((d) => holds(d.if, state.flags) && [...d.a, d.b].every((id) => ids.has(id)))
+    .map(({ if: _, ...d }) => structuredClone(d) as ScriptedDuel);
   return {
     mode: "story",
     map: parseMap(b.map),
@@ -136,6 +142,7 @@ export function storySetup(
     units: [...mine, ...others],
     goals,
     shifts,
+    duels,
     burning: (b.burning ?? []).map((t) => ({ ...t })),
     // Allies (side 2) are on our team and move after us, before the enemy (ADR 0066).
     teams: [0, 1, 0],

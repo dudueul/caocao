@@ -40,6 +40,20 @@ export const DEFAULT_TUNING: Tuning = {
   stackDiscount: 500,
   maxStacks: 3,
   modifierFloor: 300,
+  duelBouts: 5,
+  duelBlowBase: 150,
+  duelBlowPerMartial: 4,
+  duelBlowMin: 60,
+  duelBlowMax: 350,
+  duelPower: 1500,
+  duelCounter: 1200,
+  duelAcceptBase: 400,
+  duelAcceptPerMartial: 12,
+  duelAcceptPerBoldness: 4,
+  duelAcceptMin: 50,
+  duelAcceptMax: 950,
+  duelMoraleRadius: 3,
+  duelMoraleTurns: 2,
 };
 
 const BEATS: Readonly<Record<CounterGroup, CounterGroup>> = {

@@ -5,7 +5,15 @@
  * (ADR 0063), and the camp is a map the player walks (ADR 0064). Choices and
  * battle outcomes set story flags that later steps can test (ADR 0060, 0061).
  */
-import type { BurningTile, Cell, Goal, Shift, TileChange, WeatherKind } from "@tk/rules";
+import type {
+  BurningTile,
+  Cell,
+  Goal,
+  ScriptedDuel,
+  Shift,
+  TileChange,
+  WeatherKind,
+} from "@tk/rules";
 import type { MapDef } from "./maps.ts";
 import type { ScenarioUnit } from "./scenarios.ts";
 
@@ -220,6 +228,9 @@ export type TalkTrigger =
   | { readonly at: "arrived"; readonly unit: string }
   /** When a map shift fires (the flood at 하비, ADR 0062). */
   | { readonly at: "shifted"; readonly shift: string }
+  /** Before the first bout of a story duel, and when it ends (ADR 0071). */
+  | { readonly at: "duel"; readonly duel: string }
+  | { readonly at: "duelEnd"; readonly duel: string }
   /** When the battle ends with this winner (0 = the player). */
   | { readonly at: "end"; readonly winner: number };
 
@@ -237,6 +248,12 @@ export type StoryGoal = Goal & { readonly if?: Cond };
 
 /** A map change in a story battle (ADR 0062). */
 export type StoryShift = Shift & { readonly if?: Cond };
+
+/**
+ * A duel the story stages (ADR 0071): it ends as history did. It happens only
+ * if every officer it names is on the field, and its `if` holds.
+ */
+export type StoryDuel = ScriptedDuel & { readonly if?: Cond };
 
 /**
  * A fate decided by play (ADR 0061): once the battle is won, `flag` becomes
@@ -289,6 +306,8 @@ export interface StoryBattleDef {
   readonly goals: readonly StoryGoal[];
   /** Map changes during the battle: the flood at 하비, a gate opened from inside (ADR 0062). */
   readonly shifts?: readonly StoryShift[];
+  /** Famous duels, ending as history did (ADR 0071). */
+  readonly duels?: readonly StoryDuel[];
   /** Tiles to mark ★ for the player besides goal tiles (a sluice to open). */
   readonly marks?: readonly Cell[];
   /** Tiles already on fire when the battle begins. */

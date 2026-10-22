@@ -12,6 +12,7 @@ import { legalCommands } from "./battle.ts";
 import { classOf, friendly, hostile, isAlive, NEIGHBOURS, terrainAt, unitById } from "./board.ts";
 import { attackPower, defensePower, hitChance, previewAttack, strikeDamage } from "./combat.ts";
 import { conditionDef, hasBlock, stacksOf, stackWeight } from "./conditions.ts";
+import { aiStance } from "./duel.ts";
 import { half, permille } from "./math.ts";
 import { reachable } from "./move.ts";
 import {
@@ -403,7 +404,9 @@ export function scoreCommand(
   command: Command,
   threats: ThreatMap = threatMap(state, rules),
 ): number {
-  if (command.kind === "endPhase") return -1_000_000;
+  if (command.kind !== "act") return -1_000_000;
+  // The AI does not issue challenges of its own; duels come from the player or the story (ADR 0071).
+  if (command.action.kind === "duel") return -1_000_000;
   const unit = unitById(state, command.unit);
   const [s, me] = shadow(state, unit, command.to);
   const tile = rules.terrains[terrainAt(s, me.x, me.y)];
@@ -603,7 +606,11 @@ export function chooseCommand(
   gambits: Readonly<Record<string, readonly Gambit[]>> = {},
 ): Command | null {
   const rules = forMode(baseRules, state.mode);
-  const commands = legalCommands(state, rules);
+  // In a duel under way, the challenger's side picks a stance by his temper.
+  if (state.duel) return { kind: "bout", stance: aiStance(state) };
+  const commands = legalCommands(state, rules).filter(
+    (c) => c.kind !== "act" || c.action.kind !== "duel",
+  );
   const threats = threatMap(state, rules);
   const byUnit = new Map<string, Act[]>();
   let fallback: Command | null = null;

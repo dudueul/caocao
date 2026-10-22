@@ -46,6 +46,15 @@ export {
   stacksOf,
   stackWeight,
 } from "./conditions.ts";
+export {
+  acceptChance,
+  duelBlocked,
+  duelBlow,
+  duelsAllowed,
+  STANCES,
+  scriptedFor,
+  stanceByTemper,
+} from "./duel.ts";
 export { bringArrivals, decidingGoal, goalMet, landingCell } from "./goals.ts";
 export { canonical, hashState } from "./hash.ts";
 export { canReach, type Reach, reachable } from "./move.ts";

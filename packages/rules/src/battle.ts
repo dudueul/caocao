@@ -19,6 +19,17 @@ import {
 } from "./board.ts";
 import { defeat, resolveAttack } from "./combat.ts";
 import { endTurn, hasBlock } from "./conditions.ts";
+import {
+  acceptChance,
+  duelBlocked,
+  duelsAllowed,
+  endDuel,
+  fireDuels,
+  playBout,
+  refused,
+  STANCES,
+  scriptedFor,
+} from "./duel.ts";
 import { bringArrivals, endByGoal } from "./goals.ts";
 import { permille } from "./math.ts";
 import { canReach, reachable } from "./move.ts";
@@ -35,6 +46,7 @@ import type {
   Goal,
   ModeId,
   Ruleset,
+  ScriptedDuel,
   Shift,
   Stats,
   TurnPolicyId,
@@ -55,6 +67,8 @@ export interface UnitSetup {
   y: number;
   /** Joins at the start of this round (2 or later) instead of starting on the field (ADR 0047). */
   arrives?: number;
+  /** A named officer, who can fight a 일기토 (ADR 0071). */
+  named?: boolean;
 }
 
 export interface BattleSetup {
@@ -76,6 +90,8 @@ export interface BattleSetup {
   teams?: number[];
   /** The order sides take their turns in; default: by side number. */
   order?: number[];
+  /** Duels the story stages, ending as history did (ADR 0071). */
+  duels?: ScriptedDuel[];
 }
 
 export type ApplyResult =
@@ -115,6 +131,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
         broken: false,
         fate: null,
         ...(cls.family === "structure" ? { structure: true as const } : {}),
+        ...(s.named && cls.family !== "structure" ? { named: true as const } : {}),
       };
     })
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
@@ -152,7 +169,7 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
   if (order.length !== sides || range.some((s) => !order.includes(s)))
     throw new Error("turn order must list every side once");
   const state: BattleState = {
-    version: 6,
+    version: 7,
     mode,
     map: { width: setup.map.width, height: setup.map.height, tiles: [...setup.map.tiles] },
     weather: setup.weather,
@@ -168,6 +185,8 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
     goals,
     reserve,
     shifts: [],
+    duels: checkDuels(setup.duels ?? [], ids),
+    duel: null,
     prng: seedFromString(setup.seed),
     winner: null,
   };
@@ -185,6 +204,26 @@ export function createBattle(baseRules: Ruleset, setup: BattleSetup): BattleStat
   state.burning = [...fire.entries()].sort((a, b) => a[0] - b[0]).map(([, b]) => b);
   state.active = firstSideOfRound(state);
   return state;
+}
+
+/** Story duels must name units of the battle; ids are unique; a played duel has one challenger. */
+function checkDuels(list: readonly ScriptedDuel[], ids: ReadonlySet<string>): ScriptedDuel[] {
+  const seen = new Set<string>();
+  for (const d of list) {
+    if (seen.has(d.id)) throw new Error(`duel ${d.id} twice`);
+    seen.add(d.id);
+    if (d.a.length === 0) throw new Error(`duel ${d.id} has no challenger`);
+    for (const id of [...d.a, d.b]) if (!ids.has(id)) throw new Error(`duel ${d.id} names ${id}`);
+    if (d.a.includes(d.b)) throw new Error(`duel ${d.id} pits a unit against itself`);
+    if (d.play && d.a.length !== 1) throw new Error(`played duel ${d.id} needs one challenger`);
+    if (d.play && d.when.kind !== "adjacent")
+      throw new Error(`played duel ${d.id} is offered when adjacent`);
+    if (d.when.kind === "arrived" && !ids.has(d.when.unit))
+      throw new Error(`duel ${d.id} waits for an unknown unit`);
+    if (d.when.kind === "round" && (!Number.isSafeInteger(d.when.round) || d.when.round < 1))
+      throw new Error(`duel ${d.id} has a bad round`);
+  }
+  return list.map((d) => structuredClone(d));
 }
 
 /** Living units of `side` that have not acted this round. */
@@ -219,6 +258,12 @@ export function legalCommands(state: BattleState, baseRules: Ruleset): Command[]
   if (state.winner !== null) return [];
   const rules = forMode(baseRules, state.mode);
   const out: Command[] = [];
+  if (state.duel) {
+    for (const stance of STANCES) out.push({ kind: "bout", stance });
+    if (!state.duel.script) out.push({ kind: "withdraw" });
+    return out;
+  }
+  const duels = duelsAllowed(rules);
   for (const u of readyUnits(state, state.active)) {
     if (hasBlock(rules, u, "act")) {
       out.push({ kind: "act", unit: u.id, to: { x: u.x, y: u.y }, action: { kind: "wait" } });
@@ -232,6 +277,18 @@ export function legalCommands(state: BattleState, baseRules: Ruleset): Command[]
         const target = unitAt(state, to.x + o.dx, to.y + o.dy);
         if (target && hostile(state, target.side, u.side) && target.id !== u.id) {
           out.push({ kind: "act", unit: u.id, to, action: { kind: "attack", target: target.id } });
+        }
+      }
+      if (duels && u.named) {
+        for (const d of [
+          { dx: 0, dy: -1 },
+          { dx: 1, dy: 0 },
+          { dx: 0, dy: 1 },
+          { dx: -1, dy: 0 },
+        ]) {
+          const target = unitAt(state, to.x + d.dx, to.y + d.dy);
+          if (target && duelBlocked(rules, state, u, target, to) === null)
+            out.push({ kind: "act", unit: u.id, to, action: { kind: "duel", target: target.id } });
         }
       }
       for (const id of cls.stratagems) {
@@ -255,6 +312,29 @@ export function apply(state: BattleState, baseRules: Ruleset, command: Command):
   const next = structuredClone(state);
   const prng = new Prng(next.prng);
   const events: BattleEvent[] = [];
+
+  if (next.duel) {
+    const duel = next.duel;
+    if (command.kind !== "bout" && command.kind !== "withdraw")
+      return { ok: false, reason: "a duel is under way" };
+    if (command.kind === "withdraw" && duel.script)
+      return { ok: false, reason: "history does not let this duel be left" };
+    if (command.kind === "bout" && !STANCES.includes(command.stance))
+      return { ok: false, reason: "unknown stance" };
+    const over =
+      command.kind === "withdraw" || playBout(rules, next, prng, duel, command.stance, events);
+    if (over) {
+      const challenger = unitById(next, duel.a);
+      endDuel(rules, next, duel, command.kind === "withdraw" ? duel.a : null, events);
+      challenger.acted = true;
+      endTurn(rules, challenger, events);
+      advance(next, rules, prng, events);
+    }
+    next.prng = prng.state;
+    return { ok: true, state: next, events };
+  }
+  if (command.kind === "bout" || command.kind === "withdraw")
+    return { ok: false, reason: "no duel under way" };
 
   if (command.kind === "endPhase") {
     if (next.policy !== "sidePhases")
@@ -284,6 +364,24 @@ export function apply(state: BattleState, baseRules: Ruleset, command: Command):
       resolveAttack(rules, next, prng, unit, unitById(next, action.target), events);
     } else if (action.kind === "stratagem") {
       castStratagem(rules, next, prng, unit, stratagemDef(rules, action.id), action.at, events);
+    } else if (action.kind === "duel") {
+      const target = unitById(next, action.target);
+      const script = scriptedFor(next, unit.id, target.id);
+      const accepted = script !== null || prng.chance(acceptChance(rules, unit, target));
+      events.push({
+        kind: "challenge",
+        a: unit.id,
+        b: target.id,
+        accepted,
+        script: script?.id ?? null,
+      });
+      if (accepted) {
+        // The battle waits while the duel is fought, bout by bout.
+        next.duel = { a: unit.id, b: target.id, bout: 0, script: script?.id ?? null };
+        next.prng = prng.state;
+        return { ok: true, state: next, events };
+      }
+      refused(rules, next, target, events);
     } else {
       events.push({ kind: "waited", unit: unit.id });
     }
@@ -324,6 +422,11 @@ function validateAct(
     const def = rules.stratagems[a.id];
     if (!def) return "unknown stratagem";
     if (!canCast(rules, state, unit, def, c.to, a.at)) return "cannot cast here";
+  } else if (a.kind === "duel") {
+    const target = state.units.find((u) => u.id === a.target);
+    if (!target) return "no such target";
+    const blocked = duelBlocked(rules, state, unit, target, c.to);
+    if (blocked) return blocked;
   }
   return null;
 }
@@ -331,6 +434,7 @@ function validateAct(
 /** After an action: end the battle, or pass the turn per the turn policy. */
 function advance(state: BattleState, rules: Ruleset, prng: Prng, events: BattleEvent[]): void {
   fireShifts(state, rules, events);
+  fireDuels(rules, state, prng, events);
   if (endByGoal(state, events)) return;
   if (endByRout(state, events)) return;
   const at = state.order.indexOf(state.active);
@@ -377,8 +481,11 @@ function newRound(state: BattleState, rules: Ruleset, prng: Prng, events: Battle
   for (const b of state.burning) b.rounds -= 1;
   state.burning = state.burning.filter((b) => b.rounds > 0);
   if (endByGoal(state, events)) return;
+  const before = events.length;
   bringArrivals(state, rules, events);
+  const arrived = events.slice(before).flatMap((e) => (e.kind === "arrived" ? [e.unit] : []));
   fireShifts(state, rules, events);
+  fireDuels(rules, state, prng, events, arrived);
   if (endByGoal(state, events)) return;
   if (endByRout(state, events)) return;
   for (const u of state.units) {

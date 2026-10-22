@@ -83,3 +83,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0068](0068-guo-jia-choice.md) | Let the player choose whether 곽가 marches to 백랑산 | Accepted | 2026-10-21 |
 | [0069](0069-breakable-gates.md) | Breakable gates: works that block a tile until they are broken | Accepted | 2026-10-21 |
 | [0070](0070-portraits-from-the-record.md) | Paint each officer from the record: their own headgear, build, turn, beard and props | Accepted | 2026-10-21 |
+| [0071](0071-duels.md) | 일기토: challenge an officer, pick a stance each bout; story duels end as history did | Accepted | 2026-10-22 |

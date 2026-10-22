@@ -42,7 +42,7 @@ describe("allies (ADR 0066)", () => {
         ALLIED,
       ),
     );
-    expect([s.version, s.teams, s.order, s.active]).toEqual([6, [0, 1, 0], [0, 2, 1], 0]);
+    expect([s.version, s.teams, s.order, s.active]).toEqual([7, [0, 1, 0], [0, 2, 1], 0]);
     let r = ok(s, wait("me", 0, 0));
     expect(r.events.at(-1)).toEqual({ kind: "turn", side: 2, round: 1 });
     s = ok(r.state, wait("ally", 2, 0)).state;

@@ -21,6 +21,8 @@ export const PROGRESSION = {
   defeatMax: 50,
   /** Extra for defeating a unit a goal names (the enemy commander). */
   commanderBonus: 30,
+  /** Winning a 일기토, on top of the defeat (ADR 0071). */
+  duelBonus: 30,
   /** A stratagem that harms or hinders an enemy, per target. */
   spellBase: 12,
   spellPerLevel: 2,

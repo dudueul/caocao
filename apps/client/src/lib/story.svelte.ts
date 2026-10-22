@@ -367,6 +367,10 @@ export class Story {
         return events.some((e) => e.kind === "arrived" && e.unit === t.unit);
       case "shifted":
         return events.some((e) => e.kind === "shifted" && e.shift === t.shift);
+      case "duel":
+        return events.some((e) => e.kind === "challenge" && e.script === t.duel);
+      case "duelEnd":
+        return events.some((e) => e.kind === "duelEnd" && e.script === t.duel);
       case "end":
         return events.some((e) => e.kind === "battleEnd" && e.winner === t.winner);
     }

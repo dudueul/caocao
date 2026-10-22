@@ -112,6 +112,7 @@ export type {
   StationDef,
   StationKind,
   StoryBattleDef,
+  StoryDuel,
   StoryGoal,
   StoryShift,
   StoryUnit,

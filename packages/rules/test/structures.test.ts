@@ -44,7 +44,7 @@ describe("structures: breakable gates (ADR 0069)", () => {
         unit("foe", 1, "infantry", 6, 1),
       ]),
     );
-    expect(s.version).toBe(6);
+    expect(s.version).toBe(7);
     expect(unitById(s, "gate").structure).toBe(true);
     expect(unitById(s, "me").structure).toBeUndefined();
     const moves = legalCommands(s, R).filter((c) => c.kind === "act" && c.unit === "me");

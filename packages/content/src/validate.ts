@@ -263,6 +263,7 @@ function chapterConds(ch: ChapterDef): Cond[] {
       for (const u of [...b.guests, ...(b.allies ?? []), ...b.enemies]) push(u.if);
       for (const g of b.goals) push(g.if);
       for (const sh of b.shifts ?? []) push(sh.if);
+      for (const d of b.duels ?? []) push(d.if);
       for (const t of b.talk) push(t.if);
     } else {
       for (const t of step.camp.talk ?? []) push(t.if);
@@ -638,6 +639,29 @@ function validateStoryBattle(
     }
   }
   for (const c of b.marks ?? []) if (!inMap(c)) say("mark off the map");
+  const duelIds = new Set<string>();
+  const sideOf = (id: string) =>
+    roster.has(id) ? 0 : units.find((u) => (u.id ?? u.officer) === id)?.side;
+  for (const d of (b.duels ?? []).filter((x) => holds(x.if, flags))) {
+    if (duelIds.has(d.id)) say(`duel ${d.id} twice`);
+    duelIds.add(d.id);
+    if (d.a.length === 0) say(`duel ${d.id} has no challenger`);
+    for (const id of [...d.a, d.b]) {
+      if (!known.has(id)) say(`duel ${d.id} names unknown unit ${id}`);
+      else if (OFFICERS[id]?.generic) say(`duel ${d.id}: ${id} is a troop, not an officer`);
+    }
+    const sb = sideOf(d.b);
+    if (d.a.some((id) => sideOf(id) === sb)) say(`duel ${d.id}: a challenger is on the foe's side`);
+    if (d.play && (d.a.length !== 1 || sideOf(d.a[0] ?? "") !== 0))
+      say(`duel ${d.id}: a played duel needs one challenger of ours`);
+    if (d.play && d.when.kind !== "adjacent")
+      say(`duel ${d.id}: a played duel is offered when adjacent`);
+    if (
+      d.when.kind === "arrived" &&
+      !units.some((u) => (u.id ?? u.officer) === (d.when as { unit: string }).unit && u.arrives)
+    )
+      say(`duel ${d.id} waits for a unit that never arrives`);
+  }
   for (const f of b.fates ?? []) {
     if (!known.has(f.unit)) say(`fate names unknown unit ${f.unit}`);
     if (!FLAG_TEXT.test(f.flag) || !FLAG_TEXT.test(f.standing) || !FLAG_TEXT.test(f.fallen))
@@ -652,6 +676,8 @@ function validateStoryBattle(
       say(`talk waits for ${w.unit}, who never arrives`);
     if (w.at === "shifted" && !(b.shifts ?? []).some((sh) => sh.id === w.shift))
       say(`talk waits for shift ${w.shift}, which does not exist`);
+    if ((w.at === "duel" || w.at === "duelEnd") && !(b.duels ?? []).some((d) => d.id === w.duel))
+      say(`talk waits for duel ${w.duel}, which does not exist`);
     for (const l of t.lines)
       if (l.who !== undefined && !OFFICERS[l.who]) say(`unknown speaker ${l.who}`);
   }

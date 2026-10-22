@@ -172,6 +172,8 @@ export function unitSetup(u: ScenarioUnit, where: string): UnitSetup {
     x: u.x,
     y: u.y,
     ...(u.arrives ? { arrives: u.arrives } : {}),
+    // Named officers can fight a 일기토; troops can't (ADR 0071).
+    ...(officer.generic ? {} : { named: true }),
   };
 }
 

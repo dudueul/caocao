@@ -41,6 +41,10 @@ export const P0_RULES: Ruleset = {
     ),
   ),
   tuning: DEFAULT_TUNING,
+  // No duels between two players in the Arena: a 일기토 is a story thing (ADR 0071).
+  modes: { arena: { duelBouts: 0 } },
+  // A duel won lifts the winner's side (고무); a duel lost or refused shakes the loser's (약화).
+  duelMorale: { win: "rally", lose: "weaken" },
 };
 
 /**

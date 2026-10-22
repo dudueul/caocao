@@ -90,6 +90,22 @@ export function recordEvents(
       case "pushed":
         if (caster && e.damage > 0) lastHit.set(e.unit, caster);
         break;
+      case "bout": {
+        // A landed duel blow earns like a strike (ADR 0071).
+        for (const [by, on, dmg] of [
+          [e.a, e.b, e.damageB],
+          [e.b, e.a, e.damageA],
+        ] as const) {
+          if (dmg <= 0) continue;
+          lastHit.set(on, by);
+          const gap = level(on) - level(by);
+          add(by, clamp(P.strikeBase + P.strikePerLevel * gap, P.strikeMin, P.strikeMax));
+        }
+        break;
+      }
+      case "duelEnd":
+        if (e.winner && e.loser) add(e.winner, P.duelBonus);
+        break;
       case "defeated": {
         const by = lastHit.get(e.unit);
         if (!by || side(by) === side(e.unit)) break;
