@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { Forecast, Session } from "../lib/session.svelte.ts";
-import { conditionName, pct, STAGE, T } from "../lib/text.ts";
+import { conditionName, pct, STAGE, STANCE, T } from "../lib/text.ts";
 import Portrait from "./Portrait.svelte";
 
 let { session, forecast }: { session: Session; forecast: Forecast } = $props();
@@ -68,6 +68,50 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
         <span class="chip">{STAGE[step.stage] ?? step.stage} {step.value}</span>
       {/each}
     </div>
+  {:else if forecast.kind === "duel"}
+    {@const f = forecast}
+    <div class="duel-head" class:story={f.story}>
+      {#if f.story}
+        ★ {T.storyDuel}
+      {:else}
+        ⚑ {T.duel}
+      {/if}
+    </div>
+    <div class="vs">
+      {#each [
+        { u: f.a, blow: f.blowA },
+        { u: f.b, blow: f.blowB },
+      ] as x, k (x.u.id)}
+        {#if k === 1}
+          <div class="arrow">⚔</div>
+        {/if}
+        <div class:right={k === 1}>
+          <div class="who" class:right={k === 1}>
+            <Portrait id={x.u.id} classId={x.u.classId} side={x.u.side} size={40} mood="angry" />
+            <strong>{x.u.name}</strong>
+          </div>
+          <div class="big">{T.martial} {x.u.stats.martial}</div>
+          <div class="muted">HP {x.u.hp}/{x.u.maxHp}</div>
+          <div class="muted">{T.blow} ≈{x.blow}</div>
+        </div>
+      {/each}
+    </div>
+    <div class="tags">
+      {#if f.story}
+        <span class="chip story">{T.acceptChance} 100% · {T.alwaysAccepts}</span>
+      {:else}
+        <span class="chip" class:low={f.accept < 400}>{T.acceptChance} {pct(f.accept)}</span>
+      {/if}
+    </div>
+    <div
+      class="triangle"
+      title={`${STANCE.power.hint} · ${STANCE.guard.hint} · ${STANCE.attack.hint}`}
+    >
+      {T.triangle}
+    </div>
+    {#if !f.story}
+      <div class="muted note">{T.refuseNote}</div>
+    {/if}
   {:else}
     {@const p = forecast.preview}
     {@const def = session.rules.stratagems[forecast.id]}
@@ -182,5 +226,44 @@ const name = (id: string) => session.state.units.find((u) => u.id === id)?.name 
 .buff {
   border-color: var(--good);
   color: var(--good);
+}
+.duel-head {
+  margin-bottom: 6px;
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.duel-head.story {
+  color: #ffe08a;
+  text-shadow: 0 0 10px rgba(255, 210, 100, 0.55);
+}
+.right {
+  text-align: right;
+}
+.who.right {
+  flex-direction: row-reverse;
+}
+.chip.story {
+  border-color: var(--accent);
+  color: #ffe08a;
+}
+.chip.low {
+  color: var(--bad);
+}
+.triangle {
+  margin-top: 6px;
+  padding: 3px 8px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #f2d58a;
+  background: rgba(232, 194, 106, 0.08);
+  border: 1px solid rgba(232, 194, 106, 0.25);
+  border-radius: 6px;
+}
+.note {
+  margin-top: 4px;
+  font-size: 11.5px;
 }
 </style>

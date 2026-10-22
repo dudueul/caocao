@@ -309,6 +309,8 @@ export class Story {
     this.ledger = emptyLedger();
     this.played = new Set();
     session.director = (events, before, after) => this.direct(b, events, before, after);
+    // A duel's talk comes before its first bout and after its end, not after the whole command.
+    session.interlude = (events) => this.talkFor(b, events);
     session.startStory({
       setup: storySetup(this.campaign, b, this.sortie, randomSeed()),
       orders: storyOrders(b, this.campaign.flags),
@@ -383,6 +385,11 @@ export class Story {
     after: BattleState,
   ): Promise<void> {
     recordEvents(this.ledger, before, after, events);
+    await this.talkFor(b, events);
+  }
+
+  /** Plays the talk these events set off that has not played yet, in the battle's order. */
+  private async talkFor(b: StoryBattleDef, events: readonly BattleEvent[]): Promise<void> {
     const side = this.session?.humanSide ?? 0;
     for (const [i, t] of b.talk.entries()) {
       const key = `${i}`;

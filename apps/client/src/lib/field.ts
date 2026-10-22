@@ -39,7 +39,7 @@ import { gateTexture, tokenTexture } from "./fx/tokens.ts";
 import { walkPath } from "./path.ts";
 import type { Session } from "./session.svelte.ts";
 import type { ClassicSkin, Facing, Pose } from "./skin.svelte.ts";
-import { FATE, SCHOOL_COLOR } from "./text.ts";
+import { FATE, refusal, SCHOOL_COLOR } from "./text.ts";
 
 /** Flat terrain colours (the deploy mini-map and tile chips). */
 export const TERRAIN_COLOR: Record<TerrainId, number> = {
@@ -975,8 +975,8 @@ export class Field {
     return this.tween(this.ms(base), () => {});
   }
 
-  /** A floating number or word that pops in, rises and fades. */
-  private float(at: Cell, text: string, color: number, big = false): void {
+  /** A floating number or word that pops in, rises and fades (over `life` ms at normal speed). */
+  private float(at: Cell, text: string, color: number, big = false, life = 1000): void {
     if (this.session.speed === 0) return;
     const t = this.tile;
     const size = Math.round(t * (big ? 0.56 : 0.4));
@@ -994,9 +994,12 @@ export class Field {
     label.anchor.set(0.5);
     const p = this.center(at);
     const y0 = p.y - t * 0.3;
-    label.position.set(p.x, y0);
+    // A long line (a refused challenge) stays over the map rather than run off its edge.
+    const half = label.width / 2 + 4;
+    const right = this.session.state.map.width * t - half;
+    label.position.set(right > half ? Math.max(half, Math.min(right, p.x)) : p.x, y0);
     this.labels.addChild(label);
-    void this.tween(this.ms(1000), (k) => {
+    void this.tween(this.ms(life), (k) => {
       const pop = k < 0.12 ? 1.7 - (k / 0.12) * 0.7 : 1;
       label.scale.set(pop);
       label.position.y = y0 - (1 - (1 - k) ** 2) * t * 0.7;
@@ -1083,8 +1086,11 @@ export class Field {
       zoomed = false;
       await this.focus({ x: this.cam.fx, y: this.cam.fy }, 1, 0, 260);
     };
+    const order = duelOrder(events);
+    /** After this event, story talk for the duel just ended (once its loser has left the field). */
+    let talkAfter = -1;
     try {
-      for (const e of events) {
+      for (const [i, e] of order.entries()) {
         if (zoomed && e.kind !== "strike" && e.kind !== "defeated") await zoomOut();
         switch (e.kind) {
           case "moved": {
@@ -1406,8 +1412,62 @@ export class Field {
               for (const u of after.units)
                 if (u.hp > 0 && u.side === e.winner) fx.heal(this.fxc(), this.center(at(u.id)));
             break;
+          case "challenge": {
+            // 일기토 (ADR 0071): a refusal is a line over the one who turned it down.
+            const name = (id: string) => before.units.find((u) => u.id === id)?.name ?? id;
+            if (!e.accepted) {
+              sound("cancel", at(e.b));
+              this.float(
+                { ...at(e.b), y: at(e.b).y - 0.6 },
+                refusal(name(e.b)),
+                0xfff0c8,
+                true,
+                1700,
+              );
+              await this.wait(1150);
+              break;
+            }
+            sound("select", at(e.a));
+            this.float(at(e.a), e.script ? "★ 일기토!" : "일기토!", 0xffd27a, true);
+            await this.wait(380);
+            await this.session.stageDuel(e, before, after, order.slice(0, i + 1));
+            break;
+          }
+          case "bout":
+            await this.session.stageDuel(e, before, after, order.slice(0, i + 1));
+            setHp(e.a, e.hpA);
+            setHp(e.b, e.hpB);
+            break;
+          case "duelEnd": {
+            await this.session.stageDuel(e, before, after, order.slice(0, i + 1));
+            let j = i + 1;
+            while (order[j]?.kind === "defeated" || order[j]?.kind === "morale") j++;
+            talkAfter = j - 1;
+            break;
+          }
+          case "morale": {
+            // Hearts rise or sink around the duel: 고무 ▲ / 약화 ▼ over each unit.
+            const def = this.session.rules.conditions[e.condition];
+            const buff = def?.kind === "buff";
+            sound(buff ? "buff" : "debuff", at(e.units[0] ?? ""));
+            for (const id of e.units) {
+              const c = at(id);
+              if (!quiet()) fx.aura(this.fxc(), this.center(c), buff ? 0xffe27a : 0xb57cff, buff);
+              this.float(
+                { x: c.x, y: c.y - 0.45 },
+                `${def?.name ?? e.condition} ${buff ? "▲" : "▼"}`,
+                buff ? 0xffe27a : 0xc58cff,
+              );
+            }
+            await this.wait(520);
+            break;
+          }
           default:
             break;
+        }
+        if (i === talkAfter) {
+          await zoomOut();
+          await this.session.afterDuel(order.slice(0, i + 1));
         }
       }
     } finally {
@@ -1424,6 +1484,24 @@ export class Field {
 }
 
 const DOWN: Dir = { facing: "down", flip: false };
+
+/**
+ * The events in the order they are shown: a duel's end comes before its
+ * loser's fall, so the duel screen closes on its banner and the field then
+ * shows him leaving (the rules list the fall first).
+ */
+function duelOrder(events: readonly BattleEvent[]): BattleEvent[] {
+  const out = [...events];
+  for (let i = 1; i < out.length; i++) {
+    const e = out[i];
+    const prev = out[i - 1];
+    if (e?.kind === "duelEnd" && prev?.kind === "defeated" && prev.unit === e.loser) {
+      out[i - 1] = e;
+      out[i] = prev;
+    }
+  }
+  return out;
+}
 
 /** The way from one tile to another; side frames are mirrored to face right. */
 function dirTo(from: Cell, to: Cell, skin: ClassicSkin | null): Dir {

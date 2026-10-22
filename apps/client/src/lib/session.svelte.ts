@@ -11,6 +11,7 @@
 import { P0_RULES, SCENARIOS, type ScenarioDef, scenarioOrders, scenarioSetup } from "@tk/content";
 import {
   type AttackPreview,
+  acceptChance,
   apply,
   type BattleEvent,
   type BattleSetup,
@@ -21,6 +22,8 @@ import {
   classOf,
   createBattle,
   dangerTiles,
+  duelBlow,
+  forMode,
   friendly,
   type Gambit,
   legalCommands,
@@ -28,7 +31,9 @@ import {
   previewStratagem,
   type Ruleset,
   reachable,
+  type Stance,
   type StratagemPreview,
+  scriptedFor,
   stratagemDef,
   type TurnPolicyId,
   type Unit,
@@ -36,11 +41,12 @@ import {
 } from "@tk/rules";
 import { audio } from "./audio/index.ts";
 import { CLASSIC_BATTLES, onClassicMap } from "./classic-battle.ts";
+import { DuelShow, duelist } from "./duel.svelte.ts";
 import type { ClassicMapGrid } from "./skin.svelte.ts";
 import { describe, type LogLine } from "./text.ts";
 
 type Act = Extract<Command, { kind: "act" }>;
-export type Aim = { kind: "attack" } | { kind: "stratagem"; id: string };
+export type Aim = { kind: "attack" } | { kind: "stratagem"; id: string } | { kind: "duel" };
 export type Speed = 0 | 1 | 2 | 4;
 
 export interface BattleOptions {
@@ -61,7 +67,21 @@ export type Forecast =
       at: Cell;
       area: Cell[];
       preview: StratagemPreview;
+    }
+  | {
+      /** A 일기토 challenge (ADR 0071): the odds he takes it up, and a clean blow each way. */
+      kind: "duel";
+      a: Unit;
+      b: Unit;
+      /** ‰ that the foe accepts; 1000 for a story duel. */
+      accept: number;
+      blowA: number;
+      blowB: number;
+      story: boolean;
     };
+
+/** The duel events the field hands to the duel screen. */
+export type DuelEvent = Extract<BattleEvent, { kind: "challenge" | "bout" | "duelEnd" }>;
 
 /** Animates the events of one command; resolves when the field shows `after`. */
 export type Player = (
@@ -144,6 +164,13 @@ export class Session {
   director: Director | null = null;
   /** Story lines are being read over the field (the battle waits). */
   talking = $state(false);
+  /** The 일기토 on the duel screen, if one is shown (ADR 0071). */
+  duel = $state.raw<DuelShow | null>(null);
+  /**
+   * Story talk for the events shown so far, in the middle of a command: before
+   * a duel's first bout and after its end, so talk and duel come in order.
+   */
+  interlude: ((events: BattleEvent[]) => Promise<void>) | null = null;
 
   options = $state<BattleOptions>({
     scenario: "wuchao-raid",
@@ -279,14 +306,34 @@ export class Session {
       return { id, name: def.name, mp: def.mp, cells };
     });
   });
+  /** Officers the selected unit may challenge to a 일기토 from the pending tile. */
+  duelCells = $derived<Cell[]>(
+    this.here.flatMap((c) => {
+      const a = c.action;
+      if (a.kind !== "duel") return [];
+      const t = this.state.units.find((u) => u.id === a.target);
+      return t ? [{ x: t.x, y: t.y }] : [];
+    }),
+  );
+  /** The foes among them whom history has the selected unit fight (★ 역사의 일기토). */
+  storyDuels = $derived<string[]>(
+    this.here.flatMap((c) =>
+      c.action.kind === "duel" && scriptedFor(this.state, c.unit, c.action.target)
+        ? [c.action.target]
+        : [],
+    ),
+  );
   /** Cells the current aim may target. */
   aimCells = $derived<Cell[]>(
     this.aim === null
       ? []
       : this.aim.kind === "attack"
         ? this.attackCells
-        : (this.stratagemOptions.find((s) => this.aim?.kind === "stratagem" && s.id === this.aim.id)
-            ?.cells ?? []),
+        : this.aim.kind === "duel"
+          ? this.duelCells
+          : (this.stratagemOptions.find(
+              (s) => this.aim?.kind === "stratagem" && s.id === this.aim.id,
+            )?.cells ?? []),
   );
   danger = $derived<Cell[]>(
     this.showDanger ? dangerTiles(this.state, this.rules, this.humanSide) : [],
@@ -312,6 +359,21 @@ export class Session {
         attacker: moved,
         defender: d,
         preview: previewAttack(this.rules, ghost, moved, d),
+      };
+    }
+    if (aim.kind === "duel") {
+      const d = ghost.units.find((v) => v.hp > 0 && v.x === at.x && v.y === at.y);
+      if (!d) return null;
+      const rules = forMode(this.rules, this.state.mode);
+      const story = scriptedFor(this.state, u.id, d.id) !== null;
+      return {
+        kind: "duel",
+        a: moved,
+        b: d,
+        accept: story ? 1000 : acceptChance(rules, moved, d),
+        blowA: duelBlow(rules, moved, d),
+        blowB: duelBlow(rules, d, moved),
+        story,
       };
     }
     const def = stratagemDef(this.rules, aim.id);
@@ -353,6 +415,9 @@ export class Session {
       if (clicked && clicked.side !== this.humanSide && this.inCells(this.attackCells, c)) {
         this.aim = { kind: "attack" };
         this.target = c;
+      } else if (clicked && this.inCells(this.duelCells, c)) {
+        this.aim = { kind: "duel" };
+        this.target = c;
       } else if (this.inCells(this.reach, c) && !same(this.to, c)) this.to = c;
       else this.undoMove();
       return;
@@ -367,6 +432,12 @@ export class Session {
   chooseAttack(): void {
     this.aim = { kind: "attack" };
     this.target = this.attackCells.length === 1 ? (this.attackCells[0] ?? null) : null;
+  }
+
+  /** 일기토: pick the officer to challenge (straight to the forecast if there is one). */
+  chooseDuel(): void {
+    this.aim = { kind: "duel" };
+    this.target = this.duelCells.length === 1 ? (this.duelCells[0] ?? null) : null;
   }
 
   chooseStratagem(id: string): void {
@@ -404,11 +475,32 @@ export class Session {
         const t = this.unitAt(at);
         return t !== undefined && a.target === t.id;
       }
+      if (aim.kind === "duel" && a.kind === "duel") {
+        const t = this.unitAt(at);
+        return t !== undefined && a.target === t.id;
+      }
       return (
         aim.kind === "stratagem" && a.kind === "stratagem" && a.id === aim.id && same(a.at, at)
       );
     });
     if (cmd) await this.commit(cmd);
+  }
+
+  /** The stance for the next bout of the 일기토 under way. */
+  async bout(stance: Stance): Promise<void> {
+    const cmd = this.legal.find((c) => c.kind === "bout" && c.stance === stance);
+    if (!cmd || this.busy) return;
+    const show = this.duel;
+    show?.chosen(stance);
+    await this.commit(cmd);
+    // A refused command leaves the pick open again.
+    if (show && show.phase === "pick" && !this.busy) show.picked = null;
+  }
+
+  /** Pulls out of the 일기토 under way (not a story duel). */
+  async withdraw(): Promise<void> {
+    const cmd = this.legal.find((c) => c.kind === "withdraw");
+    if (cmd && !this.busy) await this.commit(cmd);
   }
 
   async endPhase(): Promise<void> {
@@ -437,6 +529,7 @@ export class Session {
     this.start = this.state;
     this.commands = [];
     this.log = [];
+    this.duel = null;
     this.clearChoice();
     this.selected = null;
     this.flash(`${this.title} · ${this.sideNames[this.humanSide]}`, "turn");
@@ -487,7 +580,9 @@ export class Session {
       this.state = state;
       this.start = state;
       this.commands = [];
+      this.duel = null;
       this.clearChoice();
+      this.syncDuel();
       this.busy = false;
     });
   }
@@ -555,8 +650,99 @@ export class Session {
     }
     if (this.selected && !this.state.units.some((u) => u.id === this.selected && u.hp > 0))
       this.selected = null;
+    this.syncDuel();
     if (this.director) await this.director(r.events, before, r.state);
     this.busy = false;
+  }
+
+  // ------------------------------------------------------------ the duel screen (ADR 0071)
+
+  /** The field reached a duel's moment: shows it on the duel screen; resolves once shown. */
+  async stageDuel(
+    e: DuelEvent,
+    before: BattleState,
+    after: BattleState,
+    sofar: BattleEvent[],
+  ): Promise<void> {
+    if (e.kind === "challenge") {
+      if (!e.accepted) return;
+      // Story talk before the first bout (the challenge shouted across the field).
+      await this.interlude?.(sofar);
+      // A watched duel is fought out within this one command.
+      const watched = after.duel === null;
+      if (watched && this.speed === 0) return;
+      try {
+        this.duel = this.showFor([before, after], e.a, e.b, e.script, watched);
+      } catch (err) {
+        // The battle goes on without the duel screen rather than stall.
+        console.error(err);
+        this.duel = null;
+        return;
+      }
+      await this.duel.open();
+      return;
+    }
+    const show = this.duel;
+    if (!show) return;
+    if (e.kind === "bout") await show.bout(e);
+    else {
+      await show.end(e);
+      if (this.duel === show) this.duel = null;
+    }
+  }
+
+  /** Story talk after a duel ends: the field calls it once the loser has left the field. */
+  async afterDuel(sofar: BattleEvent[]): Promise<void> {
+    await this.interlude?.(sofar);
+  }
+
+  /**
+   * The duel screen for a duel between `a` and `b`, with the fighters as they
+   * stand in the first of `states` that has them (one who arrived this very
+   * command is still in the reserve before it).
+   */
+  private showFor(
+    states: readonly BattleState[],
+    a: string,
+    b: string,
+    script: string | null,
+    watched: boolean,
+  ): DuelShow {
+    const state = states[0] ?? this.state;
+    const find = (id: string) => {
+      for (const s of states) {
+        const u = s.units.find((v) => v.id === id) ?? s.reserve.find((r) => r.unit.id === id)?.unit;
+        if (u) return u;
+      }
+      return null;
+    };
+    const unit = (id: string) => {
+      const u = find(id);
+      if (!u) throw new Error(`no unit ${id} for the duel`);
+      return duelist(u);
+    };
+    const story = script ? state.duels.find((d) => d.id === script) : undefined;
+    return new DuelShow({
+      a: unit(a),
+      b: unit(b),
+      cast: (story?.a ?? [a]).filter((id) => find(id) !== null).map(unit),
+      story: script !== null,
+      watched,
+      bouts: forMode(this.rules, state.mode).tuning.duelBouts,
+      friendly: (side) => friendly(state, side, this.humanSide),
+      pace: () => (this.speed === 0 ? 0 : 1 / Math.min(2, this.speed)),
+    });
+  }
+
+  /** A duel under way always has its screen (after a load or a reconnect too). */
+  private syncDuel(): void {
+    const d = this.state.duel;
+    if (d && (!this.duel || this.duel.watched)) {
+      const show = this.showFor([this.state], d.a, d.b, d.script, false);
+      show.n = d.bout;
+      show.phase = "pick";
+      this.duel = show;
+    } else if (!d && this.duel && !this.duel.watched) this.duel = null;
   }
 
   /** Lets the AI play every activation that isn't the human's. */

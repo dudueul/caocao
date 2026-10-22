@@ -8,6 +8,7 @@ import type {
   BattleState,
   Fate,
   Ruleset,
+  Stance,
   StratagemDef,
   StratagemSchool,
   TurnPolicyId,
@@ -100,7 +101,65 @@ export const T = {
   sealed: "책략 불가",
   map: "지도",
   defaultMap: "기본 지도",
+  duel: "일기토",
+  storyDuel: "역사의 일기토",
+  martial: "무력",
+  acceptChance: "응할 확률",
+  alwaysAccepts: "반드시 응한다",
+  blow: "일격",
+  refuseNote: "응하지 않으면 행동 끝 · 상대 진영 약화",
+  triangle: "강공 > 공격 > 방어 > 강공",
+  withdraw: "물러나기",
+  bout: "합",
+  fallen: "전사",
+  withdrew: "물러남",
+  continue: "계속",
+  pickStance: "자세를 고르세요",
 } as const;
+
+/** The three 일기토 stances (ADR 0071): a name, a glyph, and what each beats and loses to. */
+export const STANCE: Record<Stance, { name: string; glyph: string; hint: string }> = {
+  attack: { name: "공격", glyph: "攻", hint: "방어를 뚫고 강공에 진다" },
+  power: { name: "강공", glyph: "強", hint: "공격을 꺾고 방어에 진다" },
+  guard: { name: "방어", glyph: "防", hint: "강공을 받아치고 공격에 진다" },
+};
+
+/**
+ * What happened when two stances met, in a few words. `hitA` and `hitB` say
+ * who took a blow: a story duel bends the blows to history, and then the
+ * words follow the blows rather than the stances.
+ */
+export function clashWord(a: Stance, b: Stance, hitA: boolean, hitB: boolean): string {
+  const beats = (x: Stance, y: Stance) =>
+    (x === "power" && y === "attack") ||
+    (x === "guard" && y === "power") ||
+    (x === "attack" && y === "guard");
+  const both = a === b && a !== "guard";
+  const asStances =
+    a === b ? hitA === both && hitB === both : hitA === beats(b, a) && hitB === beats(a, b);
+  if (!asStances) {
+    if (hitA && hitB) return "서로 칼을 주고받는다!";
+    return hitA || hitB ? "빈틈을 파고든다!" : "칼끝이 비껴간다";
+  }
+  if (a === b)
+    return a === "attack" ? "맞부딪친다!" : a === "power" ? "강공끼리 격돌!" : "서로 노려본다";
+  const w = beats(a, b) ? a : b;
+  if (w === "power") return "강공이 공격을 꺾는다";
+  if (w === "guard") return "방어가 강공을 받아친다";
+  return "공격이 방어를 뚫는다";
+}
+
+/** A name with the right particle: `josa("화웅", "이", "가")` is 화웅이, `josa("관우", "이", "가")` 관우가. */
+export function josa(word: string, withFinal: string, without: string): string {
+  const c = word.charCodeAt(word.length - 1);
+  if (Number.isNaN(c) || c < 0xac00 || c > 0xd7a3) return `${word}${withFinal}(${without})`;
+  return word + ((c - 0xac00) % 28 > 0 ? withFinal : without);
+}
+
+/** The line floated over an officer who turns a challenge down. */
+export function refusal(name: string): string {
+  return `${josa(name, "이", "가")} 응하지 않는다!`;
+}
 
 /** Display name of a condition. */
 export function conditionName(rules: Ruleset, id: string): string {
@@ -266,6 +325,45 @@ export function describe(
         text: e.winner < 0 ? T.draw : `${sideNames[e.winner] ?? e.winner} ${T.victory}`,
         tone: "turn",
       };
+    case "challenge":
+      if (!e.accepted)
+        return {
+          text: `${josa(name(e.b), "이", "가")} ${name(e.a)}의 도전에 응하지 않음`,
+          tone: "info",
+        };
+      return {
+        text: `${e.script ? "★ " : ""}${name(e.a)} ⚔ ${name(e.b)}: ${e.script ? T.storyDuel : T.duel}!`,
+        tone: "twist",
+      };
+    case "bout": {
+      const blows = [
+        e.damageB > 0 ? `${name(e.b)} -${e.damageB}` : "",
+        e.damageA > 0 ? `${name(e.a)} -${e.damageA}` : "",
+      ].filter((x) => x);
+      return {
+        text: `${T.duel} ${e.n}${T.bout} · ${name(e.a)} ${STANCE[e.stanceA].name} / ${name(e.b)} ${STANCE[e.stanceB].name} → ${blows.join(" · ") || "승부 없음"}`,
+        tone: e.damageA === e.damageB ? "info" : tone(e.damageB > e.damageA ? e.a : e.b, true),
+      };
+    }
+    case "duelEnd":
+      if (e.winner && e.loser)
+        return {
+          text: `${josa(name(e.winner), "이", "가")} ${T.duel}에서 ${josa(name(e.loser), "을", "를")} 꺾다${e.fatal ? ` · ${name(e.loser)} ${T.fallen}` : ""}`,
+          tone: tone(e.winner, true),
+        };
+      if (e.withdrew)
+        return { text: `${name(e.withdrew)}, ${T.duel}에서 ${T.withdrew}`, tone: "info" };
+      return { text: `${T.duel} ${T.draw}: ${name(e.a)} · ${name(e.b)}`, tone: "info" };
+    case "morale": {
+      const def = rules.conditions[e.condition];
+      const names = e.units.slice(0, 3).map(name).join(", ");
+      const more = e.units.length > 3 ? ` 외 ${e.units.length - 3}` : "";
+      const first = e.units[0] ?? "";
+      return {
+        text: `${conditionName(rules, e.condition)} ${e.turns}${T.turns}: ${names}${more}`,
+        tone: tone(first, def?.kind === "buff"),
+      };
+    }
     default:
       return null;
   }

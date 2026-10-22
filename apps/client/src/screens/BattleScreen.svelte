@@ -5,6 +5,7 @@ import BattleField from "../components/BattleField.svelte";
 import Coach from "../components/Coach.svelte";
 import CommandMenu from "../components/CommandMenu.svelte";
 import CutIn from "../components/CutIn.svelte";
+import DuelView from "../components/DuelView.svelte";
 import EventLog from "../components/EventLog.svelte";
 import Floating from "../components/Floating.svelte";
 import Forecast from "../components/Forecast.svelte";
@@ -68,10 +69,21 @@ const waitingText = $derived(
 const forecastCell = $derived.by(() => {
   const f = session.forecast;
   if (!f) return null;
-  return f.kind === "attack" ? { x: f.defender.x, y: f.defender.y } : f.at;
+  return f.kind === "attack"
+    ? { x: f.defender.x, y: f.defender.y }
+    : f.kind === "duel"
+      ? { x: f.b.x, y: f.b.y }
+      : f.at;
 });
 
+/** The player picks the stances of a 일기토 of his own; a story duel can't be left. */
+const duelMine = $derived(
+  session.state.duel !== null && session.state.active === session.humanSide,
+);
+
 function onKey(e: KeyboardEvent) {
+  // The duel screen takes the keys while it is up (1 2 3, Esc).
+  if (session.duel) return;
   if (
     e.target instanceof HTMLInputElement ||
     e.target instanceof HTMLSelectElement ||
@@ -157,6 +169,16 @@ function onKey(e: KeyboardEvent) {
   {/if}
   {#if session.cutin}
     <CutIn cut={session.cutin} at={session.cutinAt} />
+  {/if}
+  {#if session.duel}
+    <DuelView
+      show={session.duel}
+      canPick={duelMine && session.myTurn}
+      onpick={(s) => session.bout(s)}
+      onwithdraw={duelMine && !session.state.duel?.script ? () => session.withdraw() : undefined}
+      auto={session.auto}
+      onauto={duelMine || session.auto ? (on) => session.setAuto(on) : undefined}
+    />
   {/if}
   {#if session.banner && session.banner.tone !== "end"}
     <div class="banner {session.banner.tone}">{session.banner.text}</div>

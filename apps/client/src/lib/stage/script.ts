@@ -17,10 +17,20 @@ import {
   type Line,
   type SceneDef,
 } from "@tk/content";
+import { type BoutView, sceneBouts } from "../duel.svelte.ts";
 import { usualClass } from "../speakers.ts";
 import type { ActorSpec, Stage } from "./stage.ts";
 
 export type ChoiceCmd = Extract<Cmd, { do: "choice" }>;
+export type DuelCmd = Extract<Cmd, { do: "duel" }>;
+
+/** A 일기토 a scene shows (ADR 0071): two actors and the bouts drawn for them. */
+export interface SceneDuel {
+  a: string;
+  b: string;
+  bouts: BoutView[];
+  outcome: DuelCmd["outcome"];
+}
 
 /** What the script needs from the screen: show a line, ask for a choice. */
 export interface ScriptUi {
@@ -32,6 +42,8 @@ export interface ScriptUi {
     prompt: string;
     options: readonly ChoiceOption[];
   }): Promise<string>;
+  /** Shows a duel on the duel screen; resolves once it has ended (none: passed over). */
+  duel?(duel: SceneDuel): Promise<void>;
 }
 
 /** The figure an actor is drawn as: its own class, the officer's in the roster, else infantry. */
@@ -65,6 +77,7 @@ export class ScenePlayer {
   private skipping = false;
   private readonly cast: Map<string, Actor>;
   private readonly says: Extract<Cmd, { do: "say" }>[] = [];
+  private readonly duels: DuelCmd[] = [];
   /** The last speaker before the current one, for turning toward a listener. */
   private lastSpeaker: string | null = null;
 
@@ -80,6 +93,7 @@ export class ScenePlayer {
     const collect = (cmds: readonly Cmd[]) => {
       for (const c of cmds) {
         if (c.do === "say") this.says.push(c);
+        else if (c.do === "duel") this.duels.push(c);
         else if (c.do === "all") collect(c.cmds);
       }
     };
@@ -157,6 +171,20 @@ export class ScenePlayer {
         return;
       case "say":
         return this.say(c);
+      case "duel": {
+        // Watched on the duel screen; skipping passes it over.
+        if (this.skipping || !this.ui.duel || !this.here(c.a) || !this.here(c.b)) return;
+        this.stage?.speaking(null);
+        const seed = `${this.scene.id}:duel:${this.duels.indexOf(c)}:${c.a}:${c.b}`;
+        await this.ui.duel({
+          a: c.a,
+          b: c.b,
+          bouts: sceneBouts(seed, c.a, c.bouts, c.outcome),
+          outcome: c.outcome,
+        });
+        this.check();
+        return;
+      }
       case "choice": {
         // Skipping stops here: a choice is always the player's.
         this.skipping = false;

@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-22
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0071](../adr/0071-duels.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0072](../adr/0072-duel-screen.md)).
 
 ## Vision
 

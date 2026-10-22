@@ -84,3 +84,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0069](0069-breakable-gates.md) | Breakable gates: works that block a tile until they are broken | Accepted | 2026-10-21 |
 | [0070](0070-portraits-from-the-record.md) | Paint each officer from the record: their own headgear, build, turn, beard and props | Accepted | 2026-10-21 |
 | [0071](0071-duels.md) | 일기토: challenge an officer, pick a stance each bout; story duels end as history did | Accepted | 2026-10-22 |
+| [0072](0072-duel-screen.md) | Show a 일기토 on its own screen, and let a story duel's last bout explain its ending | Proposed | 2026-10-22 |

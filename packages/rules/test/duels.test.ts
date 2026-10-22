@@ -221,6 +221,18 @@ describe("일기토 (ADR 0071)", () => {
       s = r.state;
     }
     expect(unitById(s, "yan-liang").fate).toBe("killed");
+    // Every blow shown is one the stances explain: no damage through two guards.
+    const lands = (x: string, y: string) =>
+      x === y
+        ? x !== "guard"
+        : (x === "power" && y === "attack") ||
+          (x === "guard" && y === "power") ||
+          (x === "attack" && y === "guard");
+    for (const e of events) {
+      if (e.kind !== "bout") continue;
+      if (e.damageB > 0) expect(lands(e.stanceA, e.stanceB)).toBe(true);
+      if (e.damageA > 0) expect(lands(e.stanceB, e.stanceA)).toBe(true);
+    }
     expect(unitById(s, "guan-yu").hp).toBeGreaterThan(0);
     expect(s.duels).toEqual([]);
     expect(events.filter((e) => e.kind === "bout").length).toBeLessThanOrEqual(5);

@@ -1,12 +1,14 @@
 <script lang="ts">
-import type { SceneDef } from "@tk/content";
+import { OFFICERS, type SceneDef } from "@tk/content";
 import { onMount, untrack } from "svelte";
 import Backdrop from "../../components/Backdrop.svelte";
 import ChoiceBox from "../../components/ChoiceBox.svelte";
 import DialogueBox from "../../components/DialogueBox.svelte";
+import DuelView from "../../components/DuelView.svelte";
+import { type Duelist, DuelShow } from "../../lib/duel.svelte.ts";
 import { settings } from "../../lib/settings.svelte.ts";
 import { speakerOf } from "../../lib/speakers.ts";
-import { castSpecs, ScenePlayer } from "../../lib/stage/script.ts";
+import { castSpecs, type SceneDuel, ScenePlayer } from "../../lib/stage/script.ts";
 import { Stage } from "../../lib/stage/stage.ts";
 import { story } from "../../lib/story.svelte.ts";
 
@@ -40,6 +42,8 @@ const sameVisit = (a: Visit | null, b: Visit | null) =>
   a !== null && b !== null && a.id === b.id && a.campaign === b.campaign;
 let loaded = $state.raw<Visit | null>(null);
 let playing: { visit: Visit; player: ScenePlayer } | null = null;
+/** A 일기토 the scene is showing (ADR 0071), watched on the duel screen. */
+let duel = $state.raw<DuelShow | null>(null);
 let cardTimer: ReturnType<typeof setTimeout> | undefined;
 
 onMount(() => {
@@ -63,6 +67,8 @@ onMount(() => {
   window.addEventListener("resize", onResize);
   return () => {
     window.removeEventListener("resize", onResize);
+    duel?.skip();
+    duel?.dismiss();
     playing?.player.stop();
     playing = null;
     s.destroy();
@@ -138,6 +144,7 @@ function play(sc: SceneDef, v: Visit) {
         const v = await story.ask({ kind: "choice", ...c });
         return v ?? c.options[0]?.value ?? "";
       },
+      duel: (d) => showDuel(sc, d),
     },
     alive,
   );
@@ -147,7 +154,47 @@ function play(sc: SceneDef, v: Visit) {
   });
 }
 
+/** Plays a scene's duel on the duel screen: the actors' officers, the bouts drawn for them. */
+async function showDuel(sc: SceneDef, d: SceneDuel): Promise<void> {
+  const specs = castSpecs(sc.cast, story.campaign.flags, story.campaign);
+  const fighter = (id: string): Duelist => {
+    const spec = specs.find((x) => x.id === id);
+    const officer = spec?.officer ?? id;
+    const def = OFFICERS[officer];
+    return {
+      id: officer,
+      name: def?.name ?? officer,
+      hanja: def?.hanja ?? "",
+      classId: spec?.classId ?? "infantry",
+      side: spec?.side ?? 0,
+      hp: 100,
+      maxHp: 100,
+      martial: def?.stats.martial ?? 50,
+      intellect: def?.stats.intellect ?? 50,
+    };
+  };
+  const a = fighter(d.a);
+  const b = fighter(d.b);
+  const show = new DuelShow({
+    a,
+    b,
+    story: true,
+    watched: true,
+    bouts: d.bouts.length,
+    friendly: (side) => side !== 1,
+    pace: () => 1,
+  });
+  duel = show;
+  await show.open();
+  for (const bout of d.bouts) await show.bout({ ...bout, a: a.id });
+  const winner = d.outcome === "a" ? a.id : d.outcome === "b" ? b.id : null;
+  const loser = d.outcome === "a" ? b.id : d.outcome === "b" ? a.id : null;
+  await show.end({ winner, loser, fatal: false, withdrew: null });
+  if (duel === show) duel = null;
+}
+
 function skip() {
+  duel?.skip();
   if (story.cue?.kind === "choice") return;
   if (playing) {
     playing.player.skip();
@@ -176,6 +223,9 @@ function skip() {
         <a class="button" href="#/" aria-label="타이틀로">☰</a>
       </div>
       <div class="where">{scene.place} · {scene.when}</div>
+      {#if duel}
+        <DuelView show={duel} />
+      {/if}
       {#if cue?.kind === "say" && line}
         <div class="dialogue">
           {#key cue.n}

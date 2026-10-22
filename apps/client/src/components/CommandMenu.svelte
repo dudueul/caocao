@@ -5,8 +5,10 @@ import type { Session } from "../lib/session.svelte.ts";
 import { SCHOOL_COLOR, stratagemSummary, T } from "../lib/text.ts";
 
 /**
- * The command menu beside the unit's chosen tile: 공격 · 책략 ▸ · 대기 · 이동 취소.
- * 책략 opens the unit's skills in place; arrows move, Enter picks, Esc steps back.
+ * The command menu beside the unit's chosen tile: 공격 · 책략 ▸ · 일기토 · 대기 ·
+ * 이동 취소. 책략 opens the unit's skills in place; 일기토 shows only when a named
+ * officer stands next to an enemy officer, with ★ when history has them meet
+ * (ADR 0071). Arrows move, Enter picks, Esc steps back.
  */
 let { session }: { session: Session } = $props();
 let skills = $state(false);
@@ -33,6 +35,12 @@ const options = $derived.by(() =>
   }),
 );
 const castable = $derived(options.some((o) => o.reason === null));
+/** History's foe for this officer here, if the 일기토 on offer is a story duel. */
+const storyFoe = $derived(
+  session.storyDuels.length > 0
+    ? (session.state.units.find((u) => u.id === session.storyDuels[0])?.name ?? null)
+    : null,
+);
 
 function buttons(): HTMLButtonElement[] {
   return [...box.querySelectorAll<HTMLButtonElement>("button:not(:disabled)")];
@@ -103,6 +111,21 @@ function onKey(e: KeyboardEvent) {
         <span class="icon">✦</span>{T.stratagem}<span class="more">▸</span>
       </button>
     {/if}
+    {#if session.duelCells.length > 0}
+      <button
+        type="button"
+        role="menuitem"
+        class="duel"
+        class:story={storyFoe !== null}
+        onclick={() => session.chooseDuel()}
+      >
+        <span class="icon">{storyFoe ? "★" : "⚑"}</span>
+        <span class="dname">{T.duel}</span>
+        {#if storyFoe}
+          <span class="dsub">{T.storyDuel} · {storyFoe}</span>
+        {/if}
+      </button>
+    {/if}
     <button type="button" role="menuitem" onclick={() => session.wait()}>
       <span class="icon">⏸</span>{T.wait}
     </button>
@@ -142,6 +165,34 @@ function onKey(e: KeyboardEvent) {
 .head {
   font-weight: 700;
   color: var(--accent);
+}
+.menu button.duel {
+  border-color: rgba(232, 194, 106, 0.45);
+}
+.menu button.duel.story {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  grid-template-areas: "icon name" ". sub";
+  gap: 0 8px;
+  background: linear-gradient(180deg, rgba(110, 82, 30, 0.95), rgba(58, 42, 16, 0.95));
+  border-color: var(--accent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 200, 0.2),
+    0 0 14px rgba(232, 194, 106, 0.3);
+}
+.duel.story .icon {
+  grid-area: icon;
+  color: #ffe08a;
+  text-shadow: 0 0 8px rgba(255, 210, 100, 0.8);
+}
+.duel.story .dname {
+  grid-area: name;
+  font-weight: 800;
+}
+.duel.story .dsub {
+  grid-area: sub;
+  font-size: 11.5px;
+  color: #f2d58a;
 }
 .menu button.skill {
   display: grid;

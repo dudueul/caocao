@@ -25,7 +25,7 @@ const view = $derived.by<OverlayView>(() => {
     attackable: s.to ? [] : s.reach.length > 0 ? s.attackable : s.inspect.strike,
     pending: s.to,
     aimCells: s.aimCells,
-    aimColor: def ? SCHOOL_COLOR[def.school] : 0xff3b30,
+    aimColor: def ? SCHOOL_COLOR[def.school] : aim?.kind === "duel" ? 0xe8c26a : 0xff3b30,
     target: s.target,
     area: s.forecast?.kind === "stratagem" ? s.forecast.area : [],
     danger: s.danger,

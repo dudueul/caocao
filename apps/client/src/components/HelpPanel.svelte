@@ -3,7 +3,7 @@ import { P0_RULES } from "@tk/content";
 import type { TerrainId } from "@tk/rules";
 import { ui } from "../lib/ui.svelte.ts";
 
-/** How to play, in short: controls, the counter triangle, terrain and skills. */
+/** How to play, in short: controls, the counter triangle, 일기토, terrain and skills. */
 function close() {
   ui.help = false;
 }
@@ -50,6 +50,28 @@ const TERRAIN_NOTES: [TerrainId, string][] = [
     </p>
     <p class="muted">
       유리한 상대에게 피해 +20%, 불리한 상대에게 −20%. 책사와 무도가는 상성 밖입니다.
+    </p>
+  </section>
+
+  <section>
+    <h3>일기토</h3>
+    <ul>
+      <li>
+        이름난 장수가 적장 곁에 서면 메뉴에 일기토가 뜹니다. 상대가 응하지 않으면 행동이 끝나고,
+        상대 진영이 약화됩니다.
+      </li>
+      <li>
+        합마다 자세를 고릅니다: <kbd>1</kbd> 공격 · <kbd>2</kbd> 강공 · <kbd>3</kbd> 방어 ·
+        <kbd>Esc</kbd>
+        물러나기. 다섯 합 안에 쓰러뜨리면 이깁니다.
+      </li>
+    </ul>
+    <p class="triangle">
+      <span>강공</span>
+      ▶ <span>공격</span> ▶ <span>방어</span> ▶ <span>강공</span>
+    </p>
+    <p class="muted">
+      이긴 쪽 주위는 고무되고 진 쪽 주위는 약화됩니다. ★ 역사의 일기토는 역사대로 끝납니다.
     </p>
   </section>
 

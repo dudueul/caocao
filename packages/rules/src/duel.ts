@@ -105,6 +105,18 @@ export function stanceByTemper(u: Unit, roll: number): Stance {
   return "guard";
 }
 
+/** The stance each stance beats, and the one that beats it: 강공 > 공격 > 방어 > 강공. */
+const VICTIM: Readonly<Record<Stance, Stance>> = {
+  power: "attack",
+  guard: "power",
+  attack: "guard",
+};
+const KILLER: Readonly<Record<Stance, Stance>> = {
+  attack: "power",
+  power: "guard",
+  guard: "attack",
+};
+
 /** Multipliers‰ for one bout: [what a deals to b, what b deals to a]. */
 function exchange(rules: Ruleset, sa: Stance, sb: Stance): [number, number] {
   const t = rules.tuning;
@@ -147,29 +159,23 @@ export function playBout(
   const aId = script && script.a.length > 1 ? challengerOf(script, n) : duel.a;
   const a = unitById(state, aId);
   const b = unitById(state, duel.b);
-  const stanceB = stanceBForced ?? stanceByTemper(b, prng.int(1000));
+  const last = n >= t.duelBouts;
+  const outcome = script?.outcome ?? null;
+  let stanceB = stanceBForced ?? stanceByTemper(b, prng.int(1000));
+  // On a story duel's last bout, history's loser picks the stance that loses,
+  // so the stances shown always explain the blow that ends it.
+  if (last && !stanceBForced && outcome === "a" && isAlive(b)) stanceB = VICTIM[stanceA];
+  if (last && !stanceBForced && outcome === "b" && isAlive(a)) stanceB = KILLER[stanceA];
   const [ma, mb] = exchange(rules, stanceA, stanceB);
   const spread = () => 900 + prng.int(201);
   let toB = ma > 0 ? permille(permille(duelBlow(rules, a, b), ma), spread()) : 0;
   let toA = mb > 0 ? permille(permille(duelBlow(rules, b, a), mb), spread()) : 0;
-  const last = n >= t.duelBouts;
-  if (script) {
-    const outcome = script.outcome;
-    // The side history lets win takes no fatal blow; the side it fells falls by the last bout.
-    if (outcome === "a" || outcome === "draw" || outcome === "bWithdraws")
-      toA = Math.min(toA, a.hp - 1);
-    if (outcome === "b" || outcome === "draw" || outcome === "bWithdraws")
-      toB = Math.min(toB, b.hp - 1);
-    if (outcome === "a") {
-      const left = t.duelBouts - duel.bout;
-      toB = Math.max(toB, Math.ceil(b.hp / left));
-      if (last) toB = b.hp;
-    }
-    if (outcome === "b") {
-      const left = t.duelBouts - duel.bout;
-      toA = Math.max(toA, Math.ceil(a.hp / left));
-      if (last) toA = a.hp;
-    }
+  if (outcome) {
+    // The side history lets stand takes no fatal blow; history's loser falls on the last bout.
+    if (outcome !== "b") toA = Math.min(toA, a.hp - 1);
+    if (outcome !== "a") toB = Math.min(toB, b.hp - 1);
+    if (outcome === "a" && last) toB = b.hp;
+    if (outcome === "b" && last) toA = a.hp;
   }
   toA = Math.max(0, Math.min(toA, a.hp));
   toB = Math.max(0, Math.min(toB, b.hp));
