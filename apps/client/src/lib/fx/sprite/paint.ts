@@ -17,7 +17,7 @@ import { solve } from "./rig.ts";
 /** The view for each facing: the side frames are a strong three-quarter turn to the right. */
 const YAW: Record<Facing, number> = { down: 0, up: Math.PI, side: (72 * Math.PI) / 180 };
 /** In side frames the head turns a little back toward the viewer, so the face reads. */
-const SIDE_TURN = -0.42;
+const SIDE_TURN = -0.6;
 /** Forward points sit lower (the bird's-eye view), sideways ones a little. */
 const KF = 0.75;
 const KL = 0.12;

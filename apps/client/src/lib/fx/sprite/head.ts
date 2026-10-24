@@ -136,7 +136,8 @@ function faceDepth(L: SpriteLook, v: number): number {
 
 /** The hairline: low over the brow, past the temples, under the ears, low at the nape. */
 function hairline(th: number, R: number): number {
-  const a = Math.abs(th);
+  // The angle off the face, either way round (th may be any turn, e.g. 0…2π).
+  const a = Math.abs(Math.atan2(Math.sin(th), Math.cos(th)));
   const s = (x: number, a0: number, a1: number) => {
     const t = Math.min(1, Math.max(0, (x - a0) / (a1 - a0)));
     return t * t * (3 - 2 * t);
@@ -289,7 +290,8 @@ function eye(g: G, H: HeadSpace, s: -1 | 1): void {
     return;
   }
   const [x, y] = H.pt(u, v, w);
-  const sx = Math.max(0.35, on);
+  // The far eye in a three-quarter turn stays readable, if narrow.
+  const sx = Math.max(0.5, on);
   let rx = R * 0.12 * sx;
   let ry = R * 0.15;
   const kind = L.eye;
@@ -480,6 +482,7 @@ function faceFrame(H: HeadSpace, back = false): (a: number, d: number) => Pt {
 
 /** A beard's mass, as an outline in the face's frame (head radii; the mouth at 0,0). */
 function beardOutline(kind: BeardKind): Pt[] | null {
+  // Every beard hangs from the jaw below the mouth (d ≥ about 0): none climbs the cheeks.
   switch (kind) {
     case "goat":
       return [
@@ -507,84 +510,84 @@ function beardOutline(kind: BeardKind): Pt[] | null {
       ];
     case "spade":
       return [
-        [-0.5, -0.32],
-        [-0.42, 0.24],
+        [-0.46, 0.0],
+        [-0.42, 0.26],
         [-0.3, 0.62],
         [0.3, 0.62],
-        [0.42, 0.24],
-        [0.5, -0.32],
-        [0.3, 0.1],
-        [-0.3, 0.1],
+        [0.42, 0.26],
+        [0.46, 0.0],
+        [0.28, 0.13],
+        [-0.28, 0.13],
       ];
     case "full":
     case "wild":
       return [
-        [-0.58, -0.4],
-        [-0.5, 0.25],
+        [-0.52, -0.02],
+        [-0.48, 0.28],
         [-0.22, 0.66],
-        [0, 0.82],
+        [0, 0.8],
         [0.22, 0.66],
-        [0.5, 0.25],
-        [0.58, -0.4],
-        [0.36, 0.08],
-        [0, 0.18],
-        [-0.36, 0.08],
+        [0.48, 0.28],
+        [0.52, -0.02],
+        [0.32, 0.13],
+        [0, 0.19],
+        [-0.32, 0.13],
       ];
     case "bag":
     case "whiteLong":
       return [
-        [-0.5, -0.36],
-        [-0.44, 0.3],
+        [-0.46, -0.02],
+        [-0.42, 0.32],
         [-0.3, 0.9],
         [-0.16, 1.45],
         [0, 1.72],
         [0.16, 1.45],
         [0.3, 0.9],
-        [0.44, 0.3],
-        [0.5, -0.36],
-        [0.3, 0.08],
-        [0, 0.16],
-        [-0.3, 0.08],
+        [0.42, 0.32],
+        [0.46, -0.02],
+        [0.28, 0.12],
+        [0, 0.17],
+        [-0.28, 0.12],
       ];
     case "fork":
       return [
-        [-0.5, -0.3],
-        [-0.42, 0.3],
+        [-0.46, 0.0],
+        [-0.4, 0.3],
         [-0.22, 0.72],
         [-0.12, 0.98],
         [0, 0.66],
         [0.12, 0.98],
         [0.22, 0.72],
-        [0.42, 0.3],
-        [0.5, -0.3],
-        [0.3, 0.1],
-        [-0.3, 0.1],
+        [0.4, 0.3],
+        [0.46, 0.0],
+        [0.28, 0.13],
+        [-0.28, 0.13],
       ];
     case "braid":
       return [
-        [-0.3, -0.1],
+        [-0.28, 0.0],
         [-0.2, 0.3],
         [-0.07, 0.4],
         [-0.06, 1.0],
         [0.06, 1.0],
         [0.07, 0.4],
         [0.2, 0.3],
-        [0.3, -0.1],
-        [0, 0.14],
+        [0.28, 0.0],
+        [0, 0.15],
       ];
     case "chops":
       return null;
     case "tiger":
       return [
-        [-0.62, -0.4],
-        [-0.56, 0.2],
+        [-0.56, -0.04],
+        [-0.52, 0.22],
         [-0.3, 0.58],
-        [0, 0.66],
+        [0, 0.68],
         [0.3, 0.58],
-        [0.56, 0.2],
-        [0.62, -0.4],
-        [0.36, 0.06],
-        [-0.36, 0.06],
+        [0.52, 0.22],
+        [0.56, -0.04],
+        [0.34, 0.12],
+        [-0.34, 0.12],
       ];
     default:
       return null;
@@ -595,7 +598,9 @@ function beard(g: G, H: HeadSpace, behind: boolean): void {
   const L = H.look;
   const kind = L.beard;
   const on = H.faceOn();
-  if (behind && on > -0.2) return;
+  // From behind, the beard shows past the jaw only when the head is half turned; squarely
+  // from the back, the head and the body hide it.
+  if (behind && (on > -0.2 || on < -0.7)) return;
   if (!behind && on < -0.2) return;
   const F = faceFrame(H, behind);
   const _R = H.R;
@@ -603,12 +608,12 @@ function beard(g: G, H: HeadSpace, behind: boolean): void {
   const wild = kind === "wild" || kind === "tiger";
   if (kind === "stub" && !behind) {
     const s = polygon([
-      F(-0.5, -0.35),
+      F(-0.5, -0.08),
       F(-0.4, 0.25),
       F(0, 0.42),
       F(0.4, 0.25),
-      F(0.5, -0.35),
-      F(0, -0.02),
+      F(0.5, -0.08),
+      F(0, 0.1),
     ]);
     inside(g, s, () => fill(g, s, alpha(L.hair[0], 0.28)));
   }
@@ -636,7 +641,7 @@ function beard(g: G, H: HeadSpace, behind: boolean): void {
   if (behind) return;
   if (kind === "chops")
     for (const s of [-1, 1]) {
-      const c = blob([F(s * 0.62, -0.42), F(s * 0.6, 0.1), F(s * 0.4, 0.24), F(s * 0.42, -0.2)]);
+      const c = blob([F(s * 0.6, -0.16), F(s * 0.58, 0.14), F(s * 0.4, 0.26), F(s * 0.42, -0.06)]);
       cel(g, c, base, dark, 0.012, light, LW2);
     }
   // Moustaches: the Han grammar, ends hanging down; bristles for the wild.

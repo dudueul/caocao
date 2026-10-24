@@ -2,7 +2,8 @@
 // Every family and tier-2 class, the army kits and the heroes, in every pose and facing,
 // on a grass tile at display size; then the same figures moving on a Pixi stage.
 // Query: ?only=families|tier2|armies|heroes|anim  ?ids=cao-cao,guan-yu  ?tile=64
-//        ?facings=down,side  ?poses=stand,attack  ?big (frames at sheet size)
+//        ?facings=down,side  ?poses=stand,attack,walk0,attack1 (a pose, or one frame by
+//        the name its caption shows)  ?big (frames at sheet size)
 import { Application, Container, Graphics, Text } from "pixi.js";
 import {
   BATTLE_POSES,
@@ -28,7 +29,30 @@ const BIG = q.has("big");
 const ZOOM = Number(q.get("zoom")) || 1;
 const only = q.get("only");
 const FACINGS = (q.get("facings")?.split(",") ?? ["down", "side", "up"]) as Facing[];
-const POSES = (q.get("poses")?.split(",") ?? [...BATTLE_POSES, ...SCENE_POSES]) as PoseName[];
+/** The frames to show: every frame of a pose ("attack"), or one frame by its caption ("attack1"). */
+const PICKS: [PoseName, number[]][] = (() => {
+  const all = [...BATTLE_POSES, ...SCENE_POSES] as PoseName[];
+  const isPose = (s: string): s is PoseName => (all as string[]).includes(s);
+  const every = (p: PoseName): number[] => Array.from({ length: FRAMES[p] }, (_, i) => i);
+  const asked = q.get("poses")?.split(",").filter(Boolean);
+  if (!asked) return all.map((p) => [p, every(p)]);
+  const out: [PoseName, number[]][] = [];
+  for (const s of asked) {
+    const m = /^([a-zA-Z]+?)(\d+)$/.exec(s.trim());
+    const name = m ? (m[1] as string) : s.trim();
+    if (!isPose(name)) {
+      console.warn(`sprite-gallery: no pose "${s}"; poses are ${all.join(", ")}`);
+      continue;
+    }
+    const frames = m ? [Number(m[2])].filter((i) => i < FRAMES[name]) : every(name);
+    if (m && frames.length === 0)
+      console.warn(`sprite-gallery: ${name} has ${FRAMES[name]} frames`);
+    const have = out.find(([p]) => p === name);
+    if (have) have[1] = [...new Set([...have[1], ...frames])].sort((a, b) => a - b);
+    else out.push([name, frames]);
+  }
+  return out;
+})();
 
 interface Row {
   label: string;
@@ -104,9 +128,14 @@ const HERO_ROWS: Row[] = (
     .get("ids")
     ?.split(",")
     .map((s) => {
-      // id, or id:class:side
+      // id (a hero takes its class and side from the table above), or id:class:side
       const [id, cls, side] = s.split(":");
-      return [id ?? "", cls ?? "", side ? Number(side) : -1] as [string, string, number];
+      const known = HEROES.find(([h]) => h === id);
+      return [id ?? "", cls || known?.[1] || "", side ? Number(side) : (known?.[2] ?? -1)] as [
+        string,
+        string,
+        number,
+      ];
     }) ?? HEROES
 ).map(([id, classId, side]) => ({
   label: id,
@@ -181,8 +210,8 @@ function rowOf(box: HTMLElement, r: Row): void {
   label.innerHTML = `${r.label}<small>${r.classId} · side ${r.side}</small>`;
   row.appendChild(label);
   for (const facing of FACINGS)
-    for (const pose of POSES)
-      for (let i = 0; i < FRAMES[pose]; i++) {
+    for (const [pose, frames] of PICKS)
+      for (const i of frames) {
         const fig = document.createElement("figure");
         fig.appendChild(frameCanvas(L, pose, i, facing));
         const cap = document.createElement("figcaption");
