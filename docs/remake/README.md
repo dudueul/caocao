@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-22
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0075](../adr/0075-battlefields-from-the-record.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0076](../adr/0076-faint-grid.md)).
 
 ## Vision
 
@@ -100,7 +100,7 @@ flowchart TB
 | Characters | Sprite sheets painted in code in the portraits' style, each officer's figure matching his portrait; three facings; the classic's frame grammar (2-frame walk, 4-frame attack); used in battles, scenes and the camp | [0073](../adr/0073-painted-sprites.md) (superseding [0045](../adr/0045-rigged-chibi-characters.md)) |
 | Character dress | Late Eastern Han, around 200 AD: topknots, cross-collared robes, iron lamellar armour, ring-pommel sabres and lacquered shields, the ji halberd, no stirrups, Cao Cao's traction stone-thrower; [CHARACTER_LOOK.md](CHARACTER_LOOK.md) | [0046](../adr/0046-period-accurate-dress.md) |
 | Presentation | Soft terrain edges, water shimmer, weather and colour grade, cinematic camera, particles per skill school, skill cut-ins, glass-and-gold UI, smoothed classic sprites; our own procedural terrain and tokens without the skin | [0044](../adr/0044-modern-battlefield-presentation.md) |
-| Terrain painting | Procedural terrain painted from noise over the whole map, so no tile repeats, in a muted palette and the battle's region and season; tiles join with their 8 neighbours (forest canopies, hill and mountain masses, water banks, joined walls); towns and castle grounds composed as one place, mostly open ground with a cap on buildings; scene stages use the same painter | [0074](../adr/0074-terrain-variants-that-join.md) (superseding [0044](../adr/0044-modern-battlefield-presentation.md)'s terrain) |
+| Terrain painting | Procedural terrain painted from noise over the whole map, so no tile repeats, in a muted palette and the battle's region and season; tiles join with their 8 neighbours (forest canopies, hill and mountain masses, water banks, joined walls); towns and castle grounds composed as one place, mostly open ground with a cap on buildings; scene stages use the same painter; a faint tile grid | [0074](../adr/0074-terrain-variants-that-join.md) (superseding [0044](../adr/0044-modern-battlefield-presentation.md)'s terrain), [0076](../adr/0076-faint-grid.md) |
 | Battlefields | Every story map checked against the record (『삼국지』, 『후한서』, 『자치통감』, 『수경주』) and redrawn where it differed; north up; Late Eastern Han walls, towers and houses; each battle and outdoor stage painted in its region and the season it was fought; [BATTLEFIELDS.md](BATTLEFIELDS.md) | [0075](../adr/0075-battlefields-from-the-record.md) |
 | Goals and arrivals | Battles may have goals (defeat named units, hold until a round, reach a tile) and reserve units that arrive on a round; a guard order for commanders; state format 3 | [0047](../adr/0047-battle-goals-and-arrivals.md) |
 | Story progression | Experience from battle events; 100 a level; steady class growth in ‰; tier 2 from Lv 20 (six new classes) | [0048](../adr/0048-story-progression.md) |
@@ -126,7 +126,7 @@ flowchart TB
 | 곽가's march | The player chooses whether the sick 곽가 marches to 백랑산: the 오환 are surprised but he dies, or he lives and the 오환 are ready | [0068](../adr/0068-guo-jia-choice.md) |
 | Breakable gates | Gates are works: units that hold a tile, never act and open the way when broken; stone-throwers hit them hardest; state v6 | [0069](../adr/0069-breakable-gates.md) |
 | Portraits from the record | Each officer's own headgear, build, turn, beard, accent and prop, from the histories first, after a benchmark of other Three Kingdoms games; [PORTRAITS.md](PORTRAITS.md) | [0070](../adr/0070-portraits-from-the-record.md) |
-| 일기토 | A named officer can challenge an adjacent enemy officer; up to 5 bouts of secret stances (강공 > 공격 > 방어 > 강공), 무력 sets the blow; the loser retreats and hearts swing; the famous story duels are staged and end as history did; state v7 | [0071](../adr/0071-duels.md) |
+| 일기토 | A named officer can challenge an adjacent enemy officer; up to 5 bouts of secret stances (강공 > 공격 > 방어 > 강공), 무력 sets the blow; the loser retreats and hearts swing; the famous story duels are staged and end as history did; state v7. Its own screen: stance cards on keys 1–3, 물러나기 (Esc) asks first, watched duels skipped at the fastest speed, story duels bend only their last bout | [0071](../adr/0071-duels.md), [0072](../adr/0072-duel-screen.md) |
 
 ## Roadmap
 

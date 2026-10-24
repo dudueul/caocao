@@ -110,6 +110,7 @@ export const T = {
   refuseNote: "응하지 않으면 행동 끝 · 상대 진영 약화",
   triangle: "강공 > 공격 > 방어 > 강공",
   withdraw: "물러나기",
+  withdrawAsk: "물러나시겠습니까?",
   bout: "합",
   fallen: "전사",
   withdrew: "물러남",

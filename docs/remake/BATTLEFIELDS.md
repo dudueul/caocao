@@ -113,7 +113,7 @@ The arrows follow the campaign in order: ✿ spring, ☀ summer, 🍂 autumn, �
 - **The map:** The north wall runs across the top with one gate. Outside it lie the moat, bridged at the gate, and the first rise of 邙山. Inside are the wards' houses and lanes. 조조's patrol starts at the south edge, and 건도 is caught at the gate.
 - **Filled in:** The record names neither the gate nor where the uncle was taken. The ward houses and trees are generic for the capital.
 - **Changed:** Two rows were added north of the wall, for the 陽渠 moat with its bridge and the foot of 邙山. Everything else is kept and moved two rows down.
-- **Note on the season:** Winter is a guess and stays one. Candidates travelled to the capital with the year-end accounts, so the earliest 조조 could hold the post is the winter of 174. The incident came "some months" later. This is the least certain season in the chapter.
+- **Note on the season:** Winter is a guess, confirmed by the owner. Candidates travelled to the capital with the year-end accounts, so the earliest 조조 could hold the post is the winter of 174. The incident came "some months" later. This is the least certain season in the chapter.
 
 ### 장사의 불길 (`changshe`)
 - **When:** 184 (중평 원년). The siege and the fire are entered under the 4th month (『자치통감』 권58). The battle 조조 arrived for is dated to the 5th (『후한서』 권8 靈帝紀; 『자치통감』 권58) → summer. The scene card already reads 5월.
@@ -246,7 +246,7 @@ The arrows follow the campaign in order: ✿ spring, ☀ summer, 🍂 autumn, �
   - `place` "연주 정도" → "연주 승씨", and the map is named 승씨. Talk now says the hidden men come "over the dike", and the late horse comes "over the southern ford".
   - **Scene 둑 뒤의 숲:** the stage (`dingtao-dike`) is redrawn to match: dike west of the camp, woods south of it. 여포 enters and leaves by the south-east and draws off "ten 里 south". `place` is 승씨.
   - **Scene 연주를 되찾다:** the first line now says the battle was at 승씨's dike and that 조조 retook 정도.
-- **Proposed:** keep the name 정도의 둑, which is how the campaign is usually filed (定陶之戰). The owner may prefer 승씨의 둑.
+- **Name:** the battle keeps the name 정도의 둑, which is how the campaign is usually filed (定陶之戰), though it was fought at 승씨; the owner chose it over 승씨의 둑.
 
 ### 완성의 밤 (`wancheng`)
 - **When:** 197 (건안 2년), 1st month → winter

@@ -12,7 +12,7 @@ import Portrait from "./Portrait.svelte";
  * The 일기토 screen (ADR 0071): the two officers face each other over the
  * battle, our man on the left. Each bout both stances are revealed, the two
  * close, and the blows land. The player picks 공격, 강공 or 방어 (keys 1 2 3)
- * or withdraws (Esc) when the duel is his own; a watched duel plays by itself
+ * or withdraws (Esc, asked first, ADR 0072) when the duel is his own; a watched duel plays by itself
  * and can be skipped. It ends on a banner: 승리, 패배, 무승부 or 물러남.
  */
 let {
@@ -50,6 +50,11 @@ const edge = $derived(hitR && !hitL ? "left" : hitL && !hitR ? "right" : "even")
 const mine = $derived(!show.watched);
 const ready = $derived(canPick && phase === "pick" && !show.picked);
 const heavyHit = $derived(show.blows.some((b) => b.heavy));
+/** 물러나기 was pressed once and waits for a second press (ADR 0072). */
+let askWithdraw = $state(false);
+$effect(() => {
+  if (!ready) askWithdraw = false;
+});
 
 function flip(d: Duelist, place: "left" | "right"): boolean {
   if (classic.skin?.faceUrl(d.id)) return false;
@@ -66,7 +71,19 @@ function blowOn(d: Duelist) {
 const pct = (d: Duelist) => Math.max(0, Math.min(100, (d.hp * 100) / Math.max(1, d.maxHp)));
 
 function pick(s: Stance) {
+  askWithdraw = false;
   if (ready) onpick?.(s);
+}
+
+/** The first press asks; the second withdraws. */
+function withdraw() {
+  if (!onwithdraw || !ready) return;
+  if (!askWithdraw) {
+    askWithdraw = true;
+    return;
+  }
+  askWithdraw = false;
+  onwithdraw();
 }
 
 function onKey(e: KeyboardEvent) {
@@ -77,8 +94,8 @@ function onKey(e: KeyboardEvent) {
   } else if (e.key === "1" || e.key === "2" || e.key === "3") {
     const s = STANCES[Number(e.key) - 1];
     if (s) pick(s);
-  } else if (e.key === "Escape") {
-    if (onwithdraw && ready) onwithdraw();
+  } else if (e.key === "Escape" || (e.key === "Enter" && askWithdraw)) {
+    withdraw();
   } else return;
   e.preventDefault();
   e.stopPropagation();
@@ -253,9 +270,19 @@ onMount(() => {
         {/each}
       </div>
       {#if onwithdraw}
-        <button type="button" class="withdraw" disabled={!ready} onclick={() => onwithdraw?.()}>
-          {T.withdraw} <span class="esc">Esc</span>
-        </button>
+        {#if askWithdraw}
+          <div class="withdraw ask">
+            <span>{T.withdrawAsk}</span>
+            <button type="button" class="yes" onclick={withdraw}>
+              {T.withdraw} <span class="esc">Esc</span>
+            </button>
+            <button type="button" onclick={() => (askWithdraw = false)}>{T.cancel}</button>
+          </div>
+        {:else}
+          <button type="button" class="withdraw" disabled={!ready} onclick={withdraw}>
+            {T.withdraw} <span class="esc">Esc</span>
+          </button>
+        {/if}
       {/if}
     {:else}
       <div class="watching">{T.triangle}</div>
@@ -871,6 +898,22 @@ footer {
 .withdraw {
   font-size: 13px;
   padding: 5px 16px;
+}
+.withdraw.ask {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 4px 12px;
+  background: rgba(20, 16, 12, 0.85);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.withdraw.ask button {
+  font-size: 12px;
+  padding: 3px 10px;
+}
+.withdraw.ask .yes {
+  border-color: var(--enemy);
 }
 .esc {
   margin-left: 6px;

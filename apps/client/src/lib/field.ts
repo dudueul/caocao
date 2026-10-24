@@ -557,6 +557,7 @@ export class Field {
     g.clear();
     for (let x = 0; x <= w; x++) g.moveTo(x * t, 0).lineTo(x * t, h * t);
     for (let y = 0; y <= h; y++) g.moveTo(0, y * t).lineTo(w * t, y * t);
+    // Faint, so the painted land reads as one picture (ADR 0076).
     g.stroke({ width: 1, color: 0x000000, alpha: 0.05 });
     g.rect(0, 0, w * t, h * t).stroke({ width: 2, color: 0x000000, alpha: 0.35 });
   }

@@ -1,8 +1,8 @@
 # 0072. Show a 일기토 on its own screen, and let a story duel's last bout explain its ending
 
-- **Status:** Proposed
+- **Status:** Accepted (proposed while building; confirmed by the owner 2026-10-24, who chose that 물러나기 asks first)
 - **Date:** 2026-10-22
-- **Deciders:** Claude (defaults chosen while building; the owner to confirm)
+- **Deciders:** Claude (defaults chosen while building), project owner (confirmed them, and chose that 물러나기 asks first)
 - **Related:** [0054](0054-main-menu-settings-tips.md), [0063](0063-staged-scenes.md),
   [0071](0071-duels.md), [ARCHITECTURE.md](../remake/ARCHITECTURE.md)
 
@@ -27,8 +27,8 @@ blow, because every bout was bent toward the ending.
    - **Not shown; their talk and log still are:** chosen. The player's own duel always shows.
    - Always shown.
 3. **물러나기 (Esc):**
-   - **Acts at once:** chosen.
-   - Asks first.
+   - Acts at once: the default proposed while building.
+   - **Asks first:** chosen by the owner. 물러나기 costs no morale; it ends the duel with both standing and the unit's action spent, so a stray Esc would throw away a duel being won.
 4. **Story duels' bouts:**
    - **Bend only the last bout, and set the loser's stance so the triangle explains it:** chosen.
    - Bend every bout: no shown stance can be trusted.
@@ -42,7 +42,7 @@ blow, because every bout was bent toward the ending.
   - Story duels carry a ★ 역사의 일기토 ribbon, scene duels too.
   - The command menu shows 일기토 only when it is legal, with ★ for a story duel. The forecast gives the acceptance chance (반드시 응한다 for a story duel), both 무력 and the blow each way.
 - **Watched duels** play back on the same screen with a skip button. At the fastest battle speed they are not shown. Talk set on a duel plays before the first bout and after the end.
-- **물러나기** acts at once.
+- **물러나기 asks first.** The first press (Esc or the button) asks 물러나시겠습니까?; a second Esc, Enter or a click withdraws, and a stance key or 취소 cancels.
 - **Story duels:** only the last bout is bent. Before it, blows fall as the stances say, except that the side history lets stand never falls. On the last bout, history's loser picks the stance that loses to the winner's, and falls. Every bout shown is one the triangle explains.
 
 ## Consequences
@@ -52,8 +52,6 @@ blow, because every bout was bent toward the ending.
   - Story duels look fair while still ending as history did.
 - **Negative / costs:**
   - A second full-screen layer on top of the battle, to keep working at phone width and in landscape.
-- **Follow-ups:**
-  - The owner confirms these defaults, or changes them.
 
 ## Revisit when
 
