@@ -86,3 +86,4 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0071](0071-duels.md) | 일기토: challenge an officer, pick a stance each bout; story duels end as history did | Accepted | 2026-10-22 |
 | [0072](0072-duel-screen.md) | Show a 일기토 on its own screen, and let a story duel's last bout explain its ending | Proposed | 2026-10-22 |
 | [0073](0073-painted-sprites.md) | Paint every figure as a sprite sheet in the portraits' style, moving to the classic's frame grammar | Accepted | 2026-10-24 |
+| [0075](0075-battlefields-from-the-record.md) | Lay out and paint each battlefield as the record describes it | Accepted | 2026-10-24 |

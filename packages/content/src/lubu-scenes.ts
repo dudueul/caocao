@@ -125,6 +125,7 @@ const JUANCHENG_HALL: StageDef = {
 /** The road east from 견성's gate: the wall on the left, banners along the way. */
 const MARCH_ROAD: StageDef = {
   id: "juancheng-road",
+  landscape: { region: "plain", season: "autumn" },
   light: "day",
   weather: "cloudy",
   rows: [
@@ -153,6 +154,7 @@ const MARCH_ROAD: StageDef = {
 /** A town on the 사수: the river along the top, houses round a paved square. */
 const SISHUI_TOWN: StageDef = {
   id: "sishui-town",
+  landscape: { region: "huai", season: "winter" },
   light: "dusk",
   weather: "cloudy",
   rows: [
@@ -198,6 +200,7 @@ const SISHUI_HOUSES = cells(
 /** 견성 at night: open country on the left, the wall and gate, the town inside on the right. */
 const JUANCHENG_GATE: StageDef = {
   id: "juancheng-gate",
+  landscape: { region: "plain", season: "summer" },
   light: "night",
   rows: [
     "ffggggg#======",
@@ -224,6 +227,7 @@ const JUANCHENG_GATE: StageDef = {
 /** The camp under 견성: tents, a rack, and the great gate banner in the middle. */
 const YANZHOU_CAMP: StageDef = {
   id: "yanzhou-camp",
+  landscape: { region: "plain", season: "summer" },
   light: "day",
   weather: "wind",
   rows: [
@@ -248,29 +252,33 @@ const YANZHOU_CAMP: StageDef = {
   ],
 };
 
-/** Outside 복양: the city's streets behind the wall at the top, the shut east gate, our camp below. */
+/**
+ * Outside 복양's east side, as at the battle: the city's streets behind its
+ * east wall on the left, the shut east gate, our camp on the right.
+ */
 const PUYANG: StageDef = {
   id: "puyang-camp",
+  landscape: { region: "plain", season: "summer" },
   light: "night",
   rows: [
-    "vv=====vvv==vv",
+    "vv=#gggggggggg",
+    "===#.........g",
+    "v=v#..........",
+    "===#..........",
     "==============",
-    "#########=####",
-    "......===.....",
-    "g......=......",
-    "g............g",
-    "gg..........gg",
-    "ggg........ggg",
-    "gggg......gggg",
+    "v==#..........",
+    "=v=#.........g",
+    "===#gg......gg",
+    "vv=#ggg....ggg",
   ],
   props: [
-    prop("gate", 9, 2, { solid: true }),
-    prop("banner", 1, 1, { side: 1 }),
-    prop("banner", 12, 1, { side: 1 }),
-    prop("tent", 2, 5),
-    prop("tent", 11, 5),
-    prop("banner", 4, 3),
-    prop("banner", 10, 3),
+    prop("gate", 3, 4, { solid: true }),
+    prop("banner", 2, 0, { side: 1 }),
+    prop("banner", 2, 8, { side: 1 }),
+    prop("tent", 12, 2),
+    prop("tent", 12, 6),
+    prop("banner", 5, 2),
+    prop("banner", 5, 6),
     prop("brazier", 10, 7),
   ],
 };
@@ -278,30 +286,34 @@ const PUYANG: StageDef = {
 /** The same camp the morning after, the city still smouldering. */
 const PUYANG_DAWN: StageDef = { ...PUYANG, id: "puyang-camp-dawn", light: "dusk" };
 
-/** 정도: our thin camp top-left, the dike and the wood behind it, wheat fields east. */
+/**
+ * The camp at 승씨, as at the battle: the great dike west of our thin camp,
+ * the deep woods south of the dike, wheat fields east and south-east.
+ */
 const DINGTAO: StageDef = {
   id: "dingtao-dike",
+  landscape: { region: "plain", season: "summer" },
   light: "day",
   rows: [
-    "cccc..gggggggg",
-    "cccc..gggggggg",
-    "cccc..........",
-    "..............",
-    "hhhhh.........",
-    "ffffh...gggggg",
-    "ffffh...gggggg",
-    "fffffh..gggggg",
-    "fffffh..gggggg",
+    "..h.cccc.ggggg",
+    "..h.cccc.ggggg",
+    "..h.cccc......",
+    "..h...........",
+    "..h.....gggggg",
+    "ffff....gggggg",
+    "fffff...gggggg",
+    "ffffff..gggggg",
+    "ffffff..gggggg",
   ],
   props: [
-    prop("tent", 0, 0),
-    prop("tent", 2, 0),
-    prop("banner", 1, 1),
-    prop("banner", 3, 1),
-    prop("fence", 4, 0),
-    prop("fence", 4, 1),
-    prop("grain", 8, 0),
-    prop("grain", 11, 0),
+    prop("tent", 4, 0),
+    prop("tent", 6, 0),
+    prop("banner", 5, 1),
+    prop("banner", 7, 1),
+    prop("fence", 8, 0),
+    prop("fence", 8, 1),
+    prop("grain", 10, 0),
+    prop("grain", 12, 0),
     prop("grain", 10, 7),
     prop("grain", 13, 7),
   ],
@@ -311,6 +323,7 @@ const DINGTAO_DAWN: StageDef = { ...DINGTAO, id: "dingtao-dike-dawn", light: "du
 /** 허저's walled village: houses inside a stone wall, its gate open on the fields to the east. */
 const XU_VILLAGE: StageDef = {
   id: "xu-village",
+  landscape: { region: "huai", season: "spring" },
   light: "day",
   rows: [
     "##########gggg",
@@ -342,6 +355,7 @@ const XU_VILLAGE: StageDef = {
  */
 const LUOYANG_XU: StageDef = {
   id: "luoyang-xu",
+  landscape: { region: "loess", season: "autumn" },
   light: "day",
   rows: [
     "#g#.##g.##########",
@@ -407,6 +421,7 @@ const WANCHENG_HALL: StageDef = {
 /** The 육수 at first light: a ford across the middle, our bank to the east. */
 const YU_RIVER: StageDef = {
   id: "yu-river",
+  landscape: { region: "basin", season: "winter" },
   light: "dusk",
   weather: "cloudy",
   rows: [
@@ -426,6 +441,7 @@ const YU_RIVER: StageDef = {
 /** 원술's camp on the 회수 border: a yellow-hung seat, the ford across the river. */
 const HUAI_BORDER: StageDef = {
   id: "huai-border",
+  landscape: { region: "huai", season: "autumn" },
   light: "day",
   weather: "rain",
   rows: [
@@ -447,21 +463,25 @@ const HUAI_BORDER: StageDef = {
   ],
 };
 
-/** The 양성 road: a valley between mountains, our column on the road. */
+/**
+ * The road from 양 at 안중, as at the battle: between the two rivers, the 열수
+ * with the 안중 dam along the top and the 단수 along the bottom; our column on the road.
+ */
 const VALLEY_ROAD: StageDef = {
   id: "rangcheng-road",
+  landscape: { region: "basin", season: "summer" },
   light: "day",
   weather: "cloudy",
   rows: [
-    "mmmmmmmmmmmmmm",
-    "mmmhhmmmmmhhmm",
-    "hh..........hh",
+    "wwwwwwwwwwwwww",
+    "hhhhhhgghhhhhh",
+    "gg..........gg",
     "..............",
     "==============",
     "..............",
-    "hh..........hh",
-    "mmmhhmmmmmhhmm",
-    "mmmmmmmmmmmmmm",
+    "gg..........gg",
+    "ggghggggghhggg",
+    "wwwwwwwwwwwwww",
   ],
   props: [prop("cart", 12, 3), prop("cart", 12, 5), prop("banner", 9, 3)],
 };
@@ -500,6 +520,7 @@ const XU_HALL: StageDef = {
 /** Before 하비 in winter: the 기수 along the top, the 사수 down the left, the city walls right. */
 const XIAPI_SIEGE: StageDef = {
   id: "xiapi-siege",
+  landscape: { region: "huai", season: "winter" },
   light: "dusk",
   weather: "wind",
   rows: [
@@ -556,6 +577,7 @@ const WHITE_GATE_TOWER: StageDef = {
 /** The 황하 between two old friends: 원소's banners on the north bank, ours on the south. */
 const YELLOW_RIVER: StageDef = {
   id: "yellow-river",
+  landscape: { region: "plain", season: "spring" },
   light: "dusk",
   weather: "cloudy",
   rows: [
@@ -1023,16 +1045,16 @@ export const BEFORE_PUYANG: SceneDef = {
   backdrop: "night",
   stage: PUYANG,
   cast: [
-    actor("tian-shi", 1, [3, 1], "right"),
-    actor("lu-bu", 1, [4, 1], "right"),
-    extra("chen-gong-lu", "chen-gong", 1, [5, 1], "left", { if: revenge }),
-    actor("cao-cao", 0, [7, 6], "up"),
-    actor("dian-wei", 0, [8, 7], "up"),
-    actor("chen-gong", 0, [6, 7], "up", { if: mercy }),
+    actor("tian-shi", 1, [0, 1], "right"),
+    actor("lu-bu", 1, [1, 1], "right"),
+    extra("chen-gong-lu", "chen-gong", 1, [2, 1], "left", { if: revenge }),
+    actor("cao-cao", 0, [8, 4], "left"),
+    actor("dian-wei", 0, [9, 5], "left"),
+    actor("chen-gong", 0, [9, 3], "left", { if: mercy }),
   ],
   script: [
-    tell("흥평 원년 여름. 여포는 복양에 들어앉았고, 조조는 그 성 밖에 진을 쳤다."),
-    camera([4, 1], 1800),
+    tell("흥평 원년 여름. 여포는 복양에 들어앉았고, 조조는 그 성 동쪽에 진을 쳤다."),
+    camera([1, 2], 1800),
     ...when(
       revenge,
       foe("chen-gong", "전씨를 시켜 조조에게 밀서를 보내십시오. 동문을 열어 주겠다고.", "calm", {
@@ -1052,9 +1074,9 @@ export const BEFORE_PUYANG: SceneDef = {
     foe("lu-bu", "네 집안의 이름을 걸고 다녀오너라.", "calm"),
     act("tian-shi", "bow"),
     remove("tian-shi"),
-    camera([7, 5], 1600),
-    enter("tian-shi", [0, 5], [7, 5]),
-    face("tian-shi", "down"),
+    camera([8, 4], 1600),
+    enter("tian-shi", [6, 8], [7, 4]),
+    face("tian-shi", "right"),
     act("tian-shi", "kneel"),
     say("tian-shi", "복양의 전씨입니다. 여포의 횡포를 더는 견딜 수 없습니다.", "grim"),
     say("tian-shi", "내일 밤 동문을 열어 두겠습니다. 이 밀서가 그 증표입니다.", "calm"),
@@ -1064,7 +1086,7 @@ export const BEFORE_PUYANG: SceneDef = {
     ...when(
       mercy,
       emote("chen-gong", "?"),
-      walk("chen-gong", [6, 6]),
+      walk("chen-gong", [8, 3]),
       face("chen-gong", "cao-cao"),
       say("chen-gong", "주공, 전씨는 여포 밑에서 배를 불린 집안입니다.", "grim"),
       say("chen-gong", "하루아침에 등을 돌릴 리 없습니다. 함정일지 모릅니다.", "grim"),
@@ -1076,9 +1098,9 @@ export const BEFORE_PUYANG: SceneDef = {
     say("dian-wei", "주공께서 들어가시면 저도 들어갑니다. 한 걸음도 떨어지지 않겠습니다.", "calm"),
     say("cao-cao", "좋다. 동문을 지나거든 그 문을 불태워라. 물러설 길은 없다.", "angry"),
     act("tian-shi", "stand"),
-    leave("tian-shi", [0, 5]),
-    camera([4, 1], 1800),
-    place("tian-shi", [3, 1], "right"),
+    leave("tian-shi", [6, 8]),
+    camera([1, 2], 1800),
+    place("tian-shi", [0, 1], "right"),
     face("lu-bu", "tian-shi"),
     act("tian-shi", "bow"),
     foe("lu-bu", "조조가 걸려들었느냐?", "smile"),
@@ -1111,13 +1133,13 @@ export const AFTER_PUYANG: SceneDef = {
     actor("li-dian", 0, [9, 5], "down"),
     actor("yu-jin", 0, [4, 6], "down"),
     actor("cheng-yu", 0, [8, 6], "down"),
-    extra("cao-s1", "cao", 0, [3, 7], "down"),
+    extra("cao-s1", "cao", 0, [5, 7], "down"),
     extra("cao-s2", "cao", 0, [11, 7], "down"),
     actor("cao-cao", 0),
     actor("dian-wei", 0),
   ],
   script: [
-    fire([0, 0], [1, 0], [7, 0], [8, 0], [12, 0]),
+    fire([0, 0], [1, 0], [0, 2], [2, 2], [1, 8]),
     tell("복양의 불길은 밤새 꺼지지 않았다. 날이 밝도록 조조는 돌아오지 않았다."),
     camera([6, 5], 1300),
     all(act("cao-s1", "down"), act("cao-s2", "kneel")),
@@ -1170,7 +1192,7 @@ const REAPERS = ["cao-s1", "cao-s2", "cao-s3", "cao-s4"];
 export const BEFORE_DINGTAO: SceneDef = {
   id: "lubu-before-dingtao",
   title: "둑 뒤의 숲",
-  place: "정도",
+  place: "승씨",
   when: "흥평 2년(195) 여름",
   backdrop: "field",
   stage: DINGTAO,
@@ -1194,9 +1216,9 @@ export const BEFORE_DINGTAO: SceneDef = {
     camera([7, 3], 1000),
     say("li-dian", "진영에 남은 군사는 천 명도 되지 않습니다. 이럴 때 적이 오면…", "grim"),
     sound("hoof"),
-    enter("cao", [13, 3], [6, 2], true),
+    enter("cao", [13, 8], [6, 2], true),
     act("cao", "kneel"),
-    say("cao", "여포가 옵니다! 기병 만여 명이 동쪽에서 달려옵니다!", "hurt", { name: "척후" }),
+    say("cao", "여포가 옵니다! 기병 만여 명이 동남쪽에서 달려옵니다!", "hurt", { name: "척후" }),
     each(["li-dian", "yue-jin", ...REAPERS], (id) => emote(id, "!")),
     face("cao-cao", "left"),
     pause(700),
@@ -1213,27 +1235,27 @@ export const BEFORE_DINGTAO: SceneDef = {
       leave("cao", [0, 3], true),
     ),
     face("cao-cao", "right"),
-    camera([10, 3], 1400),
+    camera([10, 5], 1400),
     all(
-      enter("lu-bu", [13, 3], [10, 3], true),
-      enter("lu-s1", [13, 2], [11, 2], true),
-      enter("lu-s2", [13, 4], [11, 4], true),
+      enter("lu-bu", [13, 7], [10, 6], true),
+      enter("lu-s1", [13, 6], [11, 5], true),
+      enter("lu-s2", [13, 8], [11, 7], true),
     ),
-    on(revenge, enter("chen-gong", [13, 3], [11, 3])),
+    on(revenge, enter("chen-gong", [13, 7], [11, 6])),
     foe("lu-bu", "진영이 저리 허술하다니… 담 위에 선 것은 아녀자들 아니냐?", "calm"),
     emote("lu-bu", "?"),
     foe("lu-bu", "조조는 꾀가 많은 자다. 저 숲에 무엇이 숨어 있을지 모른다.", "grim"),
     on(revenge, foe("chen-gong", "오늘은 물러났다가 내일 다시 오시지요.", "grim")),
     all(
-      leave("lu-bu", [13, 3]),
-      leave("lu-s1", [13, 2]),
-      leave("lu-s2", [13, 4]),
-      on(revenge, leave("chen-gong", [13, 3])),
+      leave("lu-bu", [13, 7]),
+      leave("lu-s1", [13, 6]),
+      leave("lu-s2", [13, 8]),
+      on(revenge, leave("chen-gong", [13, 7])),
     ),
-    tell("여포는 십 리를 물러났다가, 이튿날 다시 왔다."),
+    tell("여포는 남쪽으로 십 리를 물러나 진을 쳤다가, 이튿날 다시 왔다."),
     camera("cao-cao", 1500),
     say("cao-cao", "의심 많은 범이 다시 왔구나. 이번에는 군사 절반을 둑 밖에 세워라.", "smile"),
-    say("cao-cao", "놈들이 둑을 넘어오면 숲의 군사가 일어선다. 북을 울려라!", "angry"),
+    say("cao-cao", "놈들이 달려들면 둑 뒤의 군사가 둑을 넘어 들이친다. 북을 울려라!", "angry"),
     sound("arrive"),
   ],
 };
@@ -1258,7 +1280,9 @@ export const AFTER_DINGTAO: SceneDef = {
     extra("cao", "cao", 0),
   ],
   script: [
-    tell("정도의 둑에서 여포는 크게 졌다. 그는 남은 군사를 이끌고 동쪽으로 달아났다."),
+    tell(
+      "승씨의 둑에서 여포는 크게 졌다. 조조는 그 길로 정도를 되찾았고, 여포는 동쪽으로 달아났다.",
+    ),
     tell("서주는 도겸이 죽은 뒤 유비가 맡고 있었다. 여포는 그 유비에게 몸을 맡겼다."),
     on(revenge, tell("진궁도 여포를 따라 서주로 갔다.")),
     camera([4, 4], 1500),
@@ -1484,7 +1508,7 @@ export const FEAST: SceneDef = {
   id: "lubu-wancheng",
   title: "완성의 술자리",
   place: "완성",
-  when: "건안 2년(197) 봄",
+  when: "건안 2년(197) 겨울",
   backdrop: "night",
   stage: WANCHENG_HALL,
   cast: [
@@ -1500,7 +1524,7 @@ export const FEAST: SceneDef = {
     extra("cao-ang-afoot", "cao-ang", 0, undefined, undefined, { classId: "infantry" }),
   ],
   script: [
-    tell("건안 2년 봄. 조조가 남쪽 완성에 이르자, 장수는 싸우지 않고 항복했다."),
+    tell("건안 2년 정월. 조조가 남쪽 완성에 이르자, 장수는 싸우지 않고 항복했다."),
     camera([7, 3], 1400),
     act("zhang-xiu", "bow"),
     foe("zhang-xiu", "완성을 명공께 바칩니다. 오늘 밤은 마음껏 드십시오.", "calm"),
@@ -1746,7 +1770,7 @@ export const BEFORE_ANZHONG: SceneDef = {
   id: "lubu-before-anzhong",
   title: "퇴로의 함정",
   place: "양성에서 안중으로",
-  when: "건안 3년(198) 봄",
+  when: "건안 3년(198) 여름",
   backdrop: "field",
   stage: VALLEY_ROAD,
   cast: [
@@ -1774,7 +1798,7 @@ export const BEFORE_ANZHONG: SceneDef = {
     say("cao-cao", "허를 비워 둘 수는 없다. 포위를 풀고 돌아간다.", "grim"),
     leave("cao", [0, 4], true),
     sound("move"),
-    tell("조조가 군사를 돌리자 장수가 성을 나와 뒤를 쫓았다."),
+    tell("오월, 조조가 군사를 돌리자 장수가 성을 나와 뒤를 쫓았다."),
     sound("hoof"),
     enter("cao", [0, 4], [6, 4], true),
     act("cao", "kneel"),
@@ -1786,7 +1810,7 @@ export const BEFORE_ANZHONG: SceneDef = {
     say("cao-cao", "적이 내 돌아갈 길을 막고, 나를 사지에서 싸우게 하는구나.", "smile"),
     say("cao-cao", "그러니 나는 이길 줄 안다.", "smile"),
     say("guo-jia", "주공께서 웃으시니 저도 마음이 놓입니다. 어찌하실 생각이십니까?", "smile"),
-    say("cao-cao", "오늘 밤 산허리에 땅굴을 판다. 치중을 먼저 빼내고 군사를 숨겨라.", "calm"),
+    say("cao-cao", "오늘 밤 저 둑 밑으로 땅굴을 판다. 치중을 먼저 빼내고 군사를 숨겨라.", "calm"),
     say("cao-cao", "날이 밝으면 적은 우리가 달아난 줄 알 것이다.", "smile"),
     say("guo-jia", "그리고 쫓아온 자들은 제 등 뒤에서 우리를 만나겠지요.", "smile"),
     leave("cao", [0, 4]),
@@ -1796,7 +1820,7 @@ export const BEFORE_ANZHONG: SceneDef = {
     all(act("cao-s1", "attack"), act("cao-s2", "attack"), sound("earth")),
     all(fx("dust", [4, 1]), fx("dust", [10, 7])),
     all(act("cao-s1", "attack"), act("cao-s2", "attack")),
-    tell("밤새 흙을 퍼내는 소리가 골짜기에 낮게 울렸다."),
+    tell("밤새 흙을 퍼내는 소리가 두 강 사이에 낮게 울렸다."),
   ],
 };
 
@@ -2280,13 +2304,14 @@ function talk(officer: string, lines: readonly [string, Mood?][], cond?: Cond): 
 const GROUND_1 = ground(
   "juancheng-camp",
   {
+    landscape: { region: "plain", season: "summer" },
     rows: ["#######==#######", ...CAMP_GROUND.stage.rows.slice(1)],
   },
   [prop("gate", 7, 0, { solid: false }), prop("gate", 8, 0, { solid: false })],
 );
 
 /** By the wheat at 정도, with the harvest in. */
-const GROUND_2 = ground("dingtao-camp", {}, [
+const GROUND_2 = ground("dingtao-camp", { landscape: { region: "plain", season: "summer" } }, [
   prop("grain", 2, 2),
   prop("grain", 13, 2),
   prop("grain", 2, 8),
@@ -2295,10 +2320,11 @@ const GROUND_2 = ground("dingtao-camp", {}, [
   prop("fence", 14, 2),
 ]);
 
-/** At 무음 after 완성: the 육수 along the top, lamps lit for the dead. */
+/** At 무음 after 완성: the 무수 (潕水) along the top, lamps lit for the dead. */
 const GROUND_3 = ground(
   "wuyin-camp",
   {
+    landscape: { region: "basin", season: "winter" },
     light: "dusk",
     rows: ["wwwwwwwwwwwwwwww", ...CAMP_GROUND.stage.rows.slice(1)],
     props: (CAMP_GROUND.stage.props ?? []).filter((p) => p.kind !== "banner"),
@@ -2306,10 +2332,11 @@ const GROUND_3 = ground(
   [prop("lantern", 6, 1), prop("lantern", 9, 1), prop("lantern", 2, 3)],
 );
 
-/** Before 하비 in winter: the 기수 along the top, braziers against the cold. */
+/** Before 하비 in late autumn (10th month): the 기수 along the top, braziers against the cold. */
 const GROUND_4 = ground(
   "xiapi-camp",
   {
+    landscape: { region: "huai", season: "autumn" },
     light: "dusk",
     weather: "wind",
     rows: ["wwwwwwwwwwwwwwww", ...CAMP_GROUND.stage.rows.slice(1)],

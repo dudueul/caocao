@@ -164,12 +164,12 @@ battles and settle them the same way.
 
 | # | Battle | Map | Win | Lose | Arrivals | Rewards |
 |---|---|---|---|---|---|---|
-| 1 | 북문의 오색봉 | Luoyang north ward, 12 × 10, night streets | arrest 건도 | 조조 falls | — | 200, 옥패 |
-| 2 | 장사의 불길 | Changshe, 18 × 12, walled town in grass, wind | defeat 파재 | 조조 or 황보숭 falls | 2 Yellow Turbans, round 4 | 400, 마삭 |
-| 3 | 사수관의 술 | Sishui Pass, 18 × 12, road to a gated fort | defeat 화웅 | 조조 falls | 여포, round 6 (holds the fort) | 600, 백련도 |
-| 4 | 변수의 추격 | Bian River, 18 × 12, open country | round 8 begins | 조조 falls | Dong cavalry, rounds 3 and 5 | 600, 칠피갑 |
-| 5 | 흑산의 무리 | Puyang, 18 × 12, bandits' hill village | defeat 백요 | 조조 falls | 2 bandits, round 4 | 800, 강궁 |
-| 6 | 수장의 겨울 | Shouzhang, 20 × 13, a camp on the plain | round 10 begins | 조조 falls | Qingzhou waves, rounds 3, 5 and 7 | 1000, 인수 |
+| 1 | 북문의 오색봉 | Luoyang north ward at night, 12 × 12, the north wall and its gate, the moat and 망산 beyond | arrest 건도 | 조조 falls | — | 200, 옥패 |
+| 2 | 장사의 불길 | Changshe, 18 × 12, the walled town between the 유수 and the 이수, rebel camps in the grass, wind | defeat 파재 | 조조 or 황보숭 falls | 2 Yellow Turbans, round 4 | 400, 마삭 |
+| 3 | 사수관의 술 | Sishui Pass (성고), 18 × 12, the Yellow River to the north, the fort on its height in the west, the 사수 before its gate with a bridge and a ford | defeat 화웅 | 조조 falls | 여포, round 6 (holds the fort) | 600, 백련도 |
+| 4 | 변수의 추격 | Bian River, 18 × 12, the Yellow River and 오산 to the north, the deep 변수 behind us to the south | round 8 begins | 조조 falls | Dong cavalry, rounds 3 and 5 | 600, 칠피갑 |
+| 5 | 흑산의 무리 | Puyang, 18 × 12, the Yellow River and its ferry, 백요 on the 금제 dike, 복양's walls to the south-east | defeat 백요 | 조조 falls | 2 bandits, round 4 | 800, 강궁 |
+| 6 | 수장의 혈전 | Shouzhang, 20 × 13, a camp between the 문수 and its marshy branch | round 10 begins | 조조 falls | Qingzhou waves, rounds 3, 5 and 7 | 1000, 인수 |
 
 - **The roster:**
   - The chapter opens with 조조 alone, at Lv 3, with two night-watch guards as guests.
@@ -191,13 +191,13 @@ battles and settle them the same way.
 
 | # | Battle | Map | Win | Lose | Arrivals | Rewards |
 |---|---|---|---|---|---|---|
-| 1 | 팽성의 원한 | Pengcheng, 18 × 12, the 사수 to the north, walled town to the east | defeat 조표 | 조조 falls | 2 Xuzhou troops, round 3 | 800, 어린갑 |
-| 2 | 복양의 불길 | Puyang at night, 18 × 12, streets inside the walls, 11 tiles burning | 조조 reaches the south gate ★ | 조조 falls | 여포 (round 2), 장료 and 2 troops (round 3) | 800, 칠피갑 |
-| 3 | 정도의 둑 | Dingtao, 18 × 12, our thin camp, a dike with a wood behind it | defeat 여포 or round 9 begins | 조조 falls | ours: the ambush, 4 troops (round 3); theirs: 1 (round 4) | 1000, 강궁 |
-| 4 | 완성의 밤 | Wancheng at night, 18 × 12, our palisade and its west gate, the 육수 | 조조 reaches the east edge ★ | 조조 falls | 장수's waves, rounds 2, 3 and 4 (the first hunts 전위) | 800 |
-| 5 | 기현의 싸움 | Qi in the rain, 18 × 12, a river with a bridge and two fords | defeat 교유 | 조조 falls | 1 Yuan Shu soldier, round 4 | 1200, 대극 |
-| 6 | 안중의 땅굴 | Anzhong, 18 × 12, a valley road between hills | defeat 장수 | 조조 falls | ours: 4 troops out of the tunnels, behind both enemies (round 3) | 1200, 철태궁 |
-| 7 | 하비 수공 | Xiapi, 20 × 14, the 사수 and 기수, the dike and the sluice, the walled city | defeat 여포 | 조조 falls | 장패 and a rider (round 5); mercy: 진등 opens the east gate (round 5) | 2000, 명광개 |
+| 1 | 팽성의 원한 | Pengcheng, 20 × 12, the walled city between the 사수 (east) and the 획수 (west and north), its west bridge and gate | defeat 조표 | 조조 falls | 2 Xuzhou troops, round 3 | 800, 어린갑 |
+| 2 | 복양의 불길 | Puyang at night, 18 × 12, streets inside the walls, the burning east gate | 조조 reaches the burning east gate ★ | 조조 falls | 여포 (round 2), 장료 and 2 troops (round 3) | 800, 칠피갑 |
+| 3 | 정도의 둑 | 승씨 near Dingtao, 20 × 14, our thin camp, the north–south dike west of it with deep woods south of the dike, the 거야 marsh and the 하수 | defeat 여포 or round 9 begins | 조조 falls | ours: the ambush, 4 troops (round 3); theirs: 1 (round 4) | 1000, 강궁 |
+| 4 | 완성의 밤 | Wancheng at night, 18 × 12, our palisaded camp between the town and the 육수, its west gate facing the town | 조조 reaches the east edge ★ | 조조 falls | 장수's waves, rounds 2, 3 and 4 (the first hunts 전위) | 800 |
+| 5 | 기현의 싸움 | Qi (蘄, 패국) in the rain, 18 × 12, the 환수 with an old stone bridge and two fords, the walled town to the north-east | defeat 교유 | 조조 falls | 1 Yuan Shu soldier, round 4 | 1200, 대극 |
+| 6 | 안중의 땅굴 | Anzhong, 18 × 12, between the 단수 and the 열수, the dammed 안중 pond and its narrows | defeat 장수 | 조조 falls | ours: 4 troops out of the tunnels, behind both enemies (round 3) | 1200, 철태궁 |
+| 7 | 하비 수공 | Xiapi, 20 × 14, the 사수 west, the 기수 north with the dike and sluice, the 소기수 east and south, the walled city | defeat 여포 | 조조 falls | 장패 and a rider (round 5); mercy: 진등 opens the east gate (round 5) | 2000, 명광개 |
 
 - **Escapes** (복양, 완성): only 조조 reaching the ★ wins. 전위 must sortie.
 - **완성:** 전위 starts on the gate tile, between the enemy and 조조. Whether he is standing at the end decides `dianwei`.
@@ -225,11 +225,11 @@ battles and settle them the same way.
 
 | # | Battle | Map | Win | Lose | Arrivals | Rewards |
 |---|---|---|---|---|---|---|
-| 1 | 백마 구원 | Baima, 18 × 12, walled town by the river | defeat 안량 | 조조 or 유연 falls | 2 cavalry, round 4 | 800, 대극, 찰갑 |
-| 2 | 연진의 미끼 | Yanjin, 18 × 12, wagons on the road, slope | defeat 문추 | 조조 falls | cavalry and infantry over the ford, round 3 | 1000, 강궁, 옥패 |
-| 3 | 관도 사수 | Guandu camp, 18 × 13, palisade and earth mounds | round 9 begins | 조조 falls | 고람 + 2 (round 3), 장합 + 2 cavalry (round 5) | 1200, 손자병법 |
-| 4 | 오소 야습 | Wuchao, 16 × 12, wind | reach the depot ★ or defeat 순우경 | 조조 falls | 장기 + 2 cavalry behind us, round 3 | 1500, 명광개, 철환 |
-| 5 | 관도 결전 | Yuan Shao's camp, 20 × 13, walls and two gates | defeat 원소 | 조조 falls | ours: 장합, 고람 (round 3); theirs: 2 elite cavalry (round 5) | 2000, 호부 |
+| 1 | 백마 구원 | Baima, 18 × 12, the Yellow River and the ferry, 안량's camp at the ferry head, the walled town with its west gate | defeat 안량 | 조조 or 유연 falls | 2 cavalry, round 4 | 800, 대극, 찰갑 |
+| 2 | 연진의 미끼 | Yanjin, 18 × 12, the river and ferry to the north, wagons on the road, our camp behind the dyke | defeat 문추 | 조조 falls | cavalry and infantry over the ford, round 3 | 1000, 강궁, 옥패 |
+| 3 | 관도 사수 | Guandu camp, 18 × 13, the canal with the 관도 crossing, 원소's mounds beyond it, our rampart, terrace and trench | round 9 begins | 조조 falls | 고람 + 2 (round 3), 장합 + 2 cavalry (round 5) | 1200, 손자병법 |
+| 4 | 오소 야습 | Wuchao, 18 × 14, the depot north of the 제수 by the marsh, wind | reach the depot ★ or defeat 순우경 | 조조 falls | 장기 + 2 cavalry behind us, round 3 | 1500, 명광개, 철환 |
+| 5 | 관도 결전 | Yuan Shao's camp, 20 × 13, outer camps on sand ridges, the walled main camp, the Yellow River behind | defeat 원소 | 조조 falls | ours: 장합, 고람 (round 3); theirs: 2 elite cavalry (round 5) | 2000, 호부 |
 
 Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순유.
 - 관우 fights at 백마 and 연진 as a guest, cutting down 안량 and 문추, and leaves after 연진 (scene 각자의 주인).
@@ -244,12 +244,12 @@ Roster: the chapter opens with 조조, 허저, 하후연, 장료, 서황 and 순
 
 | # | Battle | Map | Win | Lose | Arrivals | Rewards |
 |---|---|---|---|---|---|---|
-| 1 | 창정의 결전 | Cangting, 18 × 12, the 황하 with a bridge and two fords, 원소's palisaded camp on the east bank | defeat 원소 | 조조 falls | 2 cavalry, round 4 | 1200, 인수 |
-| 2 | 여남의 유비 | Runan, 18 × 12, wooded hills, 유비's village and hall | defeat 유비 | 조조 falls | 조운, round 3 | 1200, 면포 |
-| 3 | 여양의 형제 | Liyang, 18 × 12, a walled town on the 황하 with two open gates | defeat 원담 and 원상 | 조조 falls | 원상 and 3 riders (round 3), 2 more (round 5) | 1500, 뇌석 |
-| 4 | 업성 공략 | Ye, 20 × 14, the walled city with its keep, two gates and a trench with causeways; 유엽 (stone-thrower) must sortie | defeat 심배 in the keep | 조조 falls | 원상's relief (마연, 장의, 윤해 and 3 men), rounds 3–4 | 2000, 명광개 |
-| 5 | 남피의 얼음 | Nanpi at dusk, 18 × 12, a frozen river with two bridges, the town on the far bank | defeat 원담 | 조조 falls | 2 cavalry, round 3 | 2000, 대극 |
-| 6 | 호관의 고간 | Huguan, 18 × 12, a mountain pass shut by a wall with one gate | defeat 고간 | 조조 falls | 2 병주군, round 4 | 2200, 호구 |
+| 1 | 창정의 결전 | Cangting, 18 × 12, the 황하 with a ferry and two fords, 원소's palisaded camp on the north-west bank | defeat 원소 | 조조 falls | 2 cavalry, round 4 | 1200, 인수 |
+| 2 | 여남의 유비 | Runan, 18 × 14, we come from the north; 유비's village and hall to the south, hills toward 형주 | defeat 유비 | 조조 falls | 조운, round 3 | 1200, 면포 |
+| 3 | 여양의 형제 | Liyang, 18 × 12, the walled town against 여양산 with north and south gates, the 황하 to the south and east | defeat 원담 and 원상 | 조조 falls | 원상 and 3 riders (round 3), 2 more (round 5) | 1500, 뇌석 |
+| 4 | 업성 공략 | Ye, 20 × 14, the 장수 along the north, the walled city below it with its keep, the west and south gates and a trench led off the river; 유엽 (stone-thrower) must sortie | defeat 심배 in the keep | 조조 falls | 원상's relief (마연, 장의, 윤해 and 3 men), rounds 3–4 | 2000, 명광개 |
+| 5 | 남피의 얼음 | Nanpi at dusk, 18 × 14, the frozen 무체구 with two bridges, the frozen 청하 to the west, the town beyond | defeat 원담 | 조조 falls | 2 cavalry, round 3 | 2000, 대극 |
+| 6 | 호관의 고간 | Huguan, 18 × 12, a 태항 pass shut by a wall with one gate; we come from the east | defeat 고간 | 조조 falls | 2 병주군, round 4 | 2200, 호구 |
 | 7 | 백랑산의 오환 | Bailang, 18 × 12, our band on the hills, the steppe and 답돈's camp to the east | defeat 답돈 | 조조 falls | went: 3 오환 late (rounds 3–5); stayed: 2 early (rounds 2–3) | 2500, 준마, 호부 |
 
 - **업:**
@@ -315,43 +315,45 @@ once per path in every run):
 
 | Chapter | Battle | AI wins | Typical end |
 |---|---|---|---|
-| 1 | 북문의 오색봉 | 12 / 12 | round 8 |
+| 1 | 북문의 오색봉 | 12 / 12 | round 7 |
 | 1 | 장사의 불길 | 12 / 12 | round 5 |
-| 1 | 사수관의 술 | 12 / 12 | round 9–10; the brothers meet 여포 when he arrives, and he withdraws |
+| 1 | 사수관의 술 | 11 / 12 | round 9–10; the brothers meet 여포 when he arrives, and he withdraws |
 | 1 | 변수의 추격 | 9 / 12 | round 8 (the hold) |
-| 1 | 흑산의 무리 | 12 / 12 | round 6 |
-| 1 | 수장의 겨울 | 12 / 12 | round 10 (the hold) |
-| 2 | 팽성의 원한 | 12 · 12 | round 3–4 |
+| 1 | 흑산의 무리 | 12 / 12 | round 5 |
+| 1 | 수장의 혈전 | 12 / 12 | round 10 (the hold) |
+| 2 | 팽성의 원한 | 12 · 12 | round 4–5 |
 | 2 | 복양의 불길 | 12 · 12 | round 3–4 (the escape) |
-| 2 | 정도의 둑 | 12 · 12 | round 9 (mostly the hold) |
+| 2 | 정도의 둑 | 12 · 12 | round 8–9 (mostly the hold) |
 | 2 | 완성의 밤 | 12 · 12 | round 3 (the escape); 전위 standing 12 · 4 |
-| 2 | 기현의 싸움 | 12 · 12 | round 6–7 |
+| 2 | 기현의 싸움 | 12 · 12 | round 5 |
 | 2 | 안중의 땅굴 | 12 · 12 | round 5 |
-| 2 | 하비 수공 | 11 · 11 | round 7; the flood comes on round 2 |
-| 3 | 백마 구원 | 12 · 12 | round 5 |
-| 3 | 연진의 미끼 | 12 · 12 | round 4–5 |
-| 3 | 관도 사수 | 12 · 12 | round 8 |
-| 3 | 오소 야습 | 12 · 12 | round 4 |
+| 2 | 하비 수공 | 12 · 11 | round 6–7; the flood comes on round 3 |
+| 3 | 백마 구원 | 12 · 12 | round 4–5 |
+| 3 | 연진의 미끼 | 12 · 12 | round 4 |
+| 3 | 관도 사수 | 12 · 12 | round 9 |
+| 3 | 오소 야습 | 12 · 12 | round 3–4 |
 | 3 | 관도 결전 | 12 · 12 | round 6–7 |
-| 4 | 창정의 결전 | 12 · 12 | round 7 |
-| 4 | 여남의 유비 | 12 · 12 | round 6 |
-| 4 | 여양의 형제 | 12 · 12 | round 6–7 |
-| 4 | 업성 공략 | 11 · 11 | round 9–10; the trench floods on round 5 |
-| 4 | 남피의 얼음 | 12 · 12 | round 6–7 |
-| 4 | 호관의 고간 | 12 · 11 | round 8–10 |
-| 4 | 백랑산의 오환 | 12 · 12 | round 6 (went) · 8 (stayed) |
+| 4 | 창정의 결전 | 12 · 12 | round 6–7 |
+| 4 | 여남의 유비 | 12 · 12 | round 5 |
+| 4 | 여양의 형제 | 12 · 12 | round 6 |
+| 4 | 업성 공략 | 10 · 11 | round 13; the trench floods on round 5 |
+| 4 | 남피의 얼음 | 12 · 12 | round 5–6 |
+| 4 | 호관의 고간 | 12 · 10 | round 9–10 |
+| 4 | 백랑산의 오환 | 12 · 12 | round 7 (went) · 8 (stayed) |
 
 Chapter 2–4 cells read "history path · other path": revenge, executed and
-went · mercy, spared and stayed. A fresh start of chapter 4 wins every battle
-in 11 or 12 of 12 on both paths. There, 백랑산 without 곽가 takes about 17
-rounds against 9 with him. Since allies move by their own AI ([ADR 0066](../adr/0066-allies.md)),
+went · mercy, spared and stayed. The maps follow the record ([BATTLEFIELDS.md](BATTLEFIELDS.md),
+[ADR 0075](../adr/0075-battlefields-from-the-record.md)); redrawing them was
+balanced back to these rates. A fresh start of chapter 4 wins every battle in
+10 to 12 of 12 on both paths. There, 백랑산 without 곽가 takes about 17 rounds
+against 9 with him. Since allies move by their own AI ([ADR 0066](../adr/0066-allies.md)),
 사수관, 변수 and 하비 are a little harder for the AI: the allies no longer screen
 조조 in our phase, and the losses are 조조 falling. 전위's survival at 완성 depends on which officers the AI
 sends to the gate: about half overall, from 2 to 12 in 12 by setup. A player
 who pulls him back in time can save him.
 
-The roster leaves chapter 1 around Lv 10–15. It enters chapter 2 at its floor
-of 10, leaves it around Lv 13–21, and enters 관도 at its floor of 14.
+The roster leaves chapter 1 around Lv 9–16. It enters chapter 2 at its floor
+of 10, leaves it around Lv 10–22, and enters 관도 at its floor of 14.
 
 ## Progression
 

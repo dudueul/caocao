@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-22
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0073](../adr/0073-painted-sprites.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0075](../adr/0075-battlefields-from-the-record.md)).
 
 ## Vision
 
@@ -100,6 +100,7 @@ flowchart TB
 | Characters | Sprite sheets painted in code in the portraits' style, each officer's figure matching his portrait; three facings; the classic's frame grammar (2-frame walk, 4-frame attack); used in battles, scenes and the camp | [0073](../adr/0073-painted-sprites.md) (superseding [0045](../adr/0045-rigged-chibi-characters.md)) |
 | Character dress | Late Eastern Han, around 200 AD: topknots, cross-collared robes, iron lamellar armour, ring-pommel sabres and lacquered shields, the ji halberd, no stirrups, Cao Cao's traction stone-thrower; [CHARACTER_LOOK.md](CHARACTER_LOOK.md) | [0046](../adr/0046-period-accurate-dress.md) |
 | Presentation | Soft terrain edges, water shimmer, weather and colour grade, cinematic camera, particles per skill school, skill cut-ins, glass-and-gold UI, smoothed classic sprites; our own procedural terrain and tokens without the skin | [0044](../adr/0044-modern-battlefield-presentation.md) |
+| Battlefields | Every story map checked against the record (『삼국지』, 『후한서』, 『자치통감』, 『수경주』) and redrawn where it differed; north up; Late Eastern Han walls, towers and houses; each battle and outdoor stage painted in its region and the season it was fought; [BATTLEFIELDS.md](BATTLEFIELDS.md) | [0075](../adr/0075-battlefields-from-the-record.md) |
 | Goals and arrivals | Battles may have goals (defeat named units, hold until a round, reach a tile) and reserve units that arrive on a round; a guard order for commanders; state format 3 | [0047](../adr/0047-battle-goals-and-arrivals.md) |
 | Story progression | Experience from battle events; 100 a level; steady class growth in ‰; tier 2 from Lv 20 (six new classes) | [0048](../adr/0048-story-progression.md) |
 | Story chapter 1 | Cao Cao's Guandu campaign: five battles with scenes, camps and an epilogue; a pure `@tk/campaign` package; [STORY.md](STORY.md) | [0049](../adr/0049-story-chapter-guandu.md) |

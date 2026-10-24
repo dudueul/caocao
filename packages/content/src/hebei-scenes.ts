@@ -90,36 +90,40 @@ const theirs = { side: 1 };
 
 // ---------------------------------------------------------------- stages
 
-/** The 황하 at 창정: our bank on the west, the ford, 원소's palisaded camp on the east. */
+/**
+ * The 황하 at 창정, as on the battle map: our bank on the south-east (right),
+ * the ford, 원소's palisaded camp on the north-west bank (left).
+ */
 const HUANGHE_CROSSING: StageDef = {
   id: "cangting-crossing",
   light: "day",
   weather: "wind",
+  landscape: { region: "plain", season: "spring" },
   rows: [
     "gggg..wwww..gggg",
-    "ggg...wwww....cc",
-    "g.....wwww.....c",
+    "cc....wwww...ggg",
+    "c.....wwww.....g",
     "......wwww......",
     "......dddd......",
     "......wwww......",
-    "g.....wwww.....c",
-    "gg....wwww....cc",
+    "c.....wwww.....g",
+    "cc....wwww....gg",
     "ggg...wwww...ggg",
   ],
   props: [
-    prop("fence", 10, 1),
-    prop("fence", 10, 2),
-    prop("fence", 10, 6),
-    prop("fence", 10, 7),
-    prop("tent", 13, 1, theirs),
-    prop("tent", 14, 6, theirs),
-    prop("banner", 12, 1, theirs),
-    prop("banner", 12, 7, theirs),
-    prop("screen", 15, 4),
-    prop("brazier", 15, 2),
-    prop("banner", 1, 2),
-    prop("banner", 1, 6),
-    prop("horse", 2, 7, { solid: true }),
+    prop("fence", 5, 1),
+    prop("fence", 5, 2),
+    prop("fence", 5, 6),
+    prop("fence", 5, 7),
+    prop("tent", 2, 1, theirs),
+    prop("tent", 1, 6, theirs),
+    prop("banner", 3, 1, theirs),
+    prop("banner", 3, 7, theirs),
+    prop("screen", 0, 4),
+    prop("brazier", 0, 2),
+    prop("banner", 14, 2),
+    prop("banner", 14, 6),
+    prop("horse", 13, 7, { solid: true }),
   ],
 };
 
@@ -161,6 +165,8 @@ const XU_SEAT: StageDef = {
 const RUNAN_SICKROOM: StageDef = {
   id: "runan-ye-sickroom",
   light: "dusk",
+  // The outdoor half: our camp in the woods of 여남 just after the battle (9th month, 201).
+  landscape: { region: "huai", season: "autumn" },
   rows: [
     "ffgggfff##########",
     "fg....gg#________#",
@@ -195,6 +201,7 @@ const LIYANG_TOWN: StageDef = {
   id: "liyang-town",
   light: "day",
   weather: "cloudy",
+  landscape: { region: "plain", season: "spring" },
   rows: [
     "vvv==========vvv",
     "v==============v",
@@ -256,6 +263,8 @@ const LIYANG_TENT: StageDef = {
 const YE_TRENCH: StageDef = {
   id: "ye-trench",
   light: "day",
+  // The trench dug and flooded in the fifth month.
+  landscape: { region: "plain", season: "summer" },
   rows: [
     "wwwwwwwggg.g#===",
     "wwwwwww....g#=vv",
@@ -295,6 +304,7 @@ const YE_TOMB: StageDef = {
   id: "ye-tomb",
   light: "dusk",
   weather: "wind",
+  landscape: { region: "plain", season: "autumn" },
   rows: [
     "fffffhhhhfffff",
     "ffffhhhhhhffff",
@@ -326,6 +336,8 @@ const NANPI_ICE: StageDef = {
   id: "nanpi-ice",
   light: "night",
   weather: "wind",
+  // The first month: winter, the river frozen hard.
+  landscape: { region: "plain", season: "winter" },
   rows: [
     "vvv==vvvvvv==vvv",
     "================",
@@ -363,27 +375,31 @@ const NANPI_DAWN: StageDef = {
   ),
 };
 
-/** The 태항 road in winter: a switchback up through the mountains to a ledge, then the pass. */
+/**
+ * The 태항 road in winter, as we climbed it from 업: a switchback up from the
+ * south-east through the mountains to a ledge, then the pass to the north-west.
+ */
 const TAIHANG_ROAD: StageDef = {
   id: "taihang-road",
   light: "dusk",
   weather: "wind",
+  landscape: { region: "taihang", season: "winter" },
   rows: [
-    "mmmmmmmmmmmmh..m",
-    "mmmmmmmmmmmh...m",
-    "mmmmhhhh.....hmm",
-    "mmmh.........hmm",
-    "mmh...........mm",
-    "mh.......hhhmmmm",
-    "h.......hmmmmmmm",
-    "......hmmmmmmmmm",
-    "....hmmmmmmmmmmm",
+    "m..hmmmmmmmmmmmm",
+    "m...hmmmmmmmmmmm",
+    "mmh.....hhhhmmmm",
+    "mmh.........hmmm",
+    "mm...........hmm",
+    "mmmmhhh.......hm",
+    "mmmmmmmh.......h",
+    "mmmmmmmmmh......",
+    "mmmmmmmmmmmh....",
   ],
   props: [
-    prop("brazier", 7, 3),
-    prop("cart", 5, 6),
-    prop("horse", 12, 4, { solid: true }),
-    prop("banner", 8, 2),
+    prop("brazier", 8, 3),
+    prop("cart", 10, 6),
+    prop("horse", 3, 4, { solid: true }),
+    prop("banner", 7, 2),
   ],
 };
 
@@ -395,6 +411,7 @@ const WUZHONG_RAIN: StageDef = {
   id: "wuzhong-rain",
   light: "day",
   weather: "rain",
+  landscape: { region: "plain", season: "summer" },
   rows: [
     "wwwddgggmmmmm.mm",
     "wwddd.gggmmmh.mm",
@@ -423,6 +440,7 @@ const BAILANG_STEPPE: StageDef = {
   id: "bailang-steppe",
   light: "day",
   weather: "wind",
+  landscape: { region: "frontier", season: "autumn" },
   rows: [
     "hhhhgggggggggggg",
     "hhhggg.......ggg",
@@ -452,6 +470,7 @@ const JIESHI_CLIFF: StageDef = {
   id: "jieshi-cliff",
   light: "dusk",
   weather: "wind",
+  landscape: { region: "frontier", season: "autumn" },
   rows: [
     "ffggggghhhmmmmwwww",
     "fgggghhgghmmmmwwmw",
@@ -483,20 +502,20 @@ export const PROLOGUE: SceneDef = {
   backdrop: "field",
   stage: HUANGHE_CROSSING,
   cast: [
-    actor("yuan-shao", 1, [14, 4], "left", onFoot),
-    actor("yuan-shang", 1, [13, 3], "left"),
-    actor("feng-ji", 1, [13, 5], "left"),
-    extra("yuan-s1", "yuan", 1, [11, 3], "left"),
-    extra("yuan-s2", "yuan", 1, [11, 5], "left"),
-    actor("cao-cao", 0, [3, 4], "right"),
-    actor("xun-yu", 0, [2, 5], "right"),
-    actor("guo-jia", 0, [2, 3], "right"),
-    actor("xiahou-dun", 0, [4, 3], "right"),
-    actor("xu-chu", 0, [4, 5], "right"),
-    actor("zhang-liao", 0, [5, 3], "right", { if: notSpared }),
-    actor("lu-bu", 0, [5, 3], "right", { if: spared }),
-    actor("dian-wei", 0, [5, 5], "right", { if: lived }),
-    extra("cao-s1", "cao", 0, [1, 4], "right"),
+    actor("yuan-shao", 1, [1, 4], "right", onFoot),
+    actor("yuan-shang", 1, [2, 3], "right"),
+    actor("feng-ji", 1, [2, 5], "right"),
+    extra("yuan-s1", "yuan", 1, [4, 3], "right"),
+    extra("yuan-s2", "yuan", 1, [4, 5], "right"),
+    actor("cao-cao", 0, [12, 4], "left"),
+    actor("xun-yu", 0, [13, 5], "left"),
+    actor("guo-jia", 0, [13, 3], "left"),
+    actor("xiahou-dun", 0, [11, 3], "left"),
+    actor("xu-chu", 0, [11, 5], "left"),
+    actor("zhang-liao", 0, [10, 3], "left", { if: notSpared }),
+    actor("lu-bu", 0, [10, 3], "left", { if: spared }),
+    actor("dian-wei", 0, [10, 5], "left", { if: lived }),
+    extra("cao-s1", "cao", 0, [14, 4], "left"),
   ],
   script: [
     tell("건안 6년 봄. 관도에서 진 원소는 황하 북쪽으로 물러났다."),
@@ -505,20 +524,20 @@ export const PROLOGUE: SceneDef = {
     act("yuan-shao", "hurt"),
     emote("yuan-shao", "sweat"),
     foe("yuan-shao", "관도에서 잃은 것은 군사뿐이다. 하북은 아직 내 것이다.", "grim"),
-    walk("yuan-shang", [13, 4]),
+    walk("yuan-shang", [2, 4]),
     face("yuan-shang", "yuan-shao"),
     foe("yuan-shang", "아버님, 진중의 일은 제게 맡기시고 업으로 돌아가 쉬십시오.", "grim"),
     face("yuan-shao", "yuan-shang"),
     foe("yuan-shao", "상아, 너는 형들보다 나를 많이 닮았구나.", "smile"),
     foe("feng-ji", "현보 공자께서 곁에 계시니 하북은 걱정이 없습니다.", "smile"),
     tell("돌아온 원소가 가장 먼저 한 일은, 싸우지 말라 간했던 전풍을 죽이는 것이었다."),
-    face("yuan-shao", "left"),
+    face("yuan-shao", "right"),
     foe("yuan-shao", "전풍이 살아 있었다면 '그것 보라' 했겠지.", "grim"),
     foe("yuan-shao", "이제 내 앞에서 그 말을 할 자는 없다.", "angry"),
     pause(700),
     foe("yuan-shao", "맹덕… 건너오너라. 이번에는 내가 기다리고 있다.", "grim"),
-    camera([4, 4], 1400),
-    tell("강 서쪽 기슭에 조조의 깃발이 늘어섰다."),
+    camera([11, 4], 1400),
+    tell("강 동남쪽 기슭에 조조의 깃발이 늘어섰다."),
     say("xiahou-dun", "강 건너 깃발이 관도 때의 반도 안 되오. 이번에 끝장을 냅시다.", "angry"),
     on(
       notSpared,
@@ -534,7 +553,7 @@ export const PROLOGUE: SceneDef = {
     ),
     emote("cao-cao", "..."),
     say("cao-cao", "원소는 병이 깊다 들었다. 차라리 남쪽의 유표를 먼저 칠까.", "calm"),
-    walk("xun-yu", [3, 5]),
+    walk("xun-yu", [12, 5]),
     face("xun-yu", "cao-cao"),
     face("cao-cao", "xun-yu"),
     say(
@@ -548,14 +567,14 @@ export const PROLOGUE: SceneDef = {
     on(lived, say("dian-wei", "강을 건너실 때는 제가 앞에 서겠습니다.", "calm")),
     act("cao-cao", "nod"),
     say("cao-cao", "문약의 말이 옳다.", "calm"),
-    face("cao-cao", "right"),
-    camera([8, 4], 1000),
+    face("cao-cao", "left"),
+    camera([7, 4], 1000),
     say("cao-cao", "본초와는 낙양에서 함께 말을 달리던 사이였다.", "grim"),
     say("cao-cao", "그러니 그 끝은 내 손으로 맺어 주마.", "grim"),
     sound("arrive"),
     say("cao-cao", "강을 건너라!", "angry"),
-    walk("cao-cao", [6, 4]),
-    all(sound("water"), fx("splash", [6, 4])),
+    walk("cao-cao", [9, 4]),
+    all(sound("water"), fx("splash", [9, 4])),
     all(emote("yuan-s1", "!"), emote("yuan-s2", "!")),
     tell("건안 6년 4월, 조조는 황하를 건너 창정의 원소를 쳤다."),
   ],
@@ -862,7 +881,7 @@ export const BEFORE_YE: SceneDef = {
   id: "hebei-before-ye",
   title: "장하의 물길",
   place: "업",
-  when: "건안 9년(204) 봄",
+  when: "건안 9년(204) 여름",
   backdrop: "river",
   stage: YE_TRENCH,
   cast: [
@@ -1240,8 +1259,8 @@ export const BEFORE_HUGUAN: SceneDef = {
   backdrop: "night",
   stage: TAIHANG_ROAD,
   cast: [
-    actor("yue-jin", 0, [9, 3], "left"),
-    actor("li-dian", 0, [10, 4], "left"),
+    actor("yue-jin", 0, [6, 3], "right"),
+    actor("li-dian", 0, [5, 4], "right"),
     extra("cao-s1", "cao", 0),
     extra("cao-s2", "cao", 0),
     actor("cao-cao", 0),
@@ -1255,20 +1274,20 @@ export const BEFORE_HUGUAN: SceneDef = {
     tell("그러나 조조가 북쪽에 매인 틈에 다시 등을 돌려, 태항산의 호관을 막았다."),
     tell("건안 11년 정월. 조조는 몸소 군사를 이끌고 눈 덮인 태항산을 넘었다."),
     sound("wind"),
-    camera([3, 6], 1300),
-    all(enter("cao-s1", [0, 7], [7, 5]), enter("cao-s2", [0, 8], [2, 6])),
+    camera([12, 6], 1300),
+    all(enter("cao-s1", [15, 7], [8, 5]), enter("cao-s2", [15, 8], [13, 6])),
     act("cao-s2", "down"),
     emote("cao-s2", "sweat"),
-    all(enter("cao-cao", [0, 7], [6, 4]), enter("xu-chu", [0, 8], [5, 5])),
-    all(enter("guo-jia", [0, 7], [4, 4]), on(lived, enter("dian-wei", [0, 8], [4, 5]))),
-    on(mercy, enter("chen-gong", [0, 7], [3, 4])),
+    all(enter("cao-cao", [15, 7], [9, 4]), enter("xu-chu", [15, 8], [10, 5])),
+    all(enter("guo-jia", [15, 7], [11, 4]), on(lived, enter("dian-wei", [15, 8], [11, 5]))),
+    on(mercy, enter("chen-gong", [15, 7], [12, 4])),
     act("cao-s2", "stand"),
-    camera([7, 4], 1300),
-    all(sound("earth"), fx("dust", [5, 6])),
+    camera([8, 4], 1300),
+    all(sound("earth"), fx("dust", [10, 6])),
     say("li-dian", "수레바퀴가 또 부서졌습니다. 오늘만 벌써 세 번째입니다.", "grim"),
     say("yue-jin", "앞쪽 고개는 얼음입니다. 말은 끌고, 사람은 기어서 넘어야 합니다.", "grim"),
     face("cao-cao", "up"),
-    camera([8, 2], 1000),
+    camera([7, 2], 1000),
     tell("북풍이 골짜기를 울렸다. 눈은 그치지 않았고, 묵어 갈 마을 하나 보이지 않았다."),
     say("cao-cao", "산이 높으니 길이 굽고, 길이 굽으니 바퀴가 부서지는구나.", "grim"),
     say("cao-cao", "바람에 나무가 운다. 어둠 속에서 짐승들이 우리를 지켜보고 있다.", "grim"),
@@ -1294,9 +1313,9 @@ export const BEFORE_HUGUAN: SceneDef = {
     ),
     face("xu-chu", "cao-cao"),
     say("xu-chu", "주공, 불을 피웠습니다. 몸을 녹이십시오.", "smile"),
-    walk("cao-cao", [6, 3]),
-    face("cao-cao", "right"),
-    camera([7, 3], 1500),
+    walk("cao-cao", [9, 3]),
+    face("cao-cao", "left"),
+    camera([8, 3], 1500),
     say("cao-cao", "저 고개 너머가 호관이다. 고간은 산이 자기를 지켜 주리라 믿겠지.", "calm"),
     say("cao-cao", "그 믿음을 깨 주마.", "angry"),
   ],
@@ -1666,31 +1685,50 @@ function talk(officer: string, lines: readonly [string, Mood?][], cond?: Cond): 
 const rest = CAMP_GROUND.stage.rows.slice(1);
 
 /** In the woods of 여남, after 유비 fled south. */
-const GROUND_1 = ground("runan-camp", { weather: "cloudy", rows: ["fffffffggfffffff", ...rest] }, [
-  prop("banner", 2, 2),
-  prop("banner", 13, 2),
-]);
+const GROUND_1 = ground(
+  "runan-camp",
+  {
+    weather: "cloudy",
+    landscape: { region: "huai", season: "autumn" },
+    rows: ["fffffffggfffffff", ...rest],
+  },
+  [prop("banner", 2, 2), prop("banner", 13, 2)],
+);
 
-/** Under the north wall of 업, its gate open to us. */
-const GROUND_2 = ground("ye-camp", { rows: ["#######==#######", ...rest] }, [
-  prop("gate", 7, 0, { solid: false }),
-  prop("gate", 8, 0, { solid: false }),
-  prop("grain", 2, 2),
-  prop("grain", 13, 2),
-]);
+/** Under the south wall of 업, where we laid the siege, its gate open to us. */
+const GROUND_2 = ground(
+  "ye-camp",
+  { landscape: { region: "plain", season: "autumn" }, rows: ["#######==#######", ...rest] },
+  [
+    prop("gate", 7, 0, { solid: false }),
+    prop("gate", 8, 0, { solid: false }),
+    prop("grain", 2, 2),
+    prop("grain", 13, 2),
+  ],
+);
 
 /** By the river at 남피, still frozen at the edges; braziers against the cold. */
 const GROUND_3 = ground(
   "nanpi-camp",
-  { light: "dusk", weather: "wind", rows: ["dddddddddddddddd", ...rest] },
+  {
+    light: "dusk",
+    weather: "wind",
+    landscape: { region: "plain", season: "winter" },
+    rows: ["dddddddddddddddd", ...rest],
+  },
   [prop("brazier", 2, 2), prop("brazier", 13, 2), prop("brazier", 2, 7)],
 );
 
 /** In the hills north of 호관, the mountains at our back. */
-const GROUND_4 = ground("huguan-camp", { weather: "wind", rows: ["mmmmmmmhhmmmmmmm", ...rest] }, [
-  prop("brazier", 2, 2),
-  prop("brazier", 13, 2),
-]);
+const GROUND_4 = ground(
+  "huguan-camp",
+  {
+    weather: "wind",
+    landscape: { region: "taihang", season: "winter" },
+    rows: ["mmmmmmmhhmmmmmmm", ...rest],
+  },
+  [prop("brazier", 2, 2), prop("brazier", 13, 2)],
+);
 
 const SHOP_1 = [
   "hundred-dao",

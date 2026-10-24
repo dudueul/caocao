@@ -8,7 +8,7 @@
  * line, map and number here is our own (ADR 0002, ADR 0049).
  */
 import type { Cell, Goal } from "@tk/rules";
-import { type MapDef, WUCHAO } from "./maps.ts";
+import type { MapDef } from "./maps.ts";
 import { ORDERS, type ScenarioUnit } from "./scenarios.ts";
 import {
   act,
@@ -35,6 +35,7 @@ import type {
   Cmd,
   Cond,
   Facing4,
+  Landscape,
   Line,
   Mood,
   PropDef,
@@ -76,88 +77,147 @@ const guard = { orders: ORDERS.guard };
 const heal = { orders: ORDERS.healThenHold };
 
 // ---------------------------------------------------------------- maps
+// North is up on every map, and each lies as the record has it (ADR 0075; docs/remake/BATTLEFIELDS.md).
 
-/** 백마 (Baima): the walled town by the Yellow River; Yan Liang's camp to its south. */
+/**
+ * 백마 (Baima), the fourth month of 200: the Yellow River runs north-east across the top,
+ * with the bank of 여양 and its hill showing in the north-west. The 백마 ferry crosses
+ * north-west of the walled town, which stands south-east of it with its gate to the west.
+ * 안량 crossed there and camps at the ferry head, against the town's north-west corner;
+ * 조조 comes from the west, from the feint at 연진. A stretch of dyke guards the bank west
+ * of the ferry.
+ */
 const BAIMA: MapDef = {
   id: "baima",
   name: "백마",
   rows: [
-    "wwwwwwwwwwwwwwwwww",
-    "..gg....dd....wwww",
-    ".ggg..ff.......gww",
-    "......ff...#####.w",
-    "..hh.......#vvv#..",
-    ".hhh.......vvFv#..",
-    "...........#vvv#..",
-    "..ff...g...##v##..",
+    "mhhg.wwwwddwwwwwww",
+    "wwwwwwwwwddwwwwwww",
+    "wwwwwhh.ccccc.....",
+    "......ffcccc#####.",
+    "..hh........#vvv#.",
+    ".hhh........vvFv#.",
+    "............#vvv#.",
+    "..ff...g....#####.",
     ".fff..gg..........",
-    "......g....cc.....",
-    "..gg......cccc..h.",
-    "..........ccc..hhh",
+    "......g...........",
+    "..gg............h.",
+    ".........g....hhh.",
   ],
 };
 
-/** 연진 (Yanjin): the ford, the road strewn with Cao Cao's wagons, the southern slope. */
+/**
+ * 연진 (Yanjin), days later: the river and its ferry along the top, where 원소's riders
+ * crossed. The road from 백마 runs west along the bank, strewn with our wagons, and a dyke
+ * set back from the river shuts it off from the south: 조조's camp lies behind it, below
+ * the southern slope (남판 南阪), out of the riders' sight.
+ */
 const YANJIN: MapDef = {
   id: "yanjin",
   name: "연진",
   rows: [
-    "wwwwwwddwwwwwwwwww",
-    "wwwww...wwwwwwmmmm",
-    "gg.......g....hmmm",
-    "g..ff.....g...hhmm",
-    "..fff..c.....hh.hm",
-    "......cc.......hhh",
-    "..g...c..g.....h.h",
-    ".gg.....cc....ff..",
-    "..........c..fff..",
-    "ff..g.........f...",
-    "fff.....hh........",
-    "ff.....hhh....gg..",
+    "wwwddwwwwwwwwwwwww",
+    "wwwddwwwwww.......",
+    "ff..........g.....",
+    "f...c.......g.....",
+    "......cc....c.....",
+    "..g.....c..cc...g.",
+    ".gg..........c....",
+    "hhhhhh.hhhhh.hhhhh",
+    "..g.......c.......",
+    "ff.........ccc....",
+    "fff..g.....ccc..gg",
+    "ff......gg.......g",
   ],
 };
 
-/** 관도 (Guandu): Cao Cao's palisaded camp facing Yuan Shao's earth mounds. */
+/**
+ * 관도 (Guandu), the ninth month: the 관도 water, the canal (거수 渠水) that becomes the
+ * 홍구 (鴻溝) further down, runs east across the field, north of 조조's rampart. His camp holds
+ * the crossing, with the 관도 terrace in it, a mound of his own and a long trench inside the
+ * east rampart against 원소's tunnels; the 역수 (役水) runs behind it and the 포전 (圃田) marsh
+ * lies west. Across the water stand 원소's earth mounds, with his camps east of them along the
+ * sand ridges.
+ */
 const GUANDU_CAMP: MapDef = {
   id: "guandu-camp",
   name: "관도 진채",
   rows: [
-    "ccc#....hh.....ccc",
-    "ccc#...hhh....cccc",
-    "cFc#....h.....cccc",
-    "ccc...........gccc",
-    "ccc#.....g.......c",
-    "ccc#....hh........",
-    "ccc#...hhh....g...",
-    "ccc.....h.........",
-    "ccc#.........hh...",
-    "cFc#........hhh...",
-    "ccc#.ff......h....",
-    "ccc#ffff..........",
-    "####fff...........",
+    "..hh..hh...cc.cccc",
+    ".hhhh.hhhh.ccccccc",
+    "..hh...hh....cc.cc",
+    ".h.h..h.h.....g...",
+    "wwwwdwwwwwwwwwwwww",
+    "dccccccd#.........",
+    "wccFcccd#..g......",
+    "gcchcccd#.....h...",
+    "wcccccccc....hhh..",
+    "dcccFccd#.......f.",
+    "wccccccd#..g...ff.",
+    "####c####....gfff.",
+    "wwwwbwwwwwwwwwwwww",
   ],
 };
 
-/** 관도 북쪽 (north of Guandu): Yuan Shao's main camp with the river behind it. */
+/**
+ * 오소 (Wuchao), the tenth month, at dawn: 순우경's depot at 고시 (故市), north of the
+ * 제수 (濟水) where it runs east into the 오소 marsh. 조조 comes up from the south by the
+ * byroads, and 원소's riders follow from his camp to the south-west, behind us. The quick
+ * battle keeps its own map (maps.ts WUCHAO).
+ */
+const WUCHAO_DEPOT: MapDef = {
+  id: "wuchao-depot",
+  name: "오소",
+  rows: [
+    "ffh..#ccccccc#.gwd",
+    "fhh..#cccccFc#gwww",
+    "ff...#ccccccc#.dww",
+    "f....g##...##g.gww",
+    "..g............dwg",
+    "wwwwwdwwwbwwwdwwww",
+    "..gg........g..dgw",
+    ".ff...v.....ff..gw",
+    ".ff.........ff...g",
+    "....hh............",
+    "..g.hh....g...ff..",
+    "ff.........gg.fff.",
+    "fff..............g",
+    "ff....g........ggg",
+  ],
+};
+
+/**
+ * 원소 본진 (Yuan Shao's main camp), the tenth month: his camps strung along the sand
+ * ridges north of the 관도 water, the main one at the east end, and the Yellow River he
+ * fled across beyond them (drawn close). 조조 comes up from the south over the 관도 crossing.
+ */
 const YUAN_CAMP: MapDef = {
   id: "yuan-camp",
   name: "원소 본진",
   rows: [
     "wwwwwwwwwwwwwdddwwww",
     "..gg..........#####w",
-    ".ggg..hh......#cccc#",
-    "......hh......#cFcc#",
-    "..ff...........cccc#",
-    ".fff....g.....#cccc#",
-    "........gg....###.##",
-    "..hh..........g.....",
-    ".hhh....ff..........",
-    "........ff....hh....",
-    "gg...........hhh..ff",
-    "ggg..............fff",
-    "gg......gg.......fff",
+    ".gg..hh.......#cccc#",
+    "....hhhh..c...#cFcc#",
+    "..c..hh..ccc...cccc#",
+    ".ff......hh...#cccc#",
+    "fff...........###.##",
+    "ff......g.........g.",
+    "....hh....gg........",
+    "...hhh..........ff..",
+    ".g........hh...fff..",
+    "..g..........g......",
+    "wwwwddwwwwwwwwwwwwww",
   ],
 };
+
+/**
+ * Where and when (ADR 0075): every field of 관도 lies on the Yellow River plain. Seasons follow
+ * the weather of the lunar month: 백마 and 연진 in the fourth are spring, the rest in the
+ * eighth to tenth are autumn.
+ */
+const SPRING: Landscape = { region: "plain", season: "spring" };
+const AUTUMN: Landscape = { region: "plain", season: "autumn" };
 
 // ---------------------------------------------------------------- battles
 
@@ -168,22 +228,26 @@ const B1: StoryBattleDef = {
   summary: "안량이 백마성을 에워쌌다. 성 안의 유연이 버티는 동안 안량을 베어라.",
   map: BAIMA,
   weather: "sunny",
+  landscape: SPRING,
   roundLimit: 20,
   sides: ["조조군", "원소군", "백마 수비군"],
+  // From the west, where the feint at 연진 drew 원소 off.
   slots: cells([0, 3], [1, 3], [0, 4], [1, 4], [0, 5], [0, 6], [1, 6], [0, 7]),
   max: 7,
   required: ["cao-cao", "guan-yu"],
   guests: [],
-  allies: [{ officer: "liu-yan", classId: "infantry", level: 16, side: 2, x: 13, y: 5 }],
+  allies: [{ officer: "liu-yan", classId: "infantry", level: 16, side: 2, x: 14, y: 5 }],
+  // 안량 camps at the ferry head, between the crossing and the town; his men press the
+  // west gate and the east wall, and a screen faces west, toward us.
   enemies: [
-    foe("yan-liang", "heavyInfantry", 16, 11, 10, hold),
-    foe("yuan", "infantry", 13, 9, 5, { id: "yuan-infantry-1" }),
-    foe("yuan", "infantry", 13, 13, 8, { id: "yuan-infantry-2" }),
+    foe("yan-liang", "heavyInfantry", 16, 12, 2, hold),
+    foe("yuan", "infantry", 13, 10, 5, { id: "yuan-infantry-1" }),
+    foe("yuan", "infantry", 13, 7, 5, { id: "yuan-infantry-2" }),
     foe("yuan", "archer", 13, 8, 4, { id: "yuan-archer-1", ...hold }),
-    foe("yuan", "archer", 13, 16, 6, { id: "yuan-archer-2" }),
-    foe("yuan", "cavalry", 13, 8, 7, { id: "yuan-cavalry-1" }),
-    foe("yuan", "strategist", 12, 12, 10, { id: "yuan-strategist-1", ...heal }),
-    foe("yuan", "catapult", 12, 10, 9, { id: "yuan-catapult-1", ...hold }),
+    foe("yuan", "archer", 13, 17, 4, { id: "yuan-archer-2" }),
+    foe("yuan", "cavalry", 13, 6, 7, { id: "yuan-cavalry-1" }),
+    foe("yuan", "strategist", 12, 10, 2, { id: "yuan-strategist-1", ...heal }),
+    foe("yuan", "catapult", 12, 9, 3, { id: "yuan-catapult-1", ...hold }),
     foe("yuan", "cavalry", 13, 17, 9, { id: "yuan-cavalry-2", arrives: 4 }),
     foe("yuan", "cavalry", 13, 17, 8, { id: "yuan-cavalry-3", arrives: 4 }),
   ],
@@ -261,26 +325,29 @@ const B2: StoryBattleDef = {
   summary: "길에 버린 수레에 원소군이 달려든다. 대오가 흩어진 틈에 문추를 베어라.",
   map: YANJIN,
   weather: "cloudy",
+  landscape: SPRING,
   roundLimit: 20,
   sides: ["조조군", "원소군"],
-  slots: cells([13, 2], [13, 3], [14, 3], [13, 4], [14, 4], [15, 4], [14, 5], [15, 5], [13, 6]),
+  // Our camp south of the dyke, out of sight of the road.
+  slots: cells([12, 9], [13, 9], [11, 9], [12, 10], [13, 10], [11, 10], [14, 9], [10, 8], [14, 10]),
   max: 7,
   // 관우 stays one battle longer, for 문추 (ADR 0071).
   required: ["cao-cao", "guan-yu"],
   guests: [],
+  // 문추 and 유비 wait by the ferry they crossed; their riders scatter over the wagons on the road.
   enemies: [
-    foe("wen-chou", "cavalry", 18, 1, 2, hold),
-    foe("liu-bei", "cavalry", 16, 2, 4, hold),
+    foe("wen-chou", "cavalry", 18, 3, 3, hold),
+    foe("liu-bei", "cavalry", 16, 4, 4, hold),
     foe("yuan", "infantry", 15, 2, 2, { id: "yuan-infantry-4", ...hold }),
-    foe("yuan", "archer", 15, 0, 3, { id: "yuan-archer-3", ...hold }),
+    foe("yuan", "archer", 15, 1, 3, { id: "yuan-archer-3", ...hold }),
     foe("yuan", "cavalry", 14, 7, 4, { id: "yuan-cavalry-1" }),
-    foe("yuan", "cavalry", 14, 6, 6, { id: "yuan-cavalry-2" }),
-    foe("yuan", "infantry", 14, 8, 7, { id: "yuan-infantry-1" }),
-    foe("yuan", "infantry", 14, 10, 8, { id: "yuan-infantry-2" }),
-    foe("yuan", "archer", 14, 4, 5, { id: "yuan-archer-1" }),
-    foe("yuan", "archer", 14, 9, 5, { id: "yuan-archer-2" }),
-    foe("yuan", "cavalry", 14, 6, 0, { id: "yuan-cavalry-3", arrives: 3 }),
-    foe("yuan", "infantry", 14, 7, 0, { id: "yuan-infantry-3", arrives: 3 }),
+    foe("yuan", "cavalry", 14, 8, 5, { id: "yuan-cavalry-2" }),
+    foe("yuan", "infantry", 14, 11, 5, { id: "yuan-infantry-1" }),
+    foe("yuan", "infantry", 14, 13, 6, { id: "yuan-infantry-2" }),
+    foe("yuan", "archer", 14, 6, 4, { id: "yuan-archer-1" }),
+    foe("yuan", "archer", 14, 12, 4, { id: "yuan-archer-2" }),
+    foe("yuan", "cavalry", 14, 3, 0, { id: "yuan-cavalry-3", arrives: 3 }),
+    foe("yuan", "infantry", 14, 4, 0, { id: "yuan-infantry-3", arrives: 3 }),
   ],
   goals: [loseIf("cao-cao"), winBy("wen-chou")],
   duels: [
@@ -356,25 +423,29 @@ const B3: StoryBattleDef = {
   summary: "흙산 위 망루에서 화살이 쏟아진다. 9라운드가 밝을 때까지 진채를 지켜라.",
   map: GUANDU_CAMP,
   weather: "cloudy",
+  landscape: AUTUMN,
   roundLimit: 12,
   sides: ["조조군", "원소군"],
-  slots: cells([1, 1], [2, 2], [2, 3], [1, 4], [2, 4], [1, 5], [2, 6], [2, 7], [1, 8], [2, 9]),
+  slots: cells([4, 8], [3, 8], [5, 8], [2, 8], [4, 7], [5, 7], [2, 6], [6, 9], [2, 9], [1, 7]),
   max: 8,
   required: ["cao-cao"],
   guests: [],
+  // Archers on the earth mounds across the water, foot at the crossing and outside the east
+  // gate. 고람 comes from the camps east of the mounds and must cross at 관도 itself;
+  // 장합's riders come up our bank from downstream.
   enemies: [
-    foe("shen-pei", "strategist", 16, 8, 1, heal),
-    foe("yuan", "archer", 15, 9, 0, { id: "yuan-archer-1", ...hold }),
-    foe("yuan", "archer", 15, 8, 5, { id: "yuan-archer-2", ...hold }),
-    foe("yuan", "archer", 15, 9, 6, { id: "yuan-archer-3", ...hold }),
-    foe("yuan", "archer", 15, 13, 9, { id: "yuan-archer-4", ...hold }),
-    foe("yuan", "catapult", 15, 12, 4, { id: "yuan-catapult-1" }),
-    foe("yuan", "infantry", 15, 6, 3, { id: "yuan-infantry-1" }),
-    foe("yuan", "infantry", 15, 6, 7, { id: "yuan-infantry-2" }),
-    foe("gao-lan", "infantry", 17, 17, 5, { arrives: 3 }),
-    foe("yuan", "infantry", 15, 17, 6, { id: "yuan-infantry-3", arrives: 3 }),
-    foe("yuan", "cavalry", 15, 17, 7, { id: "yuan-cavalry-1", arrives: 3 }),
-    foe("zhang-he", "cavalry", 18, 17, 4, { arrives: 5 }),
+    foe("shen-pei", "strategist", 16, 5, 1, heal),
+    foe("yuan", "archer", 15, 1, 3, { id: "yuan-archer-1", ...hold }),
+    foe("yuan", "archer", 15, 3, 3, { id: "yuan-archer-2", ...hold }),
+    foe("yuan", "archer", 15, 6, 3, { id: "yuan-archer-3", ...hold }),
+    foe("yuan", "archer", 15, 14, 7, { id: "yuan-archer-4", ...hold }),
+    foe("yuan", "catapult", 15, 14, 1, { id: "yuan-catapult-1" }),
+    foe("yuan", "infantry", 15, 4, 2, { id: "yuan-infantry-1" }),
+    foe("yuan", "infantry", 15, 11, 8, { id: "yuan-infantry-2" }),
+    foe("gao-lan", "infantry", 17, 17, 1, { arrives: 3 }),
+    foe("yuan", "infantry", 15, 17, 2, { id: "yuan-infantry-3", arrives: 3 }),
+    foe("yuan", "cavalry", 15, 17, 0, { id: "yuan-cavalry-1", arrives: 3 }),
+    foe("zhang-he", "cavalry", 18, 17, 6, { arrives: 5 }),
     foe("yuan", "cavalry", 15, 17, 8, { id: "yuan-cavalry-2", arrives: 5 }),
     foe("yuan", "cavalry", 15, 17, 10, { id: "yuan-cavalry-3", arrives: 5 }),
   ],
@@ -428,31 +499,34 @@ const B4: StoryBattleDef = {
   name: "오소 야습",
   place: "오소",
   summary: "원소군의 깃발을 들고 밤길을 달려왔다. 군량고(★)에 불을 지르거나 순우경을 베어라.",
-  map: WUCHAO,
+  map: WUCHAO_DEPOT,
   weather: "wind",
+  landscape: AUTUMN,
   roundLimit: 15,
   sides: ["조조군", "원소군"],
-  slots: cells([3, 5], [3, 4], [3, 6], [2, 3], [2, 5], [1, 6], [2, 7], [1, 4]),
+  // Up from the south by the byroads.
+  slots: cells([9, 11], [10, 11], [8, 11], [11, 12], [9, 12], [8, 13], [7, 12], [10, 13]),
   max: 7,
   required: ["cao-cao"],
   guests: [],
   enemies: [
-    foe("chunyu-qiong", "infantry", 19, 15, 5, guard),
-    foe("yuan", "infantry", 16, 13, 4, { id: "yuan-infantry-1", ...guard }),
-    foe("yuan", "infantry", 16, 13, 5, { id: "yuan-infantry-2", ...guard }),
-    foe("yuan", "infantry", 16, 13, 6, { id: "yuan-infantry-3", ...guard }),
-    foe("yuan", "archer", 16, 14, 2, { id: "yuan-archer-1", ...hold }),
-    foe("yuan", "archer", 16, 14, 7, { id: "yuan-archer-2", ...hold }),
-    foe("yuan", "cavalry", 16, 11, 5, { id: "yuan-cavalry-1" }),
-    foe("yuan", "archer", 16, 12, 10, { id: "yuan-archer-3" }),
-    foe("yuan", "strategist", 15, 15, 7, { id: "yuan-strategist-1", ...heal }),
-    foe("jiang-qi", "cavalry", 17, 0, 11, { arrives: 3 }),
-    foe("yuan", "cavalry", 16, 0, 10, { id: "yuan-cavalry-2", arrives: 3 }),
-    foe("yuan", "cavalry", 16, 1, 10, { id: "yuan-cavalry-3", arrives: 3 }),
+    foe("chunyu-qiong", "infantry", 19, 9, 0, guard),
+    foe("yuan", "infantry", 16, 10, 2, { id: "yuan-infantry-1", ...guard }),
+    foe("yuan", "infantry", 16, 9, 2, { id: "yuan-infantry-2", ...guard }),
+    foe("yuan", "infantry", 16, 8, 2, { id: "yuan-infantry-3", ...guard }),
+    foe("yuan", "archer", 16, 12, 1, { id: "yuan-archer-1", ...hold }),
+    foe("yuan", "archer", 16, 7, 1, { id: "yuan-archer-2", ...hold }),
+    foe("yuan", "cavalry", 16, 9, 4, { id: "yuan-cavalry-1" }),
+    foe("yuan", "archer", 16, 4, 3, { id: "yuan-archer-3" }),
+    foe("yuan", "strategist", 15, 7, 0, { id: "yuan-strategist-1", ...heal }),
+    // 원소's riders from his camp to the south-west: behind us.
+    foe("jiang-qi", "cavalry", 17, 2, 13, { arrives: 3 }),
+    foe("yuan", "cavalry", 16, 3, 13, { id: "yuan-cavalry-2", arrives: 3 }),
+    foe("yuan", "cavalry", 16, 3, 12, { id: "yuan-cavalry-3", arrives: 3 }),
   ],
   goals: [
     loseIf("cao-cao"),
-    { side: 0, when: { kind: "reach", side: 0, cells: cells([14, 3]) } },
+    { side: 0, when: { kind: "reach", side: 0, cells: cells([11, 1]) } },
     winBy("chunyu-qiong"),
   ],
   goalText: { win: "군량고(★) 도달 또는 순우경 격파", lose: "조조 퇴각" },
@@ -508,27 +582,30 @@ const B5: StoryBattleDef = {
   summary: "오소가 불타 원소군이 흔들린다. 본진으로 쳐들어가 원소를 몰아내라.",
   map: YUAN_CAMP,
   weather: "sunny",
+  landscape: AUTUMN,
   roundLimit: 20,
   sides: ["조조군", "원소군", "귀순군"],
+  // Over the 관도 crossing, from the south.
   slots: cells(
-    [0, 4],
-    [1, 4],
-    [0, 5],
-    [0, 6],
-    [1, 6],
-    [2, 6],
-    [3, 6],
-    [0, 7],
-    [1, 7],
-    [0, 8],
-    [1, 9],
+    [4, 10],
+    [5, 10],
+    [3, 10],
+    [5, 11],
+    [4, 11],
+    [6, 11],
+    [3, 11],
+    [6, 10],
+    [2, 10],
+    [7, 11],
+    [7, 10],
   ),
   max: 9,
   required: ["cao-cao"],
   guests: [],
+  // 장합 and 고람 come back from our camp, which they were sent to storm, to join us.
   allies: [
-    { officer: "zhang-he", classId: "cavalry", level: 19, side: 2, x: 13, y: 8, arrives: 3 },
-    { officer: "gao-lan", classId: "infantry", level: 18, side: 2, x: 12, y: 9, arrives: 3 },
+    { officer: "zhang-he", classId: "cavalry", level: 19, side: 2, x: 13, y: 10, arrives: 3 },
+    { officer: "gao-lan", classId: "infantry", level: 18, side: 2, x: 12, y: 11, arrives: 3 },
   ],
   enemies: [
     foe("yuan-shao", "shockCavalry", 21, 16, 3, guard),
@@ -539,11 +616,12 @@ const B5: StoryBattleDef = {
     foe("yuan-elite", "heavyInfantry", 19, 17, 6, { id: "yuan-elite-infantry-2", ...guard }),
     foe("yuan-elite", "longbow", 17, 15, 5, { id: "yuan-elite-archer-1", ...hold }),
     foe("yuan", "catapult", 17, 16, 4, { id: "yuan-catapult-1", ...hold }),
-    foe("yuan-tan", "cavalry", 18, 12, 4),
-    foe("yuan", "archer", 17, 9, 2, { id: "yuan-archer-1" }),
-    foe("yuan", "cavalry", 17, 10, 6, { id: "yuan-cavalry-1" }),
-    foe("yuan", "infantry", 17, 11, 8, { id: "yuan-infantry-1" }),
-    foe("yuan", "infantry", 17, 8, 4, { id: "yuan-infantry-2" }),
+    // The outer camps on the sand ridges, between us and the main camp.
+    foe("yuan-tan", "cavalry", 18, 12, 5),
+    foe("yuan", "archer", 17, 10, 3, { id: "yuan-archer-1" }),
+    foe("yuan", "cavalry", 17, 11, 7, { id: "yuan-cavalry-1" }),
+    foe("yuan", "infantry", 17, 14, 8, { id: "yuan-infantry-1" }),
+    foe("yuan", "infantry", 17, 9, 6, { id: "yuan-infantry-2" }),
     foe("yuan-elite", "shockCavalry", 18, 19, 7, { id: "yuan-elite-cavalry-1", arrives: 5 }),
     foe("yuan-elite", "shockCavalry", 18, 19, 8, { id: "yuan-elite-cavalry-2", arrives: 5 }),
   ],
@@ -657,6 +735,7 @@ const XU_COURT: StageDef = {
 const BAIMA_FERRY: StageDef = {
   id: "baima-ferry",
   light: "day",
+  landscape: SPRING,
   rows: [
     "wwwwwwwwwwwwwwww",
     "wwwwwwwwbbwwwwww",
@@ -678,62 +757,70 @@ const BAIMA_FERRY: StageDef = {
   ],
 };
 
-/** 백마's north gate: the road to 하북, the sealed gifts left by the gatehouse. */
+/**
+ * Inside 백마's west gate, its only one: the road out to the ferry and 하북, the sealed
+ * gifts left by the gatehouse.
+ */
 const BAIMA_GATE: StageDef = {
   id: "baima-gate",
   light: "day",
+  landscape: SPRING,
   rows: [
-    "######==######",
-    "vv..##==##..vv",
-    "v.....==.....v",
-    "......==......",
-    "......==......",
-    "......==......",
-    "g.....==.....g",
-    "gg....==....gg",
-    "ggg...==...ggg",
+    "#vv..v....v.vv",
+    "#v............",
+    "#............v",
+    "==============",
+    "==============",
+    "#.............",
+    "#g...........v",
+    "#gg........gvv",
+    "#ggg.......ggg",
   ],
   props: [
-    prop("gate", 6, 0, { solid: false }),
-    prop("gate", 7, 0, { solid: false }),
-    prop("lantern", 5, 2),
-    prop("lantern", 8, 2),
-    prop("chest", 10, 2),
-    prop("chest", 11, 2),
-    prop("banner", 3, 3),
+    prop("gate", 0, 3, { solid: false }),
+    prop("gate", 0, 4, { solid: false }),
+    prop("lantern", 1, 2),
+    prop("lantern", 1, 5),
+    prop("chest", 2, 1),
+    prop("chest", 3, 1),
+    prop("banner", 3, 6),
     prop("well", 2, 6),
   ],
 };
 
-/** South of the 연진 ford: the road strewn with wagons and grain, our men resting on the slope. */
+/**
+ * South of the 연진 ferry: the road strewn with wagons and grain, and the dyke (the
+ * southern slope) across the field, our men resting below it out of sight.
+ */
 const YANJIN_SLOPE: StageDef = {
   id: "yanjin-slope",
   light: "day",
   weather: "cloudy",
+  landscape: SPRING,
   rows: [
     "wwwwwwddwwwwww",
     "gww...dd...wwg",
     "gg............",
     "g............g",
-    "ff..........hh",
-    "fff.......hhhh",
-    "ff.......hhhhh",
-    "g.......hhhhhh",
-    "gg.....hhhhhhh",
+    "ff............",
+    "ffhhhhhhhhhhhh",
+    "f.............",
+    "g............g",
+    "gg.........ggg",
   ],
   props: [
     prop("cart", 5, 3),
     prop("cart", 8, 4),
     prop("grain", 4, 4),
     prop("grain", 7, 3),
-    prop("grain", 6, 5),
-    prop("horse", 12, 5),
-    prop("horse", 13, 6),
+    prop("grain", 6, 4),
+    prop("horse", 12, 7),
+    prop("horse", 13, 7),
     prop("banner", 11, 6),
   ],
 };
 
-/** The same slope at dusk after the fight: the wagons gathered, the sealed gifts by the road. */
+/** The same road at dusk after the fight: the wagons gathered, the sealed gifts by the road. */
 const YANJIN_DUSK: StageDef = {
   ...YANJIN_SLOPE,
   id: "yanjin-dusk",
@@ -744,19 +831,23 @@ const YANJIN_DUSK: StageDef = {
     prop("chest", 10, 2),
     prop("chest", 11, 2),
     prop("lantern", 9, 2),
-    prop("horse", 12, 5),
+    prop("horse", 12, 6),
     prop("banner", 11, 6),
   ],
 };
 
-/** 관도 in the eighth month: our palisade, 원소's tents stretched along the north. */
+/**
+ * 관도 in the eighth month: our palisade on the south bank of the 관도 water, the crossing
+ * before its gate, 원소's tents stretched along the far bank.
+ */
 const GUANDU_PALISADE: StageDef = {
   id: "guandu-palisade",
   light: "day",
+  landscape: AUTUMN,
   rows: [
     "gggggggggggggg",
     "g............g",
-    "..............",
+    "wwwwwwddwwwwww",
     "cccccccccccccc",
     "cccccccccccccc",
     "cccccccccccccc",
@@ -784,16 +875,17 @@ const GUANDU_PALISADE: StageDef = {
   ],
 };
 
-/** 관도 in the ninth month: 원소's earth mounds over the palisade, archers on top. */
+/** 관도 in the ninth month: 원소's earth mounds across the water from our palisade, archers on top. */
 const GUANDU_MOUNDS: StageDef = {
   id: "guandu-mounds",
   light: "day",
   weather: "cloudy",
+  landscape: AUTUMN,
   rows: [
     "ghhhgggggghhhg",
     "hhhhhggggghhhh",
     "ghhhg....ghhhg",
-    "..............",
+    "wwwwwwddwwwwww",
     "cccccccccccccc",
     "cccccccccccccc",
     "cccccccccccccc",
@@ -848,35 +940,41 @@ const GUANDU_NIGHT: StageDef = {
   ],
 };
 
-/** The night road to 오소: a 원소 picket by the way, the depot palisade ahead. */
+/**
+ * The night road to 오소: up from the south through the woods, a 원소 picket at the bridge
+ * over the 제수, and the depot palisade beyond it, as on the battle map.
+ */
 const WUCHAO_ROAD: StageDef = {
   id: "wuchao-road",
   light: "night",
   weather: "wind",
+  landscape: AUTUMN,
   rows: [
-    "ffffffffffcccc",
-    "fffggfffffcccc",
-    "ffg......gcccc",
-    "fg........cccc",
-    "..........cccc",
-    "..........cccc",
-    "fg........cccc",
-    "ffgg....ggcccc",
-    "ffffffffffcccc",
+    "cccccccccccccc",
+    "cccccccccccccc",
+    "ff....gg....ff",
+    "wwwwwwbbwwwwww",
+    "ff.g......g.ff",
+    "fg..........gf",
+    "ff..........ff",
+    "fffg......gfff",
+    "ffff......ffff",
   ],
   props: [
-    // A stockade down the depot's west side, one gate in it (gates are drawn facing us).
-    ...[0, 1, 2, 3, 5, 6, 7, 8].map((y) => prop("fence", 10, y)),
-    prop("gate", 10, 4, { solid: false }),
-    prop("grain", 12, 1),
-    prop("grain", 13, 2),
-    prop("grain", 12, 3),
-    prop("grain", 13, 6),
-    prop("grain", 12, 7),
-    prop("banner", 11, 2, theirs),
-    prop("banner", 11, 7, theirs),
-    prop("brazier", 6, 2),
-    prop("banner", 7, 2, theirs),
+    // The depot's stockade along its south side, its gate over the bridge.
+    ...palisade(1, 0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13),
+    prop("gate", 6, 1, { solid: false }),
+    prop("gate", 7, 1, { solid: false }),
+    prop("grain", 1, 0),
+    prop("grain", 3, 0),
+    prop("grain", 10, 0),
+    prop("grain", 12, 0),
+    prop("grain", 13, 0),
+    prop("banner", 4, 0, theirs),
+    prop("banner", 9, 0, theirs),
+    // The picket's post at the bridgehead.
+    prop("brazier", 9, 5),
+    prop("banner", 9, 4, theirs),
   ],
 };
 
@@ -913,6 +1011,7 @@ const YUAN_TENT: StageDef = {
 const FINAL_FIELD: StageDef = {
   id: "final-field",
   light: "dusk",
+  landscape: AUTUMN,
   rows: [
     "wwwwwwwwwwwwww",
     "wwwwddwwwwwwww",
@@ -1472,7 +1571,7 @@ const BEFORE_WUCHAO: SceneDef = {
   stage: WUCHAO_ROAD,
   cast: [
     // The picket and the soldier who answers him speak, so they go by their troop ids.
-    extra("yuan", "yuan", 1, [7, 3], "down"),
+    extra("yuan", "yuan", 1, [8, 4], "down"),
     extra("cao", "cao", 0),
     extra("soldier-2", "cao", 0),
     actor("cao-cao", 0),
@@ -1480,16 +1579,16 @@ const BEFORE_WUCHAO: SceneDef = {
     actor("yue-jin", 0),
   ],
   script: [
-    camera([4, 4], 1200),
+    camera([7, 5], 1200),
     tell(
       "조조는 보병과 기병 오천을 이끌고 밤길을 달렸다. 병사들은 원소군의 깃발을 들고 나뭇가지를 한 다발씩 짊어졌다.",
     ),
     sound("march"),
-    all(enter("cao", [0, 4], [4, 4]), enter("soldier-2", [0, 5], [4, 5])),
-    all(enter("cao-cao", [0, 4], [3, 4]), enter("xu-chu", [0, 5], [3, 5])),
-    enter("yue-jin", [0, 4], [2, 4]),
-    walk("yuan", [5, 4]),
-    face("yuan", "left"),
+    all(enter("cao", [6, 8], [6, 5]), enter("soldier-2", [7, 8], [7, 5])),
+    all(enter("cao-cao", [6, 8], [6, 6]), enter("xu-chu", [7, 8], [7, 6])),
+    enter("yue-jin", [6, 8], [6, 7]),
+    walk("yuan", [6, 4]),
+    face("yuan", "down"),
     emote("yuan", "?"),
     say("yuan", "거기 서라! 어느 부대냐?", undefined, { name: "원소군 초병", side: 1 }),
     say("cao", "원공의 명이오. 순우 장군을 도와 오소를 지키러 가는 길이오.", undefined, {
@@ -1498,22 +1597,22 @@ const BEFORE_WUCHAO: SceneDef = {
     }),
     emote("yuan", "..."),
     act("yuan", "nod"),
-    walk("yuan", [7, 3]),
+    walk("yuan", [8, 4]),
     face("yuan", "down"),
     tell("누가 물으면 원공의 명으로 오소를 지키러 간다고 답했다. 의심하는 자는 아무도 없었다."),
     all(
-      walk("cao", [9, 4]),
-      walk("soldier-2", [9, 5]),
-      walk("cao-cao", [8, 4]),
-      walk("xu-chu", [8, 5]),
-      walk("yue-jin", [7, 4]),
+      walk("cao", [6, 2]),
+      walk("soldier-2", [7, 2]),
+      walk("cao-cao", [6, 3]),
+      walk("xu-chu", [7, 3]),
+      walk("yue-jin", [6, 4]),
     ),
     camera("cao-cao", 1400),
-    face("xu-chu", "up"),
+    face("xu-chu", "cao-cao"),
     say("xu-chu", "주공 곁은 이 허저가 지킵니다. 마음 놓고 불을 지르십시오.", "smile"),
     act("cao-cao", "nod"),
-    face("cao-cao", "right"),
-    camera([12, 4], 1200),
+    face("cao-cao", "up"),
+    camera([7, 1], 1200),
     pause(700),
   ],
 };

@@ -82,27 +82,37 @@ const turn = (terrain: TerrainId, xy: readonly [number, number][]): TileChange[]
 
 // ---------------------------------------------------------------- maps
 
-/** 팽성 (Pengcheng): the walled town to the east, the 사수 along the north, fields and a wood. */
+/**
+ * 팽성 (Pengcheng), as 『수경주』 has it: the 사수 runs south past the east
+ * wall; the 획수 comes from the west, turns north at the south-west corner, runs
+ * up the west side and along the north wall into the 사수 at the north-east
+ * corner. Hills south of the city. 도겸's army stands before the west bridge;
+ * the road east to 담 crosses the 사수 by the east gate.
+ */
 const PENGCHENG_MAP: MapDef = {
   id: "pengcheng",
   name: "팽성",
   rows: [
-    "wwwwwwwwwwwwwwwwww",
-    "gg..wwwww...wwwwww",
-    "ggg.........######",
-    "g...ff......#vvvv#",
-    "...fff..g...#vFvv#",
-    "....f..ggg..vvvvv#",
-    "......ggg...#vvvv#",
-    "..hh....g...##v###",
-    ".hhh...ff.........",
-    "......fff...gg....",
-    "..v.........ggg...",
-    ".vvv.....hh..g....",
+    "gg...ff...gg..g.ww.g",
+    "g...fff..wwwwwwwww..",
+    "gg..ff...w######ww..",
+    "g...f....w#vvvv#ww..",
+    "...ff....w#vFvv#ww..",
+    "......gg.bvvvvvvbb..",
+    ".....ggg.w#vvvv#ww..",
+    "..hh...g.w##v###ww..",
+    ".hhh...ffd......ww..",
+    "......fffw.hhhh.ww.g",
+    "wwwwwwwwwwhhhh..ww..",
+    ".vv..g....hhh...ww..",
   ],
 };
 
-/** 복양 성안 (inside Puyang): walled compounds and houses; the east gate shut, the south gate open. */
+/**
+ * 복양 성안 (inside Puyang): walled compounds and houses. 조조 came in by the
+ * east gate and set it on fire to show he would not turn back; the way out is
+ * back through that burning gate. 여포 rides in by the west gate, 장료 by the south.
+ */
 const PUYANG_CITY: MapDef = {
   id: "puyang-city",
   name: "복양 성안",
@@ -110,11 +120,11 @@ const PUYANG_CITY: MapDef = {
     "##################",
     "#vv.v...vv..v....#",
     "#...##.#.##.##...#",
-    "#.v.##...##.##..v#",
-    "#................#",
+    "#.v.##...##.##..v.",
+    "#.................",
     "#v##.vv.##.vv.##.#",
-    "#.##.vv.##.vv.##v#",
-    "#.......f........#",
+    "#.##.vv.##.vv.##.#",
+    "........f........#",
     "#vv.##.v##.##.vv.#",
     "#...##.v##.##....#",
     "#.v............v.#",
@@ -122,132 +132,155 @@ const PUYANG_CITY: MapDef = {
   ],
 };
 
-/** 정도 (Dingtao): our thin camp to the west, the river north, the dike with a wood behind it, wheat fields. */
+/**
+ * 승씨 (乘氏, Chengshi), where 조조 camped after 거야 (『자치통감』 권61). Our thin
+ * camp with the great dike west of it and deep woods south of the dike (『위서』);
+ * the north arm of the 제수 along the top into the 거야 marsh, the 하수 (菏水)
+ * along the bottom. 여포 comes up from the south-east, from 동민.
+ */
 const DINGTAO_MAP: MapDef = {
   id: "dingtao",
-  name: "정도",
+  name: "승씨",
   rows: [
-    "wwwwwwwwwwwwwwwwww",
-    "..gg..ww....www..w",
-    "#c#.gggg..gggg....",
-    "ccc.gggg.....gg...",
-    "cccc....ggg.......",
-    "cccc....ggg...hh..",
-    "ccc.gggg..gg..hh..",
-    "#c#.gggg..gg......",
-    "hhhhhhhhh..hhh....",
-    "fffffffff.....gg..",
-    "ffffffff....ggg...",
-    "fffffff......g....",
+    "wwwwwwwwwwwwwwwwwwww",
+    "..g.h#cc#..gg..wwwww",
+    "....hcccc..gggg...ww",
+    ".g..hcccc...ggg....w",
+    "....hcccc.....gg....",
+    "....h#cc#..gg.......",
+    "..g.h......gg...hh..",
+    "....h..gggg.....hh..",
+    "fffff..gggg..gg.....",
+    "ffffff........ggg...",
+    "fffff...gg.....g....",
+    "ffff...gggg.........",
+    "ff.....gggg....gg...",
+    "wwwwwwwwwwwwwddwwwww",
   ],
 };
 
 /**
- * 완성 (Wancheng): our palisade inside the town with its west gate and a back
- * gate, the town's east gate, and the 육수 with its bridge to the south-east.
+ * 완성 (Wancheng): 조조 camped on the 육수 outside the town (『삼국지』 장수전).
+ * The town's east wall and gate on the left; our palisade with its west gate
+ * (전위's gate) facing the town and a back gate; the 육수 running south past
+ * the town's east side, bending west along its south side. A ford in the
+ * middle; upstream, the 과리진 (瓜里津) bridges on the road east to 무음.
  */
 const WANCHENG_MAP: MapDef = {
   id: "wancheng",
   name: "완성",
   rows: [
-    "####.########..ww.",
-    "#hh.........#..ww.",
-    "#h...v.v..v.#..ww.",
-    "#....######.#..ww.",
-    "#v...#cccc#.#.fww.",
-    "#.hh.#cccc#v#.fww.",
-    "#.h..ccccc#....ww.",
-    "#v...#ccccc.#..ww.",
-    "#....#cccc#.#..ww.",
-    "#.v..######.#..ww.",
-    "#...v.....v.#..bb.",
-    "#####.#######.fww.",
-  ],
-};
-
-/** 기현 (Qi): a river with a bridge and two fords; the walled town of 기 to the east. */
-const QI_MAP: MapDef = {
-  id: "qi",
-  name: "기현",
-  rows: [
-    "..ff...ww...hhh...",
-    ".fff...ww..hhh....",
-    ".......dd...######",
-    "..gg...ww...#vvvv#",
-    ".ggg...ww...#vvvv#",
-    ".......bb...vvvFv#",
-    ".......bb...#vvvv#",
-    "..ff...ww...#vvvv#",
-    ".fff...ww...###v##",
-    ".......dd....g....",
-    "..hh...ww...ggg...",
-    ".hhh...ww....g....",
-  ],
-};
-
-/** 안중 (Anzhong): a valley road between hills and mountains. */
-const ANZHONG_MAP: MapDef = {
-  id: "anzhong",
-  name: "안중",
-  rows: [
-    "mmmmmmmmhhmmmmmmmm",
-    "mmhhhmmhhhhmmmhhmm",
-    "hhh..hhh..hhh..hhh",
-    "h......f.........h",
-    "...gg.....ff......",
-    "..................",
-    "......gg......gg..",
-    "h.....ff.....f...h",
-    "hhh..hhh..hhh..hhh",
-    "mmhhhmmhhhhmmmhhmm",
-    "mmmmmmhhmmmmmmmmmm",
-    "mmmmmmmmmmmmmmmmmm",
+    "vv#.......f...ww..",
+    "v.#..v........bb.g",
+    "vv#.h.......f.ww..",
+    "v.#...######..ww..",
+    "v.....#cccc#..ww..",
+    "vv....#cccc#.fww..",
+    "v.#...ccccc#..dd..",
+    "vv#...#ccccc..ww.g",
+    "v.#...#cccc#..ww..",
+    "vv#...######.fww..",
+    "v.#.v.......f.ww..",
+    "wwwwwwwwwwwwwwww..",
   ],
 };
 
 /**
- * 하비 (Xiapi): the walled city with its keep, the 사수 to the west and the 기수
- * along the north, the dike with the sluice (7,2) on the 기수.
+ * 기현 (Qi, 蘄 in 패국): the 환수 (渙水) flows south-east past the town's
+ * south side (『수경주』 권30), crossed by the old stone bridge below the town's
+ * south-west corner and by fords up and down stream. 조조 comes from the west.
+ */
+const QI_MAP: MapDef = {
+  id: "qi",
+  name: "기현",
+  rows: [
+    ".ff.ww....hhh.....",
+    "fff.dd....hh######",
+    ".....ww.....#vvvv#",
+    "..gg..ww....#vvvv#",
+    ".ggg...ww...vvvFv#",
+    ".......ww...#vvvv#",
+    "..ff....ww..#vvvv#",
+    ".fff.....bb.###v##",
+    "..........ww..g...",
+    "..hh.......ww.ggg.",
+    ".hhh........dd..g.",
+    ".............ww...",
+  ],
+};
+
+/**
+ * 안중 (Anzhong): "between the two rivers" (『수경주』 권29). The 단수 (湍水)
+ * along the south, the 열수 (涅水) along the north into the 안중항 pond, whose
+ * dam is the narrows 유표's men hold; below it the 열수 runs down to the 단수.
+ * 장수 comes after us from 양 in the west; low terraces along both banks.
+ */
+const ANZHONG_MAP: MapDef = {
+  id: "anzhong",
+  name: "안중",
+  rows: [
+    "g..hh...gg..wwwwww",
+    "wwwwwwwwwwwwwwwwww",
+    "hhh..hhh..hhwwwwww",
+    "h......f....wwwwww",
+    "...gg.....ffhhhhhh",
+    "................w.",
+    "......gg......g.w.",
+    "h.....ff.....f..d.",
+    "hhh..hhh..hhh...w.",
+    "g.hhh..hhhh..hh.w.",
+    "wwwwwwwwwwwwwwwwww",
+    "g.hh..gg..hh..g..g",
+  ],
+};
+
+/**
+ * 하비 (Xiapi), as 『수경주』 권25 has it: the 사수 down the west side; the 기수
+ * (沂水) comes from the north and parts at the north wall, one arm west into
+ * the 사수, the other (the 소기수) round the east side and along the south past
+ * the 이교 (圯) into the 사수. Three walls: 여포 holds the inner city; the south
+ * gate is 백문. The dike with the sluice (7,2) on the 기수; the 태산 men cross
+ * the 소기수 by the east bridge.
  */
 const XIAPI_MAP: MapDef = {
   id: "xiapi",
   name: "하비",
   rows: [
-    "..ww...hh....gg..hhh",
+    "..ww...hh.....ww.hh.",
     "..wwwwwwwwwwwwwwwwww",
-    "..ww.hhbhhhhhhhhh...",
-    "..ww................",
-    "..ww..g...####v####.",
-    "..ww.gg...#vv...vv#.",
-    "..dd......#v.....v#.",
-    "..ww......#..vFF..#.",
-    "..bb......v..vFF..#.",
-    "..ww...ff.#v.....v#.",
-    "..ww..fff.#vv.v.vv#.",
-    "..ww......####v####.",
-    "..ww..gg............",
-    "..ww....hh......gg..",
+    "..ww.hhbhhhhhhhhh..w",
+    "..ww...............w",
+    "..ww..g..####v####.w",
+    "..ww.gg..#vv...vv#.w",
+    "..dd.....#v.....v#.w",
+    "..ww.....#..vFF..#.w",
+    "..bb.....v..vFF..#.w",
+    "..ww...ff#vv.v.vv#.w",
+    "..ww..fff####v####.b",
+    "..ww...............w",
+    "..ww..gg...hh......w",
+    "..wwwwwwwwwwwbwwwwww",
   ],
 };
 
 /**
  * The low ground round 하비's walls, under water once the sluice is open. The
  * raised roads stay dry: west to the west gate, south to the south gate, and
- * up the east side to the east gate that 진등 may open.
+ * along the south bank and up the east side to the east gate that 진등 may open.
  */
 const XIAPI_FLOOD: TileChange[] = [
   ...turn("water", [
-    ...[3, 4, 5, 6, 7, 9, 10, 11, 12].flatMap((y): [number, number][] => [
+    ...[3, 4, 5, 6, 7, 9, 10, 11].flatMap((y): [number, number][] => [
+      [7, y],
       [8, y],
-      [9, y],
     ]),
-    ...[10, 11, 12, 13, 15, 16, 17, 18, 19].map((x): [number, number] => [x, 3]),
-    ...[10, 11, 12, 13, 15, 16, 17, 18].map((x): [number, number] => [x, 12]),
-    ...[4, 5, 6, 7].map((y): [number, number] => [19, y]),
+    ...[9, 10, 11, 12, 14, 15, 16, 17, 18].map((x): [number, number] => [x, 3]),
+    ...[9, 10, 11, 12, 14, 15, 16, 17].map((x): [number, number] => [x, 11]),
+    ...[4, 5, 6, 7].map((y): [number, number] => [18, y]),
   ]),
   ...turn("ford", [
-    [14, 3],
-    [14, 12],
+    [13, 3],
+    [13, 11],
   ]),
 ];
 
@@ -260,6 +293,7 @@ export const PENGCHENG: StoryBattleDef = {
   summary: "아버지의 원수 도겸의 군이 팽성 앞에 진을 쳤다. 서주의 장수 조표를 베어라.",
   map: PENGCHENG_MAP,
   weather: "cloudy",
+  landscape: { region: "huai", season: "autumn" },
   roundLimit: 20,
   sides: ["조조군", "서주군"],
   slots: cells([1, 5], [1, 6], [0, 5], [0, 6], [1, 4], [1, 7], [0, 4], [0, 7]),
@@ -267,18 +301,20 @@ export const PENGCHENG: StoryBattleDef = {
   required: ["cao-cao"],
   guests: [],
   enemies: [
-    foe("cao-bao", "cavalry", 12, 12, 5, guard),
-    foe("tao-qian", "strategist", 11, 14, 4, guard),
-    foe("xu", "infantry", 10, 7, 4, { id: "xu-infantry-1" }),
-    foe("xu", "infantry", 10, 7, 6, { id: "xu-infantry-2" }),
-    foe("xu", "infantry", 10, 6, 8, { id: "xu-infantry-3" }),
-    foe("xu", "infantry", 11, 9, 5, { id: "xu-infantry-4", ...hold }),
-    foe("xu", "archer", 10, 9, 3, { id: "xu-archer-1", ...hold }),
-    foe("xu", "archer", 10, 9, 7, { id: "xu-archer-2", ...hold }),
-    foe("xu", "cavalry", 10, 10, 9, { id: "xu-cavalry-1" }),
-    foe("xu", "strategist", 10, 11, 6, { id: "xu-strategist-1", ...heal }),
-    foe("xu", "infantry", 11, 17, 9, { id: "xu-infantry-5", arrives: 3 }),
-    foe("xu", "cavalry", 11, 17, 10, { id: "xu-cavalry-2", arrives: 3 }),
+    // 조표 holds the west gate behind the bridge over the 획수; 도겸 is in the city.
+    foe("cao-bao", "cavalry", 12, 10, 5, guard),
+    foe("tao-qian", "strategist", 11, 12, 4, guard),
+    foe("xu", "infantry", 10, 6, 4, { id: "xu-infantry-1" }),
+    foe("xu", "infantry", 10, 6, 6, { id: "xu-infantry-2" }),
+    foe("xu", "infantry", 10, 5, 8, { id: "xu-infantry-3" }),
+    foe("xu", "infantry", 11, 7, 5, { id: "xu-infantry-4", ...hold }),
+    foe("xu", "archer", 10, 8, 3, { id: "xu-archer-1", ...hold }),
+    foe("xu", "archer", 10, 8, 7, { id: "xu-archer-2", ...hold }),
+    foe("xu", "cavalry", 10, 12, 8, { id: "xu-cavalry-1" }),
+    foe("xu", "strategist", 10, 11, 5, { id: "xu-strategist-1", ...heal }),
+    // From 담, over the 사수 by the east gate.
+    foe("xu", "infantry", 11, 19, 4, { id: "xu-infantry-5", arrives: 3 }),
+    foe("xu", "cavalry", 11, 19, 6, { id: "xu-cavalry-2", arrives: 3 }),
   ],
   goals: [loseIf("cao-cao"), winBy("cao-bao")],
   goalText: { win: "조표 격파", lose: "조조 퇴각" },
@@ -307,7 +343,7 @@ export const PENGCHENG: StoryBattleDef = {
     },
     {
       when: { at: "arrived", unit: "xu-infantry-5" },
-      lines: [{ text: "동쪽 들판에서 서주군 원군이 달려온다!" }],
+      lines: [{ text: "사수 건너 동쪽에서 서주군 원군이 달려온다!" }],
     },
     {
       when: { at: "defeated", unit: "cao-bao" },
@@ -323,37 +359,43 @@ export const PUYANG_FIRE: StoryBattleDef = {
   id: "puyang-fire",
   name: "복양의 불길",
   place: "복양 성안",
-  summary: "전씨의 밀서는 함정이었다. 불타는 복양성을 뚫고 조조를 남문(★)까지 빠져나가게 하라.",
+  summary:
+    "전씨의 밀서는 함정이었다. 불타는 복양성을 뚫고 조조를 불붙은 동문(★)으로 빠져나가게 하라.",
   map: PUYANG_CITY,
   weather: "wind",
+  landscape: { region: "plain", season: "summer" },
   light: "night",
   roundLimit: 15,
   sides: ["조조군", "여포군"],
-  slots: cells([16, 2], [15, 2], [16, 1], [15, 1], [15, 3], [14, 2], [14, 1], [16, 4]),
+  // In the north of the city, where the 전씨 led us in.
+  slots: cells([6, 1], [7, 1], [6, 2], [7, 3], [8, 3], [5, 1], [8, 2], [8, 1]),
   max: 6,
   required: ["cao-cao", "dian-wei"],
   guests: [],
   enemies: [
     foe("lu-bu", "cavalry", 15, 1, 7, { arrives: 2 }),
-    foe("zhang-liao", "cavalry", 14, 1, 10, { arrives: 3 }),
-    foe("gao-shun", "infantry", 14, 4, 10, hold),
-    foe("chen-gong", "strategist", 13, 8, 1, { ...heal, if: revenge }),
-    foe("lu", "infantry", 11, 12, 4, { id: "lu-infantry-1" }),
-    foe("lu", "infantry", 11, 7, 4, { id: "lu-infantry-2" }),
-    foe("lu", "infantry", 11, 10, 7, { id: "lu-infantry-3", ...hold }),
-    foe("lu", "archer", 11, 10, 1, { id: "lu-archer-1", ...hold }),
-    foe("lu", "archer", 11, 13, 7, { id: "lu-archer-2", ...hold }),
-    foe("lu", "archer", 11, 7, 9, { id: "lu-archer-3", ...hold }),
-    foe("lu", "cavalry", 11, 2, 1, { id: "lu-cavalry-1" }),
-    foe("lu", "infantry", 11, 14, 10, { id: "lu-infantry-4", arrives: 3 }),
-    foe("lu", "cavalry", 11, 1, 4, { id: "lu-cavalry-2", arrives: 3 }),
+    foe("zhang-liao", "cavalry", 14, 8, 10, { arrives: 3 }),
+    foe("gao-shun", "infantry", 14, 16, 6, hold),
+    foe("chen-gong", "strategist", 13, 1, 6, { ...heal, if: revenge }),
+    foe("lu", "infantry", 11, 6, 3, { id: "lu-infantry-1" }),
+    foe("lu", "infantry", 11, 6, 6, { id: "lu-infantry-2" }),
+    foe("lu", "infantry", 11, 11, 4, { id: "lu-infantry-3", ...hold }),
+    foe("lu", "archer", 11, 2, 7, { id: "lu-archer-1", ...hold }),
+    foe("lu", "archer", 11, 11, 3, { id: "lu-archer-2", ...hold }),
+    foe("lu", "archer", 11, 13, 6, { id: "lu-archer-3", ...hold }),
+    foe("lu", "cavalry", 11, 2, 10, { id: "lu-cavalry-1" }),
+    foe("lu", "infantry", 11, 12, 10, { id: "lu-infantry-4", arrives: 3 }),
+    foe("lu", "cavalry", 11, 6, 10, { id: "lu-cavalry-2", arrives: 3 }),
   ],
-  goals: [loseIf("cao-cao"), escapeTo([7, 11], [8, 11])],
-  goalText: { win: "조조가 남문(★)에 도달", lose: "조조 퇴각" },
+  goals: [loseIf("cao-cao"), escapeTo([17, 3], [17, 4])],
+  goalText: { win: "조조가 동문(★)에 도달", lose: "조조 퇴각" },
   burning: [
+    // The east gate 조조 fired himself; it burns all night (『헌제춘추』).
+    { x: 17, y: 3, rounds: 15 },
+    { x: 17, y: 4, rounds: 15 },
     { x: 9, y: 4, rounds: 4 },
     { x: 10, y: 4, rounds: 4 },
-    { x: 16, y: 6, rounds: 3 },
+    { x: 14, y: 7, rounds: 3 },
     { x: 13, y: 8, rounds: 5 },
     { x: 13, y: 9, rounds: 5 },
     { x: 7, y: 7, rounds: 3 },
@@ -369,7 +411,9 @@ export const PUYANG_FIRE: StoryBattleDef = {
     {
       when: { at: "start" },
       lines: [
-        { text: "동문으로 들어서자 등 뒤에서 성문이 닫혔다. 거리마다 불길이 솟았다." },
+        {
+          text: "동문에 불을 지르고 성 깊이 들어섰을 때, 거리마다 불길이 솟았다. 함정이었다.",
+        },
         {
           who: "chen-gong",
           side: 1,
@@ -386,9 +430,9 @@ export const PUYANG_FIRE: StoryBattleDef = {
         {
           who: "dian-wei",
           mood: "angry",
-          text: "주공, 제 뒤에 붙으십시오. 남문까지 길을 뚫겠습니다!",
+          text: "주공, 제 뒤에 붙으십시오. 동문까지 길을 뚫겠습니다!",
         },
-        { who: "cao-cao", text: "멈추지 마라. 남문(★)으로 빠져나간다!" },
+        { who: "cao-cao", text: "멈추지 마라. 불타는 동문(★)으로 빠져나간다!" },
       ],
     },
     {
@@ -419,22 +463,22 @@ export const PUYANG_FIRE: StoryBattleDef = {
         {
           who: "dian-wei",
           mood: "angry",
-          text: "주공, 돌아보지 마십시오! 남문만 보고 달리십시오!",
+          text: "주공, 돌아보지 마십시오! 동문만 보고 달리십시오!",
         },
       ],
     },
     {
       when: { at: "arrived", unit: "zhang-liao" },
       lines: [
-        { text: "남문 쪽 골목으로 장료의 기병이 달려든다!" },
-        { who: "gao-shun", mood: "angry", text: "남문을 막아라. 한 놈도 내보내지 마라!" },
+        { text: "남문으로 들어온 장료의 기병이 동문 쪽 골목으로 달려든다!" },
+        { who: "gao-shun", mood: "angry", text: "동문을 막아라. 한 놈도 내보내지 마라!" },
       ],
     },
     {
       when: { at: "end", winner: 0 },
       lines: [
         {
-          text: "조조는 불붙은 들보 아래를 지나 남문을 벗어났다. 손과 수염이 그을렸으나 목숨은 건졌다.",
+          text: "조조는 아직 타오르는 동문의 불길을 뚫고 나왔다. 왼손과 수염이 그을렸으나 목숨은 건졌다.",
         },
       ],
     },
@@ -444,34 +488,38 @@ export const PUYANG_FIRE: StoryBattleDef = {
 export const DINGTAO: StoryBattleDef = {
   id: "dingtao",
   name: "정도의 둑",
-  place: "연주 정도",
+  place: "연주 승씨",
   summary:
     "보리를 거두러 군사가 흩어진 사이 여포가 왔다. 복병과 함께 여포를 물리치거나 9라운드까지 버텨라.",
   map: DINGTAO_MAP,
   weather: "sunny",
+  landscape: { region: "plain", season: "summer" },
   roundLimit: 20,
   sides: ["조조군", "여포군"],
-  slots: cells([1, 4], [2, 4], [1, 5], [2, 5], [1, 3], [2, 6], [3, 4], [3, 5], [0, 5]),
+  // The half of the army outside the dike, in and before the camp.
+  slots: cells([6, 3], [7, 3], [6, 4], [7, 4], [6, 2], [7, 2], [8, 3], [8, 2], [5, 3]),
   max: 6,
   required: ["cao-cao"],
+  // The hidden half behind the dike, who come over it once 여포 closes in.
   guests: [
-    guest("cao", "infantry", 12, 2, 9, { id: "cao-infantry-1", arrives: 3 }),
-    guest("cao", "infantry", 12, 5, 9, { id: "cao-infantry-2", arrives: 3 }),
-    guest("cao", "archer", 12, 3, 10, { id: "cao-archer-1", arrives: 3 }),
-    guest("cao", "cavalry", 12, 7, 9, { id: "cao-cavalry-1", arrives: 3 }),
+    guest("cao", "infantry", 12, 2, 3, { id: "cao-infantry-1", arrives: 3 }),
+    guest("cao", "infantry", 12, 2, 6, { id: "cao-infantry-2", arrives: 3 }),
+    guest("cao", "archer", 12, 1, 4, { id: "cao-archer-1", arrives: 3 }),
+    guest("cao", "cavalry", 12, 3, 7, { id: "cao-cavalry-1", arrives: 3 }),
   ],
+  // Up from the south-east, from 동민, and from the camp ten li south.
   enemies: [
-    foe("lu-bu", "cavalry", 16, 16, 4),
-    foe("zhang-liao", "cavalry", 15, 13, 3),
-    foe("gao-shun", "infantry", 15, 13, 6),
-    foe("chen-gong", "strategist", 14, 17, 5, { ...heal, if: revenge }),
-    foe("lu", "cavalry", 12, 11, 2, { id: "lu-cavalry-1" }),
-    foe("lu", "cavalry", 12, 12, 7, { id: "lu-cavalry-2" }),
-    foe("lu", "infantry", 12, 10, 4, { id: "lu-infantry-1" }),
-    foe("lu", "infantry", 12, 10, 6, { id: "lu-infantry-2" }),
-    foe("lu", "archer", 12, 14, 2, { id: "lu-archer-1" }),
-    foe("lu", "archer", 12, 15, 6, { id: "lu-archer-2" }),
-    foe("lu", "cavalry", 12, 17, 9, { id: "lu-cavalry-3", arrives: 4 }),
+    foe("lu-bu", "cavalry", 16, 16, 11),
+    foe("zhang-liao", "cavalry", 15, 14, 9),
+    foe("gao-shun", "infantry", 15, 12, 10),
+    foe("chen-gong", "strategist", 14, 18, 12, { ...heal, if: revenge }),
+    foe("lu", "cavalry", 12, 17, 6, { id: "lu-cavalry-1" }),
+    foe("lu", "cavalry", 12, 13, 12, { id: "lu-cavalry-2" }),
+    foe("lu", "infantry", 12, 15, 7, { id: "lu-infantry-1" }),
+    foe("lu", "infantry", 12, 11, 11, { id: "lu-infantry-2" }),
+    foe("lu", "archer", 12, 17, 8, { id: "lu-archer-1" }),
+    foe("lu", "archer", 12, 15, 12, { id: "lu-archer-2" }),
+    foe("lu", "cavalry", 12, 13, 13, { id: "lu-cavalry-3", arrives: 4 }),
   ],
   goals: [loseIf("cao-cao"), winBy("lu-bu"), holdUntil(9)],
   goalText: { win: "여포 격퇴 또는 9라운드까지 버티기", lose: "조조 퇴각" },
@@ -501,7 +549,7 @@ export const DINGTAO: StoryBattleDef = {
     {
       when: { at: "arrived", unit: "cao-infantry-1" },
       lines: [
-        { text: "둑 뒤의 숲에서 북소리가 울리고 복병이 일어났다!" },
+        { text: "둑 뒤에서 북소리가 울리고, 숨어 있던 군사가 둑을 넘어 쏟아져 나왔다!" },
         {
           who: "cao-cao",
           mood: "smile",
@@ -512,7 +560,7 @@ export const DINGTAO: StoryBattleDef = {
     },
     {
       when: { at: "arrived", unit: "lu-cavalry-3" },
-      lines: [{ text: "동쪽에서 여포의 기병이 더 달려온다!" }],
+      lines: [{ text: "남쪽 여울을 건너 여포의 기병이 더 달려온다!" }],
     },
     {
       when: { at: "round", round: 8 },
@@ -541,38 +589,40 @@ export const WANCHENG: StoryBattleDef = {
     "장수가 등을 돌렸다. 전위가 문을 지키는 동안 조조를 육수 건너 동쪽 끝(★)까지 피신시켜라.",
   map: WANCHENG_MAP,
   weather: "cloudy",
+  landscape: { region: "basin", season: "winter" },
   light: "night",
   roundLimit: 15,
   sides: ["조조군", "장수군"],
-  slots: cells([9, 4], [5, 6], [6, 6], [7, 5], [7, 7], [8, 8], [6, 4], [9, 7]),
+  slots: cells([10, 4], [6, 6], [7, 6], [8, 5], [8, 7], [9, 8], [7, 4], [10, 7]),
   max: 5,
   required: ["cao-cao", "dian-wei"],
   guests: [],
+  // 장수's men came out of the town in arms, on the road through our camp (『오서』).
   enemies: [
-    foe("zhang-xiu", "cavalry", 15, 1, 7),
-    foe("jia-xu", "strategist", 15, 2, 6, guard),
-    foe("hu-cheer", "martialArtist", 14, 3, 6, { orders: HUNT_DIAN_WEI }),
-    foe("zhang", "infantry", 12, 4, 4, { id: "zhang-infantry-1" }),
-    foe("zhang", "infantry", 12, 4, 8, { id: "zhang-infantry-2", ...charge }),
-    foe("zhang", "infantry", 12, 3, 7, { id: "zhang-infantry-3", ...charge }),
-    foe("zhang", "archer", 12, 2, 4, { id: "zhang-archer-1" }),
-    foe("zhang", "archer", 12, 2, 8, { id: "zhang-archer-2" }),
-    foe("zhang", "cavalry", 12, 6, 1, { id: "zhang-cavalry-1" }),
-    foe("zhang", "archer", 12, 14, 8, { id: "zhang-archer-3", ...hold }),
-    foe("zhang", "archer", 12, 13, 3, { id: "zhang-archer-4", ...hold }),
-    foe("zhang", "infantry", 12, 3, 5, {
+    foe("zhang-xiu", "cavalry", 15, 3, 7),
+    foe("jia-xu", "strategist", 15, 3, 6, guard),
+    foe("hu-cheer", "martialArtist", 14, 4, 6, { orders: HUNT_DIAN_WEI }),
+    foe("zhang", "infantry", 12, 5, 4, { id: "zhang-infantry-1" }),
+    foe("zhang", "infantry", 12, 5, 8, { id: "zhang-infantry-2", ...charge }),
+    foe("zhang", "infantry", 12, 4, 7, { id: "zhang-infantry-3", ...charge }),
+    foe("zhang", "archer", 12, 3, 4, { id: "zhang-archer-1" }),
+    foe("zhang", "archer", 12, 3, 8, { id: "zhang-archer-2" }),
+    foe("zhang", "cavalry", 12, 7, 1, { id: "zhang-cavalry-1" }),
+    foe("zhang", "archer", 12, 12, 10, { id: "zhang-archer-3", ...hold }),
+    foe("zhang", "archer", 12, 12, 0, { id: "zhang-archer-4", ...hold }),
+    foe("zhang", "infantry", 12, 4, 5, {
       id: "zhang-infantry-4",
       arrives: 2,
       orders: HUNT_DIAN_WEI,
     }),
-    foe("zhang", "infantry", 12, 3, 8, {
+    foe("zhang", "infantry", 12, 4, 8, {
       id: "zhang-infantry-6",
       arrives: 2,
       orders: HUNT_DIAN_WEI,
     }),
-    foe("zhang", "cavalry", 12, 4, 1, { id: "zhang-cavalry-2", arrives: 3 }),
-    foe("zhang", "infantry", 12, 9, 1, { id: "zhang-infantry-5", arrives: 3 }),
-    foe("zhang", "cavalry", 12, 5, 10, { id: "zhang-cavalry-3", arrives: 4 }),
+    foe("zhang", "cavalry", 12, 5, 0, { id: "zhang-cavalry-2", arrives: 3 }),
+    foe("zhang", "infantry", 12, 10, 1, { id: "zhang-infantry-5", arrives: 3 }),
+    foe("zhang", "cavalry", 12, 6, 10, { id: "zhang-cavalry-3", arrives: 4 }),
   ],
   goals: [
     loseIf("cao-cao"),
@@ -592,10 +642,10 @@ export const WANCHENG: StoryBattleDef = {
     },
   ],
   burning: [
-    { x: 8, y: 4, rounds: 3 },
-    { x: 9, y: 8, rounds: 4 },
-    { x: 6, y: 2, rounds: 5 },
-    { x: 11, y: 4, rounds: 4 },
+    { x: 9, y: 4, rounds: 3 },
+    { x: 10, y: 8, rounds: 4 },
+    { x: 7, y: 2, rounds: 5 },
+    { x: 12, y: 4, rounds: 4 },
   ],
   rewards: { gold: 800, items: [] },
   music: "danger",
@@ -625,7 +675,7 @@ export const WANCHENG: StoryBattleDef = {
     },
     {
       when: { at: "arrived", unit: "zhang-cavalry-2" },
-      lines: [{ text: "북문으로 장수의 기병이 더 들어온다!" }],
+      lines: [{ text: "북쪽에서 장수의 기병이 진채 뒤로 돌아 들어온다!" }],
     },
     {
       when: { at: "defeated", unit: "dian-wei" },
@@ -644,25 +694,27 @@ export const WANCHENG: StoryBattleDef = {
 export const QI: StoryBattleDef = {
   id: "qi",
   name: "기현의 싸움",
-  place: "진국 기현",
+  place: "패국 기현",
   summary: "원술은 회수를 건너 달아나고 장수들만 남았다. 빗속에서 강을 건너 교유를 베어라.",
   map: QI_MAP,
   weather: "rain",
+  landscape: { region: "huai", season: "autumn" },
   roundLimit: 20,
   sides: ["조조군", "원술군"],
-  slots: cells([1, 5], [1, 6], [0, 5], [0, 6], [1, 4], [1, 7], [2, 5], [2, 6], [0, 4]),
+  slots: cells([3, 6], [3, 7], [2, 6], [2, 7], [3, 5], [4, 7], [2, 8], [3, 8], [2, 5]),
   max: 7,
   required: ["cao-cao"],
   guests: [],
+  // 원술's generals hold the town's bank of the 환수 at its crossings.
   enemies: [
     foe("qiao-rui", "infantry", 17, 15, 5, guard),
-    foe("zhang-xun", "cavalry", 16, 10, 5, hold),
+    foe("zhang-xun", "cavalry", 16, 11, 7, hold),
     foe("ji-ling", "heavyInfantry", 17, 13, 6, hold),
-    foe("zhong", "infantry", 14, 9, 5, { id: "zhong-infantry-1" }),
-    foe("zhong", "infantry", 14, 9, 6, { id: "zhong-infantry-2" }),
-    foe("zhong", "archer", 14, 10, 3, { id: "zhong-archer-1", ...hold }),
-    foe("zhong", "archer", 14, 10, 8, { id: "zhong-archer-2", ...hold }),
-    foe("zhong", "cavalry", 14, 11, 1, { id: "zhong-cavalry-1" }),
+    foe("zhong", "infantry", 14, 11, 6, { id: "zhong-infantry-1" }),
+    foe("zhong", "infantry", 14, 14, 9, { id: "zhong-infantry-2" }),
+    foe("zhong", "archer", 14, 9, 3, { id: "zhong-archer-1", ...hold }),
+    foe("zhong", "archer", 14, 12, 8, { id: "zhong-archer-2", ...hold }),
+    foe("zhong", "cavalry", 14, 8, 1, { id: "zhong-cavalry-1" }),
     foe("zhong", "strategist", 14, 14, 4, { id: "zhong-strategist-1", ...heal }),
     foe("zhong", "infantry", 15, 15, 7, { id: "zhong-infantry-4", ...guard }),
     foe("zhong", "infantry", 15, 17, 10, { id: "zhong-infantry-5", arrives: 4 }),
@@ -714,16 +766,18 @@ export const ANZHONG: StoryBattleDef = {
   summary: "앞은 유표의 군이 막고 뒤에서는 장수가 쫓아온다. 땅굴로 보낸 복병과 함께 장수를 쳐라.",
   map: ANZHONG_MAP,
   weather: "cloudy",
+  landscape: { region: "basin", season: "summer" },
   roundLimit: 20,
   sides: ["조조군", "장수·유표군"],
   slots: cells([8, 5], [9, 5], [8, 4], [9, 6], [8, 6], [10, 5], [7, 5], [10, 4], [9, 4]),
   max: 7,
   required: ["cao-cao"],
+  // Out of the tunnel under the dam: two flank 장수 from the river banks, two come out behind 유표's men.
   guests: [
-    guest("cao", "infantry", 14, 3, 1, { id: "cao-infantry-1", arrives: 3 }),
+    guest("cao", "infantry", 14, 3, 2, { id: "cao-infantry-1", arrives: 3 }),
     guest("cao", "infantry", 14, 3, 9, { id: "cao-infantry-3", arrives: 3 }),
-    guest("cao", "infantry", 14, 16, 3, { id: "cao-infantry-2", arrives: 3 }),
-    guest("cao", "archer", 14, 16, 7, { id: "cao-archer-1", arrives: 3 }),
+    guest("cao", "infantry", 14, 17, 4, { id: "cao-infantry-2", arrives: 3 }),
+    guest("cao", "archer", 14, 15, 8, { id: "cao-archer-1", arrives: 3 }),
   ],
   enemies: [
     foe("zhang-xiu", "cavalry", 17, 0, 5, guard),
@@ -733,10 +787,11 @@ export const ANZHONG: StoryBattleDef = {
     foe("zhang", "infantry", 15, 5, 5, { id: "zhang-infantry-2" }),
     foe("zhang", "cavalry", 15, 3, 3, { id: "zhang-cavalry-1" }),
     foe("zhang", "archer", 15, 2, 6, { id: "zhang-archer-1", ...hold }),
-    foe("jing", "infantry", 15, 14, 4, { id: "jing-infantry-1", ...hold }),
-    foe("jing", "infantry", 15, 14, 6, { id: "jing-infantry-2", ...hold }),
-    foe("jing", "archer", 15, 15, 5, { id: "jing-archer-1", ...hold }),
-    foe("jing", "strategist", 15, 16, 5, { id: "jing-strategist-1", ...heal }),
+    // 유표's men on the 안중 dam and the neck below it.
+    foe("jing", "infantry", 14, 14, 5, { id: "jing-infantry-1", ...hold }),
+    foe("jing", "infantry", 14, 14, 7, { id: "jing-infantry-2", ...hold }),
+    foe("jing", "archer", 14, 15, 6, { id: "jing-archer-1", ...hold }),
+    foe("jing", "strategist", 14, 15, 4, { id: "jing-strategist-1", ...heal }),
   ],
   goals: [loseIf("cao-cao"), winBy("zhang-xiu")],
   goalText: { win: "장수 격파", lose: "조조 퇴각" },
@@ -761,8 +816,8 @@ export const ANZHONG: StoryBattleDef = {
     {
       when: { at: "arrived", unit: "cao-infantry-1" },
       lines: [
-        { text: "밤새 판 땅굴을 빠져나온 군사가 적의 등 뒤에서 일어났다!" },
-        { who: "zhang-xiu", mood: "angry", text: "뒤에서 군사가?! 언제 산을 넘었단 말이냐!" },
+        { text: "밤새 둑 밑으로 판 땅굴을 빠져나온 군사가 적의 등 뒤에서 일어났다!" },
+        { who: "zhang-xiu", mood: "angry", text: "뒤에서 군사가?! 언제 둑을 넘었단 말이냐!" },
       ],
     },
     {
@@ -783,6 +838,7 @@ export const XIAPI: StoryBattleDef = {
     "여포가 하비성에 틀어박혔다. 북쪽 둑의 수문(★)을 열어 성을 물에 잠기게 하고 여포를 쳐라.",
   map: XIAPI_MAP,
   weather: "cloudy",
+  landscape: { region: "huai", season: "winter" },
   roundLimit: 22,
   sides: ["조조군", "여포군", "유비군"],
   slots: cells([5, 6], [6, 7], [5, 7], [6, 8], [5, 8], [6, 9], [5, 9], [4, 7], [4, 8]),
@@ -795,19 +851,20 @@ export const XIAPI: StoryBattleDef = {
     ally("zhang-fei", "cavalry", 18, 5, 12),
   ],
   enemies: [
-    foe("lu-bu", "shockCavalry", 20, 14, 7, hold),
-    foe("chen-gong", "tactician", 18, 15, 8, { ...heal, if: revenge }),
-    foe("gao-shun", "heavyInfantry", 18, 11, 8, guard),
+    foe("lu-bu", "shockCavalry", 20, 13, 7, hold),
+    foe("chen-gong", "tactician", 18, 14, 8, { ...heal, if: revenge }),
+    foe("gao-shun", "heavyInfantry", 18, 10, 8, guard),
     // 고순's 함진영 stand where they are put; they never ride out after 조조.
-    foe("xianzhen", "heavyInfantry", 16, 12, 8, { id: "xianzhen-infantry-1", ...guard }),
-    foe("xianzhen", "heavyInfantry", 16, 14, 10, { id: "xianzhen-infantry-2", ...guard }),
-    foe("zhang-liao", "cavalry", 18, 13, 9, hold),
-    foe("hou-cheng", "infantry", 17, 14, 5, guard),
-    foe("song-xian", "archer", 17, 13, 6, hold),
+    foe("xianzhen", "heavyInfantry", 16, 11, 8, { id: "xianzhen-infantry-1", ...guard }),
+    foe("xianzhen", "heavyInfantry", 16, 13, 9, { id: "xianzhen-infantry-2", ...guard }),
+    foe("zhang-liao", "cavalry", 18, 12, 9, hold),
+    foe("hou-cheng", "infantry", 17, 13, 5, guard),
+    foe("song-xian", "archer", 17, 12, 6, hold),
     foe("wei-xu", "infantry", 17, 7, 2, guard),
-    foe("lu", "archer", 16, 9, 3, { id: "lu-archer-1", ...hold }),
-    foe("zang-ba", "cavalry", 18, 19, 13, { arrives: 5 }),
-    foe("lu", "cavalry", 16, 18, 13, { id: "lu-cavalry-1", arrives: 5 }),
+    foe("lu", "archer", 16, 8, 3, { id: "lu-archer-1", ...hold }),
+    // 장패's 태산 men come down from 개양 in the north and cross the 소기수 by the east bridge.
+    foe("zang-ba", "cavalry", 18, 19, 10, { arrives: 5 }),
+    foe("lu", "cavalry", 16, 18, 11, { id: "lu-cavalry-1", arrives: 5 }),
   ],
   goals: [loseIf("cao-cao"), winBy("lu-bu")],
   goalText: { win: "여포 격파", lose: "조조 퇴각" },
@@ -821,7 +878,7 @@ export const XIAPI: StoryBattleDef = {
     {
       id: "east-gate",
       when: { kind: "round", round: 5 },
-      tiles: turn("plain", [[18, 8]]),
+      tiles: turn("plain", [[17, 8]]),
       damage: 0,
       if: mercy,
     },

@@ -487,7 +487,7 @@ describe("story duels at 사수관 (ADR 0071)", () => {
     const s = start();
     expect(s.duels.map((d) => d.id)).toEqual(["sishui-hua-xiong", "sishui-lu-bu"]);
     const guan = unit(s, "guan-yu");
-    [guan.x, guan.y] = [14, 5]; // before 화웅 at the gate
+    [guan.x, guan.y] = [3, 5]; // before 화웅 at the gate
     const r = wait(s);
     const challenge = r.events.find((e) => e.kind === "challenge");
     expect(challenge?.kind === "challenge" && challenge.script).toBe("sishui-hua-xiong");

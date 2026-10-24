@@ -69,6 +69,23 @@ export type Facing4 = "up" | "down" | "left" | "right";
 /** Light over a stage. */
 export type StageLight = "day" | "dusk" | "night";
 
+/**
+ * The landscape a battle or stage is painted in (ADR 0075): the region it lies
+ * in and the season it was fought, from the record. Looks only; the rules never read it.
+ * - `plain`: the Yellow River and the North China plain, flat and dusty, silt-yellow water.
+ * - `huai`: the rivers and lakes of 서주 and the Huai, wetter and greener, reeds.
+ * - `basin`: the 남양 basin, green river land among low hills.
+ * - `loess`: the loess cliffs and gullies by the Yellow River around 낙양, 형양 and 성고.
+ * - `taihang`: the 태항 mountains, steep rock and loess, gorges.
+ * - `frontier`: 요서 beyond the wall, sparse grass, bare mountains, steppe.
+ */
+export type Region = "plain" | "huai" | "basin" | "loess" | "taihang" | "frontier";
+export type Season = "spring" | "summer" | "autumn" | "winter";
+export interface Landscape {
+  readonly region: Region;
+  readonly season: Season;
+}
+
 /** Things on a stage that are not ground: furniture, tents, banners (drawn by the client). */
 export type PropKind =
   | "throne"
@@ -109,6 +126,8 @@ export interface StageDef {
   readonly rows: readonly string[];
   readonly light?: StageLight;
   readonly weather?: WeatherKind;
+  /** Outdoor stages: where and when, for the terrain painter (ADR 0075). */
+  readonly landscape?: Landscape;
   /** What the walls are made of indoors: a tent's canvas or a hall's timber (default: from the floors). */
   readonly walls?: "tent" | "hall";
   readonly props?: readonly PropDef[];
@@ -294,6 +313,8 @@ export interface StoryBattleDef {
   readonly summary: string;
   readonly map: MapDef;
   readonly weather: WeatherKind;
+  /** Where and when the battle was fought, for the terrain painter (ADR 0075). */
+  readonly landscape: Landscape;
   /** How the field is lit; night battles are darker (looks only). */
   readonly light?: StageLight;
   readonly roundLimit: number;

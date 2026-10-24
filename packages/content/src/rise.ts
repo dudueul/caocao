@@ -36,10 +36,12 @@ import {
 } from "./stage.ts";
 import type {
   Actor,
+  CampGround,
   CampTalk,
   ChapterDef,
   Cmd,
   Facing4,
+  Landscape,
   Mood,
   PropDef,
   PropKind,
@@ -94,11 +96,17 @@ const heal = { orders: ORDERS.healThenHold };
 
 // ---------------------------------------------------------------- maps
 
-/** 낙양 북문 (Luoyang, the north gate): night streets, houses and the city wall. */
+/**
+ * 낙양 북부 (Luoyang, the north district): the north wall and a gate, the 陽渠
+ * moat outside it with a bridge, and the foot of 邙山 beyond; the wards'
+ * houses and lanes inside (수경주 穀水).
+ */
 const LUOYANG: MapDef = {
   id: "luoyang",
   name: "낙양 북부",
   rows: [
+    "g.hhgg.hhh.g",
+    "wwwwbwwwwwww",
     "####v#######",
     "....v.......",
     ".vv.....vv..",
@@ -112,104 +120,130 @@ const LUOYANG: MapDef = {
   ],
 };
 
-/** 장사 (Changshe): a small walled town in a sea of grass, the rebels camped all round it. */
+/**
+ * 장사 (Changshe): the walled town between two rivers, the 洧水 along the north
+ * and the 潩水 down the west with a bridge at the west gate; the rebels camped
+ * in the grass of the plain to the south and east, the woods of 林鄉 to the
+ * north-east (수경주 洧水, 潩水).
+ */
 const CHANGSHE: MapDef = {
   id: "changshe",
   name: "장사",
   rows: [
-    "gggg..ggggg..ggggg",
-    "g##v##ggggg..ggfff",
-    "g#vvv#gg....gggfff",
-    "gvvFvvggg...gggg..",
-    "g#vvv#ggcc..ggg...",
-    "g##v##gccc...gg...",
-    "gggg.gggcc..ggg...",
-    "..ggggggg...ggggg.",
-    "..gg..ggg..cc.gg..",
-    "......gg..ccc..ff.",
-    "hh....g...cc...ff.",
-    "hhh..........ffff.",
+    "wwwwwwwwwwwwwwwwww",
+    "w#####ggggg..ggfff",
+    "w#vvv#gg....gggfff",
+    "bvvFvvggg...gggg..",
+    "w#vvv#ggcc..ggg...",
+    "w##v##gccc...gg...",
+    "wggg.gggcc..ggg...",
+    "w.ggggggg...ggggg.",
+    "w.gg..ggg..cc.gg..",
+    "w.....gg..ccc..ff.",
+    "w.....g...cc...ff.",
+    "w............ffff.",
   ],
 };
 
-/** 사수관 (Sishui Pass): a road between mountains to a gated fort. */
+/**
+ * 사수관, the novel's name for 성고 (虎牢): the walled town on its loess height
+ * in the west, the Yellow River below it to the north, the 汜水 running north
+ * past its east gate to the river, bridged on the road and forded below; the
+ * town's sheer sides fall straight to the water north of the road. The
+ * coalition comes from the east, between the bluffs and the hills (수경주 河水, 汜水).
+ */
 const SISHUI: MapDef = {
   id: "sishui",
   name: "사수관",
   rows: [
-    "mmmmmmhhh..hhmmmmm",
-    "mmmmhhh......hmmmm",
-    "mmhh.....ff....#cc",
-    "mh.....f.ff....#cc",
-    "h..............#cc",
-    "...............Fcc",
-    "..g............Fcc",
-    "h.gg...........#cc",
-    "mh....ff.......#cc",
-    "mmh...ff....hh.#cc",
-    "mmmhh......hhhmmmm",
-    "mmmmmmhhh..hmmmmmm",
+    "wwwwwwwwwwwwwwwwww",
+    "cc#mwhh......hhhhh",
+    "cc#mw..ff.....hhmm",
+    "cc#mw..ff.f.....hm",
+    "cc#mw............h",
+    "ccF.b.............",
+    "ccF.b..........g..",
+    "cc#hw.........gg.h",
+    "cc#hw.....ff....hm",
+    "cc#hdhh...ff...hmm",
+    "mmmmwhh......hhmmm",
+    "mmmmwmh..hhhmmmmmm",
   ],
 };
 
-/** 형양 변수 (Xingyang, the Bian River): open country, woods and hills, the river behind. */
+/**
+ * 형양 변수 (Xingyang, the Bian): the corridor between the Yellow River and the
+ * 汴수 (the 濟水 here) north of 형양, 敖山 with its granary in the north-west,
+ * the deep river behind us to the south and the walls of 형양 beyond it
+ * (수경주 濟水: 曹洪 gave up his horse where the 濟 passes north of 滎陽).
+ */
 const XINGYANG: MapDef = {
   id: "xingyang",
   name: "변수",
   rows: [
-    "..ff....hh....ww..",
-    ".fff...hhh....ww.f",
-    "..f..........dww..",
-    "....gg.......ww..f",
-    "...ggg..ff...ww...",
-    "........ff..dw....",
-    "..hh........ww..ff",
-    ".hhh....gg..ww..ff",
-    "..h.....gg..dw....",
-    "....ff.......ww...",
-    "...fff..hh...ww.hh",
-    "....f...hh....w.hh",
+    "wwwwwwwwwwwwwwwwww",
+    "hhhvhhh....ff.....",
+    ".hhhh......fff..f.",
+    "..h..gg.........ff",
+    "....ggg..ff.......",
+    ".........ff.......",
+    "..ff..............",
+    ".fff.....gg....hh.",
+    "..f......gg...hhh.",
+    ".....ff...........",
+    "wwwwwwwwwwwwwwwwww",
+    "#v###.............",
   ],
 };
 
-/** 복양 (Puyang): our village to the south-west, the bandits' hill village to the north-east. */
+/**
+ * 복양 (Puyang): the Yellow River along the north with the 濮陽津 ferry, the
+ * 金堤 dike on its south bank and the hamlet at the 瓠河口 on it, where 백요
+ * camps with the river at his back; the plain of 동군 below, our hamlet to the
+ * south-west and 복양's walls to the south-east (수경주 河水, 瓠子河).
+ */
 const PUYANG: MapDef = {
   id: "puyang",
   name: "복양",
   rows: [
-    "mmhh..ff....ffhhmm",
-    "mhh..fff..v..ffhhm",
-    "hh...ff..vvv...hhm",
-    "h.....g...v.....hh",
-    "..gg..........f.hh",
-    "..ggg...ff...fff.h",
-    "........ff...fff..",
+    "wwwwwwwwwwwwwwddww",
+    "ggg..gggg.v.gg..gg",
+    "hhhhh.hhhvvvhh..hh",
+    ".....g..........f.",
+    "..gg..........ff..",
+    "..ggg...ff...fff..",
+    "........ff...ff...",
     "..v........g......",
-    ".vvv..hh...gg..ff.",
-    "..v..hhh......fff.",
-    "....hh.....hh..ff.",
-    "..........hhh.....",
+    ".vvv.......gg#v###",
+    "..v...........vvv#",
+    "...........ff#vvv#",
+    "..........fff#vvv#",
   ],
 };
 
-/** 수장 (Shouzhang): a camp on the open plain of Yanzhou, the river to the south. */
+/**
+ * 수장 (Shouzhang), east of the town: the 汶水 across the north from the
+ * north-east, fordable in places; a branch of it coming in from the east and
+ * pooling into marshes before the town in the south-west, where 포신 fell;
+ * our camp on the open ground between (수경주 汶水).
+ */
 const SHOUZHANG: MapDef = {
   id: "shouzhang",
   name: "수장",
   rows: [
-    "gggg....ffff....gggg",
-    "gg.....ffff.......gg",
-    "g.....hh..........gg",
-    ".....hhh.....ff.....",
+    "gggg....ffff.wwwwwww",
+    "gg...wwwwwwwdw..gggg",
+    "wwwdww.hh.........gg",
+    "....ghhh.....ff.....",
     "....................",
     "..ff.....cc.....ff..",
     "..ff....cccc....ff..",
     ".........cc.........",
     "....................",
-    ".....ff.....hhh.....",
-    "gg..fff......hh...gg",
-    "ggg..............ggg",
-    "gggg....wwww....gggg",
+    "g....ff.....hhh.....",
+    "gwdwg.ff......hh....",
+    "wwgwwddwwwwwdwwwwwww",
+    "wgwdwgg.....gggggggg",
   ],
 };
 
@@ -222,23 +256,24 @@ const B1: StoryBattleDef = {
   summary: "금령을 어기고 밤길을 다니는 자를 잡아라. 상대는 권세 높은 환관 건석의 숙부다.",
   map: LUOYANG,
   weather: "cloudy",
+  landscape: { region: "loess", season: "winter" },
   roundLimit: 12,
   sides: ["북부위", "건가"],
-  slots: cells([4, 9], [3, 9], [7, 9], [8, 9], [3, 8], [4, 8]),
+  slots: cells([4, 11], [3, 11], [7, 11], [8, 11], [3, 10], [4, 10]),
   max: 1,
   required: ["cao-cao"],
   guests: [
-    guest("ward", "infantry", 2, 7, 7, { id: "ward-1" }),
-    guest("ward", "archer", 2, 8, 7, { id: "ward-2" }),
+    guest("ward", "infantry", 2, 7, 9, { id: "ward-1" }),
+    guest("ward", "archer", 2, 8, 9, { id: "ward-2" }),
   ],
   enemies: [
-    foe("jian-tu", "infantry", 3, 4, 0, guard),
-    foe("jianjia", "infantry", 2, 3, 2, { id: "jianjia-infantry-1" }),
-    foe("jianjia", "infantry", 2, 6, 2, { id: "jianjia-infantry-2" }),
-    foe("jianjia", "infantry", 2, 5, 4, { id: "jianjia-infantry-3" }),
-    foe("jianjia", "infantry", 2, 4, 1, { id: "jianjia-infantry-4", ...guard }),
-    foe("jianjia", "archer", 2, 7, 1, { id: "jianjia-archer-1" }),
-    foe("jianjia", "archer", 2, 0, 1, { id: "jianjia-archer-2" }),
+    foe("jian-tu", "infantry", 3, 4, 2, guard),
+    foe("jianjia", "infantry", 2, 3, 4, { id: "jianjia-infantry-1" }),
+    foe("jianjia", "infantry", 2, 6, 4, { id: "jianjia-infantry-2" }),
+    foe("jianjia", "infantry", 2, 5, 6, { id: "jianjia-infantry-3" }),
+    foe("jianjia", "infantry", 2, 4, 3, { id: "jianjia-infantry-4", ...guard }),
+    foe("jianjia", "archer", 2, 7, 3, { id: "jianjia-archer-1" }),
+    foe("jianjia", "archer", 2, 0, 3, { id: "jianjia-archer-2" }),
   ],
   goals: [loseIf("cao-cao"), winBy("jian-tu")],
   goalText: { win: "건도 체포", lose: "조조 퇴각" },
@@ -274,9 +309,10 @@ const B2: StoryBattleDef = {
   summary: "황건적이 풀숲에 진을 치고 황보숭을 에워쌌다. 바람이 분다. 불을 지르고 파재를 쳐라.",
   map: CHANGSHE,
   weather: "wind",
+  landscape: { region: "plain", season: "summer" },
   roundLimit: 18,
   sides: ["조조군", "황건적", "관군"],
-  slots: cells([0, 7], [1, 7], [0, 8], [1, 8], [0, 9], [1, 9], [2, 9], [3, 9]),
+  slots: cells([1, 7], [2, 7], [1, 8], [2, 8], [1, 9], [2, 9], [3, 9], [4, 9]),
   max: 5,
   required: ["cao-cao"],
   guests: [],
@@ -333,30 +369,33 @@ const B3: StoryBattleDef = {
   summary: "동탁의 맹장 화웅이 관문을 지킨다. 연합군의 장수들과 함께 관문을 열고 화웅을 베어라.",
   map: SISHUI,
   weather: "cloudy",
+  landscape: { region: "loess", season: "spring" },
   roundLimit: 16,
   sides: ["조조군", "동탁군", "연합군"],
-  slots: cells([1, 4], [2, 4], [0, 5], [1, 5], [2, 5], [0, 6], [1, 6], [1, 7]),
+  slots: cells([16, 4], [15, 4], [17, 5], [16, 5], [15, 5], [17, 6], [16, 6], [16, 7]),
   max: 5,
   required: ["cao-cao"],
   guests: [],
   allies: [
-    ally("guan-yu", "cavalry", 12, 3, 5),
-    ally("zhang-fei", "cavalry", 11, 3, 6),
-    ally("liu-bei", "infantry", 10, 3, 4),
-    ally("sun-jian", "cavalry", 12, 2, 3),
+    ally("guan-yu", "cavalry", 12, 14, 5),
+    ally("zhang-fei", "cavalry", 11, 14, 6),
+    ally("liu-bei", "infantry", 10, 14, 4),
+    ally("sun-jian", "cavalry", 12, 15, 3),
   ],
   enemies: [
-    foe("hua-xiong", "shockCavalry", 13, 15, 5, guard),
-    foe("dong", "heavyInfantry", 10, 15, 6, { id: "dong-infantry-1", ...guard }),
-    foe("dong", "infantry", 9, 12, 4, { id: "dong-infantry-2" }),
-    foe("dong", "infantry", 9, 12, 6, { id: "dong-infantry-3" }),
-    foe("dong", "infantry", 9, 10, 5, { id: "dong-infantry-4" }),
-    foe("dong", "archer", 9, 12, 9, { id: "dong-archer-1", ...hold }),
-    foe("dong", "archer", 9, 13, 9, { id: "dong-archer-2", ...hold }),
-    foe("dong", "cavalry", 9, 11, 7, { id: "dong-cavalry-1" }),
-    foe("dong", "cavalry", 9, 8, 4, { id: "dong-cavalry-2" }),
-    foe("dong", "catapult", 9, 16, 4, { id: "dong-catapult-1", ...guard }),
-    foe("lu-bu", "cavalry", 20, 16, 6, { arrives: 6, ...hold }),
+    foe("hua-xiong", "shockCavalry", 13, 2, 5, guard),
+    foe("dong", "heavyInfantry", 10, 2, 6, { id: "dong-infantry-1", ...guard }),
+    foe("dong", "infantry", 9, 5, 4, { id: "dong-infantry-2" }),
+    foe("dong", "infantry", 9, 5, 6, { id: "dong-infantry-3" }),
+    // Holding the west end of the bridge, under the gate.
+    foe("dong", "infantry", 9, 3, 5, { id: "dong-infantry-4", ...guard }),
+    // On the hills by the lower ford of the 汜水.
+    foe("dong", "archer", 9, 5, 9, { id: "dong-archer-1", ...hold }),
+    foe("dong", "archer", 9, 6, 9, { id: "dong-archer-2", ...hold }),
+    foe("dong", "cavalry", 9, 6, 7, { id: "dong-cavalry-1" }),
+    foe("dong", "cavalry", 9, 9, 4, { id: "dong-cavalry-2" }),
+    foe("dong", "catapult", 9, 1, 4, { id: "dong-catapult-1", ...guard }),
+    foe("lu-bu", "cavalry", 20, 1, 6, { arrives: 6, ...hold }),
   ],
   goals: [loseIf("cao-cao"), winBy("hua-xiong")],
   // Two duels, watched (ADR 0071): 관우 cuts down 화웅 when he reaches him, which
@@ -469,6 +508,7 @@ const B4: StoryBattleDef = {
   summary: "홀로 동탁을 쫓다 서영의 매복에 걸렸다. 해가 질 때(8라운드)까지 버티며 조조를 지켜라.",
   map: XINGYANG,
   weather: "sunny",
+  landscape: { region: "loess", season: "spring" },
   roundLimit: 10,
   sides: ["조조군", "동탁군", "연합군"],
   slots: cells([5, 5], [6, 5], [7, 5], [5, 6], [6, 6], [7, 6], [6, 4], [7, 4]),
@@ -478,8 +518,8 @@ const B4: StoryBattleDef = {
   allies: [ally("wei-zi", "infantry", 8, 4, 5), ally("bao-xin", "cavalry", 10, 8, 6)],
   enemies: [
     foe("xu-rong", "cavalry", 13, 1, 2, hold),
-    foe("dong", "cavalry", 10, 10, 1, { id: "dong-cavalry-1" }),
-    foe("dong", "cavalry", 10, 6, 10, { id: "dong-cavalry-2" }),
+    foe("dong", "cavalry", 10, 13, 1, { id: "dong-cavalry-1" }),
+    foe("dong", "cavalry", 10, 12, 8, { id: "dong-cavalry-2" }),
     foe("dong", "cavalry", 10, 10, 9, { id: "dong-cavalry-3" }),
     foe("dong", "infantry", 9, 3, 3, { id: "dong-infantry-1" }),
     foe("dong", "infantry", 9, 2, 8, { id: "dong-infantry-2" }),
@@ -487,9 +527,10 @@ const B4: StoryBattleDef = {
     foe("dong", "archer", 9, 9, 8, { id: "dong-archer-2" }),
     foe("dong", "cavalry", 10, 0, 5, { id: "dong-cavalry-4", arrives: 3 }),
     foe("dong", "cavalry", 10, 0, 6, { id: "dong-cavalry-5", arrives: 3 }),
-    foe("dong", "cavalry", 10, 0, 3, { id: "dong-cavalry-6", arrives: 5 }),
-    foe("dong", "cavalry", 10, 0, 9, { id: "dong-cavalry-7", arrives: 5 }),
-    foe("dong", "infantry", 10, 0, 4, { id: "dong-infantry-3", arrives: 5 }),
+    // Round behind us along the river, across the road back to 산조.
+    foe("dong", "cavalry", 10, 17, 3, { id: "dong-cavalry-6", arrives: 5 }),
+    foe("dong", "cavalry", 10, 17, 8, { id: "dong-cavalry-7", arrives: 5 }),
+    foe("dong", "infantry", 10, 17, 6, { id: "dong-infantry-3", arrives: 5 }),
   ],
   goals: [loseIf("cao-cao"), holdUntil(8)],
   goalText: { win: "8라운드까지 생존", lose: "조조 퇴각" },
@@ -534,9 +575,10 @@ const B5: StoryBattleDef = {
   id: "puyang",
   name: "흑산의 무리",
   place: "동군 복양",
-  summary: "흑산적 백요가 동군을 휩쓴다. 산 위 마을에 버틴 백요를 쳐서 동군을 지켜라.",
+  summary: "흑산적 백요가 동군을 휩쓴다. 복양 북쪽 강둑에 진을 친 백요를 쳐서 동군을 지켜라.",
   map: PUYANG,
   weather: "sunny",
+  landscape: { region: "plain", season: "autumn" },
   roundLimit: 18,
   sides: ["조조군", "흑산적"],
   slots: cells([1, 10], [2, 10], [3, 10], [0, 9], [1, 9], [3, 9], [0, 11], [1, 11], [2, 11]),
@@ -552,10 +594,11 @@ const B5: StoryBattleDef = {
     foe("heishan", "martialArtist", 10, 5, 4, { id: "heishan-brawler-1" }),
     foe("heishan", "martialArtist", 10, 13, 3, { id: "heishan-brawler-2" }),
     foe("heishan", "archer", 10, 10, 1, { id: "heishan-archer-1", ...hold }),
-    foe("heishan", "archer", 10, 6, 1, { id: "heishan-archer-2", ...hold }),
+    foe("heishan", "archer", 10, 6, 2, { id: "heishan-archer-2", ...hold }),
     foe("heishan", "cavalry", 10, 4, 6, { id: "heishan-cavalry-1" }),
-    foe("heishan", "infantry", 10, 16, 4, { id: "heishan-infantry-5", arrives: 4 }),
-    foe("heishan", "infantry", 10, 17, 5, { id: "heishan-infantry-6", arrives: 4 }),
+    // Across the 濮陽津 from 위군.
+    foe("heishan", "infantry", 10, 14, 0, { id: "heishan-infantry-5", arrives: 4 }),
+    foe("heishan", "infantry", 10, 15, 0, { id: "heishan-infantry-6", arrives: 4 }),
   ],
   goals: [loseIf("cao-cao"), winBy("bai-rao")],
   goalText: { win: "백요 격파", lose: "조조 퇴각" },
@@ -567,22 +610,22 @@ const B5: StoryBattleDef = {
         {
           who: "bai-rao",
           mood: "smile",
-          text: "관군 깃발이 또 왔구나. 산에서 내려다보면 다 보인다!",
+          text: "관군 깃발이 또 왔구나. 둑 위에서 내려다보면 다 보인다!",
         },
         {
           who: "xun-yu",
-          text: "적은 산 위 마을에 의지해 있습니다. 궁수와 기병을 아래로 끌어낸 뒤 본채를 치십시오.",
+          text: "적은 강을 등지고 둑 위 마을에 의지해 있습니다. 궁수와 기병을 둑 아래로 끌어낸 뒤 본채를 치십시오.",
         },
       ],
     },
     {
       when: { at: "arrived", unit: "heishan-infantry-5" },
-      lines: [{ text: "산 너머에서 흑산적이 더 내려온다!" }],
+      lines: [{ text: "나루를 건너 흑산적이 더 몰려온다!" }],
     },
     {
       when: { at: "defeated", unit: "bai-rao" },
       lines: [
-        { who: "bai-rao", mood: "hurt", text: "산채가… 무너진다…!" },
+        { who: "bai-rao", mood: "hurt", text: "본채가… 무너진다…!" },
         { text: "백요의 무리가 흩어지자 동군의 백성들이 집으로 돌아왔다." },
       ],
     },
@@ -591,12 +634,13 @@ const B5: StoryBattleDef = {
 
 const B6: StoryBattleDef = {
   id: "shouzhang",
-  name: "수장의 겨울",
+  name: "수장의 혈전",
   place: "연주 수장",
   summary:
     "백만이라 일컫는 청주 황건이 몰려온다. 진채를 지키며 10라운드까지 버티면 적의 기세가 꺾인다.",
   map: SHOUZHANG,
   weather: "cloudy",
+  landscape: { region: "plain", season: "spring" },
   roundLimit: 12,
   sides: ["조조군", "청주 황건", "제북군"],
   slots: cells([9, 5], [10, 5], [8, 6], [9, 6], [10, 6], [11, 6], [9, 7], [10, 7], [8, 5], [11, 5]),
@@ -605,7 +649,7 @@ const B6: StoryBattleDef = {
   guests: [],
   allies: [ally("bao-xin", "cavalry", 12, 12, 6)],
   enemies: [
-    foe("qingzhou", "infantry", 11, 3, 2, { id: "qingzhou-infantry-1" }),
+    foe("qingzhou", "infantry", 11, 3, 3, { id: "qingzhou-infantry-1" }),
     foe("qingzhou", "infantry", 11, 16, 2, { id: "qingzhou-infantry-2" }),
     foe("qingzhou", "infantry", 11, 2, 8, { id: "qingzhou-infantry-3" }),
     foe("qingzhou", "infantry", 11, 17, 8, { id: "qingzhou-infantry-4" }),
@@ -613,7 +657,7 @@ const B6: StoryBattleDef = {
     foe("qingzhou", "cavalry", 11, 19, 4, { id: "qingzhou-cavalry-2" }),
     foe("qingzhou", "archer", 11, 6, 3, { id: "qingzhou-archer-1" }),
     foe("qingzhou", "archer", 11, 13, 9, { id: "qingzhou-archer-2" }),
-    foe("qingzhou", "strategist", 11, 10, 1, { id: "qingzhou-strategist-1", ...heal }),
+    foe("qingzhou", "strategist", 11, 10, 2, { id: "qingzhou-strategist-1", ...heal }),
     foe("qingzhou", "infantry", 11, 0, 7, { id: "qingzhou-infantry-5", arrives: 3 }),
     foe("qingzhou", "infantry", 11, 19, 7, { id: "qingzhou-infantry-6", arrives: 3 }),
     foe("qingzhou", "infantry", 11, 10, 0, { id: "qingzhou-infantry-7", arrives: 3 }),
@@ -661,7 +705,9 @@ const B6: StoryBattleDef = {
     {
       when: { at: "end", winner: 0 },
       lines: [
-        { text: "겨울이 깊어지자 군량이 떨어진 청주 황건은 더 버티지 못하고 무기를 내려놓았다." },
+        {
+          text: "싸움은 겨울까지 이어졌다. 군량이 떨어진 청주 황건은 끝내 더 버티지 못하고 무기를 내려놓았다.",
+        },
       ],
     },
   ],
@@ -670,6 +716,20 @@ const B6: StoryBattleDef = {
 // ---------------------------------------------------------------- stages (ADR 0063)
 
 type At = [number, number];
+
+/**
+ * Where and when each outdoor stage is (ADR 0075), the season by the weather of
+ * the lunar month: 낙양 in the winter 조조 took up his post (a guess); 거록 and 초현
+ * in the spring of 184; 장사 in its fifth month; 진류 in the twelfth month of 189;
+ * 사수관 and 산조 in the second and third months of 190; 동군 after the seventh
+ * month of 191; the surrender of the 청주 men in the winter of 192.
+ */
+const LUOYANG_WINTER: Landscape = { region: "loess", season: "winter" };
+const PLAIN_SPRING: Landscape = { region: "plain", season: "spring" };
+const PLAIN_SUMMER: Landscape = { region: "plain", season: "summer" };
+const PLAIN_AUTUMN: Landscape = { region: "plain", season: "autumn" };
+const PLAIN_WINTER: Landscape = { region: "plain", season: "winter" };
+const LOESS_SPRING: Landscape = { region: "loess", season: "spring" };
 
 const prop = (kind: PropKind, [x, y]: At, more: Partial<PropDef> = {}): PropDef => ({
   kind,
@@ -818,22 +878,26 @@ const MUSTER_PROPS: PropDef[] = [
   prop("cart", [12, 4]),
 ];
 
-/** 장사: the walled town with its south gate, 파재's tents in the grass, a wood to the south-west. */
+/**
+ * 장사: the walled town with its south gate between the 洧水 to the north and the
+ * 潩水 to the west, as on the battle map; 파재's tents in the grass, a wood to the south-west.
+ */
 const CHANGSHE_STAGE: StageDef = {
   id: "changshe-town",
   light: "dusk",
   weather: "wind",
+  landscape: PLAIN_SUMMER,
   rows: [
-    "gggggggggggggggg",
-    "g########ggggggg",
-    "g#=v==v=#ggggggg",
-    "g#======#ggggggg",
-    "g#======#ggggggg",
-    "g#=v==v=#ggggggg",
-    "g###==###ggggggg",
-    "ff..==..gggggggg",
-    "fff....ggggggggg",
-    "ffff..gggggggggg",
+    "wwwwwwwwwwwwwwww",
+    "w########ggggggg",
+    "w#=v==v=#ggggggg",
+    "w#======#ggggggg",
+    "w#======#ggggggg",
+    "w#=v==v=#ggggggg",
+    "w###==###ggggggg",
+    "wf..==..gggggggg",
+    "wff....ggggggggg",
+    "wfff..gggggggggg",
   ],
   props: [
     prop("gate", [4, 6], { solid: false }),
@@ -892,34 +956,39 @@ const CHENLIU_PROPS: PropDef[] = [
   prop("grain", [1, 2]),
 ];
 
-/** 사수관: the gated wall of the pass across the top between mountains, the coalition's lines below. */
+/**
+ * 사수관 (성고), as on the battle map: the walls and east gate of the pass on the
+ * left, the 汜水 bridged below them, the Yellow River along the top; the road
+ * runs east between the coalition's lines, 원소's men north of it and ours south.
+ */
 const SISHUI_STAGE: StageDef = {
   id: "sishui-gate",
   light: "day",
   weather: "cloudy",
+  landscape: LOESS_SPRING,
   rows: [
-    "mmmmmFFFFFFmmmmm",
-    "mmmm###==###mmmm",
-    "mmhh........hhmm",
-    "mh............hm",
-    "h..............h",
-    "g..............g",
-    "g..............g",
-    "g..............g",
-    "gg............gg",
-    "ggggg......ggggg",
+    "wwwwwwwwwwwwwwww",
+    "F#hwhhh...gggggg",
+    "F#.w..........gg",
+    "F#.w............",
+    "F=.b............",
+    "F=.b............",
+    "F#.w............",
+    "F#.w..........gg",
+    "F#hw.hh.....gggg",
+    "mmmwmmhhh..ggggg",
   ],
   props: [
-    prop("gate", [7, 1], { solid: false }),
-    prop("gate", [8, 1], { solid: false }),
-    prop("tent", [2, 5], { side: 2 }),
-    prop("tent", [1, 8], { side: 2 }),
-    prop("banner", [3, 8], { side: 2 }),
-    prop("tent", [13, 5]),
-    prop("tent", [14, 8]),
-    prop("banner", [12, 8]),
+    prop("gate", [1, 4], { solid: false }),
+    prop("gate", [1, 5], { solid: false }),
+    prop("tent", [12, 1], { side: 2 }),
+    prop("tent", [14, 3], { side: 2 }),
+    prop("banner", [11, 2], { side: 2 }),
+    prop("tent", [12, 7]),
+    prop("tent", [14, 6]),
+    prop("banner", [11, 8]),
     // the cup of warm wine
-    prop("table", [10, 6]),
+    prop("table", [8, 7]),
   ],
 };
 
@@ -950,14 +1019,15 @@ const SUANZAO_PROPS: PropDef[] = [
   prop("brazier", [9, 2]),
 ];
 
-/** 동군: our camp on the plain; 백요's hill village smokes to the north-east. */
+/** 동군: our camp on the plain; 백요's hamlet on the river dike smokes to the north-east. */
 const DONGJUN_CAMP: StageDef = {
   id: "dongjun-camp",
   light: "day",
+  landscape: PLAIN_AUTUMN,
   rows: [
-    "hhhhhhhhhvvvhm",
-    "fhhhhhhhhhvhhm",
-    "ff..........hh",
+    "wwwwwwwwwwwwww",
+    "hhhhhhhhhvvvhh",
+    "ff.......gvg.h",
     "f.............",
     "..............",
     "..............",
@@ -995,11 +1065,12 @@ const DONGJUN_HALL: StageDef = {
   ],
 };
 
-/** 수장의 겨울 진영: a wooden likeness of 포신 on a paved altar, tents, the frozen plain. */
+/** 수장의 겨울 진영, months after the battle: a wooden likeness of 포신 on a paved altar, tents, the frozen plain. */
 const WINTER_CAMP: StageDef = {
   id: "shouzhang-winter",
   light: "dusk",
   weather: "cloudy",
+  landscape: PLAIN_WINTER,
   rows: [
     "ggggffffffgggg",
     "gg..........gg",
@@ -1036,6 +1107,7 @@ const PROLOGUE: SceneDef = {
   stage: {
     id: "xu-shao-house",
     light: "day",
+    landscape: LUOYANG_WINTER,
     rows: [...HOUSE_ROWS, ...BETWEEN, ...WARD_ROWS],
     props: [...HOUSE_PROPS, ...lower(WARD_PROPS, 12)],
   },
@@ -1100,7 +1172,13 @@ const BEFORE_LUOYANG: SceneDef = {
   place: "낙양 북문",
   when: "희평 3년(174)",
   backdrop: "night",
-  stage: { id: "ward-office-night", light: "night", rows: WARD_ROWS, props: WARD_PROPS },
+  stage: {
+    id: "ward-office-night",
+    light: "night",
+    landscape: LUOYANG_WINTER,
+    rows: WARD_ROWS,
+    props: WARD_PROPS,
+  },
   cast: [
     actor("cao-cao", 0, [6, 1], "down", { classId: "infantry" }),
     soldier("ward-1", "ward", 0, [4, 5], "down"),
@@ -1157,6 +1235,7 @@ const YELLOW_TURBANS: SceneDef = {
   stage: {
     id: "julu-rally",
     light: "dusk",
+    landscape: PLAIN_SPRING,
     rows: [...RALLY_ROWS, ...BETWEEN, ...MUSTER_ROWS],
     props: [...RALLY_PROPS, ...lower(MUSTER_PROPS, 12)],
   },
@@ -1300,6 +1379,8 @@ const DONG_ZHUO: SceneDef = {
   stage: {
     id: "luoyang-court",
     light: "day",
+    // The court is indoors; 진류 below it, in the winter of 189, is not.
+    landscape: PLAIN_WINTER,
     rows: [...COURT_ROWS, ...BETWEEN, ...CHENLIU_ROWS],
     props: [...COURT_PROPS, ...lower(CHENLIU_PROPS, 12)],
   },
@@ -1392,23 +1473,23 @@ const BEFORE_SISHUI: SceneDef = {
   when: "초평 원년(190)",
   backdrop: "camp",
   stage: SISHUI_STAGE,
-  // The lords stand either side of the road up to the gate; the road is where men die.
+  // The lords stand either side of the road west to the gate; the road is where men die.
   cast: [
-    actor("yuan-shao", 2, [4, 7], "up", { classId: "infantry" }),
-    actor("sun-jian", 0, [5, 6], "up", { classId: "infantry" }),
-    actor("cao-cao", 0, [9, 6], "up", { classId: "infantry" }),
-    actor("liu-bei", 0, [10, 7], "up"),
-    actor("guan-yu", 0, [11, 7], "up", { classId: "infantry" }),
-    actor("zhang-fei", 0, [11, 8], "up", { classId: "infantry" }),
-    actor("hua-xiong", 1, [7, 2], "down", { classId: "shockCavalry" }),
-    soldier("dong-1", "dong", 1, [5, 2], "down"),
-    soldier("dong-2", "dong", 1, [10, 2], "down"),
+    actor("yuan-shao", 2, [9, 2], "left", { classId: "infantry" }),
+    actor("sun-jian", 0, [8, 3], "left", { classId: "infantry" }),
+    actor("cao-cao", 0, [8, 6], "left", { classId: "infantry" }),
+    actor("liu-bei", 0, [9, 7], "left"),
+    actor("guan-yu", 0, [10, 7], "left", { classId: "infantry" }),
+    actor("zhang-fei", 0, [10, 8], "left", { classId: "infantry" }),
+    actor("hua-xiong", 1, [2, 4], "right", { classId: "shockCavalry" }),
+    soldier("dong-1", "dong", 1, [2, 2], "right"),
+    soldier("dong-2", "dong", 1, [2, 6], "right"),
     soldier("yuan-1", "yuan", 2, undefined, undefined, "cavalry"),
   ],
   script: [
-    camera([7, 3], 1700),
+    camera([3, 4], 1700),
     sound("hooves"),
-    enter("yuan-1", [7, 9], [7, 3], true),
+    enter("yuan-1", [15, 4], [3, 4], true),
     strike("hua-xiong", "yuan-1", true),
     act("hua-xiong", "cheer"),
     camera([7, 5], 1000),
@@ -1416,11 +1497,11 @@ const BEFORE_SISHUI: SceneDef = {
       "동탁의 장수 화웅이 사수관을 지키며 연합군의 장수들을 잇달아 베었다. 제후들은 얼굴빛이 변했다.",
     ),
     all(emote("yuan-shao", "sweat"), emote("liu-bei", "...")),
-    walk("sun-jian", [5, 5]),
+    walk("sun-jian", [7, 3]),
     say("sun-jian", "강동의 손견이오. 화웅에게 한 번 졌으나 두 번은 지지 않소."),
     // 관우 steps out from behind his brother into the road.
-    walk("guan-yu", [11, 5]),
-    walk("guan-yu", [8, 5]),
+    walk("guan-yu", [10, 5]),
+    walk("guan-yu", [7, 5]),
     face("guan-yu", "yuan-shao"),
     say("guan-yu", "평원의 유현덕 아래 있는 관우라 하오. 화웅의 목은 제가 가져오겠소."),
     emote("yuan-shao", "?"),
@@ -1431,12 +1512,12 @@ const BEFORE_SISHUI: SceneDef = {
     act("liu-bei", "bow"),
     say("liu-bei", "두 아우가 무례하나 그 용맹만은 믿을 만합니다."),
     // 조조 pours the wine that will still be warm when 관우 comes back.
-    face("cao-cao", "right"),
+    face("cao-cao", "down"),
     act("cao-cao", "nod"),
     face("cao-cao", "guan-yu"),
     say("cao-cao", "좋소. 우리 모두 함께 관문을 엽시다.", "smile"),
     each(["sun-jian", "guan-yu", "zhang-fei", "liu-bei", "cao-cao", "yuan-shao"], (id) =>
-      face(id, "up"),
+      face(id, "left"),
     ),
     camera("hua-xiong", 1700),
   ],
@@ -1448,7 +1529,13 @@ const BEFORE_XINGYANG: SceneDef = {
   place: "산조",
   when: "초평 원년(190)",
   backdrop: "fire",
-  stage: { id: "suanzao-night", light: "night", rows: SUANZAO_ROWS, props: SUANZAO_PROPS },
+  stage: {
+    id: "suanzao-night",
+    light: "night",
+    landscape: PLAIN_SPRING,
+    rows: SUANZAO_ROWS,
+    props: SUANZAO_PROPS,
+  },
   cast: [
     actor("yuan-shao", 2, [6, 2], "down", { classId: "infantry" }),
     soldier("yuan-1", "yuan", 2, [5, 3], "down", "infantry"),
@@ -1504,6 +1591,7 @@ const AFTER_XINGYANG: SceneDef = {
   stage: {
     id: "suanzao-feast",
     light: "dusk",
+    landscape: PLAIN_SPRING,
     rows: SUANZAO_ROWS,
     props: [...SUANZAO_PROPS, prop("table", [4, 5]), prop("table", [9, 5])],
   },
@@ -1565,7 +1653,7 @@ const BEFORE_PUYANG: SceneDef = {
   ],
   script: [
     camera([10, 1], 1700),
-    all(fx("smoke", [10, 0]), fx("smoke", [11, 1])),
+    all(fx("smoke", [10, 1]), fx("smoke", [11, 1])),
     tell("흑산적 백요의 무리 십여만이 동군을 휩쓸었다. 조조는 군사를 이끌고 동군으로 들어갔다."),
     camera([6, 4], 1300),
     enter("xun-yu", [0, 4], [5, 4]),
@@ -1610,7 +1698,7 @@ const AFTER_PUYANG: SceneDef = {
   place: "동군",
   when: "초평 2년(191)",
   backdrop: "field",
-  stage: { ...STREET, id: "dongwuyang" },
+  stage: { ...STREET, id: "dongwuyang", landscape: PLAIN_AUTUMN },
   cast: [
     actor("cao-cao", 0),
     actor("xun-yu", 0),
@@ -1783,6 +1871,16 @@ const TALK_3: CampTalk[] = [
 
 // ---------------------------------------------------------------- chapter
 
+/**
+ * The walkable camp, painted where the army is (ADR 0075): at 산조 as the coalition
+ * gathers in the first month of 190; back from 양주 in 하내 later that year (a
+ * guess); in 동군 in the autumn of 191.
+ */
+const campIn = (landscape: Landscape): CampGround => ({
+  ...CAMP_GROUND,
+  stage: { ...CAMP_GROUND.stage, landscape },
+});
+
 export const RISE: ChapterDef = {
   id: "rise",
   number: 1,
@@ -1810,7 +1908,7 @@ export const RISE: ChapterDef = {
       kind: "camp",
       camp: {
         id: "rise-camp-1",
-        ground: CAMP_GROUND,
+        ground: campIn(PLAIN_WINTER),
         shop: [
           "ring-dao",
           "iron-ji",
@@ -1833,7 +1931,7 @@ export const RISE: ChapterDef = {
       kind: "camp",
       camp: {
         id: "rise-camp-2",
-        ground: CAMP_GROUND,
+        ground: campIn(PLAIN_SUMMER),
         shop: [
           "ring-dao",
           "refined-dao",
@@ -1859,7 +1957,7 @@ export const RISE: ChapterDef = {
       kind: "camp",
       camp: {
         id: "rise-camp-3",
-        ground: CAMP_GROUND,
+        ground: campIn(PLAIN_AUTUMN),
         shop: [
           "refined-dao",
           "horse-lance",
