@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terrain gallery</title>
+    <style>
+    html,
+    body {
+      margin: 0;
+      background: #1b1a17;
+      color: #efe7d6;
+      font:
+        13px system-ui,
+        sans-serif;
+    }
+    main {
+      padding: 12px;
+    }
+    h2 {
+      margin: 18px 0 6px;
+      font-size: 15px;
+      color: #e2b65c;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    figure {
+      margin: 0;
+    }
+    figcaption {
+      color: #b9ad94;
+      margin-top: 3px;
+    }
+    canvas {
+      display: block;
+      border: 1px solid #3a352c;
+    }
+    #stats {
+      color: #8f866f;
+    }
+    </style>
+  </head>
+  <body>
+    <main id="out"><p id="stats"></p></main>
+    <script type="module" src="./terrain-gallery.ts"></script>
+  </body>
+</html>

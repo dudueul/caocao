@@ -318,6 +318,7 @@ export class Story {
       sides: [...b.sides],
       goalText: b.goalText,
       light: b.light ?? "day",
+      ...(b.landscape ? { landscape: b.landscape } : {}),
       marks: (b.marks ?? []).map((c) => ({ ...c })),
     });
     this.session = session;

@@ -483,11 +483,13 @@ export class Stage {
     // own layer, so the clip is cached along with them.
     const edges = new Container();
     const clip = new Graphics().rect(0, 0, w * T, h * T).fill(0xffffff);
-    paintStage({ width: w, height: h, tiles: this.tiles }, T, this.setting, {
-      ground: this.ground,
-      water: this.water,
-      edges,
-    });
+    paintStage(
+      { width: w, height: h, tiles: this.tiles },
+      T,
+      this.setting,
+      { ground: this.ground, water: this.water, edges },
+      this.def?.landscape ?? null,
+    );
     edges.mask = clip;
     this.edges.addChild(edges, clip);
     this.water.filters = this.waterFilter ? [this.waterFilter] : [];

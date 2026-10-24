@@ -1,6 +1,6 @@
 # 0044. Give the battlefield a modern presentation: lighting, effects and cinematics
 
-- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-15)
+- **Status:** Accepted (proposed while building, confirmed by the owner 2026-10-15); its terrain painting is superseded by [0074](0074-terrain-variants-that-join.md)
 - **Date:** 2026-10-15
 - **Deciders:** Claude (proposal), project owner (accepted)
 - **Related:** [0007](0007-top-down-2d-pixijs.md), [0031](0031-svelte-dom-overlay.md),

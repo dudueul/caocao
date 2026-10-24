@@ -8,7 +8,14 @@
  * freely) until an action is confirmed (ADR 0028).
  */
 
-import { P0_RULES, SCENARIOS, type ScenarioDef, scenarioOrders, scenarioSetup } from "@tk/content";
+import {
+  type Landscape,
+  P0_RULES,
+  SCENARIOS,
+  type ScenarioDef,
+  scenarioOrders,
+  scenarioSetup,
+} from "@tk/content";
 import {
   type AttackPreview,
   acceptChance,
@@ -136,6 +143,8 @@ export interface StoryBattle {
   goalText: { win: string; lose: string };
   /** How the field is lit (night battles are darker). */
   light?: "day" | "dusk" | "night";
+  /** Where and when it was fought, for the terrain painter (ADR 0075); looks only. */
+  landscape?: Landscape;
   /** Tiles to mark ★ for the whole battle. */
   marks?: Cell[];
 }

@@ -1,13 +1,14 @@
 /**
- * The ground of a stage (ADR 0063): our terrain painter's tiles plus the three
- * stage floors (wooden boards, stone paving, a red carpet), and walls that
- * look built rather than quarried indoors (timber and plaster in a hall,
- * canvas in a tent). Painted procedurally like `fx/terrain.ts`; our own art.
+ * The ground of a stage (ADR 0063): our terrain painter's landscape (ADR 0074)
+ * plus the three stage floors (wooden boards, stone paving, a red carpet),
+ * laid as hard tiles, and walls that look built rather than quarried indoors
+ * (timber and plaster in a hall, canvas in a tent). Outdoors the painter's
+ * own rammed-earth walls stand. Painted procedurally; our own art.
  */
 import type { StageDef, StageTile } from "@tk/content";
 import type { BattleMap, TerrainId } from "@tk/rules";
 import { Container, Graphics, Sprite, Texture } from "pixi.js";
-import { ourTerrain, paintTerrain, type TerrainSet } from "../fx/terrain.ts";
+import { type Landscape, paintTerrain, type TerrainSet } from "../fx/terrain/index.ts";
 
 type Paint = (g: CanvasRenderingContext2D, s: number, v: number) => void;
 
@@ -234,10 +235,9 @@ const tentWall: Paint = (g, s, v) => {
 
 /**
  * The top of a wall run seen from above (where the wall continues toward the
- * viewer): glazed roof tiles on a hall, the canvas roof's edge on a tent, a
- * paved walk behind battlements on a stone wall.
+ * viewer): glazed roof tiles on a hall, the canvas roof's edge on a tent.
  */
-const wallTop: Record<Setting, Paint> = {
+const wallTop: Record<Indoor, Paint> = {
   hall: (g, s) => {
     g.fillStyle = "#3e3c3b";
     g.fillRect(0, 0, s, s);
@@ -266,25 +266,16 @@ const wallTop: Record<Setting, Paint> = {
     g.fillStyle = "#9b2f28";
     g.fillRect(s * 0.42, 0, s * 0.16, s);
   },
-  outdoor: (g, s) => {
-    g.fillStyle = "#8d877c";
-    g.fillRect(0, 0, s, s);
-    for (let y = 0; y < s; y += s / 4)
-      for (let x = (y / (s / 4)) % 2 ? -s / 6 : 0; x < s; x += s / 3) {
-        g.fillStyle = "#9f998d";
-        g.fillRect(x + 1, y + 1, s / 3 - 2, s / 4 - 2);
-      }
-    g.fillStyle = "#6d675d";
-    for (let y = 0; y < s; y += s / 3) g.fillRect(0, y, s * 0.16, s / 5);
-  },
 };
 
-/** Wall faces dressed for where they stand (outdoors the battle painter's stone stays). */
-const wallFace: Record<Exclude<Setting, "outdoor">, Paint> = { hall: hallWall, tent: tentWall };
+type Indoor = Exclude<Setting, "outdoor">;
+
+/** Wall faces dressed for where they stand (outdoors the landscape painter's walls stay). */
+const wallFace: Record<Indoor, Paint> = { hall: hallWall, tent: tentWall };
 
 const wallTextures = new Map<string, Texture>();
 function wallTexture(style: Setting, part: "face" | "top"): Texture | null {
-  if (part === "face" && style === "outdoor") return null;
+  if (style === "outdoor") return null;
   const key = `${style}:${part}`;
   let t = wallTextures.get(key);
   if (!t) {
@@ -293,7 +284,7 @@ function wallTexture(style: Setting, part: "face" | "top"): Texture | null {
     c.height = 64;
     const g = c.getContext("2d") as CanvasRenderingContext2D;
     if (part === "top") wallTop[style](g, 64, 0);
-    else if (style !== "outdoor") wallFace[style](g, 64, 0);
+    else wallFace[style](g, 64, 0);
     t = Texture.from(c);
     wallTextures.set(key, t);
   }
@@ -315,14 +306,13 @@ function paintVariants(paint: Paint, size: number): HTMLCanvasElement[] {
 
 let terrain: TerrainSet | null = null;
 
-/** Our terrain set with the three floors added. */
+/** Our landscape painter with the three floors added as hard tiles (painted sharp, 128 px). */
 export function stageTerrain(): TerrainSet {
   if (terrain) return terrain;
-  const base = ourTerrain();
-  const variants = new Map(base.variants);
+  const variants = new Map<TerrainId, HTMLCanvasElement[]>();
   for (const [id, paint] of Object.entries(FLOORS))
-    variants.set(id as TerrainId, paintVariants(paint, base.size));
-  terrain = { size: base.size, variants };
+    variants.set(id as TerrainId, paintVariants(paint, 128));
+  terrain = { size: 128, variants, procedural: true };
   return terrain;
 }
 
@@ -347,11 +337,12 @@ export function paintStage(
   tile: number,
   setting: Setting,
   layers: { ground: Container; water: Container; edges: Container },
+  landscape: Landscape | null = null,
 ): void {
   // Floors ride through the painter as extra tile ids: they are not natural
-  // terrain, so they are laid as hard tiles and never spill.
+  // terrain, so they are laid as hard tiles; everything else joins up as in battle.
   const map = { width: grid.width, height: grid.height, tiles: grid.tiles } as unknown as BattleMap;
-  paintTerrain(map, tile, stageTerrain(), layers);
+  paintTerrain(map, tile, stageTerrain(), layers, { px: 128, landscape });
   const at = (x: number, y: number): StageTile | null =>
     x < 0 || y < 0 || x >= grid.width || y >= grid.height
       ? null
@@ -411,12 +402,13 @@ export function paintStage(
       sp.height = t;
       deco.addChild(sp);
     }
-  // Walls throw a soft shadow on the tile below them.
+  // Walls indoors throw a soft shadow on the tile below them (outdoors the painter casts its own).
   for (let y = 1; y < grid.height; y++)
     for (let x = 0; x < grid.width; x++) {
       const above = at(x, y - 1);
       const here = at(x, y);
-      if (above === "wall" && here !== "wall")
+      const built = setting === "tent" || indoor(x, y - 1);
+      if (above === "wall" && here !== "wall" && built)
         for (let k = 0; k < 5; k++)
           g.rect(x * t, y * t + k * t * 0.06, t, t * 0.06).fill({
             color: 0x000000,

@@ -33,7 +33,16 @@ import { Ambient } from "./fx/ambient.ts";
 import * as fx from "./fx/effects.ts";
 import { Particles } from "./fx/particles.ts";
 import { lookFor, SpriteFigure } from "./fx/sprite/index.ts";
-import { ourTerrain, paintTerrain, skinTerrain, type TerrainSet } from "./fx/terrain.ts";
+import {
+  type Landscape,
+  lookOf,
+  ourTerrain,
+  paintTerrain,
+  quantizePx,
+  skinTerrain,
+  type TerrainSet,
+  terrainStats,
+} from "./fx/terrain/index.ts";
 import { type FxTextures, makeTextures } from "./fx/textures.ts";
 import { gateTexture } from "./fx/tokens.ts";
 import { walkPath } from "./path.ts";
@@ -191,6 +200,8 @@ export class Field {
   private mounted = false;
   private skin: ClassicSkin | null = null;
   private skinSet: TerrainSet | null = null;
+  /** A landscape set by hand, over the story battle's own (ADR 0074, ADR 0075). */
+  private landscape: Landscape | null = null;
   /** The 1998 map picture under the current battle, once loaded. */
   private backdrop: { id: number; texture: Texture } | null = null;
   private loadingSets = new Set<number>();
@@ -295,6 +306,27 @@ export class Field {
     if (this.mounted && this.view) this.render(this.shown ?? this.session.state, this.view);
   }
 
+  /** What the terrain is painted in: an override, else the story battle's own, else the default. */
+  private landscapeNow(): Landscape | null {
+    return this.landscape ?? this.session.story?.landscape ?? null;
+  }
+
+  /**
+   * Overrides the battle's landscape (region and season; `?debug` tools and
+   * galleries). Null goes back to the story battle's own.
+   */
+  setLandscape(landscape: Landscape | null): void {
+    if (landscape === this.landscape) return;
+    this.landscape = landscape;
+    this.mapKey = "";
+    if (this.mounted && this.view) this.render(this.shown ?? this.session.state, this.view);
+  }
+
+  /** Paint time and texture memory of our terrain (for `?debug`). */
+  get terrainStats(): typeof terrainStats {
+    return { ...terrainStats };
+  }
+
   destroy(): void {
     this.session.player = null;
     this.mounted = false;
@@ -337,7 +369,8 @@ export class Field {
     const i = this.session.insets;
     const wanted = this.skin ? this.session.backdrop : null;
     const back = wanted !== null && this.backdrop?.id === wanted ? wanted : "-";
-    return `${map.width}x${map.height}:${map.tiles.join("")}|${i.top},${i.right},${i.bottom},${i.left}|${this.skin ? 1 : 0}${back}`;
+    const look = lookOf(this.landscapeNow()).key;
+    return `${map.width}x${map.height}:${map.tiles.join("")}|${i.top},${i.right},${i.bottom},${i.left}|${this.skin ? 1 : 0}${back}|${look}`;
   }
 
   private loadBackdrop(id: number): void {
@@ -498,27 +531,33 @@ export class Field {
         this.water.mask = mask;
       }
     } else {
-      paintTerrain(state.map, t, this.skinSet ?? ourTerrain(), {
-        ground: this.ground,
-        water: this.water,
-        edges: this.edges,
-      });
+      // Our landscape is painted at about twice its size on screen (sharp under the
+      // camera's close-ups), in steps so a small resize reuses the painting.
+      const px = quantizePx(Math.min(128, t * this.app.renderer.resolution * 2));
+      paintTerrain(
+        state.map,
+        t,
+        this.skinSet ?? ourTerrain(),
+        { ground: this.ground, water: this.water, edges: this.edges },
+        { px, landscape: this.landscapeNow() },
+      );
     }
     this.water.filters = this.waterFilter ? [this.waterFilter as Filter] : [];
     if (this.waterMap) {
       this.waterMap.scale.set((t * 2.5) / 128);
       this.waterFilter?.scale.set(t * 0.09, t * 0.06);
     }
-    // One texture each for the still layers, when it fits the GPU's limits.
+    // One texture each for the classic skin's many tiles, when it fits the GPU's limits
+    // (our own landscape is already a few large textures).
     const res = this.app.renderer.resolution;
-    if (w * t * res <= 4096 && h * t * res <= 4096)
+    if (this.skin && w * t * res <= 4096 && h * t * res <= 4096)
       for (const layer of [this.ground, this.edges])
         if (layer.children.length > 0) layer.cacheAsTexture({ resolution: res });
     const g = this.grid;
     g.clear();
     for (let x = 0; x <= w; x++) g.moveTo(x * t, 0).lineTo(x * t, h * t);
     for (let y = 0; y <= h; y++) g.moveTo(0, y * t).lineTo(w * t, y * t);
-    g.stroke({ width: 1, color: 0x000000, alpha: 0.09 });
+    g.stroke({ width: 1, color: 0x000000, alpha: 0.05 });
     g.rect(0, 0, w * t, h * t).stroke({ width: 2, color: 0x000000, alpha: 0.35 });
   }
 

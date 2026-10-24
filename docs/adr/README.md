@@ -56,7 +56,7 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0041](0041-p1-arena-defaults.md) | P1 Arena defaults chosen while building | Accepted | 2026-10-15 |
 | [0042](0042-local-classic-skin.md) | A local-only classic skin from the owner's own copy of the 1998 game | Accepted | 2026-10-15 |
 | [0043](0043-floating-command-menu.md) | Float the command menu and the forecast beside the unit | Accepted | 2026-10-15 |
-| [0044](0044-modern-battlefield-presentation.md) | Give the battlefield a modern presentation: lighting, effects and cinematics | Accepted | 2026-10-15 |
+| [0044](0044-modern-battlefield-presentation.md) | Give the battlefield a modern presentation: lighting, effects and cinematics | Accepted; terrain painting superseded by 0074 | 2026-10-15 |
 | [0045](0045-rigged-chibi-characters.md) | Draw our characters as rigged 2D chibi figures at tile scale | Superseded by 0073 | 2026-10-15 |
 | [0046](0046-period-accurate-dress.md) | Dress our characters as late Eastern Han soldiers and officials | Accepted (side colours swapped by 0055) | 2026-10-15 |
 | [0047](0047-battle-goals-and-arrivals.md) | Let battles have goals, timed arrivals and a guard order | Accepted | 2026-10-19 |
@@ -86,4 +86,5 @@ what was decided, why, what else was considered, and when to revisit it.
 | [0071](0071-duels.md) | 일기토: challenge an officer, pick a stance each bout; story duels end as history did | Accepted | 2026-10-22 |
 | [0072](0072-duel-screen.md) | Show a 일기토 on its own screen, and let a story duel's last bout explain its ending | Proposed | 2026-10-22 |
 | [0073](0073-painted-sprites.md) | Paint every figure as a sprite sheet in the portraits' style, moving to the classic's frame grammar | Accepted | 2026-10-24 |
+| [0074](0074-terrain-variants-that-join.md) | Paint terrain tiles in many variants that join with their neighbours | Accepted | 2026-10-24 |
 | [0075](0075-battlefields-from-the-record.md) | Lay out and paint each battlefield as the record describes it | Accepted | 2026-10-24 |
