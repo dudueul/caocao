@@ -1,9 +1,11 @@
 # Character look: the late Eastern Han, around 200 AD
 
 How our figures dress and what they carry ([ADR 0046](../adr/0046-period-accurate-dress.md)).
-The rig and its scale are in [ADR 0045](../adr/0045-rigged-chibi-characters.md). The
-parts are painted in code today (`apps/client/src/lib/fx/chibi.ts`); an artist's
-drawings follow this guide later. Portraits follow the same dress. Each officer
+The figures are sprite sheets painted in code ([ADR 0073](../adr/0073-painted-sprites.md),
+`apps/client/src/lib/fx/sprite/`): each officer's figure takes its headgear, beard,
+skin, accent and signature items from his portrait, and troops wear their army's
+kit. An artist's drawings can replace the sheets later in the same layout.
+Portraits follow the same dress. Each officer
 gets their own headgear, build, turn, beard, accent colour and prop, drawn from
 the record first ([ADR 0070](../adr/0070-portraits-from-the-record.md),
 [PORTRAITS.md](PORTRAITS.md)). The source of truth is the officer table in

@@ -233,14 +233,14 @@ function chinCords(g: G, L: Look, color: string, y0: number): void {
 // ---------------------------------------------------------------- helmets
 
 /** Han dyes for a headcloth under a helmet, all darker than skin: purple, madder, green, indigo. */
-const DYES: readonly Tri[] = [
+export const DYES: readonly Tri[] = [
   ["#5e3a6a", "#3c2446", "#82608f"],
   ["#9a3a2a", "#62221a", "#c4614c"],
   ["#3f6b46", "#26452c", "#649a6c"],
   ["#2e3f66", "#1c2742", "#52668f"],
 ];
 
-type HelmStyle =
+export type HelmStyle =
   | "lam"
   | "band"
   | "lac"
@@ -263,7 +263,7 @@ type HelmStyle =
   | "plume"
   | "plain";
 
-const HELM_OF: Partial<Record<Hat, HelmStyle>> = {
+export const HELM_OF: Partial<Record<Hat, HelmStyle>> = {
   helmLam: "lam",
   helmBand: "band",
   helmLac: "lac",
@@ -291,7 +291,7 @@ const HELM_OF: Partial<Record<Hat, HelmStyle>> = {
  * Each helmet's outline: dome size (k), height (kv) and shape (q < 2 pointed,
  * > 2 boxy); cheek flaps; neck guard; finial; tassel; brow band; dome texture.
  */
-interface HelmSpec {
+export interface HelmSpec {
   k: number;
   kv: number;
   q: number;
@@ -305,7 +305,7 @@ interface HelmSpec {
 }
 
 // biome-ignore format: one helmet per line reads as a table
-const HELMS: Record<HelmStyle, HelmSpec> = {
+export const HELMS: Record<HelmStyle, HelmSpec> = {
   lam:    { k: 1.13, kv: 1.08, q: 2,    mat: "iron",  cheeks: "long",  neck: "short", finial: "knob",  tassel: "short", band: "metal",  dome: "lines" },
   /** Banded and tall, with a long guard over the nape. */
   band:   { k: 1.13, kv: 1.24, q: 1.5,  mat: "iron",  cheeks: "long",  neck: "long",  finial: "knob",  tassel: "short", band: "metal",  dome: "lamellae" },

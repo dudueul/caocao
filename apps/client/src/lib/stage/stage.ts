@@ -1,6 +1,6 @@
 /**
  * The stage renderer (ADR 0063, 0064): a small tile map acted on by our
- * rigged figures, for story scenes and the walkable camp. It follows the
+ * painted figures (ADR 0073), for story scenes and the walkable camp. It follows the
  * battle field's way of working (a Pixi app, painted terrain, layers sorted
  * by row, particles, ambience, a colour grade) but is its own renderer: it
  * moves actors around, poses them, pans the camera and lights the scene. The
@@ -24,9 +24,9 @@ import { Application, Container, DisplacementFilter, Graphics, Sprite, Text } fr
 import { AdjustmentFilter, AdvancedBloomFilter } from "pixi-filters";
 import { audio, SFX_NAMES, type Sfx } from "../audio/index.ts";
 import { Ambient } from "../fx/ambient.ts";
-import { ChibiRig, type Look, lookFor, type RigPose } from "../fx/chibi.ts";
 import * as fx from "../fx/effects.ts";
 import { Particles } from "../fx/particles.ts";
+import { type FigurePose, lookFor, SpriteFigure, type SpriteLook } from "../fx/sprite/index.ts";
 import { type FxTextures, makeTextures } from "../fx/textures.ts";
 import { emoteArt } from "./emotes.ts";
 import { paintStage, type Setting, settingOf } from "./floors.ts";
@@ -39,6 +39,8 @@ export const T = 96;
 const HEADROOM = T * 0.7;
 /** Figures are drawn a little larger than a tile: the stage is small, the actors matter. */
 const FIG = 1.18;
+/** A name plate's height over an actor's tile centre, in tiles: clear of the tallest hat. */
+const TAG_Y = 1.32;
 const BG = 0x14130f;
 const FONT = "'Noto Serif KR', 'Nanum Myeongjo', 'Noto Sans KR', serif";
 
@@ -70,7 +72,7 @@ const SFX_ALIAS: Readonly<Record<string, Sfx>> = {
   lose: "loss",
 };
 
-/** One-shot poses and how long they take (seconds, as the rig plays them). */
+/** One-shot poses and how long they take (seconds, as the figures play them). */
 const ONE_SHOT: Partial<Record<ActPose, number>> = {
   bow: 1.3,
   nod: 0.7,
@@ -113,9 +115,9 @@ interface ActorView {
   spec: ActorSpec;
   root: Container;
   shadow: Sprite;
-  rig: ChibiRig;
+  rig: SpriteFigure;
   /** The look standing up; cavalry get off their horses to kneel or lie down. */
-  look: Look;
+  look: SpriteLook;
   afoot: boolean;
   cell: Cell;
   /** Position in tiles (fractional while moving). */
@@ -686,7 +688,7 @@ export class Stage {
       a.rig.update(real, real);
       a.root.position.set(a.pos.x * T + T / 2, a.pos.y * T + T / 2);
       a.root.zIndex = a.root.position.y;
-      if (a.tag) a.tag.position.set(a.root.x, a.root.y - T * 1.12);
+      if (a.tag) a.tag.position.set(a.root.x, a.root.y - T * TAG_Y);
     }
     for (const p of this.props) {
       p.view.tick(secs);
@@ -807,11 +809,11 @@ export class Stage {
     shadow.height = T * 0.3 * FIG;
     shadow.position.set(0, T * 0.31);
     root.addChild(shadow);
-    let look = lookFor(spec.classId, spec.officer, spec.side);
     // Nobody rides into a hall or a tent, or about the camp.
-    if (look.kind === "cavalry" && (this.setting !== "outdoor" || this.afoot))
-      look = { ...look, kind: "infantry" };
-    const rig = new ChibiRig(look);
+    const afoot = this.setting !== "outdoor" || this.afoot;
+    const look = lookFor(spec.classId, spec.officer, spec.side, afoot);
+    // Scenes paint their actors' actions and scene poses ahead; the camp only walks.
+    const rig = new SpriteFigure(look, { ahead: this.afoot ? [] : ["action", "scene"] });
     rig.setSize(T * FIG);
     rig.root.y = -T * 0.32 * (FIG - 1);
     root.addChild(rig.root);
@@ -842,12 +844,12 @@ export class Stage {
 
   /** Swaps the figure when a rider gets down (to kneel or lie) or back up. */
   private setAfoot(a: ActorView, down: boolean): void {
-    if (a.look.kind !== "cavalry") return;
-    const want = down ? { ...a.look, kind: "infantry" as const } : a.look;
-    if (a.rig.look.kind === want.kind) return;
+    if (!a.look.mounted) return;
+    const want = down ? lookFor(a.spec.classId, a.spec.officer, a.spec.side, true) : a.look;
+    if (a.rig.look.key === want.key) return;
     const idx = a.root.getChildIndex(a.rig.root);
     a.rig.root.destroy({ children: true });
-    a.rig = new ChibiRig(want);
+    a.rig = new SpriteFigure(want, { ahead: this.afoot ? [] : ["action", "scene"] });
     a.rig.setSize(T * FIG);
     a.rig.root.y = -T * 0.32 * (FIG - 1);
     a.root.addChildAt(a.rig.root, idx);
@@ -860,7 +862,7 @@ export class Stage {
     else a.rig.setFacing(f, false);
   }
 
-  private setPose(a: ActorView, pose: RigPose): void {
+  private setPose(a: ActorView, pose: FigurePose): void {
     a.rig.setPose(pose);
   }
 
@@ -905,8 +907,7 @@ export class Stage {
       if (!a.on) continue;
       const dx = px - (a.pos.x + 0.5);
       const dy = py - (a.pos.y + 0.5);
-      if (Math.abs(dx) < 0.4 && dy > -1.05 && dy < 0.45)
-        if (!best || a.pos.y > best.pos.y) best = a;
+      if (Math.abs(dx) < 0.4 && dy > -1.3 && dy < 0.45) if (!best || a.pos.y > best.pos.y) best = a;
     }
     return best;
   }
@@ -1088,9 +1089,9 @@ export class Stage {
     a.held = null;
     this.setAfoot(a, false);
     this.look(a.spec.id);
-    const riding = a.rig.look.kind === "cavalry";
+    const riding = a.rig.look.mounted;
     const per = (run ? 175 : 300) * (riding ? 0.85 : 1);
-    this.setPose(a, "walk");
+    this.setPose(a, run ? "run" : "walk");
     try {
       for (let i = 1; i < path.length; i++) {
         if (shouldStop?.()) break;
@@ -1238,7 +1239,7 @@ export class Stage {
     const x = a.pos.x * T + T / 2;
     const lying = a.held === "down";
     const y =
-      a.pos.y * T + T / 2 - T * (lying ? 0.35 : 1.1) + Math.sin(this.clock / 220) * T * 0.04;
+      a.pos.y * T + T / 2 - T * (lying ? 0.35 : 1.3) + Math.sin(this.clock / 220) * T * 0.04;
     const w = T * 0.11;
     g.moveTo(x - w, y - w * 0.9)
       .lineTo(x, y + w * 0.25)
@@ -1261,9 +1262,10 @@ export class Stage {
     const place = () => {
       const x = a.pos.x * T + T / 2;
       const y = a.pos.y * T + T / 2;
-      if (art.bubble) s.position.set(x + T * 0.1, y - T * (lying ? 0.3 : 1.0));
-      else if (e === "tear") s.position.set(x + T * 0.14, y - T * (lying ? 0.1 : 0.55));
-      else s.position.set(x + T * 0.28, y - T * (lying ? 0.25 : 0.95));
+      // Over the head, at the eye, beside the crown: the figures stand a third over their tile.
+      if (art.bubble) s.position.set(x + T * 0.1, y - T * (lying ? 0.3 : 1.2));
+      else if (e === "tear") s.position.set(x + T * 0.14, y - T * (lying ? 0.1 : 0.62));
+      else s.position.set(x + T * 0.3, y - T * (lying ? 0.25 : 1.12));
     };
     place();
     this.above.addChild(s);
@@ -1325,7 +1327,7 @@ export class Stage {
     label.position.set(0, -4);
     this.above.addChild(box);
     a.tag = box;
-    box.position.set(a.root.x, a.root.y - T * 1.12);
+    box.position.set(a.root.x, a.root.y - T * TAG_Y);
   }
 
   /** Stations in the camp: a soft glow on the tile and a wooden sign with its name. */

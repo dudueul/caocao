@@ -1,6 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import { Field, type OverlayView } from "../lib/field.ts";
+import { spriteDebug } from "../lib/fx/sprite/index.ts";
 import type { Session } from "../lib/session.svelte.ts";
 import { settings } from "../lib/settings.svelte.ts";
 import { classic } from "../lib/skin.svelte.ts";
@@ -52,9 +53,13 @@ onMount(() => {
   const f = new Field(session, {
     lite: params.has("lowfx") || calm || settings.lite,
     calm,
-    tokens: params.has("tokens"),
   });
-  if (params.has("debug")) (window as unknown as { tkField: Field }).tkField = f;
+  if (params.has("debug"))
+    Object.assign(window as unknown as Record<string, unknown>, {
+      tkField: f,
+      // Paint time and sheet memory of the figures (ADR 0073).
+      tkSprites: spriteDebug,
+    });
   field = f;
   void f.mount(host).then(() => (ready = true));
   return () => f.destroy();

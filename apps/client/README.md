@@ -80,23 +80,25 @@ exporter smooths the sprites to twice their size; `--raw` keeps the 1998 pixels.
 - **Cut-ins:** a stratagem opens with a cut-in showing the caster's portrait
   (or a crest).
 - **Our own art:** without the skin, the terrain is our procedural painting and
-  units are rigged chibi figures at tile scale
-  ([ADR 0045](../../docs/adr/0045-rigged-chibi-characters.md)), dressed as late
-  Eastern Han soldiers and officials
+  units are sprite figures painted in code in the portraits' style
+  ([ADR 0073](../../docs/adr/0073-painted-sprites.md)), each from the same
+  traits as its portrait, dressed as late Eastern Han soldiers and officials
   ([ADR 0046](../../docs/adr/0046-period-accurate-dress.md),
-  [CHARACTER_LOOK.md](../../docs/remake/CHARACTER_LOOK.md)). They breathe,
-  walk, swing, shoot, guard, flinch and cheer, facing front, back or sideways.
-  `/dev/rig-gallery.html` on the dev server shows every class, side, facing
-  and pose.
+  [CHARACTER_LOOK.md](../../docs/remake/CHARACTER_LOOK.md)). They move to the
+  classic's frame grammar: a two-frame step, a four-frame attack (wind-up,
+  strike, follow-through, recover), one frame each for guard, hurt and cheer,
+  a two-frame slump when weak, facing front, back or sideways.
+  `/dev/sprite-gallery.html` on the dev server shows every family, tier-2
+  class, army kit and hero in every pose and facing.
 
 | Flag | Effect |
 |---|---|
 | `?lowfx` | No bloom or water shimmer, lighter ambience (slow devices) |
 | `?noskin` | Our own art even when the classic skin is exported |
-| `?tokens` | Medallion tokens instead of our rigged figures |
-| `?debug` | `window.tk` (the sandbox store), `window.story` (the Story store) and `window.tkField` (`manualClock(true)`, `step(ms)` for frame-by-frame captures) |
+| `?debug` | `window.tk` (the sandbox store), `window.story` (the Story store), `window.tkField` (`manualClock(true)`, `step(ms)` for frame-by-frame captures) and `window.tkSprites` (the figures' paint time and sheet memory) |
 
-Dev pages (served by `bun run dev`): `/dev/rig-gallery.html` (every figure and pose),
+Dev pages (served by `bun run dev`): `/dev/sprite-gallery.html` (every figure, pose and
+facing; `?only=anim` moving, `?only=bench` paint times),
 `/dev/portrait-gallery.html` (every portrait and mood), `/dev/audio-test.html`
 (every sound and track, with levels).
 
@@ -108,7 +110,8 @@ The system's *reduce motion* setting also turns off camera moves, shake and flas
 |---|---|
 | `src/lib/session.svelte.ts` | The battle store (Svelte 5 runes): state, command log, choices, AI turns |
 | `src/lib/field.ts` | Pixi renderer: layers, camera, event scenes (our art, or the classic skin) |
-| `src/lib/fx/` | Effect textures, particles, effect recipes, weather, terrain painting, tokens |
+| `src/lib/fx/` | Effect textures, particles, effect recipes, weather, terrain painting, the gatehouse |
+| `src/lib/fx/sprite/` | The figures: looks from the portrait traits, key poses, the painter, sheets and their cache, the figure ([ADR 0073](../../docs/adr/0073-painted-sprites.md)) |
 | `src/lib/skin.svelte.ts`, `src/lib/classic-battle.ts` | The local classic skin (dev only) and 1998-map sandbox battles |
 | `src/lib/text.ts` | Korean UI strings, event-log lines |
 | `src/components/` | Top bar (with the Arena clock), unit card, floating command menu and forecast, skill cut-in, portraits, tile info, log |

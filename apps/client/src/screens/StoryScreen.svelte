@@ -1,6 +1,7 @@
 <script lang="ts">
 import TalkOverlay from "../components/TalkOverlay.svelte";
 import { audio, type Track } from "../lib/audio/index.ts";
+import { spriteDebug } from "../lib/fx/sprite/index.ts";
 import { story } from "../lib/story.svelte.ts";
 import BattleScreen from "./BattleScreen.svelte";
 import CampView from "./story/CampView.svelte";
@@ -13,7 +14,7 @@ import SortieView from "./story/SortieView.svelte";
 let { expose = false }: { expose?: boolean } = $props();
 
 $effect(() => {
-  if (expose) (window as unknown as { story: typeof story }).story = story;
+  if (expose) Object.assign(window, { story, tkSprites: spriteDebug });
 });
 
 const track = $derived.by<Track | null>(() => {

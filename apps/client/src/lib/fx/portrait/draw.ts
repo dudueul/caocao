@@ -1,7 +1,7 @@
 /**
- * Canvas helpers shared by the portrait painter: paths, the cel shading of
- * the rigged figures (ADR 0045), colour mixing, a seeded generator, and the
- * lamellar texture.
+ * Canvas helpers shared by the portrait painter: paths, cel shading (the
+ * painted figures of ADR 0073 follow the same style), colour mixing, a seeded
+ * generator, and the lamellar texture.
  */
 
 export type G = CanvasRenderingContext2D;

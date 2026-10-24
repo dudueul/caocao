@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sprite gallery</title>
+    <style>
+    html,
+    body {
+      margin: 0;
+      background: #1b1a17;
+      color: #efe7d6;
+      font:
+        13px system-ui,
+        sans-serif;
+    }
+    main {
+      padding: 12px;
+    }
+    h2 {
+      margin: 14px 0 6px;
+      font-size: 15px;
+      color: #e2b65c;
+    }
+    .row {
+      display: flex;
+      gap: 2px;
+      align-items: flex-end;
+      margin-bottom: 4px;
+    }
+    .label {
+      flex: 0 0 120px;
+      color: #e2b65c;
+    }
+    .label small {
+      display: block;
+      color: #a99f8c;
+    }
+    figure {
+      margin: 0;
+      display: grid;
+      justify-items: center;
+      color: #a99f8c;
+      font-size: 9px;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Dev only (`bun run dev`, then /dev/sprite-gallery.html): every family, tier-2 class and hero
+         in every pose and facing, on a grass tile at display size (ADR 0073).
+         Query: ?only=families|tier2|heroes|armies|anim  ?ids=cao-cao,guan-yu  ?tile=64  ?facings=down,side
+         ?poses=stand,attack  ?big (frames at sheet size) -->
+    <main id="app"></main>
+    <script type="module" src="./sprite-gallery.ts"></script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 
 > Living document. Decisions are recorded in [`docs/adr/`](../adr/README.md);
 > this folder describes the **current** design. Last updated 2026-10-22
-> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0072](../adr/0072-duel-screen.md)).
+> (decisions [0001](../adr/0001-record-architecture-decisions.md)–[0073](../adr/0073-painted-sprites.md)).
 
 ## Vision
 
@@ -97,7 +97,7 @@ flowchart TB
 | P1 defaults | One `MatchDO` per room, room codes, first pick vs first move, 16-officer pool at Lv 20, one mirrored map | [0041](../adr/0041-p1-arena-defaults.md) |
 | Classic skin | The owner's own 1998 game exported into a git-ignored folder; dev server only; animated sprites, portraits, terrain and 1998 maps; never built, deployed or published | [0042](../adr/0042-local-classic-skin.md) |
 | Command menu | Command menu, skill list and forecast float beside the unit; keyboard and touch | [0043](../adr/0043-floating-command-menu.md) |
-| Characters | Rigged 2D chibi figures at tile scale in the map's bird's-eye view; three facings; parts painted in code until an artist draws them | [0045](../adr/0045-rigged-chibi-characters.md) |
+| Characters | Sprite sheets painted in code in the portraits' style, each officer's figure matching his portrait; three facings; the classic's frame grammar (2-frame walk, 4-frame attack); used in battles, scenes and the camp | [0073](../adr/0073-painted-sprites.md) (superseding [0045](../adr/0045-rigged-chibi-characters.md)) |
 | Character dress | Late Eastern Han, around 200 AD: topknots, cross-collared robes, iron lamellar armour, ring-pommel sabres and lacquered shields, the ji halberd, no stirrups, Cao Cao's traction stone-thrower; [CHARACTER_LOOK.md](CHARACTER_LOOK.md) | [0046](../adr/0046-period-accurate-dress.md) |
 | Presentation | Soft terrain edges, water shimmer, weather and colour grade, cinematic camera, particles per skill school, skill cut-ins, glass-and-gold UI, smoothed classic sprites; our own procedural terrain and tokens without the skin | [0044](../adr/0044-modern-battlefield-presentation.md) |
 | Goals and arrivals | Battles may have goals (defeat named units, hold until a round, reach a tile) and reserve units that arrive on a round; a guard order for commanders; state format 3 | [0047](../adr/0047-battle-goals-and-arrivals.md) |
@@ -162,7 +162,7 @@ come for P2: the server copy of progress (`PlayerDO`) and re-simulation.
 | 6 | Story scope | Cao Cao's story in order from 174 ([0056](../adr/0056-chapter-order-and-carry-over.md)): chapters 1–4 are playable (174–207, [0067](../adr/0067-chapter-four-hebei.md)); next, chapter 5 (적벽, 208); other lords' routes later, if ever |
 | 7 | Equipment ([RULES.md §11](RULES.md#11-still-to-decide)) | Story gear decided ([0050](../adr/0050-equipment-and-shop.md)); the Arena uses none ([0039](../adr/0039-arena-draft.md), [0041](../adr/0041-p1-arena-defaults.md)); consumables in battle still open |
 | 8 | Remaining techniques ([MODERN_TECHNIQUES.md](MODERN_TECHNIQUES.md)) | AI profiles and lookahead next; speed/skip in the client; party level cap and TP later |
-| 9 | Art pipeline | Direction chosen: rigged 2D chibi at tile scale ([0045](../adr/0045-rigged-chibi-characters.md)); still open: the rig format (Spine, which needs editor licences, or our own parts-and-bones JSON) and who draws |
+| 9 | Art pipeline | Figures and portraits are painted in code from the record ([0070](../adr/0070-portraits-from-the-record.md), [0073](../adr/0073-painted-sprites.md)); figures move to the classic's frame grammar. Still open: who draws, if an artist later replaces the painters' sheets in the same layout |
 | 10 | Languages | Korean first; English next |
 | 11 | Monetization (if public) | Out of scope until a public launch |
 

@@ -2,8 +2,8 @@
  * PixiJS battlefield (ADR 0007): terrain, overlays (reach, targets, danger),
  * units and effects. The presentation (ADR 0044) adds soft terrain edges, water
  * shimmer, weather, lighting and colour grading, a cinematic camera, particles
- * and skill cut-ins. Units are our own medallion tokens, or the local classic
- * skin's animated sprites when the owner has exported one (ADR 0042).
+ * and skill cut-ins. Units are our own painted figures (ADR 0073), or the local
+ * classic skin's animated sprites when the owner has exported one (ADR 0042).
  * It only reads the session and animates rules events; it decides nothing.
  */
 
@@ -30,12 +30,12 @@ import {
 import { AdjustmentFilter, AdvancedBloomFilter } from "pixi-filters";
 import { audio, type Sfx } from "./audio/index.ts";
 import { Ambient } from "./fx/ambient.ts";
-import { ChibiRig, lookFor } from "./fx/chibi.ts";
 import * as fx from "./fx/effects.ts";
 import { Particles } from "./fx/particles.ts";
+import { lookFor, SpriteFigure } from "./fx/sprite/index.ts";
 import { ourTerrain, paintTerrain, skinTerrain, type TerrainSet } from "./fx/terrain.ts";
 import { type FxTextures, makeTextures } from "./fx/textures.ts";
-import { gateTexture, tokenTexture } from "./fx/tokens.ts";
+import { gateTexture } from "./fx/tokens.ts";
 import { walkPath } from "./path.ts";
 import type { Session } from "./session.svelte.ts";
 import type { ClassicSkin, Facing, Pose } from "./skin.svelte.ts";
@@ -99,12 +99,12 @@ export interface OverlayView {
 interface UnitSprite {
   root: Container;
   shadow: Sprite;
-  /** Team ring at the feet of a skinned figure. */
+  /** Team ring at the feet of a figure. */
   ring: Graphics;
-  /** Our medallion token (with `?tokens`). */
+  /** A work's picture: the gatehouse (ADR 0069). */
   token: Sprite;
-  /** Our rigged chibi figure (ADR 0045; hidden with the classic skin or `?tokens`). */
-  rig: ChibiRig | null;
+  /** Our painted figure (ADR 0073; hidden while the classic skin draws the unit). */
+  rig: SpriteFigure | null;
   /** The animated classic sprite (hidden without a skin). */
   figure: Sprite;
   hp: Graphics;
@@ -113,7 +113,6 @@ interface UnitSprite {
   badge: Text;
   /** ▲ buffs / ▼ debuffs at the top-left. */
   cond: Text;
-  glyph: Text;
   /** Classic sprite set, or -1. */
   set: number;
   pose: PoseState | null;
@@ -149,8 +148,6 @@ const POSE_TIMING: Record<Pose, { fps: number; loop: boolean }> = {
 };
 
 export interface FieldOptions {
-  /** Medallion tokens instead of our rigged figures. */
-  tokens?: boolean;
   /** Fewer effects and no full-screen filters (slow devices, `?lowfx`). */
   lite: boolean;
   /** No camera moves or screen shake (prefers-reduced-motion). */
@@ -575,15 +572,13 @@ export class Field {
     outline(v.aimCells, 0xffffff, 1.5, 0.5);
     fill(v.area, v.aimColor, 0.3);
     for (const c of v.ready) {
+      // A ring at the figure's feet.
       const p = this.center(c);
-      // Figures get a ring at their feet; tokens get one around them.
-      if (this.skin || !this.opts.tokens)
-        g.ellipse(p.x, p.y + t * 0.3, t * 0.42, t * 0.17).stroke({
-          width: 2,
-          color: 0xfff3b0,
-          alpha: 0.75,
-        });
-      else g.circle(p.x, p.y, t * 0.45).stroke({ width: 2, color: 0xfff3b0, alpha: 0.7 });
+      g.ellipse(p.x, p.y + t * 0.3, t * 0.42, t * 0.17).stroke({
+        width: 2,
+        color: 0xfff3b0,
+        alpha: 0.75,
+      });
     }
     if (v.hover) outline([v.hover], 0xffffff, 1.5, 0.7);
     const p = this.pulse;
@@ -615,15 +610,6 @@ export class Field {
     const figure = new Sprite();
     figure.anchor.set(0.5);
     figure.visible = false;
-    const glyph = new Text({
-      text: "",
-      style: {
-        ...textStyle(Math.round(t * 0.34), 0xffffff, true),
-        dropShadow: { color: 0x000000, alpha: 0.6, blur: 2, distance: 1, angle: Math.PI / 2 },
-      },
-    });
-    glyph.anchor.set(0.5);
-    glyph.position.set(0, -t * 0.04);
     const hp = new Graphics();
     const mark = new Text({ text: "", style: textStyle(Math.round(t * 0.26), 0xffe066, true) });
     mark.anchor.set(0.5);
@@ -634,7 +620,7 @@ export class Field {
     const badge = new Text({ text: "", style: textStyle(Math.round(t * 0.3), 0xffd23f, true) });
     badge.anchor.set(0.5);
     badge.position.set(0, -t * 0.62);
-    root.addChild(shadow, ring, token, figure, glyph, hp, mark, cond, badge);
+    root.addChild(shadow, ring, token, figure, hp, mark, cond, badge);
     this.units.addChild(root);
     const set = this.skin && !u.structure ? this.skin.setFor(u.classId, u.id, u.side) : -1;
     s = {
@@ -648,7 +634,6 @@ export class Field {
       mark,
       cond,
       badge,
-      glyph,
       set,
       pose: null,
       hpNow: u.hp,
@@ -680,25 +665,18 @@ export class Field {
 
   private drawUnit(u: Unit, s: UnitSprite, dir: Dir, state: BattleState): void {
     const t = this.tile;
-    const cls = this.session.rules.classes[u.classId];
     const color = SIDE_COLOR[u.side] ?? 0x888888;
     if (u.structure) {
       this.drawWork(u, s, color, state);
       return;
     }
     const skinned = this.skinned(s);
-    const rigged = !skinned && !this.opts.tokens;
     const resting = u.acted && state.winner === null;
-    if (rigged) {
+    if (!skinned) {
       const look = lookFor(u.classId, u.id, u.side);
-      if (
-        !s.rig ||
-        s.rig.look.kind !== look.kind ||
-        s.rig.look.side !== look.side ||
-        s.rig.look.elite !== look.elite
-      ) {
+      if (!s.rig || s.rig.look.key !== look.key) {
         s.rig?.root.destroy({ children: true });
-        s.rig = new ChibiRig(look);
+        s.rig = new SpriteFigure(look);
         s.root.addChildAt(s.rig.root, s.root.getChildIndex(s.figure));
       }
       s.rig.setSize(t);
@@ -706,39 +684,23 @@ export class Field {
       s.rig.root.destroy({ children: true });
       s.rig = null;
     }
-    const figure = skinned || rigged;
-    s.shadow.width = t * (figure ? 0.86 : 0.9);
+    s.shadow.width = t * 0.86;
     s.shadow.height = t * 0.34;
-    s.shadow.position.set(figure ? 0 : t * 0.04, t * (figure ? 0.3 : 0.28));
-    s.ring.clear();
-    if (rigged && s.rig) {
-      s.ring
-        .ellipse(0, t * 0.3, t * 0.34, t * 0.13)
-        .fill({ color, alpha: 0.22 })
-        .stroke({ width: 2, color, alpha: 0.95 });
-      this.setPose(s, idlePose(u, state, this.session), dir);
+    s.shadow.position.set(0, t * 0.3);
+    s.ring
+      .clear()
+      .ellipse(0, t * 0.3, t * 0.34, t * 0.13)
+      .fill({ color, alpha: 0.22 })
+      .stroke({ width: 2, color, alpha: skinned ? 0.9 : 0.95 });
+    this.setPose(s, idlePose(u, state, this.session), dir);
+    if (s.rig) {
       s.rig.setTint(resting ? 0x8c8c8c : 0xffffff);
       s.pose = null;
-    } else if (skinned) {
-      s.ring
-        .ellipse(0, t * 0.3, t * 0.34, t * 0.13)
-        .fill({ color, alpha: 0.22 })
-        .stroke({ width: 2, color, alpha: 0.9 });
-      this.setPose(s, idlePose(u, state, this.session), dir);
-      s.figure.tint = resting ? 0x8c8c8c : 0xffffff;
-    } else {
-      const ranged = cls?.range.some((o) => Math.abs(o.dx) + Math.abs(o.dy) > 1) ?? false;
-      s.token.texture = tokenTexture(color, ranged);
-      s.token.width = t * 0.82;
-      s.token.height = t * 0.82;
-      s.token.tint = resting ? 0x8a8a8a : 0xffffff;
-      s.glyph.text = cls?.name.slice(0, 1) ?? "?";
-      s.glyph.alpha = resting ? 0.6 : 1;
-      s.pose = null;
-    }
+    } else s.figure.tint = resting ? 0x8c8c8c : 0xffffff;
     s.figure.visible = skinned;
-    s.token.visible = !figure;
-    s.glyph.visible = !figure;
+    s.token.visible = false;
+    // Badges ride over the head: our figures stand a third taller than their tile.
+    s.badge.position.y = skinned ? -t * 0.62 : -t * 1.1;
     if (s.hpNow !== u.hp || s.maxHp !== u.maxHp) {
       s.hpNow = u.hp;
       s.hpGhost = u.hp;
@@ -772,7 +734,6 @@ export class Field {
     s.rig?.root.destroy({ children: true });
     s.rig = null;
     s.figure.visible = false;
-    s.glyph.visible = false;
     s.ring.clear();
     s.shadow.width = t * 0.96;
     s.shadow.height = t * 0.3;
@@ -853,9 +814,11 @@ export class Field {
   /** Shows a pose; an unchanged looping pose keeps its rhythm. */
   private setPose(s: UnitSprite, pose: Pose, dir: Dir, fps?: number): void {
     if (s.rig) {
-      // Our figures are painted facing right: mirror them to face left.
+      // Our figures are painted facing right: mirror them to face left. Ready
+      // figures mark time on the spot; on the move they step at the given rate.
       s.rig.setFacing(dir.facing, dir.facing === "side" && !dir.flip);
-      s.rig.setPose(pose === "walk" ? (fps === undefined ? "ready" : "walk") : pose);
+      if (pose === "walk") s.rig.setPose(fps === undefined ? "ready" : "walk", fps);
+      else s.rig.setPose(pose);
       return;
     }
     const skin = this.skin;
@@ -929,7 +892,9 @@ export class Field {
     if (!at || this.playing) return;
     const t = this.tile;
     const p = this.center(at);
-    const y = p.y - t * 0.66 + Math.sin(this.clock / 220) * t * 0.05;
+    // Over the head: our figures stand taller than the classic's.
+    const top = this.skin ? 0.66 : 1.12;
+    const y = p.y - t * top + Math.sin(this.clock / 220) * t * 0.05;
     const w = t * 0.16;
     g.moveTo(p.x - w, y - w * 0.9)
       .lineTo(p.x, y + w * 0.2)
